@@ -1,0 +1,13 @@
+# Problems with Emails Received from Amazon SES<a name="received-email-problems"></a>
+
+The following issue can arise when a recipient receives an email sent through Amazon SES\. If you are looking for troubleshooting information that talks about when a recipient does not receive an email at all, see [Amazon SES Delivery Problems](delivery-problems.md)\.
+
++ **A recipient's email client displays "sent via amazonses\.com" as the source of the email**—Some email clients display the "via" domain when the sender's domain does not match the domain that the email was actually sent from \(in this case, amazonses\.com\)\. For more information on why, see this [explanation from Google](https://support.google.com/mail/answer/1311182?hl=en;)\. As a workaround, you can set up Domain Keys Identified Mail \(DKIM\), which is good practice anyway\. When you authenticate your emails using DKIM, email clients will typically not show the "via" domain because the DKIM signature shows that the email is from the domain it claims to be from\. For information about how to set up DKIM, see [Authenticating Email with DKIM in Amazon SES](dkim.md)\.
+
++ **Your email is not displaying correctly in a recipient's email client**
+
+  + If your email contains non\-ASCII characters, you must construct the email in Multipurpose Internet Mail Extensions \(MIME\) format and send it using the `SendRawEmail` API\. For more information, see [Sending Raw Email Using the Amazon SES API](send-email-raw.md)\.
+
+  + Your email might contain improperly formatted MIME\. Ensure that it complies with [RFC 2047](http://tools.ietf.org/html/rfc2047)\. For example, it must use appropriate header fields and message body encoding\.
+
+  + The recipient's email server or email client might impose limitations on the rendered content\.

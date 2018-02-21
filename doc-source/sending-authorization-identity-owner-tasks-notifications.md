@@ -1,0 +1,5 @@
+# Setting Up Identity Owner Notifications for Amazon SES Sending Authorization<a name="sending-authorization-identity-owner-tasks-notifications"></a>
+
+When a delegate sender sends email using an identity you own, bounces and complaints that those emails generate count toward the delegate sender's bounce and complaint metrics rather than your own\. However, if you want to be informed of these email\-sending outcomes, you can set up notifications by email or by Amazon SNS notifications just as you would for any other identity\. For more information about receiving bounce and complaint notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-using-notifications.md)\.
+
+Delegate senders can set up their own Amazon SNS notifications for the identities that you have authorized them to use, although only you, the identity owner, can control whether feedback can be directly forwarded to your identity via email\.
