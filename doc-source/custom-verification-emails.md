@@ -133,7 +133,7 @@ Custom verification email templates may not exceed 10 MB in size\.
 In order to prevent abuse, custom verification email templates that contain HTML can only use the tags listed in the following table:
 
 
-| Allowed tags | 
+| <td colspan="4">Allowed tags<td> | 
 | --- | 
 | abbr  | dfn | img | span | 
 | acronym  | dir | input | strike | 
