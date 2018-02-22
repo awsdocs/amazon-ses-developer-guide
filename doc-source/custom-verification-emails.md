@@ -2,7 +2,7 @@
 
 When you attempt to verify an email address, Amazon SES sends an email to that address that resembles the example shown in the following image\.
 
-![\[\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/verification_email_example.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/verification_email_example.png)
 
 Several Amazon SES customers build applications \(such as email marketing suites or ticketing systems\) that send email through Amazon SES on behalf of their own customers\. For the end users of these applications, the email verification process can be confusing: the verification email uses Amazon SES branding, rather than the branding of the application, and those end users never signed up to use Amazon SES directly\.
 
@@ -89,7 +89,7 @@ After you create at least one custom verification email template, you can send i
 
 For example, assume your customers register for your service using a form in your application\. When the customer completes the form and submits it, your application calls the `SendCustomVerificationEmail` operation, passing the customer's email address and the name of the template you want to use\. 
 
-Your customer receives an email that uses the customized email template you created\. Amazon SES automatically adds a unique link to the recipient, as well as a brief disclaimer\. The following image shows a sample verification email that uses the template created in [[ERROR] BAD/MISSING LINK TEXT](#custom-verification-emails-creating)\.
+Your customer receives an email that uses the customized email template you created\. Amazon SES automatically adds a unique link to the recipient, as well as a brief disclaimer\. The following image shows a sample verification email that uses the template created in [Creating a Custom Verification Email Template](#custom-verification-emails-creating)\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/cve_sample_message.png)
 
@@ -126,51 +126,87 @@ You can embed the Base64\-encoded image by including the following in the HTML f
 
 In the example above, replace `png` with the file type of the encoded image \(such as jpg or gif\), and replace `base64EncodedImage` with the Base64 encoded image \(that is, the contents of `output.txt` from one of the preceding commands\)\.
 
-### Q5\. Are there any size limitations to the content that is included in custom verification email templates?<a name="custom-verification-emails-faq-q5"></a>
+### Q5\. Are there any limits to the content that I can include in custom verification email templates?<a name="custom-verification-emails-faq-q5"></a>
 
-Custom verification email templates may not exceed 10 MB in size\.
-
-In order to prevent abuse, custom verification email templates that contain HTML can only use the tags listed in the following table:
+Custom verification email templates may not exceed 10 MB in size\. Additionally, custom verification email templates that contain HTML can only use the tags and attributes listed in the following table:
 
 
-| <td colspan="4">Allowed tags<td> | 
-| --- | 
-| abbr  | dfn | img | span | 
-| acronym  | dir | input | strike | 
-| address | div | ins | strong | 
-| area | dl | kbd | sub | 
-| b  | dt | label | sup | 
-| bdo | em | legend | table | 
-| big | fieldset | li | tbody | 
-| blockquote | font | map | td | 
-| body | form | menu | textarea | 
-| br | h1 | ol | tfoot | 
-| button | h2 | optgroup | th | 
-| caption | h3 | option | thead | 
-| center | h4 | p | tr | 
-| cite | h5 | pre | tt | 
-| code | h6 | q | u | 
-| col | head | s | ul | 
-| colgroup | hr | samp | var | 
-| dd | html | select |  | 
-| del | i | small |  | 
-
-Additionally, the HTML tags in the preceding table may only include certain attributes\. These attributes are listed in the following table:
-
-
-| Tag | Allowed attributes | 
+| HTML tag | Allowed attributes | 
 | --- | --- | 
-| \(All allowed tags\) | id, class, style, title | 
-| blockquote | cite | 
-| col | span, width | 
-| colgroup | span, width | 
-| img | align, alt, height, src, title, width | 
-| ol | start, type | 
-| q | cite | 
-| table | summary, width | 
-| td | abbr, axis, colspan, rowspan, width | 
-| th | abbr, axis, colspan, rowspan, scope, width | 
-| ul | type | 
+| abbr | class, id, style, title | 
+| acronym | class, id, style, title | 
+| address | class, id, style, title | 
+| area | class, id, style, title | 
+| b | class, id, style, title | 
+| bdo | class, id, style, title | 
+| big | class, id, style, title | 
+| blockquote | cite, class, id, style, title | 
+| body | class, id, style, title | 
+| br | class, id, style, title | 
+| button | class, id, style, title | 
+| caption | class, id, style, title | 
+| center | class, id, style, title | 
+| cite | class, id, style, title | 
+| code | class, id, style, title | 
+| col | class, id, span, style, title, width | 
+| colgroup | class, id, span, style, title, width | 
+| dd | class, id, style, title | 
+| del | class, id, style, title | 
+| dfn | class, id, style, title | 
+| dir | class, id, style, title | 
+| div | class, id, style, title | 
+| dl | class, id, style, title | 
+| dt | class, id, style, title | 
+| em | class, id, style, title | 
+| fieldset | class, id, style, title | 
+| font | class, id, style, title | 
+| form | class, id, style, title | 
+| h1 | class, id, style, title | 
+| h2 | class, id, style, title | 
+| h3 | class, id, style, title | 
+| h4 | class, id, style, title | 
+| h5 | class, id, style, title | 
+| h6 | class, id, style, title | 
+| head | class, id, style, title | 
+| hr | class, id, style, title | 
+| html | class, id, style, title | 
+| i | class, id, style, title | 
+| img | align, alt, class, height, id, src, style, title, width | 
+| input | class, id, style, title | 
+| ins | class, id, style, title | 
+| kbd | class, id, style, title | 
+| label | class, id, style, title | 
+| legend | class, id, style, title | 
+| li | class, id, style, title | 
+| map | class, id, style, title | 
+| menu | class, id, style, title | 
+| ol | class, id, start, style, title, type | 
+| optgroup | class, id, style, title | 
+| option | class, id, style, title | 
+| p | class, id, style, title | 
+| pre | class, id, style, title | 
+| q | cite, class, id, style, title | 
+| s | class, id, style, title | 
+| samp | class, id, style, title | 
+| select | class, id, style, title | 
+| small | class, id, style, title | 
+| span | class, id, style, title | 
+| strike | class, id, style, title | 
+| strong | class, id, style, title | 
+| sub | class, id, style, title | 
+| sup | class, id, style, title | 
+| table | class, id, style, summary, title, width | 
+| tbody | class, id, style, title | 
+| td | abbr, axis, class, colspan, id, rowspan, style, title, width | 
+| textarea | class, id, style, title | 
+| tfoot | class, id, style, title | 
+| th | abbr, axis, class, colspan, id, rowspan, scope, style, title, width | 
+| thead | class, id, style, title | 
+| tr | class, id, style, title | 
+| tt | class, id, style, title | 
+| u | class, id, style, title | 
+| ul | class, id, style, title, type | 
+| var | class, id, style, title | 
 
 ### Q6\. How many verified email addresses can exist in my account?<a name="custom-verification-emails-faq-q6"></a>
 
