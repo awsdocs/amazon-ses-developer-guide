@@ -33,7 +33,7 @@ You can use the Policy Generator to create a simple authorization policy by usin
 
    + **Principals** – Enter either the 12\-digit AWS account ID or the ARN of an IAM user that you are allowing or denying access, and then choose **Add**\. You can add more principals by repeating this step\. An example of an AWS account ID is 123456789012 and an example of an IAM user ARN is *arn:aws:iam::123456789012:user/John*\.
 **Note**  
-The policy generator wizard does not currently support AWS service principals\. To add an AWS service principal, you must either create a custom policy or use the policy generator to add an AWS account or IAM user principal, and then edit the policy\.
+The policy generator wizard does not currently support AWS service principals\. To add an AWS service principal, you must either [create a custom policy](#sending-authorization-identity-owner-tasks-identity-policy-custom) or use the policy generator to add an AWS account or IAM user principal, and then [edit](sending-authorization-identity-owner-tasks-management.md#sending-authorization-identity-owner-tasks-management-edit) the policy\.
 
    + **Actions** – Choose the email\-sending access to which this policy applies\. Typically, identity owners choose both options to give the delegate sender the freedom to choose how to implement the email sending\. For more information, see [Statements Specific to the Policy](sending-authorization-policies.md#sending-authorization-policy-statements)\. 
 

@@ -1,6 +1,6 @@
 # Set Up an Amazon SNS Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-sns"></a>
 
-An Amazon Simple Notification Service event destination notifies you about specific email sending events using Amazon SNS\. Because an Amazon SNS event destination exists within a configuration set only, you must first create a configuration set and then add the event destination to the configuration set\.
+An Amazon Simple Notification Service event destination notifies you about specific email sending events using Amazon SNS\. Because an Amazon SNS event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
 
 You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API operation to add an Amazon SNS event destination\.
 
@@ -15,7 +15,7 @@ It is also possible to receive notifications through Amazon SNS at the account l
 
 1. In the navigation pane, choose **Configuration Sets**\.
 
-1. Choose a configuration set from the configuration set list\. If the list is empty, you must first create a configuration set\.
+1. Choose a configuration set from the configuration set list\. If the list is empty, you must first [create a configuration set](event-publishing-create-configuration-set.md)\.
 
 1. For **Add Destination**, choose **Select a destination type**, and then choose **SNS**\.
 

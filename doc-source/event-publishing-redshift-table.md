@@ -2,7 +2,7 @@
 
 After you connect to the initial database in Amazon Redshift, you typically use the initial database as the base for creating a new database\. However, in this simple tutorial, we create a table to hold your Amazon SES event publishing data directly within the initial database\.
 
-For this tutorial, let's assume that we're interested in the following fields within the email sending event records\. All of these fields, except for `mail.tags.campaign`, are provided automatically by Amazon SES\. We introduce the `mail.tags.campaign` field when we send an email using `campaign` as a message tag in [Step 6: Send Emails](event-publishing-redshift-send-email.md)\.
+For this tutorial, let's assume that we're interested in the following fields within the [email sending event records](event-publishing-retrieving-firehose-contents.md)\. All of these fields, except for `mail.tags.campaign`, are provided automatically by Amazon SES\. We introduce the `mail.tags.campaign` field when we send an email using `campaign` as a message tag in [Step 6: Send Emails](event-publishing-redshift-send-email.md)\.
 
 + `mail.messageId`
 
@@ -21,7 +21,7 @@ For this tutorial, let's assume that we're interested in the following fields wi
 To access this information within your database, you must create a table\. The following procedure shows how to specify this information when you create the table in your database\.
 
 **Note**  
-We assume that SQL Workbench/J is currently open on your computer, and it is connected to your Amazon Redshift cluster, as described in previous step\.
+We assume that SQL Workbench/J is currently open on your computer, and it is connected to your Amazon Redshift cluster, as described in [previous step](event-publishing-redshift-cluster-connect.md)\.
 
 **To create a table using SQL Workbench/J**
 

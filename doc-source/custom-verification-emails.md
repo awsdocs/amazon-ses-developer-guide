@@ -234,7 +234,7 @@ The *email address* link in this text refers to ses\-enforcement@amazon\.com, an
 
 ### Q11\. Are custom verification emails DKIM\-signed?<a name="custom-verification-emails-faq-q11"></a>
 
-In order for verification emails to be DKIM\-signed, the email address that you specify in the `FromEmailAddress` attribute when you create the verification email template must be configured to generate a DKIM signature\. For more information about setting up DKIM for domains and email addresses, see [[ERROR] BAD/MISSING LINK TEXT](dkim.md)\.
+In order for verification emails to be DKIM\-signed, the email address that you specify in the `FromEmailAddress` attribute when you create the verification email template must be configured to generate a DKIM signature\. For more information about setting up DKIM for domains and email addresses, see [Authenticating Email with DKIM in Amazon SES](dkim.md)\.
 
 ### Q12\. Why don't the custom verification email template API operations appear in the SDK or CLI?<a name="custom-verification-emails-faq-q12"></a>
 

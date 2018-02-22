@@ -1,6 +1,6 @@
 # Set Up a CloudWatch Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-cloudwatch"></a>
 
-You can use Amazon CloudWatch event destinations to publish Amazon SES email sending events to CloudWatch\. Because a CloudWatch event destination exists within a configuration set only, you must first create a configuration set and then add the event destination to the configuration set\.
+You can use Amazon CloudWatch event destinations to publish Amazon SES email sending events to CloudWatch\. Because a CloudWatch event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
 
 When you add a CloudWatch event destination to a configuration set, you must choose one or more CloudWatch *dimensions* that correspond to the message tags you use when you send your emails\. Like message tags, a CloudWatch dimension is a name/value pair that helps you uniquely identify a metric\.
 
@@ -24,7 +24,7 @@ You can also use the `UpdateConfigurationSetEventDestination` API operation to c
 
 1. In the navigation pane, choose **Configuration Sets**\.
 
-1. In the list of configuration sets, choose the configuration set for which you want to create a CloudWatch event destination\. If the list is empty, you must first create a configuration set\.
+1. In the list of configuration sets, choose the configuration set for which you want to create a CloudWatch event destination\. If the list is empty, you must first [create a configuration set](event-publishing-create-configuration-set.md)\.
 
 1. On the **Event Destinations** tab, for **Add Destination**, choose **Select a destination type**, and then choose **CloudWatch**\.
 
@@ -52,7 +52,7 @@ You can also use the `UpdateConfigurationSetEventDestination` API operation to c
 
 1. For **Value Source**, choose the location from which Amazon SES obtains the dimensions\. The following value sources are available:
 
-   + **Message Tag** – Amazon SES retrieves the dimension name and value from a message tag that you specified using an `X-SES-MESSAGE-TAGS` header or a parameter to the API\. For more information about adding message tags to your email, see [[ERROR] BAD/MISSING LINK TEXT](event-publishing-send-email.md)\.
+   + **Message Tag** – Amazon SES retrieves the dimension name and value from a message tag that you specified using an `X-SES-MESSAGE-TAGS` header or a parameter to the API\. For more information about adding message tags to your email, see [Step 3: Send Email Using Amazon SES Event Publishing](event-publishing-send-email.md)\.
 
    + **Email Header** – Amazon SES retrieves the dimension name and value from a header in the email\.
 **Note**  

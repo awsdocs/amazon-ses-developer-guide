@@ -36,9 +36,9 @@ Even when you have your customers' best interests in mind, you may still encount
 
 ## Authentication<a name="authentication-considerations"></a>
 
-+ Authenticate your domain with SPF and SenderID\. These authentication methods confirm to email recipients that each email you send is actually from the domain it claims to be from\.
++ Authenticate your domain with [SPF](spf.md) and SenderID\. These authentication methods confirm to email recipients that each email you send is actually from the domain it claims to be from\.
 
-+ Sign your outbound mail with DKIM\. This step confirms to recipients that the content has not been changed in transit between sender and receiver\.
++ Sign your outbound mail with [DKIM](dkim.md)\. This step confirms to recipients that the content has not been changed in transit between sender and receiver\.
 
 + You can test your authentication settings for both SPF and DKIM by sending an email to an ISP\-based email address that you own, such as a personal Gmail or Hotmail account, and then viewing the message's headers\. The headers indicate whether your attempts to authenticate and sign the message were successful\.
 

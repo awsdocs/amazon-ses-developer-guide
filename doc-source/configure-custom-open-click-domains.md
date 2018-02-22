@@ -1,6 +1,6 @@
 # Configuring Custom Domains to Handle Open and Click Tracking<a name="configure-custom-open-click-domains"></a>
 
-When you use event publishing to capture open and click events, Amazon SES makes minor changes to the emails you send\. To capture open events, Amazon SES adds a 1 pixel by 1 pixel transparent image to the bottom of each email\. This image has a unique file name for each email, and is hosted on a server operated by Amazon SES\. To capture link click events, Amazon SES replaces the links in your emails with links to a server operated by Amazon SES\. This immediately redirects the recipient to his or her intended destination\. Some Amazon SES customers may want to use their own domains, rather than domains owned and operated by Amazon SES, to create a more cohesive experience for their recipients\. 
+When you use [event publishing](monitor-using-event-publishing.md) to capture open and click events, Amazon SES makes minor changes to the emails you send\. To capture open events, Amazon SES adds a 1 pixel by 1 pixel transparent image to the bottom of each email\. This image has a unique file name for each email, and is hosted on a server operated by Amazon SES\. To capture link click events, Amazon SES replaces the links in your emails with links to a server operated by Amazon SES\. This immediately redirects the recipient to his or her intended destination\. Some Amazon SES customers may want to use their own domains, rather than domains owned and operated by Amazon SES, to create a more cohesive experience for their recipients\. 
 
 You can configure multiple custom domains to handle open and click tracking events\. These custom domains are associated with configuration sets\. When you send an email using a configuration set, if that configuration set is configured to use a custom domain, then the open and click links in that email automatically use the custom domain specified in that configuration set\.
 
@@ -32,7 +32,7 @@ Depending on your web hosting provider, it may take several minutes for the chan
 
 ### Option 2: Configuring an HTTPS Domain<a name="configure-custom-open-click-domain-https"></a>
 
-If you plan to use an HTTPS subdomain for handling open and click links, you must perform some additional steps, beyond those required for setting up an HTTP domain\.
+If you plan to use an HTTPS subdomain for handling open and click links, you must perform some additional steps, beyond [those required for setting up an HTTP domain](#configure-custom-open-click-domain-http)\.
 
 **To set up an HTTPS subdomain for handling open and click links**
 

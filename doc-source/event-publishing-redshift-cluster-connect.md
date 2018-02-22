@@ -1,6 +1,6 @@
 # Step 2: Connect to Your Amazon Redshift Cluster<a name="event-publishing-redshift-cluster-connect"></a>
 
-Now you will connect to your cluster by using a SQL client tool\. For this tutorial, you use the SQL Workbench/J client that you installed in the prerequisites section\.
+Now you will connect to your cluster by using a SQL client tool\. For this tutorial, you use the SQL Workbench/J client that you installed in the [prerequisites section](event-publishing-redshift-prerequisites.md)\.
 
 Complete this section by performing the following steps:
 
@@ -57,7 +57,7 @@ The following procedure shows how to connect to your cluster from SQL Workbench/
 
 1. For **URL**, paste the JDBC URL that you copied from the [Amazon Redshift console](https://console.aws.amazon.com/redshift/)\.
 
-1. For **Username**, type the username that you chose when you set up the Amazon Redshift cluster\.
+1. For **Username**, type the username that you chose when you [set up the Amazon Redshift cluster](event-publishing-redshift-cluster.md)\.
 
 1. For **Password**, type the password that you chose when you set up the Amazon Redshift cluster\.
 

@@ -8,6 +8,6 @@ As a service that is accessed through computers in data centers around the world
 
 Some areas in which you may notice a delay include:
 
-+ **Creating and modifying configuration sets** – When you create or modify a configuration set \(for example, if you associate a dedicated IP pool with an existing configuration set\), there may be a brief delay from the time that you create or modify it to the time those changes are active\.
++ **Creating and modifying configuration sets** – When you create or modify a configuration set \(for example, if you [associate a dedicated IP pool with an existing configuration set](managing-ip-pools.md)\), there may be a brief delay from the time that you create or modify it to the time those changes are active\.
 
-+ **Creating and modifying event destinations** – When you create or modify an event destination \(for example, to tell Amazon SES to send your email sending data to another AWS service\), there may be a delay between the time your created or modified the event destination and the time email sending events actually arrive at the specified destination\.
++ **Creating and modifying event destinations** – When you create or modify an event destination \(for example, [to tell Amazon SES to send your email sending data to another AWS service](monitor-using-event-publishing.md)\), there may be a delay between the time your created or modified the event destination and the time email sending events actually arrive at the specified destination\.

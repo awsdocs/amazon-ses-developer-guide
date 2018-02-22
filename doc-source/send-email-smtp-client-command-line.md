@@ -9,7 +9,7 @@ OpenSSL is an open\-source utility, and is compatible with all operating systems
 In order to connect to the Amazon SES SMTP interface using OpenSSL, you must first obtain your SMTP credentials\.
 
 **Important**  
-Your SMTP credentials are different from your standard AWS credentials\. For more information about obtaining your SMTP credentials, see [[ERROR] BAD/MISSING LINK TEXT](smtp-credentials.md)\.
+Your SMTP credentials are different from your standard AWS credentials\. For more information about obtaining your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
 
 After you obtain your SMTP credentials, you must encode them using base64 encoding\.
 
@@ -46,7 +46,7 @@ There are two ways to connect to the Amazon SES SMTP interface with OpenSSL: usi
   openssl s_client -crlf -quiet -starttls smtp -connect email-smtp.us-west-2.amazonaws.com:587
   ```
 **Note**  
-Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](regions.md)\.
+Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
   If the connection was successful, you will see output similar to the following:
 
@@ -68,7 +68,7 @@ Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SE
   openssl s_client -crlf -quiet -connect email-smtp.us-west-2.amazonaws.com:465
   ```
 **Note**  
-Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](regions.md)\.
+Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
   If the connection was successful, you will see output similar to the following:
 
@@ -136,7 +136,7 @@ If you do not want to use a configuration set, remove the entire line that begin
    openssl s_client -crlf -quiet -starttls smtp -connect email-smtp.us-west-2.amazonaws.com:587 < input.txt
    ```
 **Note**  
-Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](regions.md)\.
+Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
    If the message was sent, you'll see output similar to the following:
 
@@ -197,7 +197,7 @@ If you do not want to use a configuration set, remove the entire line that begin
    openssl s_client -crlf -quiet -connect email-smtp.us-west-2.amazonaws.com:465 < input.txt
    ```
 **Note**  
-Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](regions.md)\.
+Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
    If the message was sent, you'll see output similar to the following:
 

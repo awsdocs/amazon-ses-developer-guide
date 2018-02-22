@@ -1,6 +1,6 @@
 # Set Up a Kinesis Firehose Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-firehose"></a>
 
-An Amazon Kinesis Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Firehose\. Because a Kinesis Firehose event destination exists within a configuration set only, you must first create a configuration set and then add the event destination to the configuration set\.
+An Amazon Kinesis Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Firehose\. Because a Kinesis Firehose event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
 
 You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API to add a Kinesis Firehose event destination\. 
 
@@ -10,7 +10,7 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
 
 1. In the left navigation pane, choose **Configuration Sets**\.
 
-1. Choose a configuration set from the configuration set list\. If the list is empty, you must first create a configuration set\.
+1. Choose a configuration set from the configuration set list\. If the list is empty, you must first [create a configuration set](event-publishing-create-configuration-set.md)\.
 
 1. For **Add Destination**, choose **Select a destination type**, and then choose **Kinesis Firehose**\.
 

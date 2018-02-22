@@ -8,7 +8,7 @@ Although there's no minimum commitment, we recommend that you lease three or mor
 
 Each AWS Region that Amazon SES is available in contains at least three *Availability Zones* \(*zones*\)\. When you lease more than one dedicated IP address, we distribute them evenly across the Availability Zones for your region\. 
 
-If you create a dedicated IP pool that contains only one address, and the zone where that address is based is temporarily unavailable, emails that you attempt to send using that pool might not be sent\. However, if you create a pool that contains three addresses, you can ensure that each address is in a separate zone\. In this case, even in the unlikely event that two of the three zones are unavailable, you'll still be able to send email from the remaining address\. 
+If you create a [dedicated IP pool](dedicated-ip-pools.md) that contains only one address, and the zone where that address is based is temporarily unavailable, emails that you attempt to send using that pool might not be sent\. However, if you create a pool that contains three addresses, you can ensure that each address is in a separate zone\. In this case, even in the unlikely event that two of the three zones are unavailable, you'll still be able to send email from the remaining address\. 
 
 Service interruptions are rare, but it's a good practice to use redundant systems, especially if you send time\-sensitive or mission\-critical email\. For more information about AWS Regions and Availability Zones, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
 

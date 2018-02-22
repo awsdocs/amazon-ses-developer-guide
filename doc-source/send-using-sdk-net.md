@@ -161,7 +161,7 @@ The following procedure shows how to send an email through Amazon SES using the 
 
 1. In the code editor, do the following:
 
-   + Replace *sender@example\.com* with the "From:" email address\. This address must be verified\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](verify-addresses-and-domains.md)\.
+   + Replace *sender@example\.com* with the "From:" email address\. This address must be verified\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
 
    + Replace *recipient@example\.com* with the "To:" address\. If your account is still in the sandbox, this address must also be verified\.
 

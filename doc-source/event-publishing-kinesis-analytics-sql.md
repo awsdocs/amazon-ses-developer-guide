@@ -9,7 +9,7 @@ This procedure requires that you continue to send a steady stream of emails conf
 
 **To run a SQL query in Amazon Kinesis Data Analytics**
 
-1. Assuming that you have moved on to this procedure after completing the last step, go to the Amazon Kinesis Data Analytics console top menu and choose your application\.  
+1. Assuming that you have moved on to this procedure after completing the [last step](event-publishing-kinesis-analytics-application.md), go to the Amazon Kinesis Data Analytics console top menu and choose your application\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_select_app.png)
 
 1. Choose **Go to SQL editor**\. 

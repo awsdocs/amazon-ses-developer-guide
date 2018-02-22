@@ -18,7 +18,7 @@ The solution described in this section pauses email sending for a specific confi
 
 Before you can configure Amazon SES to automatically pause email sending for a configuration set, you must first enable the export of reputation metrics for the configuration set\.
 
-To enable the export of bounce and complaint metrics for the configuration set, complete the steps in [[ERROR] BAD/MISSING LINK TEXT](configuration-sets-export-metrics.md)\.
+To enable the export of bounce and complaint metrics for the configuration set, complete the steps in [Exporting Reputation Metrics for a Configuration Set to CloudWatch](configuration-sets-export-metrics.md)\.
 
 ## Part 2: Create an IAM Role<a name="monitoring-sender-reputation-pausing-configuration-set-part-2"></a>
 
@@ -72,7 +72,7 @@ This function only pauses email sending for configuration sets in the AWS Region
 
    + For **Role**, choose **Choose an existing role**\.
 
-   + For **Existing role**, choose the IAM role you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-2)\.
+   + For **Existing role**, choose the IAM role you created in [Part 2: Create an IAM Role](#monitoring-sender-reputation-pausing-configuration-set-part-2)\.
 
    Choose **Create function**\.
 
@@ -114,13 +114,13 @@ This function only pauses email sending for configuration sets in the AWS Region
 
 1.  Ensure that the notification bar at the top of the page says Execution result: succeeded\. If the function failed to execute, do the following:
 
-   + Verify that the IAM role you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-2) contains the correct policies\.
+   + Verify that the IAM role you created in [Part 2: Create an IAM Role](#monitoring-sender-reputation-pausing-configuration-set-part-2) contains the correct policies\.
 
    + Verify that the code in the Lambda function does not contain any errors\. The Lambda code editor automatically highlights syntax errors and other potential issues\.
 
 ## Part 4: Re\-Enable Email Sending for the Configuration Set<a name="monitoring-sender-reputation-pausing-configuration-set-part-4"></a>
 
-A side effect of testing the Lambda function in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-3) is that email sending for the configuration set is paused\. In most cases, you do not want to pause sending for the configuration set until the CloudWatch alarm is triggered\.
+A side effect of testing the Lambda function in [Part 3: Create the Lambda Function](#monitoring-sender-reputation-pausing-configuration-set-part-3) is that email sending for the configuration set is paused\. In most cases, you do not want to pause sending for the configuration set until the CloudWatch alarm is triggered\.
 
 The procedures in this section re\-enable email sending for your configuration set\. To complete these procedures, you must install and configure the AWS Command Line Interface\. For more information, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/)\.
 
@@ -172,7 +172,7 @@ For CloudWatch to execute the Lambda function when an alarm is triggered, you mu
 
    + For **Protocol**, choose **AWS Lambda**\.
 
-   + For **Endpoint**, choose the Lambda function you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-3)\.
+   + For **Endpoint**, choose the Lambda function you created in [Part 3: Create the Lambda Function](#monitoring-sender-reputation-pausing-configuration-set-part-3)\.
 
    + For **Version or alias**, choose **default**\.
 
@@ -180,7 +180,7 @@ For CloudWatch to execute the Lambda function when an alarm is triggered, you mu
 
 ## Part 6: Create a CloudWatch Alarm<a name="monitoring-sender-reputation-pausing-configuration-set-part-6"></a>
 
-This section contains procedures for creating an alarm in CloudWatch that is triggered when a metric reaches a certain threshold\. When the alarm is triggered, it delivers a notification to the Amazon SNS topic you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-5), which then executes the Lambda function you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-3)\.
+This section contains procedures for creating an alarm in CloudWatch that is triggered when a metric reaches a certain threshold\. When the alarm is triggered, it delivers a notification to the Amazon SNS topic you created in [Part 5: Create an Amazon SNS Topic](#monitoring-sender-reputation-pausing-configuration-set-part-5), which then executes the Lambda function you created in [Part 3: Create the Lambda Function](#monitoring-sender-reputation-pausing-configuration-set-part-3)\.
 
 **To create a CloudWatch alarm**
 
@@ -210,7 +210,7 @@ This section contains procedures for creating an alarm in CloudWatch that is tri
 **Note**  
 If the overall bounce rate for your Amazon SES account exceeds 10%, or if the overall complaint rate for your Amazon SES account exceeds \.5%, your Amazon SES account is automatically placed on probation\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are far below these rates to prevent your account from being placed on probation\.
 
-   + Under **Actions**, for **Whenever this alarm**, choose **State is ALARM**\. For **Send notification to**, choose the Amazon SNS topic you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-5)\.
+   + Under **Actions**, for **Whenever this alarm**, choose **State is ALARM**\. For **Send notification to**, choose the Amazon SNS topic you created in [Part 5: Create an Amazon SNS Topic](#monitoring-sender-reputation-pausing-configuration-set-part-5)\.
 
    Choose **Create Alarm**\.
 
@@ -242,7 +242,7 @@ The procedures in this section are optional, but we recommend that you complete 
 
 1. At the command line, type the following command to temporarily change the alarm state to `ALARM`: aws cloudwatch set\-alarm\-state \-\-alarm\-name *MyAlarm* \-\-state\-value ALARM \-\-state\-reason "Testing execution of Lambda function" \-\-region *us\-west\-2*
 
-   Replace *MyAlarm* in the preceding command with the name of the alarm you created in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-6)\.
+   Replace *MyAlarm* in the preceding command with the name of the alarm you created in [Part 6: Create a CloudWatch Alarm](#monitoring-sender-reputation-pausing-configuration-set-part-6)\.
 **Note**  
 When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
 
@@ -264,4 +264,4 @@ When you execute this command, the status of the alarm switches from `OK` to `AL
 
    If the value of `SendingEnabled` is `false`, then email sending for the configuration set is disabled, indicating that the Lambda function executed successfully\.
 
-1. Complete the steps in [[ERROR] BAD/MISSING LINK TEXT](#monitoring-sender-reputation-pausing-configuration-set-part-4) to re\-enable email sending for the configuration set\.
+1. Complete the steps in [Part 4: Re\-Enable Email Sending for the Configuration Set](#monitoring-sender-reputation-pausing-configuration-set-part-4) to re\-enable email sending for the configuration set\.

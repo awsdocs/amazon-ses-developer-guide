@@ -28,7 +28,7 @@ The procedure in this section is optional, but highly recommended\.
 
    For procedures, see [Subscribe to a Topic](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
-1. Complete the procedures in [[ERROR] BAD/MISSING LINK TEXT](event-publishing-add-event-destination-sns.md) to set up your configuration sets to publish Rendering Failure events to your Amazon SNS topic\.
+1. Complete the procedures in [Set Up an Amazon SNS Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-sns.md) to set up your configuration sets to publish Rendering Failure events to your Amazon SNS topic\.
 
 ## Part 2: Create an Email Template<a name="send-personalized-email-create-template"></a>
 
@@ -98,7 +98,7 @@ You can use the `SendTemplatedEmail` operation to send an email to a single dest
 
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications \(Optional\)](#send-personalized-email-set-up-notifications)\.
 
    + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendTemplatedEmail` operation, all recipients receive the same email\.
 
@@ -167,7 +167,7 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
 
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications \(Optional\)](#send-personalized-email-set-up-notifications)\.
 
    + **Destinations** – An array that contains one or more Destinations\.
 

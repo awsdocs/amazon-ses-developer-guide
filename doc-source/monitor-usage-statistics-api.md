@@ -18,9 +18,9 @@ For a complete description of the `GetSendStatistics` operation, see the *[Amazo
 
 In this section, you will find the following topics:
 
-+ [[ERROR] BAD/MISSING LINK TEXT](#call-getsendstatistics-awscli)
++ [Calling the `GetSendStatistics` API Operation Using the AWS CLI](#call-getsendstatistics-awscli)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](#call-getsendstatistics-programmatically)
++ [Calling the `GetSendStatistics` Operation Programmatically](#call-getsendstatistics-programmatically)
 
 ## Calling the `GetSendStatistics` API Operation Using the AWS CLI<a name="call-getsendstatistics-awscli"></a>
 
@@ -40,13 +40,13 @@ The easiest way to call the `GetSendStatistics` API operation is to use the [AWS
 
 You can also call the `GetSendStatistics` operation using the AWS SDKs\. This section includes code examples for the AWS SDKs for Go, PHP, Python, and Ruby\. Choose one of the following links to view code examples for that language:
 
-+ Code example for the AWS SDK for Go
++ [Code example for the AWS SDK for Go](#code-example-getsendstatistics-golang)
 
-+ Code example for the AWS SDK for PHP
++ [Code example for the AWS SDK for PHP](#code-example-getsendstatistics-php)
 
-+ Code example for the AWS SDK for Python \(Boto\)
++ [Code example for the AWS SDK for Python \(Boto\)](#code-example-getsendstatistics-python)
 
-+ Code example for the AWS SDK for Ruby
++ [Code example for the AWS SDK for Ruby](#code-example-getsendstatistics-ruby)
 
 **Note**  
 These code examples assume that you have created an AWS shared credentials file that contains your AWS Access Key ID, your AWS Secret Access Key, and your preferred AWS Region\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.

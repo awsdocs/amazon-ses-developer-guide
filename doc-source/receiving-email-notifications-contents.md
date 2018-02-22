@@ -30,7 +30,7 @@ The `receipt` object has the following fields\.
 | dmarcPolicy | Object that indicates the Domain\-based Message Authentication, Reporting & Conformance \(DMARC\) settings for the sending domain\. This field only appears if the value of dmarcVerdict is FAIL\. For a list of possible values, see [dmarcPolicy Object](#receiving-email-notifications-contents-dmarcrequestedreceiverpolicy-object)\. | 
 | dmarcVerdict | Object that indicates whether the Domain\-based Message Authentication, Reporting & Conformance \(DMARC\) check passed\. For a list of possible values, see [dmarcVerdict Object](#receiving-email-notifications-contents-dmarcverdict-object)\. | 
 |  `processingTimeMillis`  |  String that specifies the period, in milliseconds, from the time Amazon SES received the message to the time it triggered the action\.  | 
-|  `recipients`  |  A list of recipients that were matched by the active receipt rule\. The addresses listed here may differ from those listed by the `destination` field in the [[ERROR] BAD/MISSING LINK TEXT](#receiving-email-notifications-contents-mail-object)\.  | 
+|  `recipients`  |  A list of recipients that were matched by the active receipt rule\. The addresses listed here may differ from those listed by the `destination` field in the [mail Object](#receiving-email-notifications-contents-mail-object)\.  | 
 |  `spamVerdict`  |  Object that indicates whether the message is spam\. For a list of possible values, see [spamVerdict Object](#receiving-email-notifications-contents-spamverdict-object)\.  | 
 |  `spfVerdict`  |  Object that indicates whether the Sender Policy Framework \(SPF\) check passed\. For a list of possible values, see [spfVerdict Object](#receiving-email-notifications-contents-spfverdict-object)\.  | 
 |  `timestamp`  |  String that specifies the date and time at which the action was triggered, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format\.  | 
@@ -48,7 +48,7 @@ The `action` object has the following fields\.
 |  `type`  |  String that indicates the type of action that was executed\. Possible values are `S3`, `SNS`, `Bounce`, `Lambda`, `Stop`, and `WorkMail`\.  | 
 |  `topicArn`  |  String that contains the Amazon Resource Name \(ARN\) of the Amazon SNS topic to which the notification was published\.  | 
 |  `bucketName`  |  String that contains the name of the Amazon S3 bucket to which the message was published\. Present only for the S3 action type\.  | 
-|  `objectKey`  |  String that contains a name that uniquely identifies the email in the Amazon S3 bucket\. This is the same as the `messageId` in the [[ERROR] BAD/MISSING LINK TEXT](#receiving-email-notifications-contents-mail-object)\. Present only for the S3 action type\.  | 
+|  `objectKey`  |  String that contains a name that uniquely identifies the email in the Amazon S3 bucket\. This is the same as the `messageId` in the [mail Object](#receiving-email-notifications-contents-mail-object)\. Present only for the S3 action type\.  | 
 |  `smtpReplyCode`  |  String that contains the SMTP reply code, as defined by [RFC 5321](https://tools.ietf.org/html/rfc5321)\. Present only for the bounce action type\.  | 
 |  `statusCode`  |  String that contains the SMTP enhanced status code, as defined by [RFC 3463](https://tools.ietf.org/html/rfc3463)\. Present only for the bounce action type\.  | 
 |  `message`  |  String that contains the human\-readable text to include in the bounce message\. Present only for the bounce action type\.  | 

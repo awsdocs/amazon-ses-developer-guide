@@ -6,7 +6,7 @@ There are two levels of granularity at which Amazon SES can publish these events
 
 + **Across your AWS account** – These coarse metrics, which correspond to the metrics you monitor using the Amazon SES console and the `GetSendStatistics` API, are totals across your entire AWS account\. Amazon SES publishes these metrics to CloudWatch automatically\.
 
-+ **Fine\-grained** – These metrics are categorized by email characteristics that you define using *message tags*\. To publish these metrics to CloudWatch, you must set up event publishing with a CloudWatch event destination and specify a configuration set when you send an email\. You can also specify message tags or use auto\-tags that Amazon SES automatically provides\.
++ **Fine\-grained** – These metrics are categorized by email characteristics that you define using *message tags*\. To publish these metrics to CloudWatch, you must [set up event publishing](event-publishing-setting-up.md) with a CloudWatch event destination and [specify a configuration set](event-publishing-send-email.md) when you send an email\. You can also specify message tags or use [auto\-tags](monitor-using-event-publishing.md#event-publishing-how-works) that Amazon SES automatically provides\.
 
 This section describes the available metrics and how to view the metrics in CloudWatch\.
 
@@ -48,7 +48,7 @@ The following procedure describes how to view your Amazon SES event publishing m
 
 1. In the **All metrics** pane, expand **AWS Namespaces**, and then choose **SES**\.
 
-1. To view metrics across your entire AWS account, which Amazon SES publishes automatically, choose **Account Sending Metrics**\. To view fine\-grained event publishing metrics, choose the combination of dimensions that you specified when you set up your CloudWatch event destination\.
+1. To view metrics across your entire AWS account, which Amazon SES publishes automatically, choose **Account Sending Metrics**\. To view fine\-grained [event publishing metrics](monitor-using-event-publishing.md), choose the combination of dimensions that you specified when you [set up your CloudWatch event destination](event-publishing-add-event-destination-cloudwatch.md)\.
 
 1. Choose the metric you want to view\.
 

@@ -1,12 +1,12 @@
 # Configuring Email Clients to Send Through Amazon SES<a name="configure-email-client"></a>
 
-After you obtain your SMTP user name and password, you can send email through Amazon SES\. 
+After you obtain your [SMTP user name and password](smtp-credentials.md), you can send email through Amazon SES\. 
 
 The following procedures show how to configure three popular email clients—[Mozilla Thunderbird](https://www.mozilla.org/thunderbird/), [Microsoft Outlook](https://products.office.com/outlook/), and macOS Mail—to send email through Amazon SES\. If you are using a different email client, the specific procedures are different, but the concepts and settings are the same\.
 
 **Note**  
 These procedures help you set up an email client to *send* email using Amazon SES\. However, you cannot use these clients to *receive* email sent to the email addresses you use with Amazon SES\.  
-For more information about receiving email in Amazon SES, see [[ERROR] BAD/MISSING LINK TEXT](receiving-email.md)\.
+For more information about receiving email in Amazon SES, see [Receiving Email with Amazon SES](receiving-email.md)\.
 
 
 + [Configuring Mozilla Thunderbird to Send Email Using Amazon SES](#configure-email-client-thunderbird)
@@ -19,7 +19,7 @@ The procedures in this section help you configure [Mozilla Thunderbird](https://
 
 ### Part 1: Create Local Folders<a name="configure-email-client-thunderbird-part-1"></a>
 
-Amazon SES does not include server\-based folders in which you can save items such as sent mail and drafts\. For this reason, you must create these folders on your computer\. You will configure Thunderbird to save mail to these folders in [[ERROR] BAD/MISSING LINK TEXT](#configure-email-client-thunderbird-part-3)\.
+Amazon SES does not include server\-based folders in which you can save items such as sent mail and drafts\. For this reason, you must create these folders on your computer\. You will configure Thunderbird to save mail to these folders in [Part 3: Configure Thunderbird to Save Sent Mail and Drafts on Your Computer](#configure-email-client-thunderbird-part-3)\.
 
 **To create the Sent Mail and Drafts folders**
 
@@ -55,7 +55,7 @@ Before you can send email through Amazon SES, you must configure Thunderbird to 
 
    + For **Description**, type **Amazon SES**\.
 
-   + For **Server Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [[ERROR] BAD/MISSING LINK TEXT](regions.md#region-endpoints-sending)\.
+   + For **Server Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Email Sending Endpoints](regions.md#region-endpoints-sending)\.
 
    + For **Port**, type **587**\.
 
@@ -161,7 +161,7 @@ You modify the hidden configuration settings in Thunderbird during this procedur
 The procedures in this section will help you configure Microsoft Outlook for Windows to send email through Amazon SES\. These procedures were tested using Microsoft Outlook 2016, build 16\.0\.4549\.1000\. The procedures may differ slightly for other versions of Outlook\.
 
 **Note**  
-These procedures will not work on Microsoft Outlook for Mac\. Outlook for Mac requires an incoming \(IMAP\) server, and does not allow you to bypass the connection test in the same way that the Windows version does\. If you need a graphical client for sending email from a macOS computer, we recommend that you use Thunderbird\.
+These procedures will not work on Microsoft Outlook for Mac\. Outlook for Mac requires an incoming \(IMAP\) server, and does not allow you to bypass the connection test in the same way that the Windows version does\. If you need a graphical client for sending email from a macOS computer, we recommend that you use [Thunderbird](#configure-email-client-thunderbird)\.
 
 **To configure Microsoft Outlook 2016 to send email using Amazon SES**
 
@@ -277,7 +277,7 @@ The procedures in this section apply to the version of Mail that is included wit
 **Note**  
 Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
 
-   + For **Host Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [[ERROR] BAD/MISSING LINK TEXT](regions.md#region-endpoints-sending)\.
+   + For **Host Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Email Sending Endpoints](regions.md#region-endpoints-sending)\.
 
    When you finish, choose **Save**\.
 **Note**  

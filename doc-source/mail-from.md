@@ -16,7 +16,7 @@ If you choose to use your own MAIL FROM domain with Amazon SES, the domain you u
 
 + The MAIL FROM domain must be a subdomain of the verified identity \(email address or domain\) from which you will send your emails\. For example, *mail\.example\.com* is a valid MAIL FROM domain for the email address *user@example\.com* or the domain *example\.com*\.
 
-+ In most cases, the MAIL FROM domain should not be a domain that you send email from\. If you must use the MAIL FROM domain in a From address, either disable email feedback forwarding and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email Feedback Forwarding Destination](notifications-via-email.md#notifications-via-email-destination)\.
++ In most cases, the MAIL FROM domain should not be a domain that you send email from\. If you must use the MAIL FROM domain in a From address, either [disable email feedback forwarding](notifications-via-email.md#notifications-via-email-disabling) and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email Feedback Forwarding Destination](notifications-via-email.md#notifications-via-email-destination)\.
 
 + The MAIL FROM domain should not be a domain that you use to receive email\.
 

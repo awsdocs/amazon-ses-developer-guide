@@ -7,16 +7,16 @@ When you create a new Amazon SES account, your emails are sent from IP addresses
 
 | Benefit | Shared IP addresses | Dedicated IP addresses | 
 | --- | --- | --- | 
-| Ready to use with no additional setup | Yes | No | 
-| Reputation managed by AWS | Yes | No | 
-| Good for customers with continuous, predictable sending patterns | Yes | Yes | 
-| Good for customers with less predictable sending patterns | Yes | No | 
-| Good for high\-volume senders | Yes | Yes | 
-| Good for low\-volume senders | Yes | No | 
-| Additional monthly costs | No | Yes | 
-| Complete control over sender reputation | No | Yes | 
-| Isolate reputation by email type, recipient, or other factors | No | Yes | 
-| Provides known IP addresses that never change | No | Yes | 
+| [Ready to use with no additional setup](#dedicated-ips-simplicity) | Yes | No | 
+| [Reputation managed by AWS](#dedicated-ips-managed-reputation) | Yes | No | 
+| [Good for customers with continuous, predictable sending patterns](#dedicated-ips-sending-patterns) | Yes | Yes | 
+| [Good for customers with less predictable sending patterns](#dedicated-ips-sending-patterns) | Yes | No | 
+| [Good for high\-volume senders](#dedicated-ips-sending-volumes) | Yes | Yes | 
+| [Good for low\-volume senders](#dedicated-ips-sending-volumes) | Yes | No | 
+| [Additional monthly costs](#dedicated-ips-costs) | No | Yes | 
+| [Complete control over sender reputation](#dedicated-ips-reputation-control) | No | Yes | 
+| [Isolate reputation by email type, recipient, or other factors](#dedicated-ips-isolate-reputation) | No | Yes | 
+| [Provides known IP addresses that never change](#dedicated-ips-known-addresses) | No | Yes | 
 
 **Important**  
 If you do not plan to send large volumes of email on a regular and predictable basis, we recommend using shared IP addresses\. If you use dedicated IP addresses in situations where you are sending low volumes of mail, or if your sending patterns are highly irregular, you will experience deliverability issues\.

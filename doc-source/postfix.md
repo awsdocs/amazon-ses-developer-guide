@@ -34,7 +34,7 @@ Complete the following procedures to configure your mail server to send email th
    smtp_tls_note_starttls_offer = yes
    ```
 **Note**  
-If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](regions.md)\.
+If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
 1. In a text editor, open the file `/etc/postfix/master.cf`\.
 
@@ -54,8 +54,8 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
    [email-smtp.us-west-2.amazonaws.com]:587 SMTPUSERNAME:SMTPPASSWORD
    ```
 **Note**  
-Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. For more information about credentials, see [[ERROR] BAD/MISSING LINK TEXT](smtp-credentials.md)\.  
-If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](regions.md)\.
+Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.  
+If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
    Save and close `sasl_passwd`\.
 
@@ -91,7 +91,7 @@ In some versions of Ubuntu, when you enter the `sendmail -f` command, you may se
 
 ## Advanced Usage Example<a name="send-email-postfix-advanced"></a>
 
-This example shows how to send an email that uses a configuration set, and that uses MIME\-multipart encoding to send both a plain text and an HTML version of the message, along with an attachment\. It also includes a link tag, which can be used for categorizing click events\. The content of the email is specified in an external file, so that you do not have to manually type the commands in the Postfix session\.
+This example shows how to send an email that uses a [configuration set](using-configuration-sets.md), and that uses MIME\-multipart encoding to send both a plain text and an HTML version of the message, along with an attachment\. It also includes a [link tag](sending-metric-faqs.md#sending-metric-faqs-clicks-q5), which can be used for categorizing click events\. The content of the email is specified in an external file, so that you do not have to manually type the commands in the Postfix session\.
 
 **To send a multipart MIME email using Postfix**
 

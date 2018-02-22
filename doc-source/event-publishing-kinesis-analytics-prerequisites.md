@@ -8,7 +8,7 @@ For this tutorial, you need the following:
 
 + **Email application** – To use Amazon Kinesis Data Analytics as described in this tutorial, you must send a steady stream of emails through Amazon SES so that you generate a steady stream of email sending events\. This enables Amazon Kinesis Data Analytics to automatically detect the schema and then to process the event records with SQL\. Sending one email every ten seconds for five minutes is sufficient for this tutorial\. 
 **Important**  
-If you do not have an existing email campaign to send to real recipients, we strongly recommend that you send emails to an Amazon SES mailbox simulator address\. Emails that you send to the mailbox simulator do not count toward your Amazon SES bounce and complaint rates or your daily sending quota\.
+If you do not have an existing email campaign to send to real recipients, we strongly recommend that you send emails to an [Amazon SES mailbox simulator](mailbox-simulator.md) address\. Emails that you send to the mailbox simulator do not count toward your Amazon SES bounce and complaint rates or your daily sending quota\.
 
 ## Next Step<a name="event-publishing-kinesis-analytics-prerequisites-next-step"></a>
 

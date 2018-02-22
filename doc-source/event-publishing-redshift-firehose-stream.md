@@ -1,11 +1,11 @@
 # Step 4: Create a Kinesis Firehose Delivery Stream<a name="event-publishing-redshift-firehose-stream"></a>
 
-To publish email sending events to Amazon Kinesis Firehose, you must create a Kinesis Firehose delivery stream\. When you set up a Kinesis Firehose delivery stream, you choose where Kinesis Firehose publishes the data\. For this tutorial, we will set up Kinesis Firehose to publish the data to Amazon Redshift, and choose to have Kinesis Firehose publish the records to Amazon S3 as an intermediary step\. In the process, we need to specify how Amazon Redshift should copy records from Amazon S3 into the table we created in the previous step\.
+To publish email sending events to Amazon Kinesis Firehose, you must create a Kinesis Firehose delivery stream\. When you set up a Kinesis Firehose delivery stream, you choose where Kinesis Firehose publishes the data\. For this tutorial, we will set up Kinesis Firehose to publish the data to Amazon Redshift, and choose to have Kinesis Firehose publish the records to Amazon S3 as an intermediary step\. In the process, we need to specify how Amazon Redshift should copy records from Amazon S3 into the table we created in the [previous step](event-publishing-redshift-table.md)\.
 
 This section shows how to create a Kinesis Firehose delivery stream that sends data to Amazon Redshift, and how to edit the delivery stream to specify how Amazon Redshift should copy the Amazon SES event publishing data to Amazon S3\.
 
 **Note**  
-You must have already set up the Amazon Redshift cluster, connected to your cluster, and created a database table, as explained previous steps\.
+You must have already [set up the Amazon Redshift cluster](event-publishing-redshift-cluster.md), [connected to your cluster](event-publishing-redshift-cluster-connect.md), and [created a database table](event-publishing-redshift-table.md), as explained previous steps\.
 
 ## Creating a Kinesis Firehose Delivery Stream<a name="event-publishing-redshift-firehose-stream-create"></a>
 
@@ -33,7 +33,7 @@ The following procedure shows how to create a Kinesis Firehose delivery stream t
 
    + **Redshift table columns** – Leave this field empty\.
 
-   + **Redshift username** – Type the username that you chose when you set up the Amazon Redshift cluster\.
+   + **Redshift username** – Type the username that you chose when you [set up the Amazon Redshift cluster](event-publishing-redshift-cluster.md)\.
 
    + **Redshift password** – Type the password that you chose when you set up the Amazon Redshift cluster\.
 

@@ -4,6 +4,6 @@ You can access the Amazon SES API using an [AWS SDK](https://aws.amazon.com/tool
 
 This section contains the following topics:
 
-+ [[ERROR] BAD/MISSING LINK TEXT](query-interface.md)
++ [Amazon SES Query API](query-interface.md)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](api-error-codes.md)
++ [API Error Codes Returned by Amazon SES](api-error-codes.md)

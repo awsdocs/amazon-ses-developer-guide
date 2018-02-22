@@ -7,10 +7,11 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 | Change | Description | Date Changed | 
 | --- | --- | --- | 
-| Documentation update | Revised the Amazon SNS event publishing field definitions, and added a Rendering Failure event example\. | January 22, 2018 | 
-| Documentation update | Updated Deliverability Dashboard appendix to account for changes to IAM and Lambda consoles\. | January 18, 2018 | 
-| Documentation update | Updated content related to publishing events to CloudWatch to mention blacklisted fields\. | January 15, 2018 | 
-| Documentation update | Updated procedures for sending email using OpenSSL to make them easier to follow\. | January 11, 2018 | 
+| Open sourced documentation | The Amazon SES documentation is now available on [GitHub](https://github.com/awsdocs/amazon-ses-developer-guide)\. You can submit issues or request changes in the GitHub repository, or make changes directly and submit a pull request\. | February 22, 2018 | 
+| Documentation update | Revised the [Amazon SNS event publishing field definitions](event-publishing-retrieving-sns-contents.md), and added a [Rendering Failure event example](event-publishing-retrieving-sns-examples.md#event-publishing-retrieving-sns-failure)\. | January 22, 2018 | 
+| Documentation update | Updated [Deliverability Dashboard appendix](bouncecomplaintdashboard.md) to account for changes to IAM and Lambda consoles\. | January 18, 2018 | 
+| Documentation update | Updated [content related to publishing events to CloudWatch](event-publishing-add-event-destination-cloudwatch.md) to mention blacklisted fields\. | January 15, 2018 | 
+| Documentation update | Updated [procedures for sending email using OpenSSL](send-email-smtp-client-command-line.md) to make them easier to follow\. | January 11, 2018 | 
 | Documentation update | Added code example for sending raw email by using the AWS SDK for Ruby\. | January 2, 2018 | 
 | Documentation update | Added code example for sending raw email by using the AWS SDK for PHP\. | December 29, 2017 | 
 |  New feature  |  Added content related to custom verification emails\.  |  December 7, 2017  | 

@@ -8,7 +8,7 @@ An SPF record indicates to ISPs that you have authorized Amazon SES to send emai
 
   The other setup with which you can pass an SPF check is to configure Amazon SES to use your own MAIL FROM domain, in which case you must publish an SPF record because the MAIL FROM domain and the domain of the sending mail server, Amazon SES, are different\. Instructions for configuring your domain to send emails using a custom MAIL FROM domain are provided in [Using a Custom MAIL FROM Domain](mail-from.md)\.
 
-+ **To pass DMARC validation based on SPF**—If you want DMARC validation to succeed based on SPF, you must set up a custom MAIL FROM domain and publish an SPF record\. Note that the alignment mode in the DMARC policy must be relaxed, which is the default\. For more information about DMARC policies, see [https://dmarc\.org/](https://dmarc.org/)\.
++ **To pass DMARC validation based on SPF**—If you want DMARC validation to succeed based on SPF, you must [set up a custom MAIL FROM domain](mail-from.md) and publish an SPF record\. Note that the alignment mode in the DMARC policy must be relaxed, which is the default\. For more information about DMARC policies, see [https://dmarc\.org/](https://dmarc.org/)\.
 
 ## Adding an SPF Record<a name="spf-records"></a>
 

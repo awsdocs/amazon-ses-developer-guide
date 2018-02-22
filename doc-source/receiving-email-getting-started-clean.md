@@ -4,7 +4,7 @@ After you have completed this tutorial, you should clean up the following settin
 
 ## Amazon SES Receipt Rule Set<a name="receiving-email-getting-started-clean-ses"></a>
 
-If you no longer want Amazon SES to receive mail for your domain, you must disable your active receipt rule set\.
+If you no longer want Amazon SES to receive mail for your domain, you must [disable your active receipt rule set](receiving-email-managing-receipt-rule-sets.md#receiving-email-managing-receipt-rule-sets-enable-disable)\.
 
 ## Amazon S3 Bucket<a name="receiving-email-getting-started-clean-s3"></a>
 

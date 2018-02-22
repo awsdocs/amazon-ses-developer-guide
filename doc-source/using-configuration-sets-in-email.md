@@ -1,8 +1,8 @@
 # Specifying a Configuration Set When You Send Email<a name="using-configuration-sets-in-email"></a>
 
-To use a configuration set when sending an email, you must pass the name of the configuration set in the headers of the email\. All of the Amazon SES email sending methods—including the [AWS CLI](https://aws.amazon.com/cli), the [AWS SDKs](https://aws.amazon.com/tools/#sdk), and the Amazon SES SMTP interface—allow you to pass a configuration set in the headers of the email you send\.
+To use a configuration set when sending an email, you must pass the name of the configuration set in the headers of the email\. All of the Amazon SES email sending methods—including the [AWS CLI](https://aws.amazon.com/cli), the [AWS SDKs](https://aws.amazon.com/tools/#sdk), and the [Amazon SES SMTP interface](send-email-smtp.md)—allow you to pass a configuration set in the headers of the email you send\.
 
-If you are using the SMTP interface or the [`SendRawEmail` API operation](/ses/latest/APIReference/API_SendRawEmail.html), you can specify a configuration set by including the following header in your email \(replacing `ConfigSet` with the name of the configuration set you want to use\):
+If you are using the [SMTP interface](send-email-smtp.md) or the [`SendRawEmail` API operation](/ses/latest/APIReference/API_SendRawEmail.html), you can specify a configuration set by including the following header in your email \(replacing `ConfigSet` with the name of the configuration set you want to use\):
 
 ```
 X-SES-CONFIGURATION-SET: ConfigSet

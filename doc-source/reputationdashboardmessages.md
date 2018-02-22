@@ -82,7 +82,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-bounce-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -114,7 +114,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-complaint-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -140,7 +140,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-antispamorg-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -170,7 +170,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-directfeedback-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -198,7 +198,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-domainblocklist-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -278,7 +278,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-mailboxprovider-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -310,7 +310,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-recipientfeedback-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
@@ -354,7 +354,7 @@ If you have implemented changes that you believe will resolve the issue, please 
 
 ### If your account is suspended<a name="reputationdashboard-spamtrap-suspended"></a>
 
-You can appeal this suspension; see the Enforcement FAQ for more information\.
+You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
 When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 

@@ -37,7 +37,7 @@ To verify an email address using the AWS CLI, type the following command at the 
 
 In the preceding command, replace *sender@example\.com* with the email address that you want to verify\.
 
-For a script that can be used to verify several email identities in a single operation, see [[ERROR] BAD/MISSING LINK TEXT](sample-code-bulk-verify.md)\.
+For a script that can be used to verify several email identities in a single operation, see [Verify Multiple Email Addresses](sample-code-bulk-verify.md)\.
 
 ## Troubleshoot Email Address Verification<a name="verify-email-addresses-troubleshooting"></a>
 

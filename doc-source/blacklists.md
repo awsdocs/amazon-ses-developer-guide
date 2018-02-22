@@ -9,7 +9,7 @@ This topic is about blacklists that mailbox providers use to block incoming mail
 
 ## Q1\. How do I know if blacklisting is preventing recipients from receiving my emails?<a name="bl-q1"></a>
 
-If your sending is impacted by the blacklisting of an Amazon SES IP address, you will most likely receive a bounce notification that contains a message indicating that your email was rejected because of a listing on a blacklist\. In most cases, the bounce message includes the name or URL of the blacklist\. An example of this type of message is "Message rejected due to IP \[0\.0\.0\.0\] listed on RBL \[X\]"\. If you do not see this type of message in your bounce notifications, it is unlikely that a blacklist is impacting your sending\.
+If your sending is impacted by the blacklisting of an Amazon SES IP address, you will most likely receive a [bounce notification](monitor-sending-using-notifications.md) that contains a message indicating that your email was rejected because of a listing on a blacklist\. In most cases, the bounce message includes the name or URL of the blacklist\. An example of this type of message is "Message rejected due to IP \[0\.0\.0\.0\] listed on RBL \[X\]"\. If you do not see this type of message in your bounce notifications, it is unlikely that a blacklist is impacting your sending\.
 
 ## Q2\. What does Amazon SES do about blacklisting?<a name="bl-q2"></a>
 

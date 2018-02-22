@@ -4,11 +4,11 @@ Amazon SES collects several metrics about the emails you send\. These metrics en
 
 This section contains FAQs on the following topics related to email sending metrics:
 
-+ [[ERROR] BAD/MISSING LINK TEXT](#sending-metric-faqs-general)
++ [General Questions](#sending-metric-faqs-general)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](#sending-metric-faqs-opens)
++ [Open Tracking](#sending-metric-faqs-opens)
 
-+ [[ERROR] BAD/MISSING LINK TEXT](#sending-metric-faqs-clicks)
++ [Click Tracking](#sending-metric-faqs-clicks)
 
 ## General Questions<a name="sending-metric-faqs-general"></a>
 
@@ -56,7 +56,7 @@ Open tracking is available to all Amazon SES users by default\. To use open trac
 
 1. In every email for which you want to track opens, specify the configuration set that you created in step 1\.
 
-For a more detailed explanation of this process, see [[ERROR] BAD/MISSING LINK TEXT](monitor-using-event-publishing.md)\.
+For a more detailed explanation of this process, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\.
 
 ### Q3\. Can I omit the open tracking pixel from certain emails?<a name="sending-metric-faqs-opens-q3"></a>
 

@@ -14,7 +14,7 @@ For an email to comply with DMARC based on SPF, both of the following conditions
 
 To comply with these requirements, complete the following steps:
 
-+ Set up a custom MAIL FROM domain by completing the procedures in [[ERROR] BAD/MISSING LINK TEXT](mail-from.md)\.
++ Set up a custom MAIL FROM domain by completing the procedures in [Using a Custom MAIL FROM Domain with Amazon SES](mail-from.md)\.
 
 + Ensure that your sending domain uses a relaxed policy for SPF\. If you have not changed your domain's policy alignment, it will use a relaxed policy by default\.
 **Note**  
@@ -36,9 +36,9 @@ For an email to comply with DMARC based on DKIM, both of the following condition
 
 To comply with these requirements, complete the following steps:
 
-+ Set up Easy DKIM by completing the procedures in [[ERROR] BAD/MISSING LINK TEXT](easy-dkim.md)\. When you use Easy DKIM, Amazon SES will automatically sign your emails\.
++ Set up Easy DKIM by completing the procedures in [Easy DKIM in Amazon SES](easy-dkim.md)\. When you use Easy DKIM, Amazon SES will automatically sign your emails\.
 **Note**  
-Rather than use Easy DKIM, you can also manually sign your messages\. However, you must be very careful if you choose to do so, because Amazon SES does not validate the DKIM signature that you construct\. For this reason, we highly recommend using Easy DKIM\.
+Rather than use Easy DKIM, you can also [manually sign your messages](manual-dkim.md)\. However, you must be very careful if you choose to do so, because Amazon SES does not validate the DKIM signature that you construct\. For this reason, we highly recommend using Easy DKIM\.
 
 + Ensure that your sending domain uses a relaxed policy for DKIM\. If you have not changed your domain's policy alignment, it will use a relaxed policy by default\.
 **Note**  

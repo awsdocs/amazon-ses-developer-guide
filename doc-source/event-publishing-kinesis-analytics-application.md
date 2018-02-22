@@ -5,7 +5,7 @@ Now that you have set up event publishing with Amazon SES, you can configure Ama
 The following procedure shows how to use the Amazon Kinesis Data Analytics console to create an application that captures Amazon SES email sending event data from your Kinesis Firehose delivery stream, and then how to perform a simply SQL query on the data to return the events of type "Send"\.
 
 **Note**  
-The email sending events of different event types \(send, bounce, complaint, and delivery\) have different JSON schemas\. In a production environment, you might examine several fields of this schema, but in this tutorial, we limit our examination to a small set of fields that are present for all event types\.
+The email sending events of different event types \(send, bounce, complaint, and delivery\) have [different JSON schemas](event-publishing-retrieving-firehose-contents.md)\. In a production environment, you might examine several fields of this schema, but in this tutorial, we limit our examination to a small set of fields that are present for all event types\.
 
 **To create an Amazon Kinesis Data Analytics application**
 

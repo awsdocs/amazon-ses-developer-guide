@@ -3,7 +3,7 @@
 Receipt rules let you specify what Amazon SES does with email it receives for the email addresses or domains you own\. A receipt rule contains a condition and an ordered list of actions\. If the recipient of an incoming email matches a recipient specified in the conditions for the receipt rule, then Amazon SES performs the actions specified in that receipt rule\. For more information about the role of receipt rules in the email\-receiving process, see [Email\-Receiving Concepts](receiving-email-concepts.md)\.
 
 **Important**  
-To set up receipt rules, first verify a domain and publish an MX record on that domain\. For more information about verifying domains, see [Verifying Domains in Amazon SES](verify-domains.md)\. For more information about publishing MX records, see [[ERROR] BAD/MISSING LINK TEXT](receiving-email-mx-record.md)\.
+To set up receipt rules, first verify a domain and publish an MX record on that domain\. For more information about verifying domains, see [Verifying Domains in Amazon SES](verify-domains.md)\. For more information about publishing MX records, see [Publishing an MX Record for Amazon SES Email Receiving](receiving-email-mx-record.md)\.
 
 You can use the Amazon SES console or the `CreateReceiptRule` API operation to create receipt rules\. This section provides procedures for creating a new receipt rule using the console\. These procedures assume that your Amazon SES account does not contain any existing receipt rules\.
 

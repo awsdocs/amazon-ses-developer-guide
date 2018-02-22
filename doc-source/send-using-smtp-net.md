@@ -20,8 +20,7 @@ In this getting started tutorial, you send an email to yourself so that you can 
    1. Under **Visual C\#**, choose **Windows Classic Desktop**\.
 
    1. On the menu at the top of the window, choose **\.NET Framework 4\.5**, as shown in the following image\.  
-![\[The .NET Framework selection menu on the New Project
-                                window.\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_dotnet_smtp_new_project.png)
+![\[The .NET Framework selection menu on the New Project window.\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_dotnet_smtp_new_project.png)
 **Note**  
 You can select a later version of the \.NET Framework if necessary\.
 

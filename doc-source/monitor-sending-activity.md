@@ -25,8 +25,8 @@ You can monitor email sending events in three ways: using the console, using fee
 
 | Monitoring Method | Events You Can Monitor | How to Access the Data | Level of Detail | Granularity | 
 | --- | --- | --- | --- | --- | 
-|  Amazon SES console  |  Deliveries and rejects  |  Sending Statistics page in Amazon SES console  |  Count only  |  Across entire AWS account  | 
-|  Amazon SES console  |  Bounce and complaint rates  |  Reputation Dashboard page in Amazon SES console  |  Calculated rates only  |  Across entire AWS account  | 
+|  Amazon SES console  |  Deliveries and rejects  |  [Sending Statistics page](monitor-using-console.md) in Amazon SES console  |  Count only  |  Across entire AWS account  | 
+|  Amazon SES console  |  Bounce and complaint rates  |  [Reputation Dashboard page](reputation-dashboard-dg.md) in Amazon SES console  |  Calculated rates only  |  Across entire AWS account  | 
 |  Amazon SES API  |  Deliveries, bounces, complaints, and rejects  |  `GetSendStatistics` API operation  |  Count only  |  Across entire AWS account  | 
 |  Amazon CloudWatch console  |  Sends, deliveries, opens, clicks, bounces, complaints, and rejects  |  CloudWatch console  |  Count only  |  Across entire AWS account  | 
 |  Feedback notifications  |  Deliveries, bounces, and complaints  |  Amazon SNS notification \(deliveries, bounces, and complaints\) or email \(bounces and complaints only\)  |  Details on each event  |  Across entire AWS account  | 

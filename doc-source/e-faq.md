@@ -30,7 +30,7 @@ Yes\. You'll receive a notification at the email address of the AWS account asso
 
 When your account is placed on probation, we automatically send a notice to the email address associated with your AWS account\. This email address is the one you specified when you created your AWS account\. In some cases, this email address may be different from the one you use to send email using Amazon SES\.
 
-We recommend that you monitor your sender reputation by regularly consulting the Reputation Dashboard\. You can also set up automated alarms in Amazon CloudWatch\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
+We recommend that you monitor your sender reputation by regularly consulting the [Reputation Dashboard](monitor-sender-reputation.md)\. You can also [set up automated alarms in Amazon CloudWatch](reputationdashboard-cloudwatch-alarm.md)\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
 
 ### Q4\. Will the Amazon SES probation affect my use of other AWS services?<a name="pr-q4"></a>
 
@@ -114,7 +114,7 @@ Yes\. You'll receive a notification at the email address of the AWS account asso
 
 When your account is suspended, we automatically send a notice to the email address associated with your AWS account\. This email address is the one you specified when you created your AWS account\. In some cases, this email address may be different from the one you use to send email using Amazon SES\.
 
-We recommend that you monitor your sender reputation by regularly consulting the Reputation Dashboard\. You can also set up automated alarms in Amazon CloudWatch\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
+We recommend that you monitor your sender reputation by regularly consulting the [Reputation Dashboard](monitor-sender-reputation.md)\. You can also [set up automated alarms in Amazon CloudWatch](reputationdashboard-cloudwatch-alarm.md)\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
 
 ### Q4\. Will the Amazon SES suspension affect my use of other AWS services?<a name="sp-q4"></a>
 
