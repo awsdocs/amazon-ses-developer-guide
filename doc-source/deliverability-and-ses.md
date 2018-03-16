@@ -56,7 +56,9 @@ For more information about sending limits and how to increase them, see [Managin
 
 ### Content Filtering<a name="content-filtering"></a>
 
-Many ISPs use content filtering to determine if incoming emails are spam\. Content filters look for questionable content and block the email if the email fits the profile of spam\. Amazon SES uses content filters also\. When your application sends a request to Amazon SES, Amazon SES assembles an email message on your behalf and then scans the message header and body to determine if they contain content that ISPs might construe as spam\. If your messages look like spam to the content filters that Amazon SES uses, your reputation with Amazon SES will be negatively affected\. If a message is infected with a virus, it is rejected by Amazon SES entirely\.
+Many ISPs use content filtering to determine if incoming emails are spam\. Content filters look for questionable content and block the email if the email fits the profile of spam\. Amazon SES uses content filters also\. When your application sends a request to Amazon SES, Amazon SES assembles an email message on your behalf and then scans the message header and body to determine if they contain content that ISPs might construe as spam\. If your messages look like spam to the content filters that Amazon SES uses, your reputation with Amazon SES will be negatively affected\. 
+
+Amazon SES also scans all messages for viruses\. If a message contains a virus, Amazon SES doesn't attempt to deliver the message to the recipient's mail server\.
 
 ### Reputation<a name="reputation"></a>
 

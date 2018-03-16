@@ -253,6 +253,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Increasing Throughput with Amazon SES](throughput-problems.md)
    + [Amazon SES SMTP Issues](smtp-issues.md)
    + [SMTP Response Codes Returned by Amazon SES](smtp-response-codes.md)
++ [Deleting Personal Data from Amazon SES](deleting-personal-data.md)
 + [Amazon SES Frequently Asked Questions (FAQs)](faqs-dg.md)
    + [Amazon SES Enforcement FAQs](e-faq.md)
    + [Amazon SES IP Blacklist FAQs](blacklists.md)

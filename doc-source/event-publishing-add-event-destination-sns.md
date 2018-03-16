@@ -23,21 +23,21 @@ It is also possible to receive notifications through Amazon SNS at the account l
 
 1. For **Event types**, select at least one event type to publish to the event destination:
 
-   + **Send** – The call to Amazon SES was successful and Amazon SES will attempt to deliver the email\.
+   + **Sends** – The call to Amazon SES was successful and Amazon SES will attempt to deliver the email\.
 
-   + **Reject** – Amazon SES initially accepted the email, but later rejected it because the email contained a virus\.
+   + **Rejects** – Amazon SES accepted the email, determined that it contained a virus, and rejected it\. Amazon SES didn't attempt to deliver the email to the recipient's mail server\.
 
-   + **Bounce** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
+   + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
 
-   + **Complaint** – The recipient marked the email as spam\.
+   + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
 
-   + **Delivery** – Amazon SES successfully delivered the email to the recipient's mail server\.
+   + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
 
-   + **Open** – The recipient received the message and opened it in his or her email client\.
+   + **Opens** – The recipient received the message and opened it in his or her email client\.
 
-   + **Click** – The recipient clicked one or more links contained in the email\.
+   + **Clicks** – The recipient clicked one or more links contained in the email\.
 
-   + **Rendering Failure** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 1. Select **Enabled**\.
 

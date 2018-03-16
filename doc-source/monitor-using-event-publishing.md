@@ -38,23 +38,23 @@ The following sections contain the information you need to set up and use Amazon
 The following list defines terms related to Amazon SES event publishing\.
 
 **Email sending event**  
-Information associated with the outcome of an email you submit to Amazon SES\. There are eight types of email sending events:  
+Information associated with the outcome of an email you submit to Amazon SES\. Sending events include the following:  
 
-+ **Send** – Amazon SES successfully received your email and will attempt to deliver it\.
++ **Sends** – The call to Amazon SES was successful and Amazon SES will attempt to deliver the email\.
 
-+ **Reject** – Amazon SES initially accepted the email, but later rejected it because the email contained a virus\.
++ **Rejects** – Amazon SES accepted the email, determined that it contained a virus, and rejected it\. Amazon SES didn't attempt to deliver the email to the recipient's mail server\.
 
-+ **Bounce** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
++ **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
 
-+ **Complaint** – The message was received, but the recipient marked the email as spam\.
++ **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
 
-+ **Delivery** – Amazon SES successfully delivered the email to the recipient's mail server\.
++ **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
 
-+ **Open** – The recipient received the message and opened it in his or her email client\.
++ **Opens** – The recipient received the message and opened it in his or her email client\.
 
-+ **Click** – The recipient clicked one or more links contained in the email\.
++ **Clicks** – The recipient clicked one or more links contained in the email\.
 
-+ **Rendering Failure** – The email was not sent because of a template rendering issue\. This event type only occurs when you send templated email using the `SendTemplatedEmail` or `SendBulkTemplatedEmail` API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
++ **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 **Configuration set**  
 An Amazon SES construct that encapsulates where you want to publish email sending events, and what email sending events you want to publish\. When you send an email that you want to use with event publishing, you specify the configuration set to associate with the email\.

@@ -1,6 +1,6 @@
 # Amazon SES Enforcement FAQs<a name="e-faq"></a>
 
-We monitor the email that is sent through Amazon SES to ensure that users aren't sending unsolicited or malicious content\. If we determine that you are sending unsolicited or malicious content, we may limit or suspend your ability to send additional email\. This process is called *enforcement*\.
+We monitor the email that is sent through Amazon SES to ensure that users aren't sending unsolicited or malicious content\. If we determine that you're sending unsolicited or malicious content, we may limit or suspend your ability to send additional email\. This process is called *enforcement*\.
 
 This section contains frequently asked questions about the following enforcement\-related topics:
 

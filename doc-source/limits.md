@@ -52,6 +52,18 @@ Sending limits are based on recipients rather than on messages\.
 |  Maximum number of event destinations per configuration set  |  10  | 
 |  Maximum number of dimensions per CloudWatch event destination  |  10  | 
 
+### Email Template Limits<a name="limits-templates"></a>
+
+
+****  
+
+| Limit | Description | 
+| --- | --- | 
+|  Maximum number of email templates in each AWS Region  |  10,000  | 
+|  Maximum template size  |  500 KB  | 
+|  Maximum number replacement values in each template  |  Unlimited  | 
+| Maximum number of recipients for each templated email | 50 destinations\. A *destination* is any email address on the "To", "CC", or "BCC" lines\.  The number of destinations you can contact in a single call to the API may be limited by your account’s maximum sending rate\.  | 
+
 ### Amazon EC2\-Related Limits<a name="limits-ec2"></a>
 
 

@@ -24,7 +24,7 @@ You can determine your domain's DMARC alignment for SPF by typing the following 
   nslookup -type=TXT _dmarc.example.com
   ```
 In the output of this command, under **Non\-authoritative answer**, look for a record that begins with `v=DMARC1`\. If this record includes the string `aspf=r`, or if the `aspf` string is not present at all, then your domain uses relaxed alignment for SPF\. If the record includes the string `aspf=s`, then your domain uses strict alignment for SPF\. Your system administrator will need to remove this tag from the DMARC TXT record in your domain's DNS configuration\.  
-Alternatively, you can use a web\-based DMARC lookup tool, such as the [DMARC Inspector from dmarcian\.com](https://dmarcian.com/dmarc-inspector/), to determine your domain's policy alignment for SPF\.
+Alternatively, you can use a web\-based DMARC lookup tool, such as the [DMARC Inspector](https://dmarcian.com/dmarc-inspector/) from the dmarcian website or the [DMARC Check](https://stopemailfraud.proofpoint.com/dmarc/) tool from the Proofpoint website, to determine your domain's policy alignment for SPF\.
 
 ## Complying with DMARC through DKIM<a name="dmarc-dkim"></a>
 
@@ -48,4 +48,4 @@ You can determine your domain's DMARC alignment for DKIM by typing the following
   nslookup -type=TXT _dmarc.example.com
   ```
 In the output of this command, under **Non\-authoritative answer**, look for a record that begins with `v=DMARC1`\. If this record includes the string `adkim=r`, or if the `adkim` string is not present at all, then your domain uses relaxed alignment for DKIM\. If the record includes the string `adkim=s`, then your domain uses strict alignment for DKIM\. Your system administrator will need to remove this tag from the DMARC TXT record in your domain's DNS configuration\.  
-Alternatively, you can use a web\-based DMARC lookup tool, such as the [DMARC Inspector from dmarcian\.com](https://dmarcian.com/dmarc-inspector/), to determine your domain's policy alignment for DKIM\.
+Alternatively, you can use a web\-based DMARC lookup tool, such as the [DMARC Inspector](https://dmarcian.com/dmarc-inspector/) from the dmarcian website or the [DMARC Check](https://stopemailfraud.proofpoint.com/dmarc/) tool from the Proofpoint website, to determine your domain's policy alignment for DKIM\.

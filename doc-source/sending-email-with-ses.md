@@ -29,7 +29,7 @@ When the sender makes a request to Amazon SES to send an email, the call may suc
 If the request to Amazon SES succeeds, Amazon SES returns a success response to the sender\. This message includes the *message ID*, a string of characters that uniquely identifies the request\. You can use the message ID to identify the sent email or to track problems encountered during sending\. Amazon SES then assembles an email message based on the request parameters, scans the message for questionable content and viruses and then sends it out over the Internet using Simple Mail Transfer Protocol \(SMTP\)\. Your message is usually sent immediately; the first delivery attempt typically occurs within milliseconds\.
 
 **Note**  
-If Amazon SES successfully accepts the sender's request and then an Amazon SES content filter finds that the message contains a virus, Amazon SES drops the message and notifies the sender by email\.
+If Amazon SES accepts the sender's request and then determines that the message contains a virus, Amazon SES stops processing the message and doesn't attempt to deliver it to the recipient's mail server\.
 
 ### Failed Sending Request<a name="failed-sending-request"></a>
 

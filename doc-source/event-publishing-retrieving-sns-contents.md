@@ -174,7 +174,7 @@ The JSON object that contains information about a `Reject` event has the followi
 
 | Field Name | Description | 
 | --- | --- | 
-|  `reason`  |  The reason the email was rejected\. The only possible value is `Bad content`, which means that Amazon SES detected that the email contained a virus\.  | 
+|  `reason`  |  The reason the email was rejected\. The only possible value is `Bad content`, which means that Amazon SES detected that the email contained a virus\. When a message is rejected, Amazon SES stops processing it, and doesn't attempt to deliver it to the recipient's mail server\.  | 
 
 ## Open Object<a name="event-publishing-retrieving-sns-contents-open-object"></a>
 
