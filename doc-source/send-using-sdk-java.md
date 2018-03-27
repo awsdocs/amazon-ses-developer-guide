@@ -8,15 +8,10 @@ In this getting started tutorial, you send an email to yourself so that you can 
 ## Prerequisites<a name="send-using-sdk-java-prerequisites"></a>
 
 Before you begin, perform the following tasks:
-
 + **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
-
 + **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page in the AWS Management Console\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
-
 + **Install Eclipse**—Eclipse is available at [https://www\.eclipse\.org/downloads](https://www.eclipse.org/downloads)\. The code in this tutorial was tested using Eclipse Neon\.3 \(version 4\.6\.3\), running version 1\.8 of the Java Runtime Environment\.
-
 + **Install the AWS Toolkit for Eclipse**—Instructions for adding the AWS Toolkit for Eclipse to your Eclipse installation are available at [https://aws\.amazon\.com/eclipse](https://aws.amazon.com/eclipse)\. The code in this tutorial was tested using version 2\.3\.1 of the AWS Toolkit for Eclipse\.
-
 + **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
 ## Procedure<a name="send-using-sdk-java-procedure"></a>
@@ -123,11 +118,8 @@ The following procedure shows how to send an email through Amazon SES using the 
 1. In `AmazonSESSample.java`, replace the following with your own values:
 **Important**  
 The email addresses are case\-sensitive\. Make sure that the addresses are exactly the same as the ones you verified\.
-
    + `SENDER@EXAMPLE.COM`—Replace with your "From" email address\. You must verify this address before you run this program\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
-
    + `RECIPIENT@EXAMPLE.COM`—Replace with your "To" email address\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
-
    + `US_WEST_2`—Set this to the AWS Region of the Amazon SES endpoint you want to connect to\. Note that your sandbox status, sending limits, and Amazon SES identity\-related settings are specific to a given AWS Region, so be sure to select an AWS Region in which you set up Amazon SES\. In this example, we are using the US West \(Oregon\) Region\. Examples of other Regions that Amazon SES supports are US\_EAST\_1 and EU\_WEST\_1\. For a complete list of AWS Regions that Amazon SES supports, see [Regions and Amazon SES](regions.md)\.
 
 1. Save `AmazonSESSample.java`\.

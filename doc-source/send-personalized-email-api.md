@@ -3,13 +3,9 @@
 You can use the `CreateTemplate` API operation to create email templates\. These templates include a subject line, and the text and HTML parts of the email body\. The subject and body sections may also contain unique values that are personalized for each recipient\.
 
 There are a few limits and other considerations when using these features:
-
 + You can create up to 10,000 email templates per Amazon SES account\.
-
 + Each template can be up to 500KB in size, including both the text and HTML parts\.
-
 + You can include an unlimited number of replacement variables in each template\.
-
 + You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients, as well as CC and BCC recipients\. Note that the number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing Your Amazon SES Sending Limits](manage-sending-limits.md)\.
 
 This section includes procedures for creating email templates and for sending personalized emails\.
@@ -50,15 +46,11 @@ The instructions in this section assume that you are using the AWS CLI, and that
    ```
 
    This code contains the following properties:
-
    + **TemplateName** – The name of the template\. When you send the email, you refer to this name\.
-
    + **SubjectPart** – The subject line of the email\. This property may contain replacement tags\. These tags use the following format: `{{tagname}}`\. When you send the email, you can specify a value for `tagname` for each destination\.
 
      The preceding example includes two tags: `{{name}}` and `{{favoriteanimal}}`\.
-
    + **HtmlPart** – The HTML body of the email\. This property may contain replacement tags\.
-
    + **TextPart** – The text body of the email\. Recipients whose email clients don't display HTML email see this version of the email\. This property may contain replacement tags\.
 
 1. Customize the preceding example to fit your needs, and then save the file as `mytemplate.json`\.
@@ -91,17 +83,12 @@ You can use the `SendTemplatedEmail` operation to send an email to a single dest
    ```
 
    This code contains the following properties:
-
    + **Source** – The email address of the sender\.
-
    + **Template** – The name of the template to apply to the email\.
-
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
 We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications \(Optional\)](#send-personalized-email-set-up-notifications)\.
-
    + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendTemplatedEmail` operation, all recipients receive the same email\.
-
    + **TemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
 
 1. Change the values in the code above to meet your needs, and then save the file as `myemail.json`\.
@@ -160,21 +147,14 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
    ```
 
    This code contains the following properties:
-
    + **Source** – The email address of the sender\.
-
    + **Template** – The name of the template to apply to the email\.
-
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
 We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications \(Optional\)](#send-personalized-email-set-up-notifications)\.
-
    + **Destinations** – An array that contains one or more Destinations\.
-
      + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendBulkTemplatedEmail` operation, all recipients within the same `Destination` object receive the same email\.
-
      + **ReplacementTemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
-
    + **DefaultTemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\. This object contains fallback data\. If a `Destination` object contains an empty JSON object in the `ReplacementTemplateData` property, the values in the `DefaultTemplateData` property are used\.
 
 1. Change the values in the code above to meet your needs, and then save the file as `mybulkemail.json`\.

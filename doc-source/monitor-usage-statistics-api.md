@@ -3,23 +3,16 @@
 The Amazon SES API provides the `GetSendStatistics` operation, which returns information about your service usage\. We recommend that you check your sending statistics regularly, so that you can make adjustments if needed\.
 
 When you call the `GetSendStatistics` operation, you receive a list of data points representing the last two weeks of your sending activity\. Each data point in this list represents 15 minutes of activity and contains the following information for that period:
-
 + The number of hard bounces
-
 + The number of complaints
-
 + The number of delivery attempts \(corresponds to the number of emails you have sent\)
-
 + The number of rejected send attempts
-
 + A timestamp for the analysis period
 
 For a complete description of the `GetSendStatistics` operation, see the *[Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/GetSendStatistics.html)*\.
 
 In this section, you will find the following topics:
-
 + [Calling the `GetSendStatistics` API Operation Using the AWS CLI](#call-getsendstatistics-awscli)
-
 + [Calling the `GetSendStatistics` Operation Programmatically](#call-getsendstatistics-programmatically)
 
 ## Calling the `GetSendStatistics` API Operation Using the AWS CLI<a name="call-getsendstatistics-awscli"></a>
@@ -39,13 +32,9 @@ The easiest way to call the `GetSendStatistics` API operation is to use the [AWS
 ## Calling the `GetSendStatistics` Operation Programmatically<a name="call-getsendstatistics-programmatically"></a>
 
 You can also call the `GetSendStatistics` operation using the AWS SDKs\. This section includes code examples for the AWS SDKs for Go, PHP, Python, and Ruby\. Choose one of the following links to view code examples for that language:
-
 + [Code example for the AWS SDK for Go](#code-example-getsendstatistics-golang)
-
 + [Code example for the AWS SDK for PHP](#code-example-getsendstatistics-php)
-
 + [Code example for the AWS SDK for Python \(Boto\)](#code-example-getsendstatistics-python)
-
 + [Code example for the AWS SDK for Ruby](#code-example-getsendstatistics-ruby)
 
 **Note**  

@@ -16,11 +16,8 @@ If you are looking for information about how to generate Amazon SES SMTP credent
 This section explains how you can use IAM policies specifically with Amazon SES\. To learn how to create IAM policies in general, see the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html)\.
 
 There are three reasons you might use IAM with Amazon SES:
-
 + To restrict the email\-sending action\.
-
 + To restrict the "From", recipient, and "Return\-Path" addresses of the emails that the user sends\.
-
 + To control general aspects of API usage such as the time period during which a user is permitted to call the APIs that they are authorized to use\.
 
 ### Restricting the Action<a name="iam-and-ses-restrict-action"></a>
@@ -30,19 +27,13 @@ To control which Amazon SES actions a user can perform, you use the `Action` ele
 Then, depending on the `Action`, specify the `Resource` element as follows:
 
 **If the `Action` element only permits access to email\-sending APIs \(that is, `ses:SendEmail` and/or `ses:SendRawEmail`\):**
-
 + To allow the user to send from any identity in your AWS account, set `Resource` to \*
-
 + To limit the identities that the user can send from, set `Resource` to the ARN\(s\) of the identities that you are permitting the user to use\.
 
 **If the `Action` element permits access to all APIs:**
-
 + If you do not want to limit the identities that the user can send from, set `Resource` to \*
-
 + If you **do** want to limit the identities that the user can send from, you need to create two policies \(or two statements within one policy\):
-
   + One with `Action` set to an explicit list of the permitted non\-email\-sending APIs and `Resource` set to \*
-
   + One with `Action` set to one of the email\-sending APIs \(`ses:SendEmail` and/or `ses:SendRawEmail`\), and `Resource` set to the ARN\(s\) of the identities you are permitting the user to use\.
 
 For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
@@ -67,15 +58,10 @@ These email address condition keys apply only to the APIs noted in the following
 ### Restricting General API Usage<a name="iam-and-ses-restrict-API-usage"></a>
 
 By using AWS\-wide keys in conditions, you can restrict access to Amazon SES based on aspects such as the date and time that user is permitted access to APIs\. Amazon SES implements only the following AWS\-wide policy keys:
-
 + `aws:CurrentTime`
-
 + `aws:EpochTime`
-
 + `aws:SecureTransport`
-
 + `aws:SourceIp`
-
 + `aws:UserAgent`
 
 For more information about these keys, see the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition)\.
@@ -83,19 +69,12 @@ For more information about these keys, see the [IAM User Guide](http://docs.aws.
 ## Example IAM Policies for Amazon SES<a name="iam-and-ses-examples"></a>
 
 This topic provides examples of policies that permit a user access to Amazon SES, but only under certain conditions\.
-
 + [Allowing Full Access to All Amazon SES Actions](#iam-and-ses-examples-full-access)
-
 + [Allowing Access to Email\-Sending Actions Only](#iam-and-ses-examples-email-sending-actions)
-
 + [Restricting the Time Period of Sending](#iam-and-ses-examples-time-period)
-
 + [Restricting the Recipient Addresses](#iam-and-ses-examples-recipients)
-
 + [Restricting the "From" Address](#iam-and-ses-examples-from-address)
-
 + [Restricting the Display Name of the Email Sender](#iam-and-ses-examples-display-name)
-
 + [Restricting the Destination of Bounce and Complaint Feedback](#iam-and-ses-examples-feedback)
 
 ### Allowing Full Access to All Amazon SES Actions<a name="iam-and-ses-examples-full-access"></a>

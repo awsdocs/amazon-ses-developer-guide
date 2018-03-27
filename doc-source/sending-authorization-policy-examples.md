@@ -1,19 +1,12 @@
 # Amazon SES Sending Authorization Policy Examples<a name="sending-authorization-policy-examples"></a>
 
 Sending authorization enables you to specify the fine\-grained conditions under which you allow delegate senders to send on your behalf\. The following examples show you how to write policies to control different aspects of sending:
-
 + [Specifying the Delegate Sender](#sending-authorization-policy-example-sender)
-
 + [Restricting the "From" Address](#sending-authorization-policy-example-from)
-
 + [Restricting the Destination of Bounce and Complaint Feedback](#sending-authorization-policy-example-feedback)
-
 + [Restricting the Time at which the Delegate can Send Email](#sending-authorization-policy-example-time)
-
 + [Restricting the Email\-Sending Action](#sending-authorization-policy-example-action)
-
 + [Restricting the Display Name of the Email Sender](#sending-authorization-policy-example-display-name)
-
 + [Using Multiple Statements](#sending-authorization-policy-example-multiple-statements)
 
 ## Specifying the Delegate Sender<a name="sending-authorization-policy-example-sender"></a>

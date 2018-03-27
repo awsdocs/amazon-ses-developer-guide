@@ -8,11 +8,8 @@ For security reasons, Amazon SES does not support HTTP requests\. You must use H
 ## Structure of a GET Request<a name="query-interface-get-requests"></a>
 
 This guide presents the Amazon SES GET requests as URLs\. Each URL consists of the following:
-
 + **Endpoint—**The resource the request is acting on\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
-
 + **Action—**The action you want to perform on the endpoint, such as sending a message\.
-
 + **Parameters—**Any request parameters\.
 
 The following is an example GET request to send a message using the Amazon SES endpoint in the US West \(Oregon\) region\.
@@ -42,9 +39,7 @@ The `Action` parameter indicates the action to perform\. For a complete list of 
 Some operations take lists of parameters\. For example, when you send an email to multiple recipients, you can provide a list of email addresses\. You specify this type of list with `param.n` notation, where values of *n* are integers starting from 1\. For example, you would specify the first "To:" address using `Destination.ToAddresses.1`, the second with `Destination.ToAddresses.2`, etc\.
 
 In Amazon SES, spaces are not allowed in any of the parameter values\. In this guide, any example Query request parameter value that includes spaces is displayed in one of two different ways:
-
 + URL\-encoded \(as `%20`\)\.
-
 + Represented by a plus sign \("\+"\)\. Within a Query request, a plus sign is reserved as a shorthand notation for a space\. \(If you want to include a literal, uninterpreted plus sign in any parameter, you must URL\-encode it as `%2B`\.\)
 
 **Note**  
@@ -83,13 +78,9 @@ Amazon SES also accepts POST requests\. With a POST request, you send the query 
 1. Provide the resulting form as the body of the POST request\.
 
 1. Include the following HTTP headers in the request:
-
    + `Content-Type`, with the value set to `application/x-www-form-urlencoded`
-
    + `Content-Length`
-
    + `Date`
-
    + `X-Amzn-Authorization` \(For more information, see [Request Authentication and Amazon SES](query-interface-authentication.md)\.\) 
 
 1. Send the completed request\.

@@ -3,11 +3,8 @@
 Amazon SES collects several metrics about the emails you send\. These metrics enable you to analyze the effectiveness of your email program and monitor important statistics, such as your bounce and complaint rates\.
 
 This section contains FAQs on the following topics related to email sending metrics:
-
 + [General Questions](#sending-metric-faqs-general)
-
 + [Open Tracking](#sending-metric-faqs-opens)
-
 + [Click Tracking](#sending-metric-faqs-clicks)
 
 ## General Questions<a name="sending-metric-faqs-general"></a>

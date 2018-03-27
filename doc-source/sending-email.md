@@ -13,27 +13,19 @@ A sender can generate the email content in different ways\. A sender can create 
 ## How do I send emails using Amazon SES?<a name="how-to-use-ses"></a>
 
 There are several ways that you can send an email by using Amazon SES\. You can use the Amazon SES console, the Simple Mail Transfer Protocol \(SMTP\) interface, or you can call the Amazon SES API\.
-
 + **Amazon SES console—**This method is the quickest way to set up your system and send a couple of test emails, but once you are ready to start your email campaign, you will use the console primarily to monitor your sending activity\. For example, you can quickly view the number of emails that you have sent and the number of bounces and complaints that you have received\.
-
 + **SMTP Interface—**There are two ways to access Amazon SES through the SMTP interface\. The first way, which requires no coding, is to configure any SMTP\-enabled software to send email through Amazon SES\. For example, you can configure your existing email client or software program to connect to the Amazon SES SMTP endpoint instead of your current outbound email server\.
 
   The second way is to use an SMTP\-compatible programming language such as Java and access the Amazon SES SMTP interface by using the language's built\-in SMTP functions and data types\. 
-
 + **Amazon SES API—**You can call the Amazon SES Query API directly through HTTPS, or you can use the [AWS Command Line Interface](https://aws.amazon.com/cli/), the [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/), or an [AWS SDK](https://aws.amazon.com/tools/)\. The AWS SDKs wrap the low\-level functionality of the Amazon SES API with higher\-level data types and function calls that take care of the details for you\. The AWS SDKs provide not only Amazon SES operations, but also basic AWS functionality such as request authentication, request retries, and error handling\.
 
 ## How do I start?<a name="how-to-start-using-ses"></a>
 
 If you are a first\-time user of Amazon SES, we recommend that you begin by reading the following sections:
-
 + [Amazon SES Quick Start](quick-start.md)—Shows you how to get set up and send a test email as quickly as possible\.
-
 + [Getting Started Sending Email with Amazon SES](getting-started.md)—Shows you how to send an email by using the Amazon SES console, the SMTP interface, and an AWS SDK\. Examples are provided in C\#, Java, and PHP\.
-
 + [Amazon SES and Deliverability](deliverability-and-ses.md)—Explains email deliverability concepts that you should be familiar with when you use Amazon SES\.
-
 + [Amazon SES Email\-Sending Process](sending-email-with-ses.md)—Shows you what happens when you send an email through Amazon SES\.
-
 + [Email Format and Amazon SES](email-format.md)—Reviews the format of emails and identifies the information that you need to provide to Amazon SES\.
 
 Then you can learn about sending email with Amazon SES in more detail by reading the sections listed in the following table:

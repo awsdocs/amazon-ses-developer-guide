@@ -2,7 +2,7 @@
 
 The procedures in this section explain the steps to set up Amazon SES, Amazon SNS, Amazon CloudWatch, and AWS Lambda to automatically pause email sending for your Amazon SES account in a single AWS Region\. If you send email from multiple regions, repeat the procedures in this section for each region in which you want to implement this solution\.
 
-
+**Topics**
 + [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1)
 + [Part 2: Create the Lambda Function](#monitoring-sender-reputation-pausing-account-part-2)
 + [Part 3: Re\-Enable Email Sending for Your Account](#monitoring-sender-reputation-pausing-account-part-3)
@@ -27,9 +27,7 @@ The first step in configuring automatic pausing of email sending is to create an
 1. Under **Choose the service that will use this role**, choose **Lambda**\. Choose **Next: Permissions**\.
 
 1. On the **Attach permissions policies** page, choose the following policies:
-
    + **AWSLambdaBasicExecutionRole**
-
    + **AmazonSESFullAccess**
 **Tip**  
 Use the search box at the top of the list of policies to quickly locate these policies\.
@@ -55,13 +53,9 @@ This function only pauses email sending in the AWS Region you select in this ste
 1. Under **Create function**, choose **Author from scratch**\.
 
 1. Under **Author from scratch**, complete the following steps:
-
    + For **Name**, type a name for the Lambda function\.
-
    + For **Runtime**, choose **Node\.js 6\.10**\.
-
    + For **Role**, choose **Choose an existing role**\.
-
    + For **Existing role**, choose the IAM role you created in [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1)\.
 
    Choose **Create function**\.
@@ -100,9 +94,7 @@ This function only pauses email sending in the AWS Region you select in this ste
 1. Choose **Test**\. If the **Configure test event** window appears, type a name in the **Event name** field, and then choose **Create**\.
 
 1.  Ensure that the notification bar at the top of the page says Execution result: succeeded\. If the function failed to execute, do the following:
-
    + Verify that the IAM role you created in [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1) contains the correct policies\.
-
    + Verify that the code in the Lambda function does not contain any errors\. The Lambda code editor automatically highlights syntax errors and other potential issues\.
 
 ## Part 3: Re\-Enable Email Sending for Your Account<a name="monitoring-sender-reputation-pausing-account-part-3"></a>
@@ -148,11 +140,8 @@ For CloudWatch to execute your Lambda function when an alarm is triggered, you m
 1. In the list of topics, check the box next to the topic you created in the previous step\. On the **Actions** menu, choose **Subscribe to topic**\.
 
 1. On the **Create subscription** window, make the following selections:
-
    + For **Protocol**, choose **AWS Lambda**\.
-
    + For **Endpoint**, choose the Lambda function you created in [Part 2: Create the Lambda Function](#monitoring-sender-reputation-pausing-account-part-2)\.
-
    + For **Version or alias**, choose **default**\.
 
 1. Choose **Create subscription**\.
@@ -174,21 +163,16 @@ This section contains procedures for creating an alarm in CloudWatch that is tri
 1. On the **Create Alarm** window, under **SES Metrics**, choose **Account Metrics**\.
 
 1. Under **Metric Name**, choose one of the following options:
-
    + **Reputation\.BounceRate** – Choose this metric if you want to pause email sending for your account when the overall hard bounce rate for your account crosses a threshold that you define\.
-
    + **Reputation\.ComplaintRate** – Choose this metric if you want to pause email sending for your account when the overall complaint rate for your account crosses a threshold that you define\.
 
    Choose **Next**\.
 
 1. Complete the following steps:
-
    + Under **Alarm Threshold**, for **Name**, type a name for the alarm\.
-
    + Under **Whenever: Reputation\.BounceRate** or **Whenever: Reputation\.ComplaintRate**, specify the threshold that causes the alarm to trigger\.
 **Note**  
 Your account is automatically placed on probation if your bounce rate exceeds 10%, or if your complaint rate exceeds \.5%\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are below these rates to prevent your account from being placed on probation\.
-
    + Under **Actions**, for **Whenever this alarm**, choose **State is ALARM**\. For **Send notification to**, choose the Amazon SNS topic you created in [Part 4: Create an Amazon SNS Topic](#monitoring-sender-reputation-pausing-account-part-4)\.
 
    Choose **Create Alarm**\.

@@ -15,11 +15,8 @@ You can use the Amazon SES console to associate an IP pool with an existing conf
 1. In the list of configuration sets, choose the configuration set that you want to associate with an IP pool\.
 
 1. On the **Sending IP pool** tab, for **Pool name**, choose from one of the following options:
-
    + *A specific dedicated IP pool* – When you select an existing dedicated IP pool, emails that use the configuration set are sent using only the dedicated IP addresses that belong to that pool\. For procedures for creating new IP pools, see [Creating Dedicated IP Pools](dedicated-ip-pools.md)\.
-
    + **ses\-default\-dedicated\-pool** – This pool contains all of the dedicated IP addresses for your account that do not already belong to an IP pool\. If you send an email using a configuration set that is not associated with a pool, that email is sent from one of the addresses in the default pool\.
-
    + **ses\-shared\-pool** – This pool contains a large set of IP addresses that are shared among all Amazon SES customers\. This option may be useful when you need to send email that doesn't align with your usual sending behaviors\.
 
    When you are finished, choose **Assign**\.

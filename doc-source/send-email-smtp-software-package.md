@@ -1,13 +1,9 @@
 # Sending Email Through Amazon SES From Software Packages<a name="send-email-smtp-software-package"></a>
 
 There are a number of commercial and open source software packages that support sending email via SMTP\. Here are some examples:
-
 + Blogging platforms
-
 + RSS aggregators
-
 + List management software
-
 + Workflow systems
 
 You can configure any such SMTP\-enabled software to send email through the Amazon SES SMTP interface\. For instructions on how to configure SMTP for a particular software package, see the documentation for that software\.

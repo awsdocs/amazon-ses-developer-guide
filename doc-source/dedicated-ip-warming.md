@@ -11,9 +11,7 @@ The amount of time required to warm up an IP address varies between email provid
 When you request dedicated IP addresses, Amazon SES automatically warms them up to improve the delivery of emails you send\. The automatic IP address warm\-up feature is enabled by default\. 
 
 The steps that happen during the automatic warm\-up process depend on whether or not you already have dedicated IP addresses:
-
 + When you request dedicated IP addresses for the first time, Amazon SES distributes your email sending between your dedicated IP addresses and a set of addresses that are shared with other Amazon SES customers\. Amazon SES gradually increases the number of messages sent from your dedicated IP addresses over time\.
-
 + If you already have dedicated IP addresses, Amazon SES distributes your email sending between your existing dedicated IPs \(which are already warmed up\) and your new dedicated IPs \(which are not warmed up\)\. Amazon SES gradually increases the number of messages sent from your new dedicated IP addresses over time\.
 
 After you warm up a dedicated IP address, you should send around 1,000 emails every day to each email provider that you want to maintain a positive reputation with\. You should perform this task on each dedicated IP address that you use with Amazon SES\. 

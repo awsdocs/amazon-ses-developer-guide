@@ -8,15 +8,11 @@ Your SMTP user name and password are not the same as your AWS access key ID and 
 There are two ways to generate your SMTP credentials\. You can either use the Amazon SES console or you can generate your SMTP credentials from your AWS credentials\.
 
 Use the Amazon SES console to generate your SMTP credentials if:
-
 + You want to get your SMTP credentials using the simplest method\.
-
 + You do not need to automate SMTP credential generation using code or a script\.
 
 Generate your SMTP credentials from your AWS credentials if:
-
 + You have an existing [AWS Identity and Access Management \(IAM\)](https://aws.amazon.com/iam/) user that you created using the IAM interface and you want that user to be able to send emails using the Amazon SES SMTP interface\.
-
 + You want to automate SMTP credential generation using code or a script\.
 
 For information on each method, see [Obtaining Amazon SES SMTP Credentials Using the Amazon SES Console](#smtp-credentials-console) and [Obtaining Amazon SES SMTP Credentials by Converting AWS Credentials](#smtp-credentials-convert)\.
@@ -58,11 +54,9 @@ If you have an IAM user that you set up using the IAM interface, you can derive 
 Do not use temporary AWS credentials to derive SMTP credentials\. The Amazon SES SMTP interface does not support SMTP credentials that have been generated from temporary security credentials\. 
 
 To enable the IAM user to send email using the Amazon SES SMTP interface, you need to do the following two steps:
-
 + Derive the user's SMTP credentials from their AWS credentials using the algorithm provided in this section\. Because you are starting from AWS credentials, the SMTP username will be the same as the AWS access key ID, so you just need to generate the SMTP password\.
 **Important**  
 If you generate SMTP credentials using the Amazon SES console, the SMTP username is not the same as the AWS access key ID\. The SMTP username and the AWS access key ID are only the same if you generate the SMTP password programmatically, as described in this section\.
-
 + Apply the following policy to the IAM user:
 
   ```

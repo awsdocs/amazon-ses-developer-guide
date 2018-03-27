@@ -13,13 +13,9 @@ Plan ahead\. Be aware of your sending limits and try to stay within them\. If yo
 If you anticipate needing to send more than one million emails per day, you must open an SES Sending Limits Increase case\.
 
 For Amazon SES to increase your quota, use the following guidelines:
-
 + **Send high\-quality content**—Send content that recipients want and expect\. 
-
 + **Send real production content**—Send your actual production email\. This enables Amazon SES to accurately evaluate your sending patterns, and verify that you are sending high\-quality content\.
-
 + **Send near your current quota**—If your volume stays close to your quota without exceeding it, Amazon SES can detect this usage pattern and automatically increase your quota\.
-
 + **Have low bounce and complaint rates**—Try to minimize the numbers of bounces and complaints\. Having high numbers of bounces and complaints can adversely affect your sending limits\.
 
 **Important**  

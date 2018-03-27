@@ -4,7 +4,7 @@ Depending on how you use it, Amazon SES might store certain data that could be c
 
 This chapter provides procedures for deleting various types of data that might be considered personal\.
 
-
+**Topics**
 + [Delete Data About Email Sent Using Amazon SES](#deleting-personal-data-message-data)
 + [Delete Data About Identities](#deleting-personal-data-identities)
 + [Delete Sender Authentication Data](#deleting-personal-data-sender-authentication)
@@ -50,11 +50,8 @@ You can also use the Amazon SES API to delete event destinations\. The following
 ### Remove Stored Event Data<a name="deleting-personal-data-message-data-storage"></a>
 
 For more information about deleting information from other AWS services, see the following documents:
-
 + [Delete an Object and Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/DeletingAnObjectandBucket.html) in the *Amazon Simple Storage Service Getting Started Guide*
-
 + [Delete an Amazon ES Domain](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg-deleting.html) in the *Amazon Elasticsearch Service Developer Guide*
-
 + [Deleting a Cluster](http://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-console.html#delete-cluster) in the *Amazon Redshift Cluster Management Guide*
 
 You can also use Kinesis Data Firehose to stream email data to Splunk, a third\-party service that isn't supported by AWS or managed in the AWS Management Console\. For more information about removing data from Splunk, consult your system administrator or the documentation on the [Splunk website](http://docs.splunk.com/Documentation)\.
@@ -68,9 +65,7 @@ Identities include the email addresses and domains that you use to send email us
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
 1. Under **Identity Management**, do one of the following:
-
    + Choose **Domains** if you want to delete a domain\.
-
    + Choose **Email Addresses** if you want to delete an email address\.
 
 1. Choose the identity that you want to delete, and then choose **Remove**\.
@@ -80,7 +75,6 @@ Identities include the email addresses and domains that you use to send email us
 You can also use the Amazon SES API to delete identities\. The following procedure uses the AWS Command Line Interface \(AWS CLI\) to interact with the Amazon SES API\. You can also interact with the API by using an AWS SDK, or by making HTTP requests directly\.
 
 **To delete an identity by using the AWS CLI**
-
 + At the command line, type the following command:
 
   ```
@@ -98,9 +92,7 @@ Sender authentication refers to the process of configuring Amazon SES so that an
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
 1. Under **Identity Management**, do one of the following:
-
    + Choose **Domains** if the sender authentication policy you want to delete is associated with a domain\.
-
    + Choose **Email Addresses** if the sender authentication policy you want to delete is associated with an email address\.
 
 1. Under **Identity Policies**, choose the policy you want to delete, and then choose **Remove Policy**\.
@@ -108,7 +100,6 @@ Sender authentication refers to the process of configuring Amazon SES so that an
 You can also use the Amazon SES API to delete sender authentication policies\. The following procedure uses the AWS Command Line Interface \(AWS CLI\) to interact with the Amazon SES API\. You can also interact with the API by using an AWS SDK, or by making HTTP requests directly\.
 
 **To delete a sender authentication policy by using the AWS CLI**
-
 + At the command line, type the following command:
 
   ```
@@ -138,7 +129,6 @@ If you use Amazon SES to receive incoming email, you can create receipt rules th
 You can also use the Amazon SES API to delete receipt rules\. The following procedure uses the AWS Command Line Interface \(AWS CLI\) to interact with the Amazon SES API\. You can also interact with the API by using an AWS SDK, or by making HTTP requests directly\.
 
 **To delete a receipt rule by using the AWS CLI**
-
 + At the command line, type the following command:
 
   ```
@@ -162,7 +152,6 @@ If you use Amazon SES to receive incoming email, you can create filters to expli
 You can also use the Amazon SES API to delete IP address filters\. The following procedure uses the AWS Command Line Interface \(AWS CLI\) to interact with the Amazon SES API\. You can also interact with the API by using an AWS SDK, or by making HTTP requests directly\.
 
 **To delete an IP address filter by using the AWS CLI**
-
 + At the command line, type the following command:
 
   ```
@@ -178,7 +167,6 @@ If you use email templates for sending email, it's possible that those templates
 You can only delete email templates by using the Amazon SES API\.
 
 **To delete an email template by using the AWS CLI**
-
 + At the command line, type the following command:
 
   ```
@@ -194,7 +182,6 @@ If you use customized templates for verifying new email sending addresses, it's 
 You can only delete custom verification email templates by using the Amazon SES API\.
 
 **To delete a custom verification email template by using the AWS CLI**
-
 + At the command line, type the following command:
 
   ```

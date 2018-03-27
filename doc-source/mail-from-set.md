@@ -24,9 +24,7 @@ The following procedures show how to use the Amazon SES console to configure a v
 1. In the **Set MAIL FROM Domain** dialog box, type the name of the MAIL FROM domain that you want to use\. Note that this must be a subdomain of the domain of the verified email address, such as *mail\.example\.com*\.
 
 1. For **Behavior if MX record not found**, choose one of the following options:
-
    + **Use *region*\.amazonses\.com as MAIL FROM** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will use a subdomain of *amazonses\.com*\. The subdomain varies based on the AWS Region in which you use Amazon SES\.
-
    + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will return a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this address will be automatically rejected\.
 
 1. Choose **Set MAIL FROM Domain**\. A window appears that contains the MX and SPF records that you must add to your domain's DNS configuration\. Note these values, and then proceed to the next step\.
@@ -58,9 +56,7 @@ If the DNS configuration for the MAIL FROM domain contains multiple MX records, 
 1. In the **Set MAIL FROM Domain** dialog box, type the name of the MAIL FROM domain that you want to use\. Note that this must be a subdomain of the verified domain, such as *mail\.example\.com*\.
 
 1. For **Behavior if MX record not found**, choose one of the following options:
-
    + **Use *region*\.amazonses\.com as MAIL FROM** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will use a subdomain of *amazonses\.com*\. The subdomain varies based on the AWS Region in which you use Amazon SES\.
-
    + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will return a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this address will be automatically rejected\.
 
 1. Choose **Set MAIL FROM Domain**\.

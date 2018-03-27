@@ -12,7 +12,7 @@ The specific procedures for setting up a redirect domain vary depending on your 
 
 ### Option 1: Configuring an HTTP Domain<a name="configure-custom-open-click-domain-http"></a>
 
-If the subdomain you will use for handling open and click links uses HTTP rather than HTTPS, the process for configuring the subdomain involves only a few steps\.
+If you plan to use an HTTP domain to handle open and click links \(as opposed to an HTTPS domain\), the process for configuring the subdomain involves only a few steps\.
 
 **Note**  
 If you set up a custom domain that uses the HTTP protocol, and you send an email that contains links that use the HTTPS protocol, your customers may see a warning message when they click the links in your email\. If you plan to send emails that contain links that use the HTTPS protocol, you should use an HTTPS domain for handling open and click tracking events\.
@@ -21,33 +21,33 @@ If you plan to use an HTTPS subdomain, follow the procedures in [Option 2: Confi
 
 **To set up an HTTP subdomain for handling open and click links**
 
-1. If you have not already done so, create a subdomain to use for open and click tracking links\. We recommend that you create a subdomain that is dedicated specifically to handling these links\. 
+1. If you have not already done so, create a subdomain to use for open and click tracking links\. We recommend that you create a subdomain that is specifically dedicated to handling these links\.
 
-1. Verify the subdomain you created in step 1 for use with Amazon SES\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
+1. Verify the subdomain for use with Amazon SES\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
 
-1. Modify the DNS record for the subdomain you created in step 1\. In the DNS record, add a new CNAME record to refer to the appropriate tracking domain for the AWS Region in which you are using Amazon SES\. The following table contains a list of tracking domains for the AWS Regions in which Amazon SES is available\.    
+1. Modify the DNS record for the subdomain\. In the DNS record, add a new `CNAME` record that redirects requests to the Amazon SES tracking domain\. The address that you redirect to depends on the AWS Region that you use Amazon SES in\. The following table contains a list of tracking domains for the AWS Regions where Amazon SES is available\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html)
 **Note**  
 Depending on your web hosting provider, it may take several minutes for the changes you make to the subdomain's DNS record to take effect\. Your web hosting provider or IT organization can provide additional information about these delays\.
 
 ### Option 2: Configuring an HTTPS Domain<a name="configure-custom-open-click-domain-https"></a>
 
-If you plan to use an HTTPS subdomain for handling open and click links, you must perform some additional steps, beyond [those required for setting up an HTTP domain](#configure-custom-open-click-domain-http)\.
+If you plan to use an HTTPS domain for handling open and click links, you must perform some additional steps, beyond [those required for setting up an HTTP domain](#configure-custom-open-click-domain-http)\.
 
 **To set up an HTTPS subdomain for handling open and click links**
 
-1. Create a subdomain to use for open and click tracking links\. We recommend that you create a subdomain that is dedicated specifically to handling these links\. 
+1. Create a subdomain to use for open and click tracking links\. We recommend that you create a subdomain that is specifically dedicated to handling these links\. 
 
-1. Verify the subdomain you created in step 1 for use with Amazon SES\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
+1. Verify the subdomain for use with Amazon SES\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
 
 1. Create a new account with a Content Delivery Network \(CDN\), such as [Amazon CloudFront](https://aws.amazon.com/cloudfront)\.
 
-1. Configure the CDN to redirect requests to the appropriate tracking domain for the AWS Region in which you are using Amazon SES\. The following table contains a list of tracking domains for the AWS Regions in which Amazon SES is available\.    
+1. Configure the CDN to redirect requests to the Amazon SES tracking domain\. The address that you redirect to depends on the AWS Region that you use Amazon SES in\. The following table contains a list of tracking domains for the AWS Regions where Amazon SES is available\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html)
 
 1. If you use Amazon CloudFront as your CDN, complete the following procedures:
 
-   1.  On the **CloudFront Distributations** page, choose the distribution that corresponds with your CDN\.
+   1.  On the **CloudFront Distributions** page, choose the distribution that corresponds with your CDN\.
 
    1. On the **Behaviors** tab, choose the default behavior, and then choose **Edit**\.
 
@@ -55,17 +55,17 @@ If you plan to use an HTTPS subdomain for handling open and click links, you mus
 
    1. For **Query String Forwarding and Caching**, choose **Forward all, cache based on all**\.
 
-   If you use a CDN other than CloudFront, you may need to complete similar steps\. See your CDN's documentation for more information\.
+   1. \(Optional\) If you want to use a custom domain for your CloudFront distribution, rather than the domain CloudFront assigns, you can add an alternate domain name to your distribution\. This subdomain should also be verified in Amazon SES\. For more information, see [Adding and Moving Alternate Domain Names](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html) in the *Amazon CloudFront Developer Guide*\.
 
-1. Modify the DNS record for the subdomain you created in step 1\. In the DNS record, add a new CNAME record to refer to your address in the CDN you set up in step 3\.
-**Note**  
-Depending on your web hosting provider, it may take several minutes for the changes you make to the subdomain's DNS record to take effect\. Your web hosting provider or IT organization can provide additional information about these delays\.
+   If you use a CDN other than CloudFront, you may need to complete similar steps\. For more information, refer to the documentation for your CDN\.
 
-1. Acquire an SSL certificate from a trusted Certificate Authority\. The certificate should cover your address at the CDN, as well as the subdomain you created in step 1\. Upload the certificate to the CDN\.
+1. In the DNS configuration for your subdomain, add a `CNAME` record that refers to the address of your CDN\.
+
+1. Acquire an SSL certificate from a trusted Certificate Authority\. The certificate should cover both the subdomain you created in step 1 as well as the CDN you configured in steps 3–5\. Upload the certificate to the CDN\.
 
 ## Part 2: Setting up a Configuration Set to Refer to a Custom Open and Click Tracking Domain<a name="configure-custom-open-click-domain-config-set"></a>
 
-After you configure your domain to handle open and click tracking redirects, you must set up an event destination in a configuration set to refer to your custom domain\. You can complete this step using the Amazon SES console or the `CreateConfigurationSetTrackingOptions` API operation\. This section contains procedures for completing these tasks using the Amazon SES console; for more information about using the API, see [CreateConfigurationSetTrackingOptions](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html) in the *[Amazon SES API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)*\.
+After you configure your domain to handle open and click tracking redirects, you must set up an event destination in a configuration set to refer to your custom domain\. You can complete this step using the Amazon SES console or the `CreateConfigurationSetTrackingOptions` API operation\. This section contains procedures for completing these tasks using the Amazon SES console; for more information about using the API, see [CreateConfigurationSetTrackingOptions](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html) in the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **To create a new configuration set event destination that refers to a custom tracking domain**
 

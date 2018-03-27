@@ -5,7 +5,7 @@ In addition to creating receipt rules as described in [Creating Receipt Rules](r
 **Note**  
 The instructions in this section assume that the receipt rule is in the active receipt rule set\. To edit the receipt rules of a disabled receipt rule set, choose a receipt rule set from the **Inactive Rule Sets** list\. From there, the instructions for editing receipt rules are the same as for the active receipt rule set\.
 
-
+**Topics**
 + [Editing a Receipt Rule](#receiving-email-managing-receipt-rules-edit)
 + [Deleting a Receipt Rule](#receiving-email-managing-receipt-rules-delete)
 + [Enabling and Disabling a Receipt Rule](#receiving-email-managing-receipt-rules-enable-disable)

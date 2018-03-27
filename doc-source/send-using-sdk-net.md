@@ -3,13 +3,9 @@
 The following procedure shows you how to send an email through Amazon SES using [Visual Studio](https://www.visualstudio.com/) and the AWS SDK for \.NET\.
 
 This solution was tested using the following components:
-
 + Microsoft Visual Studio Community 2017, version 15\.4\.0\.
-
 + Microsoft \.NET Framework version 4\.6\.1\.
-
 + The AWSSDK\.Core package \(version 3\.3\.19\), installed using NuGet\.
-
 + The AWSSDK\.SimpleEmail package \(version 3\.3\.6\.1\), installed using NuGet\.
 
 **Note**  
@@ -18,13 +14,9 @@ In this getting started tutorial, you send an email to yourself so that you can 
 ## Prerequisites<a name="send-using-sdk-net-prerequisites"></a>
 
 Before you begin, perform the following tasks:
-
 + **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
-
 + **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
-
 + **Install Visual Studio**—Visual Studio is available at [https://www\.visualstudio\.com/](https://www.visualstudio.com/)\.
-
 + **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
 ## Procedure<a name="send-using-sdk-net-procedure"></a>
@@ -160,13 +152,9 @@ The following procedure shows how to send an email through Amazon SES using the 
    ```
 
 1. In the code editor, do the following:
-
    + Replace *sender@example\.com* with the "From:" email address\. This address must be verified\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
-
    + Replace *recipient@example\.com* with the "To:" address\. If your account is still in the sandbox, this address must also be verified\.
-
    + Replace *ConfigSet* with the name of the configuration set to use when sending this email\.
-
    + Replace *USWest2* with the name of the AWS Region endpoint you use to send email using Amazon SES\. The following values are allowed: `USEast1`, `USWest2`, and `EUWest1`\.
 
    When you finish, save `Program.cs`\.

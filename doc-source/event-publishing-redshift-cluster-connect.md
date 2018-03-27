@@ -3,9 +3,7 @@
 Now you will connect to your cluster by using a SQL client tool\. For this tutorial, you use the SQL Workbench/J client that you installed in the [prerequisites section](event-publishing-redshift-prerequisites.md)\.
 
 Complete this section by performing the following steps:
-
 + [Getting Your Connection String](#event-publishing-redshift-cluster-connect-connection-string)
-
 + [Connecting to Your Cluster From SQL Workbench/J](#event-publishing-redshift-cluster-connect-profile)
 
 ## Getting Your Connection String<a name="event-publishing-redshift-cluster-connect-connection-string"></a>

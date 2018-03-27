@@ -17,17 +17,11 @@ To use Amazon SES as your email receiver, you must have at least one active *rec
 ![\[Create a receipt rule\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_receiving_rule_4.png)
 
 1. For **Bucket Name**, enter a new bucket name\. Bucket names must comply with the following requirements\.
-
    + Can contain lowercase letters, numbers, periods \(\.\), and hyphens \(\-\)\.
-
    + Must be unique across all of AWS\.
-
    + Must start with a number or letter\.
-
    + Must be between 3 and 63 characters long\.
-
    + Must not contain underscores \(\_\), end with a hyphen, or be formatted as an IP address \(e\.g\., 192\.168\.5\.4\)\.
-
    + Cannot contain two, adjacent periods or dashes next to periods\.
 
    Next, choose **Create Bucket**\.  

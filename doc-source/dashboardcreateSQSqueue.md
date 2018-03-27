@@ -23,9 +23,7 @@ In this procedure, you create a new queue in Amazon SQS and subscribe to the top
 1. In the list of queues, select the queue you just created\. On the **Queue Actions** menu, choose **Subscribe Queue to SNS Topic**\.
 
 1. On the **Subscribe to a Topic** window, make the following selections:
-
    + For **Topic Region**, choose the AWS Region that contains the Amazon SNS topic you created in [Part 1: Create a Topic in Amazon Simple Notification Service](dashboardcreateSNStopic.md)\.
-
    + For **Choose a Topic**, choose the topic you created in [Part 1: Create a Topic in Amazon Simple Notification Service](dashboardcreateSNStopic.md)\.
 
    Choose **Subscribe**\.

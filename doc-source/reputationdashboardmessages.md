@@ -3,57 +3,34 @@
 The Amazon SES reputation dashboard provides important metrics related to your account\. The following sections describe the messages that may be displayed in this dashboard, and provide tips and information that you may be able to use to resolve issues related to your sender reputation\.
 
 This section contains information about the following types of notifications:
-
 + [Status Messages](#reputationdashboard-account-status)
-
 + [Bounce Rate Notification](#reputationdashboard-bounce)
-
 + [Complaint Rate Notification](#reputationdashboard-complaint)
-
 + [Anti\-Spam Organization Notification](#reputationdashboard-antispamorg)
-
 + [Direct Feedback Notification](#reputationdashboard-directfeedback)
-
 + [Domain Blocklist Notification](#reputationdashboard-domainblocklist)
-
 + [Internal Review Notification](#reputationdashboard-internalreview)
-
 + [Mailbox Provider Notification](#reputationdashboard-mailboxprovider)
-
 + [Recipient Feedback Notification](#reputationdashboard-recipientfeedback)
-
 + [Related Account Notification](#reputationdashboard-relatedaccount)
-
 + [Spamtrap Notification](#reputationdashboard-spamtrap)
-
 + [Vulnerable Site Notification](#reputationdashboard-vulnerablesite)
-
 + [Other Notification](#reputationdashboard-other)
 
 ## Status Messages<a name="reputationdashboard-account-status"></a>
 
 When you use the reputation dashboard, you will see a message describing the status of your Amazon SES account\. The following is a list of possible account status values:
-
 + **Healthy** – There are no issues currently impacting your account\.
-
 + **Probation** – Your account is on probation\. If the issues that caused your account to be put on probation are not resolved by the end of the probation period, your account may be suspended\.
-
 + **Pending end of probation decision** – Your account is on probation\. Because of the nature of the issues that led to this probation, a member of the Amazon SES team must review your account before any further action is taken\.
-
 + **Shutdown** – Your account has been shutdown\. While your account is shutdown, you will not be able to send email using Amazon SES\. You can appeal this decision; see [Amazon SES Enforcement FAQs](e-faq.md) for more information about submitting an appeal\.
-
 + **Pending shutdown** – Your account is on probation\. The issues that caused this probation have not been resolved\. These issues may lead to your account being shut down\. However, because of the nature of your account, a member of the Amazon SES team will review your account before any further action is taken\.
 
 Additionally, the **Bounce Rate** and **Complaint Rate** sections of the reputation dashboard display status summaries for their respective metrics\. The following is a list of possible metric status values:
-
 + **Healthy** – The metric is below the threshold that could cause your account to be placed on probation\.
-
 + **Almost healed** – The metric caused your account to be placed on probation\. Since the probation began, the metric has stayed below the maximum rate\. If the metric remains below the maximum rate, its status may change to Healthy before the probation period ends\.
-
 + **Probation** – The metric caused your account to be placed on probation, and is still above the maximum rate\. If the issue that caused the metric to exceed the maximum rate is not resolved by the end of the probation period, your account may be suspended\.
-
 + **Shutdown** – The metric caused your account to be suspended\. While your account is shut down, you cannot send email using Amazon SES\. You can appeal this decision\. For information about submitting an appeal, see [Amazon SES Enforcement FAQs](e-faq.md)\.
-
 + **Pending shutdown** – The metric caused your account to be placed on probation\. The issues that caused this probation have not been resolved\. These issues may lead to your account being shut down\. A member of the Amazon SES team will review your account before any further action is taken\.
 
 ## Bounce Rate Notification<a name="reputationdashboard-bounce"></a>
@@ -213,19 +190,12 @@ A comprehensive review of your account identified several characteristics that m
 To protect our abuse detection process, we cannot reveal the specific factors that led to your account being flagged in this way\.
 
 Common factors that can lead to this determination include the following:
-
 + Messages being flagged by commercial anti\-spam systems\.
-
 + Message content that implies the recipient has not explicitly requested the email\.
-
 + Mismatches between the message sender and the branding within the email body\.
-
 + Content that does not make it obvious who the sender is\.
-
 + Sending messages that deal with content that is associated with unsolicited email\.
-
 + Formatting patterns associated with unsolicited email\.
-
 + Sending from or making reference to domains with poor reputations\.
 
 This is not a comprehensive list; the specific reason for this notification may be a combination of any of these factors, or the reason might be something not listed\.
@@ -233,15 +203,10 @@ This is not a comprehensive list; the specific reason for this notification may 
 ### What you can do to resolve the issue<a name="reputationdashboard-internalreview-whattodo"></a>
 
 The following suggestions may help reduce the severity of the issue:
-
 + Ensure that the only recipients you are contacting are those who have explicitly asked to receive email from you\.
-
 + Never purchase, rent, or borrow lists of email recipients\.
-
 + Do not attempt to hide your identity or the purpose of your communication in the messages you send\.
-
 + Create a list of all of the domains referenced in the emails you send through Amazon SES, and then use the Spamhaus Domain Lookup tool at [https://www\.spamhaus\.org/lookup/](https://www.spamhaus.org/lookup/) to determine if any of those domains are on the Spamhaus Domain Blocklist\.
-
 + Ensure that you are following industry best practices when designing your emails\.
 
 This list is not exhaustive, but it should help you identify some of the most common factors that may lead to your email being flagged\.

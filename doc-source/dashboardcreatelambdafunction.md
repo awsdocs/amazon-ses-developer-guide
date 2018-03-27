@@ -15,13 +15,9 @@ Now that all of the components are in place, you can create a Lambda function\. 
 1. Choose **Author from scratch**\.
 
 1. Under **Author from scratch** page, complete the following steps:
-
    + For **Name**, type a name for the function\.
-
    + For **Runtime**, choose **Node\.js 6\.10**\.
-
    + For **Role**, select **Choose an existing role**\.
-
    + For **Existing role**, choose the IAM role you created in [Part 4: Create AWS Identity and Access Management Policies and Roles](dashboardconfigureIAM.md)\.
 
    Choose **Create function**\.
@@ -35,11 +31,9 @@ Now that all of the components are in place, you can create a Lambda function\. 
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/dashboardcreatelambdafunction.html)
 
 1. Under **Basic settings**, make the following selections:
-
    + For **Memory \(MB\)**, choose **512 MB**\.
 **Note**  
 If you think you will receive more than 5,000 bounces and complaints per day, increase the value in the **Memory** field to at least 1024 MB\. If you think you will receive more than 10,000 bounces and complaints per day, increase the value in the **Memory** field to at least 1536 MB\.
-
    + For **Timeout**, select **5 min**\.
 
 1. Choose **Test**\.

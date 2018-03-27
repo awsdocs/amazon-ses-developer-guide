@@ -39,7 +39,6 @@ There are two ways to connect to the Amazon SES SMTP interface with OpenSSL: usi
 #### [ STARTTLS \(Port 587\) ]
 
 **To connect to the SMTP interface using STARTTLS**
-
 + At the command line, type the following command to connect to the Amazon SES SMTP server:
 
   ```
@@ -61,7 +60,6 @@ Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SE
 #### [ SSL \(Port 465\) ]
 
 **To connect to the SMTP interface using SSL**
-
 + At the command line, type the following command to connect to the Amazon SES SMTP server:
 
   ```
@@ -113,17 +111,11 @@ In this example, you'll add all of the client requests to a text file, and then 
    ```
 
 1. Make the following changes to the file you created in the previous step:
-
    + Replace *example\.com* with your sending domain\.
-
    + Replace *Base64EncodedSMTPUserName* with your base64\-encoded SMTP user name\.
-
    + Replace *Base64EncodedSMTPPassword* with your base64\-encoded SMTP password\.
-
    + Replace *sender@example\.com* with the email address you are sending from\. This identity must be verified\.
-
    + Replace *recipient@example\.com* with the destination email address\. If your Amazon SES account is still in the sandbox, this address must be verified\.
-
    + Replace *ConfigSet* with the name of the configuration set that you want to apply to this email\.
 **Note**  
 If you do not want to use a configuration set, remove the entire line that begins with "`X-SES-CONFIGURATION-SET`"\.
@@ -174,17 +166,11 @@ The connection may remain open after the message is sent\. If it does, it will a
    ```
 
 1. Make the following changes to the file you created in the previous step:
-
    + Replace *example\.com* with your sending domain\.
-
    + Replace *Base64EncodedSMTPUserName* with your base64\-encoded SMTP user name\.
-
    + Replace *Base64EncodedSMTPPassword* with your base64\-encoded SMTP password\.
-
    + Replace *sender@example\.com* with the email address you are sending from\. This identity must be verified\.
-
    + Replace *recipient@example\.com* with the destination email address\. If your Amazon SES account is still in the sandbox, this address must be verified\.
-
    + Replace *ConfigSet* with the name of the configuration set that you want to apply to this email\.
 **Note**  
 If you do not want to use a configuration set, remove the entire line that begins with "`X-SES-CONFIGURATION-SET`"\.

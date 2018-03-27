@@ -33,32 +33,22 @@ Do not choose **Save and continue**\. This will cause errors because the discove
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_discovery.png)
 
 1. For this tutorial, we remove most of the rows\. Choose **X** next to all rows *except* rows with the following column names:
-
    + eventType
-
    + timestamp
-
    + messageId
-
    + to
-
    + ses:configuration\-set
 **Important**  
 Do not choose **Save schema and update stream samples**\. This will cause errors because the discovered schema does not adhere to SQL naming constraints\. You must edit the schema as described in the next step\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_remove.png)
 
 1. Examine the remaining entries under **Column name** and compare them to the SQL naming requirements as follows:
-
    + **Format** – As described in [Identifiers](http://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-identifiers.html) in the *Amazon Kinesis Data Analytics SQL Reference*, unquoted identifiers must start with a letter or underscore, and be followed by letters, digits, or underscores\. Amazon SES auto\-tag names do not comply with these requirements because they contain colons and dashes\. You will edit these in the next step\. 
-
    + **Reserved words** – Column names must not conflict with the SQL reserved words listed in [Reserved Words and Keywords](http://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-reserved-words-keywords.html) in the *Amazon Kinesis Data Analytics SQL Reference*\. Examples of reserved keywords that conflict with Amazon SES event records are `timestamp`, `value`, `date`, `from`, and `to`\. 
 
 1. Edit the remaining column names to conform to the SQL requirements as follows:
-
    + Rename `ses:configuration-set` to `ses_configuration_set`\.
-
    + Rename `timestamp` to `ses_timestamp`\.
-
    + Rename `to` to `ses_to`\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_edit.png)

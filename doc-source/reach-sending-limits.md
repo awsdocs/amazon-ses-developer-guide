@@ -10,9 +10,7 @@ For a technique to use when you reach your maximum send rate, see [ How to handl
 ## Reaching Sending Limits with the Amazon SES API<a name="reach-sending-limits-api"></a>
 
 If your application attempts to send an email beyond your sending limits, the application will encounter a [Throttling](http://docs.aws.amazon.com/ses/latest/APIReference/CommonErrors.html) error with one of the following messages:
-
 + Daily message quota exceeded
-
 + Maximum sending rate exceeded
 
 A throttling error might occur because of incorrect predictions of email volume, or bursts of transactional email that are higher than expected\. To handle a throttling error, program your application to wait for a random interval of between 0 and 10 minutes, and then retry the send request\.
@@ -20,9 +18,7 @@ A throttling error might occur because of incorrect predictions of email volume,
 ## Reaching Sending Limits with SMTP<a name="reach-sending-limits-smtp"></a>
 
 If you reach your sending limits when you are accessing Amazon SES through the SMTP interface, your SMTP client will receive one of the following errors:
-
 + `454 Throttling failure: Maximum sending rate exceeded`
-
 + `454 Throttling failure: Daily message quota exceeded`
 
 However, SMTP clients handle these errors in various ways\. For example, if you use Microsoft Outlook as your email client, and you attempt to send past your sending quota, you get a Send/Receive error that displays the following text in the status pane at the bottom of the Outlook client window:

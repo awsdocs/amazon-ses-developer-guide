@@ -20,19 +20,13 @@ The cluster that you deploy for this tutorial will run in a live environment\. A
 1. Choose **Next**\.
 
 1. On the **Configure cluster** page, under **Node configuration**, choose the following options\.
-
    + **Instance count** – Type **1**\.
-
    + **Instance type** – Choose **t2\.micro\.elasticsearch \(Free tier eligible\)**\.
-
    + **Enable dedicated master** – Do not enable this option\.
-
    + **Enable zone awareness** – Do not enable this option\.
 
 1. Under **Storage configuration**, choose the following options\.
-
    + **Storage type** – Choose **EBS**\. For the EBS settings, choose **EBS volume type** of **General Purpose \(SSD\)** and **EBS volume size ** of **10**\.
-
    + **Automated snapshot start hour** – Choose **Automated snapshots start hour 00:00 UTC \(default\)**\.
 
 1. Choose **Next**\.

@@ -9,9 +9,7 @@ Successful Amazon SES responses also include one or more message IDs\. You can t
 ## Structure of a Successful Response<a name="query-interface-response-structure"></a>
 
 If the request succeeded, the main response element is named after the action, but with "Response" appended\. For example, `SendEmailResponse` is the response element returned for a successful `SendEmail` request\. This element contains the following child elements:
-
 + `ResponseMetadata`, which contains the `RequestId` child element\.
-
 + An optional element containing action\-specific results\. For example, the `SendEmailResponse` element includes an element called `SendEmailResult`\.
 
 The XML schema describes the XML response message for each Amazon SES action\.
@@ -32,13 +30,9 @@ The following is an example of a successful response\.
 ## Structure of an Error Response<a name="w3ab1c25c13c13c13"></a>
 
 If a request is unsuccessful, the main response element is called `ErrorResponse` regardless of the action that was called\. This element contains an `Error` element and a `RequestId` element\. Each `Error` includes:
-
 + A `Type` element that identifies whether the error was a receiver or sender error
-
 + A `Code` element that identifies the type of error that occurred
-
 + A `Message` element that describes the error condition in a human\-readable form
-
 + A `Detail` element that might give additional details about the error or might be empty
 
 The following is an example of an error response\.

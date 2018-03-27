@@ -1,9 +1,7 @@
 # Examples of Notifications for Amazon SES Email Receiving<a name="receiving-email-notifications-examples"></a>
 
 This section includes examples of the following types of notifications:
-
 + [A notification sent as a result of an SNS action\.](#receiving-email-notifications-examples-sns-action)
-
 + [A notification sent as a result of another type of action](#receiving-email-notifications-examples-alert) \(an *alert notification*\)\.
 
 ## Notification of an SNS action<a name="receiving-email-notifications-examples-sns-action"></a>

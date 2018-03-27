@@ -18,29 +18,17 @@ The following procedure shows how to create a Kinesis Firehose delivery stream t
 1. Choose **Create Delivery Stream**\.
 
 1. On the **Destination** page, choose the following options\.
-
    + **Destination** – Choose Amazon Redshift\.
-
    + **Delivery stream name** – Type a name for the delivery stream\.
-
    + **S3 bucket** – Choose **New S3 bucket**, type a bucket name, choose the region, and then choose **Create Bucket**\.
-
    + **Redshift cluster** – Choose the Amazon Redshift cluster that you created in a previous step\.
-
    + **Redshift database** – Type **dev**, which is the default database name\.
-
    + **Redshift table** – Type **ses**, which is the table you created in [Step 3: Create a Database Table](event-publishing-redshift-table.md)\.
-
    + **Redshift table columns** – Leave this field empty\.
-
    + **Redshift username** – Type the username that you chose when you [set up the Amazon Redshift cluster](event-publishing-redshift-cluster.md)\.
-
    + **Redshift password** – Type the password that you chose when you set up the Amazon Redshift cluster\.
-
    + **Redshift COPY options** – Leave this field empty\.
-
    + **Retry duration** – Leave this at its default value\.
-
    + **COPY command** – Leave this at its default value\. You will update it in the next procedure\.
 
 1. Choose **Next**\.
@@ -100,9 +88,7 @@ You upload the JSONPaths file to the Amazon S3 bucket you set up when you create
    1. On the **Details** page, choose **Edit**\.
 
    1. In the **Redshift COPY options** box, type the following text, replacing the following values with your own values:
-
       + **S3\-BUCKET\-NAME** – The name of the Amazon S3 bucket where Kinesis Firehose places your data for Amazon Redshift to access\. You created this bucket when you set up your Kinesis Firehose delivery stream in [Step 4: Create a Kinesis Firehose Delivery Stream](#event-publishing-redshift-firehose-stream)\. An example is `my-bucket`\.
-
       + **REGION** – The region in which your Amazon SES, Kinesis Firehose, Amazon S3, and Amazon Redshift resources are located\. An example is `us-west-2`\.
 
       ```

@@ -16,11 +16,8 @@ You provide this information to Amazon SES as either parameters to the email sen
 |  SMTP interface  |  Amazon SES\-specific email headers  | 
 
 The following sections describe how to specify the configuration set and message tags using headers and using API parameters\.
-
 + [Using Amazon SES API Parameters](#event-publishing-using-ses-parameters)
-
 + [Using Amazon SES\-Specific Email Headers](#event-publishing-using-ses-headers)
-
 + [Using Custom Email Headers](#event-publishing-using-custom-headers)
 
 Additionally, this guide contains several code examples that demonstrate how to send email programmatically using Amazon SES\. Each of these code examples includes a method of passing a configuration set when sending an email\. For more information, see [Amazon SES Code Examples](samplecodeindex.md)\.

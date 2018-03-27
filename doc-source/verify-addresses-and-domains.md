@@ -4,6 +4,6 @@ In Amazon SES, an *identity* is an email address or domain that you use to send 
 
 You can verify an identity by using the Amazon SES console or the Amazon SES API\.
 
-
+**Topics**
 + [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)
 + [Verifying Domains in Amazon SES](verify-domains.md)

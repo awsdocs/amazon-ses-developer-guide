@@ -14,25 +14,15 @@ You must have already set up an Amazon ES cluster, as explained in [Step 1: Crea
 1. Choose **Create Delivery Stream**\.
 
 1. On the **Destination** page, choose the following options\.
-
    + **Destination** – Choose Amazon Elasticsearch Service\.
-
    + **Delivery stream name** – Type a name for the delivery stream\.
-
    + **Elasticsearch domain** – Choose the Amazon ES domain that you created in [Step 1: Create an Amazon ES Cluster](event-publishing-elasticsearch-cluster.md)\.
-
    + **Index** – Type a name that you want to use to explore your email sending event data in Kibana\. You can choose any name, but let's use `holiday-sale` for this tutorial\. An *index* is analogous to a database\. For example, if you want an easy way to access events from each of your email campaigns separately, you can use a different Kinesis Firehose stream and index for each campaign\. 
-
    + **Index rotation** – Choose **NoRotation**\.
-
    + **Type** – Although this setting is not relevant to this tutorial, you must choose something, so type `events`\. A *type* is a logical category or partition of your index\. 
-
    + **Retry duration \(sec\)** – Type **300**\.
-
    + **Backup mode** – Choose **Failed Documents Only**\.
-
    + **S3 bucket** – Choose **New S3 Bucket**\. Type a name for the bucket and choose the region your console is currently using\.
-
    + **S3 prefix** – Leave this field empty\.
 
 1. Choose **Next**\.

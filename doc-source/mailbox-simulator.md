@@ -3,17 +3,11 @@
 Amazon Simple Email Service \(Amazon SES\) includes a mailbox simulator that you can use to test how your application handles various email sending scenarios without affecting your sending quota or your bounce and complaint metrics\. You can send emails to the mailbox simulator even if you are in the sandbox\. 
 
 The Amazon SES mailbox simulator is a set of test email addresses\. Each email address represents a specific scenario\. You can send emails to the mailbox simulator when you want to:
-
 + Test your application without having to create test "To" addresses\.
-
 + Test how your email sending program handles bounces, complaints, and out\-of\-the\-office \(OOTO\) responses\.
-
 + See what happens when you email an address that is on the Amazon SES suppression list\.
-
 + Generate a bounce without putting a valid email address on the suppression list\. 
-
 + Find your system's maximum throughput without using up your daily sending quota\. 
-
 + Send test emails without affecting your email deliverability metrics for bounces and complaints\. 
 
 To use the mailbox simulator, email the addresses and observe how your setup responds to the simulated scenarios\. The following table lists each simulated scenario and the corresponding email address that you would use\. The email addresses are not case\-sensitive\.

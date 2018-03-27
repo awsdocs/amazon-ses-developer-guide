@@ -3,25 +3,16 @@
 Bounce, complaint, and delivery notifications are published to [Amazon Simple Notification Service \(Amazon SNS\)](https://aws.amazon.com/sns) topics in JavaScript Object Notation \(JSON\) format\. The top\-level JSON object contains a `notificationType` string, a `mail` object, and either a `bounce` object, a `complaint` object, or a `delivery` object\.
 
 See the following sections for descriptions of the different types of objects:
-
 + [Top\-level JSON object](#top-level-json-object)
-
 + [`mail` object](#mail-object)
-
 + [`bounce` object](#bounce-object)
-
 + [`complaint` object](#complaint-object)
-
 + [`delivery` object](#delivery-object)
 
 The following are some important notes about the contents of Amazon SNS notifications for Amazon SES:
-
 + For a given notification type, you might receive one Amazon SNS notification for multiple recipients, or you might receive a single Amazon SNS notification per recipient\. Your code should be able to parse the Amazon SNS notification and handle both cases; Amazon SES does not make ordering or batching guarantees for notifications sent through Amazon SNS\. However, different Amazon SNS notification types \(for example, bounces and complaints\) will never be combined into a single notification\.
-
 + You might receive multiple types of Amazon SNS notifications for one recipient\. For example, the receiving mail server might accept the email \(triggering a delivery notification\), but after processing the email, the receiving mail server might determine that the email actually results in a bounce \(triggering a bounce notification\)\. However, these will always be separate notifications because they are different notification types\.
-
 + Amazon SES reserves the right to add additional fields to the notifications\. As such, applications that parse these notifications must be flexible enough to handle unknown fields\.
-
 + Amazon SES overwrites the headers of the message when it sends the email\. You can retrieve the headers of the original message from the `headers` and `commonHeaders` fields of the `mail` object\.
 
 ## Top\-Level JSON Object<a name="top-level-json-object"></a>
@@ -278,17 +269,11 @@ Because of this behavior, you can be more certain that you know which email addr
 #### Complaint Types<a name="complaint-types"></a>
 
 You may see the following complaint types in the `complaintFeedbackType` field as assigned by the reporting ISP, according to the [Internet Assigned Numbers Authority website](http://www.iana.org/assignments/marf-parameters/marf-parameters.xml#marf-parameters-2):
-
 + `abuse`—Indicates unsolicited email or some other kind of email abuse\.
-
 + `auth-failure`—Email authentication failure report\.
-
 + `fraud`—Indicates some kind of fraud or phishing activity\.
-
 + `not-spam`—Indicates that the entity providing the report does not consider the message to be spam\. This may be used to correct a message that was incorrectly tagged or categorized as spam\.
-
 + `other`—Indicates any other feedback that does not fit into other registered types\.
-
 + `virus`—Reports that a virus is found in the originating message\. 
 
 ## Delivery Object<a name="delivery-object"></a>

@@ -2,7 +2,7 @@
 
 This section provides examples of each type of email sending event record that Amazon SES publishes to Amazon SNS\.
 
-
+**Topics**
 + [Bounce Record](#event-publishing-retrieving-sns-bounce)
 + [Complaint Record](#event-publishing-retrieving-sns-complaint)
 + [Delivery Record](#event-publishing-retrieving-sns-delivery)

@@ -5,23 +5,14 @@ Amazon SES publishes email sending event records to Amazon Kinesis Firehose in J
 The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `bounce`, `complaint`, `delivery`, `send`, `reject`, `open` or `click` object, depending on the type of event\.
 
 See the following sections for descriptions of the different types of objects:
-
 + [Top\-level JSON object](#event-publishing-retrieving-firehose-contents-top-level-json-object)
-
 + [`mail` object](#event-publishing-retrieving-firehose-contents-mail-object)
-
 + [`bounce` object](#event-publishing-retrieving-firehose-contents-bounce-object)
-
 + [`complaint` object](#event-publishing-retrieving-firehose-contents-complaint-object)
-
 + [`delivery` object](#event-publishing-retrieving-firehose-contents-delivery-object)
-
 + [`send` object](#event-publishing-retrieving-firehose-contents-send-object)
-
 + [`reject` object](#event-publishing-retrieving-firehose-contents-reject-object)
-
 + [`open` object](#event-publishing-retrieving-firehose-contents-open-object)
-
 + [`click` object](#event-publishing-retrieving-firehose-contents-click-object)
 
 ## Top\-Level JSON Object<a name="event-publishing-retrieving-firehose-contents-top-level-json-object"></a>

@@ -3,13 +3,9 @@
 *Easy DKIM* is a feature of Amazon SES that signs every message that you send from a verified email address or domain with a DKIM signature that uses a 1024\-bit DKIM key\. You can use the Amazon SES console to configure Easy DKIM settings, and to enable or disable automatic DKIM signing for your email messages\. You must be able to edit your domain's DNS records to set up Easy DKIM\. With the appropriate DNS records in place, you can enable Easy DKIM signing for any verified email address or domain\. 
 
 The following rules apply:
-
 + As with other verified identity settings, if you verify a domain, subdomain, and email address that share a root domain, Easy DKIM settings apply at the most granular level you verified\. That is:
-
   + Verified email address settings override verified domain settings\.
-
   + Verified subdomain settings override verified domain settings, with lower\-level subdomain settings overriding higher\-level subdomain settings\.
-
 + If you verify a root domain, and do not verify a particular subdomain, then that subdomain uses the root domain's Easy DKIM settings\. That is, if the root domain has Easy DKIM set up and enabled, the subdomain's emails are automatically DKIM\-signed as well\.
 
 Once you set up Easy DKIM, your messages will automatically be DKIM\-signed regardless of whether you call Amazon SES through the SMTP interface or the API \(`SendEmail` or `SendRawEmail`\)\. Note that you only need to set up Easy DKIM for the domain you use in your From address, not for the domain in a "Return\-Path" or "Reply\-To" address\.
@@ -20,9 +16,7 @@ If you are verifying a new domain, you can set up Easy DKIM at that time\. If yo
 Amazon SES has endpoints in multiple AWS regions, and Easy DKIM setup applies to each AWS region separately\. You must perform the Easy DKIM setup procedure for each region in which you want to use Easy DKIM\. For information about using Amazon SES in multiple AWS regions, see [Regions and Amazon SES](regions.md)\.
 
 This topic contains the following sections:
-
 + To set up Easy DKIM while you verify a new domain, see [Setting Up Easy DKIM for a New Domain](#easy-dkim-new-domain)\.
-
 + To set up Easy DKIM for an email address or domain that you have already verified, see [Setting Up Easy DKIM for an Existing Verified Identity](#easy-dkim-existing-domain)\.
 
 ## Setting Up Easy DKIM for a New Domain<a name="easy-dkim-new-domain"></a>

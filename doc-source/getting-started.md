@@ -13,9 +13,7 @@ To start this tutorial, go to [Send an Email Using the Amazon SES Console](send-
 ## Using Simple Mail Transfer Protocol \(SMTP\)<a name="using-smtp-intro"></a>
 
 Use this method if you want to send email through the Amazon SES SMTP interface with or without programming as follows:
-
 + Enable an application to send email through Amazon SES by using a programming language that supports SMTP\. Examples are provided in C\#, Java, and PHP\. To start this tutorial, go to [Send an Email by Accessing the Amazon SES SMTP Interface Programmatically](send-using-smtp-programmatically.md)\.
-
 + Set up your mail server to forward mail to Amazon SES, or configure your email client or SMTP\-enabled software package to send email through Amazon SES\. Examples are provided for Postfix, Sendmail, and Exim mail servers, as well as email client Microsoft Outlook and issue\-tracking software Jira\. To start this tutorial, go to [Configuring Your Existing Email Server or SMTP\-Enabled Application to Send Email Through Amazon SES](send-using-smtp-integrate.md)\.
 
 For introductory information on both SMTP sending methods, see [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)\.

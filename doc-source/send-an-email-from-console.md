@@ -20,9 +20,7 @@ If you are not currently signed in to your AWS account, this link takes you to a
 1. Choose **Send a Test Email**\.
 
 1. For **Send Test Email**, choose the **Email Format**\. The two choices are as follows:
-
    + ****Formatted****—This is the simplest option\. Choose this option if you simply want to type the text of your message into the **Body** text box\. When you send the email, Amazon SES puts the text into email format for you\.
-
    + ****Raw****—Choose this option if you want to send a more complex message, such as a message that includes HTML or an attachment\. Because of this flexibility, you need to format the message, as described in [Sending Raw Email Using the Amazon SES API](send-email-raw.md), yourself, and then paste the entire formatted message, including the headers, into the **Body** text box\. You can use the following example, which contains HTML, to send a test email using the **Raw** email format\. Copy and paste this message in its entirety into the **Body** text box\. Ensure that there is not a blank line between the `MIME-Version` header and the `Content-Type` header; a blank line between these two lines causes the email to be formatted as plain text instead of HTML\.
 
      ```

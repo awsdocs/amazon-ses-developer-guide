@@ -13,13 +13,9 @@ When you set up a Kinesis Firehose delivery stream, you choose the final destina
 1. Choose **Create Delivery Stream**\.
 
 1. On the **Destination** page, choose the following options\.
-
    + **Destination** – Choose **Amazon S3**\.
-
    + **Delivery stream name** – Type a name for the delivery stream\.
-
    + **S3 bucket** – Choose an existing bucket, or choose **New S3 Bucket**\. If you create a new bucket, type a name for the bucket and choose the region your console is currently using\.
-
    + **S3 prefix** – Leave this field empty\.
 
 1. Choose **Next**\.

@@ -1,11 +1,8 @@
 # Amazon SNS Notification Examples for Amazon SES<a name="notification-examples"></a>
 
 The following sections provide examples of the three types of notifications:
-
 + For bounce notification examples, see [Amazon SNS Bounce Notification Examples](#notification-examples-bounce)\.
-
 + For complaint notification examples, see [Amazon SNS Complaint Notification Examples](#notification-examples-complaint)\.
-
 + For delivery notification examples, see [Amazon SNS Delivery Notification Example](#notification-examples-delivery)\.
 
 ## Amazon SNS Bounce Notification Examples<a name="notification-examples-bounce"></a>

@@ -7,19 +7,14 @@ To verify an email address or domain with Amazon SES, you initiate the process u
 ### The Verification Email Did Not Arrive<a name="troubleshooting-verification-email-did-not-arrive"></a>
 
 If you complete the procedures in [Verifying Email Addresses in Amazon SES](verify-email-addresses.md) but do not receive the verification email within a few minutes, complete the following troubleshooting tasks:
-
 + Check the spam or junk mail folder in your email client\.
-
 + Confirm that the address you are trying to verify is able to receive email\. Send a test email to the address that you want to verify from a separate email address\.
-
 + Check [the list of verified addresses in the Amazon SES console](https://console.aws.amazon.com/ses/home#verified-senders-email:)\. Confirm that there are no errors in the email address you want to verify\.
 
 ## Common Domain Verification Problems<a name="domain-verification-common-problems"></a>
 
 If you attempt to verify a domain using the procedure in [Verifying Domains in Amazon SES](verify-domains.md) and you encounter problems, review the possible causes and solutions below\.
-
 + **Your DNS provider does not allow underscores in TXT record names**—You can omit *\_amazonses* from the TXT record name\.
-
 + **You want to verify the same domain multiple times and you can't have multiple TXT records with the same name**—You might need to verify your domain more than once because you're sending in different regions or you're sending from multiple AWS accounts from the same domain in the same region\. If your DNS provider does not allow you to have multiple TXT records with the same name, there are two workarounds\. The first workaround, if your DNS provider allows it, is to assign multiple values to the TXT record\. For example, if your DNS is managed by Amazon Route 53, you can set up multiple values for the same TXT record as follows: 
 
   1. In the Route 53 console, choose the *\_amazonses* TXT record you added when you verified your domain in the first region\.
@@ -29,13 +24,9 @@ If you attempt to verify a domain using the procedure in [Verifying Domains in A
   1. Add the value for the additional region, and save the record set\.
 
   The other workaround is that if you only need to verify your domain twice, you can verify it once with *\_amazonses* in the TXT record name and the other time you can omit *\_amazonses* from the record name entirely\. We recommend the previous solution as a best practice, however\.
-
 + **Your email address is provided by a web\-based email service you do not have control over**—You cannot successfully verify a domain that you do not own\. For example, if you want to send email through Amazon SES from a gmail address, you need to verify that email address specifically; you cannot verify gmail\.com\. For information about individual email address verification, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
-
 + **Amazon SES reports that domain verification failed**—You receive a "Domain Verification Failure" email from Amazon SES, and the domain displays a status of "failed" in the **Domains** tab of the Amazon SES console\. This means that Amazon SES cannot find the necessary TXT record on your DNS server\. Verify that the required TXT record is correctly published to your DNS server by using the procedure in [How to Check Domain Verification Settings](#domain-verification-check-dns), and look for the following possible errors:
-
   + **Your DNS provider appended the domain name to the end of the TXT record**—Adding a TXT record that already contains the domain name \(such as *\_amazonses\.example\.com*\) may result in the duplication of the domain name \(such as *\_amazonses\.example\.com\.example\.com*\)\. To avoid duplication of the domain name, add a period to the end of the domain name in the TXT record\. This will indicate to your DNS provider that the record name is fully qualified \(that is, no longer relative to the domain name\), and prevent the DNS provider from appending an additional domain name\.
-
 + **You receive an email from Amazon SES that says your domain verification has been \(or will be\) revoked**—Amazon SES can no longer find the required TXT record on your DNS server\. The notification email will inform you of the length of time in which you must re\-publish the TXT record before your domain verification status is revoked\.
 **Note**  
 You can review the required TXT record information in the Amazon SES console by using the following instructions\. In the navigation pane, under **Identities**, choose **Domains**\. In the list of domains, choose \(not just expand\) the domain to display the domain verification settings, which include the TXT record name and value\.

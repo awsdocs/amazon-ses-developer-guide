@@ -13,21 +13,15 @@ There are two ways to achieve DMARC validation: using SPF and using DKIM\. Unles
 ## Choosing a MAIL FROM Domain<a name="mail-from-requirements"></a>
 
 If you choose to use your own MAIL FROM domain with Amazon SES, the domain you use must meet the following requirements:
-
 + The MAIL FROM domain must be a subdomain of the verified identity \(email address or domain\) from which you will send your emails\. For example, *mail\.example\.com* is a valid MAIL FROM domain for the email address *user@example\.com* or the domain *example\.com*\.
-
 + In most cases, the MAIL FROM domain should not be a domain that you send email from\. If you must use the MAIL FROM domain in a From address, either [disable email feedback forwarding](notifications-via-email.md#notifications-via-email-disabling) and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email Feedback Forwarding Destination](notifications-via-email.md#notifications-via-email-destination)\.
-
 + The MAIL FROM domain should not be a domain that you use to receive email\.
 
 ## Setup Process<a name="mail-from-process"></a>
 
 To set the MAIL FROM domain for a verified identity, you configure the verified identity using the Amazon SES console or API and publish an MX record \(and optionally, an SPF record\) to your MAIL FROM domain's DNS server\. If at any point you want to return to using the default Amazon SES MAIL FROM domain, you can remove your MAIL FROM domain from the verified identity's settings\. These procedures are described in the following sections:
-
 + [Setting a MAIL FROM Domain](mail-from-set.md)
-
 + [Removing a MAIL FROM Domain](mail-from-remove.md)
-
 + [Editing a MAIL FROM Domain](mail-from-edit.md)
 
 For a description of custom MAIL FROM domain setup states, see [MAIL FROM Domain Setup States](mail-from-states.md)\.

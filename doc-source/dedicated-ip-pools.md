@@ -23,9 +23,7 @@ Dedicated IP addresses that have not yet been assigned to a pool are listed unde
 A dedicated IP address can only belong to a single pool\. If you select a dedicated IP address that is associated with a different pool, that setting is overwritten, and the address is instead associated with the pool you are creating\.
 
 1. On the **Assign to a configuration set** page, do one of the following:
-
    + Select **Add this pool to an existing configuration set** to associate the dedicated IP pool with an existing configuration set\. Then, under **Existing configuration sets**, choose the configuration set with which you want to associate the IP pool\.
-
    + Select **Create a new configuration set** to create a configuration set and associate the dedicated IP pool with it\. For **Configuration set name**, type a descriptive name for the configuration set\.
 
    When you finish, choose **Next**\.

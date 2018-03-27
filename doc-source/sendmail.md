@@ -5,7 +5,6 @@ Sendmail was released in the early 1980s, and has been continuously improved eve
 The following instructions show you how to configure Sendmail to send email through Amazon SES\.
 
 These instructions were tested on a 64\-bit Amazon EC2 instance using the following Amazon Machine Image \(AMI\):
-
 + Amazon Linux AMI 2015\.09\.2 \(ami\-8fcee4e5\)
 
 To launch an Amazon EC2 instance, which includes selecting an AMI, see [Amazon Machine Images \(AMIs\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance_linux.html)\.
@@ -13,17 +12,12 @@ To launch an Amazon EC2 instance, which includes selecting an AMI, see [Amazon M
  **Prerequisites** 
 
 Before you perform one of the following procedures, verify the following:
-
 + The Sendmail package is installed on your computer, and you are able to successfully send an email using Sendmail without Amazon SES\. 
 **Note**  
 To see if a package is installed on a computer running Red Hat Linux, type `rpm -qa | grep <package>`, where `<package>` is the package name\. To see if a package is installed on a computer running Ubuntu Linux, type `dpkg -s <package>`\.
-
 + In addition to the Sendmail package, the following packages are installed on your computer: sendmail\-cf, m4, and cyrus\-sasl\-plain\.
-
 + You have verified your "From" address and, if your account is still in the sandbox, you have also verified your "To" addresses\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
-
 + \(Optional\) If you are sending email through Amazon SES from an Amazon EC2 instance, you may need to assign an Elastic IP Address to your Amazon EC2 instance for the receiving ISP to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
-
 + \(Optional\) If you are sending email through Amazon SES from an Amazon EC2 instance, you can fill out a [Request to Remove Email Sending Limitations](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/ec2-email-limit-rdns-request) to remove the additional sending limit restrictions that are applied to port 25 by default\.
 
 **To configure Sendmail to send email through the Amazon SES endpoint in US West \(Oregon\) using STARTTLS**
@@ -33,13 +27,9 @@ To see if a package is installed on a computer running Red Hat Linux, type `rpm 
 These instructions assume that you want to use Amazon SES in the US West \(Oregon\) AWS region\. If you want to use a different region, replace all instances of *email\-smtp\.us\-west\-2\.amazonaws\.com* in these instructions with the SMTP endpoint of the desired region\. For a list of SMTP endpoints, see [Regions and Amazon SES](regions.md)\.
 
 1. Add the following line to */etc/mail/authinfo*, where:
-
    + U:root—Do not modify\.
-
    + I:USERNAME—Replace USERNAME with the Amazon SES username you obtained using the instructions in [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. This is NOT the same as your AWS Access Key ID\.
-
    + P:PASSWORD—Replace PASSWORD with the Amazon SES password you obtained using the instructions in [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. This is NOT the same as your AWS Secret Key\.
-
    + M:LOGIN—Replace LOGIN with the method of authentication to use\. For example, PLAIN, DIGEST\-MD5, etc\.
 
    ```

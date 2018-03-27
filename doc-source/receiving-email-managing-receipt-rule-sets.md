@@ -2,7 +2,7 @@
 
 After you create a receipt rule set as described in [Creating a Receipt Rule Set](receiving-email-receipt-rule-set.md), you can update it as needed\. Although editing a receipt rule set usually consists of editing individual receipt rules as described in [Managing Receipt Rules](receiving-email-managing-receipt-rules.md), you can also delete, activate, disable, and copy receipt rule sets\. Additionally, you can reorder the receipt rules in a receipt rule set\. These operations are described in the following sections\. 
 
-
+**Topics**
 + [Deleting a Receipt Rule Set](#receiving-email-managing-receipt-rule-sets-delete)
 + [Activating and Disabling a Receipt Rule Set](#receiving-email-managing-receipt-rule-sets-enable-disable)
 + [Copying a Receipt Rule Set](#receiving-email-managing-receipt-rule-sets-copy)

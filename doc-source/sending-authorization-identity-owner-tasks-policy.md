@@ -6,9 +6,7 @@ To authorize a delegate sender to send emails for one of your identities, you cr
 Policies attached to email address identities override policies attached to the corresponding domain identities\. For example, say that you have verified *example\.com* and *user@example\.com*\. If you create a policy for *example\.com* that disallows a delegate sender, and you create a policy for *user@example\.com* that allows that delegate sender, the delegate sender will be able to send from *user@example\.com* if they specify the ARN of *user@example\.com* in the request to send the email\.
 
 You can create a sending authorization policy in the following ways:
-
 + **By using the Policy Generator** – You can create a simple policy by using the Policy Generator in the Amazon SES console\. In addition to specifying who can send the emails, you can constrain the email\-sending with conditions based on the time and date range in which emails can be sent, the "From" address, the "From" display name, the address to which bounces and complaints are sent, the recipient addresses, and the source IP\. You might also want to use the Policy Generator to create the structure of a simple policy and then customize it later by editing the policy\.
-
 + **By creating a Custom Policy** – If you want to include more advanced conditions or use an AWS service as the principal, you can create a custom policy and attach it to the identity by using the Amazon SES console or the Amazon SES API\.
 
 This topic describes both methods\.
@@ -28,21 +26,15 @@ You can use the Policy Generator to create a simple authorization policy by usin
 1. In the details pane, expand **Identity Policies**, choose **Create Policy**, and then choose **Policy Generator**\.
 
 1. In the wizard, create a policy statement by choosing values for the following fields\. You can find information about these options in [Sending Authorization Policies](sending-authorization-policies.md)\.
-
    + **Effect** – If you want to grant access, choose **Allow**; otherwise, choose **Deny**\. 
-
    + **Principals** – Enter either the 12\-digit AWS account ID or the ARN of an IAM user that you are allowing or denying access, and then choose **Add**\. You can add more principals by repeating this step\. An example of an AWS account ID is 123456789012 and an example of an IAM user ARN is *arn:aws:iam::123456789012:user/John*\.
 **Note**  
 The policy generator wizard does not currently support AWS service principals\. To add an AWS service principal, you must either [create a custom policy](#sending-authorization-identity-owner-tasks-identity-policy-custom) or use the policy generator to add an AWS account or IAM user principal, and then [edit](sending-authorization-identity-owner-tasks-management.md#sending-authorization-identity-owner-tasks-management-edit) the policy\.
-
    + **Actions** – Choose the email\-sending access to which this policy applies\. Typically, identity owners choose both options to give the delegate sender the freedom to choose how to implement the email sending\. For more information, see [Statements Specific to the Policy](sending-authorization-policies.md#sending-authorization-policy-statements)\. 
 
 1. \(Optional\) If you want to add restrictions to the policy, choose **Add Conditions**, and then choose the following information:
-
    + **Key** – This is the characteristic that is the basis for access restriction\. The Policy Generator lets you choose an Amazon SES\-specific key or one of a few commonly used AWS\-wide keys \(current time and source IP\)\. For details, see [Conditions](sending-authorization-policies.md#sending-authorization-policy-conditions)\. If you want to specify the more advanced AWS\-wide keys listed in [Available Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AvailableKeys), you can edit the policy after you create it\.
-
    + **Condition** – This is the type of condition that you want to specify\. For example, there are string conditions, numeric conditions, date and time conditions, and so on\. For a list of conditions, see [Condition Types](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AccessPolicyLanguage_ConditionType) in the *IAM User Guide*\.
-
    + **Value** – This is the value that will be tested against the condition\. For examples, see the policies in [Sending Authorization Policy Examples](sending-authorization-policy-examples.md)\. 
 
    After you choose the key, condition, and value, choose **Add Condition**\. The condition appears in the **Conditions** list\. You can remove conditions by choosing **Remove** next to a condition in the list\. You can add another condition by choosing **Add Conditions** again\.   
@@ -57,9 +49,7 @@ The policy generator wizard does not currently support AWS service principals\. 
 ## Creating a Custom Policy<a name="sending-authorization-identity-owner-tasks-identity-policy-custom"></a>
 
 If you want to create a custom policy and attach it to an identity, you have the following options:
-
 + **Using the Amazon SES API** – Create a policy in a text editor and then attach the policy to the identity by using the `PutIdentityPolicy` API described in the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
-
 + **Using the Amazon SES console** – Create a policy in a text editor and attach it to an identity by pasting it into the Custom Policy editor in the Amazon SES console\. The following procedure describes this method\.
 
 **To create a custom policy by using the Custom Policy editor**

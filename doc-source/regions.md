@@ -3,27 +3,16 @@
 When you use Amazon Simple Email Service \(Amazon SES\), you connect to a URL that provides an endpoint for the Amazon SES API or SMTP interface\. Amazon SES has endpoints in multiple AWS regions\. To reduce network latency, it's a good idea to choose an endpoint closest to your application\.
 
 This topic contains information you need to know when you use Amazon SES endpoints in multiple AWS regions\. It discusses the following subjects:
-
 + [Amazon SES Endpoints](#region-endpoints)
-
 + [Selecting a Region to Use with Amazon SES](#region-select)
-
 + [Sandbox and Sending Limit Increases](#region-limit-increases)
-
 + [Verification](#region-verification)
-
 + [Easy DKIM Setup](#region-dkim)
-
 + [Suppression List](#region-suppression-list)
-
 + [Feedback Notifications](#region-feedback-notifications)
-
 + [SMTP Credentials](#region-smtp)
-
 + [Sending Authorization](#region-sending-authorization)
-
 + [Custom MAIL FROM Domains](#region-mail-from)
-
 + [Email Receiving](#region-receive-email)
 
 For general information about AWS regions, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference\.*
@@ -103,9 +92,7 @@ Although each region has a separate suppression list, if you remove an address f
 ## Feedback Notifications<a name="region-feedback-notifications"></a>
 
 There are two important points to note about setting up feedback notifications in multiple regions:
-
 + Verified identity settings, such as whether you receive feedback by email or through Amazon Simple Notification Service \(Amazon SNS\), apply only to the region in which you set them\. For example, if you verify user@example\.com in the US West \(Oregon\) and US East \(N\. Virginia\) regions and you want to receive bounced emails via Amazon SNS notifications, you must use the Amazon SES API or the Amazon SES console to set up Amazon SNS feedback notifications for user@example\.com in both regions\.
-
 + Amazon SNS topics you use for feedback forwarding must be within the same region in which you are using Amazon SES\.
 
 ## SMTP Credentials<a name="region-smtp"></a>

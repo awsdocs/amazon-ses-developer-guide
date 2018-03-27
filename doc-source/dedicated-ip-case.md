@@ -23,35 +23,22 @@ The following steps show how to request dedicated IP addresses by submitting an 
 1. Open an [SES Sending Limits Increase case](https://aws.amazon.com/ses/extendedaccessrequest/) in Support Center\.
 
 1. In the case submission form, make the following selections:
-
    + For **Regarding**, choose **Service Limit Increase**\.
-
    + For **Limit Type**, choose **SES Sending Limits**\.
-
    + For **Region**, choose the AWS Region in which you use Amazon SES\.
 **Note**  
 Dedicated IP addresses are unique to each AWS Region, so it is important to select the region in which you use Amazon SES\.  
 For example, if you have a dedicated IP address for use in the US West \(Oregon\) region, you will not be able to use that address to send email from the US East \(N\. Virginia\) region\.  
 If you need to request dedicated IP addresses for use in more than one region, submit a separate request form for each region\.
-
    + For **Limit**, choose **Desired Daily Sending Quota**\.
-
    + For **New limit value**, enter the approximate number of emails you plan to send per day from the dedicated IP addresses that you are requesting\.
-
    + For **Mail Type**, choose the type of email you plan to send using your dedicated IP address\. If multiple values apply, choose the type that will make up the majority of your email sending\.
-
    + For **Website URL**, type the URL of your website\. Providing this information will help us better understand the type of content you plan to send\.
-
    + For **My email sending complies with the AWS Service Terms and AUP**, choose the option that applies to your use case\.
-
    + For **I only send to recipients who have specifically requested my mail**, choose the option that applies to your use case\.
-
    + For **I have a process to handle bounces and complaints**, choose the option that applies to your use case\.
-
    + For **Use Case Description**, state that you want to request dedicated IP addresses, and indicate the number of dedicated IP addresses that you are requesting\. Next, describe the ways in which you will use dedicated IP addresses to send email using Amazon SES\. Include information about why you want to use dedicated IP addresses as opposed to shared IP addresses; this information will help us better understand your use case\.
-
    + For **Support Language**, choose your preferred language\.
-
    + For **Contact method**, choose **Web**\.
 
    When you finish, choose **Submit**\.
@@ -69,24 +56,16 @@ If you no longer need dedicated IP addresses that are assigned to your account, 
 1. Open an [SES Sending Limits Increase case](https://aws.amazon.com/ses/extendedaccessrequest/) in Support Center\.
 
 1. In the case submission form, make the following selections:
-
    + For **Regarding**, choose **Service Limit Increase**\.
-
    + For **Limit Type**, choose **SES Sending Limits**\.
-
    + For **Region**, choose the AWS Region in which you use Amazon SES\.
 **Note**  
 Dedicated IP addresses are unique to each AWS Region, so it is important to select the region in which you use Amazon SES\.  
 If you need to relinquish dedicated IP addresses in more than one region, submit a separate request form for each region\.
-
    + For **Limit**, choose **Desired Daily Sending Quota**\.
-
    + For **New limit value**, enter any number\. The number you enter here is not important—you will specify how many dedicated IPs you want to relinquish in the Use Case Description field\.
-
    + For **Use Case Description**, state that you want to relinquish dedicated IP addresses, and then state the number of dedicated IP addresses you want to relinquish\.
-
    + For **Support Language**, choose your preferred language\.
-
    + For **Contact method**, choose **Web**\.
 
    When you finish, choose **Submit**\.

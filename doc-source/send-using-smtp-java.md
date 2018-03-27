@@ -140,17 +140,13 @@ This tutorial requires JavaMail version 1\.5 or later\. These procedures were te
 1. In `AmazonSESSample.java`, replace the following email addresses with your own values:
 **Important**  
 The email addresses are case\-sensitive\. Make sure that the addresses are exactly the same as the ones you verified\.
-
    + `SENDER@EXAMPLE.COM`—Replace with your "From" email address\. You must verify this address before you run this program\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
-
    + `RECIPIENT@EXAMPLE.COM`—Replace with your "To" email address\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
 
 1. In `AmazonSESSample.java`, replace the following SMTP credentials with the values that you obtained in [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md):
 **Important**  
 Your SMTP credentials are different from your AWS credentials\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
-
    + `YOUR_SMTP_USERNAME`—Replace with your SMTP username credential\. Note that your SMTP username credential is a 20\-character string of letters and numbers, not an intelligible name\.
-
    + `YOUR_SMTP_PASSWORD`—Replace with your SMTP password\.
 
 1. \(Optional\) If you want to use an Amazon SES SMTP endpoint in a Region other than US West \(Oregon\), change the value of the variable `HOST` to the endpoint you want to use\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.

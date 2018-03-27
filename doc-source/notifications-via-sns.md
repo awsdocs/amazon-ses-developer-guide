@@ -8,9 +8,6 @@ If you configure Amazon SNS notifications for both bounces and complaints, you c
 For several important points about notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-using-notifications.md)\.
 
 For information about Amazon SES bounce, complaint, and delivery notifications through Amazon SNS, see the following sections:
-
 + To set up notifications using the Amazon SES console or the Amazon SES API, see [Configuring Amazon SNS Notifications for Amazon SES](configure-sns-notifications.md)\.
-
 + For a description of the contents of a notification, see [Amazon SNS Notification Contents for Amazon SES](notification-contents.md)\.
-
 + For examples of bounce, complaint, and delivery notifications, see [Amazon SNS Notification Examples for Amazon SES](notification-examples.md)\.

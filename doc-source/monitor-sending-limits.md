@@ -21,11 +21,8 @@ The following procedure shows you how to view your sending limits using the Amaz
 ## Monitoring Your Sending Limits Using the Amazon SES API<a name="monitor-sending-limits-api"></a>
 
 The Amazon SES API provides the `GetSendQuota` action, which returns your sending limits\. When you call `GetSendQuota` action, you receive the following information:
-
 + Number of emails you have sent during the past 24 hours
-
 + Sending quota for the current 24\-hour period
-
 + Maximum send rate
 
 **Note**  

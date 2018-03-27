@@ -8,7 +8,7 @@ Several Amazon SES customers build applications \(such as email marketing suites
 
 If your Amazon SES use case requires your customers to have their email addresses verified for use with Amazon SES, you can create customized verification emails\. These customized emails help reduce customer confusion and increase the rates at which your customers complete the registration process\.
 
-
+**Topics**
 + [Creating a Custom Verification Email Template](#custom-verification-emails-creating)
 + [Editing a Custom Verification Email Template](#custom-verification-emails-editing)
 + [Sending Verification Emails Using Custom Templates](#custom-verification-emails-sending)
@@ -112,9 +112,7 @@ To preview a custom verification email, use the `SendCustomVerificationEmail` op
 ### Q4\. Can I include images in my custom verification email templates?<a name="custom-verification-emails-faq-q4"></a>
 
 You can embed images in the HTML for your templates by using Base64 encoding\. When you embed images in this way, Amazon SES automatically converts them into attachments\. You can encode an image at the command line by issuing one of the following commands:
-
-+ Linux, macOS, or Unix: base64 \-i *imagefile\.png* | tr \-d '\\n' > output\.txt
-
++ Linux, macOS, or Unix: base64 \-i *imagefile\.png* \| tr \-d '\\n' > output\.txt
 + Windows: certutil \-encode *imagefile\.png* output\.tmp && findstr /v /c:\- output\.tmp > output\.txt && del output\.tmp
 
 Replace `imagefile.png` with the name of the file you want to encode\. In both of the commands above, the Base64 encoded image is saved to `output.txt`\.
@@ -239,21 +237,12 @@ In order for verification emails to be DKIM\-signed, the email address that you 
 ### Q12\. Why don't the custom verification email template API operations appear in the SDK or CLI?<a name="custom-verification-emails-faq-q12"></a>
 
 If you're unable to use the custom verification email template operations in an SDK or the AWS CLI, you may be using an older version of the SDK or CLI\. The custom verification email template operations are available in the following SDKs and CLIs: 
-
 + Version 1\.14\.6 or later of the AWS Command Line Interface
-
 + Version 3\.3\.205\.0 or later of the AWS SDK for \.NET
-
 + Version 1\.3\.20170531\.19 or later of the AWS SDK for C\+\+
-
 + Version 1\.12\.43 or later of the AWS SDK for Go
-
 + Version 1\.11\.245 or later of the AWS SDK for Java
-
 + Version 2\.166\.0 or later of the AWS SDK for JavaScript
-
 + Version 3\.45\.2 or later of the AWS SDK for PHP
-
 + Version 1\.5\.1 or later of the AWS SDK for Python \(Boto\)
-
 + Version 1\.5\.0 or later of the `aws-sdk-ses` gem in the AWS SDK for Ruby

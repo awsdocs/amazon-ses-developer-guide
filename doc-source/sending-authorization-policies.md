@@ -12,9 +12,7 @@ You cannot create Identity Policies that allow delegate senders to use the `Send
 ## Policy Structure<a name="sending-authorization-policy-structure"></a>
 
 Each sending authorization policy is a JSON document that is attached to an identity\. Each policy includes the following sections:
-
 + Policy\-wide information at the top of the document\.
-
 + One or more individual statements, each of which describes a set of permissions\.
 
 Each statement includes the core information about a single permission\. If a policy includes multiple statements, Amazon SES applies a logical OR across the statements at evaluation time\. Similarly, if an identity has multiple policies attached to it, Amazon SES applies a logical OR across the policies at evaluation time\.
@@ -124,15 +122,9 @@ For more information about how to specify conditions, see [Condition](http://doc
 ## Policy Requirements<a name="sending-authorization-policy-restrictions"></a>
 
 Each policy must adhere to the following requirements:
-
 + Each policy must include at least one statement\.
-
 + Each policy must include at least one valid principal\.
-
 + Each policy must specify one resource, and that resource must be the ARN of the identity to which the policy is attached\.
-
 + Identity owners can associate up to 20 policies with each unique identity\.
-
 + Policies must not exceed 4 kilobytes \(KB\)\.
-
 + Policy names cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores\.

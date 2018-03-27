@@ -6,11 +6,8 @@ Amazon SES can notify you of your bounces and complaints through email using a p
 For several important points about notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-using-notifications.md)\.
 
 The following sections describe how to receive bounce and complaint notifications through email:
-
 + To enable bounce and complaint notifications by email, see [Enabling Email Feedback Forwarding](#notifications-via-email-enabling)\.
-
 + To disable bounce and complaint notifications by email, see [Disabling Email Feedback Forwarding](#notifications-via-email-disabling)\.
-
 + To learn the email address to which bounce and complaint notifications are sent, see [Email Feedback Forwarding Destination](#notifications-via-email-destination)\.
 
 ## Enabling Email Feedback Forwarding<a name="notifications-via-email-enabling"></a>
@@ -68,17 +65,12 @@ When you receive notifications by email, Amazon SES rewrites the From header and
 If you used the SMTP interface to send the message, then notifications go to the address specified in the MAIL FROM command, which overrides any Return\-Path headers specified in the SMTP DATA\.
 
 If you used the `SendEmail` API operation to send the message, then the notifications are delivered as follows:
-
 + If you specified the optional `ReturnPath` parameter of `SendEmail`, then notifications go to that address\.
-
 + Otherwise, notifications go to the address specified in the required `Source` parameter of `SendEmail`, which populates the From header of the message\.
 
 If you used the `SendRawEmail` API operation to send the message, then the notifications are delivered as follows:
-
 + If you specified the optional `Source` parameter of `SendRawEmail`, then notifications go to that address, overriding any Return\-Path headers specified in the raw message\.
-
 + Otherwise, if the Return\-Path header was specified in the raw message, then notifications go to that address\.
-
 + Otherwise, notifications go to the address in the From header of the raw message\.
 
 **Important**  

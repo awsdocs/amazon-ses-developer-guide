@@ -5,13 +5,9 @@ Postfix is an alternative to the widely used Sendmail Message Transfer Agent \(M
 ## Prerequisites<a name="send-email-postfix-prereqs"></a>
 
 Before you complete the procedures in this section, you must perform the following tasks:
-
 + Uninstall Sendmail, if it is already installed on your system\. The procedures for completing this step will vary depending on the operating system you use\.
-
 + Install Postfix\. The procedures for completing this step will vary depending on the operating system you use\.
-
 + Verify an email address or domain that you will use for sending email\. If your account is still in the sandbox, you must also verify all of the recipient addresses that you send to\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
-
 + \(Optional\) If you are sending email through Amazon SES from an Amazon EC2 instance, you may need to assign an Elastic IP Address to your Amazon EC2 instance for the receiving ISP to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
 
 ## Configuring Postfix<a name="send-email-postfix"></a>
@@ -68,9 +64,7 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
    1. At a command prompt, type the following command to change the permissions of the files so that only the root user can read or write to them: sudo chmod 0600 /etc/postfix/sasl\_passwd /etc/postfix/sasl\_passwd\.db
 
 1. Tell Postfix where to find the CA certificate \(needed to verify the Amazon SES server certificate\)\. The command you use in this step varies based on your operating system\.
-
    + If you use Amazon Linux, Red Hat Enterprise Linux, or a related distribution, type the following command: sudo postconf \-e 'smtp\_tls\_CAfile = /etc/ssl/certs/ca\-bundle\.crt'
-
    + If you use Ubuntu or a related distribution, type the following command: sudo postconf \-e 'smtp\_tls\_CAfile = /etc/ssl/certs/ca\-certificates\.crt'
 
 1. Type the following command to start the Postfix server \(or to reload the configuration settings if the server is already running\): sudo postfix start; sudo postfix reload

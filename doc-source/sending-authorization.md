@@ -3,19 +3,13 @@
 You can configure Amazon SES to authorize other users to send emails from addresses or domains that you own \(your *identities*\) using their own Amazon SES accounts\. This feature, called *sending authorization*, lets you maintain control over your identities so that you can change or revoke the permissions at any time\. For example, if you are a business owner, you can use sending authorization to enable a third party \(such as an email marketing company\) to send email from a domain you own\.
 
 If you want to authorize someone to send emails on your behalf, then you are an *identity owner*\. If you are an identity owner, we recommend that you read the following sections:
-
 + [Overview of Sending Authorization](sending-authorization-overview.md)
-
 + [Sending Authorization Policies](sending-authorization-policies.md)
-
 + [Sending Authorization Policy Examples](sending-authorization-policy-examples.md)
-
 + [Identity Owner Tasks](sending-authorization-identity-owner-tasks.md)
 
 If you have been authorized to send emails on behalf of someone else, then you are a *delegate sender*\. If you are a delegate sender, we recommend that you read the following sections:
-
 + [Overview of Sending Authorization](sending-authorization-overview.md)
-
 + [Delegate Sender Tasks](sending-authorization-delegate-sender-tasks.md)
 
 **Note**  

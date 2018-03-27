@@ -7,7 +7,7 @@ As the delegate sender, bounces and complaints count toward *your* bounce and co
 
 You will be charged standard Amazon SNS rates for bounce, complaint, and delivery notifications\. For more information, see the [Amazon SNS pricing page](https://aws.amazon.com/sns/pricing)\.
 
-
+**Topics**
 + [Setting Up an Amazon SES Cross\-Account Identity Notification Configuration](#sending-authorization-delegate-sender-tasks-management-add)
 + [Editing an Amazon SES Cross\-Account Notification Configuration](#sending-authorization-delegate-sender-tasks-management-edit)
 + [Viewing Your Amazon SES Cross\-Account Identity Notifications](#sending-authorization-delegate-sender-tasks-management-list)

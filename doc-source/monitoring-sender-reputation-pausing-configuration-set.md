@@ -5,7 +5,7 @@ You can configure Amazon SES to export reputation metrics that are specific to e
 **Note**  
 The solution described in this section pauses email sending for a specific configuration set in a single AWS Region\. If you send email from multiple regions, repeat the procedures in this section for each region in which you want to implement this solution\.
 
-
+**Topics**
 + [Part 1: Enable Reputation Metric Reporting for the Configuration Set](#monitoring-sender-reputation-pausing-configuration-set-part-1)
 + [Part 2: Create an IAM Role](#monitoring-sender-reputation-pausing-configuration-set-part-2)
 + [Part 3: Create the Lambda Function](#monitoring-sender-reputation-pausing-configuration-set-part-3)
@@ -37,9 +37,7 @@ The first step in configuring automatic pausing of email sending is to create an
 1. Under **Choose the service that will use this role**, choose **Lambda**\. Choose **Next: Permissions**\.
 
 1. On the **Attach permissions policies** page, choose the following policies:
-
    + **AWS LambdaBasicExecutionRole**
-
    + **AmazonSESFullAccess**
 **Tip**  
 Use the search box at the top of the list of policies to quickly locate these policies\.
@@ -65,13 +63,9 @@ This function only pauses email sending for configuration sets in the AWS Region
 1. Under **Create function**, choose **Author from scratch**\.
 
 1. Under **Author from scratch**, complete the following steps:
-
    + For **Name**, type a name for the Lambda function\.
-
    + For **Runtime**, choose **Node\.js 6\.10**\.
-
    + For **Role**, choose **Choose an existing role**\.
-
    + For **Existing role**, choose the IAM role you created in [Part 2: Create an IAM Role](#monitoring-sender-reputation-pausing-configuration-set-part-2)\.
 
    Choose **Create function**\.
@@ -113,9 +107,7 @@ This function only pauses email sending for configuration sets in the AWS Region
 1. Choose **Test**\. If the **Configure test event** window appears, type a name in the **Event name** field, and then choose **Create**\.
 
 1.  Ensure that the notification bar at the top of the page says Execution result: succeeded\. If the function failed to execute, do the following:
-
    + Verify that the IAM role you created in [Part 2: Create an IAM Role](#monitoring-sender-reputation-pausing-configuration-set-part-2) contains the correct policies\.
-
    + Verify that the code in the Lambda function does not contain any errors\. The Lambda code editor automatically highlights syntax errors and other potential issues\.
 
 ## Part 4: Re\-Enable Email Sending for the Configuration Set<a name="monitoring-sender-reputation-pausing-configuration-set-part-4"></a>
@@ -169,11 +161,8 @@ For CloudWatch to execute the Lambda function when an alarm is triggered, you mu
 1. In the list of topics, check the box next to the topic you created in the previous step\. On the **Actions** menu, choose **Subscribe to topic**\.
 
 1. On the **Create subscription** window, make the following selections:
-
    + For **Protocol**, choose **AWS Lambda**\.
-
    + For **Endpoint**, choose the Lambda function you created in [Part 3: Create the Lambda Function](#monitoring-sender-reputation-pausing-configuration-set-part-3)\.
-
    + For **Version or alias**, choose **default**\.
 
 1. Choose **Create subscription**\.
@@ -195,21 +184,16 @@ This section contains procedures for creating an alarm in CloudWatch that is tri
 1. On the **Create Alarm** window, under **SES Metrics**, choose **Configuration Set Metrics**\.
 
 1. In the **ses:configuration\-set** column, locate the configuration set for which you want to create an alarm\. Under **Metric Name**, choose one of the following options:
-
    + **Reputation\.BounceRate** – Choose this metric if you want to pause email sending for the configuration set when the overall hard bounce rate for the configuration set crosses a threshold that you define\.
-
    + **Reputation\.ComplaintRate** – Choose this metric if you want to pause email sending for the configuration set when the overall complaint rate for the configuration set crosses a threshold that you define\.
 
    Choose **Next**\.
 
 1. Complete the following steps:
-
    + Under **Alarm Threshold**, for **Name**, type a name for the alarm\.
-
    + Under **Whenever: Reputation\.BounceRate** or **Whenever: Reputation\.ComplaintRate**, specify the threshold that causes the alarm to trigger\.
 **Note**  
 If the overall bounce rate for your Amazon SES account exceeds 10%, or if the overall complaint rate for your Amazon SES account exceeds \.5%, your Amazon SES account is automatically placed on probation\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are far below these rates to prevent your account from being placed on probation\.
-
    + Under **Actions**, for **Whenever this alarm**, choose **State is ALARM**\. For **Send notification to**, choose the Amazon SNS topic you created in [Part 5: Create an Amazon SNS Topic](#monitoring-sender-reputation-pausing-configuration-set-part-5)\.
 
    Choose **Create Alarm**\.

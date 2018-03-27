@@ -8,7 +8,7 @@ The following procedures show how to configure three popular email clients—[Mo
 These procedures help you set up an email client to *send* email using Amazon SES\. However, you cannot use these clients to *receive* email sent to the email addresses you use with Amazon SES\.  
 For more information about receiving email in Amazon SES, see [Receiving Email with Amazon SES](receiving-email.md)\.
 
-
+**Topics**
 + [Configuring Mozilla Thunderbird to Send Email Using Amazon SES](#configure-email-client-thunderbird)
 + [Configuring Microsoft Outlook to Send Email Using Amazon SES](#configure-email-client-outlook)
 + [Configuring macOS Mail to Send Email Using Amazon SES](#configure-email-client-macos-mail)
@@ -28,9 +28,7 @@ Amazon SES does not include server\-based folders in which you can save items su
 1. In the navigation pane on the left side of the Thunderbird window, right\-click a blank area, and then choose **New Folder**\.
 
 1. On the **New Folder** window, complete the following sections:
-
    + For **Name**, type **Sent Mail**\.
-
    + For **Create as a subfolder of**, choose **Local Folders**\.
 
 1. Repeat steps 2 and 3 to create an additional folder, but this time, name the folder **Drafts**\.
@@ -42,9 +40,7 @@ Before you can send email through Amazon SES, you must configure Thunderbird to 
 **To configure the SMTP server**
 
 1. In Thunderbird, complete one of the following steps:
-
    + If you use Windows: choose the **Menu** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/thunderbird_menu_icon.png)\) icon, point to **Options**, and then choose **Account Settings**\.
-
    + If you use Linux or macOS: choose the **Menu** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/thunderbird_menu_icon.png)\) icon, point to **Preferences**, and then choose **Account Settings**\.
 
 1. On the **Account Settings** window, in the column on the left, choose **Outgoing Server \(SMTP\)**\.
@@ -52,17 +48,11 @@ Before you can send email through Amazon SES, you must configure Thunderbird to 
 1. Choose **Add**\.
 
 1. On the **SMTP Server** window, complete the following sections:
-
    + For **Description**, type **Amazon SES**\.
-
    + For **Server Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Email Sending Endpoints](regions.md#region-endpoints-sending)\.
-
    + For **Port**, type **587**\.
-
    + For **Connection security**, choose **STARTTLS**\.
-
    + For **Authentication method**, choose **Normal password**\.
-
    + For **User Name**, type your SMTP user name\.
 **Note**  
 Your SMTP user name is not the same as your AWS access key ID\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
@@ -72,11 +62,8 @@ Your SMTP user name is not the same as your AWS access key ID\. For more informa
 1. On the **Account Settings** window, choose **Account Actions**, and then choose **Add Mail Account**\. 
 
 1. On the **Mail Account Setup** window, complete the following sections:
-
    + For **Your name**, type the name you want to appear on messages sent from this account\.
-
    + For **Email address**, type the email address you use to send email with Amazon SES\.
-
    + Leave the **Password** field blank, and clear the check box next to **Remember password**\.
 
    When you finish, choose **Advanced config**\. You will return to the **Account Settings** window\.
@@ -96,11 +83,8 @@ In this section, you will find procedures for saving sent mail and drafts to you
 1. On the **Account Settings** window, under your account, choose **Server Settings**\.
 
 1. Under **Server Settings**, clear the check boxes next to the following items:
-
    + **Check for new messages at startup**
-
    + **Check for new messages every 10 minutes**
-
    + **Allow immediate server notifications when new messages arrive** 
 
 1. On the **Account Settings** window, under your account, choose **Copies & Folders**\.
@@ -254,11 +238,8 @@ The procedures in this section apply to the version of Mail that is included wit
 1. On the **Mail** menu, choose **Add Account**\.
 
 1. On the **Add a Mail Account** window, complete the following sections:
-
    + For **Name**, type the name that you want to appear on messages sent from this account\.
-
    + For **Email Address**, type the email address you use to send email with Amazon SES\.
-
    + For **Password**, type any value\. This field is used to connect to an IMAP server\. Because Amazon SES does not include an IMAP server, the value you enter here is not important\.
 
    When you finish, choose **Sign In**\. You will see a message stating that Mail is unable to verify your account name or password\. Choose **Next**\.
@@ -270,13 +251,10 @@ The procedures in this section apply to the version of Mail that is included wit
 1. In the pane on the left, choose the IMAP account you just created\.
 
 1. On the **Server Settings** tab, under **Outgoing Mail Server \(SMTP\)**, complete the following sections:
-
    + For **User Name**, type your SMTP user name\.
-
    + For **Password**, type your SMTP password\.
 **Note**  
 Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
-
    + For **Host Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Email Sending Endpoints](regions.md#region-endpoints-sending)\.
 
    When you finish, choose **Save**\.

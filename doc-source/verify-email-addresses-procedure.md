@@ -42,13 +42,9 @@ For a script that can be used to verify several email identities in a single ope
 ## Troubleshoot Email Address Verification<a name="verify-email-addresses-troubleshooting"></a>
 
 If you attempted to verify an email address, but didn't receive a verification email from AWS, try the following troubleshooting steps:
-
 + Check the Junk Mail folder in your email client\.
-
 + Ensure that your email client isn't applying rules that automatically move certain messages to a folder other than your inbox\.
-
 + In your email client, add no\-reply\-aws@amazon\.com to your address book or Safe Senders list\. You can also ask your system administrator to whitelist incoming email from no\-reply\-aws@amazon\.com\.
-
 + With an email address that uses a different email service provider \(such as a personal email address\), send a message to the address you want to verify\. Ensure that the address you want to verify receives the message\. This step is especially important if you recently set up your own domain\. Occasionally, new domains might not be correctly configured to receive incoming email\.
 
   Alternatively, try to verify an email address that you know is able to receive email, such as a personal email address\. If you receive the verification email at your personal address, it might indicate that there is an issue on the other domain\.

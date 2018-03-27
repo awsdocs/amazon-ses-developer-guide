@@ -2,7 +2,7 @@
 
 In this tutorial, you will set up Amazon SES to receive email for a domain that you have registered with Route 53, and deliver the email to an Amazon S3 bucket\.
 
-
+**Topics**
 + [Step 1: Before You Begin](receiving-email-getting-started-before.md)
 + [Step 2: Verify Your Domain](receiving-email-getting-started-verify.md)
 + [Step 3: Set up a Receipt Rule](receiving-email-getting-started-receipt-rule.md)

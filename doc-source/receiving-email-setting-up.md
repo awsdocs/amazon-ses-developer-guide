@@ -2,7 +2,7 @@
 
 This section describes what you need to do to configure Amazon SES to receive your mail\. For example, you should first consider how you want to receive, filter, and process your mail, because those decisions will affect how you configure Amazon SES\. You also need to verify your domain with Amazon SES to prove that you own it, and point your domain to Amazon SES for incoming mail\. Another step is to give Amazon SES permission to access any required AWS resources\. Then you configure email receiving by creating a receipt rule set, receipt rules, and optionally, IP address filters\.
 
-
+**Topics**
 + [Considering Your Use Case for Amazon SES Email Receiving](receiving-email-consider-use-case.md)
 + [Verifying Your Domain for Amazon SES Email Receiving](receiving-email-verification.md)
 + [Publishing an MX Record for Amazon SES Email Receiving](receiving-email-mx-record.md)

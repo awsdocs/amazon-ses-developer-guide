@@ -14,11 +14,9 @@ As with any Amazon SES email sender, if you access Amazon SES through the Amazon
 ### SendRawEmail<a name="sending-authorization-delegate-sender-tasks-api-sendrawemail"></a>
 
 If you want to use `SendRawEmail` so that you can control the format of your emails, you can specify the cross\-account identity in one of two ways:
-
 + **Pass optional parameters to the `SendRawEmail` API**\. The required parameters are described in the following table:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-delegate-sender-tasks-email.html)
-
 + **Include X\-headers in the email**\. X\-headers are custom headers that you can use in addition to standard email headers \(such as the From, Reply\-To, or Subject headers\)\. Amazon SES recognizes three X\-headers that you can use to specify sending authorization parameters:
 **Important**  
 Do not include these X\-headers in the DKIM signature, because they are removed by Amazon SES before sending the email\.  

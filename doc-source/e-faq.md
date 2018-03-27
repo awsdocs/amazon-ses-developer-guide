@@ -3,17 +3,11 @@
 We monitor the email that is sent through Amazon SES to ensure that users aren't sending unsolicited or malicious content\. If we determine that you're sending unsolicited or malicious content, we may limit or suspend your ability to send additional email\. This process is called *enforcement*\.
 
 This section contains frequently asked questions about the following enforcement\-related topics:
-
 + [Probations](#e-faq-pr)
-
 + [Suspensions](#e-faq-sp)
-
 + [Bounces](#e-faq-bn)
-
 + [Complaints](#e-faq-cm)
-
 + [Spamtraps](#e-faq-st)
-
 + [Manual Investigations](#e-faq-mi)
 
 ## Amazon SES Probation FAQ<a name="e-faq-pr"></a>
@@ -39,15 +33,10 @@ You'll still be able to use other AWS services while your Amazon SES account is 
 ### Q5\. What should I do if I'm on probation?<a name="pr-q5"></a>
 
 You should do the following:
-
 + If your situation allows it, stop sending mail until you fix the problem\. Although probation doesn't affect your ability to send mail through Amazon SES, if you continue to send mail without first making changes, you're putting your continued sending at risk\.
-
 + Look at the email you received from us for a summary of the issue\.
-
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
-
 + Once you've made your fixes, send us an appeal telling us about the fixes you made \(see [Q6\. What's an appeal?](#pr-q6)\)\. Note that you should appeal your probation only after you've made your changes—don't submit an appeal outlining changes you plan to make\. If you do, we will ask you to contact us again once the fixes are actually in place\. If we find that you've fixed the problem, we'll take you off probation\.
-
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
 ### Q6\. What's an appeal?<a name="pr-q6"></a>
@@ -57,11 +46,8 @@ An appeal is when you reply to a probation or suspension notification \(or email
 ### Q7\. How do I submit an appeal?<a name="pr-q7"></a>
 
 Reply to the probation notification\. If you can't find the probation notification, send your appeal to *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\. In your appeal, you should explain in as much detail as possible the following three things:
-
 + An explanation of how and why you think the problem occurred\.
-
 + A list of changes you've already made to address the issue \(not the changes you plan to make\)\.
-
 + An explanation of why you believe these changes will prevent the problem from happening again\.
 
 Please read the FAQ section specific to your issue for more information about the specific information that you should include in your appeal\.
@@ -81,9 +67,7 @@ We will provide this information in our response to your appeal, or in some case
 ### Q11\. Will I always have a probation period if there's a problem?<a name="pr-q11"></a>
 
 No\. There are two cases in which you might not be provided a probation period:
-
 + If the issue is very serious, your account may be suspended immediately\. If this occurs, we will send you a notification\.
-
 + If your account has been placed on probation multiple times in the past, your account may be suspended rather than being placed on probation again\. For this reason, it's important to address the underlying problem rather than just the specific incident that caused a specific probation\. For instance, if a particular campaign triggers a probation, you must do more than simply stop that campaign\. You need to determine which properties of the campaign were problematic and ensure that you have processes in place so that your future campaigns won't have the same issue\.
 
 ### Q12\. What if I make my fixes shortly before the probation is due to expire?<a name="pr-q12"></a>
@@ -99,11 +83,8 @@ If you're already working with an AWS account representative, we'll automaticall
 ### Q1\. I received a suspension notice\. What does that mean?<a name="sp-q1"></a>
 
 We shut down your account because of a critical issue with emails you sent\. Your account may be suspended for one of the following reasons:
-
 + Your account was previously placed on probation\. The issues that caused your account to be placed on probation weren't corrected before the end of the probation period, so your account was suspended\.
-
 + Your account has a history of being placed on probation for the same issue\.
-
 + Your account sent email that violated the [AWS Service Terms](https://aws.amazon.com/service-terms)\. If these violations are serious, your account may be suspended without being placed on suspension first\.
 
 ### Q2\. Will I always be notified if I am suspended?<a name="sp-q2"></a>
@@ -123,13 +104,9 @@ You'll still be able to use other AWS services while your Amazon SES account is 
 ### Q5\. What should I do if my account has been suspended?<a name="sp-q5"></a>
 
 You should do the following:
-
 + Look at the email you received from us for a summary of the issue\.
-
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
-
 + Once you've fixed the issue, send us an appeal telling us about the fixes you made \(see [Q6\. What's an appeal?](#sp-q6)\)\. Note that you should appeal your suspension only after you've made your changes— don't submit an appeal outlining changes you plan to make\. If you do, we will ask you to contact us again once the fixes are actually in place\.
-
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
 ### Q6\. What's an appeal?<a name="sp-q6"></a>
@@ -139,11 +116,8 @@ An appeal is when you reply to a probation or suspension notification \(or email
 ### Q7\. How do I submit an appeal?<a name="sp-q7"></a>
 
 Just reply to the suspension notification\. If you can't find the suspension notification, send your appeal to *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\. In your appeal, you should explain in as much detail as possible the following three things:
-
 + An explanation of how and why you think the problem occurred\.
-
 + A list of changes you've already made to address the issue \(not changes you plan to make\)\.
-
 + An explanation of why you believe these changes will prevent the problem from happening again\.
 
 Read the FAQ specific to your issue \(for example, bounces\) to see if there is additional information you need to provide in your appeal\.
@@ -176,9 +150,7 @@ High bounce rates are often used by entities such as ISPs, mailbox providers, an
 ### Q2\. What should I do if I receive a probation or suspension notice for my bounce rate?<a name="bn-q2"></a>
 
 Fix the underlying problem and appeal to get your case reevaluated\. For information about the appeal process, see the FAQs on probation and suspension\. In your appeal, in addition to the information requested in the probation and suspension FAQs, tell us the following:
-
 + The method you use to track your bounces
-
 + How you ensure that the email addresses of new recipients are valid prior to sending to them\. For example, which of the recommendations are you following in [Q11\. What can I do to minimize bounces?](#bn-q11)
 
 ### Q3\. What types of bounces count toward my bounce rate?<a name="bn-q3"></a>
@@ -216,23 +188,14 @@ No\. Bounces have nothing to do with sending limits\. If you try to exceed your 
 ### Q11\. What can I do to minimize bounces?<a name="bn-q11"></a>
 
 First, be sure that you're aware of your bounces \(see [Q7\. How can I find out which email addresses bounced?](#bn-q7)\)\. Then follow these guidelines:
-
 + Don't buy, rent, or share email addresses\. Send email only to recipients who explicitly requested to receive email from you\.
-
 + Remove bounced email addresses from your list\.
-
 + On web forms, ask users to enter their email addresses two times, and check to make sure both addresses match before the form can be submitted\.
-
 + Use double opt\-in to sign up new users\. That is, when a new users sign up, send them a confirmation email that they need to click before receiving any additional mail\. This prevents people from signing up other people as well as accidental sign\-ups\.
-
 + If you must send to addresses that you haven't mailed lately \(and thus you can't be confident that the addresses are still valid\), do so only with a small portion of your overall sending\. For more information, see our blog post [ Never send to old addresses, but what if you have to?](https://aws.amazon.com//blogs/ses/never-send-to-old-addresses-but-what-if-you-have-to/)\. 
-
 + Ensure that you're not structuring sign\-ups to encourage people to use fictional addresses\. For example, don't provide any added value or benefits until recipients verify their addresses\.
-
 + If you have an "email a friend" feature, use CAPTCHA or a similar mechanism to discourage automated use of the feature, and don't allow users to insert arbitrary content\. For more information about CAPTCHA, see [http://www\.captcha\.net/](http://www.captcha.net/)\. 
-
 + If you're using Amazon SES for system notifications, ensure that you're sending the notifications to real addresses that can receive mail\. Also consider turning off notifications that you don't need\.
-
 + If you're testing a new system, be sure you're either sending to real addresses that can receive email, or you're using the Amazon SES mailbox simulator\. For more information, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\. 
 
 ## Amazon SES Complaint FAQ<a name="e-faq-cm"></a>
@@ -252,19 +215,12 @@ Review your list acquisition process and the content of your emails to try to un
 ### Q4\. What can I do to minimize complaints?<a name="cm-q4"></a>
 
 First, be sure that you monitor the complaints that Amazon SES can notify you about, which are complaints that Amazon SES receives through ISP feedback loops \(see the [Amazon SES Complaints Through ISP Feedback Loops FAQ](#cm-feedback-loop)\)\. Then follow these guidelines:
-
 + Do not buy, rent, or share email addresses\. Use only addresses that specifically requested your mail\.
-
 + Use double opt\-in to sign up new users\. That is, when users sign up, send them a confirmation email that they need to click before receiving any additional mail\. This prevents people from signing up other people as well as accidental sign\-ups\.
-
 + Monitor engagement with the mail you send and stop sending to recipients who don't open or click your messages\.
-
 + When new users sign up, be clear about the type of email they will receive from you, and ensure that you send only the type of mail that they signed up for\. For example, if users sign up for news updates, don't send them advertisements\.
-
 + Ensure that your mail is well\-formatted and looks professional\.
-
 + Ensure that your mail is clearly from you and can't be confused for something else\.
-
 + Provide users an obvious and easy way to unsubscribe from your mail\.
 
 ### Amazon SES Complaints Through ISP Feedback Loops FAQ<a name="cm-feedback-loop"></a>
@@ -300,9 +256,7 @@ We don't calculate your complaint rate based on a fixed period of time, because 
 #### Q7\. Can I calculate my own complaint rate by using metrics from the Amazon SES console or the GetSendStatistics API?<a name="cm-feedback-loop-q7"></a>
 
 No\. There are two primary reasons for this:
-
 + The complaint rate is calculated using representative volume \(see [Q6\. Over what period of time is my complaint rate calculated?](#cm-feedback-loop-q6)\)\. Depending on your sending rate, your complaint rate can stretch farther back in time than the Amazon SES console or `GetSendStatistics` can retrieve\. However, if you regularly monitor your complaint rates using those methods, you should still have a good indicator that you can use to catch problems before they get to levels that trigger a probation or suspension\.
-
 + When calculating complaint rate, not every email counts\. Complaint rate is calculated as the percentage of complaints on mail sent to domains that send complaint feedback to Amazon SES\.
 
 #### Q8\. How can I find out which email addresses complained?<a name="cm-feedback-loop-q8"></a>
@@ -412,19 +366,12 @@ No\. In order for spamtraps to be effective, it's essential that they remain con
 ### Q8\. What can I do to avoid sending to spamtraps?<a name="st-q8"></a>
 
 To reduce the risk of sending to spamtraps, follow these guidelines:
-
 + Do not buy, rent, or share email addresses\. Use only addresses that specifically requested your mail\.
-
 + On web forms, ask users to enter their email addresses two times, and check to make sure both addresses match before the form can be submitted\.
-
 + Use double opt\-in to sign up new users\. That is, when users sign up, send them a confirmation email that they need to click before receiving any additional mail\.
-
 + Ensure that you remove addresses that hard bounce from your list, so that they are removed long before they are converted to spamtraps\.
-
 + Ensure that you're monitoring engagement by your recipients, and stop sending to recipients who haven't engaged with your emails or website recently\. Time frames for what an "engaged user" is depend on your use case, but generally speaking if users haven't opened or clicked your emails in several months, you should consider removing them unless you have evidence that they do want your mail\.
-
 + Be very careful with re\-engagement campaigns where you intentionally contact people who haven't interacted with you recently\. These efforts tend to be highly risky, and can often cause problems not only with spamtrap sending, but also with bounces and complaints\.
-
 + Send an opt\-in message to your entire mailing list and keep only the recipients who click on the verification link\. In addition to removing inactive recipients from your list, this procedure will remove spamtrap addresses as well\. However, we don't recommend using this technique if you think that your mailing list might contain a lot of bad addresses and/or you already have a problem with bounces, because it might cause your bounce rate to reach the point at which your sending is put on probation or shut down\.
 
 ## Amazon SES Manual Investigation FAQ<a name="e-faq-mi"></a>
@@ -432,11 +379,8 @@ To reduce the risk of sending to spamtraps, follow these guidelines:
 ### Q1\. I received a probation or shutdown notice for a manual investigation\. What does that mean?<a name="mi-q1"></a>
 
 An Amazon SES investigator has identified a significant problem with your sending\. Typical problems include, but aren't limited to, the following:
-
 + Your sending violates the [AWS Acceptable Use Policy](https://aws.amazon.com/aup/) \(AUP\)\.
-
 + Your emails appear to be unsolicited\.
-
 + Your content is associated with a use case that Amazon SES doesn't support\.
 
 If the problem is correctable, your account is put on probation and you're given a certain amount of time \(rather than a certain volume of mail, as with bounces and complaints\) to correct the problem\. If the problem is uncorrectable, your account is suspended without a probation period\.
@@ -444,11 +388,8 @@ If the problem is correctable, your account is put on probation and you're given
 ### Q2\. Why would you do a manual investigation?<a name="mi-q2"></a>
 
 There are a variety of reasons\. These include, but aren't limited to, the following:
-
 + Recipients contact Amazon SES to complain about your emails\.
-
 + We detect a significant change in your sending patterns\.
-
 + The spam filters of Amazon SES flag a significant portion of your emails\.
 
 The probation or suspension notification indicates the issue at a high level\. For some problems, we are able to provide more specific details\.
@@ -456,11 +397,8 @@ The probation or suspension notification indicates the issue at a high level\. F
 ### Q3\. What are "unsolicited" emails?<a name="mi-q3"></a>
 
 Unsolicited emails are emails that the recipient didn't explicitly ask to receive\. This includes cases in which a recipient signs up for a certain type of mail \(for example, notifications\), and instead is sent a different type of mail \(for example, advertisements\)\. If the probation or suspension notice indicates that unsolicited sending is your problem, you should provide the following information in your appeal:
-
 + Are all the messages that you send specifically requested by the recipient, and do they comply with the [AWS Acceptable Use Policy](https://aws.amazon.com/aup/)?
-
 + Have you acquired email addresses in any way other than a customer specifically interacting with you or your website and requesting emails from it? You should explain how you acquired your mailing list\.
-
 + How do your subscribe and unsubscribe processes work? You should include your opt\-in and opt\-out links\.
 
 ### Q4\. What should I do if I receive a probation or suspension notice for a manual investigation?<a name="mi-q4"></a>

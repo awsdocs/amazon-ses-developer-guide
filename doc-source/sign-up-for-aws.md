@@ -6,11 +6,8 @@ You need to create an AWS account before you can use Amazon SES or other AWS ser
 If you will be sending your emails from an Amazon EC2 instance either directly or through AWS Elastic Beanstalk, you can get started with Amazon SES for free\. For more information, see [Amazon SES Pricing](https://aws.amazon.com/ses/pricing/)\. 
 
 When you first sign up for AWS, your Amazon SES sending is in the Amazon SES sandbox\. In the sandbox, you have full access to the Amazon SES API and SMTP interface\. However, the following restrictions are in effect:
-
 + You can only send emails to the Amazon SES mailbox simulator and to email addresses or domains that you have verified\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
-
 + You can send a maximum of 200 messages per 24\-hour period\.
-
 + You can send a maximum of one message per second\.
 
 For information about moving out of the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.

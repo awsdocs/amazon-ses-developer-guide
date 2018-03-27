@@ -15,9 +15,7 @@ In most cases, your messages are delivered successfully to recipients who expect
 If your recipient's receiver \(for example, an ISP\) fails to deliver your message to the recipient, the receiver bounces the message back to Amazon SES\. Amazon SES then notifies you of the bounced email through email or through Amazon Simple Notification Service \(Amazon SNS\), depending on how you have your system set up\. For more information, see [Monitoring Using Amazon SES Notifications](monitor-sending-using-notifications.md)\.
 
 There are *hard bounces* and *soft bounces*, as follows: 
-
 + **Hard bounce – **A persistent email delivery failure\. For example, the mailbox does not exist\. Amazon SES does not retry hard bounces, with the exception of DNS lookup failures\. We strongly recommend that you do not make repeated delivery attempts to email addresses that hard bounce\.
-
 + **Soft bounce – **A temporary email delivery failure\. For example, the mailbox is full, there are too many connections \(also called *throttling*\), or the connection times out\. Amazon SES retries soft bounces multiple times\. If the email still cannot be delivered, then Amazon SES stops retrying it\.
 
 Amazon SES notifies you of hard bounces and soft bounces that will no longer be retried\. However, only hard bounces count toward your bounce rate and the bounce metric that you retrieve using the Amazon SES console or the `GetSendStatistics` API\.

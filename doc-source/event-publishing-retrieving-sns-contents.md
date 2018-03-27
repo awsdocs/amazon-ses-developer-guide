@@ -4,7 +4,7 @@ Amazon SES publishes email sending event records to Amazon Simple Notification S
 
 The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `bounce`, `complaint`, `delivery`, `send`, `reject`, `open`, `click`, or `failure` object, depending on the type of event\.
 
-
+**Topics**
 + [Top\-Level JSON Object](#event-publishing-retrieving-sns-contents-top-level-json-object)
 + [Mail Object](#event-publishing-retrieving-sns-contents-mail-object)
 + [Bounce Object](#event-publishing-retrieving-sns-contents-bounce-object)

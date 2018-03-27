@@ -26,11 +26,8 @@ The following table lists the auto\-tags that are automatically applied to messa
 ## How to Use Event Publishing<a name="event-publishing-how-to-use"></a>
 
 The following sections contain the information you need to set up and use Amazon SES event publishing\.
-
 + [Setting Up Event Publishing](event-publishing-setting-up.md)
-
 + [Working with Event Data](working-with-event-data.md)
-
 + [Tutorials](event-publishing-tutorials.md)
 
 ## Event Publishing Terminology<a name="event-publishing-terminology"></a>
@@ -39,21 +36,13 @@ The following list defines terms related to Amazon SES event publishing\.
 
 **Email sending event**  
 Information associated with the outcome of an email you submit to Amazon SES\. Sending events include the following:  
-
 + **Sends** – The call to Amazon SES was successful and Amazon SES will attempt to deliver the email\.
-
 + **Rejects** – Amazon SES accepted the email, determined that it contained a virus, and rejected it\. Amazon SES didn't attempt to deliver the email to the recipient's mail server\.
-
 + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
-
 + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
-
 + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-
 + **Opens** – The recipient received the message and opened it in his or her email client\.
-
 + **Clicks** – The recipient clicked one or more links contained in the email\.
-
 + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 **Configuration set**  

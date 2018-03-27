@@ -70,9 +70,7 @@ To ensure the security of your AWS account, you must create an AWS Identity and 
    ```
 
    In the pasted code, change the following attributes:
-
    + Replace *BUCKET\_NAME* with the name of the Amazon S3 bucket you created in [Part 3: Create an Amazon Simple Storage Service Bucket](dashboardcreateS3bucket.md)\.
-
    + Replace *SQS\_QUEUE\_ARN* with the ARN of the Amazon SQS queue you created in [Part 2: Create a Queue in Amazon Simple Queue Service](dashboardcreateSQSqueue.md)\.
 **Tip**  
 You can find the ARN of the Amazon SQS queue by completing the following steps:  
@@ -83,9 +81,7 @@ In the **Details** section, copy the value shown next to **ARN**\. The format of
 1. Choose **Review policy**\.
 
 1. On the **Review policy** screen, complete the following sections:
-
    + For **Name**, type a name for the policy\.
-
    + For **Description**, type a brief description of the policy\.
 
 1. Choose **Create policy**\.

@@ -4,7 +4,7 @@ The template feature in Amazon SES is based on the Handlebars template system\. 
 
 Handlebars includes additional features beyond those documented in this section\. For more information, see [Built\-In Helpers](http://handlebarsjs.com/builtin_helpers.html) at [handlebarsjs\.com](http://handlebarsjs.com)\.
 
-
+**Topics**
 + [Parsing Nested Attributes](#send-personalized-email-advanced-nested)
 + [Iterating Through Lists](#send-personalized-email-advanced-iterating)
 + [Using Basic Conditional Statements](#send-personalized-email-advanced-conditionals)

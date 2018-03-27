@@ -13,25 +13,15 @@ Building a large\-scale email solution is often a complex and costly challenge f
 ## Amazon SES and other AWS services<a name="ses-and-aws"></a>
 
 Amazon SES integrates seamlessly with other AWS products\. For example, you can:
-
 + Add email capabilities to any application that runs on an [Amazon Elastic Compute Cloud \(Amazon EC2\)](https://aws.amazon.com/ec2/) instance by using the [AWS SDKs](https://aws.amazon.com/tools/) or the Amazon SES API\. If you want to send email through Amazon SES from an Amazon EC2 instance, you can get started with Amazon SES for [free](https://aws.amazon.com/ses/pricing/)\.
-
 + Use [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) to create an email\-enabled application such as a program that uses Amazon SES to send a newsletter to customers\.
-
 + Set up [Amazon Simple Notification Service \(Amazon SNS\)](https://aws.amazon.com/sns/) to notify you of your emails that bounced, produced a complaint, or were successfully delivered to the recipient's mail server\. When you use Amazon SES to receive emails, your email content can be published to Amazon SNS topics\.
-
 + Use the AWS Management Console to set up Easy DKIM, which is a way to authenticate your emails\. Although you can use Easy DKIM with any DNS provider, it is especially easy to set up when you manage your domain with [Route 53](https://aws.amazon.com/route53/)\.
-
 + Control user access to your email sending by using [AWS Identity and Access Management \(IAM\)](https://aws.amazon.com/iam/)\.
-
 + Store emails you receive in [Amazon Simple Storage Service \(Amazon S3\)](https://aws.amazon.com/s3/)\.
-
 + Take action on your received emails by triggering [AWS Lambda](https://aws.amazon.com/lambda/) functions\.
-
 + Use [AWS Key Management Service \(AWS KMS\)](https://aws.amazon.com/kms/) to optionally encrypt the mail you receive in your Amazon S3 bucket\.
-
 + Use [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) to log Amazon SES API calls that you make using the console or the Amazon SES API\.
-
 + Publish your email sending events to [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) or [Amazon Kinesis Firehose](https://aws.amazon.com/firehose/)\. If you publish your email sending events to Kinesis Firehose, you can access them in [Amazon Redshift](https://aws.amazon.com/redshift/), [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/), or [Amazon S3](https://aws.amazon.com/s3/)\.
 
 ## In this guide<a name="in-this-guide"></a>

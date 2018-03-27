@@ -31,11 +31,8 @@ When applied to an Amazon S3 bucket, the following policy gives Amazon SES permi
 ## Give Amazon SES Permission to Use Your AWS KMS Master Key<a name="receiving-email-permissions-kms"></a>
 
 For Amazon SES to encrypt your emails, it must have permission to use the AWS KMS key that you specified when you set up your receipt rule\. You can either use the default master key \(**aws/ses**\) in your account or a custom master key you create\. If you use the default master key, you don't need to perform any steps to give Amazon SES permission to use it\. If you use a custom master key, you need to give Amazon SES permission to use it by adding a statement to the key's policy\. The policy statement includes conditions that are designed to ensure that Amazon SES can only use your custom master key when certain values are present in the request to AWS KMS; specifically:
-
 + `aws:ses:source-account—`The AWS account ID on behalf of which Amazon SES received the email\.
-
 + `aws:ses:message-id—`The Amazon SES message ID of the received email\.
-
 + `aws:ses:rule-name—`The name of the receipt rule that was used to encrypt the email\.
 
 Paste the following policy statement into the key policy to permit Amazon SES to use your custom master key when Amazon SES receives email on behalf of your AWS account\. Replace `AWSACCOUNTID` with your 12\-digit AWS account ID\.

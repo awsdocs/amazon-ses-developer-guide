@@ -3,19 +3,12 @@
 This section provides examples of each type of email sending event record that Amazon SES publishes to Kinesis Firehose\.
 
 The event types are as follows:
-
 + [Bounce Record](#event-publishing-retrieving-firehose-bounce)
-
 + [Complaint Record](#event-publishing-retrieving-firehose-complaint)
-
 + [Delivery Record](#event-publishing-retrieving-firehose-delivery)
-
 + [Send Email Record](#event-publishing-retrieving-firehose-send)
-
 + [Reject Event Record](#event-publishing-retrieving-firehose-reject)
-
 + [Open Event Record](#event-publishing-retrieving-firehose-open)
-
 + [Click Event Record](#event-publishing-retrieving-firehose-click)
 
 ## Bounce Record<a name="event-publishing-retrieving-firehose-bounce"></a>
