@@ -31,11 +31,11 @@ If you are having problems sending email through the Amazon SES Simple Mail Tran
 + **You are integrating Amazon SES with Sendmail or Postfix, and your server cannot authenticate because the hostname does not match\.**
 
   If you completed the procedures in [Integrating Amazon SES with Your Existing Email Server](send-email-smtp-existing-server.md), but you receive an authentication error stating that the hostname does not match, complete the appropriate troubleshooting steps for your mail server:
-  + **If you use Sendmail** – After you complete step 2 of [Integrating Amazon SES with Sendmail](sendmail.md), add one of the following lines to `/etc/mail/authinfo`, replacing `USERNAME` and `PASSWORD` with your SMTP user name and password\.  
+  + **If you use Sendmail** – After you complete step 2 of [Integrating Amazon SES with Sendmail](send-email-sendmail.md), add one of the following lines to `/etc/mail/authinfo`, replacing `USERNAME` and `PASSWORD` with your SMTP user name and password\.  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/smtp-issues.html)
 
-    After you complete step 5 of [Integrating Amazon SES with Sendmail](sendmail.md), add one of the following lines to `/etc/mail/access`:  
+    After you complete step 5 of [Integrating Amazon SES with Sendmail](send-email-sendmail.md), add one of the following lines to `/etc/mail/access`:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/smtp-issues.html)
   + **If you use Postfix** – In part 2 of [Integrating Amazon SES with Postfix](postfix.md), before you encrypt the file , add one of the following lines to `/etc/postfix/sasl_passwd`, replacing `USERNAME` and `PASSWORD` with your SMTP user name and password\.  

@@ -25,7 +25,7 @@ If you plan to use an HTTPS subdomain, follow the procedures in [Option 2: Confi
 
 1. Verify the subdomain for use with Amazon SES\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
 
-1. Modify the DNS record for the subdomain\. In the DNS record, add a new `CNAME` record that redirects requests to the Amazon SES tracking domain\. The address that you redirect to depends on the AWS Region that you use Amazon SES in\. The following table contains a list of tracking domains for the AWS Regions where Amazon SES is available\.    
+1. Modify the DNS record for the subdomain\. In the DNS record, add a new CNAME record that redirects requests to the Amazon SES tracking domain\. The address that you redirect to depends on the AWS Region that you use Amazon SES in\. The following table contains a list of tracking domains for the AWS Regions where Amazon SES is available\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html)
 **Note**  
 Depending on your web hosting provider, it may take several minutes for the changes you make to the subdomain's DNS record to take effect\. Your web hosting provider or IT organization can provide additional information about these delays\.
@@ -59,7 +59,9 @@ If you plan to use an HTTPS domain for handling open and click links, you must p
 
    If you use a CDN other than CloudFront, you may need to complete similar steps\. For more information, refer to the documentation for your CDN\.
 
-1. In the DNS configuration for your subdomain, add a `CNAME` record that refers to the address of your CDN\.
+1. If you use Route 53 to manage the DNS configuration for your domain and CloudFront as your CDN, create an Alias record in Route 53 that refers to your CloudFront distribution \(such as *d111111abcdef8\.cloudfront\.net*\)\. For more information, see [Creating Records by Using the Amazon Route 53 Console](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) in the *Amazon Route 53 Developer Guide*\.
+
+   Otherwise, in the DNS configuration for your subdomain, add a CNAME record that refers to the address of your CDN\.
 
 1. Acquire an SSL certificate from a trusted Certificate Authority\. The certificate should cover both the subdomain you created in step 1 as well as the CDN you configured in steps 3–5\. Upload the certificate to the CDN\.
 

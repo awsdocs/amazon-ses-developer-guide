@@ -1,21 +1,21 @@
 # Step 5: View the Received Email<a name="receiving-email-getting-started-view"></a>
 
-1. In the upper left of the AWS Management Console, choose the AWS icon, and then, under **Storage & Content Delivery**, choose **S3**\.  
-![\[\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Find the email you received with Amazon SES\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_receiving_s3_1.png)
+After you send a test message to an address on your domain, you can retrieve it from your Amazon S3 bucket and view its contents\.
 
-1. In the Amazon S3 console, choose the bucket that you created when you set up Amazon SES email receiving earlier in this tutorial\.  
-![\[\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Find the email you received with Amazon SES\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_receiving_s3_2.png)
+**To view a message that you received through Amazon SES**
 
-1. In the bucket, find the received email\. The name of the email will be an alphanumeric string\. The bucket will also contain an item with the name AMAZON\_SES\_SETUP\_NOTIFICATION, which you can ignore\.  
-![\[\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Find the email you received with Amazon SES\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_receiving_s3_3.png)
+1. Open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
 
-1. To download the email to your computer, choose the box to the left of the email, and then choose **Download** from the menu\.  
-![\[\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Find the email you received with Amazon SES\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/getting_started_receiving_s3_4.png)
+1. In the Amazon S3 console, choose the bucket you created in [Step 3: Set up a Receipt Rule](receiving-email-getting-started-receipt-rule.md)\.
 
-1. Open the email in a text editor\. The email will be in a raw format, which is typically [Multipurpose Internet Mail Extensions \(MIME\)](http://tools.ietf.org/html/rfc2045)\. To decode MIME, you must use your own application\.
+1. In the Amazon S3 bucket, find the email you received\. The name of the email is a unique string of letters and numbers\.
+**Note**  
+The bucket may also contain a file named `AMAZON_SES_SETUP_NOTIFICATION`\. You can ignore or delete this file\.
+
+1. Select the check box next to the name of the file\. On the **Actions** menu, choose **Download**\.
+
+1. Open the folder on your computer that contains the file you downloaded in the preceding step\. There are several ways to view the downloaded message, including the following:
+   + Open the file in a text editor and read its contents directly\. Depending on the method you used to send the email, part of the message may be encoded\. If part of the message is encoded, you'll need to decode them manually \(for example, by using a base64 decoder\)\. 
+   + Add the \.eml extension to the end of the file name, and then open the file using an email client such as Microsoft Outlook or Mozilla Thunderbird\. Most email clients will automatically decode the encoded parts of a message, and will display things like HTML formatting and file attachments\.
 
 Next step: [Step 6: Clean Up](receiving-email-getting-started-clean.md)

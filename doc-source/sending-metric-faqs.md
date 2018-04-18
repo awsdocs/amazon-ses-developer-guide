@@ -114,3 +114,9 @@ These tags are passed through to your event publishing destination so that you c
 Tracking links use the same protocol as the original links in your email\.
 
 For example, if your email includes a link to `https://www.amazon.com`, the link is replaced with a tracking link that uses the HTTPS protocol\. If your email includes a link to `http://www.example.com`, the link is replaced with a tracking link that uses HTTP\. If your email includes both of the previously mentioned links, the HTTPS link is replaced with a tracking link that uses the HTTPS protocol, and the HTTP link is replaced with a tracking link that uses the HTTP protocol\.
+
+### Q7\. A link in my email isn't being tracked\. Why not?<a name="sending-metric-faqs-clicks-q7"></a>
+
+Amazon SES expects the links in your emails to contain properly encoded URLs\. Specifically, URLs in your links must comply with [RFC 3986](https://tools.ietf.org/html/rfc3986)\. If a link in an email isn't properly encoded, recipients will still see the link in the email, but Amazon SES won't track click events for that link\.
+
+Issues related to improper encoding typically occur in URLs that contain query strings\. For example, if the URL of a link in your email contains a non\-encoded space character in the query string \(such as the space between "John" and "Doe" in the following example: *http://www\.example\.com/path/to/page?name=John Doe*\), Amazon SES won't track that link\. However, if the URL uses an encoded space character instead \(such as "%20" in the following example: *http://www\.example\.com/path/to/page?name=John%20Doe*\), Amazon SES tracks it as expected\.

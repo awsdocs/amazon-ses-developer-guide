@@ -1,6 +1,8 @@
 # Creating a Receipt Rule Set for Amazon SES Email Receiving<a name="receiving-email-receipt-rule-set"></a>
 
-A receipt rule set is an ordered collection of receipt rules that specify what Amazon SES should do with mail it receives across all of your domains\. To use Amazon SES as your email receiver, you must create at least one receipt rule set for your account\. You can set up multiple receipt rule sets, but only one receipt rule set in each AWS region can be active at any given time\. For more information about the role of receipt rule sets in the email\-receiving process, see [Email\-Receiving Concepts](receiving-email-concepts.md)\.
+A receipt rule set is a collection of receipt rules that specify what Amazon SES should do with mail it receives across all of your domains\. To use Amazon SES as your email receiver, you must create a receipt rule set for your account\. For more information about the role of receipt rule sets in the email\-receiving process, see [Email\-Receiving Concepts](receiving-email-concepts.md)\.
+
+Only one receipt rule set can be active at a time\. However, you can create multiple receipt rule sets\. For example, it may be useful to have multiple receipt rule sets if you want to maintain a record of the receipt rules you used in the past, or if you need to change receipt rules rapidly for testing purposes\.
 
 **Note**  
 If you do not want to use Amazon SES as your email receiver, simply disable all of your receipt rule sets\. For information about how to disable receipt rule sets, see [Managing Receipt Rule Sets](receiving-email-managing-receipt-rule-sets.md)\.

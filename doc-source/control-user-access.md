@@ -69,6 +69,8 @@ For more information about these keys, see the [IAM User Guide](http://docs.aws.
 ## Example IAM Policies for Amazon SES<a name="iam-and-ses-examples"></a>
 
 This topic provides examples of policies that permit a user access to Amazon SES, but only under certain conditions\.
+
+**Topics**
 + [Allowing Full Access to All Amazon SES Actions](#iam-and-ses-examples-full-access)
 + [Allowing Access to Email\-Sending Actions Only](#iam-and-ses-examples-email-sending-actions)
 + [Restricting the Time Period of Sending](#iam-and-ses-examples-time-period)
@@ -82,15 +84,18 @@ This topic provides examples of policies that permit a user access to Amazon SES
 The following policy allows a user to call any Amazon SES action\.
 
 ```
-1. {
-2.     "Version": "2012-10-17",
-3.     "Statement":[{
-4.        "Effect": "Allow",
-5.        "Action": ["ses:*"],
-6.        "Resource":"*"
-7.        }
-8.     ]
-9.  }
+ 1. {
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
+ 4.     {
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:*"
+ 8.       ],
+ 9.       "Resource":"*"
+10.     }
+11.   ]
+12. }
 ```
 
 ### Allowing Access to Email\-Sending Actions Only<a name="iam-and-ses-examples-email-sending-actions"></a>
@@ -99,40 +104,46 @@ The following policy permits a user to send email using Amazon SES, but does not
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
  4.     {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendEmail", "ses:SendRawEmail"],
- 7.        "Resource":"*"
- 8.      }
- 9.     ]
-10.  }
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendEmail",
+ 8.         "ses:SendRawEmail"
+ 9.       ],
+10.       "Resource":"*"
+11.     }
+12.   ]
+13. }
 ```
 
 ### Restricting the Time Period of Sending<a name="iam-and-ses-examples-time-period"></a>
 
-The following policy permits a user to call Amazon SES email\-sending APIs only during the month of September 2015\.
+The following policy permits a user to call Amazon SES email\-sending APIs only during the month of September 2018\.
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
  4.     {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendEmail", "ses:SendRawEmail"],
- 7.        "Resource":"*",
- 8.        "Condition": {
- 9.           "DateGreaterThan": {
-10.             "aws:CurrentTime":"2015-08-31T12:00Z"
-11.            },
-12.           "DateLessThan": {
-13.             "aws:CurrentTime":"2015-10-01T12:00Z"
-14.           }
-15.        }
-16.      }
-17.     ]
-18.  }
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendEmail",
+ 8.         "ses:SendRawEmail"
+ 9.       ],
+10.       "Resource":"*",
+11.       "Condition":{
+12.         "DateGreaterThan":{
+13.           "aws:CurrentTime":"2018-08-31T12:00Z"
+14.         },
+15.         "DateLessThan":{
+16.           "aws:CurrentTime":"2018-10-01T12:00Z"
+17.         }
+18.       }
+19.     }
+20.   ]
+21. }
 ```
 
 ### Restricting the Recipient Addresses<a name="iam-and-ses-examples-recipients"></a>
@@ -141,20 +152,25 @@ The following policy permits a user to call the Amazon SES email\-sending APIs, 
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
- 4.      {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendEmail", "ses:SendRawEmail"],
- 7.        "Resource":"*",
- 8.            "Condition": {
- 9.              "ForAllValues:StringLike": {
-10.                "ses:Recipients": ["*@example.com"]
-11.              }
-12.          }
-13.        }
-14.     ]
-15.  }
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
+ 4.     {
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendEmail",
+ 8.         "ses:SendRawEmail"
+ 9.       ],
+10.       "Resource":"*",
+11.       "Condition":{
+12.         "ForAllValues:StringLike":{
+13.           "ses:Recipients":[
+14.             "*@example.com"
+15.           ]
+16.         }
+17.       }
+18.     }
+19.   ]
+20. }
 ```
 
 ### Restricting the "From" Address<a name="iam-and-ses-examples-from-address"></a>
@@ -163,40 +179,45 @@ The following policy permits a user to call the Amazon SES email\-sending APIs, 
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
- 4.      {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendEmail", "ses:SendRawEmail"],
- 7.        "Resource":"*",
- 8.            "Condition": {
- 9.              "StringEquals": {
-10.                "ses:FromAddress": "marketing@example.com"
-11.              }
-12.          }
-13.        }
-14.     ] 
-15. }
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
+ 4.     {
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendEmail",
+ 8.         "ses:SendRawEmail"
+ 9.       ],
+10.       "Resource":"*",
+11.       "Condition":{
+12.         "StringEquals":{
+13.           "ses:FromAddress":"marketing@example.com"
+14.         }
+15.       }
+16.     }
+17.   ]
+18. }
 ```
 
 The following policy permits a user to call the [SendBounce](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html) API, but only if the "From" address is *bounce@example\.com*\. 
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
- 4.      {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendBounce"],
- 7.        "Resource":"*",
- 8.            "Condition": {
- 9.              "StringEquals": {
-10.                "ses:FromAddress": "bounce@example.com"
-11.              }
-12.          }
-13.        }
-14.     ] 
-15. }
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
+ 4.     {
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendBounce"
+ 8.       ],
+ 9.       "Resource":"*",
+10.       "Condition":{
+11.         "StringEquals":{
+12.           "ses:FromAddress":"bounce@example.com"
+13.         }
+14.       }
+15.     }
+16.   ]
+17. }
 ```
 
 ### Restricting the Display Name of the Email Sender<a name="iam-and-ses-examples-display-name"></a>
@@ -205,20 +226,23 @@ The following policy permits a user to call the Amazon SES email\-sending APIs, 
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
- 4.      {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendEmail", "ses:SendRawEmail"],
- 7.        "Resource":"*",
- 8.            "Condition": {
- 9.              "StringLike": {
-10.                "ses:FromDisplayName": "Marketing"
-11.              }
-12.          }
-13.        }
-14.     ]
-15.  }
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
+ 4.     {
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendEmail",
+ 8.         "ses:SendRawEmail"
+ 9.       ],
+10.       "Resource":"*",
+11.       "Condition":{
+12.         "StringLike":{
+13.           "ses:FromDisplayName":"Marketing"
+14.         }
+15.       }
+16.     }
+17.   ]
+18. }
 ```
 
 ### Restricting the Destination of Bounce and Complaint Feedback<a name="iam-and-ses-examples-feedback"></a>
@@ -227,20 +251,23 @@ The following policy permits a user to call the Amazon SES email\-sending APIs, 
 
 ```
  1. {
- 2.     "Version": "2012-10-17",
- 3.     "Statement": [
- 4.      {
- 5.        "Effect": "Allow",
- 6.        "Action": ["ses:SendEmail", "ses:SendRawEmail"],
- 7.        "Resource":"*",
- 8.        "Condition": {
- 9.          "StringEquals": {
-10.            "ses:FeedbackAddress": "feedback@example.com"
-11.           }
-12.         }
-13.      }
-14.     ]
-15.  }
+ 2.   "Version":"2012-10-17",
+ 3.   "Statement":[
+ 4.     {
+ 5.       "Effect":"Allow",
+ 6.       "Action":[
+ 7.         "ses:SendEmail",
+ 8.         "ses:SendRawEmail"
+ 9.       ],
+10.       "Resource":"*",
+11.       "Condition":{
+12.         "StringEquals":{
+13.           "ses:FeedbackAddress":"feedback@example.com"
+14.         }
+15.       }
+16.     }
+17.   ]
+18. }
 ```
 
 

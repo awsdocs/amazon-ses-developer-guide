@@ -41,11 +41,11 @@ You should do the following:
 
 ### Q6\. What's an appeal?<a name="pr-q6"></a>
 
-An appeal is when you reply to a probation or suspension notification \(or email *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\) and provide the specific information we need to determine whether we can remove the probation or suspension\. For a list of information to provide, see [Q7\. How do I submit an appeal?](#pr-q7)\.
+An appeal is when you send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account and provide the specific information we need in order to determine whether we can resolve the issue\.
 
 ### Q7\. How do I submit an appeal?<a name="pr-q7"></a>
 
-Reply to the probation notification\. If you can't find the probation notification, send your appeal to *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\. In your appeal, you should explain in as much detail as possible the following three things:
+To submit an appeal, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your appeal, provide the following information:
 + An explanation of how and why you think the problem occurred\.
 + A list of changes you've already made to address the issue \(not the changes you plan to make\)\.
 + An explanation of why you believe these changes will prevent the problem from happening again\.
@@ -111,11 +111,11 @@ You should do the following:
 
 ### Q6\. What's an appeal?<a name="sp-q6"></a>
 
-An appeal is when you reply to a probation or suspension notification \(or email *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\) and provide the specific information we need to determine whether we can remove the probation or suspension\. For a list of information to provide, see [Q7\. How do I submit an appeal?](#sp-q7)\.
+An appeal is when you send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account and provide the specific information we need in order to determine whether we can resolve the enforcement issue\. For a list of information to provide, see [Q7\. How do I submit an appeal?](#pr-q7)\.
 
 ### Q7\. How do I submit an appeal?<a name="sp-q7"></a>
 
-Just reply to the suspension notification\. If you can't find the suspension notification, send your appeal to *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\. In your appeal, you should explain in as much detail as possible the following three things:
+To submit an appeal, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your appeal, explain in as much detail as possible the following three things:
 + An explanation of how and why you think the problem occurred\.
 + A list of changes you've already made to address the issue \(not changes you plan to make\)\.
 + An explanation of why you believe these changes will prevent the problem from happening again\.
@@ -194,7 +194,7 @@ First, be sure that you're aware of your bounces \(see [Q7\. How can I find out 
 + Use double opt\-in to sign up new users\. That is, when a new users sign up, send them a confirmation email that they need to click before receiving any additional mail\. This prevents people from signing up other people as well as accidental sign\-ups\.
 + If you must send to addresses that you haven't mailed lately \(and thus you can't be confident that the addresses are still valid\), do so only with a small portion of your overall sending\. For more information, see our blog post [ Never send to old addresses, but what if you have to?](https://aws.amazon.com//blogs/ses/never-send-to-old-addresses-but-what-if-you-have-to/)\. 
 + Ensure that you're not structuring sign\-ups to encourage people to use fictional addresses\. For example, don't provide any added value or benefits until recipients verify their addresses\.
-+ If you have an "email a friend" feature, use CAPTCHA or a similar mechanism to discourage automated use of the feature, and don't allow users to insert arbitrary content\. For more information about CAPTCHA, see [http://www\.captcha\.net/](http://www.captcha.net/)\. 
++ If you have an "email a friend" feature, use CAPTCHA or a similar mechanism to discourage automated use of the feature, and don't allow users to insert arbitrary content\.
 + If you're using Amazon SES for system notifications, ensure that you're sending the notifications to real addresses that can receive mail\. Also consider turning off notifications that you don't need\.
 + If you're testing a new system, be sure you're either sending to real addresses that can receive email, or you're using the Amazon SES mailbox simulator\. For more information, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\. 
 
@@ -299,9 +299,9 @@ To protect the identities of the recipients who complained, we can't provide cop
 
 #### Q6\. I have received a probation notice for direct recipient complaints\. What should I do?<a name="cm-direct-q6"></a>
 
-Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. Once you've completed these steps, reply to the probation notice\. In your reply, provide details about the changes that you've made in order to resolve the issue\. 
+Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. Once you've completed these steps, submit an appeal\. In your appeal, provide details about the changes that you've made in order to resolve the issue\. 
 
-If you don't reply to the original probation notice within three weeks, and we're still receiving direct recipient complaints, we will suspend your account\.
+If you don't submit an appeal within three weeks, and we're still receiving direct recipient complaints, we will suspend your account\.
 
 ### Amazon SES Complaints Through Email Providers FAQ<a name="cm-email-provider"></a>
 
@@ -331,7 +331,7 @@ No\. Email providers typically don't provide an example email\.
 
 Fix your system so that your mailing list only includes recipients who have specifically signed up to receive your mail, and ensure that the email content itself is something your recipients actually want\. Then, please email us with the details of your changes so that we can start the process of re\-evaluating your case\. 
 
-If you don't reply to the original probation notice within three weeks, and we're still receiving complaints from providers, we will suspend your account\.
+If you don't submit an appeal within three weeks, and we're still receiving complaints from providers, we will suspend your account\.
 
 ## Amazon SES Spamtrap FAQ<a name="e-faq-st"></a>
 
@@ -411,4 +411,4 @@ Generally, we believe the situation is correctable if you have a history of good
 
 ### Q6\. What if I can't find the source of the problem?<a name="mi-q6"></a>
 
-You can respond to the notification \(or email *ses\-enforcement@amazon\.com* from the email address associated with your AWS account\) and request a sample of the mail that caused the issue\.
+You can send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account and request a sample of the mail that caused the issue\.

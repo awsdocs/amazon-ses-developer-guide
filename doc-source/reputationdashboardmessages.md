@@ -49,19 +49,19 @@ Most email providers interpret a high bounce rate as a sign that a sender is not
 
 If you have not done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email Program Success Metrics](success-metrics.md)\.
 
-Next, determine which email addresses are bouncing, and create and implement a plan for reducing or eliminating these bounces\. If your account has already been shut down, contact us at the email address shown in the email you received from the Amazon SES Enforcement team to request a list of recent complaints\.
+Next, determine which email addresses are bouncing, and create and implement a plan for reducing or eliminating these bounces\. If your account has already been shut down, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) to request a list of recent complaints\.
 
 ### If your account is on probation<a name="reputationdashboard-bounce-probation"></a>
 
 If, at the end of your probation period, the bounce rate for your account remains above 10%, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. In your email, describe the changes you implemented\. If we agree that the changes will reduce your bounce rate, we will adjust our calculations to only consider bounces received after your changes were implemented\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your email, describe the changes you implemented\. If we agree that the changes will reduce your bounce rate, we will adjust our calculations to only consider bounces received after your changes were implemented\.
 
 ### If your account is suspended<a name="reputationdashboard-bounce-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Complaint Rate Notification<a name="reputationdashboard-complaint"></a>
 
@@ -79,7 +79,7 @@ Most email providers interpret a high complaint rate as a sign that a sender is 
 
 If you have not done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email Program Success Metrics](success-metrics.md)\.
 
-Next, determine which messages you are sending that result in complaints, and implement a plan for reducing these complaints\. If your account has already been shut down, contact us at the address shown in the email you received from the Amazon SES Enforcement team to request a list of recent complaints\.
+Next, determine which messages you are sending that result in complaints, and implement a plan for reducing these complaints\. If your account has already been shut down, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) to request a list of recent complaints\.
 
 While you should immediately stop sending to addresses that have complained, it is important that you identify the factors that are causing recipients to issue complaints\. After you identify these factors, adjust your email sending behaviors to address them\.
 
@@ -87,13 +87,13 @@ While you should immediately stop sending to addresses that have complained, it 
 
 If, at the end of your probation period, the complaint rate for your account remains above 0\.5%, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. In your email, describe the changes you implemented\. If we agree that the changes will reduce your complaint rate, we will adjust our calculations to only consider complaints received after your changes were implemented\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your email, describe the changes you implemented\. If we agree that the changes will reduce your complaint rate, we will adjust our calculations to only consider complaints received after your changes were implemented\.
 
 ### If your account is suspended<a name="reputationdashboard-complaint-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Anti\-Spam Organization Notification<a name="reputationdashboard-antispamorg"></a>
 
@@ -113,13 +113,13 @@ To resolve this issue, you need to determine what aspects of your email sending 
 
 If, at the end of your probation period, the anti\-spam organization is still flagging your messages as problematic, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the anti\-spam organization notifications we have received after you implemented your changes\. If, at the end of this extended probation period, your account is no longer listed by the anti\-spam organization, we may remove the probation from your account\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the anti\-spam organization notifications we have received after you implemented your changes\. If, at the end of this extended probation period, your account is no longer listed by the anti\-spam organization, we may remove the probation from your account\.
 
 ### If your account is suspended<a name="reputationdashboard-antispamorg-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Direct Feedback Notification<a name="reputationdashboard-directfeedback"></a>
 
@@ -143,13 +143,13 @@ Additionally, you should purge your lists of addresses that have not interacted 
 
 If, at the end of your probation period, Amazon SES is still receiving a significant volume of direct complaints about messages sent from your account, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the amount of direct feedback we received after you implemented your changes\. At the end of this extended probation period, if the amount of direct feedback has been reduced or eliminated, we may remove the probation from your account\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the amount of direct feedback we received after you implemented your changes\. At the end of this extended probation period, if the amount of direct feedback has been reduced or eliminated, we may remove the probation from your account\.
 
 ### If your account is suspended<a name="reputationdashboard-directfeedback-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Domain Blocklist Notification<a name="reputationdashboard-domainblocklist"></a>
 
@@ -171,13 +171,13 @@ Amazon SES is not affiliated with the Spamhaus Domain Blocklist, and makes no gu
 
 If, at the end of your probation period, a significant portion of the email you send through Amazon SES still contains references to domains on the block list, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of blocklisted domains present in your email after you put your changes in place\. At the end of this extended probation period, if the amount of domain blocklist notifications has been reduced or eliminated, we may remove the probation from your account\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of blocklisted domains present in your email after you put your changes in place\. At the end of this extended probation period, if the amount of domain blocklist notifications has been reduced or eliminated, we may remove the probation from your account\.
 
 ### If your account is suspended<a name="reputationdashboard-domainblocklist-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Internal Review Notification<a name="reputationdashboard-internalreview"></a>
 
@@ -215,7 +215,7 @@ Amazon SES is not affiliated with the Spamhaus Domain Blocklist, and makes no gu
 
 ### If your account is on probation or suspended<a name="reputationdashboard-internalreview-probation-suspended"></a>
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 If, after your probation or shutdown is listed, we detect the issue again, your account may be subject to an additional probation or shutdown\. Repeated incidents may lead to your Amazon SES account being permanently disabled\. 
 
@@ -239,13 +239,13 @@ To resolve this issue, you need to determine which aspects of your email sending
 
 If, at the end of your probation period, the mailbox provider is still flagging your email as being problematic, we may suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of mailbox provider notifications we receive after you implement your changes\. At the end of this extended probation period, if the mailbox provider no longer reports your account as being problematic, we may remove the probation from your account\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of mailbox provider notifications we receive after you implement your changes\. At the end of this extended probation period, if the mailbox provider no longer reports your account as being problematic, we may remove the probation from your account\.
 
 ### If your account is suspended<a name="reputationdashboard-mailboxprovider-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Recipient Feedback Notification<a name="reputationdashboard-recipientfeedback"></a>
 
@@ -271,13 +271,13 @@ Additionally, you should purge your lists of addresses that have not interacted 
 
 If, at the end of your probation period, the mailbox provider still reports a significant number of complaints, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of mailbox provider complaints that we receive after you implement your changes\. At the end of this extended probation period, if the number of mailbox provider complaints has been reduced or eliminated, we may remove the probation from your account\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of mailbox provider complaints that we receive after you implement your changes\. At the end of this extended probation period, if the number of mailbox provider complaints has been reduced or eliminated, we may remove the probation from your account\.
 
 ### If your account is suspended<a name="reputationdashboard-recipientfeedback-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Related Account Notification<a name="reputationdashboard-relatedaccount"></a>
 
@@ -291,7 +291,7 @@ We have detected serious problems related to emails sent from another Amazon SES
 
 The related account should have received an email describing the issues that caused it to be suspended\. Address the issues with the related account first\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. If we agree with your assessment, we may lift the probation or suspension on your account\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. If we agree with your assessment, we may lift the probation or suspension on your account\.
 
 ## Spamtrap Notification<a name="reputationdashboard-spamtrap"></a>
 
@@ -315,13 +315,13 @@ Additionally, you should purge your lists of addresses that have not interacted 
 
 If, at the end of your probation period, messages sent from your account are still being sent to spamtrap addresses, we will suspend your Amazon SES account\.
 
-If you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of spamtrap reports we receive after you implement your changes\. At the end of this extended probation period, if the number of spamtrap reports has been reduced or eliminated, we may remove the probation from your account\.
+If you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the probation period to ensure that we are only analyzing the number of spamtrap reports we receive after you implement your changes\. At the end of this extended probation period, if the number of spamtrap reports has been reduced or eliminated, we may remove the probation from your account\.
 
 ### If your account is suspended<a name="reputationdashboard-spamtrap-suspended"></a>
 
 You can appeal this suspension; see the [Enforcement FAQ](e-faq.md#sp-q6) for more information\.
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 ## Vulnerable Site Notification<a name="reputationdashboard-vulnerablesite"></a>
 
@@ -335,13 +335,13 @@ Most often in these situations, a third party is abusing a feature of your websi
 
 ### What you can do to resolve the issue<a name="reputationdashboard-vulnerablesite-whattodo"></a>
 
-First, identify features of your website or applications that may allow third parties to send emails using Amazon SES without your knowledge\. Contact us at the email address shown in the email you received from the Amazon SES Enforcement team to receive a sample of the email messages we believe were sent in this manner\.
+First, identify features of your website or applications that may allow third parties to send emails using Amazon SES without your knowledge\. To request a sample of the messages we believe were sent in this manner, email us at [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com)\.
 
 Next, modify your application or website to prevent unsolicited sending\. For example, add a CAPTCHA, limit the rate at which emails can be sent, remove the ability of users to submit custom content, require users to log in to send email, and remove the ability for the application to generate multiple simultaneous notifications\.
 
 ### If your account is on probation or suspended<a name="reputationdashboard-vulnerablesite-probation-suspended"></a>
 
-When you have implemented changes that you believe will resolve the issue, please email us at the address shown in the email you received from the Amazon SES Enforcement team\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue does not occur again\. We will consider your appeal and change the status of your account if necessary\.
 
 If, after your probation or shutdown is listed, we detect the issue again, your account may be subject to an additional probation or shutdown\. Repeated incidents may lead to your Amazon SES account being permanently disabled\.
 
@@ -357,4 +357,4 @@ An automatic or human review has identified issues that are not listed in the pr
 
 ### What you can do to resolve the issue<a name="reputationdashboard-other-whattodo"></a>
 
-Refer to the email you received from the Amazon SES Enforcement team for details on the specific issue\. If possible, address this issue and reply to the ticket with the steps you have taken to address the issue\. Depending on your specific situation and the nature of the issues we discovered, we may lift your probation or suspension\.
+Refer to the email you received from the Amazon SES Enforcement team for details on the specific issue\. If possible, address this issue and send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. In your email, describe the changes you implemented\. Depending on your specific situation and the nature of the issues we discovered, we may lift your probation or suspension\.

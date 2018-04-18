@@ -12,27 +12,27 @@ The following code example shows how to use the [JavaMail](https://javaee.github
 This code example assumes you have installed the AWS SDK for Java, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
 ```
-  1. import java.io.ByteArrayOutputStream;
-  2. import java.io.IOException;
-  3. import java.io.PrintStream;
-  4. import java.nio.ByteBuffer;
-  5. import java.util.Properties;
-  6. 
-  7. // JavaMail libraries. Download the JavaMail API from 
-  8. // https://javaee.github.io/javamail. After you download the jar file, 
-  9. // include it in the build path for your project. 
- 10. import javax.activation.DataHandler;
- 11. import javax.activation.DataSource;
- 12. import javax.activation.FileDataSource;
- 13. import javax.mail.Message;
- 14. import javax.mail.MessagingException;
- 15. import javax.mail.Session;
- 16. import javax.mail.internet.AddressException;
- 17. import javax.mail.internet.InternetAddress;
- 18. import javax.mail.internet.MimeBodyPart;
- 19. import javax.mail.internet.MimeMessage;
- 20. import javax.mail.internet.MimeMultipart;
- 21. import javax.mail.internet.MimeUtility;
+  1. package com.amazonaws.samples;
+  2. 
+  3. import java.io.ByteArrayOutputStream;
+  4. import java.io.IOException;
+  5. import java.io.PrintStream;
+  6. import java.nio.ByteBuffer;
+  7. import java.util.Properties;
+  8. 
+  9. // JavaMail libraries. Download the JavaMail API 
+ 10. // from https://javaee.github.io/javamail/
+ 11. import javax.activation.DataHandler;
+ 12. import javax.activation.DataSource;
+ 13. import javax.activation.FileDataSource;
+ 14. import javax.mail.Message;
+ 15. import javax.mail.MessagingException;
+ 16. import javax.mail.Session;
+ 17. import javax.mail.internet.AddressException;
+ 18. import javax.mail.internet.InternetAddress;
+ 19. import javax.mail.internet.MimeBodyPart;
+ 20. import javax.mail.internet.MimeMessage;
+ 21. import javax.mail.internet.MimeMultipart;
  22. 
  23. // AWS SDK libraries. Download the AWS SDK for Java 
  24. // from https://aws.amazon.com/sdk-for-java
@@ -44,139 +44,129 @@ This code example assumes you have installed the AWS SDK for Java, and that you 
  30. 
  31. public class AmazonSESSample {
  32. 
- 33.     // Replace sender@example.com with your "From" address.
- 34.     // This address must be verified with Amazon SES.
- 35.     private static String SENDER = "Sender Name <sender@example.com>";
+ 33. 	// Replace sender@example.com with your "From" address.
+ 34. 	// This address must be verified with Amazon SES.
+ 35. 	private static String SENDER = "Sender Name <sender@example.com>";
  36. 
- 37.     // Replace recipient@example.com with a "To" address. If your account 
- 38.     // is still in the sandbox, this address must be verified.
- 39.     private static String RECIPIENT = "recipient@example.com";
+ 37. 	// Replace recipient@example.com with a "To" address. If your account 
+ 38. 	// is still in the sandbox, this address must be verified.
+ 39. 	private static String RECIPIENT = "recipient@example.com";
  40. 
- 41.     // Specify a configuration set. If you do not want to use a configuration
- 42.     // set, comment the following variable, and the 
- 43.     // ConfigurationSetName=CONFIGURATION_SET argument below.
- 44.     private static String CONFIGURATION_SET = "ConfigSet";
+ 41. 	// Specify a configuration set. If you do not want to use a configuration
+ 42. 	// set, comment the following variable, and the 
+ 43. 	// ConfigurationSetName=CONFIGURATION_SET argument below.
+ 44. 	private static String CONFIGURATION_SET = "ConfigSet";
  45. 
- 46.     // The subject line for the email.
- 47.     private static String SUBJECT = "Customer service contact info";
+ 46. 	// The subject line for the email.
+ 47. 	private static String SUBJECT = "Customer service contact info";
  48. 
- 49.     // The full path to the file that will be attached to the email.
- 50.     // If you are using Windows, escape backslashes as shown in this variable.
- 51.     private static String ATTACHMENT = "C:\\Users\\sender\\customers-to-contact.xlsx";
+ 49. 	// The full path to the file that will be attached to the email.
+ 50. 	// If you're using Windows, escape backslashes as shown in this variable.
+ 51. 	private static String ATTACHMENT = "C:\\Users\\sender\\customers-to-contact.xlsx";
  52. 
- 53.     // The email body for recipients with non-HTML email clients.
- 54.     private static String BODY_TEXT = "Hello,\r\n"
- 55.                                     + "Please see the attached file for a list "
- 56.                                     + "of customers to contact.";
+ 53. 	// The email body for recipients with non-HTML email clients.
+ 54. 	private static String BODY_TEXT = "Hello,\r\n"
+ 55.                                         + "Please see the attached file for a list "
+ 56.                                         + "of customers to contact.";
  57. 
- 58.     // The HTML body of the email.
- 59.     private static String BODY_HTML = "<html>"
- 60.                                     + "<head></head>"
- 61.                                     + "<body>"
- 62.                                     + "<h1>Hello!</h1>"
- 63.                                     + "<p>Please see the attached file for a "
- 64.                                     + "list of customers to contact.</p>"
- 65.                                     + "</body>"
- 66.                                     + "</html>";
+ 58. 	// The HTML body of the email.
+ 59. 	private static String BODY_HTML = "<html>"
+ 60.                                         + "<head></head>"
+ 61.                                         + "<body>"
+ 62.                                         + "<h1>Hello!</h1>"
+ 63.                                         + "<p>Please see the attached file for a "
+ 64.                                         + "list of customers to contact.</p>"
+ 65.                                         + "</body>"
+ 66.                                         + "</html>";
  67. 
  68.     public static void main(String[] args) throws AddressException, MessagingException, IOException {
- 69.         
- 70.         String DefaultCharSet = MimeUtility.getDefaultJavaCharset();
+ 69.             	
+ 70.     	Session session = Session.getDefaultInstance(new Properties());
  71.         
- 72.         Session session = Session.getDefaultInstance(new Properties());
- 73.         
- 74.         // Create a new MimeMessage object.
- 75.         MimeMessage message = new MimeMessage(session);
- 76.         
- 77.         // Add subject, from and to lines.
- 78.         message.setSubject(SUBJECT, "UTF-8");
- 79.         message.setFrom(new InternetAddress(SENDER));
- 80.         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECIPIENT));
- 81. 
- 82.         // Create a multipart/alternative child container.
- 83.         MimeMultipart msg_body = new MimeMultipart("alternative");
- 84.         
- 85.         // Create a wrapper for the HTML and text parts.        
- 86.         MimeBodyPart wrap = new MimeBodyPart();
- 87.         
- 88.         // Define the text part.
- 89.         MimeBodyPart textPart = new MimeBodyPart();
- 90.         // Encode the text content and set the character encoding. This step is
- 91.         // necessary if you're sending a message with characters outside the
- 92.         // ASCII range.
- 93.         textPart.setContent(MimeUtility
- 94.                 .encodeText(BODY_TEXT,DefaultCharSet,"B"), "text/plain; charset=UTF-8");
- 95.         textPart.setHeader("Content-Transfer-Encoding", "base64");
- 96.         
- 97.         // Define the HTML part.
- 98.         MimeBodyPart htmlPart = new MimeBodyPart();
- 99.         // Encode the HTML content and set the character encoding.
-100.         htmlPart.setContent(MimeUtility
-101.                 .encodeText(BODY_HTML,DefaultCharSet,"B"),"text/html; charset=UTF-8");
-102.         htmlPart.setHeader("Content-Transfer-Encoding", "base64");
+ 72.         // Create a new MimeMessage object.
+ 73.         MimeMessage message = new MimeMessage(session);
+ 74.         
+ 75.         // Add subject, from and to lines.
+ 76.         message.setSubject(SUBJECT, "UTF-8");
+ 77.         message.setFrom(new InternetAddress(SENDER));
+ 78.         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(RECIPIENT));
+ 79. 
+ 80.         // Create a multipart/alternative child container.
+ 81.         MimeMultipart msg_body = new MimeMultipart("alternative");
+ 82.         
+ 83.         // Create a wrapper for the HTML and text parts.        
+ 84.         MimeBodyPart wrap = new MimeBodyPart();
+ 85.         
+ 86.         // Define the text part.
+ 87.         MimeBodyPart textPart = new MimeBodyPart();
+ 88.         textPart.setContent(BODY_TEXT, "text/plain; charset=UTF-8");
+ 89.                 
+ 90.         // Define the HTML part.
+ 91.         MimeBodyPart htmlPart = new MimeBodyPart();
+ 92.         htmlPart.setContent(BODY_HTML,"text/html; charset=UTF-8");
+ 93.                 
+ 94.         // Add the text and HTML parts to the child container.
+ 95.         msg_body.addBodyPart(textPart);
+ 96.         msg_body.addBodyPart(htmlPart);
+ 97.         
+ 98.         // Add the child container to the wrapper object.
+ 99.         wrap.setContent(msg_body);
+100.         
+101.         // Create a multipart/mixed parent container.
+102.         MimeMultipart msg = new MimeMultipart("mixed");
 103.         
-104.         // Add the text and HTML parts to the child container.
-105.         msg_body.addBodyPart(textPart);
-106.         msg_body.addBodyPart(htmlPart);
-107.         
-108.         // Add the child container to the wrapper object.
-109.         wrap.setContent(msg_body);
-110.         
-111.         // Create a multipart/mixed parent container.
-112.         MimeMultipart msg = new MimeMultipart("mixed");
-113.         
-114.         // Add the parent container to the message.
-115.         message.setContent(msg);
-116.         
-117.         // Add the multipart/alternative part to the message.
-118.         msg.addBodyPart(wrap);
-119.         
-120.         // Define the attachment
-121.         MimeBodyPart att = new MimeBodyPart();
-122.         DataSource fds = new FileDataSource(ATTACHMENT);
-123.         att.setDataHandler(new DataHandler(fds));
-124.         att.setFileName(fds.getName());
-125.         
-126.         // Add the attachment to the message.
-127.         msg.addBodyPart(att);
-128. 
-129.         // Try to send the email.
-130.         try {
-131.             System.out.println("Attempting to send an email through Amazon SES "
-132.                               +"using the AWS SDK for Java...");
-133. 
-134.             // Instantiate an Amazon SES client, which will make the service 
-135.             // call with the supplied AWS credentials.
-136.             AmazonSimpleEmailService client = 
-137.                     AmazonSimpleEmailServiceClientBuilder.standard()
-138.                     // Replace US_WEST_2 with the AWS Region you're using for
-139.                     // Amazon SES.
-140.                     .withRegion(Regions.US_WEST_2).build();
-141.             
-142.             // Print the raw email content on the console
-143.             PrintStream out = System.out;
-144.             message.writeTo(out);
-145. 
-146.             // Send the email.
-147.             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-148.             message.writeTo(outputStream);
-149.             RawMessage rawMessage = 
-150.                     new RawMessage(ByteBuffer.wrap(outputStream.toByteArray()));
-151. 
-152.             SendRawEmailRequest rawEmailRequest = 
-153.                     new SendRawEmailRequest(rawMessage)
-154.                         .withConfigurationSetName(CONFIGURATION_SET);
-155.             
-156.             client.sendRawEmail(rawEmailRequest);
-157.             System.out.println("Email sent!");
-158.         // Display an error if something goes wrong.
-159.         } catch (Exception ex) {
-160.           System.out.println("Email Failed");
-161.             System.err.println("Error message: " + ex.getMessage());
-162.             ex.printStackTrace();
-163.         }
-164.     }
-165. }
+104.         // Add the parent container to the message.
+105.         message.setContent(msg);
+106.         
+107.         // Add the multipart/alternative part to the message.
+108.         msg.addBodyPart(wrap);
+109.         
+110.         // Define the attachment
+111.         MimeBodyPart att = new MimeBodyPart();
+112.         DataSource fds = new FileDataSource(ATTACHMENT);
+113.         att.setDataHandler(new DataHandler(fds));
+114.         att.setFileName(fds.getName());
+115.         
+116.         // Add the attachment to the message.
+117.         msg.addBodyPart(att);
+118. 
+119.         // Try to send the email.
+120.         try {
+121.             System.out.println("Attempting to send an email through Amazon SES "
+122.                               +"using the AWS SDK for Java...");
+123. 
+124.             // Instantiate an Amazon SES client, which will make the service 
+125.             // call with the supplied AWS credentials.
+126.             AmazonSimpleEmailService client = 
+127.                     AmazonSimpleEmailServiceClientBuilder.standard()
+128.                     // Replace US_WEST_2 with the AWS Region you're using for
+129.                     // Amazon SES.
+130.                     .withRegion(Regions.US_WEST_2).build();
+131.             
+132.             // Print the raw email content on the console
+133.             PrintStream out = System.out;
+134.             message.writeTo(out);
+135. 
+136.             // Send the email.
+137.             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+138.             message.writeTo(outputStream);
+139.             RawMessage rawMessage = 
+140.             		new RawMessage(ByteBuffer.wrap(outputStream.toByteArray()));
+141. 
+142.             SendRawEmailRequest rawEmailRequest = 
+143.             		new SendRawEmailRequest(rawMessage)
+144.             		    .withConfigurationSetName(CONFIGURATION_SET);
+145.             
+146.             client.sendRawEmail(rawEmailRequest);
+147.             System.out.println("Email sent!");
+148.         // Display an error if something goes wrong.
+149.         } catch (Exception ex) {
+150.           System.out.println("Email Failed");
+151.             System.err.println("Error message: " + ex.getMessage());
+152.             ex.printStackTrace();
+153.         }
+154.     }
+155. }
 ```
 
 ------
