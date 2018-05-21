@@ -27,7 +27,7 @@ These instructions assume that you want to use Amazon SES in the US West \(Orego
       ```
       1. ses_smtp:
       2. driver = smtp
-      3. port = 25
+      3. port = 587
       4. hosts_require_auth = *
       5. hosts_require_tls = *
       ```
