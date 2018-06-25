@@ -1,11 +1,11 @@
 # Using Delegate Sender Notifications for Amazon SES Sending Authorization<a name="sending-authorization-delegate-sender-tasks-notifications"></a>
 
-As a delegate sender, you can set up Amazon Simple Notification Service \(Amazon SNS\) notifications to inform you of bounces, complaints, and deliveries\. The format and content of these notifications are described in [Amazon SES Notifications Through Amazon SNS](notifications-via-sns.md)\. Only the identity owner has the option to receive notifications by email feedback forwarding as described in [Amazon SES Notifications Through Email](notifications-via-email.md)\.
+As the delegate sender, bounces and complaints count toward *your* bounce and complaint metrics, not those of the identity owner\. High bounce and complaint rates put your account at risk of being shut down, so it's important that you set up notifications and have a process in place to monitor the notifications and remove recipient addresses that have bounced or complained from your mailing lists\.
 
-**Important**  
-As the delegate sender, bounces and complaints count toward *your* bounce and complaint metrics, not those of the identity owner\. High bounce and complaint rates put your account at risk of being shut down, so ensure that you set up notifications and have a process in place to monitor the notifications and remove recipient addresses that have bounced or complained from your mailing list\. 
+Delegate senders can set up Amazon SES to send notifications when bounce and complaint events occur\. Delegate senders can also set up [event publishing](monitor-using-event-publishing.md) to publish bounce and complaint notifications to Amazon SNS or Kinesis Data Firehose\.
 
-You will be charged standard Amazon SNS rates for bounce, complaint, and delivery notifications\. For more information, see the [Amazon SNS pricing page](https://aws.amazon.com/sns/pricing)\.
+**Note**  
+If you set up Amazon SES to send notifications by using Amazon SNS, you're charged standard Amazon SNS rates for the notifications you receive\. For more information, see the [Amazon SNS pricing page](https://aws.amazon.com/sns/pricing)\.
 
 **Topics**
 + [Setting Up an Amazon SES Cross\-Account Identity Notification Configuration](#sending-authorization-delegate-sender-tasks-management-add)
@@ -25,21 +25,19 @@ The following procedure shows you how to set up notifications by using the Amazo
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the left navigation pane, choose **Cross\-Account Notifications**\.
+1. In the navigation pane, choose **Cross\-Account Notifications**\.
 
 1. Choose **Add Notification Config**\.
 
-1. In the **Edit Notification Configuration** dialog box, enter the ARN of the identity that the identity owner has authorized you to use, and for which you want to configure notifications\. The identity cannot belong to the account that is currently logged in\. If you want to configure notifications for your own identities, see [Configuring Amazon SNS Notifications for Amazon SES](configure-sns-notifications.md)\.
+1. On the **Add Notification Configuration** dialog box, for **Identity ARN**, type the ARN of the identity that you want to configure notifications for\. The identity can't belong to the account that you're currently logged in to\.
 
-1. Specify the existing Amazon SNS topics that you want to use for bounces, complaints, or deliveries, or create a new Amazon SNS topic\.
+1. Select the Amazon SNS topics that you want to use for bounces, complaints, or deliveries\. You can also create new Amazon SNS topics for these notifications\.
 **Important**  
-The Amazon SNS topics that you use for Amazon SES notifications must be within the same AWS Region in which you are using Amazon SES\.
+The Amazon SNS topics that you use for Amazon SES notifications must be in the same AWS Region that you use for sending email using Amazon SES\.
 
    You can choose to publish bounce, complaint, and delivery notifications to the same Amazon SNS topic or to different Amazon SNS topics\. If you want to use an Amazon SNS topic that you do not own, then the owner of that topic must configure an Amazon SNS access policy that allows your account to call the `SNS:Publish` action on their topic\. For information about how to control access to your Amazon SNS topic through the use of IAM policies, see [Managing Access to Your Amazon SNS Topics](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage.html)\.
 
 1. Choose **Save Config** to save your notification configuration\. There may be a brief delay before these changes take effect\.
-
-   After you have configured your settings, you will receive bounce, complaint, or delivery notifications for the Amazon SNS topic\. These notifications follow the structure described in [Amazon SNS Notification Contents for Amazon SES](notification-contents.md)\. 
 
 ## Editing an Amazon SES Cross\-Account Notification Configuration<a name="sending-authorization-delegate-sender-tasks-management-edit"></a>
 
@@ -58,8 +56,6 @@ The following procedure shows you how to edit a cross\-account notification conf
 1. Choose the ARN of the identity for which you want to view the notification configuration\.
 
 1. Edit the notification settings, and then choose **Save Config**\.
-**Note**  
-Setting all notifications to **No SNS Topic** is the equivalent of removing the identity's notification configuration entirely\. In this case, the ARN of the cross\-account identity is removed from the list of cross\-account identity ARNs in the Amazon SES console\. This does not mean that you cannot continue to send for that identity; it just means that you are no longer set up to receive bounce, complaint, or delivery notifications for it\. If you want to re\-enable notifications, you must repeat the notification setup procedure described in [Setting Up a Notification Configuration](#sending-authorization-delegate-sender-tasks-management-add)\.
 
 ## Viewing Your Amazon SES Cross\-Account Identity Notifications<a name="sending-authorization-delegate-sender-tasks-management-list"></a>
 

@@ -24,7 +24,7 @@ To create a custom verification email, use the `CreateCustomVerificationEmailTem
 | Attribute | Description | 
 | --- | --- | 
 | TemplateName | The name of the template\. The name you specify must be unique\. | 
-| FromEmailAddress | The email address that the verification email is sent from\. The address or domain you specify must be verified for use with your Amazon SES account\. | 
+| FromEmailAddress | The email address that the verification email is sent from\. The address or domain you specify must be verified for use with your Amazon SES account\. The `FromEmailAddress` attribute doesn't support display names \(also known as "friendly from" names\)\.  | 
 | TemplateSubject | The subject line of the verification email\. | 
 | TemplateContent | The body of the email\. The email body can contain HTML, with certain limitations\. For more information, see [Custom Verification Email Frequently Asked Questions](#custom-verification-emails-faq)\. | 
 | SuccessRedirectionURL | The URL that users are sent to if their email addresses are successfully verified\. | 

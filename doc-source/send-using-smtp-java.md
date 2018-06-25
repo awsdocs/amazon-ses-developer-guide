@@ -5,7 +5,7 @@ This example uses the [Eclipse IDE](http://www.eclipse.org/) and the [JavaMail A
 Before you perform the following procedure, complete the setup tasks described in [Before You Begin with Amazon SES](before-you-begin.md) and [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)\.
 
 **Important**  
-In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\.
+In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
 
 **To send an email using the Amazon SES SMTP interface with Java**
 

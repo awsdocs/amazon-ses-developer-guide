@@ -22,6 +22,6 @@ For information about connecting to the Amazon SES SMTP interface using these me
 
 ## Amazon SES to Receiver<a name="security-ses-to-receiver"></a>
 
-Amazon SES sends messages over a TLS\-protected connection \(TLS version 1\.0 only\) by default\. This method, called *opportunistic TLS*, means that when Amazon SES establishes an SMTP connection with a receiving mail server, Amazon SES upgrades the connection using the STARTTLS protocol if the receiving mail server supports TLS\. If the receiving server does not advertise STARTTLS or if TLS negotiation fails, the connection proceeds in plaintext\. 
+Amazon SES sends messages over a TLS\-protected connection by default\. This method, called *opportunistic TLS*, means that when Amazon SES establishes an SMTP connection with a receiving mail server, Amazon SES upgrades the connection using the STARTTLS protocol if the receiving mail server supports TLS\. If the receiving server does not advertise STARTTLS or if TLS negotiation fails, the connection proceeds in plaintext\. Amazon SES supports TLS 1\.2, TLS 1\.1 and TLS 1\.0 for opportunistic TLS connections\.
 
-Amazon SES supports opportunistic TLS in all regions and you don't need to take any action to enable it\.
+Amazon SES supports opportunistic TLS in all AWS Regions\. You don't need to take any action to enable it\.

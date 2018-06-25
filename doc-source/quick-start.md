@@ -36,7 +36,7 @@ To be able to send emails to unverified email addresses and to raise the number 
 For more information about the sandbox restrictions and how to apply to move out of the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
 
 ## Next steps<a name="quick-start-next-steps"></a>
-+ After you send a few test emails to yourself, use the Amazon SES mailbox simulator for further testing because emails to the mailbox simulator do not count towards your sending quota or your bounce and complaint rates\. For more information on the mailbox simulator, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\.
++ After you send a few test emails to yourself, use the Amazon SES mailbox simulator for further testing because emails to the mailbox simulator do not count towards your sending quota or your bounce and complaint rates\. For more information on the mailbox simulator, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
 + Monitor your sending activity, such as the number of emails that you have sent and the number that have bounced or received complaints\. For more information, see [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md)\.
 + Verify entire domains so that you can send email from any email address in your domain without verifying addresses individually\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
 + Increase the chance that your emails will be delivered to your recipients' inboxes instead of junk boxes by authenticating your emails\. For more information, see [Authenticating Your Email in Amazon SES](authentication.md)\.
@@ -46,4 +46,4 @@ For more information about the sandbox restrictions and how to apply to move out
 
 |  | 
 | --- |
-| For technical discussions about various Amazon SES topics, visit the [Amazon SES Blog](https://aws.amazon.com//blogs/ses/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 
+| For information and discussions about a variety of topics related to Amazon SES, visit the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

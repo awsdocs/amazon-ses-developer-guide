@@ -3,7 +3,7 @@
 The easiest way to send an email with Amazon SES is to use the Amazon SES console\. Because the console requires you to manually enter information, you typically only use it to send test emails\. After you get started with Amazon SES, you will most likely send your emails using either the Amazon SES SMTP interface or API, but the console is useful for monitoring your sending activity\.
 
 **Important**  
-In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\.
+In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
 
 Before you follow these steps, make sure you review the setup instructions in [Before You Begin with Amazon SES](before-you-begin.md)\.
 

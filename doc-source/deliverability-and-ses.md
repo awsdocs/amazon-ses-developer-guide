@@ -38,7 +38,7 @@ One of the biggest issues with email on the Internet is unsolicited bulk email, 
 
 Unfortunately, it's possible for a spammer to falsify an email header and spoof the originating email address so that it appears as though the email originated from a different source\. To maintain trust between ISPs and Amazon SES, Amazon SES needs to ensure that its senders are who they say they are\. You are therefore required to verify all email addresses from which you send emails through Amazon SES to protect your sending identity\. You can verify email addresses by using the Amazon SES console or by using the Amazon SES API\. You can also verify entire domains\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md) and [Verifying Domains in Amazon SES](verify-domains.md)\.
 
-If your account is still in the Amazon SES sandbox, you also need to verify all recipient addresses except for addresses provided by the Amazon SES mailbox simulator\. For information about getting out of the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. For more information about the mailbox simulator, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\.
+If your account is still in the Amazon SES sandbox, you also need to verify all recipient addresses except for addresses provided by the Amazon SES mailbox simulator\. For information about getting out of the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. For more information about the mailbox simulator, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
 
 ### Authentication<a name="authentication-concept"></a>
 
@@ -62,7 +62,7 @@ Amazon SES also scans all messages for viruses\. If a message contains a virus, 
 
 When it comes to email sending, *reputation*—a measure of confidence that an IP address, email address, or sending domain is not the source of spam—is important\. Amazon SES maintains a strong reputation with ISPs so that ISPs deliver your emails to your recipients' inboxes\. Similarly, you need to maintain a trusted reputation with Amazon SES\. You build your reputation with Amazon SES by sending high\-quality content\. When you send high\-quality content, your reputation becomes more trusted over time and Amazon SES increases your sending limits\. Excessive bounces and complaints negatively impact your reputation and can cause Amazon SES to lower your sending limits or terminate your Amazon SES account\.
 
-One way to help maintain your reputation is to use the mailbox simulator when you test your system, instead of sending to email addresses that you have created yourself\. Emails to the mailbox simulator do not count toward your bounce and complaint metrics\. For more information about the mailbox simulator, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\.
+One way to help maintain your reputation is to use the mailbox simulator when you test your system, instead of sending to email addresses that you have created yourself\. Emails to the mailbox simulator do not count toward your bounce and complaint metrics\. For more information about the mailbox simulator, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
 
 ### High\-Quality Email<a name="high-quality-email"></a>
 

@@ -359,7 +359,7 @@ The following code example shows how to use the [Python email\.mime](https://doc
  97.     print(e.response['Error']['Message'])
  98. else:
  99.     print("Email sent! Message ID:"),
-100.     print(response['ResponseMetadata']['RequestId'])
+100.     print(response['MessageId'])
 ```
 
 ------

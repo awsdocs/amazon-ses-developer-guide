@@ -1,14 +1,19 @@
 # Amazon SES Notifications Through Email<a name="notifications-via-email"></a>
 
-Amazon SES can notify you of your bounces and complaints through email using a process called *email feedback forwarding* or through [Amazon Simple Notification Service \(Amazon SNS\)](https://aws.amazon.com/sns)\. This topic is about receiving notifications by email, which is the default setting\. For information about setting up notifications through Amazon SNS, see [Amazon SES Notifications Through Amazon SNS](notifications-via-sns.md)\. Unlike bounce and complaint notifications, delivery notifications are available only through Amazon SNS\.
+Amazon SES can send you email when you receive bounces and complaints by using a process called *email feedback forwarding*\.
+
+In order to send email using Amazon SES, you must configure it to send bounce and complaint notifications by using one of the following methods:
++ By enabling email feedback forwarding\. The procedure for setting up this type of notification is included in this section\.
++ By sending notifications to an Amazon SNS topic\. For more information, see [Amazon SES Notifications Through Amazon SNS](notifications-via-sns.md)\.
++ By publishing event notifications\. For more information, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\.
 
 **Important**  
 For several important points about notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-using-notifications.md)\.
 
-The following sections describe how to receive bounce and complaint notifications through email:
-+ To enable bounce and complaint notifications by email, see [Enabling Email Feedback Forwarding](#notifications-via-email-enabling)\.
-+ To disable bounce and complaint notifications by email, see [Disabling Email Feedback Forwarding](#notifications-via-email-disabling)\.
-+ To learn the email address to which bounce and complaint notifications are sent, see [Email Feedback Forwarding Destination](#notifications-via-email-destination)\.
+**Topics**
++ [Enabling Email Feedback Forwarding](#notifications-via-email-enabling)
++ [Disabling Email Feedback Forwarding](#notifications-via-email-disabling)
++ [Email Feedback Forwarding Destination](#notifications-via-email-destination)
 
 ## Enabling Email Feedback Forwarding<a name="notifications-via-email-enabling"></a>
 
@@ -20,7 +25,7 @@ Email feedback forwarding is enabled by default\. If you previously disabled it,
 
 1. In the navigation pane, under **Identity Management**, choose **Email Addresses** if you want to configure bounce and complaint notifications for an email address, or choose **Domains** if you want to configure bounce and complaint notifications for a domain\.
 
-1. In the list of verified senders, choose the email address or domain for which you want to configure bounce and complaint notifications\.
+1. In the list of verified email addresses or domains, choose the email address or domain that you want to configure bounce and complaint notifications for\.
 
 1. In the details pane, expand the **Notifications** section\.
 
@@ -28,13 +33,13 @@ Email feedback forwarding is enabled by default\. If you previously disabled it,
 
 1. Under **Email Feedback Forwarding**, choose **Enabled**\.
 **Note**  
-Changes made to your settings on this page might take a few minutes to take effect\.
+Changes you make on this page may take a few minutes to take effect\.
 
 You can also enable bounce and complaint notifications through email by using the [ SetIdentityFeedbackForwardingEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\.
 
 ## Disabling Email Feedback Forwarding<a name="notifications-via-email-disabling"></a>
 
-You must receive bounce and complaint notifications through either Amazon SNS or email feedback forwarding, so you can disable email feedback forwarding only if you select an Amazon SNS topic for both bounce and complaint notifications\. If you selected an Amazon SNS topic for bounces and complaints, you can disable email feedback forwarding by using the following procedure\.
+If you set up a different method of providing bounce and complaint notifications, you can disable email feedback forwarding so that you don't receive multiple notifications when a bounce or complaint event occurs\.
 
 **To disable bounce and complaint forwarding through email using the Amazon SES console**
 
@@ -42,21 +47,21 @@ You must receive bounce and complaint notifications through either Amazon SNS or
 
 1. In the navigation pane, under **Identity Management**, choose **Email Addresses** if you want to configure bounce and complaint notifications for an email address, or choose **Domains** if you want to configure bounce and complaint notifications for a domain\.
 
-1. In the list of verified senders, choose the email address or domain for which you want to configure bounce and complaint notifications\.
+1. In the list of verified email addresses or domains, choose the email address or domain that you want to configure bounce and complaint notifications for\.
 
 1. In the details pane, expand the **Notifications** section\.
 
 1. Choose **Edit Configuration**\.
 
-1. In the Edit Notification Configuration dialog box, ensure that you have selected an Amazon SNS topic for both bounces and complaints\. Otherwise, you will not be able to disable email feedback forwarding in the next step\.
-
 1. Under **Email Feedback Forwarding**, choose **Disabled**\.
+**Note**  
+You must configure one method of receiving bounce and complaint notifications in order to send email through Amazon SES\. If you disable email feedback forwarding, you must enable notifications sent by Amazon SNS, or publish bounce and complaint events to an Amazon SNS topic or a Kinesis Data Firehose stream by using [event publishing](monitor-using-event-publishing.md)\. If you use event publishing, you must also apply the configuration set that contains the event publishing rule to each email you send\. If you don't set up a method of receiving bounce and complaint notifications, Amazon SES automatically forwards feedback notifications by email to the address in the Return\-Path field \(or the Source field, if you didn't specify a Return\-Path address\) of the message that resulted in the bounce or complaint event\. In this situation, Amazon SES forwards bounce and complaint notifications even if you disabled email feedback notifications\.
 
 1. Choose **Save Config** to save your notification configuration\.
 **Note**  
-Changes made to your settings on this page might take a few minutes to take effect\.
+Changes you make on this page might take a few minutes to take effect\.
 
-You can also disable bounce and complaint notifications through email by using the [ SetIdentityFeedbackForwardingEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\. 
+You can also disable bounce and complaint notifications through email by using the [SetIdentityFeedbackForwardingEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\. 
 
 ## Email Feedback Forwarding Destination<a name="notifications-via-email-destination"></a>
 

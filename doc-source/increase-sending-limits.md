@@ -19,6 +19,6 @@ For Amazon SES to increase your quota, use the following guidelines:
 + **Have low bounce and complaint rates**—Try to minimize the numbers of bounces and complaints\. Having high numbers of bounces and complaints can adversely affect your sending limits\.
 
 **Important**  
-Test emails that you send to your own email addresses may adversely affect your bounce and complaint metrics, or appear as low\-quality content to our filters\. Whenever possible, use the Amazon SES mailbox simulator to test your system\. Emails that are sent to the mailbox simulator do not count toward your sending metrics or your bounce and complaint rates\. For more information, see [Testing Amazon SES Email Sending](mailbox-simulator.md)\. 
+Test emails that you send to your own email addresses may adversely affect your bounce and complaint metrics, or appear as low\-quality content to our filters\. Whenever possible, use the Amazon SES mailbox simulator to test your system\. Emails that are sent to the mailbox simulator do not count toward your sending metrics or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\. 
 
 For information about opening an SES Sending Limits Increase case, see [Opening an SES Sending Limits Increase Case](submit-extended-access-request.md)\.

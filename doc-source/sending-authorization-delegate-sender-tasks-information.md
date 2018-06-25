@@ -8,7 +8,7 @@ As a delegate sender, you must provide the identity owner with your AWS account 
 
 1. In the navigation menu, choose your name, and then choose **My Account**\.
 
-1. Expand **Account Settings**\. Your AWS account ID is listed at the top of this section\.
+1. Expand **Account Settings**\. This section displays your AWS account ID\.
 
 **To find the ARN of an IAM user**
 
@@ -16,4 +16,4 @@ As a delegate sender, you must provide the identity owner with your AWS account 
 
 1. In the navigation pane, choose **Users**\.
 
-1. In the list of users, choose the user name\. The **Summary** section displays the ARN\. The ARN will resemble the following example: *arn:aws:iam::123456789012:user/John*\.
+1. In the list of users, choose the user name\. The **Summary** section displays the ARN\. The ARN resembles the following example: *arn:aws:iam::123456789012:user/John*\.

@@ -10,8 +10,8 @@ See the following sections for descriptions of the different types of objects:
 + [`delivery` object](#delivery-object)
 
 The following are some important notes about the contents of Amazon SNS notifications for Amazon SES:
-+ For a given notification type, you might receive one Amazon SNS notification for multiple recipients, or you might receive a single Amazon SNS notification per recipient\. Your code should be able to parse the Amazon SNS notification and handle both cases; Amazon SES does not make ordering or batching guarantees for notifications sent through Amazon SNS\. However, different Amazon SNS notification types \(for example, bounces and complaints\) will never be combined into a single notification\.
-+ You might receive multiple types of Amazon SNS notifications for one recipient\. For example, the receiving mail server might accept the email \(triggering a delivery notification\), but after processing the email, the receiving mail server might determine that the email actually results in a bounce \(triggering a bounce notification\)\. However, these will always be separate notifications because they are different notification types\.
++ For a given notification type, you might receive one Amazon SNS notification for multiple recipients, or you might receive a single Amazon SNS notification per recipient\. Your code should be able to parse the Amazon SNS notification and handle both cases; Amazon SES does not make ordering or batching guarantees for notifications sent through Amazon SNS\. However, different Amazon SNS notification types \(for example, bounces and complaints\) are never combined into a single notification\.
++ You might receive multiple types of Amazon SNS notifications for one recipient\. For example, the receiving mail server might accept the email \(triggering a delivery notification\), but after processing the email, the receiving mail server might determine that the email actually results in a bounce \(triggering a bounce notification\)\. However, these are always separate notifications because they are different notification types\.
 + Amazon SES reserves the right to add additional fields to the notifications\. As such, applications that parse these notifications must be flexible enough to handle unknown fields\.
 + Amazon SES overwrites the headers of the message when it sends the email\. You can retrieve the headers of the original message from the `headers` and `commonHeaders` fields of the `mail` object\.
 
@@ -106,7 +106,7 @@ The following is an example of a `mail` object that includes the original email 
 
 ## Bounce Object<a name="bounce-object"></a>
 
-The JSON object that contains information about bounces will always have the following fields\.
+The JSON object that contains information about bounces contains the following fields\.
 
 
 | Field Name | Description | 
@@ -117,14 +117,14 @@ The JSON object that contains information about bounces will always have the fol
 |  `timestamp`  |  The date and time at which the bounce was sent \(in ISO8601 format\)\. Note that this is the time at which the notification was sent by the ISP, and not the time at which it was received by Amazon SES\.  | 
 |  `feedbackId`  |  A unique ID for the bounce\.  | 
 
-If Amazon SES was able to contact the remote Message Transfer Authority \(MTA\), the following field will also be present\.
+If Amazon SES was able to contact the remote Message Transfer Authority \(MTA\), the following field is also present\.
 
 
 | Field Name | Description | 
 | --- | --- | 
 |  `remoteMtaIp`  |  The IP address of the MTA to which Amazon SES attempted to deliver the email\.  | 
 
-If a delivery status notification \(DSN\) was attached to the bounce, the following field may also be present\.
+If a delivery status notification \(DSN\) was attached to the bounce, the following field is also present\.
 
 
 | Field Name | Description | 
@@ -159,7 +159,7 @@ The following is an example of a `bounce` object\.
 
 ### Bounced Recipients<a name="bounced-recipients"></a>
 
-A bounce notification may pertain to a single recipient or to multiple recipients\. The `bouncedRecipients` field holds a list of objects—one per recipient to whom the bounce notification pertains—and will always contain the following field\.
+A bounce notification may pertain to a single recipient or to multiple recipients\. The `bouncedRecipients` field holds a list of objects—one per recipient to whom the bounce notification pertains—and always contains the following field\.
 
 
 | Field Name | Description | 
@@ -188,23 +188,28 @@ The following is an example of an object that might be in the `bouncedRecipients
 
 ### Bounce Types<a name="bounce-types"></a>
 
-The following bounce types are available\. We recommend that you remove the email addresses that have returned bounces marked `Permanent` from your mailing list, as we do not believe that you will be able to successfully send to them in the future\. `Transient` bounces are sent to you when all retry attempts have been exhausted and will no longer be retried\. You may be able to successfully resend to an address that initially resulted in a `Transient` bounce\.
+The bounce object contains a bounce type of `Undetermined`, `Permanent`, or `Transient`\. The `Permanent` and `Transient` bounce types can also contain one of several bounce subtypes\. 
+
+When you receive a bounce notification with a bounce type of `Transient`, you might be able to send email to that recipient in the future if the issue that caused the message to bounce is resolved\. 
+
+When you receive a bounce notification with a bounce type of `Permanent`, it's unlikely that you'll be able to send email to that recipient in the future\. For this reason, you should immediately remove the recipient whose address produced the bounce from your mailing lists\. 
 
 **Note**  
-Amazon SES only reports hard bounces and soft bounces that will no longer be retried by Amazon SES\. In other words, your recipient did not receive your email message, and Amazon SES will not try to resend it\.
+When a *soft bounce* \(a bounce related to a temporary issue, such as the recipient's inbox being full\) occurs, Amazon SES attempts to redeliver the email for a certain period of time\. At the end of that period of time, if Amazon SES still can't deliver the email, it stops trying\.  
+Amazon SES provides notifications for hard bounces, as well as for soft bounces that it stopped trying to deliver\.
 
 
 | bounceType | bounceSubType | Description | 
 | --- | --- | --- | 
-|  `Undetermined`  |  `Undetermined`  |  Amazon SES was unable to determine a specific bounce reason\.  | 
-|  `Permanent`  |  `General`  |  Amazon SES received a general hard bounce and recommends that you remove the recipient's email address from your mailing list\.  | 
-|  `Permanent`  |  `NoEmail`  |  Amazon SES received a permanent hard bounce because the target email address does not exist\. It is recommended that you remove that recipient from your mailing list\.  | 
-|  `Permanent`  |  `Suppressed`  |  Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address\. For information about how to remove an address from the suppression list, see [Removing an Email Address from the Amazon SES Suppression List](remove-from-suppression-list.md)\.  | 
-|  `Transient`  |  `General`  |  Amazon SES received a general bounce\. You may be able to successfully retry sending to that recipient in the future\.  | 
-|  `Transient`  |  `MailboxFull`  |  Amazon SES received a mailbox full bounce\. You may be able to successfully retry sending to that recipient in the future\.  | 
-|  `Transient`  |  `MessageTooLarge`  |  Amazon SES received a message too large bounce\. You may be able to successfully retry sending to that recipient if you reduce the message size\.  | 
-|  `Transient`  |  `ContentRejected`  |  Amazon SES received a content rejected bounce\. You may be able to successfully retry sending to that recipient if you change the message content\.  | 
-|  `Transient`  |  `AttachmentRejected`  |  Amazon SES received an attachment rejected bounce\. You may be able to successfully retry sending to that recipient if you remove or change the attachment\.  | 
+|  `Undetermined`  |  `Undetermined`  |  The recipient's email provider sent a bounce message\. The bounce message didn't contain enough information for Amazon SES to determine the reason for the bounce\. The bounce email, which was sent to the address in the Return\-Path header of the email that resulted in the bounce, might contain additional information about the issue that caused the email to bounce\.  | 
+|  `Permanent`  |  `General`  |  The recipient's email provider sent a hard bounce message, but didn't specify the reason for the hard bounce\.   When you receive this type of bounce notification, you should immediately remove the recipient's email address from your mailing list\. Sending messages to addresses that produce hard bounces can have a negative impact on your reputation as a sender\. If you continue sending email to addresses that produce hard bounces, we might pause your ability to send additional email\.   | 
+|  `Permanent`  |  `NoEmail`  |  The intended recipient's email provider sent a bounce message indicating that the email address doesn't exist\.  When you receive this type of bounce notification, you should immediately remove the recipient's email address from your mailing list\. Sending messages to addresses that don't exist can have a negative impact on your reputation as a sender\. If you continue sending email to addresses that don't exist, we might pause your ability to send additional email\.   | 
+|  `Permanent`  |  `Suppressed`  |  The recipient's email address is on the Amazon SES suppression list because it has a recent history of producing hard bounces\. For information about removing an address from the Amazon SES suppression list, see [Removing an Email Address from the Amazon SES Suppression List](remove-from-suppression-list.md)\.  | 
+|  `Transient`  |  `General`  |  The recipient's email provider sent a general bounce message\. You might be able to send a message to the same recipient in the future if the issue that caused the message to bounce is resolved\.  If you send an email to a recipient who has an active automatic response rule \(such as an "out of the office" message\), you might receive this type of notification\. Even though the response has a notification type of `Bounce`, Amazon SES doesn't count automatic responses when it calculates the bounce rate for your account\.   | 
+|  `Transient`  |  `MailboxFull`  |  The recipient's email provider sent a bounce message because the recipient's inbox was full\. You might be able to send to the same recipient in the future when the mailbox is no longer full\.  | 
+|  `Transient`  |  `MessageTooLarge`  |  The recipient's email provider sent a bounce message because message you sent was too large\. You might be able to send a message to the same recipient if you reduce the size of the message\.  | 
+|  `Transient`  |  `ContentRejected`  |  The recipient's email provider sent a bounce message because the message you sent contains content that the provider doesn't allow\. You might be able to send a message to the same recipient if you change the content of the message\.  | 
+|  `Transient`  |  `AttachmentRejected`  |  The recipient's email provider sent a bounce message because the message contained an unacceptable attachment\. For example, some email providers may reject messages with attachments of a certain file type, or messages with very large attachments\. You might be able to send a message to the same recipient if you remove or change the content of the attachment\.  | 
 
 ## Complaint Object<a name="complaint-object"></a>
 
@@ -214,8 +219,8 @@ The JSON object that contains information about complaints has the following fie
 | Field Name | Description | 
 | --- | --- | 
 |  `complainedRecipients`  |  A list that contains information about recipients that may have been responsible for the complaint\. For more information, see [Complained Recipients](#complained-recipients)\.  | 
-|  `timestamp`  |  The date and time at which the complaint was sent \(in ISO8601 format\)\. Note that this is the time at which the notification was sent by the ISP, and not the time at which it was received by Amazon SES\.  | 
-|  `feedbackId`  |  A unique ID for the complaint\.  | 
+|  `timestamp`  |  The date and time when the ISP sent the complaint notification, in ISO 8601 format\. The date and time in this field might not be the same as the date and time when Amazon SES received the notification\.   | 
+|  `feedbackId`  |  A unique ID associated with the complaint\.  | 
 
 Further, if a feedback report is attached to the complaint, the following fields may be present\.
 
@@ -245,10 +250,10 @@ The following is an example of a `complaint` object\.
 
 ### Complained Recipients<a name="complained-recipients"></a>
 
-The `complainedRecipients` field contains a list of recipients that may have submitted the complaint\. 
+The `complainedRecipients` field contains a list of recipients that may have submitted the complaint\. You should use this information to determine which recipient submitted the complaint, and then immediately remove that recipient your mailing lists\. 
 
 **Important**  
-Since most ISPs redact the email address of the recipient who submitted the complaint from their complaint notification, this list contains information about recipients who might have sent the complaint, based on the recipients of the original message and the ISP from which we received the complaint\. Amazon SES performs a lookup against the original message to determine this recipient list\.
+Most ISPs remove the email address of the recipient who submitted the complaint from their complaint notification\. For this reason, this list contains information about recipients who might have sent the complaint, based on the recipients of the original message and the ISP from which we received the complaint\. Amazon SES performs a lookup against the original message to determine this recipient list\.
 
 JSON objects in this list contain the following field\.
 
@@ -278,7 +283,7 @@ You may see the following complaint types in the `complaintFeedbackType` field a
 
 ## Delivery Object<a name="delivery-object"></a>
 
-The JSON object that contains information about deliveries will always have the following fields\.
+The JSON object that contains information about deliveries always has the following fields\.
 
 
 | Field Name | Description | 
@@ -286,7 +291,7 @@ The JSON object that contains information about deliveries will always have the 
 |  `timestamp`  |  The time Amazon SES delivered the email to the recipient's mail server \(in ISO8601 format\)\.  | 
 |  `processingTimeMillis`  |  The time in milliseconds between when Amazon SES accepted the request from the sender to passing the message to the recipient's mail server\.  | 
 |  `recipients`  |  A list of the intended recipients of the email to which the delivery notification applies\.  | 
-|  `smtpResponse`  |  The SMTP response message of the remote ISP that accepted the email from Amazon SES\. This message will vary by email, by receiving mail server, and by receiving ISP\.  | 
+|  `smtpResponse`  |  The SMTP response message of the remote ISP that accepted the email from Amazon SES\. This message varies by email, by receiving mail server, and by receiving ISP\.  | 
 |  `reportingMTA`  |  The host name of the Amazon SES mail server that sent the mail\.  | 
 |  `remoteMtaIp`  |  The IP address of the MTA to which Amazon SES delivered the email\.  | 
 

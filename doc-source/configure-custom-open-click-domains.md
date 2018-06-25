@@ -81,7 +81,7 @@ After you configure your domain to handle open and click tracking redirects, you
 
 1. In the list of configuration sets, select the box next to the configuration set you created in the previous step\. On the **Actions** menu, choose **Edit**\.
 
-1. On the **Event Destinations** tab, for **Add Destination**, choose an event destination type\. For more information about the options in this menu, see [Add an Event Destination](event-publishing-add-event-destination.md)\.
+1. On the **Event Destinations** tab, for **Add Destination**, choose an event destination type\. For more information about the options in this menu, see [Step 2: Add Event Destination](event-publishing-add-event-destination.md)\.
 
 1. For **Event types**, choose either **Click**, **Open**, or both, depending on the types of events you want to track\.
 
@@ -89,6 +89,6 @@ After you configure your domain to handle open and click tracking redirects, you
 
 1. For **Select a verified domain**, choose the domain that you want to use for open and click event tracking\. In the text field to the left of the menu, you can optionally specify a subdomain of the parent domain\. 
 
-1. Configure the remaining options as you normally would\. For more information about setting up event destinations, see [Add an Event Destination](event-publishing-add-event-destination.md)\.
+1. Configure the remaining options as you normally would\. For more information about setting up event destinations, see [Step 2: Add Event Destination](event-publishing-add-event-destination.md)\.
 
 1. Choose **Save**\.

@@ -9,7 +9,7 @@ This section contains FAQs on the following topics related to email sending metr
 
 ## General Questions<a name="sending-metric-faqs-general"></a>
 
-### Q1\. After an email is delivered, how long will Amazon SES continue to collect open and click metrics?<a name="sending-metric-faqs-general-q1"></a>
+### Q1\. After an email is delivered, how long does Amazon SES continue to collect open and click metrics?<a name="sending-metric-faqs-general-q1"></a>
 
 Amazon SES collects open and click metrics for 60 days after each email is sent\.
 
@@ -108,6 +108,9 @@ For example, assume you want to add the tags `product:book, genre:fiction, subge
 ```
 
 These tags are passed through to your event publishing destination so that you can perform additional analysis on the specific links that your users clicked\.
+
+**Note**  
+Link tags can include the numbers 0–9, the letters A–Z \(both uppercase and lowercase\), hyphens \(\-\), and underscores \(\_\)\.
 
 ### Q6\. Do tracked links use the HTTP or HTTPS protocol?<a name="sending-metric-faqs-clicks-q6"></a>
 

@@ -44,6 +44,8 @@ You can also use the `UpdateConfigurationSetEventDestination` API operation to c
 
 1. For **Value Source**, specify how Amazon SES will obtain the data that it passes to CloudWatch\. The following value sources are available:
    + **Message Tag** – Amazon SES retrieves the dimension name and value from a tag that you specify by using the `X-SES-MESSAGE-TAGS` header or the `Tags` API parameter\. For more information about using message tags, see [Step 3: Send Email Using Amazon SES Event Publishing](event-publishing-send-email.md)\.
+**Note**  
+Message tags can include the numbers 0–9, the letters A–Z \(both uppercase and lowercase\), hyphens \(\-\), and underscores \(\_\)\.
 
      You can also use the **Message Tag** value source to create dimensions based on Amazon SES auto\-tags\. To use an auto\-tag, type the complete name of the auto\-tag as the **Dimension Name**\. For example, to create a dimension based on the configuration set auto\-tag, use `ses:configuration-set` for the **Dimension Name**, and the name of the configuration set for the **Default Value**\. For a complete list of auto\-tags, see [How Event Publishing Works](monitor-using-event-publishing.md#event-publishing-how-works)\.
    + **Email Header** – Amazon SES retrieves the dimension name and value from a header in the email\.

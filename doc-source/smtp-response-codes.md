@@ -2,7 +2,7 @@
 
 This topic contains a list of SMTP response codes that are returned by Amazon SES\. The way in which errors are handled depends on the SMTP client that you use; some SMTP clients may not display error codes at all\.
 
-You should retry SMTP requests that receive 4xx errors\. In this case, to reduce the likelihood of generating duplicates, we recommend that you implement an exponential retry method with progressively longer waits \(5, 10, and 30 seconds\) between consecutive timeouts\. If the third retry call does not succeed, perform another set of retries after 20 minutes\. For an example implementation that uses an exponential retry policy with Amazon SES, see [How to handle a "Throttling \- Maximum sending rate exceeded" error ](https://aws.amazon.com//blogs/ses/how-to-handle-a-throttling-maximum-sending-rate-exceeded-error/) on the Amazon SES blog\.
+You should retry SMTP requests that receive 4xx errors\. In this case, to reduce the likelihood of generating duplicates, we recommend that you implement an exponential retry method with progressively longer waits \(5, 10, and 30 seconds\) between consecutive timeouts\. If the third retry call does not succeed, perform another set of retries after 20 minutes\. For an example implementation that uses an exponential retry policy with Amazon SES, see [How to handle a "Throttling \- Maximum sending rate exceeded" error ](https://aws.amazon.com//blogs/messaging-and-targeting/how-to-handle-a-throttling-maximum-sending-rate-exceeded-error/) on the Amazon SES blog\.
 
 **Note**  
 AWS SDKs implement retry logic [automatically](http://docs.aws.amazon.com/general/latest/gr/api-retries.html), although they use the HTTPS interface instead of SMTP\.

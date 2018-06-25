@@ -10,9 +10,9 @@ There are a few limits and other considerations when using these features:
 
 This section includes procedures for creating email templates and for sending personalized emails\.
 
-## Part 1: Set up Rendering Failure Event Notifications \(Optional\)<a name="send-personalized-email-set-up-notifications"></a>
+## Part 1: Set up Rendering Failure Event Notifications<a name="send-personalized-email-set-up-notifications"></a>
 
- If you send an email that contains invalid personalization content, Amazon SES may initially accept the message, but will not be able to deliver it\. For this reason, if you plan to send personalized email, you should configure Amazon SES to send Rendering Failure event notifications through Amazon SNS\. When you receive a Rendering Failure event notification, you can identify which message contained the invalid content, fix the issues, and send the message again\.
+ If you send an email that contains invalid personalization content, Amazon SES might accept the message, but won't be able to deliver it\. For this reason, if you plan to send personalized email, you should configure Amazon SES to send Rendering Failure event notifications through Amazon SNS\. When you receive a Rendering Failure event notification, you can identify which message contained the invalid content, fix the issues, and send the message again\.
 
 The procedure in this section is optional, but highly recommended\.
 
@@ -87,7 +87,7 @@ You can use the `SendTemplatedEmail` operation to send an email to a single dest
    + **Template** – The name of the template to apply to the email\.
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications \(Optional\)](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications](#send-personalized-email-set-up-notifications)\.
    + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendTemplatedEmail` operation, all recipients receive the same email\.
    + **TemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
 
@@ -151,7 +151,7 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
    + **Template** – The name of the template to apply to the email\.
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications \(Optional\)](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications](#send-personalized-email-set-up-notifications)\.
    + **Destinations** – An array that contains one or more Destinations\.
      + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendBulkTemplatedEmail` operation, all recipients within the same `Destination` object receive the same email\.
      + **ReplacementTemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.

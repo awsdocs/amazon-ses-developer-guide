@@ -5,10 +5,11 @@ Postfix is an alternative to the widely used Sendmail Message Transfer Agent \(M
 ## Prerequisites<a name="send-email-postfix-prereqs"></a>
 
 Before you complete the procedures in this section, you must perform the following tasks:
-+ Uninstall Sendmail, if it is already installed on your system\. The procedures for completing this step will vary depending on the operating system you use\.
-+ Install Postfix\. The procedures for completing this step will vary depending on the operating system you use\.
-+ Verify an email address or domain that you will use for sending email\. If your account is still in the sandbox, you must also verify all of the recipient addresses that you send to\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
-+ \(Optional\) If you are sending email through Amazon SES from an Amazon EC2 instance, you may need to assign an Elastic IP Address to your Amazon EC2 instance for the receiving ISP to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
++ Uninstall Sendmail, if it's already installed on your system\. The procedure for completing this step varies depending on the operating system you use\.
++ Install Postfix\. The procedure for completing this step varies depending on the operating system you use\.
++ Install a SASL authentication package\. The procedure for completing this step varies depending on the operating system you use\. For example, if you use a RedHat\-based system, you should install the `cyrus-sasl-plain` package\. If you use a Debian\- or Ubuntu\-based system, you should install the `libsasl2-modules` package\.
++ Verify an email address or domain to use for sending email\. If your account is still in the sandbox, you also have to verify every address that you plan to send email to\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
++ If you're sending email through Amazon SES from an Amazon EC2 instance, assign an Elastic IP Address to your Amazon EC2 instance for the receiving ISP to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
 
 ## Configuring Postfix<a name="send-email-postfix"></a>
 

@@ -11,6 +11,9 @@ The following code example shows how to use the [JavaMail](https://javaee.github
 
 This code example assumes you have installed the AWS SDK for Java, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
+**Important**  
+You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
+
 ```
   1. package com.amazonaws.samples;
   2. 
@@ -176,6 +179,9 @@ The following code example shows how to use the [PHPMailer](https://github.com/P
 
 This code example assumes that you have installed the [PHPMailer package](https://packagist.org/packages/phpmailer/phpmailer) using [Composer](https://getcomposer.org/)\. It also assumes that you have installed the AWS SDK for PHP, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
+**Important**  
+You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
+
 ```
  1. <?php
  2. require 'vendor/autoload.php';
@@ -269,6 +275,9 @@ This code example assumes that you have installed the [PHPMailer package](https:
 The following code example shows how to use the Python [email](https://docs.python.org/3/library/email.html) package and the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/sdk-for-python/) to compose and send a raw email that contains an HTML part, a text part, and an attachment\.
 
 This code example assumes that you have installed the AWS SDK for Python \(Boto\), and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+
+**Important**  
+You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
 
 ```
   1. import os
@@ -370,7 +379,7 @@ This code example assumes that you have installed the AWS SDK for Python \(Boto\
  97.     print(e.response['Error']['Message'])
  98. else:
  99.     print("Email sent! Message ID:"),
-100.     print(response['ResponseMetadata']['RequestId'])
+100.     print(response['MessageId'])
 ```
 
 ------
@@ -379,6 +388,9 @@ This code example assumes that you have installed the AWS SDK for Python \(Boto\
 The following code example shows how to use the Ruby [MIME](https://rubygems.org/gems/mime/versions/0.4.4) gem and the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/) to compose and send a raw email that contains an HTML part, a text part, and an attachment\.
 
 This code example assumes that you have installed the AWS SDK for Ruby and the MIME gem, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+
+**Important**  
+You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
 
 ```
  1. require 'base64'  #standard library

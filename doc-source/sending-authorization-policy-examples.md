@@ -1,11 +1,12 @@
 # Amazon SES Sending Authorization Policy Examples<a name="sending-authorization-policy-examples"></a>
 
-Sending authorization enables you to specify the fine\-grained conditions under which you allow delegate senders to send on your behalf\. The following examples show you how to write policies to control different aspects of sending:
+Sending authorization enables you to specify the fine\-grained conditions under which you allow delegate senders to send on your behalf\.
+
+**Topics**
 + [Specifying the Delegate Sender](#sending-authorization-policy-example-sender)
 + [Restricting the "From" Address](#sending-authorization-policy-example-from)
-+ [Restricting the Destination of Bounce and Complaint Feedback](#sending-authorization-policy-example-feedback)
 + [Restricting the Time at which the Delegate can Send Email](#sending-authorization-policy-example-time)
-+ [Restricting the Email\-Sending Action](#sending-authorization-policy-example-action)
++ [Restricting the Email Sending Action](#sending-authorization-policy-example-action)
 + [Restricting the Display Name of the Email Sender](#sending-authorization-policy-example-display-name)
 + [Using Multiple Statements](#sending-authorization-policy-example-multiple-statements)
 
@@ -126,40 +127,6 @@ If you use a verified domain, you may want to create a policy that only allows t
 25. }
 ```
 
-## Restricting the Destination of Bounce and Complaint Feedback<a name="sending-authorization-policy-example-feedback"></a>
-
-If a delegate sender is sending on your behalf and you want to ensure that bounce and complaint notifications are forwarded to you by email, you need to do two things: you must enable email feedback forwarding for the identity by using the procedure in [Amazon SES Notifications Through Email](notifications-via-email.md), and you must restrict the "Return Path" of the emails to an email address that you own by setting a condition on the *ses:FeedbackAddress* key\.
-
-The following sending authorization policy enables AWS account ID *123456789012* to send from the identity *example\.com* as long as the "Return Path" of the email is set to *feedback@example\.com*\.
-
-```
- 1. {
- 2.   "Id":"ExamplePolicy",
- 3.   "Version":"2012-10-17",
- 4.   "Statement":[
- 5.     {
- 6.       "Sid":"ControlReturnPath",
- 7.       "Effect":"Allow",
- 8.       "Resource":"arn:aws:ses:us-east-1:888888888888:identity/example.com",
- 9.       "Principal":{
-10.         "AWS":[
-11.           "123456789012"
-12.         ]
-13.       },
-14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
-17.       ],
-18.       "Condition":{
-19.         "StringEquals":{
-20.           "ses:FeedbackAddress":"feedback@example.com"
-21.         }
-22.       }
-23.     }
-24.   ]
-25. }
-```
-
 ## Restricting the Time at which the Delegate can Send Email<a name="sending-authorization-policy-example-time"></a>
 
 You can also configure your sender authorization policy so that a delegate sender can only send email at a certain time of day, or within a certain date range\. For example, if you plan to send an email campaign during the month of September 2018, you can use the following policy to limit the delegate's ability to send email to that month only\.
@@ -195,9 +162,9 @@ You can also configure your sender authorization policy so that a delegate sende
 28. }
 ```
 
-## Restricting the Email\-Sending Action<a name="sending-authorization-policy-example-action"></a>
+## Restricting the Email Sending Action<a name="sending-authorization-policy-example-action"></a>
 
-There are two actions that senders can use to send an email with Amazon SES: `SendEmail` and `SendRawEmail`, depending on how much control the sender wants over the format of the email\. Sending authorization policies enable you to restrict the delegate sender to one of those two actions\. However, many identity owners leave the details of the email\-sending calls up to the delegate sender by enabling both actions in their policies\.
+There are two actions that senders can use to send an email with Amazon SES: `SendEmail` and `SendRawEmail`, depending on how much control the sender wants over the format of the email\. Sending authorization policies enable you to restrict the delegate sender to one of those two actions\. However, many identity owners leave the details of the email sending calls up to the delegate sender by enabling both actions in their policies\.
 
 **Note**  
 If you want to enable the delegate sender to access Amazon SES through the SMTP interface, you must choose `SendRawEmail` at a minimum\.

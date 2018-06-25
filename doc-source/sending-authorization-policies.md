@@ -4,7 +4,7 @@ To enable another AWS account, Identity Access and Management \(IAM\) user, or A
 
 Policies can be simple or can be configured to provide fine\-grained control\. For example, if you owned *example\.com*, you could write a simple policy to grant AWS ID 123456789012 permission to send from that domain\. A more detailed policy could specify that AWS ID 123456789012 can send email only from *user@example\.com* and only within a specified date range\.
 
-Amazon SES sending authorization policies apply to email\-sending APIs \(`SendEmail` and `SendRawEmail`\) only\. They do not enable a user to access your AWS account in any other way\.
+Amazon SES sending authorization policies apply to email sending APIs \(`SendEmail` and `SendRawEmail`\) only\. They do not enable a user to access your AWS account in any other way\.
 
 **Note**  
 You cannot create Identity Policies that allow delegate senders to use the `SendTemplatedEmail` or `SendBulkTemplatedEmail` operations\.
@@ -59,8 +59,8 @@ There are two policy\-wide elements: `Id` and `Version`\. The following table pr
 
 |  Name  |  Description  |  Required  |  Valid Values  | 
 | --- | --- | --- | --- | 
-|  `Id`  |  Uniquely identifies the policy\.  |  No\.  |  Any string  | 
-|  `Version`  |  Specifies the policy access language version\.  |  No, but as a best practice, we recommend that you include this field with a value of "2012\-10\-17"\.  |  Any string  | 
+|   `Id`   |  Uniquely identifies the policy\.  |  No\.  |  Any string  | 
+|   `Version`   |  Specifies the policy access language version\.  |  No, but as a best practice, we recommend that you include this field with a value of "2012\-10\-17"\.  |  Any string  | 
 
 ### Statements Specific to the Policy<a name="sending-authorization-policy-statements"></a>
 
@@ -71,12 +71,12 @@ Sending authorization policies require at least one statement\. Each statement c
 
 |  Name  |  Description  |  Required  |  Valid Values  | 
 | --- | --- | --- | --- | 
-|  `Sid`  |  Uniquely identifies the statement\.  |  No\.  |  Any string\.  | 
-|  `Effect`  |  Specifies the result that you want the policy statement to return at evaluation time\.  |  No, although a statement without an effect is useless\.  |  "Allow" or "Deny"\.  | 
-|  `Resource`  |  Specifies the identity to which the policy applies\. This is the email address or domain that the identity owner is authorizing the delegate sender to use\.  |  Yes\.  |  An identity's ARN, as specified in the Amazon SES console\.  | 
-|  `Principal`  |  Specifies the AWS account, IAM user, or AWS service that receives the permission in the statement\.  |  Yes\.  |  A valid AWS account ID, IAM user ARN, or AWS service\. AWS account IDs and IAM user ARNs are specified using `"AWS"` \(for example, `"AWS": ["123456789012"]` or `"AWS": ["arn:aws:iam::123456789012:root"]`\)\. AWS service names are specified using `"Service"` \(for example, `"Service": ["cognito-idp.amazonaws.com"]`\)\.  For examples of the format of IAM user ARNs, see the [AWS General Reference](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam.html)\.  | 
-|  `Action`  |  Specifies the email\-sending action to which the statement applies\.  |  Yes\.  |  "ses:SendEmail", "ses:SendRawEmail" \(one or both\)\.  If you use the custom policy editor, you can also set the action to "ses:\*" to encompass both APIs\. If your sender will access Amazon SES through the SMTP interface, you must at least specify "ses:SendRawEmail", or use "ses:\*"\.  | 
-|  `Condition`  |  Specifies any restrictions or details about the permission\.  |  No\.  |  See the information about conditions following this table\.  | 
+|   `Sid`   |  Uniquely identifies the statement\.  |  No\.  |  Any string\.  | 
+|   `Effect`   |  Specifies the result that you want the policy statement to return at evaluation time\.  |  No, although a statement without an effect is useless\.  |  "Allow" or "Deny"\.  | 
+|   `Resource`   |  Specifies the identity to which the policy applies\. This is the email address or domain that the identity owner is authorizing the delegate sender to use\.  |  Yes\.  |  An identity's ARN, as specified in the Amazon SES console\.  | 
+|   `Principal`   |  Specifies the AWS account, IAM user, or AWS service that receives the permission in the statement\.  |  Yes\.  |  A valid AWS account ID, IAM user ARN, or AWS service\. AWS account IDs and IAM user ARNs are specified using `"AWS"` \(for example, `"AWS": ["123456789012"]` or `"AWS": ["arn:aws:iam::123456789012:root"]`\)\. AWS service names are specified using `"Service"` \(for example, `"Service": ["cognito-idp.amazonaws.com"]`\)\.  For examples of the format of IAM user ARNs, see the [AWS General Reference](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam.html)\.  | 
+|   `Action`   |  Specifies the email sending action that the statement applies to\.  |  Yes\.  |  "ses:SendEmail", "ses:SendRawEmail" \(one or both\)\.  If you use the custom policy editor, you can also set the action to "ses:\*" to encompass both APIs\. If your sender will access Amazon SES through the SMTP interface, you must at least specify "ses:SendRawEmail", or use "ses:\*"\.  | 
+|   `Condition`   |  Specifies any restrictions or details about the permission\.  |  No\.  |  See the information about conditions following this table\.  | 
 
 ### Conditions<a name="sending-authorization-policy-conditions"></a>
 
@@ -91,10 +91,10 @@ You can use any of the AWS\-wide keys listed at [Available Keys](http://docs.aws
 
 |  Condition Key  |  Description  | 
 | --- | --- | 
-|  `ses:Recipients`  |  Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\.  | 
-|  `ses:FromAddress`  |  Restricts the "From" address\.  | 
-|  `ses:FromDisplayName`  |  Restricts the contents of the string that is used as the "From" display name \(sometimes called "friendly from"\)\. For example, the display name of "John Doe <johndoe@example\.com>" is John Doe\.  | 
-|  `ses:FeedbackAddress`  |  Restricts the "Return Path" address, which is the address where bounce and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](notifications-via-email.md)\.  | 
+|   `ses:Recipients`   |  Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\.  | 
+|   `ses:FromAddress`   |  Restricts the "From" address\.  | 
+|   `ses:FromDisplayName`   |  Restricts the contents of the string that is used as the "From" display name \(sometimes called "friendly from"\)\. For example, the display name of "John Doe <johndoe@example\.com>" is John Doe\.  | 
+|   `ses:FeedbackAddress`   |  Restricts the "Return Path" address, which is the address where bounce and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](notifications-via-email.md)\.  | 
 
 It is common to use the `StringEquals` and `StringLike` conditions with the Amazon SES keys\. These conditions are for case\-sensitive string matching\. For `StringLike`, the values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\. For example, the following condition specifies that the delegate sender can only send from a "From" address that starts with *invoicing* and ends with *example\.com*:
 

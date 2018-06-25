@@ -12,7 +12,7 @@ The following table lists resources that you may find useful as you work with Am
 |  [SES Sending Limits Increase case](https://aws.amazon.com/ses/extendedaccessrequest/)  |  The Support Center form to request an increase in your sending limits and move out of the sandbox\.  | 
 |   [Request to Remove Email Sending Limitations](https://aws.amazon.com/forms/ec2-email-limit-rdns-request)   |  The form to request to remove the default Amazon EC2 sending limits\.  | 
 |  [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)   |  The forum in which Amazon SES users can post questions and discuss various Amazon SES topics\.  | 
-|  [Amazon SES Blog](https://aws.amazon.com//blogs/ses/)   |  The blog that contains blog posts and announcements by the Amazon SES team\.  | 
+|  [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)   |  The blog that contains blog posts and announcements by the Amazon SES team\.  | 
 |   [AWS Developer Tools](https://aws.amazon.com/developertools/)   |  Links to developer tools and resources that provide documentation, code samples, release notes, and other information to help you build innovative applications with AWS\.   | 
 |   [AWS Support Center](https://aws.amazon.com/premiumsupport/)   |  The hub for creating and managing your AWS Support cases\. Also includes links to other helpful resources, such as forums, technical FAQs, service health status, and AWS Trusted Advisor\.  | 
 |   [Contact Us](https://aws.amazon.com/contact-us/)   |  A central contact point for inquiries concerning AWS billing, account, events, abuse, and other issues\.   | 
@@ -25,4 +25,4 @@ The following table lists resources that you may find useful as you work with Am
 
 |  | 
 | --- |
-| For technical discussions about various Amazon SES topics, visit the [Amazon SES Blog](https://aws.amazon.com//blogs/ses/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 
+| For information and discussions about a variety of topics related to Amazon SES, visit the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

@@ -8,6 +8,6 @@ These steps are explained in the following topics\.
 
 1. [Step 1: Create a Configuration Set](event-publishing-create-configuration-set.md)
 
-1. [Add an Event Destination](event-publishing-add-event-destination.md)
+1. [Step 2: Add Event Destination](event-publishing-add-event-destination.md)
 
 1. [Step 3: Send Email](event-publishing-send-email.md)

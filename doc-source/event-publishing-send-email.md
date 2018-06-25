@@ -22,9 +22,12 @@ The following sections describe how to specify the configuration set and message
 
 Additionally, this guide contains several code examples that demonstrate how to send email programmatically using Amazon SES\. Each of these code examples includes a method of passing a configuration set when sending an email\. For more information, see [Amazon SES Code Examples](samplecodeindex.md)\.
 
+**Note**  
+You can optionally include message tags in the headers of your emails\. Message tags can include the numbers 0–9, the letters A–Z \(both uppercase and lowercase\), hyphens \(\-\), and underscores \(\_\)\.
+
 ## Using Amazon SES API Parameters<a name="event-publishing-using-ses-parameters"></a>
 
-To use `[SendEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html)` or `[SendRawEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html)` with event publishing, you specify the configuration set and the message tags by passing data structures called `[ConfigurationSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html)` and `[MessageTag](http://docs.aws.amazon.com/ses/latest/APIReference/API_MessageTag.html)` to the API call\.
+To use [SendEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html) or [SendRawEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html) with event publishing, you specify the configuration set and the message tags by passing data structures called [ConfigurationSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html) and [MessageTag](http://docs.aws.amazon.com/ses/latest/APIReference/API_MessageTag.html) to the API call\.
 
 For more information about using the Amazon SES API, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
