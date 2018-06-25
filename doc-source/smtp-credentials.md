@@ -19,7 +19,7 @@ For information on each method, see [Obtaining Amazon SES SMTP Credentials Using
 
 ## Obtaining Amazon SES SMTP Credentials Using the Amazon SES Console<a name="smtp-credentials-console"></a>
 
-When you generate SMTP credentials by using the Amazon SES console, the Amazon SES console creates an IAM user with the appropriate policies to call Amazon SES and provides you with the SMTP credentials associated with that user\. 
+When you generate SMTP credentials by using the Amazon SES console, the Amazon SES console creates an IAM user with the appropriate policies to call Amazon SES and provides you with the SMTP credentials associated with that user\.
 
 **Note**  
 An IAM user can create Amazon SES SMTP credentials, but the IAM user's policy must give them permission to use IAM itself, because Amazon SES SMTP credentials are created by using IAM\. Your IAM policy must allow you to perform the following IAM actions: `iam:ListUsers`, `iam:CreateUser`, `iam:CreateAccessKey`, and `iam:PutUserPolicy`\. If you try to create Amazon SES SMTP credentials using the console and your IAM user doesn't have these permissions, you see an error that states that your account is "not authorized to perform iam:ListUsers\."
@@ -51,7 +51,7 @@ If you want to change your SMTP password, go to the IAM console and delete your 
 If you have an IAM user that you set up using the IAM interface, you can derive the user's Amazon SES SMTP credentials from their AWS credentials\.
 
 **Important**  
-Don't use temporary AWS credentials to derive SMTP credentials\. The Amazon SES SMTP interface doesn't support SMTP credentials that have been generated from temporary security credentials\. 
+Don't use temporary AWS credentials to derive SMTP credentials\. The Amazon SES SMTP interface doesn't support SMTP credentials that have been generated from temporary security credentials\.
 
 To enable the IAM user to send email using the Amazon SES SMTP interface, you need to do the following two steps:
 + Derive the user's SMTP credentials from their AWS credentials using the algorithm provided in this section\. Because you are starting from AWS credentials, the SMTP username is the same as the AWS access key ID, so you just need to generate the SMTP password\.
@@ -100,11 +100,11 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
 
 ```
  1. #!/usr/bin/env bash
- 2. 
+ 2.
  3. # These variables are required to calculate the SMTP password.
  4. VERSION='\x02'
  5. MESSAGE='SendRawEmail'
- 6. 
+ 6.
  7. # Check to see if OpenSSL is installed. If not, exit with errors.
  8. if ! [[ -x "$(command -v openssl)" ]]; then
  9.   echo "Error: OpenSSL isn't installed." >&2
@@ -115,7 +115,7 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
 14.   echo "Error: Couldn't find environment variable AWS_SECRET_ACCESS_KEY." >&2
 15.   exit 1
 16. fi
-17. 
+17.
 18. # If we made it this far, all of the required elements exist.
 19. # Calculate the SMTP password.
 20. (echo -en $VERSION; echo -n $MESSAGE \
@@ -130,15 +130,15 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
  1. import javax.crypto.Mac;
  2. import javax.crypto.spec.SecretKeySpec;
  3. import javax.xml.bind.DatatypeConverter;
- 4. 
+ 4.
  5. public class SesSmtpCredentialGenerator {
  6.    // Put your AWS secret access key in this environment variable.
- 7.    private static final String KEY_ENV_VARIABLE = "AWS_SECRET_ACCESS_KEY"; 
+ 7.    private static final String KEY_ENV_VARIABLE = "AWS_SECRET_ACCESS_KEY";
  8.    // Used to generate the HMAC signature. Do not modify.
- 9.    private static final String MESSAGE = "SendRawEmail"; 
+ 9.    private static final String MESSAGE = "SendRawEmail";
 10.    // Version number. Do not modify.
-11.    private static final byte VERSION =  0x02; 
-12. 
+11.    private static final byte VERSION =  0x02;
+12.
 13.    public static void main(String[] args) {
 14.         
 15.       // Get the AWS secret access key from environment variable AWS_SECRET_ACCESS_KEY.
@@ -151,25 +151,25 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
 22.            
 23.       // Create an HMAC-SHA256 key from the raw bytes of the AWS secret access key.
 24.       SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "HmacSHA256");
-25. 
+25.
 26.       try {             
 27.          // Get an HMAC-SHA256 Mac instance and initialize it with the AWS secret access key.
 28.          Mac mac = Mac.getInstance("HmacSHA256");
 29.          mac.init(secretKey);
-30. 
+30.
 31.          // Compute the HMAC signature on the input data bytes.
 32.          byte[] rawSignature = mac.doFinal(MESSAGE.getBytes());
-33. 
+33.
 34.          // Prepend the version number to the signature.
 35.          byte[] rawSignatureWithVersion = new byte[rawSignature.length + 1];               
 36.          byte[] versionArray = {VERSION};                
 37.          System.arraycopy(versionArray, 0, rawSignatureWithVersion, 0, 1);
 38.          System.arraycopy(rawSignature, 0, rawSignatureWithVersion, 1, rawSignature.length);
-39. 
+39.
 40.          // To get the final SMTP password, convert the HMAC signature to base 64.
 41.          String smtpPassword = DatatypeConverter.printBase64Binary(rawSignatureWithVersion);       
 42.          System.out.println(smtpPassword);
-43.       } 
+43.       }
 44.       catch (Exception ex) {
 45.          System.out.println("Error generating SMTP password: " + ex.getMessage());
 46.       }             
@@ -186,20 +186,20 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
  3. import hashlib #required to create a SHA256 hash
  4. import base64  #required to encode the computed key
  5. import sys     #required for system functions (exiting, in this case)
- 6. 
+ 6.
  7. # Fetch the environment variable called AWS_SECRET_ACCESS_KEY, which contains
  8. # the secret access key for your IAM user.
  9. key = os.getenv('AWS_SECRET_ACCESS_KEY',0)
-10. 
+10.
 11. # These varibles are used when calculating the SMTP password. You shouldn't
 12. # change them.
 13. message = 'SendRawEmail'
 14. version = '\x02'
-15. 
+15.
 16. # See if the environment variable exists. If not, quit and show an error.
 17. if key == 0:
 18.     sys.exit("Error: Can't find environment variable AWS_SECRET_ACCESS_KEY.")
-19. 
+19.
 20. # Compute an HMAC-SHA256 key from the AWS secret access key.
 21. signatureInBytes = hmac.new(key.encode('utf-8'),message.encode('utf-8'),hashlib.sha256).digest()
 22. # Prepend the version number to the signature.
