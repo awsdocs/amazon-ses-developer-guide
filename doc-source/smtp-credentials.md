@@ -83,6 +83,12 @@ The following pseudocode shows the algorithm that converts an AWS Secret Access 
 6. smtpPassword = Base64(signatureAndVer);
 ```
 
+If you have opensssl installed, the following bash oneliner uses that algorithm (after you replace `$secret_access_key` with your AWS Secret Access Key):
+
+```bash
+(echo -en "\x02"; echo -n 'SendRawEmail' | openssl sha256 -hmac $secret_access_key -binary) | base64
+```
+
 The following is an example Java implementation that converts an AWS Secret Access Key to an Amazon SES SMTP password\. Before you run the program, put the AWS Secret Access Key of the IAM user into an environment variable called AWS\_SECRET\_ACCESS\_KEY\. The output of the program is the SMTP password\. That password, along with the SMTP username \(which, if you generate the SMTP password programmatically, is the same as the AWS access key ID\) are the user's Amazon SES SMTP credentials\.
 
 ```
