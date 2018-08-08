@@ -95,7 +95,7 @@ This example shows how to send an email that uses a [configuration set](using-co
 1. In the text file, paste the following content, replacing the values in red with the appropriate values for your account:
 
    ```
-   X-SES-CONFIGURATION-SET:ConfigSet
+   X-SES-CONFIGURATION-SET: ConfigSet
    From:Sender Name <sender@example.com>
    Subject:Amazon SES Test
    MIME-Version: 1.0
