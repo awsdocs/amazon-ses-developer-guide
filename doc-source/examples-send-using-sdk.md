@@ -416,84 +416,68 @@ The following code example is a complete solution for sending email through Amaz
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
 
 ```
- 1. <?php
- 2. 
- 3. // Replace path_to_sdk_inclusion with the path to the SDK as described in 
- 4. // http://docs.aws.amazon.com/aws-sdk-php/v3/guide/getting-started/basic-usage.html
- 5. define('REQUIRED_FILE','path_to_sdk_inclusion'); 
- 6.                                                   
- 7. // Replace sender@example.com with your "From" address. 
- 8. // This address must be verified with Amazon SES.
- 9. define('SENDER', 'sender@example.com');           
-10. 
-11. // Replace recipient@example.com with a "To" address. If your account 
-12. // is still in the sandbox, this address must be verified.
-13. define('RECIPIENT', 'recipient@example.com');    
-14. 
-15. // Specify a configuration set. If you do not want to use a configuration
-16. // set, comment the following variable, and the 
-17. // 'ConfigurationSetName' => CONFIGSET argument below.
-18. define('CONFIGSET','ConfigSet');
-19. 
-20. // Replace us-west-2 with the AWS Region you're using for Amazon SES.
-21. define('REGION','us-west-2'); 
-22. 
-23. define('SUBJECT','Amazon SES test (AWS SDK for PHP)');
-24. 
-25. define('HTMLBODY','<h1>AWS Amazon Simple Email Service Test Email</h1>'.
-26.                   '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
-27.                   'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
-28.                   'AWS SDK for PHP</a>.</p>');
-29. define('TEXTBODY','This email was send with Amazon SES using the AWS SDK for PHP.');
-30. 
-31. define('CHARSET','UTF-8');
-32. 
-33. require REQUIRED_FILE;
-34. 
-35. use Aws\Ses\SesClient;
-36. use Aws\Ses\Exception\SesException;
-37. 
-38. $client = SesClient::factory(array(
-39.     'version'=> 'latest',     
-40.     'region' => REGION
-41. ));
-42. 
-43. try {
-44.      $result = $client->sendEmail([
-45.     'Destination' => [
-46.         'ToAddresses' => [
-47.             RECIPIENT,
-48.         ],
-49.     ],
-50.     'Message' => [
-51.         'Body' => [
-52.             'Html' => [
-53.                 'Charset' => CHARSET,
-54.                 'Data' => HTMLBODY,
-55.             ],
-56. 			'Text' => [
-57.                 'Charset' => CHARSET,
-58.                 'Data' => TEXTBODY,
-59.             ],
-60.         ],
-61.         'Subject' => [
-62.             'Charset' => CHARSET,
-63.             'Data' => SUBJECT,
-64.         ],
-65.     ],
-66.     'Source' => SENDER,
-67.     // If you are not using a configuration set, comment or delete the
-68.     // following line
-69.     'ConfigurationSetName' => CONFIGSET,
-70. ]);
-71.      $messageId = $result->get('MessageId');
-72.      echo("Email sent! Message ID: $messageId"."\n");
-73. 
-74. } catch (SesException $error) {
-75.      echo("The email was not sent. Error message: ".$error->getAwsErrorMessage()."\n");
-76. }
-77. 
-78. ?>
+  1.    <?php
+ 2. require 'vendor/autoload.php';
+ 3. use Aws\SES\SESClient;
+ 4. use Aws\Exception\AwsException;
+ 5. 
+ 6. /**
+ 7.  * Send an Amazon Simple Email Service Message. 
+ 8.  *
+ 9.  * This code expects that you have AWS credentials set up per:
+10.  * https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials.html
+11.  */
+12.  
+13.  
+14. //Create a SESClient
+15. $SesClient = new Aws\SES\SESClient([
+16.     'profile' => 'default',
+17.     'version' => '2010-12-01',
+18.     'region'  => 'us-east-1'
+19. ]);
+20. $html_body = '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
+21.                   '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
+22.                   'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
+23.                   'AWS SDK for PHP</a>.</p>';
+24. $subject = 'Amazon SES test (AWS SDK for PHP)';
+25. $plaintext_body = 'This email was send with Amazon SES using the AWS SDK for PHP.' ;
+26. $sender_email = 'email_address';
+27. $verified_recipeint_emails = ['email_address'];
+28. $char_set = 'UTF-8';
+29. try {
+30.     $result = $SesClient->sendEmail([
+31.         'Destination' => [
+32.             'ToAddresses' => $verified_recipeint_emails,
+33.         ],
+34.         'ReplyToAddresses' => [$sender_email],
+35.         'Source' => $sender_email,
+36.         'Message' => [
+37.         
+38.         'Body' => [
+39.             'Html' => [
+40.                 'Charset' => $char_set,
+41.                 'Data' => $html_body,
+42.             ],
+43.             'Text' => [
+44.                 'Charset' => $char_set,
+45.                 'Data' => $plaintext_body,
+46.             ],
+47.         ],
+48.         'Subject' => [
+49.             'Charset' => $char_set,
+40.             'Data' => $subject,
+51.         ],
+52.     ],
+53.             ]);
+54.     $messageId = $result['MessageId'];
+55.     echo("Email sent! Message ID: $messageId"."\n");
+56. } catch (AwsException $e) {
+57.     // output error message if fails
+58.     echo $e->getMessage();echo("The email was not sent. Error message: ".$e->getAwsErrorMessage()."\n");
+59.     echo "\n";
+60.  }
+61.  ?>
+
 ```
 
 ------
