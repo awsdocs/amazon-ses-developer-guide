@@ -69,7 +69,7 @@ This tutorial requires JavaMail version 1\.5 or later\. These procedures were te
    29.     static final String CONFIGSET = "ConfigSet";
    30.     
    31.     // Amazon SES SMTP host name. This example uses the US West (Oregon) region.
-   32.     // See http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html#region-endpoints
+   32.     // See https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html#region-endpoints
    33.     // for more information.
    34.     static final String HOST = "email-smtp.us-west-2.amazonaws.com";
    35.     
@@ -150,6 +150,8 @@ Your SMTP credentials are different from your AWS credentials\. For more informa
    + `YOUR_SMTP_PASSWORD`—Replace with your SMTP password\.
 
 1. \(Optional\) If you want to use an Amazon SES SMTP endpoint in a Region other than US West \(Oregon\), change the value of the variable `HOST` to the endpoint you want to use\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
+
+1. \(Optional\) If you want to use a configuration set when sending this email, change the value of the variable `CONFIGSET` to the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES Configuration Sets](using-configuration-sets.md)\.
 
 1. Save `AmazonSESSample.java`\.
 

@@ -5,7 +5,7 @@ The **Bounce** action rejects the email by returning a bounce response to the se
 + **SMTP Status Code—**The SMTP enhanced status code, as defined by [RFC 3463](https://tools.ietf.org/html/rfc3463)\.
 + **Message—**Human\-readable text to include in the bounce email\.
 + **Reply Sender—**The email address of the sender of the bounced email\. This is the address from which the bounce email will be sent\. It must be verified with Amazon SES\.
-+ **SNS Topic—**The name or ARN of the Amazon SNS topic to optionally notify when a bounce email is sent\. An example of an Amazon SNS topic ARN is *arn:aws:sns:us\-west\-2:123456789012:MyTopic*\. You can also create an Amazon SNS topic when you set up your action by choosing **Create SNS Topic**\. For more information about Amazon SNS topics, see the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\. 
++ **SNS Topic—**The name or ARN of the Amazon SNS topic to optionally notify when a bounce email is sent\. An example of an Amazon SNS topic ARN is *arn:aws:sns:us\-west\-2:123456789012:MyTopic*\. You can also create an Amazon SNS topic when you set up your action by choosing **Create SNS Topic**\. For more information about Amazon SNS topics, see the [Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\. 
 **Note**  
 The Amazon SNS topic you choose must be in the same AWS region as the Amazon SES endpoint you use to receive email\. 
 

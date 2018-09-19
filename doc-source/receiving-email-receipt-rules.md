@@ -56,4 +56,4 @@ We recommend that you coordinate with other teams in your organization that use 
 
 1. Choose **Next Step**, and then choose **Create Rule**\.
 
-For information about how to use the `CreateReceiptRule` API to create rules, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html)\. 
+For information about how to use the `CreateReceiptRule` API to create rules, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html)\. 

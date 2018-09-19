@@ -1,25 +1,19 @@
 # Configuring Email Clients to Send Through Amazon SES<a name="configure-email-client"></a>
 
-After you obtain your [SMTP user name and password](smtp-credentials.md), you can send email through Amazon SES\. 
+After you obtain your [SMTP user name and password](smtp-credentials.md), you can use the Amazon SES SMTP interface to send email\.
 
-The following procedures show how to configure three popular email clients—[Mozilla Thunderbird](https://www.mozilla.org/thunderbird/), [Microsoft Outlook](https://products.office.com/outlook/), and macOS Mail—to send email through Amazon SES\. If you are using a different email client, the specific procedures are different, but the concepts and settings are the same\.
+The following procedures show how to configure [Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) to send email by using Amazon SES\. You might be able to configure other email clients to send email through Amazon SES\. See the documentation for your email client for more information\.
 
 **Note**  
-These procedures help you set up an email client to *send* email using Amazon SES\. However, you can't use these clients to *receive* email sent to the email addresses you use with Amazon SES\.  
-For more information about receiving email in Amazon SES, see [Receiving Email with Amazon SES](receiving-email.md)\.
-
-**Topics**
-+ [Configuring Mozilla Thunderbird to Send Email Using Amazon SES](#configure-email-client-thunderbird)
-+ [Configuring Microsoft Outlook to Send Email Using Amazon SES](#configure-email-client-outlook)
-+ [Configuring macOS Mail to Send Email Using Amazon SES](#configure-email-client-macos-mail)
+These procedures show you how to set up Mozilla Thunderbird to *send* email using Amazon SES\. However, you can't use Thunderbird to *receive* email that is sent to your Amazon SES email addresses\. For more information about receiving email with Amazon SES, see [Receiving Email with Amazon SES](receiving-email.md)\.
 
 ## Configuring Mozilla Thunderbird to Send Email Using Amazon SES<a name="configure-email-client-thunderbird"></a>
 
-The procedures in this section help you configure [Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) to send email through Amazon SES\. These procedures were tested using Mozilla Thunderbird version 52\.5 on Windows, macOS and Linux\. The procedures might differ slightly for other versions of Thunderbird\.
+The procedures in this section show you how to configure [Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) to send email through Amazon SES\. These procedures were tested using Mozilla Thunderbird version 52\.5 on Windows, macOS, and Linux\. The procedures might differ slightly for other versions of Thunderbird\.
 
 ### Part 1: Create Local Folders<a name="configure-email-client-thunderbird-part-1"></a>
 
-Amazon SES doesn't include server\-based folders in which you can save items such as sent mail and drafts\. For this reason, you have to create these folders on your computer\. You configure Thunderbird to save mail to these folders in [Part 3: Configure Thunderbird to Save Sent Mail and Drafts on Your Computer](#configure-email-client-thunderbird-part-3)\.
+Amazon SES doesn't include server\-based folders for saving items such as drafts and sent mail\. For this reason, you have to create these folders on your computer\. You configure Thunderbird to save mail to these folders in a later section\.
 
 **To create the Sent Mail and Drafts folders**
 
@@ -139,128 +133,3 @@ You modify the hidden configuration settings in Thunderbird during this procedur
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/thunderbird_configuration_set.png)
 
 1. On the **X\-SES\-CONFIGURATION\-SET** line, type the name of the configuration set you want to use\. Complete the remaining sections of the email as you normally would\.
-
-## Configuring Microsoft Outlook to Send Email Using Amazon SES<a name="configure-email-client-outlook"></a>
-
-The procedures in this section show you how to configure Microsoft Outlook for Windows to send email through Amazon SES\. These procedures were tested using Microsoft Outlook 2016, build 16\.0\.4549\.1000\. The procedures might differ slightly for other versions of Outlook\.
-
-**Note**  
-These procedures don't work on Outlook for Mac, Outlook 365, or any of the mobile versions of Outlook\. These versions of Outlook require you to specify an incoming \(IMAP\) server, and they don't allow you to bypass the connection test in the same way that the Windows version does\. If you need a graphical email client, and you don't have Outlook for Windows, you should consider using [Mozilla Thunderbird](#configure-email-client-thunderbird)\.
-
-**To configure Microsoft Outlook 2016 to send email using Amazon SES**
-
-1. In Microsoft Outlook, choose **File**, and then choose **Info**\.
-
-1. Choose **Add Account**\.
-
-1. On the **Add Account** window, choose **Manual setup or additional server types**, and then choose **Next**\.
-
-1. Under **Choose Service**, choose **POP or IMAP**, and then choose **Next**\.
-
-1. Under **POP and IMAP Account Settings**, fill in the following fields:
-
-   1. ****Your Name**** – Your full name\.
-
-   1. ****Email Address**** – The email address you want to send email from\. This address must be verified in Amazon SES, and it must exactly match the address specified in Amazon SES\. 
-
-   1. ****Account Type**** – Choose **POP3**\.
-
-   1. ****Incoming mail server**** – Type **none**\. \(Even though you are setting up Amazon SES for outgoing email only, this field is required\.\)
-
-   1. ****Outgoing mail server \(SMTP\)**** –Type the SMTP endpoint for the outgoing mail server\. For a list of Amazon SES SMTP endpoints, see [Connecting to the Amazon SES SMTP Endpoint](smtp-connect.md)\. For example, if you use the Amazon SES endpoint in the US West \(Oregon\) Region, the outgoing mail server is *email\-smtp\.us\-west\-2\.amazonaws\.com*\.
-
-   1. ****User Name**** – Type **none**\. You configure your credentials later in this procedure\.  
-![\[Microsoft Outlook 2013 configuration\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/SMTP_outlook_01.png)
-
-1. Choose **More Settings**\.
-
-1. On the **Internet E\-mail Settings** window, choose the **Outgoing Server** tab, and then complete the following fields:
-
-   1. ****My outgoing server \(SMTP\) requires authentication**** – \[Selected\]
-
-   1. ****Log on using**** – \[Selected\]
-
-   1. ****User Name**** – Your Amazon SES SMTP user name\.
-**Important**  
-Your SMTP password isn't the same as your AWS access key ID\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
-
-   1. ****Password**** – Your Amazon SES SMTP password\.
-**Important**  
-Your SMTP password isn't the same as your AWS secret access key\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
-
-   1. ****Remember Password**** – \[Selected\]  
-![\[Microsoft Outlook 2013 configuration\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/SMTP_outlook_02.png)
-
-1. Choose the **Advanced** tab, and then complete the following fields:
-
-   1. ****Outgoing server \(SMTP\)**** – Type 587\.
-
-   1. ****Use the following type of encrypted connection**** – Choose **TLS**\.  
-![\[Microsoft Outlook 2013 configuration\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/SMTP_outlook_03.png)
-
-1. Choose **OK**\.
-
-1. On the **Add Account** page, choose **Test Account Settings**\. On the **Internet E\-mail \- none** window, choose **Cancel**\.
-
-1. Choose the **Tasks** tab and confirm that the *Send test e\-mail message* test completed successfully\.
-**Note**  
-Because you are using Amazon SES as your outgoing email server only, the *Log onto incoming mail server* test is expected to fail\. The *Send test e\-mail message* test should pass\.
-
-1. If the test completes successfully, clear the box next to **Automatically test account settings when Next is clicked**, and then choose **Next**\.
-
-1. Choose **Next**, and then choose **Finish**\.
-
-1. You set up Amazon SES for email sending only\. To ensure that the account isn't set up to receive messages using Amazon SES, you have to disable mail retrieval for the account by using the following steps\.
-
-   1. In Microsoft Outlook, choose the **Send/Receive** tab\.
-
-   1. On the **Send/Receive** tab, choose **Send/Receive Groups**, and then choose **Define Send/Receive Groups**\.
-
-   1. In the **Send/Receive Groups** dialog box, choose **Edit**\.
-
-   1. In the **Accounts** section on the left, choose the account you just created for sending mail through Amazon SES\.
-
-   1. Under **Account Options**, clear **Receive mail items**\.
-
-   1. Choose **OK**, and then choose **Close**\.
-
-## Configuring macOS Mail to Send Email Using Amazon SES<a name="configure-email-client-macos-mail"></a>
-
-The procedures in this section help you configure the Mail application that is included with macOS \(Mail\.app\) to send email through Amazon SES\. These procedures were tested using Mail\.app version 11\.1 on macOS High Sierra \(version 10\.13\)\. The procedures might differ slightly for other versions of Mail\.app and macOS\.
-
-**Note**  
-The procedures in this section apply to the version of Mail\.app that is included with macOS desktop and laptop computers\. The version of Mail that is included with iOS devices, such as iPhones and iPads, can't be configured to send mail using Amazon SES\.
-
-**To configure Mail\.app to send email using Amazon SES**
-
-1. In Mail, on the **Mailbox** menu, choose **Take All Accounts Offline**\.
-
-1. On the **Mail** menu, choose **Add Account**\.
-
-1. On the **Add a Mail Account** window, complete the following sections:
-   + For **Name**, type the name that you want to appear on messages sent from this account\.
-   + For **Email Address**, type the email address you use to send email with Amazon SES\.
-   + For **Password**, type any value\. This field is used to connect to an IMAP server\. Because Amazon SES doesn't include an IMAP server, the value you enter here isn't important\.
-
-   When you finish, choose **Sign In**\. A message appears stating that Mail is unable to verify your account name or password\. Choose **Next**\.
-
-1. On the **Select the apps you want to use with this account** window, choose **Mail**, and then choose **Done**\.
-
-1. On the **Mail** menu, choose **Preferences**\.
-
-1. In the pane on the left, choose the IMAP account you just created\.
-
-1. On the **Server Settings** tab, under **Outgoing Mail Server \(SMTP\)**, complete the following sections:
-   + For **User Name**, type your SMTP user name\.
-   + For **Password**, type your SMTP password\.
-**Note**  
-Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
-   + For **Host Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Email Sending Endpoints](regions.md#region-endpoints-sending)\.
-
-   When you finish, choose **Save**\.
-**Note**  
-Don't change any of the settings in the Incoming Mail Server \(IMAP\) section\. If you make changes in this section, you won't be able to save your settings\.
-
-1. On the **Mailbox** menu, choose **Take All Accounts Online**\.
-
-1. Send a test message to another email address you control to test the connection\.

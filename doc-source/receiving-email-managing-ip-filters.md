@@ -12,7 +12,7 @@ You can use the Amazon SES console or the `ListReceiptFilters` API to get a list
 
 1. In the left navigation pane, under **Email Receiving**, choose **IP Address Filters**\. You will see a list of your IP address filters\.
 
-For information about how to use the `ListReceiptFilters` API to get a list of your IP address filters, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html)\.
+For information about how to use the `ListReceiptFilters` API to get a list of your IP address filters, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html)\.
 
 ## Deleting an IP Address Filter<a name="receiving-email-managing-ip-filters-delete"></a>
 
@@ -28,4 +28,4 @@ You can use the Amazon SES console or the `DeleteReceiptFilter` API to delete an
 
 1. Choose **Delete**, and then confirm that you want to delete the IP address filter\.
 
-For information about how to use the `DeleteReceiptFilter` API to delete an IP address filter, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptFilter.html)\.
+For information about how to use the `DeleteReceiptFilter` API to delete an IP address filter, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptFilter.html)\.

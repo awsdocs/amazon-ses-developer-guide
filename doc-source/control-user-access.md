@@ -4,7 +4,7 @@ You can use AWS Identity and Access Management \(IAM\) with Amazon Simple Email 
 
 For example, you can create an IAM policy that allows users in your organization to send email, but not perform administrative actions such as checking sending statistics\. As another example, you can write a policy that allows a user to send emails through Amazon SES from your account, but only if they use a specific "From" address\.
 
-To use IAM, you define an IAM policy, which is a document that explicitly defines permissions, and attach the policy to a user\. To learn how to create IAM policies, see the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html)\. Other than applying the restrictions you set in your policy, there are no changes to how users interact with Amazon SES or in how Amazon SES carries out requests\.
+To use IAM, you define an IAM policy, which is a document that explicitly defines permissions, and attach the policy to a user\. To learn how to create IAM policies, see the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html)\. Other than applying the restrictions you set in your policy, there are no changes to how users interact with Amazon SES or in how Amazon SES carries out requests\.
 
 **Note**  
 You can also control access to Amazon SES by using sending authorization policies\. Whereas IAM policies constrain what individual IAM users can do, sending authorization policies constrain how individual verified identities can be used\. Further, only sending authorization policies can grant cross\-account access\. For more information about sending authorization, see [Using Sending Authorization with Amazon SES](sending-authorization.md)\.
@@ -13,7 +13,7 @@ If you are looking for information about how to generate Amazon SES SMTP credent
 
 ## Creating IAM Policies for Access to Amazon SES<a name="iam-and-ses"></a>
 
-This section explains how you can use IAM policies specifically with Amazon SES\. To learn how to create IAM policies in general, see the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html)\.
+This section explains how you can use IAM policies specifically with Amazon SES\. To learn how to create IAM policies in general, see the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html)\.
 
 There are three reasons you might use IAM with Amazon SES:
 + To restrict the email\-sending action\.
@@ -36,11 +36,11 @@ Then, depending on the `Action`, specify the `Resource` element as follows:
   + One with `Action` set to an explicit list of the permitted non\-email\-sending APIs and `Resource` set to \*
   + One with `Action` set to one of the email\-sending APIs \(`ses:SendEmail` and/or `ses:SendRawEmail`\), and `Resource` set to the ARN\(s\) of the identities you are permitting the user to use\.
 
-For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
+For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
 
 ### Restricting Email Addresses<a name="iam-and-ses-restrict-addresses"></a>
 
-If you want to restrict the user to specific email addresses, you can use a `Condition` block\. In the `Condition` block, you specify conditions by using condition keys as described in the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition)\. By using condition keys, you can control the following email addresses:
+If you want to restrict the user to specific email addresses, you can use a `Condition` block\. In the `Condition` block, you specify conditions by using condition keys as described in the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition)\. By using condition keys, you can control the following email addresses:
 
 **Note**  
 These email address condition keys apply only to the APIs noted in the following table\.
@@ -64,7 +64,7 @@ By using AWS\-wide keys in conditions, you can restrict access to Amazon SES bas
 + `aws:SourceIp`
 + `aws:UserAgent`
 
-For more information about these keys, see the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition)\.
+For more information about these keys, see the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition)\.
 
 ## Example IAM Policies for Amazon SES<a name="iam-and-ses-examples"></a>
 
@@ -198,7 +198,7 @@ The following policy permits a user to call the Amazon SES email\-sending APIs, 
 18. }
 ```
 
-The following policy permits a user to call the [SendBounce](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html) API, but only if the "From" address is *bounce@example\.com*\. 
+The following policy permits a user to call the [SendBounce](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBounce.html) API, but only if the "From" address is *bounce@example\.com*\. 
 
 ```
  1. {

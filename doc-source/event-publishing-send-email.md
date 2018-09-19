@@ -27,9 +27,9 @@ You can optionally include message tags in the headers of your emails\. Message 
 
 ## Using Amazon SES API Parameters<a name="event-publishing-using-ses-parameters"></a>
 
-To use [SendEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html) or [SendRawEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html) with event publishing, you specify the configuration set and the message tags by passing data structures called [ConfigurationSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html) and [MessageTag](http://docs.aws.amazon.com/ses/latest/APIReference/API_MessageTag.html) to the API call\.
+To use [SendEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html) or [SendRawEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html) with event publishing, you specify the configuration set and the message tags by passing data structures called [ConfigurationSet](https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html) and [MessageTag](https://docs.aws.amazon.com/ses/latest/APIReference/API_MessageTag.html) to the API call\.
 
-For more information about using the Amazon SES API, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+For more information about using the Amazon SES API, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 ## Using Amazon SES\-Specific Email Headers<a name="event-publishing-using-ses-headers"></a>
 

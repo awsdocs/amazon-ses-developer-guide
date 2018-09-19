@@ -1,12 +1,12 @@
 # \(Optional\) Step 6: Save SQL Query Results<a name="event-publishing-kinesis-analytics-destination"></a>
 
-You can set up your Amazon Kinesis Data Analytics application to write the output of your SQL queries to an Amazon Kinesis Firehose delivery stream\. To do so, you must create another Kinesis Firehose delivery stream because you cannot use the same delivery stream as both the source and destination of an Amazon Kinesis Data Analytics application\. As with any Kinesis Firehose delivery stream, you can choose Amazon Simple Storage Service \(Amazon S3\), Amazon Elasticsearch Service, or Amazon Redshift as the destination\.
+You can set up your Amazon Kinesis Data Analytics application to write the output of your SQL queries to an Amazon Kinesis Data Firehose delivery stream\. To do so, you must create another Kinesis Data Firehose delivery stream because you cannot use the same delivery stream as both the source and destination of an Amazon Kinesis Data Analytics application\. As with any Kinesis Data Firehose delivery stream, you can choose Amazon Simple Storage Service \(Amazon S3\), Amazon Elasticsearch Service, or Amazon Redshift as the destination\.
 
-The following procedure shows how to configure Amazon Kinesis Data Analytics to save SQL query results in JSON format to a Kinesis Firehose delivery stream that writes the data to Amazon S3\. Then you run a SQL query and access the saved data\.
+The following procedure shows how to configure Amazon Kinesis Data Analytics to save SQL query results in JSON format to a Kinesis Data Firehose delivery stream that writes the data to Amazon S3\. Then you run a SQL query and access the saved data\.
 
 **To save the results of SQL queries to Amazon S3**
 
-1. Set up a new Kinesis Firehose stream that uses Amazon S3 as the destination\. It is the same procedure as [Step 1: Create a Kinesis Firehose Delivery Stream](event-publishing-kinesis-analytics-firehose-stream.md)\.
+1. Set up a new Kinesis Data Firehose stream that uses Amazon S3 as the destination\. It is the same procedure as [Step 1: Create a Kinesis Data Firehose Delivery Stream](event-publishing-kinesis-analytics-firehose-stream.md)\.
 
 1. Go to the [Amazon Kinesis Data Analytics console](https://console.aws.amazon.com/kinesisanalytics), choose the arrow next to your application, and then choose **Application details**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_expand_app.png)
@@ -14,7 +14,7 @@ The following procedure shows how to configure Amazon Kinesis Data Analytics to 
 1. Choose **Connect to a destination**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_connect.png)
 
-1. Choose the Kinesis Firehose stream you created in step 1, leave the rest of the options at their default settings, and then choose **Save and continue**\.
+1. Choose the Kinesis Data Firehose stream you created in step 1, leave the rest of the options at their default settings, and then choose **Save and continue**\.
 
    In several seconds, you return to the main page of the application\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_destination.png)
@@ -24,14 +24,14 @@ The following procedure shows how to configure Amazon Kinesis Data Analytics to 
 
 1. Choose **Save and run SQL** to re\-run the query you ran in [Step 5: Run a SQL Query](event-publishing-kinesis-analytics-sql.md)\.
 
-   Amazon Kinesis Data Analytics attempts to process event data it receives from the Kinesis Firehose delivery stream\. If you encounter the **No rows have arrived yet** error, ensure that you are still sending emails so that Amazon Kinesis Data Analytics has email sending events to process\.
+   Amazon Kinesis Data Analytics attempts to process event data it receives from the Kinesis Data Firehose delivery stream\. If you encounter the **No rows have arrived yet** error, ensure that you are still sending emails so that Amazon Kinesis Data Analytics has email sending events to process\.
 
-   As Amazon Kinesis Data Analytics processes records, results appear in the **Real\-time analytics** tab\. Amazon Kinesis Data Analytics automatically saves the results to the Amazon S3 bucket that you specified when you set up the Kinesis Firehose delivery stream in step 1\.  
+   As Amazon Kinesis Data Analytics processes records, results appear in the **Real\-time analytics** tab\. Amazon Kinesis Data Analytics automatically saves the results to the Amazon S3 bucket that you specified when you set up the Kinesis Data Firehose delivery stream in step 1\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_sql.png)
 
 1. To retrieve the results, go to the [Amazon S3 console](https://console.aws.amazon.com/s3/)\.
 
-1. Choose the Amazon S3 bucket that is associated with the Kinesis Firehose delivery stream that the Amazon Kinesis Data Analytics application uses as its destination\.
+1. Choose the Amazon S3 bucket that is associated with the Kinesis Data Firehose delivery stream that the Amazon Kinesis Data Analytics application uses as its destination\.
 
 1. Navigate to the data, which, by default, is organized in a folder hierarchy based on the date the results are saved to the bucket\.
 

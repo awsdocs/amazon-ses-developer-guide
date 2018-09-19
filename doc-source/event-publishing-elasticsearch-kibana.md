@@ -11,7 +11,7 @@ For Kibana documentation and tutorials, see the [Kibana User Guide](https://www.
 
 ## Viewing Your Email Sending Events<a name="event-publishing-elasticsearch-kibana-view-raw"></a>
 
-The following procedure shows how to go to the Kibana user interface from the Amazon ES console\. It then shows how to view the email sending events associated with the index you defined when you set up your Amazon Kinesis Firehose delivery stream in [Step 2: Create a Kinesis Firehose Delivery Stream](event-publishing-elasticsearch-firehose-stream.md)\.
+The following procedure shows how to go to the Kibana user interface from the Amazon ES console\. It then shows how to view the email sending events associated with the index you defined when you set up your Amazon Kinesis Data Firehose delivery stream in [Step 2: Create a Kinesis Data Firehose Delivery Stream](event-publishing-elasticsearch-firehose-stream.md)\.
 
 **To view your raw email sending events in Kibana**
 

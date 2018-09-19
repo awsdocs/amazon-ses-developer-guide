@@ -101,7 +101,7 @@ This function only pauses email sending in the AWS Region you select in this ste
 
 A side effect of testing the Lambda function in [Part 2: Create the Lambda Function](#monitoring-sender-reputation-pausing-account-part-2) is that email sending for your Amazon SES account is paused\. In most cases, you do not want to pause sending for your account until the CloudWatch alarm is triggered\.
 
-The procedures in this section re\-enable email sending for your Amazon SES account\. To complete these procedures, you must install and configure the AWS Command Line Interface\. For more information, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/)\.
+The procedures in this section re\-enable email sending for your Amazon SES account\. To complete these procedures, you must install and configure the AWS Command Line Interface\. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
 **To re\-enable email sending**
 
@@ -172,7 +172,7 @@ This section contains procedures for creating an alarm in CloudWatch that is tri
    + Under **Alarm Threshold**, for **Name**, type a name for the alarm\.
    + Under **Whenever: Reputation\.BounceRate** or **Whenever: Reputation\.ComplaintRate**, specify the threshold that causes the alarm to trigger\.
 **Note**  
-Your account is automatically placed on probation if your bounce rate exceeds 10%, or if your complaint rate exceeds \.5%\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are below these rates to prevent your account from being placed on probation\.
+Your account is automatically placed under review if your bounce rate exceeds 10%, or if your complaint rate exceeds \.5%\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are below these rates to prevent your account from being placed under review\.
    + Under **Actions**, for **Whenever this alarm**, choose **State is ALARM**\. For **Send notification to**, choose the Amazon SNS topic you created in [Part 4: Create an Amazon SNS Topic](#monitoring-sender-reputation-pausing-account-part-4)\.
 
    Choose **Create Alarm**\.
@@ -199,7 +199,7 @@ Replace *us\-west\-2* in the preceding command with the name of the region you s
 
    Replace *MyAlarm* in the preceding command with the name of the alarm you created in [Part 5: Create a CloudWatch Alarm](#monitoring-sender-reputation-pausing-account-part-5), and replace *us\-west\-2* with the region in which you want to automatically pause email sending\.
 **Note**  
-When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
+When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
 
 1. At the command line, type the following command to check the email sending status for your account: aws ses get\-account\-sending\-enabled \-\-region *us\-west\-2*
 

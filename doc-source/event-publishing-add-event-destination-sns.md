@@ -9,7 +9,7 @@ It is also possible to receive notifications through Amazon SNS at the account l
 
 **To add an Amazon SNS event destination to a configuration set**
 
-1. If you have not already done so, create an Amazon SNS topic and subscribe to it\. For more information, see [Getting Started](http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html) in the *Amazon Simple Notification Service Developer Guide*\.
+1. If you have not already done so, create an Amazon SNS topic and subscribe to it\. For more information, see [Getting Started](https://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
@@ -29,12 +29,12 @@ It is also possible to receive notifications through Amazon SNS at the account l
    + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
    + **Opens** – The recipient received the message and opened it in his or her email client\.
    + **Clicks** – The recipient clicked one or more links contained in the email\.
-   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 1. Select **Enabled**\.
 
 1. For **Topic**, choose an existing Amazon SNS topic, or choose **Create new topic** to create a new one\.
 
-   For information about creating a topic, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+   For information about creating a topic, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Choose **Save**\.

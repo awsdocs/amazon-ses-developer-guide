@@ -48,7 +48,7 @@ You can find more sending authorization policy examples at [Sending Authorizatio
 
 This section describes the elements contained in sending authorization policies\. First we describe policy\-wide elements, and then we describe elements that apply only to the statement in which they are included\. We follow with a discussion of how to add conditions to your statements\.
 
-For specific information about the syntax of the elements, see [Grammar of the IAM Policy Language](http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-grammar.html) in the *IAM User Guide*\.
+For specific information about the syntax of the elements, see [Grammar of the IAM Policy Language](https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-grammar.html) in the *IAM User Guide*\.
 
 ### Policy\-Wide Information<a name="sending-authorization-policy-policy-wide"></a>
 
@@ -74,7 +74,7 @@ Sending authorization policies require at least one statement\. Each statement c
 |   `Sid`   |  Uniquely identifies the statement\.  |  No\.  |  Any string\.  | 
 |   `Effect`   |  Specifies the result that you want the policy statement to return at evaluation time\.  |  No, although a statement without an effect is useless\.  |  "Allow" or "Deny"\.  | 
 |   `Resource`   |  Specifies the identity to which the policy applies\. This is the email address or domain that the identity owner is authorizing the delegate sender to use\.  |  Yes\.  |  An identity's ARN, as specified in the Amazon SES console\.  | 
-|   `Principal`   |  Specifies the AWS account, IAM user, or AWS service that receives the permission in the statement\.  |  Yes\.  |  A valid AWS account ID, IAM user ARN, or AWS service\. AWS account IDs and IAM user ARNs are specified using `"AWS"` \(for example, `"AWS": ["123456789012"]` or `"AWS": ["arn:aws:iam::123456789012:root"]`\)\. AWS service names are specified using `"Service"` \(for example, `"Service": ["cognito-idp.amazonaws.com"]`\)\.  For examples of the format of IAM user ARNs, see the [AWS General Reference](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam.html)\.  | 
+|   `Principal`   |  Specifies the AWS account, IAM user, or AWS service that receives the permission in the statement\.  |  Yes\.  |  A valid AWS account ID, IAM user ARN, or AWS service\. AWS account IDs and IAM user ARNs are specified using `"AWS"` \(for example, `"AWS": ["123456789012"]` or `"AWS": ["arn:aws:iam::123456789012:root"]`\)\. AWS service names are specified using `"Service"` \(for example, `"Service": ["cognito-idp.amazonaws.com"]`\)\.  For examples of the format of IAM user ARNs, see the [AWS General Reference](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam.html)\.  | 
 |   `Action`   |  Specifies the email sending action that the statement applies to\.  |  Yes\.  |  "ses:SendEmail", "ses:SendRawEmail" \(one or both\)\.  If you use the custom policy editor, you can also set the action to "ses:\*" to encompass both APIs\. If your sender will access Amazon SES through the SMTP interface, you must at least specify "ses:SendRawEmail", or use "ses:\*"\.  | 
 |   `Condition`   |  Specifies any restrictions or details about the permission\.  |  No\.  |  See the information about conditions following this table\.  | 
 
@@ -84,7 +84,7 @@ A *condition* is any restriction about the permission in the statement\. The par
 
 You use both conditions and keys together to express the restriction\. For example, if you want to restrict the delegate sender from making requests to Amazon SES on your behalf after July 30, 2015, you use the condition called `DateLessThan`\. You use the key called `aws:CurrentTime` and set it to the value `2015-07-30T00:00:00Z`\. 
 
-You can use any of the AWS\-wide keys listed at [Available Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AvailableKeys) in the *IAM User Guide*, or you can use one of the following keys specific to Amazon SES:
+You can use any of the AWS\-wide keys listed at [Available Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AvailableKeys) in the *IAM User Guide*, or you can use one of the following keys specific to Amazon SES:
 
 
 ****  
@@ -117,7 +117,7 @@ When you want to disallow access to an email address, use wildcards to ensure th
 5.  }
 ```
 
-For more information about how to specify conditions, see [Condition](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition) in the *IAM User Guide*\.
+For more information about how to specify conditions, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition) in the *IAM User Guide*\.
 
 ## Policy Requirements<a name="sending-authorization-policy-restrictions"></a>
 

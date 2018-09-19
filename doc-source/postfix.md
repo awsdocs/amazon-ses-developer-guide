@@ -4,7 +4,7 @@ Postfix is an alternative to the widely used Sendmail Message Transfer Agent \(M
 
 ## Prerequisites<a name="send-email-postfix-prereqs"></a>
 
-Before you complete the procedures in this section, you must perform the following tasks:
+Before you complete the procedures in this section, you have to perform the following tasks:
 + Uninstall Sendmail, if it's already installed on your system\. The procedure for completing this step varies depending on the operating system you use\.
 + Install Postfix\. The procedure for completing this step varies depending on the operating system you use\.
 + Install a SASL authentication package\. The procedure for completing this step varies depending on the operating system you use\. For example, if you use a RedHat\-based system, you should install the `cyrus-sasl-plain` package\. If you use a Debian\- or Ubuntu\-based system, you should install the `libsasl2-modules` package\.
@@ -17,60 +17,93 @@ Complete the following procedures to configure your mail server to send email th
 
 **To configure Postfix**
 
-1. In a text editor, open the file `/etc/postfix/main.cf`\.
-
-1. Add the following lines to the end of `main.cf`:
+1. At the command line, type the following command:
 
    ```
-   relayhost = [email-smtp.us-west-2.amazonaws.com]:587
-   smtp_sasl_auth_enable = yes
-   smtp_sasl_security_options = noanonymous
-   smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
-   smtp_use_tls = yes
-   smtp_tls_security_level = encrypt
-   smtp_tls_note_starttls_offer = yes
+   sudo postconf -e "relayhost = [email-smtp.us-west-2.amazonaws.com]:587" \
+   "smtp_sasl_auth_enable = yes" \
+   "smtp_sasl_security_options = noanonymous" \
+   "smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd" \
+   "smtp_use_tls = yes" \
+   "smtp_tls_security_level = encrypt" \
+   "smtp_tls_note_starttls_offer = yes"
    ```
 **Note**  
-If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
+If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the preceding command with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
-1. In a text editor, open the file `/etc/postfix/master.cf`\.
-
-1. In `master.cf`, locate the following line:
+1. In a text editor, open the file `/etc/postfix/master.cf`\. Search for the following entry:
 
    ```
    -o smtp_fallback_relay=
    ```
 
-   Place a `#` \(hash\) character at the beginning of the line to comment it out\. Save and close `master.cf`\.
+   If you find this entry, comment it out by placing a `#` \(hash\) character at the beginning of the line\. Save and close the file\.
 
-1. In a text editor, open the file `/etc/postfix/sasl_passwd`\. If the file does not already exist, create it\.
+   Otherwise, if this entry isn't present, proceed to the next step\.
 
-1. Add the following line to `sasl_passwd`:
+1. In a text editor, open the file `/etc/postfix/sasl_passwd`\. If the file doesn't already exist, create it\.
+
+1. Add the following line to `/etc/postfix/sasl_passwd`:
 
    ```
    [email-smtp.us-west-2.amazonaws.com]:587 SMTPUSERNAME:SMTPPASSWORD
    ```
 **Note**  
-Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.  
+Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password aren't the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.  
 If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
    Save and close `sasl_passwd`\.
 
-1. At a command prompt, type the following command to create a hashmap database file containing your SMTP credentials: sudo postmap hash:/etc/postfix/sasl\_passwd
+1. At a command prompt, type the following command to create a hashmap database file containing your SMTP credentials:
 
-1. \(Optional\) The `/etc/postfix/sasl_passwd` and `/etc/postfix/sasl_passwd.db` files you created in the previous steps are not encrypted\. Because these files contain your SMTP credentials, we recommend that you modify the files' ownership and permissions in order to restrict access to them\. To restrict access to these files:
+   ```
+   sudo postmap hash:/etc/postfix/sasl_passwd
+   ```
 
-   1. At a command prompt, type the following command to change the ownership of the files: sudo chown root:root /etc/postfix/sasl\_passwd /etc/postfix/sasl\_passwd\.db
+1. *\(Optional\)* The `/etc/postfix/sasl_passwd` and `/etc/postfix/sasl_passwd.db` files you created in the previous steps aren't encrypted\. Because these files contain your SMTP credentials, we recommend that you modify the files' ownership and permissions in order to restrict access to them\. To restrict access to these files:
 
-   1. At a command prompt, type the following command to change the permissions of the files so that only the root user can read or write to them: sudo chmod 0600 /etc/postfix/sasl\_passwd /etc/postfix/sasl\_passwd\.db
+   1. At a command prompt, type the following command to change the ownership of the files:
+
+      ```
+      sudo chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+      ```
+
+   1. At a command prompt, type the following command to change the permissions of the files so that only the root user can read or write to them:
+
+      ```
+      sudo chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
+      ```
 
 1. Tell Postfix where to find the CA certificate \(needed to verify the Amazon SES server certificate\)\. The command you use in this step varies based on your operating system\.
-   + If you use Amazon Linux, Red Hat Enterprise Linux, or a related distribution, type the following command: sudo postconf \-e 'smtp\_tls\_CAfile = /etc/ssl/certs/ca\-bundle\.crt'
-   + If you use Ubuntu or a related distribution, type the following command: sudo postconf \-e 'smtp\_tls\_CAfile = /etc/ssl/certs/ca\-certificates\.crt'
+   + If you use Amazon Linux, Red Hat Enterprise Linux, or a related distribution, type the following command: 
 
-1. Type the following command to start the Postfix server \(or to reload the configuration settings if the server is already running\): sudo postfix start; sudo postfix reload
+     ```
+     sudo postconf -e 'smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt'
+     ```
+   + If you use Ubuntu or a related distribution, type the following command:
 
-1. Send a test email by typing the following at a command line, pressing Enter after each line\. Replace *sender@example\.com* with your From email address\. The From address must be verified for use with Amazon SES\. Replace *recipient@example\.com* with the destination address\. If your account is still in the sandbox, the recipient address must also be verified\. Finally, the final line must contain a single period \(\.\) with no other content\.
+     ```
+     sudo postconf -e 'smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt'
+     ```
+   + If you use macOS, you can generate the certificate from your system keychain\. To generate the certificate, type the following command at the command line:
+
+     ```
+     sudo security find-certificate -a -p /System/Library/Keychains/SystemRootCertificates.keychain > /etc/ssl/certs/ca-bundle.crt
+     ```
+
+     After you generate the certificate, type the following command:
+
+     ```
+     sudo postconf -e 'smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt'
+     ```
+
+1. Type the following command to start the Postfix server \(or to reload the configuration settings if the server is already running\):
+
+   ```
+   sudo postfix start; sudo postfix reload
+   ```
+
+1. Send a test email by typing the following at a command line, pressing Enter after each line\. Replace *sender@example\.com* with your From email address\. The From address has to be verified for use with Amazon SES\. Replace *recipient@example\.com* with the destination address\. If your account is still in the sandbox, the recipient address also has to be verified\. Finally, the final line of the message has to contain a single period \(\.\) with no other content\.
 
    ```
    sendmail -f sender@example.com recipient@example.com
@@ -79,10 +112,8 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
    This message was sent using Amazon SES.                
    .
    ```
-**Note**  
-In some versions of Ubuntu, when you enter the `sendmail -f` command, you may see the following error message: command not found: sendmail\. In this situation, replace `sendmail` in the command above with `/usr/lib/sendmail`\.
 
-1. Check the mailbox associated with the recipient address\. If the email does not arrive, check your junk mail folder\. If you still cannot locate the email, check your system's mail log \(typically located at `/var/log/maillog`\) for more information\.
+1. Check the mailbox associated with the recipient address\. If the email doesn't arrive, check your junk mail folder\. If you still can't locate the email, check the mail log on the system that you used to send the email \(typically located at `/var/log/maillog`\) for more information\.
 
 ## Advanced Usage Example<a name="send-email-postfix-advanced"></a>
 
@@ -147,8 +178,19 @@ This example shows how to send an email that uses a [configuration set](using-co
 
    Save and close the file\.
 
-1. At the command line, type the following command: sendmail *recipient@example\.com* < mime\-email\.txt
+1. At the command line, type the following command\. Replace *sender@example\.com* with your email address, and replace *recipient@example\.com* with the recipient's email address\.
+
+   ```
+   sendmail -f sender@example.com recipient@example.com < mime-email.txt
+   ```
 
    If the command runs successfully, it exits without providing any output\.
 
-1. Check your inbox for the email\. If the message was not delivered, check your system's mail log\.
+1. Check your inbox for the email\. If the message wasn't delivered, check your system's mail log\.
+
+
+****  
+
+|  | 
+| --- |
+| For information and discussions about a variety of topics related to Amazon SES, visit the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

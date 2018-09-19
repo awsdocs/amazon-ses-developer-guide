@@ -1,6 +1,6 @@
 # Listing Email Identities in Amazon SES<a name="list-email-addresses-procedure"></a>
 
-You can display a list of email identities by using the Amazon SES console or the [ListIdentities](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html) API operation\.
+You can display a list of email identities by using the Amazon SES console or the [ListIdentities](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html) API operation\.
 
 ## Viewing a List of Email Identities in Amazon SES<a name="list-email-addresses-procedure-console"></a>
 
@@ -21,7 +21,7 @@ These procedures only display a list of email addresses for the selected AWS Reg
 
 ## Viewing a List of Email Identities Using the Amazon SES API<a name="list-email-addresses-procedure-console"></a>
 
-Use the [ListIdentities](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html) API operation to view a list of all email identities, regardless of their statuses\. You can also use the [GetIdentityVerificationAttributes](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html) operation to find the verification status of a given identity\.
+Use the [ListIdentities](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html) API operation to view a list of all email identities, regardless of their statuses\. You can also use the [GetIdentityVerificationAttributes](https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html) operation to find the verification status of a given identity\.
 
 To view a list of identities by using the AWS CLI, type the following command at the command line: aws ses list\-identities
 

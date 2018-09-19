@@ -18,17 +18,17 @@ The procedure in this section is optional, but highly recommended\.
 
 **To configure Rendering Failure event notifications**
 
-1. Create an Amazon SNS topic\. For procedures, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+1. Create an Amazon SNS topic\. For procedures, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Subscribe to the Amazon SNS topic\. For example, if you want to receive Rendering Failure notifications by email, subscribe an email endpoint \(that is, your email address\) to the topic\.
 
-   For procedures, see [Subscribe to a Topic](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+   For procedures, see [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Complete the procedures in [Set Up an Amazon SNS Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-sns.md) to set up your configuration sets to publish Rendering Failure events to your Amazon SNS topic\.
 
 ## Part 2: Create an Email Template<a name="send-personalized-email-create-template"></a>
 
-The instructions in this section assume that you are using the AWS CLI, and that you configured it to interact with your AWS account\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/)\.
+The instructions in this section assume that you are using the AWS CLI, and that you configured it to interact with your AWS account\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
 **To create the template**
 

@@ -2,7 +2,7 @@
 
 If you want to use the default Amazon SES MAIL FROM domain, you can remove the custom MAIL FROM domain configuration from the verified identity\.
 
-The following procedures show how to use the Amazon SES console to remove a custom MAIL FROM domain from the configuration of a verified email address or domain\. If you want to use the Amazon SES API instead, see the `SetIdentityMailFromDomain` API in the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+The following procedures show how to use the Amazon SES console to remove a custom MAIL FROM domain from the configuration of a verified email address or domain\. If you want to use the Amazon SES API instead, see the `SetIdentityMailFromDomain` API in the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **To remove a custom MAIL FROM domain from the configuration of a verified email address**
 

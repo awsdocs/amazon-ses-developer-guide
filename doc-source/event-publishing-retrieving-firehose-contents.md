@@ -1,6 +1,6 @@
-# Contents of Amazon SES Event Data Published to Kinesis Firehose<a name="event-publishing-retrieving-firehose-contents"></a>
+# Contents of Amazon SES Event Data Published to Kinesis Data Firehose<a name="event-publishing-retrieving-firehose-contents"></a>
 
-Amazon SES publishes email sending event records to Amazon Kinesis Firehose in JSON format\. When publishing events to Kinesis Firehose, Amazon SES follows each JSON record with a newline character\.
+Amazon SES publishes email sending event records to Amazon Kinesis Data Firehose in JSON format\. When publishing events to Kinesis Data Firehose, Amazon SES follows each JSON record with a newline character\.
 
 The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `bounce`, `complaint`, `delivery`, `send`, `reject`, `open` or `click` object, depending on the type of event\.
 

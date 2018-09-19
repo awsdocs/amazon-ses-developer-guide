@@ -1,6 +1,6 @@
 # Verifying an Email Address<a name="verify-email-addresses-procedure"></a>
 
-You can verify email addresses by using the Amazon SES console or the [VerifyEmailIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation\.
+You can verify email addresses by using the Amazon SES console or the [VerifyEmailIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation\.
 
 ## Verifying an Email Address Using the Amazon SES Console<a name="verify-email-addresses-procedure-console"></a>
 
@@ -31,7 +31,7 @@ The link in the verification message expires 24 hours after the message was sent
 
 ## Verify an Email Address Using the Amazon SES API<a name="verify-email-addresses-api-procedure"></a>
 
-Use the [VerifyEmailIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation to create a new email identity\. When you execute this operation, a verification email is sent to the specified address\.
+Use the [VerifyEmailIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation to create a new email identity\. When you execute this operation, a verification email is sent to the specified address\.
 
 To verify an email address using the AWS CLI, type the following command at the command line: aws ses verify\-email\-identity \-\-email\-address *sender@example\.com*
 

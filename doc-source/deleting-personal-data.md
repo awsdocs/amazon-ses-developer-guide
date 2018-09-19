@@ -50,9 +50,9 @@ You can also use the Amazon SES API to delete event destinations\. The following
 ### Remove Stored Event Data<a name="deleting-personal-data-message-data-storage"></a>
 
 For more information about deleting information from other AWS services, see the following documents:
-+ [Delete an Object and Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/DeletingAnObjectandBucket.html) in the *Amazon Simple Storage Service Getting Started Guide*
-+ [Delete an Amazon ES Domain](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg-deleting.html) in the *Amazon Elasticsearch Service Developer Guide*
-+ [Deleting a Cluster](http://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-console.html#delete-cluster) in the *Amazon Redshift Cluster Management Guide*
++ [Delete an Object and Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/DeletingAnObjectandBucket.html) in the *Amazon Simple Storage Service Getting Started Guide*
++ [Delete an Amazon ES Domain](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg-deleting.html) in the *Amazon Elasticsearch Service Developer Guide*
++ [Deleting a Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-console.html#delete-cluster) in the *Amazon Redshift Cluster Management Guide*
 
 You can also use Kinesis Data Firehose to stream email data to Splunk, a third\-party service that isn't supported by AWS or managed in the AWS Management Console\. For more information about removing data from Splunk, consult your system administrator or the documentation on the [Splunk website](http://docs.splunk.com/Documentation)\.
 

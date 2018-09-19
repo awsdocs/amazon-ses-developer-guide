@@ -9,7 +9,7 @@ When you call the `GetSendStatistics` operation, you receive a list of data poin
 + The number of rejected send attempts
 + A timestamp for the analysis period
 
-For a complete description of the `GetSendStatistics` operation, see the *[Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/GetSendStatistics.html)*\.
+For a complete description of the `GetSendStatistics` operation, see the *[Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/GetSendStatistics.html)*\.
 
 In this section, you will find the following topics:
 + [Calling the `GetSendStatistics` API Operation Using the AWS CLI](#call-getsendstatistics-awscli)
@@ -21,9 +21,9 @@ The easiest way to call the `GetSendStatistics` API operation is to use the [AWS
 
 **To call the `GetSendStatistics` API operation using the AWS CLI**
 
-1. If you have not already done so, install the AWS CLI\. For more information, see "[Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)" in the *AWS Command Line Interface User Guide*\.
+1. If you have not already done so, install the AWS CLI\. For more information, see "[Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)" in the *AWS Command Line Interface User Guide*\.
 
-1. If you have not already done so, configure the AWS CLI to use your AWS credentials\. For more information, see "[Configuring the AWS CLI](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)" in the *AWS Command Line Interface User Guide*\.
+1. If you have not already done so, configure the AWS CLI to use your AWS credentials\. For more information, see "[Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)" in the *AWS Command Line Interface User Guide*\.
 
 1. At the command line, type **aws ses get\-send\-statistics**
 

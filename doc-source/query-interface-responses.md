@@ -27,7 +27,7 @@ The following is an example of a successful response\.
 8. </SendEmailResponse>
 ```
 
-## Structure of an Error Response<a name="w3ab1c25c13c13c13"></a>
+## Structure of an Error Response<a name="w3aac25c13c13c13"></a>
 
 If a request is unsuccessful, the main response element is called `ErrorResponse` regardless of the action that was called\. This element contains an `Error` element and a `RequestId` element\. Each `Error` includes:
 + A `Type` element that identifies whether the error was a receiver or sender error

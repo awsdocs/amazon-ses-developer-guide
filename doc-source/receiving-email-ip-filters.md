@@ -23,4 +23,4 @@ If you only want to receive mail from a finite list of known IP addresses, then 
 
 1. Choose **Create Filter**\.
 
-For information about how to use the `CreateReceiptFilter` API to create an IP address filter, see the *[Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html)*\.
+For information about how to use the `CreateReceiptFilter` API to create an IP address filter, see the *[Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html)*\.

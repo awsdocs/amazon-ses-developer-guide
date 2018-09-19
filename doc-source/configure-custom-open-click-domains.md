@@ -55,11 +55,11 @@ If you plan to use an HTTPS domain for handling open and click links, you must p
 
    1. For **Query String Forwarding and Caching**, choose **Forward all, cache based on all**\.
 
-   1. \(Optional\) If you want to use a custom domain for your CloudFront distribution, rather than the domain CloudFront assigns, you can add an alternate domain name to your distribution\. This subdomain should also be verified in Amazon SES\. For more information, see [Adding and Moving Alternate Domain Names](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html) in the *Amazon CloudFront Developer Guide*\.
+   1. \(Optional\) If you want to use a custom domain for your CloudFront distribution, rather than the domain CloudFront assigns, you can add an alternate domain name to your distribution\. This subdomain should also be verified in Amazon SES\. For more information, see [Adding and Moving Alternate Domain Names](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html) in the *Amazon CloudFront Developer Guide*\.
 
    If you use a CDN other than CloudFront, you may need to complete similar steps\. For more information, refer to the documentation for your CDN\.
 
-1. If you use Route 53 to manage the DNS configuration for your domain and CloudFront as your CDN, create an Alias record in Route 53 that refers to your CloudFront distribution \(such as *d111111abcdef8\.cloudfront\.net*\)\. For more information, see [Creating Records by Using the Amazon Route 53 Console](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) in the *Amazon Route 53 Developer Guide*\.
+1. If you use Route 53 to manage the DNS configuration for your domain and CloudFront as your CDN, create an Alias record in Route 53 that refers to your CloudFront distribution \(such as *d111111abcdef8\.cloudfront\.net*\)\. For more information, see [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) in the *Amazon Route 53 Developer Guide*\.
 
    Otherwise, in the DNS configuration for your subdomain, add a CNAME record that refers to the address of your CDN\.
 
@@ -67,7 +67,7 @@ If you plan to use an HTTPS domain for handling open and click links, you must p
 
 ## Part 2: Setting up a Configuration Set to Refer to a Custom Open and Click Tracking Domain<a name="configure-custom-open-click-domain-config-set"></a>
 
-After you configure your domain to handle open and click tracking redirects, you must set up an event destination in a configuration set to refer to your custom domain\. You can complete this step using the Amazon SES console or the `CreateConfigurationSetTrackingOptions` API operation\. This section contains procedures for completing these tasks using the Amazon SES console; for more information about using the API, see [CreateConfigurationSetTrackingOptions](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html) in the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+After you configure your domain to handle open and click tracking redirects, you must set up an event destination in a configuration set to refer to your custom domain\. You can complete this step using the Amazon SES console or the `CreateConfigurationSetTrackingOptions` API operation\. This section contains procedures for completing these tasks using the Amazon SES console; for more information about using the API, see [CreateConfigurationSetTrackingOptions](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSetTrackingOptions.html) in the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **To create a new configuration set event destination that refers to a custom tracking domain**
 

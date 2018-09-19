@@ -1,6 +1,6 @@
-# Examples of Amazon SES Event Data Published to Kinesis Firehose<a name="event-publishing-retrieving-firehose-examples"></a>
+# Examples of Amazon SES Event Data Published to Kinesis Data Firehose<a name="event-publishing-retrieving-firehose-examples"></a>
 
-This section provides examples of each type of email sending event record that Amazon SES publishes to Kinesis Firehose\.
+This section provides examples of each type of email sending event record that Amazon SES publishes to Kinesis Data Firehose\.
 
 The event types are as follows:
 + [Bounce Record](#event-publishing-retrieving-firehose-bounce)
@@ -13,7 +13,7 @@ The event types are as follows:
 
 ## Bounce Record<a name="event-publishing-retrieving-firehose-bounce"></a>
 
-The following is an example of a `bounce` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of a `bounce` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {
@@ -95,7 +95,7 @@ The following is an example of a `bounce` event record that Amazon SES publishes
 
 ## Complaint Record<a name="event-publishing-retrieving-firehose-complaint"></a>
 
-The following is an example of a `complaint` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of a `complaint` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {
@@ -173,7 +173,7 @@ The following is an example of a `complaint` event record that Amazon SES publis
 
 ## Delivery Record<a name="event-publishing-retrieving-firehose-delivery"></a>
 
-The following is an example of a `delivery` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of a `delivery` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {
@@ -262,7 +262,7 @@ The following is an example of a `delivery` event record that Amazon SES publish
 
 ## Send Email Record<a name="event-publishing-retrieving-firehose-send"></a>
 
-The following is an example of a `send` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of a `send` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {
@@ -340,7 +340,7 @@ The following is an example of a `send` event record that Amazon SES publishes t
 
 ## Reject Event Record<a name="event-publishing-retrieving-firehose-reject"></a>
 
-The following is an example of a `reject` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of a `reject` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {
@@ -420,7 +420,7 @@ The following is an example of a `reject` event record that Amazon SES publishes
 
 ## Open Event Record<a name="event-publishing-retrieving-firehose-open"></a>
 
-The following is an example of an `open` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of an `open` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {
@@ -495,7 +495,7 @@ The following is an example of an `open` event record that Amazon SES publishes 
 
 ## Click Event Record<a name="event-publishing-retrieving-firehose-click"></a>
 
-The following is an example of a `click` event record that Amazon SES publishes to Kinesis Firehose\. 
+The following is an example of a `click` event record that Amazon SES publishes to Kinesis Data Firehose\. 
 
 ```
  1. {

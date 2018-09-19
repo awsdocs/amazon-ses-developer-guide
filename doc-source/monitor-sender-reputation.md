@@ -1,6 +1,6 @@
 # Monitoring Your Amazon SES Sender Reputation<a name="monitor-sender-reputation"></a>
 
-Amazon SES actively tracks several metrics that may cause your reputation as a sender to be damaged, or that could cause your email delivery rates to decline\. Two important metrics that we consider in this process are the bounce and complaint rates for your account\. Accounts with excessively high bounce or complaint rates may be placed on probation or suspended\. For more information, see [Amazon SES Enforcement FAQs](e-faq.md)\.
+Amazon SES actively tracks several metrics that may cause your reputation as a sender to be damaged, or that could cause your email delivery rates to decline\. Two important metrics that we consider in this process are the bounce and complaint rates for your account\. If the bounce or complaint rates for your account are too high, we might place your account under review or pause your account's ability to send email\.
 
 Because your bounce and complaint rate are so important to the health of your account, Amazon SES includes a reputation dashboard that you can use to track these metrics\. The reputation dashboard can also display information about factors unrelated to bounces or complaints that could damage your sender reputation\. For example, if you send email to a known [spamtrap](https://en.wikipedia.org/wiki/Spamtrap), you will see a message on this dashboard\.
 

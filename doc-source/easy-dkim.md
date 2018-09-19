@@ -75,7 +75,7 @@ DNS providers may append the domain name to the end of DNS records\. Adding a re
 **Important**  
 How you update the DNS settings depends on who provides your DNS service\. DNS service may be provided by a domain name registrar such as GoDaddy or Network Solutions, or by a separate service such as Amazon Route 53\.
 
-**What if Easy DKIM fails?**
+ **What if Easy DKIM fails?** 
 
 If your DNS settings are not correctly updated, you will first receive an *Amazon SES DKIM FAILURE* email from Amazon Web Services, and you will see a status of *failed* in the Domains area when you click on the DKIM tab\.
 
@@ -145,7 +145,7 @@ Easy DKIM only works with fully qualified domain names \(FQDNs\)\. If you wanted
 **Important**  
  How you update the DNS settings depends on who provides your DNS service\. DNS service may be provided by a domain name registrar such as GoDaddy or Network Solutions, or by a separate service such as Route 53\.
 
-**What if Easy DKIM fails?**
+ **What if Easy DKIM fails?** 
 
 If your DNS settings are not correctly updated, you will first receive an *Amazon SES DKIM FAILURE* email from Amazon Web Services, and you will see a status of *failed* in the Domains area when you click on the DKIM tab\.
 

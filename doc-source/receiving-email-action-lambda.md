@@ -1,13 +1,13 @@
 # Lambda Action<a name="receiving-email-action-lambda"></a>
 
 The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS\. This action has the following options\.
-+ **Lambda function—**The ARN of the Lambda function\. An example of a Lambda function ARN is *arn:aws:lambda:us\-west\-2:account\-id:function:MyFunction*\. For information about AWS Lambda, see the [AWS Lambda Developer Guide](http://docs.aws.amazon.com/lambda/latest/dg/welcome.html)\.
++ **Lambda function—**The ARN of the Lambda function\. An example of a Lambda function ARN is *arn:aws:lambda:us\-west\-2:account\-id:function:MyFunction*\. For information about AWS Lambda, see the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)\.
 + **Invocation type—**The invocation type of the Lambda function\. An invocation type of **RequestResponse** means that the execution of the function will immediately result in a response, and a value of **Event** means that the function will be invoked asynchronously\. We recommend that you use **Event** invocation type unless synchronous execution is absolutely necessary for your use case\.
 **Note**  
 There is a 30\-second timeout on **RequestResponse** invocations\.
 
-  For information about AWS Lambda invocation types, see the [AWS Lambda Developer Guide](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\.
-+ **SNS Topic—**The name or ARN of the Amazon SNS topic to notify when the specified Lambda function is triggered\. An example of an Amazon SNS topic ARN is *arn:aws:sns:us\-west\-2:123456789012:MyTopic*\. You can also create an Amazon SNS topic when you set up your action by choosing **Create SNS Topic**\. For more information about Amazon SNS topics, see the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\.
+  For information about AWS Lambda invocation types, see the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\.
++ **SNS Topic—**The name or ARN of the Amazon SNS topic to notify when the specified Lambda function is triggered\. An example of an Amazon SNS topic ARN is *arn:aws:sns:us\-west\-2:123456789012:MyTopic*\. You can also create an Amazon SNS topic when you set up your action by choosing **Create SNS Topic**\. For more information about Amazon SNS topics, see the [Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\.
 **Note**  
 The Amazon SNS topic you choose must be in the same AWS region as the Amazon SES endpoint you use to receive email\. 
 

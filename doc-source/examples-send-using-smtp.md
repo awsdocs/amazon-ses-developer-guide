@@ -22,89 +22,86 @@ The following code example is a complete solution for sending email through the 
 10.         {
 11.             // Replace sender@example.com with your "From" address. 
 12.             // This address must be verified with Amazon SES.
-13.             const String FROM = "sender@example.com";
-14.             const String FROMNAME = "Sender Name";
+13.             String FROM = "sender@example.com";
+14.             String FROMNAME = "Sender Name";
 15. 
 16.             // Replace recipient@example.com with a "To" address. If your account 
 17.             // is still in the sandbox, this address must be verified.
-18.             const String TO = "recipient@example.com";
+18.             String TO = "recipient@amazon.com";
 19. 
 20.             // Replace smtp_username with your Amazon SES SMTP user name.
-21.             const String SMTP_USERNAME = "smtp_username";
+21.             String SMTP_USERNAME = "smtp_username";
 22. 
 23.             // Replace smtp_password with your Amazon SES SMTP user name.
-24.             const String SMTP_PASSWORD = "smtp_password";
+24.             String SMTP_PASSWORD = "smtp_password";
 25. 
 26.             // (Optional) the name of a configuration set to use for this message.
 27.             // If you comment out this line, you also need to remove or comment out
 28.             // the "X-SES-CONFIGURATION-SET" header below.
-29.             const String CONFIGSET = "ConfigSet";
+29.             String CONFIGSET = "ConfigSet";
 30. 
 31.             // If you're using Amazon SES in a region other than US West (Oregon), 
 32.             // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
-33.             // endpoint in the appropriate Region.
-34.             const String HOST = "email-smtp.us-west-2.amazonaws.com";
-35.             
+33.             // endpoint in the appropriate AWS Region.
+34.             String HOST = "email-smtp.us-west-2.amazonaws.com";
+35. 
 36.             // The port you will connect to on the Amazon SES SMTP endpoint. We
 37.             // are choosing port 587 because we will use STARTTLS to encrypt
 38.             // the connection.
-39.             const int PORT = 587;
+39.             int PORT = 587;
 40. 
 41.             // The subject line of the email
-42.             const String SUBJECT =
+42.             String SUBJECT =
 43.                 "Amazon SES test (SMTP interface accessed using C#)";
-44.             
+44. 
 45.             // The body of the email
-46.             const String BODY =
+46.             String BODY =
 47.                 "<h1>Amazon SES Test</h1>" +
-48.                 "<p>This email was sent through the "+
+48.                 "<p>This email was sent through the " +
 49.                 "<a href='https://aws.amazon.com/ses'>Amazon SES</a> SMTP interface " +
 50.                 "using the .NET System.Net.Mail library.</p>";
 51. 
 52.             // Create and build a new MailMessage object
 53.             MailMessage message = new MailMessage();
 54.             message.IsBodyHtml = true;
-55.             message.From = new MailAddress(FROM,FROMNAME);
+55.             message.From = new MailAddress(FROM, FROMNAME);
 56.             message.To.Add(new MailAddress(TO));
 57.             message.Subject = SUBJECT;
 58.             message.Body = BODY;
 59.             // Comment or delete the next line if you are not using a configuration set
 60.             message.Headers.Add("X-SES-CONFIGURATION-SET", CONFIGSET);
 61. 
-62.             // Create and configure a new SmtpClient
-63.             SmtpClient client =
-64.                 new SmtpClient(HOST, PORT);
-65.             // Pass SMTP credentials
-66.             client.Credentials =
-67.                 new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
-68.             // Enable SSL encryption
-69.             client.EnableSsl = true;
+62.             using (var client = new System.Net.Mail.SmtpClient(HOST, PORT))
+63.             {
+64.                 // Pass SMTP credentials
+65.                 client.Credentials =
+66.                     new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
+67. 
+68.                 // Enable SSL encryption
+69.                 client.EnableSsl = true;
 70. 
-71.             // Send the email. 
-72.             try
-73.             {
-74.                 Console.WriteLine("Attempting to send email...");
-75.                 client.Send(message);
-76.                 Console.WriteLine("Email sent!");
-77.             }
-78.             catch (Exception ex)
-79.             {
-80.                 Console.WriteLine("The email was not sent.");
-81.                 Console.WriteLine("Error message: " + ex.Message);
-82.             }
-83. 
-84.             // Wait for a key press so that you can see the console output
-85.             Console.Write("Press any key to continue...");
-86.             Console.ReadKey();
-87.         }
-88.     }
-89. }
+71.                 // Try to send the message. Show status in console.
+72.                 try
+73.                 {
+74.                     Console.WriteLine("Attempting to send email...");
+75.                     client.Send(message);
+76.                     Console.WriteLine("Email sent!");
+77.                 }
+78.                 catch (Exception ex)
+79.                 {
+80.                     Console.WriteLine("The email was not sent.");
+81.                     Console.WriteLine("Error message: " + ex.Message);
+82.                 }
+83.             }
+84.         }
+85.     }
+86. }
 ```
 
 ------
-#### [ Go ]
+#### [ Golang ]
 
-The following code example is a complete solution for sending email through the Amazon SES SMTP interface using Go\. In order to run this code example, you must obtain SMTP credentials; for more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. You must also install the [Gomail package](https://github.com/go-gomail/gomail)\.
+The following code example is a complete solution for sending email through the Amazon SES SMTP interface using the Go programming language\. In order to run this code example, you must obtain SMTP credentials; for more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. You must also install the [Gomail package](https://github.com/go-gomail/gomail)\.
 
 ```
  1. package main
@@ -239,7 +236,7 @@ The following code example is a complete solution for sending email through the 
 29.     static final String CONFIGSET = "ConfigSet";
 30.     
 31.     // Amazon SES SMTP host name. This example uses the US West (Oregon) region.
-32.     // See http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html#region-endpoints
+32.     // See https://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html#region-endpoints
 33.     // for more information.
 34.     static final String HOST = "email-smtp.us-west-2.amazonaws.com";
 35.     
@@ -421,73 +418,75 @@ The following code example is a complete solution for sending email through the 
 ```
  1. <?php
  2. 
- 3. // Modify the path in the require statement below to refer to the 
+ 3. // If necessary, modify the path in the require statement below to refer to the 
  4. // location of your Composer autoload.php file.
- 5. require 'path_to_sdk_inclusion';
+ 5. require 'vendor/autoload.php';
  6. 
- 7. // Instantiate a new PHPMailer 
- 8. $mail = new PHPMailer;
- 9. 
-10. // Tell PHPMailer to use SMTP
-11. $mail->isSMTP();
-12. 
-13. // Replace sender@example.com with your "From" address. 
-14. // This address must be verified with Amazon SES.
-15. $mail->setFrom('sender@example.com', 'Sender Name');
-16. 
-17. // Replace recipient@example.com with a "To" address. If your account 
-18. // is still in the sandbox, this address must be verified.
-19. // Also note that you can include several addAddress() lines to send
-20. // email to multiple recipients.
-21. $mail->addAddress('recipient@example.com', 'Recipient Name');
-22. 
-23. // Replace smtp_username with your Amazon SES SMTP user name.
-24. $mail->Username = 'smtp_username';
-25. 
-26. // Replace smtp_password with your Amazon SES SMTP password.
-27. $mail->Password = 'smtp_password';
-28.     
-29. // Specify a configuration set. If you do not want to use a configuration
-30. // set, comment or remove the next line.
-31. $mail->addCustomHeader('X-SES-CONFIGURATION-SET', 'ConfigSet');
-32.  
-33. // If you're using Amazon SES in a region other than US West (Oregon), 
-34. // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
-35. // endpoint in the appropriate region.
-36. $mail->Host = 'email-smtp.us-west-2.amazonaws.com';
-37. 
-38. // The subject line of the email
-39. $mail->Subject = 'Amazon SES test (SMTP interface accessed using PHP)';
-40. 
-41. // The HTML-formatted body of the email
-42. $mail->Body = '<h1>Email Test</h1>
-43.     <p>This email was sent through the 
-44.     <a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
-45.     interface using the <a href="https://github.com/PHPMailer/PHPMailer">
-46.     PHPMailer</a> class.</p>';
-47. 
-48. // Tells PHPMailer to use SMTP authentication
-49. $mail->SMTPAuth = true;
-50. 
-51. // Enable TLS encryption over port 587
-52. $mail->SMTPSecure = 'tls';
-53. $mail->Port = 587;
-54. 
-55. // Tells PHPMailer to send HTML-formatted email
-56. $mail->isHTML(true);
-57. 
-58. // The alternative email body; this is only displayed when a recipient
-59. // opens the email in a non-HTML email client. The \r\n represents a 
-60. // line break.
-61. $mail->AltBody = "Email Test\r\nThis email was sent through the 
-62.     Amazon SES SMTP interface using the PHPMailer class.";
-63. 
-64. if(!$mail->send()) {
-65.     echo "Email not sent. " , $mail->ErrorInfo , PHP_EOL;
-66. } else {
-67.     echo "Email sent!" , PHP_EOL;
-68. }
-69. ?>
+ 7. use PHPMailer\PHPMailer\PHPMailer;
+ 8. 
+ 9. // Instantiate a new PHPMailer 
+10. $mail = new PHPMailer;
+11. 
+12. // Tell PHPMailer to use SMTP
+13. $mail->isSMTP();
+14. 
+15. // Replace sender@example.com with your "From" address. 
+16. // This address must be verified with Amazon SES.
+17. $mail->setFrom('sender@example.com', 'Sender Name');
+18. 
+19. // Replace recipient@example.com with a "To" address. If your account 
+20. // is still in the sandbox, this address must be verified.
+21. // Also note that you can include several addAddress() lines to send
+22. // email to multiple recipients.
+23. $mail->addAddress('recipient@example.com', 'Recipient Name');
+24. 
+25. // Replace smtp_username with your Amazon SES SMTP user name.
+26. $mail->Username = 'smtp_username';
+27. 
+28. // Replace smtp_password with your Amazon SES SMTP password.
+29. $mail->Password = 'smtp_password';
+30.     
+31. // Specify a configuration set. If you do not want to use a configuration
+32. // set, comment or remove the next line.
+33. $mail->addCustomHeader('X-SES-CONFIGURATION-SET', 'ConfigSet');
+34.  
+35. // If you're using Amazon SES in a region other than US West (Oregon), 
+36. // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
+37. // endpoint in the appropriate region.
+38. $mail->Host = 'email-smtp.us-west-2.amazonaws.com';
+39. 
+40. // The subject line of the email
+41. $mail->Subject = 'Amazon SES test (SMTP interface accessed using PHP)';
+42. 
+43. // The HTML-formatted body of the email
+44. $mail->Body = '<h1>Email Test</h1>
+45.     <p>This email was sent through the 
+46.     <a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
+47.     interface using the <a href="https://github.com/PHPMailer/PHPMailer">
+48.     PHPMailer</a> class.</p>';
+49. 
+50. // Tells PHPMailer to use SMTP authentication
+51. $mail->SMTPAuth = true;
+52. 
+53. // Enable TLS encryption over port 587
+54. $mail->SMTPSecure = 'tls';
+55. $mail->Port = 587;
+56. 
+57. // Tells PHPMailer to send HTML-formatted email
+58. $mail->isHTML(true);
+59. 
+60. // The alternative email body; this is only displayed when a recipient
+61. // opens the email in a non-HTML email client. The \r\n represents a 
+62. // line break.
+63. $mail->AltBody = "Email Test\r\nThis email was sent through the 
+64.     Amazon SES SMTP interface using the PHPMailer class.";
+65. 
+66. if(!$mail->send()) {
+67.     echo "Email not sent. " , $mail->ErrorInfo , PHP_EOL;
+68. } else {
+69.     echo "Email sent!" , PHP_EOL;
+70. }
+71. ?>
 ```
 
 ------

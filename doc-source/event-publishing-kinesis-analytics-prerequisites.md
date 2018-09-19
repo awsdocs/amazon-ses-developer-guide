@@ -9,4 +9,4 @@ If you do not have an existing email campaign to send to real recipients, we str
 
 ## Next Step<a name="event-publishing-kinesis-analytics-prerequisites-next-step"></a>
 
-[Step 1: Create a Kinesis Firehose Delivery Stream](event-publishing-kinesis-analytics-firehose-stream.md)
+[Step 1: Create a Kinesis Data Firehose Delivery Stream](event-publishing-kinesis-analytics-firehose-stream.md)

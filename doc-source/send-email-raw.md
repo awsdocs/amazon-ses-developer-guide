@@ -12,7 +12,7 @@ With the Internet Message Format specification, every email message consists of 
 
 ## Using MIME<a name="send-email-raw-mime"></a>
 
-The SMTP protocol is designed for sending email messages composed of 7\-bit ASCII characters\. While this works well for many use cases, it is insufficient for non\-ASCII text encodings \(such as Unicode\), binary content, or attachments\. The Multipurpose Internet Mail Extensions standard \(MIME\) was developed to overcome these limitations, making it possible to send many other kinds of content using SMTP\.
+The SMTP protocol was originally designed to send email messages that only contained 7\-bit ASCII characters\. This limitation makes SMTP insufficient for non\-ASCII text encodings \(such as Unicode\), binary content, or attachments\. The Multipurpose Internet Mail Extensions standard \(MIME\) was developed to overcome these limitations, making it possible to send many other kinds of content using SMTP\.
 
 The MIME standard works by breaking the message body into multiple parts and then specifying what is to be done with each part\. For example, one part of an email message body might be plain text, while another might be HTML\. In addition, MIME allows email messages to contain one or more attachments\. Message recipients can view the attachments from within their email clients, or they can save the attachments\.
 
@@ -65,26 +65,93 @@ The multipart message in the following example contains a text and an HTML part\
 42. --a3f166a86b56ff6c37755292d690675717ea3cd9de81228ec2b76ed4a15d6d1a--
 ```
 
-The content type for the message is `multipart/mixed`, which indicates that the message has many parts \(in this example, a body and an attachment\), and the receiving client must handle each part separately\. Nested within the body section, there is a second part that uses the `multipart/alternative` content type\. This content type indicates that each part contains alternative versions of the same content \(in this case, a text version and an HTML version\)\. When sent, if the recipient's email client can display HTML, then the HTML version of the body text is displayed\. If the recipient's email client cannot display HTML, then the plain text version is shown\. Both versions of the message will also contain an attachment \(in this case, a short text file that contains some customer names\)\.
+The content type for the message is `multipart/mixed`, which indicates that the message has many parts \(in this example, a body and an attachment\), and the receiving client must handle each part separately\. Nested within the body section is a second part that uses the `multipart/alternative` content type\. This content type indicates that each part contains alternative versions of the same content \(in this case, a text version and an HTML version\)\. If the recipient's email client can display HTML content, then it shows the HTML version of the message body\. If the recipient's email client can't display HTML content, then it shows the plain text version of the message body\. Both versions of the message also contain an attachment \(in this case, a short text file that contains some customer names\)\.
 
 When you nest a MIME part within another part, as in this example, the nested part must use a `boundary` parameter that is distinct from the `boundary` parameter in the parent part\. These boundaries should be unique strings of characters\. To define a boundary between MIME parts, type two hyphens \(\-\-\) followed by the boundary string\. At the end of a MIME part, place two hyphens at both the beginning and the end of the boundary string\.
 
 ### MIME Encoding<a name="send-email-mime-encoding"></a>
 
-Because of the 7\-bit ASCII restriction of SMTP, any content containing 8\-bit characters must first be converted to 7\-bit ASCII before sending\. MIME defines a *Content\-Transfer\-Encoding* header field for this purpose\. 
+To maintain compatibility with older systems, Amazon SES honors the 7\-bit ASCII limitation of SMTP as defined in [RFC 2821](https://tools.ietf.org/html/rfc2821)\. If you want to send content that contains non\-ASCII characters, you must encode those characters into a format that uses 7\-bit ASCII characters\.
 
-By convention, the most common encoding scheme is base64, where 8\-bit binary content is encoded using a well\-defined set of 7\-bit ASCII characters\. Upon receipt, the email client inspects the Content\-Transfer\-Encoding header field, and can immediately perform a base64 decode operation on the content, thus returning it to its original form\. With most email clients, the encoding and decoding occur automatically, and the user need not be aware of it\.
+#### Email Addresses<a name="send-email-mime-encoding-addresses"></a>
 
-In the example above, the "customers\.txt" attachment must be decoded from base64 format in order to be read\. Some email clients will encode all MIME parts in base64 format, even if they were originally in plain text\. This is not normally an issue, since email clients perform the encoding and decoding automatically\.
+To encode an email address that is used in the message envelope, use Punycode encoding\.
+
+For example, to send an email to *张伟@example\.com*, use Punycode encoding on the local part of the address \(the part before the @ sign\)\. The resulting, encoded address is *xn\-\-cpqy30b@example\.com*\.
 
 **Note**  
-For a list of MIME types that Amazon SES accepts, see [Appendix: Unsupported Attachment Types](mime-types-appendix.md)\.
+This rule only applies to email addresses that you specify message envelope, not the message headers\. When you use the `SendRawEmail` API, the addresses you specify in the `Source` and `Destinations` parameters define the envelope sender and recipients, respectively\.
 
-If you want certain parts of a message, like some headers, to contain characters other than 7\-bit ASCII, then you must use MIME encoded\-word syntax \(RFC 2047\) instead of a literal string\. MIME encoded\-word syntax uses the following form: *=?charset?encoding?encoded\-text?=*\. For more information, see [RFC 2047](https://tools.ietf.org/html/rfc2047)\. If you want to send to or from email addresses that contain unicode characters in the domain part of an address, you must encode the domain using Punycode\. For more information, see [RFC 3492](https://tools.ietf.org/html/rfc3492)\. 
+For more information about Punycode encoding, see [RFC 3492](https://tools.ietf.org/html/rfc3492)\.
+
+#### Email Headers<a name="send-email-mime-encoding-headers"></a>
+
+To encode a message header, use MIME encoded\-word syntax\. MIME encoded word syntax uses the following format:
+
+```
+=?charset?encoding?encoded-text?=
+```
+
+The value of `encoding` can be either `Q` or `B`\. If the value of encoding is `Q`, then the value `encoded-text` has to use Q\-encoding\. If the value of encoding is `B`, then the value of `encoded-text` has to use base64 encoding\.
+
+For example, if you want to use the string "Як ти поживаєш?" in the subject line of an email, you can use either of the following encodings:
++ **Q\-encoding**
+
+  ```
+  =?utf-8?Q?=D0=AF=D0=BA_=D1=82=D0=B8_=D0=BF=D0=BE=D0=B6=D0=B8=D0=B2=D0=B0=D1=94=D1=88=3F?=
+  ```
++ **Base64 encoding**
+
+  ```
+  =?utf-8?B?0K/QuiDRgtC4INC/0L7QttC40LLQsNGU0Yg/?=
+  ```
+
+For more information about Q\-encoding, see [RFC 2047](https://tools.ietf.org/html/rfc2047)\. For more information about base64 encoding, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\.
+
+#### Message Body<a name="send-email-mime-encoding-body"></a>
+
+To encode the body of a message, you can use quoted\-printable encoding or base64 encoding\. Then, use the `Content-Transfer-Encoding` header to indicate which encoding scheme you used\.
+
+For example, assume the body of your message contains the following text: 
+
+१९७२ मे रे टॉमलिंसन ने पहला ई\-मेल संदेश भेजा \| रे टॉमलिंसन ने ही सर्वप्रथम @ चिन्ह का चयन किया और इन्ही को ईमेल का आविष्कारक माना जाता है
+
+If you choose to encode this text using base64 encoding, first specify the following header:
+
+```
+Content-Type-Encoding: base64
+```
+
+Then, in the body section of the email, include the base64\-encoded text:
+
+```
+4KWn4KWv4KWt4KWoIOCkruClhyDgpLDgpYcg4KSf4KWJ4KSu4KSy4KS/4KSC4KS44KSoIOCkqOCl
+hyDgpKrgpLngpLLgpL4g4KSILeCkruClh+CksiDgpLjgpILgpKbgpYfgpLYg4KSt4KWH4KSc4KS+
+IHwg4KSw4KWHIOCkn+ClieCkruCksuCkv+CkguCkuOCkqCDgpKjgpYcg4KS54KWAIOCkuOCksOCl
+jeCkteCkquCljeCksOCkpeCkriBAIOCkmuCkv+CkqOCljeCkuSDgpJXgpL4g4KSa4KSv4KSoIOCk
+leCkv+Ckr+CkviDgpJTgpLAg4KSH4KSo4KWN4KS54KWAIOCkleCliyDgpIjgpK7gpYfgpLIg4KSV
+4KS+IOCkhuCkteCkv+Ckt+CljeCkleCkvuCksOCklSDgpK7gpL7gpKjgpL4g4KSc4KS+4KSk4KS+
+IOCkueCliAo=
+```
+
+**Note**  
+In some cases, you can use the 8bit `Content-Transfer-Encoding` in messages that you send using Amazon SES\. However, if Amazon SES has to make any changes to your messages \(for example, when you use [open and click tracking](sending-metric-faqs.md)\), 8\-bit\-encoded content might not appear correctly when it arrives in recipients' inboxes\. For this reason, you should always encode content that isn't 7\-bit ASCII\.
+
+#### File Attachments<a name="send-email-mime-encoding-files"></a>
+
+To attach a file to an email, you have to encode the attachment using base64 encoding\. Attachments are typically placed in dedicated MIME message parts, which include the following headers:
++ **Content\-Type**: The file type of the attachment\. The following are examples of common MIME Content\-Type declarations:
+  + **Plain text file**: `Content-Type: text/plain; name="sample.txt"`
+  + **Microsoft Word Document**: `Content-Type: application/msword; name="document.docx"`
+  + **JPG image**: `Content-Type: image/jpeg; name="photo.jpeg"`
++ **Content\-Disposition**: Specifies how the recipient's email client should handle the content\. For attachments, this value is `Content-Disposition: attachment`\.
++ **Content\-Transfer\-Encoding**: The scheme that was used to encode the attachment\. For file attachments, this value is almost always `base64`\.
+
+Amazon SES accepts most common file types\. For a list of file types that Amazon SES doesn't accept, see [Appendix: Unsupported Attachment Types](mime-types-appendix.md)\.
 
 ## Sending a Raw Email Using the Amazon SES API<a name="send-email-raw-api"></a>
 
-The Amazon SES API provides the `SendRawEmail` action, which lets you compose and send an email message in the format that you specify\. For a complete description of `SendRawEmail`, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+The Amazon SES API provides the `SendRawEmail` action, which lets you compose and send an email message in the format that you specify\. For a complete description of `SendRawEmail`, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **Note**  
 For tips on how to increase your email sending speed when you make multiple calls to `SendRawEmail`, see [Increasing Throughput with Amazon SES](throughput-problems.md)\.

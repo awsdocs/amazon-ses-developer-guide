@@ -7,7 +7,7 @@ You can use the same MAIL FROM address in multiple AWS Regions\. For more inform
 
 ## Setting the MAIL FROM Domain<a name="mail-from-setup-procedure"></a>
 
-The following procedures show how to use the Amazon SES console to configure a verified email address or domain to send emails using a specified MAIL FROM domain\. You can also configure a MAIL FROM domain using the `SetIdentityMailFromDomain` API operation\. For more information, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+The following procedures show how to use the Amazon SES console to configure a verified email address or domain to send emails using a specified MAIL FROM domain\. You can also configure a MAIL FROM domain using the `SetIdentityMailFromDomain` API operation\. For more information, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **To configure a verified email address to use a specified MAIL FROM domain**
 

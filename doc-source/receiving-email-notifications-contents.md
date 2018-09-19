@@ -11,9 +11,9 @@ The top\-level JSON object contains the following fields\.
 
 | Field Name | Description | 
 | --- | --- | 
-|  `notificationType`  |  String that specifies the notification type\. This value will always be `Received`\.  | 
-|  `receipt`  |  Object that contains information about the email delivery\.   | 
-|  `mail`  |  Object that contains information about the email to which the notification pertains\.   | 
+|  `notificationType`  |  The notification type\. For this type of notification, the value is always `Received`\.  | 
+|  [`receipt`](#receiving-email-notifications-contents-receipt-object)  |  Object that contains information about the email delivery\.   | 
+|  [`mail`](#receiving-email-notifications-contents-mail-object)  |  Object that contains information about the email associated with the notification\.   | 
 |  `content`  |  String that contains the raw, unmodified email, which is typically in Multipurpose Internet Mail Extensions \(MIME\) format\. For more information about MIME format, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\.  This field is present only if the notification was triggered by an SNS action\. Notifications triggered by all other actions do not contain this field\.   | 
 
 ## receipt Object<a name="receiving-email-notifications-contents-receipt-object"></a>
@@ -25,16 +25,16 @@ The `receipt` object has the following fields\.
 
 | Field Name | Description | 
 | --- | --- | 
-|  `action`  |  Object that encapsulates information about the action that was executed\. For a list of possible values, see [action Object](#receiving-email-notifications-contents-action-object)\.  | 
-|  `dkimVerdict`  |  Object that indicates whether the DomainKeys Identified Mail \(DKIM\) check passed\. For a list of possible values, see [dkimVerdict Object](#receiving-email-notifications-contents-dkimverdict-object)\.  | 
+|  [`action`](#receiving-email-notifications-contents-action-object)  |  Object that encapsulates information about the action that was executed\. For a list of possible values, see [action Object](#receiving-email-notifications-contents-action-object)\.  | 
+|  [`dkimVerdict`](#receiving-email-notifications-contents-dkimverdict-object)  |  Object that indicates whether the DomainKeys Identified Mail \(DKIM\) check passed\. For a list of possible values, see [dkimVerdict Object](#receiving-email-notifications-contents-dkimverdict-object)\.  | 
 | dmarcPolicy | Indicates the Domain\-based Message Authentication, Reporting & Conformance \(DMARC\) settings for the sending domain\. This field only appears if the message fails DMARC authentication\. Possible values for this field are:[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-notifications-contents.html) | 
-| dmarcVerdict | Object that indicates whether the Domain\-based Message Authentication, Reporting & Conformance \(DMARC\) check passed\. For a list of possible values, see [dmarcVerdict Object](#receiving-email-notifications-contents-dmarcverdict-object)\. | 
+| [`dmarcVerdict`](#receiving-email-notifications-contents-dmarcverdict-object) | Object that indicates whether the Domain\-based Message Authentication, Reporting & Conformance \(DMARC\) check passed\. For a list of possible values, see [dmarcVerdict Object](#receiving-email-notifications-contents-dmarcverdict-object)\. | 
 |  `processingTimeMillis`  |  String that specifies the period, in milliseconds, from the time Amazon SES received the message to the time it triggered the action\.  | 
 |  `recipients`  |  A list of recipients \(specifically, the envelope RCPT TO addresses\) that were matched by the active [receipt rule](receiving-email-receipt-rules.md)\. The addresses listed here may differ from those listed by the `destination` field in the [mail Object](#receiving-email-notifications-contents-mail-object)\.  | 
-|  `spamVerdict`  |  Object that indicates whether the message is spam\. For a list of possible values, see [spamVerdict Object](#receiving-email-notifications-contents-spamverdict-object)\.  | 
-|  `spfVerdict`  |  Object that indicates whether the Sender Policy Framework \(SPF\) check passed\. For a list of possible values, see [spfVerdict Object](#receiving-email-notifications-contents-spfverdict-object)\.  | 
+|  [`spamVerdict`](#receiving-email-notifications-contents-spamverdict-object)  |  Object that indicates whether the message is spam\. For a list of possible values, see [spamVerdict Object](#receiving-email-notifications-contents-spamverdict-object)\.  | 
+|  [`spfVerdict`](#receiving-email-notifications-contents-spfverdict-object)  |  Object that indicates whether the Sender Policy Framework \(SPF\) check passed\. For a list of possible values, see [spfVerdict Object](#receiving-email-notifications-contents-spfverdict-object)\.  | 
 |  `timestamp`  |  String that specifies the date and time at which the action was triggered, in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format\.  | 
-|  `virusVerdict`  |  Object that indicates whether the message contains a virus\. For a list of possible values, see [virusVerdict Object](#receiving-email-notifications-contents-virusverdict-object)\.  | 
+|  [virusVerdict](#receiving-email-notifications-contents-virusverdict-object)  |  Object that indicates whether the message contains a virus\. For a list of possible values, see [virusVerdict Object](#receiving-email-notifications-contents-virusverdict-object)\.  | 
 
 ### action Object<a name="receiving-email-notifications-contents-action-object"></a>
 
@@ -126,5 +126,25 @@ The `mail` object has the following fields\.
 |  `source`  |  String that contains the email address \(specifically, the envelope MAIL FROM address\) that the email was sent from\.  | 
 |  `timestamp`  |  String that contains the time at which the email was received, in ISO8601 format\.  | 
 |  `headers`  |  A list of Amazon SES headers and your custom headers\. Each header in the list has a `name` field and a `value` field\.  | 
-|  `commonHeaders`  |  A list of headers common to all emails\. Each header in the list is composed of a name and a value\.  | 
+|  [`commonHeaders`](#receiving-email-notifications-contents-mail-object-commonHeaders)  |  A list of headers common to all emails\. Each header in the list is composed of a name and a value\.  | 
 |  `headersTruncated`  |  String that specifies whether the headers were truncated in the notification, which will happen if the headers are larger than 10 KB\. Possible values are `true` and `false`\.  | 
+
+### commonHeaders Object<a name="receiving-email-notifications-contents-mail-object-commonHeaders"></a>
+
+The `commonHeaders` object can have the fields shown in the following table\. The fields present in this object vary depending on which fields were present in the incoming email\.
+
+
+****  
+
+| Field Name | Description | 
+| --- | --- | 
+|  `messageId`  | The ID of the original message\. | 
+|  `date`  |  The date and time when Amazon SES received the message\.  | 
+|  `to`  | The values in the To header of the email\. | 
+|  `cc`  | The values in the CC header of the email\. | 
+|  `bcc`  | The values in the BCC header of the email\. | 
+|  `from`  | The values in the From header of the email\. | 
+|  `sender`  | The values in the Sender header of the email\. | 
+|  `returnPath`  | The values in the Return\-Path header of the email\. | 
+|  `reply-to`  | The values in the Reply\-To header of the email\. | 
+|  `subject`  | The value of the Subject header for the email\. | 

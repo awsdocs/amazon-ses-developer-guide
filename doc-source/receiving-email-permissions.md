@@ -4,7 +4,7 @@ To enable Amazon SES to write emails to your Amazon S3 bucket, use an AWS KMS ke
 
 ## Give Amazon SES Permission to Write to Your Amazon S3 Bucket<a name="receiving-email-permissions-s3"></a>
 
-When applied to an Amazon S3 bucket, the following policy gives Amazon SES permission to write to that bucket\. For more information about creating receipt rules that transfer incoming email to Amazon S3, see [S3 Action](receiving-email-action-s3.md)\. For more information about attaching policies to Amazon S3 buckets, see the *[Amazon Simple Storage Service Developer Guide](http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html.html)*\.
+When applied to an Amazon S3 bucket, the following policy gives Amazon SES permission to write to that bucket\. For more information about creating receipt rules that transfer incoming email to Amazon S3, see [S3 Action](receiving-email-action-s3.md)\. For more information about attaching policies to Amazon S3 buckets, see the *[Amazon Simple Storage Service Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html.html)*\.
 
 ```
  1. {
@@ -56,11 +56,11 @@ Paste the following policy statement into the key policy to permit Amazon SES to
 16. }
 ```
 
-For more information about attaching policies to AWS KMS keys, see the *[AWS Key Management Service Developer Guide](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)*\.
+For more information about attaching policies to AWS KMS keys, see the *[AWS Key Management Service Developer Guide](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)*\.
 
 ## Give Amazon SES Permission to Invoke Your Lambda Function<a name="receiving-email-permissions-lambda"></a>
 
-To enable Amazon SES to call your Lambda function, you can either configure the Lambda function using the Amazon SES console during receipt\-rule setup \(in which case Amazon SES automatically adds the necessary permissions to the function\) or you can use the AWS Lambda `AddPermission` API to attach a policy to the function\. The following `AddPermission` API call gives Amazon SES permission to invoke your Lambda function\. Replace `AWSACCOUNTID` with your 12\-digit AWS account ID\. For more information about attaching policies to Lambda functions, see the *[AWS Lambda Developer Guide](http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html)*\.
+To enable Amazon SES to call your Lambda function, you can either configure the Lambda function using the Amazon SES console during receipt\-rule setup \(in which case Amazon SES automatically adds the necessary permissions to the function\) or you can use the AWS Lambda `AddPermission` API to attach a policy to the function\. The following `AddPermission` API call gives Amazon SES permission to invoke your Lambda function\. Replace `AWSACCOUNTID` with your 12\-digit AWS account ID\. For more information about attaching policies to Lambda functions, see the *[AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html)*\.
 
 ```
 1. {
@@ -73,7 +73,7 @@ To enable Amazon SES to call your Lambda function, you can either configure the 
 
 ## Give Amazon SES Permission to Publish to an Amazon SNS Topic of Another Account<a name="receiving-email-permissions-sns"></a>
 
-If the Amazon SNS topic you want to use is owned by the same AWS account you are using for Amazon SES, no setup is required to allow Amazon SES to publish to the topic\. However, if you want to publish notifications to a topic that you do not own, use the Amazon SNS console or API to attach a policy to the Amazon SNS topic\. The following policy gives Amazon SES permission to publish to an Amazon SNS topic\. Replace `AWSACCOUNTID` with your 12\-digit AWS account ID, and `TOPIC-NAME` with the name of the Amazon SNS topic\. For more information about writing policies for Amazon SNS topics, see the *[Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage.html)*\.
+If the Amazon SNS topic you want to use is owned by the same AWS account you are using for Amazon SES, no setup is required to allow Amazon SES to publish to the topic\. However, if you want to publish notifications to a topic that you do not own, use the Amazon SNS console or API to attach a policy to the Amazon SNS topic\. The following policy gives Amazon SES permission to publish to an Amazon SNS topic\. Replace `AWSACCOUNTID` with your 12\-digit AWS account ID, and `TOPIC-NAME` with the name of the Amazon SNS topic\. For more information about writing policies for Amazon SNS topics, see the *[Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage.html)*\.
 
 ```
  1. {

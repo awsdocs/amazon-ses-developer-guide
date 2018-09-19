@@ -12,10 +12,10 @@ This section contains the following topics that may help you when you encounter 
 + For solutions to common problems that you might encounter when you use Amazon SES through its Simple Mail Transfer Protocol \(SMTP\) interface, see [Amazon SES SMTP Issues](smtp-issues.md)\. 
 + For a list of SMTP response codes that a client application can receive from Amazon SES, see [SMTP Response Codes Returned by Amazon SES](smtp-response-codes.md)\.
 + For a list of error codes that are returned by the Amazon SES Query \(HTTPS\) API, see [API Error Codes Returned by Amazon SES](api-error-codes.md)\.
-+ For a description of common enforcement issues and how to handle them, see [Amazon SES Enforcement FAQs](e-faq.md)\.
++ For a description of common issues related to our sending review process, and how to handle them, see [Amazon SES Sending Review Process FAQs](e-faq.md)\.
 + For a discussion about how IP blacklists affect your sending with Amazon SES, see [Amazon SES IP Blacklist FAQs](blacklists.md)\.
 
-If you are calling the Amazon SES API directly, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/) for the HTTP errors that you might receive\.
+If you are calling the Amazon SES API directly, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) for the HTTP errors that you might receive\.
 
 
 ****  

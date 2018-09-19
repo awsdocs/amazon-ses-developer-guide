@@ -25,7 +25,7 @@ The following script reads the input file and attempts to validate all of the em
  4. 
  5. # The full path to the file that contains the identities to be verified. 
  6. # The input file must be JSON-formatted. See
- 7. # http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sample-code-bulk-verify.html 
+ 7. # https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sample-code-bulk-verify.html 
  8. # for a sample input file.
  9. FILE_INPUT = '/path/to/identities.json'
 10. 

@@ -26,4 +26,4 @@ The Amazon SES API provides the `GetSendQuota` action, which returns your sendin
 + Maximum send rate
 
 **Note**  
-For a description of `GetSendQuota`, see [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+For a description of `GetSendQuota`, see [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.

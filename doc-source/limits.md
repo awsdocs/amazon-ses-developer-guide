@@ -17,6 +17,7 @@ Sending limits are based on recipients rather than on messages\.
 | Limit | Description | 
 | --- | --- | 
 | Sending limits in the sandbox environment |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/limits.html) To increase your sending limits, open an SES Sending Limit case in Support Center\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.  | 
+| Sending limits outside of the sandbox environment |  Your sending quota and maximum send rate vary depending on your unique use case and your sending practices\. If your account is in good standing \(that is, it's not under review and its ability to send email isn't paused\), and you're approaching your current sending limits, we automatically increase the sending limits for your account\. We perform these limit increases on a regular basis\. We don't publish the increase amount or the frequency with which these increases occur, because these values can change regularly\. You can see the current sending limits for your account on the [Sending Statistics](monitor-using-console.md) page in the Amazon SES console, or by using the [GetSendQuota](https://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendQuota.html) API\. If you need to have your sending limits by a larger amount, [open a sending limit increase case in Support Center](increase-sending-limits.md)\.  | 
 
 ### Message Limits<a name="limits-message"></a>
 
@@ -101,7 +102,7 @@ The following table lists limits that apply to both email sending and email rece
 
 | Limit | Description | 
 | --- | --- | 
-|  Rate at which you can call Amazon SES API actions  |  All actions \(except for `SendEmail` and `SendRawEmail`\) are throttled at one request per second\. For more information about the Amazon SES API, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.  | 
+|  Rate at which you can call Amazon SES API actions  |  All actions \(except for `SendEmail` and `SendRawEmail`\) are throttled at one request per second\. For more information about the Amazon SES API, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.  | 
 
 
 ****  

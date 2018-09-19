@@ -7,7 +7,7 @@ Sendmail was acquired by Proofpoint in 2013, but Proofpoint continues to offer a
 The instructions in this section show you how to configure Sendmail to send email through Amazon SES\. These instructions were tested on a 64\-bit Amazon EC2 instance using the following Amazon Machine Image \(AMI\):
 + Amazon Linux AMI 2015\.09\.2 \(ami\-8fcee4e5\)
 
-For more information about launching an Amazon EC2 instance, which includes selecting an AMI, see [Amazon Machine Images \(AMIs\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance_linux.html)\.
+For more information about launching an Amazon EC2 instance, which includes selecting an AMI, see [Amazon Machine Images \(AMIs\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance_linux.html)\.
 
  **Prerequisites** 
 

@@ -17,7 +17,7 @@ The following procedure shows how to install SQL Workbench/J\.
 **Important**  
 Note the Java runtime version prerequisites for SQL Workbench/J and ensure you are using that version\. Otherwise, this client application will not run\.
 
-1. Go to [Configure a JDBC Connection](http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html) and download an Amazon Redshift JDBC driver to enable SQL Workbench/J to connect to your cluster\.
+1. Go to [Configure a JDBC Connection](https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html) and download an Amazon Redshift JDBC driver to enable SQL Workbench/J to connect to your cluster\.
 
 ## Next Step<a name="event-publishing-redshift-prerequisites-next-step"></a>
 

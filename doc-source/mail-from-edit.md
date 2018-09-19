@@ -1,6 +1,6 @@
 # Editing a MAIL FROM Domain with Amazon SES<a name="mail-from-edit"></a>
 
-The following procedures show how to use the Amazon SES console to edit the custom MAIL FROM domain configuration of a verified email address or domain\. If you want to use the Amazon SES API instead, see the `SetIdentityMailFromDomain` API in the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+The following procedures show how to use the Amazon SES console to edit the custom MAIL FROM domain configuration of a verified email address or domain\. If you want to use the Amazon SES API instead, see the `SetIdentityMailFromDomain` API in the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **To edit the MAIL FROM configuration of a verified email address**
 

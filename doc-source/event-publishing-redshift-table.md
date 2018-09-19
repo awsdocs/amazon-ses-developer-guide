@@ -39,4 +39,4 @@ We assume that SQL Workbench/J is currently open on your computer, and it is con
 
 ## Next Step<a name="event-publishing-redshift-table-next-step"></a>
 
-[Step 4: Create a Kinesis Firehose Delivery Stream](event-publishing-redshift-firehose-stream.md)
+[Step 4: Create a Kinesis Data Firehose Delivery Stream](event-publishing-redshift-firehose-stream.md)

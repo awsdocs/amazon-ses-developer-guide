@@ -10,7 +10,7 @@ This section includes procedures for exporting reputation data for individual co
 
 To start exporting reputation metrics for a configuration set, use the `UpdateConfigurationSetReputationMetricsEnabled` API operation\. To access the Amazon SES API, we recommend using the AWS CLI or one of the AWS SDKs\.
 
-This procedure assumes that the AWS CLI is installed on your computer and properly configured\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)\.
+This procedure assumes that the AWS CLI is installed on your computer and properly configured\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html)\.
 
 **To enable the exporting of reputation metrics for a configuration set**
 + At the command line, type the following command: aws ses update\-configuration\-set\-reputation\-metrics\-enabled \-\-configuration\-set\-name *ConfigSet* \-\-enabled

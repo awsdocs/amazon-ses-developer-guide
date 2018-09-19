@@ -34,7 +34,7 @@ To make the GET examples easier to read, this guide presents them in the followi
 
 The first line represents the *endpoint* of the request\. After the endpoint is a question mark \(?\), which separates the endpoint from the parameters\. Each parameter is separated by an ampersand \(&\)\.
 
-The `Action` parameter indicates the action to perform\. For a complete list of actions, and the parameters used with each action, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+The `Action` parameter indicates the action to perform\. For a complete list of actions, and the parameters used with each action, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 Some operations take lists of parameters\. For example, when you send an email to multiple recipients, you can provide a list of email addresses\. You specify this type of list with `param.n` notation, where values of *n* are integers starting from 1\. For example, you would specify the first "To:" address using `Destination.ToAddresses.1`, the second with `Destination.ToAddresses.2`, etc\.
 

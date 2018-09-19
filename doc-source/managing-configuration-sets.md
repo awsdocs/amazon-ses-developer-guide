@@ -14,7 +14,7 @@ You can use the Amazon SES console or you can use the `ListConfigurationSets` AP
 
    In the details pane, you will see a list of your configuration sets\.
 
-For information about how to use the `ListConfigurationSets` API to list your configuration sets, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html)\.
+For information about how to use the `ListConfigurationSets` API to list your configuration sets, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html)\.
 
 ## Viewing the Details of a Configuration Set<a name="event-publishing-managing-configuration-sets-describing"></a>
 
@@ -30,7 +30,7 @@ You can use the Amazon SES console to view the details of a configuration set, o
 
    You will see the details of the configuration set\.
 
-For information about how to use the `DescribeConfigurationSet` API to describe a configuration set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html)\.
+For information about how to use the `DescribeConfigurationSet` API to describe a configuration set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html)\.
 
 ## Deleting a Configuration Set<a name="event-publishing-managing-configuration-sets-deleting"></a>
 
@@ -46,4 +46,4 @@ You can use the Amazon SES console or the `DeleteConfigurationSet` API to delete
 
 1. From the **Actions** menu, choose **Delete**, and then confirm that you want to delete the configuration set\.
 
-For information about how to use the `DeleteConfigurationSet` API to delete a configuration set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html)\.
+For information about how to use the `DeleteConfigurationSet` API to delete a configuration set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html)\.

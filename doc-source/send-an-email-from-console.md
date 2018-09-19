@@ -32,7 +32,7 @@ If you are not currently signed in to your AWS account, this link takes you to a
       6. <html>
       7. <body>
       8. <h1>This text should be large, because it is formatted as a header in HTML.</h1>
-      9. <p>Here is a formatted link: <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon Simple Email Service Developer Guide</a>.</p>
+      9. <p>Here is a formatted link: <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html">Amazon Simple Email Service Developer Guide</a>.</p>
      10. </body>
      11. </html>
      ```

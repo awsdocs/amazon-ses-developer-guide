@@ -1,8 +1,8 @@
 # Step 4: Create an Amazon Kinesis Data Analytics Application<a name="event-publishing-kinesis-analytics-application"></a>
 
-Now that you have set up event publishing with Amazon SES, you can configure Amazon Kinesis Data Analytics to capture the email sending event data from your Amazon Kinesis Firehose delivery stream\. To do this, you create an Amazon Kinesis Data Analytics application\.
+Now that you have set up event publishing with Amazon SES, you can configure Amazon Kinesis Data Analytics to capture the email sending event data from your Amazon Kinesis Data Firehose delivery stream\. To do this, you create an Amazon Kinesis Data Analytics application\.
 
-The following procedure shows how to use the Amazon Kinesis Data Analytics console to create an application that captures Amazon SES email sending event data from your Kinesis Firehose delivery stream, and then how to perform a simply SQL query on the data to return the events of type "Send"\.
+The following procedure shows how to use the Amazon Kinesis Data Analytics console to create an application that captures Amazon SES email sending event data from your Kinesis Data Firehose delivery stream, and then how to perform a simply SQL query on the data to return the events of type "Send"\.
 
 **Note**  
 The email sending events of different event types \(send, bounce, complaint, and delivery\) have [different JSON schemas](event-publishing-retrieving-firehose-contents.md)\. In a production environment, you might examine several fields of this schema, but in this tutorial, we limit our examination to a small set of fields that are present for all event types\.
@@ -21,7 +21,7 @@ The email sending events of different event types \(send, bounce, complaint, and
 
 1. Choose **Connect to a source**\.
 
-1. Choose the Kinesis Firehose stream you created in [Step 2: Set up a Configuration Set](event-publishing-kinesis-analytics-configuration-set.md)\.
+1. Choose the Kinesis Data Firehose stream you created in [Step 2: Set up a Configuration Set](event-publishing-kinesis-analytics-configuration-set.md)\.
 
    Amazon Kinesis Data Analytics attempts to discover the schema of the email sending event records based on the incoming records\. If Amazon Kinesis Data Analytics displays **Error discovering input schema**, that means that Amazon Kinesis Data Analytics has not received any email sending records yet\. Choose **Rediscover schema**\. You might need to choose this button several times\. If schema discovery does not succeed after several attempts, ensure that your email sending application is steadily sending emails, and that the emails specify a configuration set\.
 
@@ -43,8 +43,8 @@ Do not choose **Save schema and update stream samples**\. This will cause errors
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_remove.png)
 
 1. Examine the remaining entries under **Column name** and compare them to the SQL naming requirements as follows:
-   + **Format** – As described in [Identifiers](http://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-identifiers.html) in the *Amazon Kinesis Data Analytics SQL Reference*, unquoted identifiers must start with a letter or underscore, and be followed by letters, digits, or underscores\. Amazon SES auto\-tag names do not comply with these requirements because they contain colons and dashes\. You will edit these in the next step\. 
-   + **Reserved words** – Column names must not conflict with the SQL reserved words listed in [Reserved Words and Keywords](http://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-reserved-words-keywords.html) in the *Amazon Kinesis Data Analytics SQL Reference*\. Examples of reserved keywords that conflict with Amazon SES event records are `timestamp`, `value`, `date`, `from`, and `to`\. 
+   + **Format** – As described in [Identifiers](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-identifiers.html) in the *Amazon Kinesis Data Analytics SQL Reference*, unquoted identifiers must start with a letter or underscore, and be followed by letters, digits, or underscores\. Amazon SES auto\-tag names do not comply with these requirements because they contain colons and dashes\. You will edit these in the next step\. 
+   + **Reserved words** – Column names must not conflict with the SQL reserved words listed in [Reserved Words and Keywords](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-reserved-words-keywords.html) in the *Amazon Kinesis Data Analytics SQL Reference*\. Examples of reserved keywords that conflict with Amazon SES event records are `timestamp`, `value`, `date`, `from`, and `to`\. 
 
 1. Edit the remaining column names to conform to the SQL requirements as follows:
    + Rename `ses:configuration-set` to `ses_configuration_set`\.

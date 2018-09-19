@@ -1,6 +1,6 @@
 # Step 5: Run a SQL Query<a name="event-publishing-kinesis-analytics-sql"></a>
 
-Now that you have created an Amazon Kinesis Data Analytics application and configured it to use your Amazon Kinesis Firehose delivery stream as its source, you can query the email sending event data that the Kinesis Firehose delivery stream receives\.
+Now that you have created an Amazon Kinesis Data Analytics application and configured it to use your Amazon Kinesis Data Firehose delivery stream as its source, you can query the email sending event data that the Kinesis Data Firehose delivery stream receives\.
 
 This topic shows how to run a SQL query on the email sending event data\.
 
@@ -14,7 +14,7 @@ This procedure requires that you continue to send a steady stream of emails conf
 
 1. Choose **Go to SQL editor**\. 
 
-   Amazon Kinesis Data Analytics attempts to read event data from the Kinesis Firehose stream\. If you encounter the **No rows in source stream** error, ensure that you are still sending the email stream you started at the beginning of this procedure, and then choose **Retrieve rows**\.  
+   Amazon Kinesis Data Analytics attempts to read event data from the Kinesis Data Firehose stream\. If you encounter the **No rows in source stream** error, ensure that you are still sending the email stream you started at the beginning of this procedure, and then choose **Retrieve rows**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_go_to_editor.png)
 
 1. In the code editor box, paste the following\.

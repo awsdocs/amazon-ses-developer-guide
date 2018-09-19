@@ -35,7 +35,7 @@ Email feedback forwarding is enabled by default\. If you previously disabled it,
 **Note**  
 Changes you make on this page may take a few minutes to take effect\.
 
-You can also enable bounce and complaint notifications through email by using the [ SetIdentityFeedbackForwardingEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\.
+You can also enable bounce and complaint notifications through email by using the [ SetIdentityFeedbackForwardingEnabled](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\.
 
 ## Disabling Email Feedback Forwarding<a name="notifications-via-email-disabling"></a>
 
@@ -61,7 +61,7 @@ You must configure one method of receiving bounce and complaint notifications in
 **Note**  
 Changes you make on this page might take a few minutes to take effect\.
 
-You can also disable bounce and complaint notifications through email by using the [SetIdentityFeedbackForwardingEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\. 
+You can also disable bounce and complaint notifications through email by using the [SetIdentityFeedbackForwardingEnabled](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\. 
 
 ## Email Feedback Forwarding Destination<a name="notifications-via-email-destination"></a>
 

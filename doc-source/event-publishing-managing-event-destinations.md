@@ -20,7 +20,7 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
 
 1. To exit the **Edit Configuration Set** page, use the back button of your browser\.
 
-For information about how to use the `UpdateConfigurationSetEventDestination` API to update an event destination, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
+For information about how to use the `UpdateConfigurationSetEventDestination` API to update an event destination, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
 
 ## Deleting an Event Destination<a name="event-publishing-managing-event-destinations-deleting"></a>
 
@@ -40,7 +40,7 @@ You can use the Amazon SES console or the `DeleteConfigurationSetEventDestinatio
 
 1. To exit the **Edit Configuration Set** page, use the back button of your browser\.
 
-For information about how to use the `DeleteConfigurationSetEventDestination` API to delete an event destination, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html)\.
+For information about how to use the `DeleteConfigurationSetEventDestination` API to delete an event destination, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html)\.
 
 ## Enabling or Disabling an Event Destination<a name="event-publishing-managing-event-destinations-enabling-disabling"></a>
 
@@ -60,4 +60,4 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
 
 1. To exit the **Edit Configuration Set** page, use the back button of your browser\.
 
-For information about how to use the `UpdateConfigurationSetEventDestination` API to enable or disable an event destination, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
+For information about how to use the `UpdateConfigurationSetEventDestination` API to enable or disable an event destination, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.

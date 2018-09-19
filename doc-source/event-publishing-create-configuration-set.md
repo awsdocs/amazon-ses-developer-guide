@@ -1,6 +1,6 @@
 # Step 1: Create a Configuration Set Using Amazon SES<a name="event-publishing-create-configuration-set"></a>
 
-Configuration sets enable you to publish email sending events \(bounces, complaints, deliveries, sent emails, and rejected emails\) to Amazon CloudWatch or Amazon Kinesis Firehose\.
+Configuration sets enable you to publish email sending events \(bounces, complaints, deliveries, sent emails, and rejected emails\) to Amazon CloudWatch or Amazon Kinesis Data Firehose\.
 
 You can use the Amazon SES console or the `CreateConfigurationSet` API to create a configuration set\. 
 
@@ -16,4 +16,4 @@ You can use the Amazon SES console or the `CreateConfigurationSet` API to create
 
 1. Choose **Close**\.
 
-For information about how to use the `CreateConfigurationSet` API to create a configuration set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html)\.
+For information about how to use the `CreateConfigurationSet` API to create a configuration set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html)\.

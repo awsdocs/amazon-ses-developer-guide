@@ -4,6 +4,26 @@ Domain\-based Message Authentication, Reporting and Conformance \(DMARC\) is an 
 
 This topic contains information that will help you configure Amazon SES so that the emails you send comply with both SPF and DKIM\. By complying with one of these authentication systems, your emails will comply with DMARC\. For information about the DMARC specification, see [http://www\.dmarc\.org](http://www.dmarc.org)\.
 
+## Setting Up the DMARC Policy on Your Domain<a name="dmarc-dns"></a>
+
+To set up DMARC, you have to modify the DNS settings for your domain\. The DNS settings for your domain should include a TXT record that specifies the domain's DMARC settings\. The procedures for adding TXT records to your DNS configuration depend on which DNS or hosting provider you use\. If you use Route 53, see [Working with Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/rrsets-working-with.html) in the *Amazon Route 53 Developer Guide*\. If you use another provider, see the DNS configuration documentation for your provider\.
+
+The name of the TXT record you create should be `_dmarc.example.com`, where `example.com` is your domain\. The value of the TXT record contains the DMARC policy that applies to your domain\. The following is an example of a TXT record that contains a DMARC policy:
+
+
+| Name | Type | Value | 
+| --- | --- | --- | 
+| \_dmarc\.example\.com | TXT | "v=DMARC1;p=quarantine;pct=25;rua=dmarcreports@example\.com" | 
+
+In plain language, this policy tells email providers to do the following: 
++ Look for all emails with a "From" domain of *example\.com* that don't pass SPF or DKIM authentication\.
++ Quarantine 25% of the emails that failed authentication by sending them to the Spam folder \(you can also do nothing by using `p=none`, or reject the messages outright by using `p=reject`\)\. 
++ Send reports about all emails that failed authentication in a digest \(that is, a report that aggregates the data for a certain time period, rather than sending individual reports for each event\)\. Email providers typically send these aggregated reports once per day, although these policies differ from provider to provider\. 
+
+To learn more about configuring DMARC for your domain, see the [Overview](https://dmarc.org/overview/) on the DMARC website\.
+
+For complete specifications of the DMARC system, see [RFC 7489](https://tools.ietf.org/html/rfc7489) on the IETF website\. Section 6\.3 of this document contains a complete list of tags that you can use to configure the DMARC policy for your domain\.
+
 ## Complying with DMARC through SPF<a name="dmarc-spf"></a>
 
 For an email to comply with DMARC based on SPF, both of the following conditions must be met:

@@ -36,7 +36,7 @@ If Amazon SES accepts the sender's request and then determines that the message 
 If the sender's email\-sending request to Amazon SES fails, Amazon SES responds to the sender with an error and drops the email\. The request could fail for several reasons\. For example, the request may not be formatted properly or the email address may not have been verified by the sender\. 
 
 The method through which you can determine if the request has failed depends on how you call Amazon SES\. The following are examples of how errors and exceptions are returned:
-+ If you are calling Amazon SES through the Query \(HTTPS\) API \(`SendEmail` or `SendRawEmail`\), the actions will return an error\. For more information, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
++ If you are calling Amazon SES through the Query \(HTTPS\) API \(`SendEmail` or `SendRawEmail`\), the actions will return an error\. For more information, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 + If you are using an AWS SDK for a programming language that uses exceptions, the call to Amazon SES will throw a *MessageRejectedException*\. \(The name of the exception may vary slightly depending on the SDK\.\)
 + If you are using the SMTP interface, then the sender receives an SMTP response code, but how the error is conveyed depends on the sender's client\. Some clients may display an error code; others may not\.
 

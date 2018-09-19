@@ -25,73 +25,75 @@ The following procedure shows how to send an email through Amazon SES with PHP\.
    ```
     1. <?php
     2. 
-    3. // Modify the path in the require statement below to refer to the 
+    3. // If necessary, modify the path in the require statement below to refer to the 
     4. // location of your Composer autoload.php file.
-    5. require 'path_to_sdk_inclusion';
+    5. require 'vendor/autoload.php';
     6. 
-    7. // Instantiate a new PHPMailer 
-    8. $mail = new PHPMailer;
-    9. 
-   10. // Tell PHPMailer to use SMTP
-   11. $mail->isSMTP();
-   12. 
-   13. // Replace sender@example.com with your "From" address. 
-   14. // This address must be verified with Amazon SES.
-   15. $mail->setFrom('sender@example.com', 'Sender Name');
-   16. 
-   17. // Replace recipient@example.com with a "To" address. If your account 
-   18. // is still in the sandbox, this address must be verified.
-   19. // Also note that you can include several addAddress() lines to send
-   20. // email to multiple recipients.
-   21. $mail->addAddress('recipient@example.com', 'Recipient Name');
-   22. 
-   23. // Replace smtp_username with your Amazon SES SMTP user name.
-   24. $mail->Username = 'smtp_username';
-   25. 
-   26. // Replace smtp_password with your Amazon SES SMTP password.
-   27. $mail->Password = 'smtp_password';
-   28.     
-   29. // Specify a configuration set. If you do not want to use a configuration
-   30. // set, comment or remove the next line.
-   31. $mail->addCustomHeader('X-SES-CONFIGURATION-SET', 'ConfigSet');
-   32.  
-   33. // If you're using Amazon SES in a region other than US West (Oregon), 
-   34. // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
-   35. // endpoint in the appropriate region.
-   36. $mail->Host = 'email-smtp.us-west-2.amazonaws.com';
-   37. 
-   38. // The subject line of the email
-   39. $mail->Subject = 'Amazon SES test (SMTP interface accessed using PHP)';
-   40. 
-   41. // The HTML-formatted body of the email
-   42. $mail->Body = '<h1>Email Test</h1>
-   43.     <p>This email was sent through the 
-   44.     <a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
-   45.     interface using the <a href="https://github.com/PHPMailer/PHPMailer">
-   46.     PHPMailer</a> class.</p>';
-   47. 
-   48. // Tells PHPMailer to use SMTP authentication
-   49. $mail->SMTPAuth = true;
-   50. 
-   51. // Enable TLS encryption over port 587
-   52. $mail->SMTPSecure = 'tls';
-   53. $mail->Port = 587;
-   54. 
-   55. // Tells PHPMailer to send HTML-formatted email
-   56. $mail->isHTML(true);
-   57. 
-   58. // The alternative email body; this is only displayed when a recipient
-   59. // opens the email in a non-HTML email client. The \r\n represents a 
-   60. // line break.
-   61. $mail->AltBody = "Email Test\r\nThis email was sent through the 
-   62.     Amazon SES SMTP interface using the PHPMailer class.";
-   63. 
-   64. if(!$mail->send()) {
-   65.     echo "Email not sent. " , $mail->ErrorInfo , PHP_EOL;
-   66. } else {
-   67.     echo "Email sent!" , PHP_EOL;
-   68. }
-   69. ?>
+    7. use PHPMailer\PHPMailer\PHPMailer;
+    8. 
+    9. // Instantiate a new PHPMailer 
+   10. $mail = new PHPMailer;
+   11. 
+   12. // Tell PHPMailer to use SMTP
+   13. $mail->isSMTP();
+   14. 
+   15. // Replace sender@example.com with your "From" address. 
+   16. // This address must be verified with Amazon SES.
+   17. $mail->setFrom('sender@example.com', 'Sender Name');
+   18. 
+   19. // Replace recipient@example.com with a "To" address. If your account 
+   20. // is still in the sandbox, this address must be verified.
+   21. // Also note that you can include several addAddress() lines to send
+   22. // email to multiple recipients.
+   23. $mail->addAddress('recipient@example.com', 'Recipient Name');
+   24. 
+   25. // Replace smtp_username with your Amazon SES SMTP user name.
+   26. $mail->Username = 'smtp_username';
+   27. 
+   28. // Replace smtp_password with your Amazon SES SMTP password.
+   29. $mail->Password = 'smtp_password';
+   30.     
+   31. // Specify a configuration set. If you do not want to use a configuration
+   32. // set, comment or remove the next line.
+   33. $mail->addCustomHeader('X-SES-CONFIGURATION-SET', 'ConfigSet');
+   34.  
+   35. // If you're using Amazon SES in a region other than US West (Oregon), 
+   36. // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
+   37. // endpoint in the appropriate region.
+   38. $mail->Host = 'email-smtp.us-west-2.amazonaws.com';
+   39. 
+   40. // The subject line of the email
+   41. $mail->Subject = 'Amazon SES test (SMTP interface accessed using PHP)';
+   42. 
+   43. // The HTML-formatted body of the email
+   44. $mail->Body = '<h1>Email Test</h1>
+   45.     <p>This email was sent through the 
+   46.     <a href="https://aws.amazon.com/ses">Amazon SES</a> SMTP
+   47.     interface using the <a href="https://github.com/PHPMailer/PHPMailer">
+   48.     PHPMailer</a> class.</p>';
+   49. 
+   50. // Tells PHPMailer to use SMTP authentication
+   51. $mail->SMTPAuth = true;
+   52. 
+   53. // Enable TLS encryption over port 587
+   54. $mail->SMTPSecure = 'tls';
+   55. $mail->Port = 587;
+   56. 
+   57. // Tells PHPMailer to send HTML-formatted email
+   58. $mail->isHTML(true);
+   59. 
+   60. // The alternative email body; this is only displayed when a recipient
+   61. // opens the email in a non-HTML email client. The \r\n represents a 
+   62. // line break.
+   63. $mail->AltBody = "Email Test\r\nThis email was sent through the 
+   64.     Amazon SES SMTP interface using the PHPMailer class.";
+   65. 
+   66. if(!$mail->send()) {
+   67.     echo "Email not sent. " , $mail->ErrorInfo , PHP_EOL;
+   68. } else {
+   69.     echo "Email sent!" , PHP_EOL;
+   70. }
+   71. ?>
    ```
 
 1. In `amazon-ses-smtp-sample.php`, replace the following with your own values:
@@ -99,6 +101,7 @@ The following procedure shows how to send an email through Amazon SES with PHP\.
    + **`recipient@example.com`**—Replace with the address of the recipient\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
    + **`smtp_username`**—Replace with your SMTP user name credential, which you obtained from the [SMTP Settings](https://console.aws.amazon.com/ses/home?#smtp-settings:) page of the Amazon SES console\. This is **not** the same as your AWS access key ID\. Note that your SMTP user name credential is a 20\-character string of letters and numbers, not an intelligible name\.
    + **`smtp_password`**—Replace with your SMTP password, which you obtained from the [SMTP Settings](https://console.aws.amazon.com/ses/home?#smtp-settings:) page of the Amazon SES console\. This is **not** the same as your AWS secret access key\.
+   + **\(Optional\) `ConfigSet`**—If you want to use a configuration set when sending this email, replace this value with the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES Configuration Sets](using-configuration-sets.md)\.
    + **\(Optional\) `email-smtp.us-west-2.amazonaws.com`**—If you want to use an Amazon SES SMTP endpoint in a Region other than US West \(Oregon\), replace this with the Amazon SES SMTP endpoint in the Region you want to use\. For a list of Amazon SES SMTP endpoints, see [Regions and Amazon SES](regions.md)\.
 
 1. Save `amazon-ses-smtp-sample.php`\.

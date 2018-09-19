@@ -1,5 +1,10 @@
 # Amazon SES Quick Start<a name="quick-start"></a>
 
+
+|  | 
+| --- |
+| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
+
 This procedure leads you through the steps to sign up for AWS, verify your email address, send your first email, consider how you will handle bounces and complaints, and move out of the Amazon Simple Email Service \(Amazon SES\) sandbox\.
 
 Use this procedure if you:

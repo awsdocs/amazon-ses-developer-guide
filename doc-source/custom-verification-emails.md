@@ -32,10 +32,10 @@ To create a custom verification email, use the `CreateCustomVerificationEmailTem
 
 You can use the AWS SDKs or the AWS CLI to create a custom verification email template with the `CreateCustomVerificationEmailTemplate` operation\. To learn more about the AWS SDKs, see [Tools for Amazon Web Services](https://aws.amazon.com/tools/#sdk)\. For more information about the AWS CLI, see [AWS Command Line Interface\.](https://aws.amazon.com/cli)
 
-The following section includes procedures for creating a custom verification email using the AWS CLI\. These procedures assume that you have installed and configured the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/)\.
+The following section includes procedures for creating a custom verification email using the AWS CLI\. These procedures assume that you have installed and configured the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
 **Note**  
-To complete the procedure in this section, you must use version 1\.14\.6 or later of the AWS CLI\. For best results, upgrade to the latest version of the AWS CLI\. For more information about updating the AWS CLI, see [Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) in the AWS Command Line Interface User Guide\.
+To complete the procedure in this section, you must use version 1\.14\.6 or later of the AWS CLI\. For best results, upgrade to the latest version of the AWS CLI\. For more information about updating the AWS CLI, see [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) in the AWS Command Line Interface User Guide\.
 
 1. In a text editor, create a new file\. Paste the following content into the editor:
 
@@ -226,9 +226,9 @@ Custom verification emails cannot include custom headers\.
 
 The following text is automatically added to the end of every custom verification email and cannot be removed:
 
-*If you did not request to verify this email address, please disregard this message\. If you have any concerns, please forward this message to the following [email address](mailto:ses-enforcement@amazon.com) along with your questions or comments\. *
+*If you did not request to verify this email address, please disregard this message\. If you have any concerns, please forward this message to the following email address along with your questions or comments\. *
 
-The *email address* link in this text refers to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com), an inbox that is actively monitored by the Amazon SES team\.
+The *email address* link in this text refers to [ses\-review@amazon\.com](mailto:ses-review@amazon.com), an inbox that is actively monitored by the Amazon SES team\.
 
 ### Q11\. Are custom verification emails DKIM\-signed?<a name="custom-verification-emails-faq-q11"></a>
 

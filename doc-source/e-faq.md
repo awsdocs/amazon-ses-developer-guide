@@ -1,161 +1,165 @@
-# Amazon SES Enforcement FAQs<a name="e-faq"></a>
+# Amazon SES Sending Review Process FAQs<a name="e-faq"></a>
 
-We monitor the email that is sent through Amazon SES to ensure that users aren't sending unsolicited or malicious content\. If we determine that you're sending unsolicited or malicious content, we may limit or suspend your ability to send additional email\. This process is called *enforcement*\.
+We monitor the email that's sent through Amazon SES to make sure that the service isn't being used to deliver malicious, unsolicited, or low\-quality email\. If we determine that a user is sending content that falls into one of these categories, we take actions on that account\. We call this process our *sending review process*\.
 
-This section contains frequently asked questions about the following enforcement\-related topics:
-+ [Probations](#e-faq-pr)
-+ [Suspensions](#e-faq-sp)
+In many cases, when we detect an issue with an account, we place that account [under review](#e-faq-pr)\. In other cases, we [pause the account's ability to send email](#e-faq-sp)\. We take these actions to protect each account's sender reputation, and to prevent other Amazon SES users from experiencing service interruptions and deliverability issues\.
+
+This section contains frequently asked questions about the following topics:
++ [Account Under Review FAQ](#e-faq-pr)
++ [Sending Pauses](#e-faq-sp)
 + [Bounces](#e-faq-bn)
 + [Complaints](#e-faq-cm)
 + [Spamtraps](#e-faq-st)
 + [Manual Investigations](#e-faq-mi)
 
-## Amazon SES Probation FAQ<a name="e-faq-pr"></a>
+## Amazon SES Account Under Review FAQ<a name="e-faq-pr"></a>
 
-### Q1\. I received a probation notice\. What does that mean?<a name="pr-q1"></a>
+### Q1\. I received a message stating that my account is under review\. What does that mean?<a name="pr-q1"></a>
 
-We've detected an issue related to the email sent from your account, and we're giving you time to fix it\. You can continue to send email as you normally would, but you must also correct the issue that caused your account to be placed on probation\. If you don't correct the issue before the probation period is over, your ability to send email using Amazon SES may be suspended\.
+We've detected an issue related to the email sent from your account, and we're giving you time to fix it\. You can continue to send email as you normally would, but you should also correct the issue that caused your account to be placed under review\. If you don't correct the issue before the review period is over, we might pause your ability to send additional email\.
 
-### Q2\. Will I always be notified if I am put on probation?<a name="pr-q2"></a>
+### Q2\. Will I always be notified if my account is placed under review?<a name="pr-q2"></a>
 
-Yes\. You'll receive a notification at the email address of the AWS account associated with the Amazon SES probation\.
+Yes\. You'll receive a notification at the email address associated with your AWS account\.
 
-### Q3\. Why didn't I receive a probation notice?<a name="pr-q3"></a>
+### Q3\. Why didn't I receive a notificaton that my account is under review?<a name="pr-q3"></a>
 
-When your account is placed on probation, we automatically send a notice to the email address associated with your AWS account\. This email address is the one you specified when you created your AWS account\. In some cases, this email address may be different from the one you use to send email using Amazon SES\.
+When your account is placed under review, we automatically send a notice to the email address associated with your AWS account\. This email address is the one you specified when you created your AWS account\. In some cases, this email address may be different from the one you use to send email using Amazon SES\.
 
 We recommend that you monitor your sender reputation by regularly consulting the [Reputation Dashboard](monitor-sender-reputation.md)\. You can also [set up automated alarms in Amazon CloudWatch](reputationdashboard-cloudwatch-alarm.md)\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
 
-### Q4\. Will the Amazon SES probation affect my use of other AWS services?<a name="pr-q4"></a>
+### Q4\. Will the fact that my Amazon SES account is under review impact my use of other AWS services?<a name="pr-q4"></a>
 
-You'll still be able to use other AWS services while your Amazon SES account is on probation\. However, if you request a service limit increase for another AWS service that sends outbound communications \(such as Amazon SNS\), that request may be denied until the probation on your Amazon SES account is lifted\.
+You'll still be able to use other AWS services while your Amazon SES account is under review\. However, if you request a service limit increase for another AWS service that sends outbound communications \(such as Amazon SNS\), that request may be denied until the review period for your Amazon SES account is lifted\.
 
-### Q5\. What should I do if I'm on probation?<a name="pr-q5"></a>
+### Q5\. What should I do if my account is under review?<a name="pr-q5"></a>
 
 You should do the following:
-+ If your situation allows it, stop sending mail until you fix the problem\. Although probation doesn't affect your ability to send mail through Amazon SES, if you continue to send mail without first making changes, you're putting your continued sending at risk\.
++ If your situation allows it, stop sending mail until you fix the problem\. You can still send email while your account is under review\. However, if you continue to send mail without making changes, you might inadvertantly make the issue worse\.
 + Look at the email you received from us for a summary of the issue\.
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
-+ Once you've made your fixes, send us an appeal telling us about the fixes you made \(see [Q6\. What's an appeal?](#pr-q6)\)\. Note that you should appeal your probation only after you've made your changes—don't submit an appeal outlining changes you plan to make\. If you do, we will ask you to contact us again once the fixes are actually in place\. If we find that you've fixed the problem, we'll take you off probation\.
++ After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
-### Q6\. What's an appeal?<a name="pr-q6"></a>
+### Q6\. What's a review?<a name="pr-q6"></a>
 
-We reserve the right to place your account on probation when we detect certain behaviors or sending practices\. As an Amazon SES customer, you have the right to appeal this decision\. If we accept your appeal, we’ll remove the probation from your account\.
+You can request that we review our decision to place your under review\. See the following question for more information about requesting a review\.
 
-### Q7\. How do I submit an appeal?<a name="pr-q7"></a>
+### Q7\. How do I request a review?<a name="pr-q7"></a>
 
-To submit an appeal, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\.
+To request a review, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\.
 
 **Important**  
-To protect the security of your account, we can only respond to appeals that are sent from the email address associated with your AWS account\.
+To protect the security of your account, we can only respond to review requests that are sent from the email address associated with your AWS account\.
 
-In your appeal, provide the following information:
-+ Information about the root cause of the event that caused your account to be placed on probation\.
-+ A list of the changes that you've made to prevent the problem from recurring in the future\. Only include the steps you've already implemented, not the steps you plan to implement in the future\.
-+ An explanation of how these changes will prevent the same issue from recurring\.
+In your request, provide the following information:
++ Information about the root cause of the event that caused your account to be placed under review\.
++ A list of the changes that you've made to correct the issue\. Only include the steps you've already implemented, not the steps you plan to implement in the future\.
++ Information about how these changes prevent the same issue from occurring again in the future\.
 
-Depending on the nature of the event that led us to place your account on probation, we might require additional information\. See the FAQ topic associated with the issue you experienced for a list of the information you should include in your appeal\. 
+Depending on the nature of the event that led us to place your account under review, we might require additional information\. See the FAQ topic associated with the issue you experienced for a list of the information you should include in your request\.
 
-### Q8\. What if my appeal isn't accepted?<a name="pr-q8"></a>
+### Q8\. What if my review request isn't accepted?<a name="pr-q8"></a>
 
-We will respond to you explaining why your appeal wasn't accepted, and you'll often have the option of appealing again after you address the issue\. For example, we might ask you for more information, and once you provide the information, your appeal might be accepted\. If you tell us how you'll fix the problem but you haven't actually fixed it yet, we'll ask you to contact us again once you've fixed the issue\.
+We'll respond to your request with information about why we didn't accept it\. In some cases, you'll be able to submit another request if you're able to demonstrate that you resolved the issue, and that your changes prevent the issue from occurring again in the future\.
 
 ### Q9\. Can you help me diagnose the problem?<a name="pr-q9"></a>
 
 Typically we can give you only a high\-level overview of your issue \(for example, that you have a problem with bounces\)\. You'll need to investigate the root cause on your end\.
 
-### Q10\. How will I know if I'm off probation?<a name="pr-q10"></a>
+### Q10\. How will I know if my account is no longer under review?<a name="pr-q10"></a>
 
-We will provide this information in our response to your appeal, or in some cases you'll receive an automated notification at the email address associated with your AWS account\. The notification will indicate either that you're off probation, or that your account has been suspended because you haven't fixed the problem\.
+The Reputation Dashboard includes information about the current status of your account\. For more information, see [Using the Reputation Dashboard to Track Bounce and Complaint Rates](reputation-dashboard-dg.md)\.
 
-### Q11\. Will I always have a probation period if there's a problem?<a name="pr-q11"></a>
+### Q11\. Do you place my account under review every time there's a problem?<a name="pr-q11"></a>
 
-No\. There are two cases in which you might not be provided a probation period:
-+ If the issue is very serious, your account may be suspended immediately\. If this occurs, we will send you a notification\.
-+ If your account has been placed on probation multiple times in the past, your account may be suspended rather than being placed on probation again\. For this reason, it's important to address the underlying problem rather than just the specific incident that caused a specific probation\. For instance, if a particular campaign triggers a probation, you must do more than simply stop that campaign\. You need to determine which properties of the campaign were problematic and ensure that you have processes in place so that your future campaigns won't have the same issue\.
+No\. In some situations, we might pause your account's ability to send email without first placing your account under review\. For example:
++ If the issue is very serious\.
++ If your account has been placed under review for the same issue multiple times in the past\. For this reason, it's important to address the underlying problem rather than just resolve the specific incident that led to your account being placed under review\. For instance, if a particular campaign caused us to place your account under review, you have to do more than simply stop that campaign\. You should determine which properties of the campaign were problematic and ensure that you have processes in place so that your future campaigns don't have the same issue\.
 
-### Q12\. What if I make my fixes shortly before the probation is due to expire?<a name="pr-q12"></a>
+In either of these situations, we automatically send you a notification when we pause your account's ability to send email\.
 
-Contact us through the appeal process to let us know that you fixed the problem\.
+### Q12\. What if I make my fixes shortly before the review period expires?<a name="pr-q12"></a>
+
+Send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, let us know that you've resolved the issue\.
 
 ### Q13\. Can I get help from my AWS representative or Premium Support?<a name="pr-q13"></a>
 
-If you're already working with an AWS account representative, we'll automatically contact him or her when your account is placed on probation\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
+If you're already working with an AWS account representative, we'll automatically contact him or her when your account is placed under review\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
 
-## Amazon SES Suspension FAQ<a name="e-faq-sp"></a>
+## Amazon SES Sending Pause FAQ<a name="e-faq-sp"></a>
 
-### Q1\. I received a suspension notice\. What does that mean?<a name="sp-q1"></a>
+### Q1\. I received a message stating that my account's ability to send email is paused\. What does that mean?<a name="sp-q1"></a>
 
-We suspend your account because of a critical issue with emails you sent\. Your account may be suspended for one of the following reasons:
-+ Your account was previously placed on probation\. The issues that caused your account to be placed on probation weren't corrected before the end of the probation period, so your account was suspended\.
-+ Your account has a history of being placed on probation for the same issue\.
-+ Your account sent email that violated the [AWS Service Terms](https://aws.amazon.com/service-terms)\. If these violations are serious, your account may be suspended without being placed on suspension first\.
+We paused your account's ability to send email because of a critical issue with emails you sent\. Most often, we pause accounts for one of the following reasons:
++ We previously placed your account under review\. The issues that caused us to place your account under review weren't corrected before the end of the review period, so we paused your account's ability to send email\.
++ We've placed your account under review several times for the same issue\.
++ Your account sent email that violated the [AWS Service Terms](https://aws.amazon.com/service-terms)\. If these violations are serious, we might pause your account's ability to send email without placing your account under review first\.
 
-### Q2\. Will I always be notified if I am suspended?<a name="sp-q2"></a>
+### Q2\. Will I always be notified if my account's ability to send email is paused?<a name="sp-q2"></a>
 
-Yes\. You'll receive a notification at the email address of the AWS account associated with the Amazon SES suspension\.
+Yes\. You'll receive a notification at the email address associated with your AWS account\.
 
-### Q3\. My account is suspended\. Why didn't I receive a notification?<a name="sp-q3"></a>
+### Q3\. My account's ability to send email is paused\. Why didn't I receive a notification?<a name="sp-q3"></a>
 
-When we suspend an account's ability to send email, we automatically send a notification to the email address associated with that account\.
+When we pause an account's ability to send email, we automatically send a notification to the email address associated with that account\.
 
 **Note**  
-When you create your AWS account, you must provide an email address\. You can change this address at any time\. For more information about changing the address associated with your AWS account, see [Managing an AWS Account](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#account-info) in the *AWS Billing and Cost Management User Guide*\.
+When you create your AWS account, you must provide an email address\. You can change this address at any time\. For more information about changing the address associated with your AWS account, see [Managing an AWS Account](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#account-info) in the *AWS Billing and Cost Management User Guide*\.
 
 You can use Amazon CloudWatch to create alarms that inform you when your bounce and complaint rates are too high\. Creating an alarm is a good way to receive an early warning of factors that could cause us to pause your account's ability to send email\. However, there are factors other than bounces and complaints that could cause us to pause your ability to send email\. For more information about creating alarms in CloudWatch, see [Creating Reputation Monitoring Alarms Using CloudWatch](reputationdashboard-cloudwatch-alarm.md)\.
 
-You can also use the [Deliverability Dashboard](reputation-dashboard-dg.md) to determine the current status of your account\. For example, if your account's ability to send email is currently paused, the **Account status** section of the Deliverability Dashboard displays a status of **SUSPENDED**\. If your account is able to send email normally, it displays a status of **HEALTHY**\.
+You can also use the [Deliverability Dashboard](reputation-dashboard-dg.md) to determine the current status of your account\. For example, if your account's ability to send email is currently paused, the **Account status** section of the Deliverability Dashboard displays a status of **SENDING PAUSE**\. If your account is able to send email normally, it displays a status of **HEALTHY**\.
 
-Finally, you can check the AWS Personal Health Dashboard \(PHD\) at [https://phd\.aws\.amazon\.com/](https://phd.aws.amazon.com/) to determine if your account's ability to send email is currently paused\. When we pause an account's ability to send email, we automatically add an **SES enforcement suspended** event to the **Event log** section of the PHD\. The **SES enforcement suspended** event always has a Status of **Closed**, regardless of whether or not the account's ability to send email is currently suspended\. The event log also includes a copy of the email that we sent to the email address associated with your AWS account when the suspension event occurred\. 
+Finally, you can check the AWS Personal Health Dashboard \(PHD\) at [https://phd\.aws\.amazon\.com/](https://phd.aws.amazon.com/) to determine if your account's ability to send email is currently paused\. When we pause an account's ability to send email, we automatically add an **SES sending paused** event to the **Event log** section of the PHD\. The **SES sending paused** event always has a Status of **Closed**, regardless of whether or not the account's ability to send email is currently paused\. The event log also includes a copy of the email that we sent to the email address associated with your AWS account when the sending pause event occurred\. 
 
-You can use CloudWatch to create an alarms that alert you when new events appear on your Personal Health Dashboard\. For more information, see [Monitoring AWS Health Events with CloudWatch Events](http://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html) in the *AWS Health User Guide*\.
+You can use CloudWatch to create an alarms that alert you when new events appear on your Personal Health Dashboard\. For more information, see [Monitoring AWS Health Events with CloudWatch Events](https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html) in the *AWS Health User Guide*\.
 
-### Q4\. Will the Amazon SES suspension affect my use of other AWS services?<a name="sp-q4"></a>
+### Q4\. My account's ability to send email is paused\. Does this impact my ability to use of other AWS services?<a name="sp-q4"></a>
 
-You can still use other AWS services while your Amazon SES account is suspended\. However, if you request a service limit increase for another AWS service that sends outbound communications \(such as Amazon SNS\), we might deny your request until the suspension on your Amazon SES account is lifted\.
+You can still use other AWS services while your account's ability to send email is paused\. However, if you request a service limit increase for another AWS service that sends outbound communications \(such as Amazon SNS\), we might deny your request until your account's ability to send email is restored\.
 
-### Q5\. What should I do if my account has been suspended?<a name="sp-q5"></a>
+### Q5\. What should I do if my account's ability to send email is paused?<a name="sp-q5"></a>
 
 You should do the following:
 + Look at the email you received from us for a summary of the issue\.
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
-+ Once you've fixed the issue, send us an appeal telling us about the fixes you made \(see [Q6\. What's an appeal?](#sp-q6)\)\. Note that you should appeal your suspension only after you've made your changes—don't submit an appeal outlining changes you plan to make\. If you do, we will ask you to contact us again once the fixes are actually in place\.
++ After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
-### Q6\. What's an appeal?<a name="sp-q6"></a>
+### Q6\. What's a review?<a name="sp-q6"></a>
 
-We reserve the right to pause your ability to send email when we detect certain behaviors or sending practices\. As an Amazon SES customer, you have the right to appeal this decision\. If we accept your appeal, we’ll remove the suspension from your account\. 
+You can request that we review our decision to place your under review\. See the following question for more information about requesting a review\.
 
-### Q7\. How do I submit an appeal?<a name="sp-q7"></a>
+### Q7\. How do I request a review?<a name="sp-q7"></a>
 
-To submit an appeal, send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account\. 
+To request a review, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. 
 
 **Important**  
-To protect the security of your account, we can only respond to appeals that are sent from the email address associated with your AWS account\.
+To protect the security of your account, we can only respond to requests that are sent from the email address associated with your AWS account\.
 
-In your appeal, provide the following information:
-+ Information about the root cause of the event that caused your account to be suspended\.
-+ A list of the changes that you've made to prevent the problem from recurring in the future\. Only include the steps that you've already implemented, not the steps you plan to implement in the future\.
-+ An explanation of how these changes will prevent the same issue from recurring\. 
+In your request, provide the following information:
++ Information about what caused the issue\.
++ A list of the changes that you've made to correct the issue\. Only include the steps that you've already implemented, not the steps you plan to implement in the future\.
++ Information about how these changes will prevent the same issue from occurring again in the future\. 
 
-Depending on the nature of the event that led us to suspend your account, we might require additional information\. See the FAQ topic associated with the issue you experienced for a list of the information you should include in your appeal\. 
+Depending on the nature of the event that led us to pause your account's ability to send email, we might require additional information\. See the FAQ topic associated with the issue you experienced for a list of the information you should include in your request\.
 
-### Q8\. What if my appeal isn't accepted?<a name="sp-q8"></a>
+### Q8\. What if my request isn't accepted?<a name="sp-q8"></a>
 
-We will respond to you explaining why your appeal wasn't accepted, and you'll often have the option of appealing again after you address the issue\. For example, we might ask you for more information, and once you provide the information, your appeal might be accepted\. As another example, if you tell us how you'll fix the problem and haven't actually fixed it, we'll ask you to contact us again once you've actually fixed the issue\.
+We'll respond to your request with information about why we didn't accept it\. In some cases, you'll be able to submit another request if you're able to demonstrate that you resolved the issue, and that your changes prevent the issue from occurring again in the future\.
 
 ### Q9\. Can you help me diagnose the problem?<a name="sp-q9"></a>
 
 Typically we can give you only a high\-level overview of your issue \(for example, that you have a problem with bounces\)\. It's your responsibility to correct the issue\.
 
-### Q10\. How will I know if my account has been reinstated?<a name="sp-q10"></a>
+### Q10\. How do I know if my account's ability to send email has been restored?<a name="sp-q10"></a>
 
-We will provide this information in our response to your appeal, or in some cases you'll receive an automated notification at the email address associated with your AWS account\. You can also try sending an email to yourself through Amazon SES \(for example, using the Amazon SES console\)\. If the attempt is successful, then your account has been reinstated\. 
+The Reputation Dashboard includes information about the current status of your account\. For more information, see [Using the Reputation Dashboard to Track Bounce and Complaint Rates](reputation-dashboard-dg.md)\.
 
 ### Q11\. Can I get help from my AWS representative or Premium Support?<a name="sp-q11"></a>
 
-If you're already working with an AWS account representative, we'll automatically contact him or her when your account is suspended\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
+If you're already working with an AWS account representative, we'll automatically contact him or her if we pause your account's ability to send email\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
 
 ## Amazon SES Bounce FAQ<a name="e-faq-bn"></a>
 
@@ -163,9 +167,9 @@ If you're already working with an AWS account representative, we'll automaticall
 
 High bounce rates are often used by entities such as ISPs, mailbox providers, and anti\-spam organizations as indicators that senders are engaging in low\-quality email\-sending practices and their email should be blocked or sent to the spam folder\.
 
-### Q2\. What should I do if I receive a probation or suspension notice for my bounce rate?<a name="bn-q2"></a>
+### Q2\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of my account's bounce rate?<a name="bn-q2"></a>
 
-Fix the underlying problem and appeal to get your case reevaluated\. For information about the appeal process, see the FAQs on probation and suspension\. In your appeal, in addition to the information requested in the probation and suspension FAQs, tell us the following:
+Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. Also include the following information:
 + The method you use to track your bounces
 + How you ensure that the email addresses of new recipients are valid prior to sending to them\. For example, which of the recommendations are you following in [Q11\. What can I do to minimize bounces?](#bn-q11)
 
@@ -173,11 +177,11 @@ Fix the underlying problem and appeal to get your case reevaluated\. For informa
 
 Your bounce rate includes only hard bounces to domains you haven't verified\. Hard bounces are permanent delivery failures such as "address does not exist\." Temporary and intermittent failures such as "mailbox full," or bounces due to blocked IP addresses, don't count toward your bounce rate\.
 
-### Q4\. Do you disclose the Amazon SES bounce rate limits that trigger probation and suspension?<a name="bn-q4"></a>
+### Q4\. Do you disclose the bounce rates that could cause my account to be placed under review or that could cause my sending to be paused?<a name="bn-q4"></a>
 
 For best results, you should maintain a bounce rate below 2%\. Higher bounce rates can impact the delivery of your emails\.
 
- If your bounce rate is 5% or greater, we'll place your account on probation\. If your bounce rate is 10% or greater, we'll suspend your ability to send additional email\.
+If your bounce rate is 5% or greater, we'll place your account under review\. If your bounce rate is 10% or greater, we might pause your account's ability to send additional email until you resolve the issue that resulted in the high bounce rate\.
 
 ### Q5\. Over what period of time is my bounce rate calculated?<a name="bn-q5"></a>
 
@@ -185,7 +189,7 @@ We don't calculate your bounce rate based on a fixed period of time, because dif
 
 ### Q6\. Can I calculate my own bounce rate by using the information from the Amazon SES console or the GetSendStatistics API?<a name="bn-q6"></a>
 
-No\. The bounce rate is calculated using representative volume \(see [Q5\. Over what period of time is my bounce rate calculated?](#bn-q5)\)\. Depending on your sending rate, your bounce rate can stretch farther back in time than the Amazon SES console or `GetSendStatistics` can retrieve\. In addition, only emails to non\-verified domains are considered when calculating your bounce rate\. However, if you regularly monitor your bounce rates using those methods, you should still have a good indicator that you can use to catch problems before they get to levels that trigger a probation or suspension\.
+No\. The bounce rate is calculated using representative volume \(see [Q5\. Over what period of time is my bounce rate calculated?](#bn-q5)\)\. Depending on your sending rate, your bounce rate can stretch farther back in time than the Amazon SES console or `GetSendStatistics` can retrieve\. In addition, only emails to non\-verified domains are considered when calculating your bounce rate\. However, if you regularly monitor your bounce rates using those methods, you should still have a good indicator that you can use to catch problems before they get to levels that cause us to place your account under review or pause your account's ability to send email\.
 
 ### Q7\. How can I find out which email addresses bounced?<a name="bn-q7"></a>
 
@@ -226,9 +230,9 @@ A complaint occurs when a recipient reports that they don't want to receive an e
 
 High complaint rates are often used by entities such as ISPs, email providers, and anti\-spam organizations as indicators that a sender is sending to recipients who didn't specifically sign up to receive emails, or that the sender is sending content that is different from the type that recipients signed up for\. 
 
-### Q3\. What should I do if I receive a probation or suspension notice for my complaint rate?<a name="cm-q3"></a>
+### Q3\. What should I do if a receive a notice saying that my account is under review or that my sending is paused because of an issue with complaints?<a name="cm-q3"></a>
 
-Review your list acquisition process and the content of your emails to try to understand why your recipients might not appreciate your email\. Once you've determined the cause, fix the underlying problem and appeal to get your case reevaluated\. For information about the appeal process, see the FAQs on probation and suspension\.
+Review your list acquisition process and the content of your emails to try to understand why your recipients might not appreciate the email they're receiving from you\. Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 
 ### Q4\. What can I do to minimize complaints?<a name="cm-q4"></a>
 
@@ -263,11 +267,11 @@ First, you need to remove addresses that generated complaints from your mailing 
 
 Then, take a close look at your sending to determine why your recipients don't appreciate the mail you're sending, and address that underlying problem\. For every person who complains, there are potentially dozens who didn't appreciate your mail who didn't \(or weren't able to\) complain\. If you only remove the recipients who actually complain, you're not addressing the underlying problem\.
 
-#### Q5\. Do you disclose the Amazon SES complaint rate limits that trigger probation and suspension?<a name="cm-feedback-loop-q5"></a>
+#### Q5\. Do you disclose the Amazon SES complaint rate limits that could cause my account to be placed under review or that could result in my account's ability to send email being paused?<a name="cm-feedback-loop-q5"></a>
 
 For best results, you should maintain a complaint rate below 0\.1%\. Higher complaint rates can impact the delivery of your emails\.
 
-If your complaint rate is 0\.1% or greater, we'll place your account on probation\. If your bounce rate is 0\.5% or greater, we'll suspend your ability to send additional email\. 
+If your complaint rate is 0\.1% or greater, we'll place your account under review\. If your complaint rate is 0\.5% or greater, we might pause your account's ability to send additional email until you resolve the issue that resulted in the high complaint rate\. 
 
 #### Q6\. Over what period of time is my complaint rate calculated?<a name="cm-feedback-loop-q6"></a>
 
@@ -276,7 +280,7 @@ We don't calculate your complaint rate based on a fixed period of time, because 
 #### Q7\. Can I calculate my own complaint rate by using metrics from the Amazon SES console or the GetSendStatistics API?<a name="cm-feedback-loop-q7"></a>
 
 No\. There are two primary reasons for this:
-+ The complaint rate is calculated using representative volume \(see [Q6\. Over what period of time is my complaint rate calculated?](#cm-feedback-loop-q6)\)\. Depending on your sending rate, your complaint rate can stretch farther back in time than the Amazon SES console or `GetSendStatistics` can retrieve\. However, if you regularly monitor your complaint rates using those methods, you should still have a good indicator that you can use to catch problems before they get to levels that trigger a probation or suspension\.
++ The complaint rate is calculated using representative volume \(see [Q6\. Over what period of time is my complaint rate calculated?](#cm-feedback-loop-q6)\)\. Depending on your sending rate, your complaint rate can stretch farther back in time than the Amazon SES console or `GetSendStatistics` API can retrieve\. For this reason, we recommend that you regularly use these methods to monitor the complaint rate for your account\. Monitoring your complaint rate in this way gives you the information you need to identify problems before they reach levels that could impact the delivery of your email\.
 + When calculating complaint rate, not every email counts\. Complaint rate is calculated as the percentage of complaints on mail sent to domains that send complaint feedback to Amazon SES\.
 
 #### Q8\. How can I find out which email addresses complained?<a name="cm-feedback-loop-q8"></a>
@@ -317,11 +321,11 @@ Rather than focus on removing individual recipients from your lists, we recommen
 
 To protect the identities of the recipients who complained, we can't provide copies of the emails that caused your recipients to complain\.
 
-#### Q6\. I have received a probation notice for direct recipient complaints\. What should I do?<a name="cm-direct-q6"></a>
+#### Q6\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of direct complaints?<a name="cm-direct-q6"></a>
 
-Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. Once you've completed these steps, submit an appeal\. In your appeal, provide details about the changes that you've made in order to resolve the issue\. 
+Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 
-If you don't submit an appeal within three weeks, and we're still receiving direct recipient complaints, we will suspend your account\.
+If you don't request a revinw within three weeks, and we continue to receive direct recipient complaints, we might pause your account's ability to send email\.
 
 ### Amazon SES Complaints Through Email Providers FAQ<a name="cm-email-provider"></a>
 
@@ -347,11 +351,9 @@ Email providers typically don't disclose this information\. However, rather than
 
 No\. Email providers typically don't provide an example email\.
 
-#### Q6\. I have received a probation or shutdown notice for this type of complaint\. What should I do?<a name="cm-email-provider-q6"></a>
+#### Q6\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of email provider complaints?<a name="cm-email-provider-q6"></a>
 
-Fix your system so that your mailing list only includes recipients who have specifically signed up to receive your mail, and ensure that the email content itself is something your recipients actually want\. Then, please email us with the details of your changes so that we can start the process of re\-evaluating your case\. 
-
-If you don't submit an appeal within three weeks, and we're still receiving complaints from providers, we will suspend your account\.
+Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If you don't request a review within three weeks, and we continue to receive complaints from providers, we might pause your account's ability to send additional email\.
 
 ## Amazon SES Spamtrap FAQ<a name="e-faq-st"></a>
 
@@ -369,15 +371,17 @@ Certain organizations that operate spamtraps send Amazon SES notifications when 
 
 ### Q4\. How does Amazon SES use the spamtrap reports?<a name="st-q4"></a>
 
-We review the reports, and if we find enough evidence that you have a problem with sending to spamtraps, we will put you on probation and ask you to fix the underlying problem\. If you don't fix the problem before the probation period is over, your account will be suspended\. Also, if your spamtrap problem is very severe, you might be immediately suspended without a probation period\. As with any suspension, we will send you a notification at that time\.
+We review the reports\. If we determine that your account is sending email to spamtraps, we place your account under review and ask you to fix the underlying problem\. If you don't fix the problem before the review period is over, we might pause your account's ability to send additional email\. If your spamtrap problem is very severe, we might pause your account's ability to send email immediately, without placing your account under review first\.
 
-### Q5\. What should I do if I receive a probation or suspension notice for sending to spamtraps?<a name="st-q5"></a>
+### Q5\. What should I do if a receive a notice saying that my account is under review or that my sending is paused because of an issue with spamtraps?<a name="st-q5"></a>
 
-Fix the underlying problem and appeal to get your case reevaluated\. For information about the appeal process, see the FAQs on probation and suspension\. Due to the way spamtrap sending is reported, it will take a minimum of three weeks before we can confirm that a fix you've put in place has succeeded\. 
+First, you should address the issue that caused us to place your account under review or pause your ability to send email\. Next, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we'll cancel the review period or remove the sending pause from your account\.
 
-### Q6\. How many spamtrap hits can I have before I am put on probation or suspended?<a name="st-q6"></a>
+Because of the way that spamtrap hits are reported, it may take three weeks or more before we are able to determine if the changes you made solved the issue\. 
 
-Spamtrap hits are a very negative sign, so it takes only a small number of them to indicate that you're engaging in questionable sending practices\.
+### Q6\. How many spamtrap hits can I have before you place my account under review or pause my account's ability to send email?<a name="st-q6"></a>
+
+We don't disclose the specific number of spamtrap hits that cause us to take action on your account\. However, it's important to note that even a small number of spamtrap hits can have a very negative effect on your reputation as a sender, so you should take spamtrap reports seriously\.
 
 ### Q7\. Do you disclose the spamtrap addresses?<a name="st-q7"></a>
 
@@ -392,38 +396,42 @@ To reduce the risk of sending to spamtraps, follow these guidelines:
 + Ensure that you remove addresses that hard bounce from your list, so that they are removed long before they are converted to spamtraps\.
 + Ensure that you're monitoring engagement by your recipients, and stop sending to recipients who haven't engaged with your emails or website recently\. Time frames for what an "engaged user" is depend on your use case, but generally speaking if users haven't opened or clicked your emails in several months, you should consider removing them unless you have evidence that they do want your mail\.
 + Be very careful with re\-engagement campaigns where you intentionally contact people who haven't interacted with you recently\. These efforts tend to be highly risky, and can often cause problems not only with spamtrap sending, but also with bounces and complaints\.
-+ Send an opt\-in message to your entire mailing list and keep only the recipients who click on the verification link\. In addition to removing inactive recipients from your list, this procedure will remove spamtrap addresses as well\. However, we don't recommend using this technique if you think that your mailing list might contain a lot of bad addresses and/or you already have a problem with bounces, because it might cause your bounce rate to reach the point at which your sending is put on probation or shut down\.
++ Send an opt\-in message to your entire mailing list and keep only the recipients who click on the verification link\. In addition to removing inactive recipients from your list, this procedure also helps remove spamtrap addresses\. However, we don't recommend using this technique if you think that your mailing list might contain a lot of bad addresses, or if your account already has a problem with bounces, because it might cause your account's bounce rate to increase further\.
 
 ## Amazon SES Manual Investigation FAQ<a name="e-faq-mi"></a>
 
-### Q1\. I received a probation or shutdown notice for a manual investigation\. What does that mean?<a name="mi-q1"></a>
+### Q1\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of a manual investigation?<a name="mi-q1"></a>
 
 An Amazon SES investigator has identified a significant problem with your sending\. Typical problems include, but aren't limited to, the following:
 + Your sending violates the [AWS Acceptable Use Policy](https://aws.amazon.com/aup/) \(AUP\)\.
 + Your emails appear to be unsolicited\.
 + Your content is associated with a use case that Amazon SES doesn't support\.
 
-If the problem is correctable, your account is put on probation and you're given a certain amount of time \(rather than a certain volume of mail, as with bounces and complaints\) to correct the problem\. If the problem is uncorrectable, your account is suspended without a probation period\.
+If we believe that the problem can be corrected, we place your account under review for a certain amount of time\. While your account is under review, you should make changes to your email sending practices to correct the issue\.
 
-### Q2\. Why would you do a manual investigation?<a name="mi-q2"></a>
+If we don't believe that the problem can be corrected, or if the problem is very severe, we might pause your account's ability to send email without first placing your account under review\. 
 
-There are a variety of reasons\. These include, but aren't limited to, the following:
-+ Recipients contact Amazon SES to complain about your emails\.
-+ We detect a significant change in your sending patterns\.
-+ The spam filters of Amazon SES flag a significant portion of your emails\.
+### Q2\. What issues could cause you to perform a manual review of my email sending?<a name="mi-q2"></a>
 
-The probation or suspension notification indicates the issue at a high level\. For some problems, we are able to provide more specific details\.
+There are several issues that could cause us to begin a manual review of your account\. These reasons include, but aren't limited to, the following: 
++ Recipients contact Amazon SES to complain about email sent from your account\.
++ We detect unusual changes in your email sending patterns\.
++ Our spam filters find characteristics of your email that are typical of unsolicited or low\-quality content\.
+
+When we place your account under review or pause your account's ability to send email, we send you a notification\. In most cases, this notification contains information about the issue, and provides information about the next steps you can take\.
 
 ### Q3\. What are "unsolicited" emails?<a name="mi-q3"></a>
 
-Unsolicited emails are emails that the recipient didn't explicitly ask to receive\. This includes cases in which a recipient signs up for a certain type of mail \(for example, notifications\), and instead is sent a different type of mail \(for example, advertisements\)\. If the probation or suspension notice indicates that unsolicited sending is your problem, you should provide the following information in your appeal:
+Unsolicited emails are emails that the recipient didn't explicitly ask to receive\. This includes cases in which a recipient signs up for a certain type of mail \(for example, notifications\), and instead is sent a different type of mail \(for example, advertisements\)\.
+
+When we place your account under review or pause your account's ability to send email, we send you a notification\. If you receive a notification stating that we're taking one of these actions because of an issue with unsolicited email, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, include the following information:
 + Are all the messages that you send specifically requested by the recipient, and do they comply with the [AWS Acceptable Use Policy](https://aws.amazon.com/aup/)?
 + Have you acquired email addresses in any way other than a customer specifically interacting with you or your website and requesting emails from it? You should explain how you acquired your mailing list\.
 + How do your subscribe and unsubscribe processes work? You should include your opt\-in and opt\-out links\.
 
-### Q4\. What should I do if I receive a probation or suspension notice for a manual investigation?<a name="mi-q4"></a>
+### Q4\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of a manual review?<a name="mi-q4"></a>
 
-As with any probation or suspension, fix the underlying problem that is causing the issue specified in the probation or suspension notice, and then appeal to get your case reevaluated\. For information about the appeal process, see the FAQs on probation and suspension\. 
+Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we'll cancel the review period on your account\.
 
 ### Q5\. What types of problems do you view as "correctable?"<a name="mi-q5"></a>
 
@@ -431,7 +439,7 @@ Generally, we believe the situation is correctable if you have a history of good
 
 ### Q6\. What if I can't find the source of the problem?<a name="mi-q6"></a>
 
-You can send an email to [ses\-enforcement@amazon\.com](mailto:ses-enforcement@amazon.com) from the email address associated with your AWS account and request a sample of the mail that caused the issue\.
+You can send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account and request a sample of the mail that caused the issue\.
 
 **Important**  
 To protect the security of your account, we can only respond to requests that are sent from the email address associated with your AWS account\.

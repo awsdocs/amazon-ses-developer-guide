@@ -10,7 +10,7 @@ In this section, you will find code examples in several programming languages th
 The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net/)\. This code example assumes that you have installed the AWS SDK for \.NET, and that you've created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
 **Important**  
-You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key in the SDK Store\. For more information, see [Configuring AWS credentials](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-config-creds.html) in the AWS SDK for \.NET Developer Guide\. This example doesn't function unless you specify your credentials using one of these methods\.
+You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key in the SDK Store\. For more information, see [Configuring AWS credentials](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-config-creds.html) in the AWS SDK for \.NET Developer Guide\. This example doesn't function unless you specify your credentials using one of these methods\.
 
 ```
  1. using Amazon;
@@ -113,7 +113,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ```
 
 ------
-#### [ Go ]
+#### [ Golang ]
 
 The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/)\. This code example assumes that you have installed the AWS SDK for Go, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
@@ -317,7 +317,7 @@ The following code example is a complete solution for sending email through Amaz
 ------
 #### [ JavaScript ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for JavaScript in Node\.js](https://aws.amazon.com/sdk-for-node-js/)\. This code example assumes that you have installed the SDK for JavaScript in Node\.js\. You must also create a configuration file that contains your AWS Access Key ID, Secret Access Key, and preferred AWS Region\. For more information about creating this file, see [Loading Credentials in Node\.js from a JSON File](http://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-json-file.html)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for JavaScript in Node\.js](https://aws.amazon.com/sdk-for-node-js/)\. This code example assumes that you have installed the SDK for JavaScript in Node\.js\. You must also create a configuration file that contains your AWS Access Key ID, Secret Access Key, and preferred AWS Region\. For more information about creating this file, see [Loading Credentials in Node\.js from a JSON File](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/loading-node-credentials-json-file.html)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
@@ -416,68 +416,81 @@ The following code example is a complete solution for sending email through Amaz
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
 
 ```
-  1.    <?php
- 2. require 'vendor/autoload.php';
- 3. use Aws\SES\SESClient;
- 4. use Aws\Exception\AwsException;
- 5. 
- 6. /**
- 7.  * Send an Amazon Simple Email Service Message. 
- 8.  *
- 9.  * This code expects that you have AWS credentials set up per:
-10.  * https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/guide_credentials.html
-11.  */
-12.  
-13.  
-14. //Create a SESClient
-15. $SesClient = new Aws\SES\SESClient([
-16.     'profile' => 'default',
-17.     'version' => '2010-12-01',
-18.     'region'  => 'us-east-1'
-19. ]);
-20. $html_body = '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
-21.                   '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
-22.                   'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
-23.                   'AWS SDK for PHP</a>.</p>';
-24. $subject = 'Amazon SES test (AWS SDK for PHP)';
-25. $plaintext_body = 'This email was send with Amazon SES using the AWS SDK for PHP.' ;
-26. $sender_email = 'email_address';
-27. $verified_recipeint_emails = ['email_address'];
-28. $char_set = 'UTF-8';
-29. try {
-30.     $result = $SesClient->sendEmail([
-31.         'Destination' => [
-32.             'ToAddresses' => $verified_recipeint_emails,
-33.         ],
-34.         'ReplyToAddresses' => [$sender_email],
-35.         'Source' => $sender_email,
-36.         'Message' => [
-37.         
-38.         'Body' => [
-39.             'Html' => [
-40.                 'Charset' => $char_set,
-41.                 'Data' => $html_body,
-42.             ],
-43.             'Text' => [
-44.                 'Charset' => $char_set,
-45.                 'Data' => $plaintext_body,
-46.             ],
-47.         ],
-48.         'Subject' => [
-49.             'Charset' => $char_set,
-40.             'Data' => $subject,
-51.         ],
-52.     ],
-53.             ]);
-54.     $messageId = $result['MessageId'];
-55.     echo("Email sent! Message ID: $messageId"."\n");
-56. } catch (AwsException $e) {
-57.     // output error message if fails
-58.     echo $e->getMessage();echo("The email was not sent. Error message: ".$e->getAwsErrorMessage()."\n");
-59.     echo "\n";
-60.  }
-61.  ?>
-
+ 1. <?php
+ 2. 
+ 3. // If necessary, modify the path in the require statement below to refer to the 
+ 4. // location of your Composer autoload.php file.
+ 5. require 'vendor/autoload.php';
+ 6. 
+ 7. use Aws\Ses\SesClient;
+ 8. use Aws\Exception\AwsException;
+ 9. 
+10. // Create an SesClient. Change the value of the region parameter if you're 
+11. // using an AWS Region other than US West (Oregon). Change the value of the
+12. // profile parameter if you want to use a profile in your credentials file
+13. // other than the default.
+14. $SesClient = new SesClient([
+15.     'profile' => 'default',
+16.     'version' => '2010-12-01',
+17.     'region'  => 'us-west-2'
+18. ]);
+19. 
+20. // Replace sender@example.com with your "From" address.
+21. // This address must be verified with Amazon SES.
+22. $sender_email = 'sender@example.com';
+23. 
+24. // Replace these sample addresses with the addresses of your recipients. If
+25. // your account is still in the sandbox, these addresses must be verified.
+26. $recipient_emails = ['recipient1@example.com','recipient2@example.com'];
+27. 
+28. // Specify a configuration set. If you do not want to use a configuration
+29. // set, comment the following variable, and the
+30. // 'ConfigurationSetName' => $configuration_set argument below.
+31. $configuration_set = 'ConfigSet';
+32. 
+33. $subject = 'Amazon SES test (AWS SDK for PHP)';
+34. $plaintext_body = 'This email was sent with Amazon SES using the AWS SDK for PHP.' ;
+35. $html_body =  '<h1>AWS Amazon Simple Email Service Test Email</h1>'.
+36.               '<p>This email was sent with <a href="https://aws.amazon.com/ses/">'.
+37.               'Amazon SES</a> using the <a href="https://aws.amazon.com/sdk-for-php/">'.
+38.               'AWS SDK for PHP</a>.</p>';
+39. $char_set = 'UTF-8';
+40. 
+41. try {
+42.     $result = $SesClient->sendEmail([
+43.         'Destination' => [
+44.             'ToAddresses' => $recipient_emails,
+45.         ],
+46.         'ReplyToAddresses' => [$sender_email],
+47.         'Source' => $sender_email,
+48.         'Message' => [
+49.           'Body' => [
+50.               'Html' => [
+51.                   'Charset' => $char_set,
+52.                   'Data' => $html_body,
+53.               ],
+54.               'Text' => [
+55.                   'Charset' => $char_set,
+56.                   'Data' => $plaintext_body,
+57.               ],
+58.           ],
+59.           'Subject' => [
+60.               'Charset' => $char_set,
+61.               'Data' => $subject,
+62.           ],
+63.         ],
+64.         // If you aren't using a configuration set, comment or delete the
+65.         // following line
+66.         'ConfigurationSetName' => $configuration_set,
+67.     ]);
+68.     $messageId = $result['MessageId'];
+69.     echo("Email sent! Message ID: $messageId"."\n");
+70. } catch (AwsException $e) {
+71.     // output error message if fails
+72.     echo $e->getMessage();
+73.     echo("The email was not sent. Error message: ".$e->getAwsErrorMessage()."\n");
+74.     echo "\n";
+75. }
 ```
 
 ------
@@ -577,7 +590,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ------
 #### [ Ruby ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/)\. This code example assumes that you have installed the AWS SDK for Ruby, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/)\. This code example assumes that you've installed the AWS SDK for Ruby, and that you've created a shared credentials file\. For more information about installing the SDK for Ruby, see [Installing the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-install.html) in the *AWS SDK for Ruby Developer Guide*\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.

@@ -1,6 +1,6 @@
 # Monitoring Using Amazon SES Event Publishing<a name="monitor-using-event-publishing"></a>
 
-To enable you to track your email sending at a granular level, you can set up Amazon SES to publish *email sending events* to Amazon CloudWatch or Amazon Kinesis Firehose based on fine\-grained email characteristics that you define\. For example, you can categorize your emails by purpose \(transactional versus marketing\), product details, the recipient's "From" domain, and so on\.
+To enable you to track your email sending at a granular level, you can set up Amazon SES to publish *email sending events* to Amazon CloudWatch or Amazon Kinesis Data Firehose based on fine\-grained email characteristics that you define\. For example, you can categorize your emails by purpose \(transactional versus marketing\), product details, the recipient's "From" domain, and so on\.
 
 You can track several types of email sending events, including sends, deliveries, opens, clicks, bounces, complaints, and rejections\. This information can be useful for operational and analytical purposes\. For example, you can publish your email sending data to CloudWatch and create dashboards that track the performance of your email campaigns\.
 
@@ -43,7 +43,7 @@ Information associated with the outcome of an email you submit to Amazon SES\. S
 + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
 + **Opens** – The recipient received the message and opened it in his or her email client\.
 + **Clicks** – The recipient clicked one or more links contained in the email\.
-+ **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
++ **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 **Configuration set**  
 An Amazon SES construct that encapsulates where you want to publish email sending events, and what email sending events you want to publish\. When you send an email that you want to use with event publishing, you specify the configuration set to associate with the email\.

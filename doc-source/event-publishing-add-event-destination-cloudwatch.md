@@ -16,7 +16,7 @@ This section provides information to help you choose your dimensions, and then s
 
 The procedure in this section shows how to add a CloudWatch event destination to a configuration set\.
 
-You can also use the `UpdateConfigurationSetEventDestination` API operation to create event destinations\. For more information about using the API, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
+You can also use the `UpdateConfigurationSetEventDestination` API operation to create event destinations\. For more information about using the API, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
 
 **To add a CloudWatch event destination to a configuration set \(console\)**
 
@@ -40,7 +40,7 @@ You can also use the `UpdateConfigurationSetEventDestination` API operation to c
    + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
    + **Opens** – The recipient received the message and opened it in his or her email client\.
    + **Clicks** – The recipient clicked one or more links contained in the email\.
-   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 1. For **Value Source**, specify how Amazon SES will obtain the data that it passes to CloudWatch\. The following value sources are available:
    + **Message Tag** – Amazon SES retrieves the dimension name and value from a tag that you specify by using the `X-SES-MESSAGE-TAGS` header or the `Tags` API parameter\. For more information about using message tags, see [Step 3: Send Email Using Amazon SES Event Publishing](event-publishing-send-email.md)\.
@@ -66,4 +66,4 @@ When you choose names and values to use as CloudWatch dimensions, consider the f
 + **Metric filtering** – If a metric has multiple dimensions, you cannot access the metric in CloudWatch based on each dimension separately\. For that reason, think carefully before you add more than one dimension to a single CloudWatch event destination\. For example, if you want metrics by `campaign` and by a combination of `campaign` and `genre`, you need to add two event destinations: one with only `campaign` as a dimension, and one with both `campaign` and `genre` as dimensions\.
 + **Dimension value source** – As an alternative to specifying your dimension values using Amazon SES\-specific headers or a parameter to the API, you can also choose for Amazon SES to take the dimension values from your own MIME message headers\. You might use this option if you are already using custom headers and you do not want to change your emails or your calls to the email sending API to collect metrics based on your header values\. If you use your own MIME message headers for Amazon SES event publishing, the header names and values that you use for Amazon SES event publishing may only include the letters A through Z, the numbers 0 through 9, underscores \(\_\), at signs \(@\), hyphens \(\-\), and periods \(\.\)\. If you specify a name or value that contains other characters, the email sending call will still succeed, but the event metrics will not be sent to Amazon CloudWatch\.
 
-For more information about CloudWatch concepts, see [Amazon CloudWatch Concepts](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html) in the *Amazon CloudWatch User Guide*\.
+For more information about CloudWatch concepts, see [Amazon CloudWatch Concepts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html) in the *Amazon CloudWatch User Guide*\.

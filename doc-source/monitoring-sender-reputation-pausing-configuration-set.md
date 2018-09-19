@@ -114,7 +114,7 @@ This function only pauses email sending for configuration sets in the AWS Region
 
 A side effect of testing the Lambda function in [Part 3: Create the Lambda Function](#monitoring-sender-reputation-pausing-configuration-set-part-3) is that email sending for the configuration set is paused\. In most cases, you do not want to pause sending for the configuration set until the CloudWatch alarm is triggered\.
 
-The procedures in this section re\-enable email sending for your configuration set\. To complete these procedures, you must install and configure the AWS Command Line Interface\. For more information, see the [AWS Command Line Interface User Guide](http://docs.aws.amazon.com/cli/latest/userguide/)\.
+The procedures in this section re\-enable email sending for your configuration set\. To complete these procedures, you must install and configure the AWS Command Line Interface\. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
 **To re\-enable email sending**
 
@@ -193,7 +193,7 @@ This section contains procedures for creating an alarm in CloudWatch that is tri
    + Under **Alarm Threshold**, for **Name**, type a name for the alarm\.
    + Under **Whenever: Reputation\.BounceRate** or **Whenever: Reputation\.ComplaintRate**, specify the threshold that causes the alarm to trigger\.
 **Note**  
-If the overall bounce rate for your Amazon SES account exceeds 10%, or if the overall complaint rate for your Amazon SES account exceeds \.5%, your Amazon SES account is automatically placed on probation\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are far below these rates to prevent your account from being placed on probation\.
+If the overall bounce rate for your Amazon SES account exceeds 10%, or if the overall complaint rate for your Amazon SES account exceeds \.5%, your Amazon SES account is automatically placed under review\. When you specify the bounce or complaint rate that causes the CloudWatch alarm to trigger, we recommend that you use values that are far below these rates to prevent your account from being placed under review\.
    + Under **Actions**, for **Whenever this alarm**, choose **State is ALARM**\. For **Send notification to**, choose the Amazon SNS topic you created in [Part 5: Create an Amazon SNS Topic](#monitoring-sender-reputation-pausing-configuration-set-part-5)\.
 
    Choose **Create Alarm**\.
@@ -228,7 +228,7 @@ The procedures in this section are optional, but we recommend that you complete 
 
    Replace *MyAlarm* in the preceding command with the name of the alarm you created in [Part 6: Create a CloudWatch Alarm](#monitoring-sender-reputation-pausing-configuration-set-part-6)\.
 **Note**  
-When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
+When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
 
 1. At the command line, type the following command to check the email sending status for the configuration set: aws ses describe\-configuration\-set \-\-configuration\-set\-name *ConfigSet*
 

@@ -7,6 +7,7 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 | Change | Description | Date Changed | 
 | --- | --- | --- | 
+| New feature | If your account is in good standing, and you're approaching the sending limits for your account, Amazon SES will automatically increase your limits\. For more information, see [Sending Limits](limits.md#limits-sending)\. |  | 
 | Documentation update | Added [information about deleting personal data from Amazon SES](deleting-personal-data.md)\. | March 13, 2018 | 
 | Open sourced documentation | The Amazon SES documentation is now available on [GitHub](https://github.com/awsdocs/amazon-ses-developer-guide)\. You can submit issues or request changes in the GitHub repository, or make changes directly and submit a pull request\. | February 22, 2018 | 
 | Documentation update | Added a section that provides information about [deleting personal data](deleting-personal-data.md) stored in Amazon SES\. | February 28, 2018 | 

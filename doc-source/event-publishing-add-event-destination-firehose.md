@@ -1,10 +1,10 @@
-# Set Up a Kinesis Firehose Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-firehose"></a>
+# Set Up a Kinesis Data Firehose Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-firehose"></a>
 
-An Amazon Kinesis Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Firehose\. Because a Kinesis Firehose event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
+An Amazon Kinesis Data Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Data Firehose\. Because a Kinesis Data Firehose event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
 
-You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API to add a Kinesis Firehose event destination\. 
+You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API to add a Kinesis Data Firehose event destination\. 
 
-**To add a Kinesis Firehose event destination to a configuration set \(console\)**
+**To add a Kinesis Data Firehose event destination to a configuration set \(console\)**
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
@@ -12,7 +12,7 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
 
 1. Choose a configuration set from the configuration set list\. If the list is empty, you must first [create a configuration set](event-publishing-create-configuration-set.md)\.
 
-1. For **Add Destination**, choose **Select a destination type**, and then choose **Kinesis Firehose**\.
+1. For **Add Destination**, choose **Select a destination type**, and then choose **Kinesis Data Firehose**\.
 
 1. For **Name**, type a name for the event destination\.
 
@@ -24,31 +24,31 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
    + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
    + **Opens** – The recipient received the message and opened it in his or her email client\.
    + **Clicks** – The recipient clicked one or more links contained in the email\.
-   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
 
 1. Select **Enabled**\.
 
-1. For **Stream**, choose an existing Kinesis Firehose delivery stream, or choose **Create new stream** to create a new one using the Kinesis Firehose console\.
+1. For **Stream**, choose an existing Kinesis Data Firehose delivery stream, or choose **Create new stream** to create a new one using the Kinesis Data Firehose console\.
 
-   For information about creating a stream using the Kinesis Firehose console, see [Creating an Amazon Kinesis Firehose Delivery Stream](http://docs.aws.amazon.com/firehose/latest/dev/basic-create.html) in the *Amazon Kinesis Data Firehose Developer Guide*\.
+   For information about creating a stream using the Kinesis Data Firehose console, see [Creating an Amazon Kinesis Firehose Delivery Stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html) in the *Amazon Kinesis Data Firehose Developer Guide*\.
 
-1. For **IAM role**, choose an IAM role for which Amazon SES has permission to publish to Kinesis Firehose on your behalf\. You can choose an existing role, have Amazon SES create a role for you, or create your own role\.
+1. For **IAM role**, choose an IAM role for which Amazon SES has permission to publish to Kinesis Data Firehose on your behalf\. You can choose an existing role, have Amazon SES create a role for you, or create your own role\.
 
-   If you choose an existing role or create your own role, you must manually modify the role's policies to give the role permission to access the Kinesis Firehose delivery stream, and to give Amazon SES permission to assume the role\. For example policies, see [Giving Amazon SES Permission to Publish to Your Kinesis Firehose Delivery Stream](#event-publishing-add-event-destination-firehose-role)\. 
+   If you choose an existing role or create your own role, you must manually modify the role's policies to give the role permission to access the Kinesis Data Firehose delivery stream, and to give Amazon SES permission to assume the role\. For example policies, see [Giving Amazon SES Permission to Publish to Your Kinesis Data Firehose Delivery Stream](#event-publishing-add-event-destination-firehose-role)\. 
 
 1. Choose **Save**\.
 
-For information about how to use the `UpdateConfigurationSetEventDestination` API to add a Kinesis Firehose event destination, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
+For information about how to use the `UpdateConfigurationSetEventDestination` API to add a Kinesis Data Firehose event destination, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
 
-## Giving Amazon SES Permission to Publish to Your Kinesis Firehose Delivery Stream<a name="event-publishing-add-event-destination-firehose-role"></a>
+## Giving Amazon SES Permission to Publish to Your Kinesis Data Firehose Delivery Stream<a name="event-publishing-add-event-destination-firehose-role"></a>
 
-To enable Amazon SES to publish records to your Kinesis Firehose delivery stream, you must use an AWS Identity and Access Management \(IAM\) [role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) and attach or modify the role's permissions policy and trust policy\. The permissions policy enables the role to publish records to your Kinesis Firehose delivery stream, and the trust policy enables Amazon SES to assume the role\.
+To enable Amazon SES to publish records to your Kinesis Data Firehose delivery stream, you must use an AWS Identity and Access Management \(IAM\) [role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) and attach or modify the role's permissions policy and trust policy\. The permissions policy enables the role to publish records to your Kinesis Data Firehose delivery stream, and the trust policy enables Amazon SES to assume the role\.
 
-This section provides examples of both policies\. For information about attaching policies to IAM roles, see [Modifying a Role](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_modify.html) in the *IAM User Guide*\. 
+This section provides examples of both policies\. For information about attaching policies to IAM roles, see [Modifying a Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_modify.html) in the *IAM User Guide*\. 
 
 ### Permissions Policy<a name="event-publishing-add-event-destination-firehose-role-permission"></a>
 
-The following permissions policy enables the role to publish data records to your Kinesis Firehose delivery stream\.
+The following permissions policy enables the role to publish data records to your Kinesis Data Firehose delivery stream\.
 
 ```
  1. {

@@ -9,7 +9,7 @@ To successfully send an email from an identity owner's identity, you must connec
 
 ## Using the Amazon SES API<a name="sending-authorization-delegate-sender-tasks-api"></a>
 
-As with any Amazon SES email sender, if you access Amazon SES through the Amazon SES API \(either directly through HTTPS or indirectly through an AWS SDK\), you can choose between one of two email\-sending actions: `SendEmail` and `SendRawEmail`\. The [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/) describes the details of these APIs, but we provide an overview of the sending authorization parameters here\.
+As with any Amazon SES email sender, if you access Amazon SES through the Amazon SES API \(either directly through HTTPS or indirectly through an AWS SDK\), you can choose between one of two email\-sending actions: `SendEmail` and `SendRawEmail`\. The [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) describes the details of these APIs, but we provide an overview of the sending authorization parameters here\.
 
 ### SendRawEmail<a name="sending-authorization-delegate-sender-tasks-api-sendrawemail"></a>
 

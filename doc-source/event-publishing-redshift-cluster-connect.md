@@ -45,7 +45,7 @@ The following procedure shows how to connect to your cluster from SQL Workbench/
 
    1. Next to **Library**, choose the folder icon\.
 
-   1. Navigate to the location of the driver you downloaded in [Configure a JDBC Connection](http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html), select the driver, and then choose **Open**\.
+   1. Navigate to the location of the driver you downloaded in [Configure a JDBC Connection](https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html), select the driver, and then choose **Open**\.
 
    1. Choose **OK**\.
 
@@ -63,7 +63,7 @@ The following procedure shows how to connect to your cluster from SQL Workbench/
 
 1. To test the connection, choose **Test**\.
 **Note**  
-If the connection attempt times out, you might need to add your IP address to the security group that allows incoming traffic from IP addresses\. For more information, see [The Connection Is Refused or Fails](http://docs.aws.amazon.com/redshift/latest/mgmt/connecting-refusal-failure-issues.html) in the *Amazon Redshift Database Developer Guide*\.  
+If the connection attempt times out, you might need to add your IP address to the security group that allows incoming traffic from IP addresses\. For more information, see [The Connection Is Refused or Fails](https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-refusal-failure-issues.html) in the *Amazon Redshift Database Developer Guide*\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_connection.png)
 
 1. On the top menu bar, choose the **Save profile list** button\.

@@ -8,7 +8,7 @@ You can configure Microsoft Windows Server's IIS SMTP server to send email throu
 
    1. From the [Amazon EC2 management console](https://console.aws.amazon.com/ec2/home), launch a new Microsoft Windows Server 2012 Base Amazon EC2 instance\.
 
-   1. Connect to the instance and log into it using Remote Desktop by following the instructions in [Getting Started with Amazon EC2 Windows Instances](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2Win_GetStarted.html)\.
+   1. Connect to the instance and log into it using Remote Desktop by following the instructions in [Getting Started with Amazon EC2 Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2Win_GetStarted.html)\.
 
    1. Launch the Server Manager Dashboard\.
 

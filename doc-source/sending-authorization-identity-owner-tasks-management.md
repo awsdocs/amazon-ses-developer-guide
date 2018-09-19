@@ -7,7 +7,7 @@ To revoke permissions, you can either edit a policy or remove it\.
 
 ## Editing a Policy<a name="sending-authorization-identity-owner-tasks-management-edit"></a>
 
-The easiest way to edit a policy is to use the Amazon SES console\. If you want to use the Amazon SES API instead, you can use the [GetIdentityPolicies](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html) operation to retrieve the policy, edit the policy using a text editor, and then use the [PutIdentityPolicy](http://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html) operation to overwrite the older policy\.
+The easiest way to edit a policy is to use the Amazon SES console\. If you want to use the Amazon SES API instead, you can use the [GetIdentityPolicies](https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html) operation to retrieve the policy, edit the policy using a text editor, and then use the [PutIdentityPolicy](https://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html) operation to overwrite the older policy\.
 
 The following procedure shows you how to edit a policy by using the Amazon SES console\.
 
@@ -29,7 +29,7 @@ The following procedure shows you how to edit a policy by using the Amazon SES c
 
 ## Removing a Policy<a name="sending-authorization-identity-owner-tasks-management-remove"></a>
 
-To revoke permissions at any time, you can simply remove the policy\. You can remove a policy by using the [DeleteIdentityPolicy](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html) API operation, or you can use the Amazon SES console, as described in the following procedure\.
+To revoke permissions at any time, you can simply remove the policy\. You can remove a policy by using the [DeleteIdentityPolicy](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html) API operation, or you can use the Amazon SES console, as described in the following procedure\.
 
 **Important**  
 After you remove a policy, there is no way to get it back\. We recommend that you back up the policy by copying and pasting it into a text file before you remove the policy\.
@@ -48,7 +48,7 @@ After you remove a policy, there is no way to get it back\. We recommend that yo
 
 ## Listing and Retrieving Policies<a name="sending-authorization-identity-owner-tasks-management-list"></a>
 
-You can list the policies that are attached to an identity by using the [ListIdentityPolicies](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentityPolicies.html) API operation\. You can also retrieve the policies themselves by using the [GetIdentityPolicies](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html) API operation\.
+You can list the policies that are attached to an identity by using the [ListIdentityPolicies](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentityPolicies.html) API operation\. You can also retrieve the policies themselves by using the [GetIdentityPolicies](https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html) API operation\.
 
 You can also use the Amazon SES console to perform both of these tasks, as described in the following procedure\.
 

@@ -15,7 +15,7 @@ This topic contains information you need to know when you use Amazon SES endpoin
 + [Custom MAIL FROM Domains](#region-mail-from)
 + [Email Receiving](#region-receive-email)
 
-For general information about AWS regions, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference\.*
+For general information about AWS regions, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference\.*
 
 ## Amazon SES Endpoints<a name="region-endpoints"></a>
 
@@ -28,11 +28,11 @@ The following table lists the endpoints you use for email sending\.
 
 ****  
 
-| Region name | API \(HTTPS\) endpoint | SMTP endpoint | 
-| --- | --- | --- | 
-|  US East \(N\. Virginia\)  |  email\.us\-east\-1\.amazonaws\.com  |  email\-smtp\.us\-east\-1\.amazonaws\.com  | 
-|  US West \(Oregon\)  |  email\.us\-west\-2\.amazonaws\.com  |  email\-smtp\.us\-west\-2\.amazonaws\.com  | 
-|  EU \(Ireland\)  |  email\.eu\-west\-1\.amazonaws\.com  |  email\-smtp\.eu\-west\-1\.amazonaws\.com  | 
+| Region name | Region | API \(HTTPS\) endpoint | SMTP endpoint | 
+| --- | --- | --- | --- | 
+|  US East \(N\. Virginia\)  | us\-east\-1 |  email\.us\-east\-1\.amazonaws\.com  |  email\-smtp\.us\-east\-1\.amazonaws\.com  | 
+|  US West \(Oregon\)  | us\-west\-2 |  email\.us\-west\-2\.amazonaws\.com  |  email\-smtp\.us\-west\-2\.amazonaws\.com  | 
+|  EU \(Ireland\)  | eu\-west\-1 |  email\.eu\-west\-1\.amazonaws\.com  |  email\-smtp\.eu\-west\-1\.amazonaws\.com  | 
 
 ### Email Receiving Endpoints<a name="region-endpoints-receiving"></a>
 
@@ -41,11 +41,11 @@ The following table lists the endpoints you use for email receiving\.
 
 ****  
 
-| Region name | SMTP endpoint | 
-| --- | --- | 
-|  US East \(N\. Virginia\)  |  inbound\-smtp\.us\-east\-1\.amazonaws\.com  | 
-|  US West \(Oregon\)  |  inbound\-smtp\.us\-west\-2\.amazonaws\.com  | 
-|  EU \(Ireland\)  |  inbound\-smtp\.eu\-west\-1\.amazonaws\.com  | 
+| Region name | Region | SMTP endpoint | 
+| --- | --- | --- | 
+|  US East \(N\. Virginia\)  | us\-east\-1 |  inbound\-smtp\.us\-east\-1\.amazonaws\.com  | 
+|  US West \(Oregon\)  | us\-west\-2 |  inbound\-smtp\.us\-west\-2\.amazonaws\.com  | 
+|  EU \(Ireland\)  | eu\-west\-1 |  inbound\-smtp\.eu\-west\-1\.amazonaws\.com  | 
 
 ## Selecting a Region to Use with Amazon SES<a name="region-select"></a>
 

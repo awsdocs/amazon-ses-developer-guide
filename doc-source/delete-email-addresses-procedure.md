@@ -1,6 +1,6 @@
 # Deleting an Email Identity in Amazon SES<a name="delete-email-addresses-procedure"></a>
 
-If you no longer need to use a verified email address, you can delete it by using the Amazon SES console or the [DeleteIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html) API operation\.
+If you no longer need to use a verified email address, you can delete it by using the Amazon SES console or the [DeleteIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html) API operation\.
 
 **Warning**  
 This action can't be undone\. However, you can repeat the verification process for an identity that was previously deleted\.
@@ -20,7 +20,7 @@ These procedures only delete the email address in the selected AWS Region\. To d
 
 ## Deleting an Email Identity Using the Amazon SES API<a name="delete-email-addresses-procedure-api"></a>
 
-Use the [DeleteIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html) API operation to delete email address and domain identities\.
+Use the [DeleteIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html) API operation to delete email address and domain identities\.
 
 To delete an identity using the AWS CLI, type the following command at the command line: aws ses delete\-identity \-\-identity "*sender@example\.com*"
 

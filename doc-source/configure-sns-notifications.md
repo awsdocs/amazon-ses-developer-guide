@@ -13,11 +13,11 @@ You can configure notifications in the Amazon SES console, or by using the Amazo
 
 Complete the following steps before you set up Amazon SNS notifications in Amazon SES:
 
-1. Create a topic in Amazon SNS\. For more information, see [Create a Topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+1. Create a topic in Amazon SNS\. For more information, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Subscribe at least one endpoint to the topic\. For example, if you want to receive notifications by text message, subscribe an SMS endpoint \(that is, a mobile phone number\) to the topic\. To receive notifications by email, subscribe an email endpoint \(an email address\) to the topic\. 
 
-   For more information, see [Subscribe to a Topic](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+   For more information, see [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 ## Configuring Notifications Using the Amazon SES Console<a name="configure-feedback-notifications-console"></a>
 
@@ -38,9 +38,9 @@ Verified domain notification settings apply to all mail sent from email addresse
    1. Choose the Amazon SNS topics you want to use to receive notifications\. You can publish multiple event type notifications to the same Amazon SNS topic or to different Amazon SNS topics\. 
 **Important**  
 The Amazon SNS topics you use for bounce, complaint, and delivery notifications must be in the same AWS Region where you use Amazon SES\.  
-Additionally, the topics you select must be subscribed to by one or more endpoints\. For example, if you want to have notifications sent to an email address, you must subscribe an email endpoint to the topic\. For more information, see [Subscribe to a Topic](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+Additionally, the topics you select must be subscribed to by one or more endpoints\. For example, if you want to have notifications sent to an email address, you must subscribe an email endpoint to the topic\. For more information, see [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
-      If you want to use an Amazon SNS topic that you do not own, you must [configure your AWS Identity and Access Management \(IAM\) policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage.html) to allow publishing from the Amazon Resource Name \(ARN\) of the Amazon SNS topic\.
+      If you want to use an Amazon SNS topic that you do not own, you must [configure your AWS Identity and Access Management \(IAM\) policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage.html) to allow publishing from the Amazon Resource Name \(ARN\) of the Amazon SNS topic\.
 
    1. If you want the Amazon SNS notifications to contain the original headers of the emails you pass to Amazon SES, choose **Include original headers**\. This option is only available if you have assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Amazon SNS Notification Contents](notification-contents.md)\. 
 
@@ -58,9 +58,9 @@ If an attempt to publish to your Amazon SNS topic fails because the topic has be
 ## Configuring Notifications Using the Amazon SES API<a name="configure-feedback-notifications-api"></a>
 
 You can also configure bounce, complaint, and delivery notifications by using the Amazon SES API\. Use the following operations to configure notifications:
-+ [SetIdentityNotificationTopic](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html)
-+ [SetIdentityFeedbackForwardingEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html)
-+ [GetIdentityNotificationAttributes](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html)
-+ [SetIdentityHeadersInNotificationsEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html)
++ [SetIdentityNotificationTopic](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html)
++ [SetIdentityFeedbackForwardingEnabled](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html)
++ [GetIdentityNotificationAttributes](https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html)
++ [SetIdentityHeadersInNotificationsEnabled](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html)
 
-You can use these API actions to write a customized front\-end application for notifications\. For a complete description of the API actions related to notifications, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/)\.
+You can use these API actions to write a customized front\-end application for notifications\. For a complete description of the API actions related to notifications, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.

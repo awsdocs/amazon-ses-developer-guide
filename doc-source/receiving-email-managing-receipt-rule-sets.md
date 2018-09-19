@@ -25,7 +25,7 @@ You cannot delete the receipt rule set that is currently active\.
 
 1. From the **Actions** menu, choose **Delete**, and then confirm that you want to delete the receipt rule set\.
 
-For information about how to use the `DeleteReceiptRuleSet` API to delete a receipt rule set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html)\.
+For information about how to use the `DeleteReceiptRuleSet` API to delete a receipt rule set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html)\.
 
 ## Activating and Disabling a Receipt Rule Set<a name="receiving-email-managing-receipt-rule-sets-enable-disable"></a>
 
@@ -54,7 +54,7 @@ You can use the Amazon SES console or the `SetActiveReceiptRuleSet` API to contr
 
 1. Under **Active Rule Set**, choose **Disable Active Rule Set**, and then confirm that you want to disable the receipt rule set\.
 
-For information about how to use the `SetActiveReceiptRuleSet` API to activate or disable a rule set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html)\. 
+For information about how to use the `SetActiveReceiptRuleSet` API to activate or disable a rule set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html)\. 
 
 ## Copying a Receipt Rule Set<a name="receiving-email-managing-receipt-rule-sets-copy"></a>
 
@@ -86,7 +86,7 @@ You can use the Amazon SES console or the `CloneReceiptRuleSet` API to copy a re
 
 1. Choose **Copy Rule Set**\. The copied receipt rule set will appear in the **Inactive Rule Sets** list\.
 
-For information about how to use the `CloneReceiptRuleSet` API to copy a receipt rule set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html)\.
+For information about how to use the `CloneReceiptRuleSet` API to copy a receipt rule set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html)\.
 
 ## Reordering Receipt Rules<a name="receiving-email-managing-receipt-rule-sets-reorder"></a>
 
@@ -116,4 +116,4 @@ You can use the Amazon SES console or the `ReorderReceiptRuleSet` API to reorder
 
 1. Use the up and down arrows next to the receipt rule names to reorder the receipt rules, and then choose **Save Order**\.
 
-For information about how to use the `ReorderReceiptRuleSet` API to reorder receipt rules in a receipt rule set, see the [Amazon Simple Email Service API Reference](http://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html)\.
+For information about how to use the `ReorderReceiptRuleSet` API to reorder receipt rules in a receipt rule set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html)\.

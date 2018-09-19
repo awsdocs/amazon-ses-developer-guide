@@ -1,8 +1,8 @@
 # Step 1: Create an Amazon ES Cluster<a name="event-publishing-elasticsearch-cluster"></a>
 
-Before you set up Amazon Kinesis Firehose to publish your Amazon SES email sending events to Amazon Elasticsearch Service \(Amazon ES\), you must create an Amazon ES cluster\. This section shows how to create an Amazon ES cluster using the Amazon ES console\.
+Before you set up Amazon Kinesis Data Firehose to publish your Amazon SES email sending events to Amazon Elasticsearch Service \(Amazon ES\), you must create an Amazon ES cluster\. This section shows how to create an Amazon ES cluster using the Amazon ES console\.
 
-For the simplicity of this tutorial, we choose basic options\. For information about all available options, see the [Amazon Elasticsearch Service Developer Guide](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html)\.
+For the simplicity of this tutorial, we choose basic options\. For information about all available options, see the [Amazon Elasticsearch Service Developer Guide](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/what-is-amazon-elasticsearch-service.html)\.
 
 **Important**  
 The cluster that you deploy for this tutorial will run in a live environment\. As long as it is running, it will accrue charges to your AWS account\. To avoid unnecessary charges, you should delete your cluster when you are done with it\. For pricing information, go to the [Amazon Elasticsearch Service pricing page](https://aws.amazon.com/elasticsearch-service/pricing/)\. 
@@ -33,7 +33,7 @@ The cluster that you deploy for this tutorial will run in a live environment\. A
 
 1. On the **Set up access policy** page, for **Set the domain access policy to**, choose **Allow open access to the domain**\.
 **Important**  
-This setting simplifies testing but is **not recommended for production environments**\. For information about configuring access policies, see [Configuring Access Policies](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies) in the *Amazon Elasticsearch Service Developer Guide*\.
+This setting simplifies testing but is **not recommended for production environments**\. For information about configuring access policies, see [Configuring Access Policies](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies) in the *Amazon Elasticsearch Service Developer Guide*\.
 
 1. Choose **Next**\.
 
@@ -43,4 +43,4 @@ The cluster will take up to ten minutes to deploy\.
 
 ## Next Step<a name="event-publishing-elasticsearch-cluster-next-step"></a>
 
-[Step 2: Create a Kinesis Firehose Delivery Stream](event-publishing-elasticsearch-firehose-stream.md)
+[Step 2: Create a Kinesis Data Firehose Delivery Stream](event-publishing-elasticsearch-firehose-stream.md)
