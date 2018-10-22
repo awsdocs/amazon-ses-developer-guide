@@ -42,32 +42,32 @@ Each bounce, complaint, or delivery notification contains information about the 
 |  `sourceIp`  |  The originating public IP address of the client that performed the email sending request to Amazon SES\.  | 
 |  `sendingAccountId`  |  The AWS account ID of the account that was used to send the email\. In the case of sending authorization, the `sendingAccountId` is the delegate sender's account ID\.  | 
 |  `destination`  |  A list of email addresses that were recipients of the original mail\.  | 
-|  `headersTruncated`  |  \(Only present if the [notification settings](configure-sns-notifications.md) include the original email headers\.\) A string that specifies whether the headers are truncated in the notification, which occurs if the headers are larger than 10 KB\. Possible values are `true` and `false`\.  | 
-|  `headers`  |  \(Only present if the notification settings include the original email headers\.\) A list of the email's original headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `headers` field is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
-|  `commonHeaders`  |  \(Only present if the notification settings include the original email headers\.\) A list of the email's original, commonly used headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `commonHeaders` field is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
+|  `headersTruncated`  |  This object is only present if you configured the notification settings to include the headers from the original email\. Indicates whether the headers are truncated in the notification\. Amazon SES truncates the headers in the notification when the headers from the original message are 10KB or larger in size\. Possible values are `true` and `false`\.  | 
+|  `headers`  |  This object is only present if you configured the notification settings to include the headers from the original email\. A list of the email's original headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `headers` object is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
+|  `commonHeaders`  |  This object is only present if you configured the notification settings to include the headers from the original email\. Includes information about common email headers from the original email, including the From, To, and Subject fields\. Within this object, each header is a key\. The From and To fields are represented by arrays that can contain multiple values\.  Any message ID within the `commonHeaders` object is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
 
 The following is an example of a `mail` object that includes the original email headers\. When this notification type is not configured to include the original email headers, the `mail` object does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\. 
 
 ```
 {
-   "timestamp":"2016-01-27T14:05:45 +0000",
+   "timestamp":"2018-10-08T14:05:45 +0000",
    "messageId":"000001378603177f-7a5433e7-8edb-42ae-af10-f0181f34d6ee-000000",
-   "source":"john@example.com",
+   "source":"sender@example.com",
    "sourceArn": "arn:aws:ses:us-west-2:888888888888:identity/example.com",
    "sourceIp": "127.0.3.0",
    "sendingAccountId":"123456789012",
    "destination":[
-      "jane@example.com"
+      "recipient@example.com"
    ],
    "headersTruncated":false,
    "headers":[ 
       { 
          "name":"From",
-         "value":"\"John Doe\" <john@example.com>"
+         "value":"\"Sender Name\" <sender@example.com>"
       },
       { 
          "name":"To",
-         "value":"\"Jane Doe\" <jane@example.com>"
+         "value":"\"Recipient Name\" <recipient@example.com>"
       },
       { 
          "name":"Message-ID",
@@ -87,19 +87,19 @@ The following is an example of a `mail` object that includes the original email 
       },
       { 
          "name":"Date",
-         "value":"Wed, 27 Jan 2016 14:05:45 +0000"
+         "value":"Mon, 08 Oct 2018 14:05:45 +0000"
       }
    ],
    "commonHeaders":{ 
       "from":[ 
-         "John Doe <john@example.com>"
+         "Sender Name <sender@example.com>"
       ],
-      "date":"Wed, 27 Jan 2016 14:05:45 +0000",
+      "date":"Mon, 08 Oct 2018 14:05:45 +0000",
       "to":[ 
-         "Jane Doe <jane@example.com>"
+         "Recipient Name <recipient@example.com>"
       ],
       "messageId":" custom-message-ID",
-      "subject":"Hello"
+      "subject":"Message sent using Amazon SES"
    }
 }
 ```

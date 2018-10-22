@@ -50,6 +50,7 @@ Sending limits are based on recipients rather than on messages\.
 | Limit | Description | 
 | --- | --- | 
 |  Maximum number of configuration sets  |  10,000  | 
+| Maximum length of configuration set name |  Configuration set names can contain up to 64 alphanumeric characters\. They can also contain hyphens \(\-\) and underscores \(\_\)\. Names can't contain spaces, accented characters, or any other special characters\.  | 
 |  Maximum number of event destinations per configuration set  |  10  | 
 |  Maximum number of dimensions per CloudWatch event destination  |  10  | 
 

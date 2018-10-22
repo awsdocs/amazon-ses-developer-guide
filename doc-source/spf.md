@@ -16,11 +16,8 @@ The procedure for adding a TXT record to your domain's DNS settings depends on w
 
 If your custom MAIL FROM domain does not have an existing SPF record, publish a TXT record with the following value\. The name of the record can be blank or @, depending on your DNS service\.
 
-**Important**  
-If you use "\-all" as shown in the example, ISPs might block email from IP addresses that are not listed in your SPF record\. Your SPF record must therefore include every IP address that you use to send email\. As a debugging aid, you can use "\~all" instead\. When you use "\~all", ISPs will typically accept email from IP addresses that are not listed in the SPF record, but they might flag it\. To maximize deliverability, use "\-all" and add a record for each IP address\. For examples of how to authorize multiple IP addresses, go to [http://www\.openspf\.org/SPF\_Record\_Syntax](http://www.openspf.org/SPF_Record_Syntax)\.
-
 ```
-1. "v=spf1 include:amazonses.com -all"
+1. "v=spf1 include:amazonses.com ~all"
 ```
 
 ### Adding to an Existing SPF Record<a name="spf-records-preexisting"></a>

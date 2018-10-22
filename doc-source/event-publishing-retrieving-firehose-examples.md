@@ -445,52 +445,62 @@ The following is an example of an `open` event record that Amazon SES publishes 
 20.         "value": "ConfigSet"
 21.       },
 22.       {
-23.         "name": "From",
-24.         "value": "sender@example.com"
+23.         "name":"X-SES-MESSAGE-TAGS",
+24.         "value":"myCustomTag1=myCustomValue1, myCustomTag2=myCustomValue2"
 25.       },
 26.       {
-27.         "name": "To",
-28.         "value": "recipient@example.com"
+27.         "name": "From",
+28.         "value": "sender@example.com"
 29.       },
 30.       {
-31.         "name": "Subject",
-32.         "value": "Message sent from Amazon SES"
+31.         "name": "To",
+32.         "value": "recipient@example.com"
 33.       },
 34.       {
-35.         "name": "MIME-Version",
-36.         "value": "1.0"
+35.         "name": "Subject",
+36.         "value": "Message sent from Amazon SES"
 37.       },
 38.       {
-39.         "name": "Content-Type",
-40.         "value": "multipart/alternative; boundary=\"XBoundary\""
-41.       }
-42.     ],
-43.     "headersTruncated": false,
-44.     "messageId": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000",
-45.     "sendingAccountId": "123456789012",
-46.     "source": "sender@example.com",
-47.     "tags": {
-48.       "ses:caller-identity": [
-49.         "ses-user"
-50.       ],
-51.       "ses:configuration-set": [
-52.         "ConfigSet"
-53.       ],
-54.       "ses:from-domain": [
-55.         "example.com"
-56.       ],
-57.       "ses:source-ip": [
-58.         "192.0.2.0"
-59.       ]
-60.     },
-61.     "timestamp": "2017-08-09T21:59:49.927Z"
-62.   },
-63.   "open": {
-64.     "ipAddress": "192.0.2.1",
-65.     "timestamp": "2017-08-09T22:00:19.652Z",
-66.     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60"
-67.   }
-68. }
+39.         "name": "MIME-Version",
+40.         "value": "1.0"
+41.       },
+42.       {
+43.         "name": "Content-Type",
+44.         "value": "multipart/alternative; boundary=\"XBoundary\""
+45.       }
+46.     ],
+47.     "headersTruncated": false,
+48.     "messageId": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000",
+49.     "sendingAccountId": "123456789012",
+50.     "source": "sender@example.com",
+51.     "tags": {
+52.       "myCustomTag1":[
+53.         "myCustomValue1"
+54.       ],
+55.       "myCustomTag2":[
+56.         "myCustomValue2"
+57.       ],
+58.       "ses:caller-identity": [
+59.         "ses-user"
+60.       ],
+61.       "ses:configuration-set": [
+62.         "ConfigSet"
+63.       ],
+64.       "ses:from-domain": [
+65.         "example.com"
+66.       ],
+67.       "ses:source-ip": [
+68.         "192.0.2.0"
+69.       ]
+70.     },
+71.     "timestamp": "2017-08-09T21:59:49.927Z"
+72.   },
+73.   "open": {
+74.     "ipAddress": "192.0.2.1",
+75.     "timestamp": "2017-08-09T22:00:19.652Z",
+76.     "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_3 like Mac OS X) AppleWebKit/603.3.8 (KHTML, like Gecko) Mobile/14G60"
+77.   }
+78. }
 ```
 
 ## Click Event Record<a name="event-publishing-retrieving-firehose-click"></a>
@@ -534,49 +544,59 @@ The following is an example of a `click` event record that Amazon SES publishes 
 34.         "value": "ConfigSet"
 35.       },
 36.       {
-37.         "name": "From",
-38.         "value": "sender@example.com"
+37.         "name":"X-SES-MESSAGE-TAGS",
+38.         "value":"myCustomTag1=myCustomValue1, myCustomTag2=myCustomValue2"
 39.       },
 40.       {
-41.         "name": "To",
-42.         "value": "recipient@example.com"
+41.         "name": "From",
+42.         "value": "sender@example.com"
 43.       },
 44.       {
-45.         "name": "Subject",
-46.         "value": "Message sent from Amazon SES"
+45.         "name": "To",
+46.         "value": "recipient@example.com"
 47.       },
 48.       {
-49.         "name": "MIME-Version",
-50.         "value": "1.0"
+49.         "name": "Subject",
+50.         "value": "Message sent from Amazon SES"
 51.       },
 52.       {
-53.         "name": "Content-Type",
-54.         "value": "multipart/alternative; boundary=\"XBoundary\""
+53.         "name": "MIME-Version",
+54.         "value": "1.0"
 55.       },
 56.       {
-57.         "name": "Message-ID",
-58.         "value": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000"
-59.       }
-60.     ],
-61.     "headersTruncated": false,
-62.     "messageId": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000",
-63.     "sendingAccountId": "123456789012",
-64.     "source": "sender@example.com",
-65.     "tags": {
-66.       "ses:caller-identity": [
-67.         "ses_user"
-68.       ],
-69.       "ses:configuration-set": [
-70.         "ConfigSet"
-71.       ],
-72.       "ses:from-domain": [
-73.         "example.com"
-74.       ],
-75.       "ses:source-ip": [
-76.         "192.0.2.0"
-77.       ]
-78.     },
-79.     "timestamp": "2017-08-09T23:50:05.795Z"
-80.   }
-81. }
+57.         "name": "Content-Type",
+58.         "value": "multipart/alternative; boundary=\"XBoundary\""
+59.       },
+60.       {
+61.         "name": "Message-ID",
+62.         "value": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000"
+63.       }
+64.     ],
+65.     "headersTruncated": false,
+66.     "messageId": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000",
+67.     "sendingAccountId": "123456789012",
+68.     "source": "sender@example.com",
+69.     "tags": {
+70.       "myCustomTag1":[
+71.         "myCustomValue1"
+72.       ],
+73.       "myCustomTag2":[
+74.         "myCustomValue2"
+75.       ],
+76.       "ses:caller-identity": [
+77.         "ses_user"
+78.       ],
+79.       "ses:configuration-set": [
+80.         "ConfigSet"
+81.       ],
+82.       "ses:from-domain": [
+83.         "example.com"
+84.       ],
+85.       "ses:source-ip": [
+86.         "192.0.2.0"
+87.       ]
+88.     },
+89.     "timestamp": "2017-08-09T23:50:05.795Z"
+90.   }
+91. }
 ```
