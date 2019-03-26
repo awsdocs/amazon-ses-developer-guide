@@ -211,3 +211,34 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
 ```
 
 ------
+#### [ Powershell ]
+
+```powershell
+$key = "${SecretAccessKey}";
+$region = "${AWS::Region}";
+
+$date = "11111111";
+$service = "ses";
+$terminal = "aws4_request";
+$message = "SendRawEmail";
+$versionInBytes = 0x04;
+
+function HmacSha256($text, $key2) {
+    $hmacsha = New-Object System.Security.Cryptography.HMACSHA256
+    $hmacsha.key = $key2;
+    $hmacsha.ComputeHash([Text.Encoding]::UTF8.GetBytes($text));
+}
+
+$signature = [Text.Encoding]::UTF8.GetBytes("AWS4" + $key)
+$signature = HmacSha256 "$date" $signature;
+$signature = HmacSha256 "$region" $signature;
+$signature = HmacSha256 "$service" $signature;
+$signature = HmacSha256 "$terminal" $signature;
+$signature = HmacSha256 "$message" $signature;
+$signatureAndVersion = [System.Byte[]]::CreateInstance([System.Byte], $signature.Length + 1);
+$signatureAndVersion[0] = $versionInBytes;
+$signature.CopyTo($signatureAndVersion, 1);
+$smtpPassword = [Convert]::ToBase64String($signatureAndVersion);
+
+Write-Host $smtpPassword;
+```
