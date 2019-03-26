@@ -214,8 +214,8 @@ Before you execute these examples, put the AWS Secret Access Key that you want t
 #### [ Powershell ]
 
 ```powershell
-$key = "${SecretAccessKey}";
-$region = "${AWS::Region}";
+$key = "${IAMUserSecretAccessKey}";
+$region = "${SESRegion}";
 
 $date = "11111111";
 $service = "ses";
