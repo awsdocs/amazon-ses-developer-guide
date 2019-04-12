@@ -18,7 +18,7 @@ The following is an example of a `bounce` event record that Amazon SES publishes
 
 ```
  1. {
- 2.   "eventType":"Bounce",
+ 2.   "notificationType":"Bounce",
  3.   "bounce":{
  4.     "bounceType":"Permanent",
  5.     "bounceSubType":"General",
@@ -100,7 +100,7 @@ The following is an example of a `complaint` event record that Amazon SES publis
 
 ```
  1. {
- 2.   "eventType":"Complaint",
+ 2.   "notificationType":"Complaint",
  3.   "complaint": {
  4.     "complainedRecipients":[
  5.       {
@@ -178,7 +178,7 @@ The following is an example of a `delivery` event record that Amazon SES publish
 
 ```
  1. {
- 2.   "eventType": "Delivery",
+ 2.   "notificationType": "Delivery",
  3.   "mail": {
  4.     "timestamp": "2016-10-19T23:20:52.240Z",
  5.     "source": "sender@example.com",
@@ -267,7 +267,7 @@ The following is an example of a `send` event record that Amazon SES publishes t
 
 ```
  1. {
- 2.   "eventType": "Send",
+ 2.   "notificationType": "Send",
  3.   "mail": {
  4.     "timestamp": "2016-10-14T05:02:16.645Z",
  5.     "source": "sender@example.com",
@@ -345,7 +345,7 @@ The following is an example of a `reject` event record that Amazon SES publishes
 
 ```
  1. {
- 2.   "eventType": "Reject",
+ 2.   "notificationType": "Reject",
  3.   "mail": {
  4.     "timestamp": "2016-10-14T17:38:15.211Z",
  5.     "source": "sender@example.com",
@@ -425,7 +425,7 @@ The following is an example of an `open` event record that Amazon SES publishes 
 
 ```
  1. {
- 2.   "eventType": "Open",
+ 2.   "notificationType": "Open",
  3.   "mail": {
  4.     "commonHeaders": {
  5.       "from": [
@@ -510,7 +510,7 @@ The following is an example of a `click` event record that Amazon SES publishes 
 
 ```
  1. {
- 2.   "eventType": "Click",
+ 2.   "notificationType": "Click",
  3.   "click": {
  4.     "ipAddress": "192.0.2.1",
  5.     "link": "http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-smtp.html",
@@ -608,7 +608,7 @@ The following is an example of a `Rendering Failure` event record that Amazon SE
 
 ```
  1. {
- 2.   "eventType":"Rendering Failure",
+ 2.   "notificationType":"Rendering Failure",
  3.   "mail":{
  4.     "timestamp":"2018-01-22T18:43:06.197Z",
  5.     "source":"sender@example.com",
