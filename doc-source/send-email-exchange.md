@@ -29,7 +29,7 @@ These instructions were written using Microsoft Exchange 2013\.
 1. Select **Route mail through smart hosts**\.  
 ![\[Route mail through smart hosts\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/exchange_integration_smart_host.png)
 
-1. Choose the plus sign and then enter the Amazon SES endpoint that you will use \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
+1. Choose the plus sign and then enter the Amazon SES endpoint that you will use \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. Choose **Save**\. The endpoint you entered will appear in the **SMART HOST** box\.
 
@@ -68,7 +68,7 @@ Your SMTP user name and password are not the same as your AWS access key ID and 
 **Important**  
 Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
 
-1. At the command prompt, type the following line, replacing ENDPOINT with an Amazon SES SMTP endpoint \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
+1. At the command prompt, type the following line, replacing ENDPOINT with an Amazon SES SMTP endpoint \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
     `New-SendConnector -Name "SES" -AddressSpaces "*;1" -SmartHosts "ENDPOINT" -SmartHostAuthMechanism BasicAuthRequireTLS -Usage Internet -AuthenticationCredential $creds` 
 

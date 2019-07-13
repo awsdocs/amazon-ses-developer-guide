@@ -54,7 +54,7 @@ Your SMTP user name and password are not the same as your AWS access key ID and 
 
    1. Choose **Advanced**\.
 
-   1. For the **Smart host** name, enter the Amazon SES endpoint that you will use \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
+   1. For the **Smart host** name, enter the Amazon SES endpoint that you will use \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
    1. Return to the Server Manager Dashboard\.
 

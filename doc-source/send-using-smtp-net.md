@@ -133,7 +133,7 @@ Your SMTP credentials are different from your AWS credentials\. For more informa
    + YOUR\_SMTP\_USERNAME—Replace with your SMTP username\. Note that your SMTP username credential is a 20\-character string of letters and numbers, not an intelligible name\.
    + YOUR\_SMTP\_PASSWORD—Replace with your SMTP password\.
 
-1. \(Optional\) If you want to use an Amazon SES SMTP endpoint in a Region other than US West \(Oregon\), change the value of the variable `HOST` to the endpoint you want to use\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
+1. \(Optional\) If you want to use an Amazon SES SMTP endpoint in a Region other than US West \(Oregon\), change the value of the variable `HOST` to the endpoint you want to use\. For a list of SMTP endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. \(Optional\) If you want to use a configuration set when sending this email, change the value of the variable `CONFIGSET` to the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES Configuration Sets](using-configuration-sets.md)\.
 

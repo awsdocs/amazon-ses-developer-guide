@@ -14,5 +14,5 @@ The following procedure shows how to create a shared credentials file in your ho
 
 1. Save the file\. The following table shows the correct location and file name for your operating system\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/create-shared-credentials-file.html)
-**Note**  
-Do not include a file extension when saving the credentials file\.
+**Important**  
+Don't include a file extension when saving the credentials file\.

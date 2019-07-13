@@ -65,18 +65,18 @@ You can also disable bounce and complaint notifications through email by using t
 
 ## Email Feedback Forwarding Destination<a name="notifications-via-email-destination"></a>
 
-When you receive notifications by email, Amazon SES rewrites the From header and sends the notification to you\. The address to which Amazon SES forwards the notification depends on how you sent the original message\.
+When you receive notifications by email, Amazon SES rewrites the `From` header and sends the notification to you\. The address to which Amazon SES forwards the notification depends on how you sent the original message\.
 
-If you used the SMTP interface to send the message, then notifications go to the address specified in the MAIL FROM command, which overrides any Return\-Path headers specified in the SMTP DATA\.
+If you used the SMTP interface to send the message, then notifications go to the address specified in the MAIL FROM command\.
 
-If you used the `SendEmail` API operation to send the message, then the notifications are delivered as follows:
-+ If you specified the optional `ReturnPath` parameter of `SendEmail`, then notifications go to that address\.
-+ Otherwise, notifications go to the address specified in the required `Source` parameter of `SendEmail`, which populates the From header of the message\.
+If you used the `SendEmail` API operation to send the message, then the notifications are delivered according to the following rules:
++ If you specified the optional `ReturnPath` parameter in your call to the `SendEmail` API, then notifications go to that address\.
++ Otherwise, notifications go to the address specified in the required `Source` parameter of `SendEmail`\.
 
-If you used the `SendRawEmail` API operation to send the message, then the notifications are delivered as follows:
-+ If you specified the optional `Source` parameter of `SendRawEmail`, then notifications go to that address, overriding any Return\-Path headers specified in the raw message\.
-+ Otherwise, if the Return\-Path header was specified in the raw message, then notifications go to that address\.
-+ Otherwise, notifications go to the address in the From header of the raw message\.
+If you used the `SendRawEmail` API operation to send the message, then the notifications are delivered according to the following rules:
++ If you specified a `Source` parameter in your call to the `SendRawEmail` API, then notifications go to that address\. This is true even if you specified a `Return-Path` header in the body of the email\.
++ Otherwise, if you specified a `Return-Path` header in the raw message, then notifications go to that address\.
++ Otherwise, notifications go to the address in the `From` header of the raw message\.
 
-**Important**  
-Regardless of whether you use the SMTP interface, `SendEmail` API, or `SendRawEmail` API, Amazon SES overwrites any Return\-Path headers that you provide\.
+**Note**  
+When you specify a `Return-Path` address in an email, you receive notifications at that address\. However, the version of the message that the recipient receives contains a `Return-Path` header that includes an anonymized email address \(such as *a0b1c2d3e4f5a6b7\-c8d9e0f1\-a2b3\-c4d5\-e6f7\-a8b9c0d1e2f3\-000000@amazonses\.com*\)\. This anonymization happens regardless of how you sent the email\.

@@ -25,3 +25,6 @@ The **Bounce Rate** and **Complaint Rate** sections also include status messages
 **Sending pause** – The metric caused us to pause your account's ability to send email\. While your account's ability to send email is paused, you can't send email using Amazon SES\. You can request that we review this decision\. To learn more about submitting a request for review, see [Amazon SES Sending Review Process FAQs](e-faq.md)\.
 **Pending sending pause** – The metric caused us to place your account under review\. The issues that caused this review period haven't been resolved\. These issues might cause us to pause your account's ability to send email\. A member of the Amazon SES team has to review your account before we take any further action\.
    + *Other Notifications* – If your account is experiencing reputation\-related issues that are not related to bounces or complaints, a brief message will be shown here\. For more information about the notifications that can be shown in this area, see [Reputation Dashboard Messages](reputationdashboardmessages.md)\.
+
+**Note**  
+The reputation dashboard is available to all users who have access to the AWS console\. You can't use IAM policies to restrict access to the reputation dashboard\.

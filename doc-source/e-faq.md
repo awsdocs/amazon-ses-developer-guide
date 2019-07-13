@@ -22,7 +22,7 @@ We've detected an issue related to the email sent from your account, and we're g
 
 Yes\. You'll receive a notification at the email address associated with your AWS account\.
 
-### Q3\. Why didn't I receive a notificaton that my account is under review?<a name="pr-q3"></a>
+### Q3\. Why didn't I receive a notification that my account is under review?<a name="pr-q3"></a>
 
 When your account is placed under review, we automatically send a notice to the email address associated with your AWS account\. This email address is the one you specified when you created your AWS account\. In some cases, this email address may be different from the one you use to send email using Amazon SES\.
 
@@ -35,7 +35,7 @@ You'll still be able to use other AWS services while your Amazon SES account is 
 ### Q5\. What should I do if my account is under review?<a name="pr-q5"></a>
 
 You should do the following:
-+ If your situation allows it, stop sending mail until you fix the problem\. You can still send email while your account is under review\. However, if you continue to send mail without making changes, you might inadvertantly make the issue worse\.
++ If your situation allows it, stop sending mail until you fix the problem\. You can still send email while your account is under review\. However, if you continue to send mail without making changes, you might inadvertently make the issue worse\.
 + Look at the email you received from us for a summary of the issue\.
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
 + After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
@@ -325,7 +325,7 @@ To protect the identities of the recipients who complained, we can't provide cop
 
 Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 
-If you don't request a revinw within three weeks, and we continue to receive direct recipient complaints, we might pause your account's ability to send email\.
+If you don't request a review within three weeks, and we continue to receive direct recipient complaints, we might pause your account's ability to send email\.
 
 ### Amazon SES Complaints Through Email Providers FAQ<a name="cm-email-provider"></a>
 

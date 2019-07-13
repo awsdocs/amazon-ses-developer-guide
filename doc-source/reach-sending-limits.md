@@ -18,6 +18,4 @@ If you attempt to send an email by using the Amazon SES SMTP interface, but you'
 + `454 Throttling failure: Maximum sending rate exceeded`
 + `454 Throttling failure: Daily message quota exceeded`
 
-Different SMTP clients handle these errors in different ways\. For example, Microsoft Outlook provides a Send/Receive error message in the status pane at the bottom of the window\. The message resembles the following example:
-
-`Task 'recipient@example.com - Sending' reported error (0x800CCC7F): 'Establishing an encrypted connection to your outgoing (SMTP) server failed. If this problem continues, contact your server administrator or Internet service provider (ISP). The server responded: 454 Throttling failure: Daily message quota exceeded.'`
+Different SMTP clients handle these errors in different ways\.

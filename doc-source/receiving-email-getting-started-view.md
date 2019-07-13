@@ -16,6 +16,6 @@ The bucket may also contain a file named `AMAZON_SES_SETUP_NOTIFICATION`\. You c
 
 1. Open the folder on your computer that contains the file you downloaded in the preceding step\. There are several ways to view the downloaded message, including the following:
    + Open the file in a text editor and read its contents directly\. Depending on the method you used to send the email, part of the message may be encoded\. If part of the message is encoded, you'll need to decode them manually \(for example, by using a base64 decoder\)\. 
-   + Add the \.eml extension to the end of the file name, and then open the file using an email client such as Microsoft Outlook or Mozilla Thunderbird\. Most email clients will automatically decode the encoded parts of a message, and will display things like HTML formatting and file attachments\.
+   + Add the `.eml` extension to the end of the file name, and then open the file using an email client such as Microsoft Outlook or Mozilla Thunderbird\. Most email clients will automatically decode the encoded parts of a message, and will display things like HTML formatting and file attachments\.
 
 Next step: [Step 6: Clean Up](receiving-email-getting-started-clean.md)

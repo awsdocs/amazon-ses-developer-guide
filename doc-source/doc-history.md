@@ -12,7 +12,7 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 | Open sourced documentation | The Amazon SES documentation is now available on [GitHub](https://github.com/awsdocs/amazon-ses-developer-guide)\. You can submit issues or request changes in the GitHub repository, or make changes directly and submit a pull request\. | February 22, 2018 | 
 | Documentation update | Added a section that provides information about [deleting personal data](deleting-personal-data.md) stored in Amazon SES\. | February 28, 2018 | 
 | Documentation update | Revised the [Amazon SNS event publishing field definitions](event-publishing-retrieving-sns-contents.md), and added a [Rendering Failure event example](event-publishing-retrieving-sns-examples.md#event-publishing-retrieving-sns-failure)\. | January 22, 2018 | 
-| Documentation update | Updated [Deliverability Dashboard appendix](bouncecomplaintdashboard.md) to account for changes to IAM and Lambda consoles\. | January 18, 2018 | 
+| Documentation update | Updated Deliverability Dashboard appendix to account for changes to IAM and Lambda consoles\.  We removed this appendix on May 3, 2019, because it used components that were no longer supported\.   | January 18, 2018 | 
 | Documentation update | Updated [content related to publishing events to CloudWatch](event-publishing-add-event-destination-cloudwatch.md) to mention blacklisted fields\. | January 15, 2018 | 
 | Documentation update | Updated [procedures for sending email using OpenSSL](send-email-smtp-client-command-line.md) to make them easier to follow\. | January 11, 2018 | 
 | Documentation update | Added code example for sending raw email by using the AWS SDK for Ruby\. | January 2, 2018 | 
@@ -27,7 +27,7 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 |  New feature  |  Added content related to dedicated IP pools feature\.  |  August 17, 2017  | 
 |  New feature  |  Added content related to open and click tracking feature\.  |  August 1, 2017  | 
 | Documentation update | Added an index of code examples\. | June 26, 2017 | 
-| Documentation update | Added an appendix that demonstrates the process of creating a deliverability dashboard for Amazon SES\. | June 22, 2017 | 
+| Documentation update | Added an appendix that demonstrates the process of creating a deliverability dashboard for Amazon SES\.  We removed this appendix on May 3, 2019, because it used components that were no longer supported\.   | June 22, 2017 | 
 | Documentation update | Updated email sending code examples\. | June 6, 2017 | 
 |  New feature  |  Updated for dedicated IPs\.  |  November 21, 2016   | 
 |  New feature  |  Updated for email sending event publishing\.  |  November 2, 2016   | 
@@ -71,4 +71,4 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 |  | 
 | --- |
-| For information and discussions about a variety of topics related to Amazon SES, visit the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 
+| For information and discussions about a variety of topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

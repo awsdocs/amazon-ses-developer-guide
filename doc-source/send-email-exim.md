@@ -8,7 +8,7 @@ To learn more about Exim, go to [http://www\.exim\.org](http://www.exim.org)\.
 
 1. Open the */etc/exim/exim\.conf* file for editing\. If the file does not exist, create it\. 
 **Important**  
-These instructions assume that you want to use Amazon SES in the US West \(Oregon\) AWS Region\. If you want to use a different region, replace all instances of *email\-smtp\.us\-west\-2\.amazonaws\.com* in these instructions with the SMTP endpoint of the desired region\. For a list of SMTP endpoints, see [Regions and Amazon SES](regions.md)\.
+These instructions assume that you want to use Amazon SES in the US West \(Oregon\) AWS Region\. If you want to use a different region, replace all instances of *email\-smtp\.us\-west\-2\.amazonaws\.com* in these instructions with the SMTP endpoint of the desired region\. For a list of SMTP endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. In */etc/exim/exim\.conf*, make the following changes:
 

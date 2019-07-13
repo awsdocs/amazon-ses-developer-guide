@@ -13,7 +13,7 @@ The name of the TXT record you create should be `_dmarc.example.com`, where `exa
 
 | Name | Type | Value | 
 | --- | --- | --- | 
-| \_dmarc\.example\.com | TXT | "v=DMARC1;p=quarantine;pct=25;rua=dmarcreports@example\.com" | 
+| \_dmarc\.example\.com | TXT | "v=DMARC1;p=quarantine;pct=25;rua=mailto:dmarcreports@example\.com" | 
 
 In plain language, this policy tells email providers to do the following: 
 + Look for all emails with a "From" domain of *example\.com* that don't pass SPF or DKIM authentication\.

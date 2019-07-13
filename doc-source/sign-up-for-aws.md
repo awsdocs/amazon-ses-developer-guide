@@ -14,9 +14,8 @@ For information about moving out of the sandbox, see [Moving Out of the Amazon S
 
 **To create an AWS account**
 
-1. Go to [https://aws\.amazon\.com/ses](https://aws.amazon.com/ses), and choose *Sign up now*\.
+1. In a web browser, go to [https://aws\.amazon\.com/ses](https://aws.amazon.com/ses)\.
+
+1. Choose **Get started with Amazon SES**\.
 
 1. Follow the on\-screen instructions\.
-
-**Note**  
-Even if your account is out of the Amazon SES sandbox, you still need to verify your "From" address to confirm that you own it\.

@@ -6,7 +6,3 @@ First, read [Send an Email Through Amazon SES Using SMTP](send-an-email-using-sm
 + [Configuring Postfix](postfix.md#send-email-postfix)
 + [Integrating Amazon SES with Sendmail](send-email-sendmail.md)
 + [Integrating Amazon SES with Exim](send-email-exim.md)
-
-For information about how to configure Microsoft Outlook, an email client, to send email through Amazon SES, see [Configuring Email Clients to Send Through Amazon SES](configure-email-client.md)\.
-
-For information about how to configure Jira, an issue\-tracking software package, to send email through Amazon SES, see [Sending Email Through Amazon SES From Software Packages](send-email-smtp-software-package.md)\.

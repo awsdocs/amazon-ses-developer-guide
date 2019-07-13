@@ -1,7 +1,7 @@
 # Amazon Simple Email Service Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -93,7 +93,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Managing Your Amazon SES Sending Limits](manage-sending-limits.md)
       + [Monitoring Your Amazon SES Sending Limits](monitor-sending-limits.md)
       + [Increasing Your Amazon SES Sending Limits](increase-sending-limits.md)
-         + [Opening an SES Sending Limits Increase Case](submit-extended-access-request.md)
+         + [Opening a Case to Increase Amazon SES Sending Limits](submit-extended-access-request.md)
       + [What Happens When You Reach Your Amazon SES Sending Limits](reach-sending-limits.md)
    + [Using Sending Authorization with Amazon SES](sending-authorization.md)
       + [Overview of Amazon SES Sending Authorization](sending-authorization-overview.md)
@@ -262,13 +262,4 @@ Amazon's trademarks and trade dress may not be used in
 + [Amazon SES Developer Guide Appendix](appendix.md)
    + [Appendix: Header Fields](header-fields.md)
    + [Appendix: Unsupported Attachment Types](mime-types-appendix.md)
-   + [Appendix: Create a Deliverability Dashboard](bouncecomplaintdashboard.md)
-      + [Part 1: Create a Topic in Amazon Simple Notification Service](dashboardcreateSNStopic.md)
-      + [Part 2: Create a Queue in Amazon Simple Queue Service](dashboardcreateSQSqueue.md)
-      + [Part 3: Create an Amazon Simple Storage Service Bucket](dashboardcreateS3bucket.md)
-      + [Part 4: Create AWS Identity and Access Management Policies and Roles](dashboardconfigureIAM.md)
-      + [Part 5: Configure Bounce and Complaint Notifications in Amazon SES](dashboardconfigureSESnotifications.md)
-      + [Part 6: Create an AWS Lambda Function](dashboardcreatelambdafunction.md)
-      + [Part 7: Test the AWS Lambda Function](dashboardtestlambdafunction.md)
-      + [Part 8: Configure Triggers in Amazon CloudWatch](dashboardtriggercloudwatch.md)
 + [Amazon SES Developer Guide Document History](doc-history.md)

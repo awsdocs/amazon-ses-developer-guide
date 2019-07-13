@@ -43,13 +43,13 @@ Before you can send email through Amazon SES, you have to configure Thunderbird 
 
 1. On the **SMTP Server** window, complete the following sections:
    + For **Description**, type **Amazon SES**\.
-   + For **Server Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Email Sending Endpoints](regions.md#region-endpoints-sending)\.
+   + For **Server Name**, enter the SMTP endpoint for the AWS Region in which you use Amazon SES\. For a list of endpoints, see [Amazon SES Regions and Endpoints](regions.md#region-endpoints)\.
    + For **Port**, type **587**\.
    + For **Connection security**, choose **STARTTLS**\.
    + For **Authentication method**, choose **Normal password**\.
    + For **User Name**, type your SMTP user name\.
 **Note**  
-Your SMTP user name isn't the same as your AWS access key ID\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
+Your SMTP user name isn't the same as your AWS access key ID\. Additionally, you have to use SMTP credentials that are specific to the AWS Region that you're using\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
 
    When you finish, choose **OK**\.
 

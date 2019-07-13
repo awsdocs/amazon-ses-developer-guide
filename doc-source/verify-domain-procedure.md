@@ -2,6 +2,9 @@
 
 The following procedure shows you how to verify a domain using the Amazon SES console\. If you want to use the Amazon SES API instead, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. 
 
+**Note**  
+As an alternative to completing the procedure in this section, you can also enable [Easy DKIM](easy-dkim.md)\. When Amazon SES detects that you've added the DKIM records to the DNS configuration for a domain, you can start sending email from that domain, even if you haven't already completed the procedure in this section\.
+
 **To verify a domain**
 
 1. Go to your [ verified domain list](https://console.aws.amazon.com/ses/home?#verified-senders-domain:) in the Amazon SES console, or follow these instructions to navigate to it:
@@ -28,4 +31,4 @@ The following procedure shows you how to verify a domain using the Amazon SES co
 
 1. You can now use Amazon SES to send email from any address in the verified domain\. To send a test email, check the box next to the verified domain, and then choose **Send a Test Email**\.
 
-If the DNS settings are not correctly updated, you will receive a domain verification failure email from Amazon SES, and the domain will display a status of "failed" in the **Domains** tab\. If this happens, read our troubleshooting page at [Amazon SES Email Address and Domain Verification Problems](domain-verification-problems.md)\. When you have verified that your TXT record is correctly in place, choose the "retry" link next to the "failed" status notification\. This will reinitiate the domain verification process\.
+If the DNS settings are not correctly updated, you will receive a domain verification failure email from Amazon SES, and the domain will display a status of failed on the **Domains** tab\. If this happens, complete the steps on the troubleshooting page at [Amazon SES Email Address and Domain Verification Problems](domain-verification-problems.md)\. After you verify that your TXT was created correctly, choose the **retry** link next to the failed status notification to restart the domain verification process\.

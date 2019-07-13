@@ -105,7 +105,7 @@ The following procedure shows how to send an email through Amazon SES using the 
    + **`sender@example.com`**—Replace with an email address that you have verified with Amazon SES\. For more information, see [Verifying Identities](verify-addresses-and-domains.md)\. Email addresses in Amazon SES are case\-sensitive\. Make sure that the address you enter is exactly the same as the one you verified\.
    + **`recipient1@example.com`, `recipient2@example.com`**—Replace with the addresses of your recipients\. If your account is still in the sandbox, your recipients' addresses must also be verified\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
    + **\(Optional\) `ConfigSet`**—If you want to use a configuration set when sending this email, replace this value with the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES Configuration Sets](using-configuration-sets.md)\.
-   + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a Region other than US West \(Oregon\), replace this value with the name of the AWS Region that you want to use\. For a list of regions that Amazon SES is available in, see [Regions and Amazon SES](regions.md)\. 
+   + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a region other than US West \(Oregon\), replace this with the region you want to use\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. Save `amazon-ses-sample.php`\.
 

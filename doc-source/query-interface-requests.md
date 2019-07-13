@@ -8,7 +8,7 @@ For security reasons, Amazon SES does not support HTTP requests\. You must use H
 ## Structure of a GET Request<a name="query-interface-get-requests"></a>
 
 This guide presents the Amazon SES GET requests as URLs\. Each URL consists of the following:
-+ **Endpoint—**The resource the request is acting on\. For a list of Amazon SES endpoints, see [Regions and Amazon SES](regions.md)\.
++ **Endpoint—**The resource the request is acting on\. For a list of endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 + **Action—**The action you want to perform on the endpoint, such as sending a message\.
 + **Parameters—**Any request parameters\.
 

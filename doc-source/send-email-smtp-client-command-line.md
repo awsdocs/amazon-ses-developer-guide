@@ -47,10 +47,15 @@ There are two ways to connect to the Amazon SES SMTP interface with OpenSSL: usi
 **Note**  
 Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
-  If the connection was successful, you will see output similar to the following:
+  If the connection was successful, you see output similar to the following:
 
   ```
-  depth=1 C = US, O = Symantec Corporation, OU = Symantec Trust Network, CN = Symantec Class 3 Secure Server CA - G4
+  depth=2 C = US, O = Amazon, CN = Amazon Root CA 1
+  verify return:1
+  depth=1 C = US, O = Amazon, OU = Server CA 1B, CN = Amazon
+  verify return:1
+  depth=0 CN = email-smtp.us-west-2.amazonaws.com
+  verify return:1
   250 Ok
   ```
 
@@ -68,11 +73,16 @@ Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SE
 **Note**  
 Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
-  If the connection was successful, you will see output similar to the following:
+  If the connection was successful, you see output similar to the following:
 
   ```
-  depth=1 C = US, O = Symantec Corporation, OU = Symantec Trust Network, CN = Symantec Class 3 Secure Server CA - G4
-  220 email-smtp.amazonaws.com ESMTP SimpleEmailService-2638499997 QSByYW5kb20gc3RyaW5n
+  depth=2 C = US, O = Amazon, CN = Amazon Root CA 1
+  verify return:1
+  depth=1 C = US, O = Amazon, OU = Server CA 1B, CN = Amazon
+  verify return:1
+  depth=0 CN = email-smtp.us-west-2.amazonaws.com
+  verify return:1
+  220 email-smtp.amazonaws.com ESMTP SimpleEmailService-d-VCSHDP1YZ A1b2C3d4E5f6G7h8I9j0
   ```
 
   The connection automatically closes after about 10 seconds of inactivity\.

@@ -8,7 +8,7 @@ The following are Amazon SES sending limits:
 **Note**  
 The rate at which Amazon SES accepts your messages might be less than the maximum send rate\.
 
-Your Amazon SES sending limits for each AWS region are separate\. For information about using Amazon SES in multiple AWS regions, see [Regions and Amazon SES](regions.md)\.
+Your Amazon SES sending limits for each AWS Region are separate\. For information about using Amazon SES in multiple AWS Regions, see [Regions and Amazon SES](regions.md)\.
 
 When you are in the Amazon SES sandbox, your sending quota is 200 messages per 24\-hour period and your maximum sending rate is one message per second\. To increase your sending limits, you need to submit an SES Sending Limits Increase case\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. After you have moved out of the sandbox and start sending emails, you can increase your sending limits further by submitting another SES Sending Limits Increase case, as discussed in [Increasing Your Amazon SES Sending Limits](increase-sending-limits.md)\.
 
@@ -23,4 +23,4 @@ Sending limits are based on recipients rather than on messages\. For example, an
 
 |  | 
 | --- |
-| For information and discussions about a variety of topics related to Amazon SES, visit the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 
+| For information and discussions about a variety of topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

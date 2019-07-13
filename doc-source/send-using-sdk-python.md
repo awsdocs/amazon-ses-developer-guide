@@ -111,7 +111,7 @@ The following procedure shows how to send an email through Amazon SES using the 
 1. In `amazon-ses-sample.py`, replace the following with your own values:
    + **`sender@example.com`**—Replace with an email address that you have verified with Amazon SES\. For more information, see [Verifying Identities](verify-addresses-and-domains.md)\. Email addresses in Amazon SES are case\-sensitive\. Make sure that the address you enter is exactly the same as the one you verified\.
    + **`recipient@example.com`**—Replace with the address of the recipient\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
-   + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a region other than US West \(Oregon\), replace this with the region you want to use\. For a list of regions in which Amazon SES is available, see [Regions and Amazon SES](regions.md)\. 
+   + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a region other than US West \(Oregon\), replace this with the region you want to use\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. Save `amazon-ses-sample.py`\.
 

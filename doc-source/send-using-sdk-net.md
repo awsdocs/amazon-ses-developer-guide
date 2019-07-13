@@ -155,7 +155,7 @@ The following procedure shows how to send an email through Amazon SES using the 
    + Replace *sender@example\.com* with the "From:" email address\. This address must be verified\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
    + Replace *recipient@example\.com* with the "To:" address\. If your account is still in the sandbox, this address must also be verified\.
    + Replace *ConfigSet* with the name of the configuration set to use when sending this email\.
-   + Replace *USWest2* with the name of the AWS Region endpoint you use to send email using Amazon SES\. The following values are allowed: `USEast1`, `USWest2`, and `EUWest1`\.
+   + Replace *USWest2* with the name of the AWS Region endpoint you use to send email using Amazon SES\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
    When you finish, save `Program.cs`\.
 

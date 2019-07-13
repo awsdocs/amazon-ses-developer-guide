@@ -61,9 +61,9 @@ The following permissions policy enables the role to publish data records to you
  8.         "firehose:PutRecordBatch"
  9.       ],
 10.       "Resource": [
-11.         "arn:aws:firehose:region:ACCOUNT-ID:deliverystream/DELIVERY-STREAM-NAME "
+11.         "arn:aws:firehose:REGION:ACCOUNT-ID:deliverystream/DELIVERY-STREAM-NAME "
 12.       ]
-13.     },
+13.     }
 14.   ]
 15. }
 ```

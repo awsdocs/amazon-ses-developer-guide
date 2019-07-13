@@ -120,7 +120,7 @@ The following procedure shows how to send an email through Amazon SES using the 
 The email addresses are case\-sensitive\. Make sure that the addresses are exactly the same as the ones you verified\.
    + `SENDER@EXAMPLE.COM`—Replace with your "From" email address\. You must verify this address before you run this program\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
    + `RECIPIENT@EXAMPLE.COM`—Replace with your "To" email address\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
-   + `US_WEST_2`—Set this to the AWS Region of the Amazon SES endpoint you want to connect to\. Note that your sandbox status, sending limits, and Amazon SES identity\-related settings are specific to a given AWS Region, so be sure to select an AWS Region in which you set up Amazon SES\. In this example, we are using the US West \(Oregon\) Region\. Examples of other Regions that Amazon SES supports are US\_EAST\_1 and EU\_WEST\_1\. For a complete list of AWS Regions that Amazon SES supports, see [Regions and Amazon SES](regions.md)\.
+   + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a region other than US West \(Oregon\), replace this with the region you want to use\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. Save `AmazonSESSample.java`\.
 

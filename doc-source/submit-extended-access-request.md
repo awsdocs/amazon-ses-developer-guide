@@ -1,28 +1,46 @@
-# Opening an SES Sending Limits Increase Case<a name="submit-extended-access-request"></a>
+# Opening a Case to Increase Amazon SES Sending Limits<a name="submit-extended-access-request"></a>
 
-To apply for higher sending limits for Amazon SES, open a case in Support Center by using the following instructions\.
+To apply for higher sending limits for Amazon SES, open a case in Support Center by completing the following steps\.
 
 **To request higher sending limits**
 
-1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
+1. Sign in to the AWS Management Console at [https://console\.aws\.amazon\.com/](https://console.aws.amazon.com/)\.
 
-1. Open an [SES Sending Limits Increase case](https://aws.amazon.com/ses/extendedaccessrequest/) in Support Center\. You can also access this link using the **Dedicated IPs** page in the Amazon SES console\.
+1. On the **Support** menu, choose **Support Center**, as shown in the following image\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/console_region_selector.png)
 
-1. In the form, provide the following information:
-   + **Region** – Choose the AWS Region for which you are requesting a sending limit increase\. Your Amazon SES sandbox status and sending limits are separate for each AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
-   + **Limit** – Choose **Desired Daily Sending Quota** or **Desired Maximum Send Rate**\. Sending limits are described in [Managing Your Amazon SES Sending Limits](manage-sending-limits.md)\.
+1. On the **My support cases** tab, choose **Create case**\.
+
+1. Under **Create case**, choose **Service limit increase**\.
+
+1. Under **Case classification**, complete the following sections:
+   + For **Limit type**, choose **SES Service Limits**\.
+   + For **Mail Type**, choose the type of email that you plan to send\. If more than one value applies, choose the option that applies to the majority of the email that you plan to send\.
+   + For **Website URL**, enter the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
+   + For **My email sending complies with the AWS Service Terms and AUP**, choose the option that applies to your use case\.
+   + For **I only send to recipients who have specifically requested my mail**, choose the option that applies to your use case\.
+   + For **I have a process to handle bounces and complaints**, choose the option that applies to your use case\.
+
+1. Under **Requests**, complete the following sections:
+   + For **Region**, choose the AWS Region that your request applies to\.
+   + For **Limit**, choose the type of limit increase that you want to request\. You can choose from the following options:
+     + **Desired Maximum Send Quota** – Choose this option if you want to request an increase to the number of emails that your account can send per 24\-hour period in the selected Region\. 
+
+       **Desired Maximum Send Rate** – Choose this option if you want to request an increase to the number of emails that your account can send each second in the selected Region\. 
+   + For **New limit value**, enter the limit that you're requesting\. Only request the amount that you think you'll need\. Remember that you aren't guaranteed to receive the amount that you request\.
 **Note**  
-The rate at which Amazon SES accepts your messages might be less than the maximum send rate\.
-   + **New limit value** – Enter the amount you are requesting\. Only request the amount that you think you'll need\. Remember that you are not guaranteed to receive the amount you request, and the higher the limit you request, the more justification you need to be considered for that amount\. 
-   + **Mail Type** – Choose the type of email you plan to send using your dedicated IP address\. If multiple values apply, choose the type that will make up the majority of your email sending\.
-   + **Website URL** – Type the URL of your website\. Providing this information will help us better understand the type of content you plan to send\.
-   + **My email sending complies with the AWS Service Terms and AUP** – Choose the option that applies to your use case\.
-   + **I only send to recipients who have specifically requested my mail** – Choose the option that applies to your use case\.
-   + **I have a process to handle bounces and complaints** – Choose the option that applies to your use case\.
-   + **Use Case Description** – Describe the ways in which you will use Amazon SES to send email\. To help us process your request more quickly, please answer the following questions:
-     + How will you build or acquire your mailing list?
-     + How will you handle bounces and complaints?
-     + How can recipients unsubscribe from your mailing list, and how will you respond to those requests?
-     + How did you choose the increase amount you specified in this request?
+If you want to request both a sending *quota* increase and a sending *rate* increase, or if you want to request a sending limit increase in a different AWS Region, choose **Add another request**\. Then repeat this step\.
 
-   When you finish, choose **Submit**\. We will respond to the case after reviewing your request\. Please allow one business day for processing\.
+1. Under **Case Description**, for **Use case description**, describe how you plan to use Amazon SES to send email\. To help us process your request, answer the following questions:
+   + How do you plan to build or acquire your mailing list?
+   + How do you plan to handle bounces and complaints?
+   + How can recipients opt out of receiving email from you?
+   + How did you choose the new sending rate or sending quota that you specified in this request?
+
+   If there's additional information that we should consider when evaluating your case, provide that information in this section as well\.
+
+1. Under **Contact options**, for **Preferred contact language**, choose whether you want to receive communications for this case in **English** or **Japanese**\.
+
+1. When you finish, choose **Submit**\.
+
+After we receive your request, we begin the process of evaluating it\. We typically respond to requests for limit increases within two business days\. However, in some cases, we might contact you to request additional information\.

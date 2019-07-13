@@ -44,7 +44,7 @@ This guide contains the following sections:
 | [Logging API Calls](logging-using-cloudtrail.md) | Provides a list of Amazon SES APIs that can be logged using AWS CloudTrail\. | 
 | [Using Credentials](using-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
 | [Using the API](using-the-api.md) | Describes how to use the Amazon SES Query API\. | 
-| [Regions](regions.md) | Lists the Amazon SES SMTP and API endpoints for the AWS regions in which Amazon SES is available, and contains information you need to know when you use Amazon SES endpoints in multiple regions\. | 
+| [Regions](regions.md) | Contains information about using Amazon SES in multiple AWS Regions\. | 
 | [Limits](limits.md) | Provides a list of limits within Amazon SES\. | 
 | [Resources](resources.md) | Lists resources that you may find useful as you work with Amazon SES | 
 | [Appendix](appendix.md) | Provides supplementary information about header fields, unsupported attachment types, and scripts\. | 
@@ -54,4 +54,4 @@ This guide contains the following sections:
 
 |  | 
 | --- |
-| For information and discussions about a variety of topics related to Amazon SES, visit the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 
+| For information and discussions about a variety of topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 
