@@ -38,3 +38,18 @@ You can change this behavior by using configuration sets\. Use the [PutConfigura
   In the preceding example, replace *MyConfigurationSet* with the name of your configuration set\.
 
   When you send an email using this configuration set, Amazon SES only sends the message to the receiving email server if it can establish a secure connection\. If Amazon SES can't make a secure connection to the receiving email server, it drops the message\.
+
+## End\-to\-End Encryption<a name="security-end-to-end"></a>
+
+You can use Amazon SES to send messages that are encrypted using S/MIME or PGP\. Messages that use these protocols are encrypted by the sender\. Their contents can only be viewed by recipients who possess the public keys that are required to decrypt the messages\.
+
+Amazon SES supports the following MIME types, which you can use to send S/MIME encrypted email:
++ `application/pkcs7-mime`
++ `application/pkcs7-signature`
++ `application/x-pkcs7-mime`
++ `application/x-pkcs7-signature`
+
+Amazon SES also supports the following MIME types, which you can use to send PGP\-encrypted email:
++ `application/pgp-encrypted`
++ `application/pgp-keys`
++ `application/pgp-signature`

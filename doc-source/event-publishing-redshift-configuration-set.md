@@ -46,4 +46,4 @@ The following procedure shows how to add a Kinesis Data Firehose event destinati
 
 ## Next Step<a name="event-publishing-redshift-configuration-set-next-step"></a>
 
-[Step 6: Send Emails](event-publishing-redshift-send-email.md)
+ [Step 6: Send Emails](event-publishing-redshift-send-email.md) 

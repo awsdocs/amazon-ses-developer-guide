@@ -20,7 +20,7 @@ If you want to actually control the mail flow, your Lambda function must be invo
 For example, you can stop the receipt rule set by writing the following line at the end of your Lambda function code:
 
 ```
-1. callback( null, { "disposition" : "STOP_RULE_SET" });
+callback( null, { "disposition" : "STOP_RULE_SET" });
 ```
 
 For AWS Lambda code samples, see [Lambda Function Examples](receiving-email-action-lambda-example-functions.md)\. For examples of high\-level use cases, see [Use Case Examples](receiving-email-action-lambda-example-use-cases.md)\.
@@ -32,22 +32,22 @@ Amazon SES passes information to the Lambda function in JSON format\. The top\-l
 The following is a high\-level view of the structure of the input that Amazon SES provides to the Lambda function\.
 
 ```
- 1. {
- 2.    "Records": [
- 3.       {
- 4.         "eventSource": "aws:ses",
- 5.         "eventVersion": "1.0",
- 6.         "ses": {
- 7.            "receipt": {
- 8.                <same contents as SNS notification>
- 9.             },
-10.            "mail": {
-11.                <same contents as SNS notification>
-12.            }
-13.          }
-14.      }
-15.    ]
-16. }
+{
+   "Records": [
+      {
+        "eventSource": "aws:ses",
+        "eventVersion": "1.0",
+        "ses": {
+           "receipt": {
+               <same contents as SNS notification>
+            },
+           "mail": {
+               <same contents as SNS notification>
+           }
+         }
+     }
+   ]
+}
 ```
 
 ### Return Values<a name="receiving-email-action-lambda-function-return-values"></a>

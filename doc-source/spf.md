@@ -10,7 +10,7 @@ An SPF record indicates to ISPs that you have authorized Amazon SES to send emai
 
 ## Adding an SPF Record<a name="spf-records"></a>
 
-The procedure for adding a TXT record to your domain's DNS settings depends on who provides your DNS service, but for general instructions, see *Adding a TXT Record to Your Domain's DNS Server* in [Amazon SES Domain Verification TXT Records](dns-txt-records.md)\. For information specific to SPF records, go to [http://www\.openspf\.net](http://www.openspf.net) and [RFC 7208](https://tools.ietf.org/html/rfc7208)\.
+The procedure for adding a TXT record to your domain's DNS settings depends on who provides your DNS service, but for general instructions, see *Adding a TXT Record to Your Domain's DNS Server* in [Amazon SES Domain Verification TXT Records](dns-txt-records.md)\. For information about SPF records, see [RFC 7208](https://tools.ietf.org/html/rfc7208)\.
 
 ### Adding a New SPF Record<a name="spf-records-new"></a>
 

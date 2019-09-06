@@ -19,11 +19,11 @@ You can also create configuration sets that use a pool of IP addresses that are 
 
 1. On the **Add Dedicated IPs** page, check the box next to each IP address you want to add to the pool, and then choose **Next**\.
 **Note**  
-Dedicated IP addresses that have not yet been assigned to a pool are listed under **ses\-default\-dedicated\-pool**\.  
-A dedicated IP address can only belong to a single pool\. If you select a dedicated IP address that is associated with a different pool, that setting is overwritten, and the address is instead associated with the pool you are creating\.
+Dedicated IP addresses that you haven't yet assigned to a pool are included in the **ses\-default\-dedicated\-pool**\. If you send an email using a configuration set that doesn't specify a sending pool, or if you send an email without specifying a configuration set at all, Amazon SES sends the email from one of the addresses in the **ses\-default\-dedicated\-pool**\.  
+A dedicated IP address can only belong to one pool\. If you select a dedicated IP address that's associated with a different pool, Amazon SES overwrites that setting, and associates the address with the pool that you're creating\.
 
 1. On the **Assign to a configuration set** page, do one of the following:
-   + Select **Add this pool to an existing configuration set** to associate the dedicated IP pool with an existing configuration set\. Then, under **Existing configuration sets**, choose the configuration set with which you want to associate the IP pool\.
+   + Select **Add this pool to an existing configuration set** to associate the dedicated IP pool with an existing configuration set\. Then, under **Existing configuration sets**, choose the configuration set that you want to associate the IP pool with\.
    + Select **Create a new configuration set** to create a configuration set and associate the dedicated IP pool with it\. For **Configuration set name**, type a descriptive name for the configuration set\.
 
    When you finish, choose **Next**\.

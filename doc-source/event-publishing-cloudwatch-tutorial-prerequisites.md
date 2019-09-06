@@ -6,4 +6,4 @@ For this tutorial, you will need the following:
 
 ## Next Step<a name="event-publishing-cloudwatch-tutorial-prerequisites-next-step"></a>
 
-[Step 1: Set up a Configuration Set](event-publishing-cloudwatch-tutorial-configuration-set.md)
+ [Step 1: Set up a Configuration Set](event-publishing-cloudwatch-tutorial-configuration-set.md) 

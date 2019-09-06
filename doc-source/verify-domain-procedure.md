@@ -23,11 +23,14 @@ As an alternative to completing the procedure in this section, you can also enab
    + If your DNS provider does not allow underscores in record names, you can omit *\_amazonses* from the **Name**\.
    + To help you easily identify this record within your domain's DNS settings, you can optionally prefix the **Value** with *amazonses:* 
    + Some DNS providers automatically append the domain name to DNS record names\. To avoid duplication of the domain name, you can add a period to the end of the domain name in the DNS record\. This indicates that the record name is fully qualified and the DNS provider need not append an additional domain name\.  
-![\[to complete verification\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/to_complete_verification.png)
+![\[The Domain verification window. On the window, there's a table that shows the name, type, and value of the TXT record that you need to add to the DNS configuration for your domain.\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/to_complete_verification.png)
 
-1. If Route 53 provides the DNS service for the domain that you are verifying, and you are signed in to the AWS Management Console under the same account that you use for Route 53, then Amazon SES will give you the option of updating your DNS server immediately from within the Amazon SES console\. If you are not using Route 53, Amazon SES needs to verify that a TXT record with the specified **Name** and **Value** have been added to your domain's DNS server\. This may take up to 72 hours\.
+1. If Route 53 provides the DNS service for the domain that you're verifying, and you're signed in to the AWS Management Console under the same account that you use for Route 53, then Amazon SES gives you the option of updating your DNS server immediately from within the Amazon SES console\.
 
-   When verification is complete, the domain's status in the Amazon SES console will change from "pending verification" to "verified," and you will receive a confirmation success email from Amazon SES to the email address associated with your AWS account\.
+   If you use a different DNS provider, the procedures for updating the DNS records vary depending on which DNS or web hosting provider you use\. The following table lists links to the documentation for several common providers\. This list isn't exhaustive and inclusion in this list isn’t an endorsement or recommendation of any company’s products or services\. If your provider isn't listed in the table, you can probably use the domain with Amazon SES\.    
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-domain-procedure.html)
+
+   When verification is complete, the domain's status in the Amazon SES console changes from "pending verification" to "verified," and you receive a notification email from Amazon SES\.
 
 1. You can now use Amazon SES to send email from any address in the verified domain\. To send a test email, check the box next to the verified domain, and then choose **Send a Test Email**\.
 

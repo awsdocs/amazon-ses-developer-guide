@@ -7,24 +7,24 @@ This topic contains examples of Lambda functions that control mail flow\.
 This example stops processing messages that have at least one spam indicator\.
 
 ```
- 1. exports.handler = function(event, context, callback) {
- 2.     console.log('Spam filter');
- 3.     
- 4.     var sesNotification = event.Records[0].ses;
- 5.     console.log("SES Notification:\n", JSON.stringify(sesNotification, null, 2));
- 6.  
- 7.     // Check if any spam check failed
- 8.     if (sesNotification.receipt.spfVerdict.status === 'FAIL'
- 9.             || sesNotification.receipt.dkimVerdict.status === 'FAIL'
-10.             || sesNotification.receipt.spamVerdict.status === 'FAIL'
-11.             || sesNotification.receipt.virusVerdict.status === 'FAIL') {
-12.         console.log('Dropping spam');
-13.         // Stop processing rule set, dropping message
-14.         callback(null, {'disposition':'STOP_RULE_SET'});
-15.     } else {
-16.         callback(null, null);   
-17.     }
-18. };
+exports.handler = function(event, context, callback) {
+    console.log('Spam filter');
+    
+    var sesNotification = event.Records[0].ses;
+    console.log("SES Notification:\n", JSON.stringify(sesNotification, null, 2));
+ 
+    // Check if any spam check failed
+    if (sesNotification.receipt.spfVerdict.status === 'FAIL'
+            || sesNotification.receipt.dkimVerdict.status === 'FAIL'
+            || sesNotification.receipt.spamVerdict.status === 'FAIL'
+            || sesNotification.receipt.virusVerdict.status === 'FAIL') {
+        console.log('Dropping spam');
+        // Stop processing rule set, dropping message
+        callback(null, {'disposition':'STOP_RULE_SET'});
+    } else {
+        callback(null, null);   
+    }
+};
 ```
 
 ## Example 2: Continues if Particular Header<a name="receiving-email-action-lambda-example-functions-2"></a>
@@ -32,27 +32,27 @@ This example stops processing messages that have at least one spam indicator\.
 This example continues processing the current rule only if the email contains a specific header value\.
 
 ```
- 1. exports.handler = function(event, context, callback) {
- 2.     console.log('Header matcher');
- 3.  
- 4.     var sesNotification = event.Records[0].ses;
- 5.     console.log("SES Notification:\n", JSON.stringify(sesNotification, null, 2));
- 6.     
- 7.     // Iterate over the headers
- 8.     for (var index in sesNotification.mail.headers) {
- 9.         var header = sesNotification.mail.headers[index];
-10.         
-11.         // Examine the header values
-12.         if (header.name === 'X-Header' && header.value === 'X-Value') {
-13.             console.log('Found header with value.');
-14.             callback(null, null);
-15.             return;
-16.         }
-17.     }
-18.     
-19.     // Stop processing the rule if the header value wasn't found
-20.     callback(null, {'disposition':'STOP_RULE'});    
-21. };
+exports.handler = function(event, context, callback) {
+    console.log('Header matcher');
+ 
+    var sesNotification = event.Records[0].ses;
+    console.log("SES Notification:\n", JSON.stringify(sesNotification, null, 2));
+    
+    // Iterate over the headers
+    for (var index in sesNotification.mail.headers) {
+        var header = sesNotification.mail.headers[index];
+        
+        // Examine the header values
+        if (header.name === 'X-Header' && header.value === 'X-Value') {
+            console.log('Found header with value.');
+            callback(null, null);
+            return;
+        }
+    }
+    
+    // Stop processing the rule if the header value wasn't found
+    callback(null, {'disposition':'STOP_RULE'});    
+};
 ```
 
 ## Example 3: Retrieves Email from Amazon S3<a name="receiving-email-action-lambda-example-functions-3"></a>
@@ -63,34 +63,34 @@ This example gets the raw email from Amazon S3 and processes it\.
 You must first write the email to Amazon S3 using an S3 Action\.
 
 ```
- 1. var AWS = require('aws-sdk');
- 2. var s3 = new AWS.S3();
- 3.  
- 4. var bucketName = '<YOUR BUCKET GOES HERE>';
- 5.  
- 6. exports.handler = function(event, context, callback) {
- 7.     console.log('Process email');
- 8.  
- 9.     var sesNotification = event.Records[0].ses;
-10.     console.log("SES Notification:\n", JSON.stringify(sesNotification, null, 2));
-11.     
-12.     // Retrieve the email from your bucket
-13.     s3.getObject({
-14.             Bucket: bucketName,
-15.             Key: sesNotification.mail.messageId
-16.         }, function(err, data) {
-17.             if (err) {
-18.                 console.log(err, err.stack);
-19.                 callback(err);
-20.             } else {
-21.                 console.log("Raw email:\n" + data.Body);
-22.                 
-23.                 // Custom email processing goes here
-24.                 
-25.                 callback(null, null);
-26.             }
-27.         });
-28. };
+var AWS = require('aws-sdk');
+var s3 = new AWS.S3();
+ 
+var bucketName = '<YOUR BUCKET GOES HERE>';
+ 
+exports.handler = function(event, context, callback) {
+    console.log('Process email');
+ 
+    var sesNotification = event.Records[0].ses;
+    console.log("SES Notification:\n", JSON.stringify(sesNotification, null, 2));
+    
+    // Retrieve the email from your bucket
+    s3.getObject({
+            Bucket: bucketName,
+            Key: sesNotification.mail.messageId
+        }, function(err, data) {
+            if (err) {
+                console.log(err, err.stack);
+                callback(err);
+            } else {
+                console.log("Raw email:\n" + data.Body);
+                
+                // Custom email processing goes here
+                
+                callback(null, null);
+            }
+        });
+};
 ```
 
 ## Example 4: Bounces Messages that Fail DMARC Authentication<a name="receiving-email-action-lambda-example-functions-4"></a>

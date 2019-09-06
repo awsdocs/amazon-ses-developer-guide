@@ -32,11 +32,14 @@ Depending on your web hosting provider, it may take several minutes for the chan
 
 ### Option 2: Configuring an HTTPS Domain<a name="configure-custom-open-click-domain-https"></a>
 
-If you plan to use an HTTPS domain for handling open and click links, you must perform some additional steps, beyond [those required for setting up an HTTP domain](#configure-custom-open-click-domain-http)\.
+You can also use an HTTPS domain for tracking link clicks\. To set up an HTTPS domain for tracking links, you have to perform some additional steps, beyond those required for [setting up an HTTP domain](#configure-custom-open-click-domain-http)\.
 
-**To set up an HTTPS subdomain for handling open and click links**
+**Note**  
+You can only use an HTTPS domain for tracking link clicks\. Amazon SES only supports open tracking over HTTP domains\.
 
-1. Create a subdomain to use for open and click tracking links\. We recommend that you create a subdomain that is specifically dedicated to handling these links\. 
+**To set up an HTTPS subdomain for handling clicks**
+
+1. Create a subdomain to use for click tracking links\. We recommend that you create a subdomain that is specifically dedicated to handling these links\. 
 
 1. Verify the subdomain for use with Amazon SES\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
 

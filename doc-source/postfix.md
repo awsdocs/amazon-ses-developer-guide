@@ -2,14 +2,17 @@
 
 Postfix is an alternative to the widely used Sendmail Message Transfer Agent \(MTA\)\. For information about Postfix, go to [http://www\.postfix\.org](http://www.postfix.org)\. The procedures in this topic will work with Linux, macOS, or Unix\.
 
+**Note**  
+Postfix is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
+
 ## Prerequisites<a name="send-email-postfix-prereqs"></a>
 
 Before you complete the procedures in this section, you have to perform the following tasks:
 + Uninstall Sendmail, if it's already installed on your system\. The procedure for completing this step varies depending on the operating system you use\.
 + Install Postfix\. The procedure for completing this step varies depending on the operating system you use\.
 + Install a SASL authentication package\. The procedure for completing this step varies depending on the operating system you use\. For example, if you use a RedHat\-based system, you should install the `cyrus-sasl-plain` package\. If you use a Debian\- or Ubuntu\-based system, you should install the `libsasl2-modules` package\.
-+ Verify an email address or domain to use for sending email\. If your account is still in the sandbox, you also have to verify every address that you plan to send email to\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
-+ If you're sending email through Amazon SES from an Amazon EC2 instance, assign an Elastic IP Address to your Amazon EC2 instance for the receiving ISP to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
++ Verify an email address or domain to use for sending email\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
++ If your account is still in the sandbox, you can only send email to verified email addresses\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
 
 ## Configuring Postfix<a name="send-email-postfix"></a>
 
@@ -126,7 +129,7 @@ This example shows how to send an email that uses a [configuration set](using-co
 1. In the text file, paste the following content, replacing the values in red with the appropriate values for your account:
 
    ```
-   X-SES-CONFIGURATION-SET:ConfigSet
+   X-SES-CONFIGURATION-SET: ConfigSet
    From:Sender Name <sender@example.com>
    Subject:Amazon SES Test
    MIME-Version: 1.0

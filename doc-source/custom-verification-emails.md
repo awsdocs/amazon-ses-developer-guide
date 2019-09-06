@@ -246,3 +246,7 @@ If you're unable to use the custom verification email template operations in an 
 + Version 3\.45\.2 or later of the AWS SDK for PHP
 + Version 1\.5\.1 or later of the AWS SDK for Python \(Boto\)
 + Version 1\.5\.0 or later of the `aws-sdk-ses` gem in the AWS SDK for Ruby
+
+### Q13\. Why do I receive `ProductionAccessNotGranted` errors when I send custom verification emails?<a name="custom-verification-emails-faq-q13"></a>
+
+The `ProductionAccessNotGranted` error indicates that your account is still in the Amazon SES sandbox\. You can only send custom verification emails if your account has been removed from the sandbox\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.

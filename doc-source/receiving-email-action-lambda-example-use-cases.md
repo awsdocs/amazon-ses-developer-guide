@@ -10,7 +10,7 @@ This example demonstrates a global rule that drops spam across all of your domai
 
 *Recipient list: *Empty\. This rule will therefore apply to all recipients under all of your verified domains\.
 
-*Actions*
+ *Actions* 
 
 1. Lambda action \(synchronous\) that returns `STOP_RULE_SET` if the email is spam\. Otherwise, it returns `CONTINUE`\. See the example Lambda function for dropping spam in [Lambda Function Examples](receiving-email-action-lambda-example-functions.md)\.
 
@@ -18,7 +18,7 @@ This example demonstrates a global rule that drops spam across all of your domai
 
 *Recipient list: *example1\.com
 
-*Actions*
+ *Actions* 
 
 1. Any action\.
 
@@ -26,7 +26,7 @@ This example demonstrates a global rule that drops spam across all of your domai
 
 *Recipient list: *example2\.com
 
-*Actions*
+ *Actions* 
 
 1. Any action\.
 
@@ -38,7 +38,7 @@ This example demonstrates a global rule that bounces spam across all of your dom
 
 *Recipient list: *Empty\. This rule will therefore apply to all recipients under all of your verified domains\.
 
-*Actions*
+ *Actions* 
 
 1. Lambda action \(synchronous\) that returns `CONTINUE` if the email is spam\. Otherwise, it returns `STOP_RULE`\.
 
@@ -50,7 +50,7 @@ This example demonstrates a global rule that bounces spam across all of your dom
 
 *Recipient list: *example1\.com
 
-*Actions*
+ *Actions* 
 
 1. Any action
 
@@ -58,7 +58,7 @@ This example demonstrates a global rule that bounces spam across all of your dom
 
 *Recipient list: *example2\.com
 
-*Actions*
+ *Actions* 
 
 1. Any action
 
@@ -70,7 +70,7 @@ This example demonstrates how you can use the Stop action to prevent emails from
 
 *Recipient list: *user@example\.com
 
-*Actions*
+ *Actions* 
 
 1. Lambda action \(asynchronous\)\.
 
@@ -80,7 +80,7 @@ This example demonstrates how you can use the Stop action to prevent emails from
 
 *Recipient list: *example\.com
 
-*Actions*
+ *Actions* 
 
 1. Any action\.
 
@@ -92,7 +92,7 @@ This example demonstrates how to keep an audit log of all mail going through you
 
 *Recipient list: *example\.com
 
-*Actions*
+ *Actions* 
 
 1. Lambda action \(asynchronous\) that writes the event object to a CloudWatch log\. The example Lambda functions in [Lambda Function Examples](receiving-email-action-lambda-example-functions.md) log to CloudWatch\.
 
@@ -106,7 +106,7 @@ This example demonstrates how you can save all incoming email to an Amazon S3 bu
 
 *Recipient list: *example\.com
 
-*Actions*
+ *Actions* 
 
 1. S3 action\.
 
@@ -116,7 +116,7 @@ This example demonstrates how you can save all incoming email to an Amazon S3 bu
 
 *Recipient list: *support@example\.com
 
-*Actions*
+ *Actions* 
 
 1. Lambda action \(asynchronous\) that triggers the automated application\.
 
@@ -128,7 +128,7 @@ This example demonstrates how you can drop all of a domain's incoming mail that 
 
 *Recipient list: *example\.com
 
-*Actions*
+ *Actions* 
 
 1. Lambda action \(synchronous\) that returns `STOP_RULE_SET` if the subject line contains the word "discount"\. Otherwise, it returns `CONTINUE`\.
 
@@ -136,7 +136,7 @@ This example demonstrates how you can drop all of a domain's incoming mail that 
 
 *Recipient list: *support@example\.com
 
-*Actions*
+ *Actions* 
 
 1. S3 action with bucket 1\.
 
@@ -148,7 +148,7 @@ This example demonstrates how you can drop all of a domain's incoming mail that 
 
 *Recipient list: *example\.com
 
-*Actions*
+ *Actions* 
 
 1. S3 action with bucket 2\.
 

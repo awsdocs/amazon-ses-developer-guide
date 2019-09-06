@@ -2,10 +2,13 @@
 
 You can configure Microsoft Exchange to send email through Amazon SES\. The following procedures show you how to integrate Microsoft Exchange with Amazon SES using the Microsoft Exchange GUI or Windows PowerShell\.
 
-**Important**  
-Follow only one of the following procedures \(Microsoft Exchange GUI or Windows PowerShell\)\. If you follow both procedures, you will get an error stating that you have two send connectors with the same name\.
+**Note**  
+Microsoft Exchange is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
 
 These instructions were written using Microsoft Exchange 2013\.
+
+**Important**  
+Follow only one of the following procedures \(Microsoft Exchange GUI or Windows PowerShell\)\. If you follow both procedures, you will get an error stating that you have two send connectors with the same name\.
 
 **To integrate Microsoft Exchange with Amazon SES using the Microsoft Exchange GUI**
 

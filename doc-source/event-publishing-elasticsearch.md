@@ -4,6 +4,9 @@ Elasticsearch is an open\-source search and analytics engine for use cases such 
 
 In this tutorial, you publish Amazon SES email sending events to an Amazon Kinesis Data Firehose delivery stream that publishes the event data to Amazon ES\. You then view the data with [Kibana](https://www.elastic.co/products/kibana), an open\-source visualization tool designed to work with Elasticsearch\. Amazon ES includes built\-in integration with Kibana\. 
 
+**Note**  
+Kibana is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
+
 The following sections walk you through the process\.
 + [Prerequisites](event-publishing-elasticsearch-prerequisites.md)
 + [Step 1: Create an Amazon ES Cluster](event-publishing-elasticsearch-cluster.md)

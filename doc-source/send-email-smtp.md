@@ -26,7 +26,7 @@ If you need a solution that can both send and receive email by using an email cl
 + To configure SMTP\-enabled software to send email through the Amazon SES SMTP interface, see [Sending Email Through Amazon SES From Software Packages](send-email-smtp-software-package.md)\.
 + To program an application to send email through Amazon SES, see [Sending Email Through Amazon SES From Your Application](send-email-smtp-app.md)\.
 + To configure your existing email server to send all of your outgoing mail through Amazon SES, see [Integrating Amazon SES with Your Existing Email Server](send-email-smtp-existing-server.md)\.
-+ To interact with the Amazon SES SMTP interface using the command line, which can be useful for testing, see [Using the Command Line to Send Email Through the Amazon SES SMTP Interface](send-email-smtp-client-command-line.md)\.
++ To interact with the Amazon SES SMTP interface using the command line, which can be useful for testing, see [Testing Email Sending Using the Command Line](send-email-smtp-client-command-line.md)\.
 
 For a list of SMTP response codes, see [SMTP Response Codes Returned by Amazon SES](smtp-response-codes.md)\.
 

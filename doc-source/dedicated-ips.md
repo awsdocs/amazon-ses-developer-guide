@@ -19,13 +19,13 @@ When you create a new Amazon SES account, your emails are sent from IP addresses
 | [Provides known IP addresses that never change](#dedicated-ips-known-addresses) | No | Yes | 
 
 **Important**  
-If you do not plan to send large volumes of email on a regular and predictable basis, we recommend using shared IP addresses\. If you use dedicated IP addresses in situations where you are sending low volumes of mail, or if your sending patterns are highly irregular, you will experience deliverability issues\.
+If you don't plan to send large volumes of email on a regular and predictable basis, we recommend that you use shared IP addresses\. If you use dedicated IP addresses in situations where you are sending low volumes of mail, or if your sending patterns are highly irregular, you might experience deliverability issues\.
 
 ## Ease of Setup<a name="dedicated-ips-simplicity"></a>
 
-If you choose to use shared IP addresses, then you do not need to perform any additional configuration; your Amazon SES account is ready to send email as soon as you verify an email address and move out of the sandbox\.
+If you choose to use shared IP addresses, then you don't need to perform any additional configuration\. Your Amazon SES account is ready to send email as soon as you verify an email address and move out of the sandbox\.
 
-If you choose to lease dedicated IP addresses, you must determine how many dedicated IP addresses you need, submit a request, and optionally set up dedicated IP pools\.
+If you choose to lease dedicated IP addresses, you have to [submit a request](dedicated-ip-case.md) and optionally [configure dedicated IP pools](dedicated-ip-pools.md)\.
 
 ## Reputation Managed by AWS<a name="dedicated-ips-managed-reputation"></a>
 

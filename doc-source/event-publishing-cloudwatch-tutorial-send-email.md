@@ -35,4 +35,4 @@ For Amazon SES to publish events associated with an email, you must specify a co
 
 ## Next Step<a name="event-publishing-cloudwatch-tutorial-send-email-next-step"></a>
 
-[Step 3: Graph Email Sending Events](event-publishing-cloudwatch-tutorial-graph.md)
+ [Step 3: Graph Email Sending Events](event-publishing-cloudwatch-tutorial-graph.md) 

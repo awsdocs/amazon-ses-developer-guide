@@ -4,6 +4,9 @@ Sendmail was released in the early 1980s, and has been continuously improved eve
 
 The procedure in this section shows you how to configure Sendmail to send email through Amazon SES\. This procedure was tested on a server running Ubuntu 18\.04\.2 LTS\.
 
+**Note**  
+Sendmail is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
+
 ## Prerequisites<a name="send-email-sendmail-prerequisites"></a>
 
 Before you complete the procedure in this section, you should complete the following steps:
@@ -83,7 +86,7 @@ Your SMTP username and password are different from your AWS Access Key ID and Se
 
    When you finish, save the file\.
 
-1. At the command pine, type the following command to make *sendmail\.cf* writeable:
+1. At the command line, type the following command to make *sendmail\.cf* writeable:
 
    ```
    sudo chmod 666 /etc/mail/sendmail.cf

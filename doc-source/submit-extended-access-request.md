@@ -43,4 +43,8 @@ If you want to request both a sending *quota* increase and a sending *rate* incr
 
 1. When you finish, choose **Submit**\.
 
-After we receive your request, we begin the process of evaluating it\. We typically respond to requests for limit increases within two business days\. However, in some cases, we might contact you to request additional information\.
+The AWS Support team provides an initial response to your request within 24 hours\.
+
+In order to prevent our systems from being used to send unsolicited or malicious content, we have to consider each request carefully\. If we're able to do so, we'll grant your request within this 24\-hour period\. However, if we need to obtain additional information from you, it might take longer to resolve your request\.
+
+We might not be able to grant your request if your use case doesn't align with our policies\.

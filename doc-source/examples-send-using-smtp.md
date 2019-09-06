@@ -99,7 +99,7 @@ The following code example is a complete solution for sending email through the 
 ```
 
 ------
-#### [ Golang ]
+#### [ Go ]
 
 The following code example is a complete solution for sending email through the Amazon SES SMTP interface using the Go programming language\. In order to run this code example, you must obtain SMTP credentials; for more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. You must also install the [Gomail package](https://github.com/go-gomail/gomail)\.
 

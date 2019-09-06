@@ -26,12 +26,12 @@ There are several ways that you can send an email by using Amazon SES\. You can 
 
 ## How do I start?<a name="how-to-start-using-ses"></a>
 
-If you are a first\-time user of Amazon SES, we recommend that you begin by reading the following sections:
+If you're new to Amazon SES, start by reading the following sections:
 + [Amazon SES Quick Start](quick-start.md)—Shows you how to get set up and send a test email as quickly as possible\.
 + [Getting Started Sending Email with Amazon SES](getting-started.md)—Shows you how to send an email by using the Amazon SES console, the SMTP interface, and an AWS SDK\. Examples are provided in C\#, Java, and PHP\.
-+ [Amazon SES and Deliverability](deliverability-and-ses.md)—Explains email deliverability concepts that you should be familiar with when you use Amazon SES\.
-+ [Amazon SES Email\-Sending Process](sending-email-with-ses.md)—Shows you what happens when you send an email through Amazon SES\.
-+ [Email Format and Amazon SES](email-format.md)—Reviews the format of emails and identifies the information that you need to provide to Amazon SES\.
++ [Amazon SES and Deliverability](sending-concepts-deliverability.md)—Explains email deliverability concepts that you should be familiar with when you use Amazon SES\.
++ [Amazon SES Email\-Sending Process](sending-concepts-process.md)—Shows you what happens when you send an email through Amazon SES\.
++ [Email Format and Amazon SES](sending-concepts-email-format.md)—Reviews the format of emails and identifies the information that you need to provide to Amazon SES\.
 
 Then you can learn about sending email with Amazon SES in more detail by reading the sections listed in the following table:
 

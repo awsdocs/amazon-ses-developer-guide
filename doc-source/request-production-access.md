@@ -14,6 +14,9 @@ When your account is out of the sandbox, you can send email to any recipient, re
 
 Complete the procedures in this section to request that your account be removed from the sandbox\.
 
+**Note**  
+If you're using Amazon SES to send email from an Amazon EC2 instance, you might also need to request that the throttle be removed from port 25 on your Amazon EC2 instance\. For more information, see [How do I remove the throttle on port 25 from my EC2 instance?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.
+
 **To request that your account be removed from the Amazon SES sandbox**
 
 1. Sign in to the AWS Management Console at [https://console\.aws\.amazon\.com/](https://console.aws.amazon.com/)\.
@@ -26,7 +29,7 @@ Complete the procedures in this section to request that your account be removed 
 1. Under **Create case**, choose **Service limit increase**\.
 
 1. Under **Case classification**, complete the following sections:
-   + For **Limit type**, choose **SES Service Limits**\.
+   + For **Limit type**, choose **SES Sending Limits**\.
    + For **Mail Type**, choose the type of email that you plan to send\. If more than one value applies, choose the option that applies to the majority of the email that you plan to send\.
    + For **Website URL**, enter the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
    + For **My email sending complies with the AWS Service Terms and AUP**, choose the option that applies to your use case\.
@@ -57,7 +60,11 @@ If you want to request that we remove your account from the sandbox in another A
 
 1. When you finish, choose **Submit**\.
 
-After we receive your request, we begin the process of evaluating it\. We typically respond to requests for production access within one business day\. However, in some cases, we might contact you to request additional information\.
+The AWS Support team provides an initial response to your request within 24 hours\.
+
+In order to prevent our systems from being used to send unsolicited or malicious content, we have to consider each request carefully\. If we're able to do so, we'll grant your request within this 24\-hour period\. However, if we need to obtain additional information from you, it might take longer to resolve your request\.
+
+We might not be able to grant your request if your use case doesn't align with our policies\.
 
 ## Checking the Sandbox Status for Your Account<a name="request-production-access-check-status"></a>
 

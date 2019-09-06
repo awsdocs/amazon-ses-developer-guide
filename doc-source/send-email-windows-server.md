@@ -2,6 +2,9 @@
 
 You can configure Microsoft Windows Server's IIS SMTP server to send email through Amazon SES\. These instructions were written using Microsoft Windows Server 2012 on an Amazon EC2 instance\. You can use the same configuration on Microsoft Windows Server 2008 and Microsoft Windows Server 2008 R2\.
 
+**Note**  
+Windows Server is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
+
 **To integrate the Microsoft Windows Server IIS SMTP server with Amazon SES**
 
 1. First, set up Microsoft Windows Server 2012 using the following instructions\.

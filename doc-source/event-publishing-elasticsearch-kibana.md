@@ -2,6 +2,9 @@
 
 Now that you have published some Amazon SES email sending events to Amazon Elasticsearch Service \(Amazon ES\) by sending emails with your configuration set and message tags, you can visualize the events using Kibana, a web interface for Elasticsearch\.
 
+**Note**  
+Kibana is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
+
 This section shows how to find your email sending events in Kibana, graph your email sending events by event type, and find the email addresses that bounced\. These exercises are useful because monitoring your bounces and complaints is an important part of maintaining your mailing list\.
 + [Viewing Your Email Sending Events](#event-publishing-elasticsearch-kibana-view-raw)
 + [Graphing Your Email Sending Events by Type](#event-publishing-elasticsearch-kibana-graph)

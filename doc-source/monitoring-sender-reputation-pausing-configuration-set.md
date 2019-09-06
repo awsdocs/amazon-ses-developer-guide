@@ -146,7 +146,7 @@ For CloudWatch to execute the Lambda function when an alarm is triggered, you mu
 
 **To create the Amazon SNS topic**
 
-1. Open the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v2/home](https://console.aws.amazon.com/sns/v2/home)\.
+1. Open the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v3/home](https://console.aws.amazon.com/sns/v3/home)\.
 
 1. Use the region selector to choose the region in which you want to automatically pause email sending\.
 

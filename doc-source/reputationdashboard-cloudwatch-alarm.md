@@ -6,7 +6,7 @@ The values of `Reputation.BounceRate` and `Reputation.ComplaintRate` are decimal
 
 **To create a CloudWatch alarm**
 
-1. Sign in to the AWS Management Console and open the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v2/home](https://console.aws.amazon.com/sns/v2/home)\.
+1. Sign in to the AWS Management Console and open the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v3/home](https://console.aws.amazon.com/sns/v3/home)\.
 
 1. Create a new Amazon SNS topic, and then subscribe to it using your preferred endpoint \(such as email or SMS\)\. For more information, see [Creating an Amazon SNS Topic](https://docs.aws.amazon.com/sns/latest/dg/sns-tutorial-create-topic.html) and [Subscribing an Endpoint to an Amazon SNS Topic](https://docs.aws.amazon.com/sns/latest/dg/sns-tutorial-create-subscribe-endpoint-to-topic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 

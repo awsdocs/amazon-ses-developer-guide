@@ -1,13 +1,10 @@
 # Amazon SES Sending Authorization Policies<a name="sending-authorization-policies"></a>
 
-To enable another AWS account, Identity Access and Management \(IAM\) user, or AWS service to send email through Amazon SES on your behalf, you create a *sending authorization policy*, which is a JSON document that you attach to an identity that you own\. The policy explicitly lists who you are allowing to send for that identity, and under which conditions\. All senders but you and the entities you explicitly grant permissions to in the policies are denied\. An identity can have no policy, one policy, or multiple policies attached to it\. You can also have one policy with multiple statements to achieve the effect of multiple policies\.
+To enable another AWS account, Identity Access and Management \(IAM\) user, or AWS service to send email through Amazon SES on your behalf, you create a *sending authorization policy*, which is a JSON document that you attach to an identity that you own\. The policy explicitly lists who you're allowing to send for that identity, and under which conditions\. All senders except you and the entities that you explicitly grant permissions to in the policies are denied\. An identity can have no policy, one policy, or multiple policies attached to it\. You can also have one policy with multiple statements to achieve the effect of multiple policies\.
 
-Policies can be simple or can be configured to provide fine\-grained control\. For example, if you owned *example\.com*, you could write a simple policy to grant AWS ID 123456789012 permission to send from that domain\. A more detailed policy could specify that AWS ID 123456789012 can send email only from *user@example\.com* and only within a specified date range\.
+Policies can be simple, or can be configured to provide fine\-grained control\. For example, if you owned *example\.com*, you could write a simple policy to grant AWS ID 123456789012 permission to send from that domain\. A more detailed policy could specify that AWS ID 123456789012 can send email only from *user@example\.com* and only within a specified date range\.
 
-Amazon SES sending authorization policies apply to email sending APIs \(`SendEmail` and `SendRawEmail`\) only\. They do not enable a user to access your AWS account in any other way\.
-
-**Note**  
-You cannot create Identity Policies that allow delegate senders to use the `SendTemplatedEmail` or `SendBulkTemplatedEmail` operations\.
+Amazon SES sending authorization policies apply to email sending APIs \(`SendEmail`, `SendRawEmail`, `SendTemplatedEmail`, and `SendBulkTemplatedEmail`\) only\. They don't enable a user to access your AWS account in any other way\.
 
 ## Policy Structure<a name="sending-authorization-policy-structure"></a>
 
@@ -27,7 +24,7 @@ The following example policy grants AWS account ID *123456789012* permission to 
  5.     {
  6.       "Sid":"AuthorizeAccount",
  7.       "Effect":"Allow",
- 8.       "Resource":"arn:aws:ses:us-east-1:888888888888:identity/example.com",
+ 8.       "Resource":"arn:aws:ses:us-east-1:123456789012:identity/example.com",
  9.       "Principal":{
 10.         "AWS":[
 11.           "123456789012"
@@ -82,7 +79,7 @@ Sending authorization policies require at least one statement\. Each statement c
 
 A *condition* is any restriction about the permission in the statement\. The part of the statement that specifies the conditions can be the most detailed of all the parts\. A *key* is the specific characteristic that is the basis for access restriction, such as the date and time of the request\.
 
-You use both conditions and keys together to express the restriction\. For example, if you want to restrict the delegate sender from making requests to Amazon SES on your behalf after July 30, 2015, you use the condition called `DateLessThan`\. You use the key called `aws:CurrentTime` and set it to the value `2015-07-30T00:00:00Z`\. 
+You use both conditions and keys together to express the restriction\. For example, if you want to restrict the delegate sender from making requests to Amazon SES on your behalf after July 30, 2019, you use the condition called `DateLessThan`\. You use the key called `aws:CurrentTime` and set it to the value `2019-07-30T00:00:00Z`\. 
 
 You can use any of the AWS\-wide keys listed at [Available Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AvailableKeys) in the *IAM User Guide*, or you can use one of the following keys specific to Amazon SES:
 
@@ -107,7 +104,7 @@ It is common to use the `StringEquals` and `StringLike` conditions with the Amaz
 ```
 
 **Note**  
-When you want to disallow access to an email address, use wildcards to ensure that you are completely preventing access to all forms of that address\. For example, to disallow sending from *admin@example\.com*, you can prevent access to alternatives such as *"admin"@example\.com* and *admin\+1@example\.com* by specifying the following condition:  
+When you want to disallow access to an email address, you can use wildcards to ensure that you're completely preventing access to all variations of that address\. For example, to disallow sending from *admin@example\.com*, you can prevent access to alternatives such as *"admin"@example\.com* and *admin\+1@example\.com* by specifying the following condition:  
 
 ```
 1. "Condition": {
@@ -122,9 +119,9 @@ For more information about how to specify conditions, see [Condition](https://do
 ## Policy Requirements<a name="sending-authorization-policy-restrictions"></a>
 
 Each policy must adhere to the following requirements:
-+ Each policy must include at least one statement\.
-+ Each policy must include at least one valid principal\.
-+ Each policy must specify one resource, and that resource must be the ARN of the identity to which the policy is attached\.
++ Each policy has to include at least one statement\.
++ Each policy has to include at least one valid principal\.
++ Each policy has to specify one resource, and that resource has to be the ARN of the identity that the policy is attached to\.
 + Identity owners can associate up to 20 policies with each unique identity\.
-+ Policies must not exceed 4 kilobytes \(KB\)\.
-+ Policy names cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores\.
++ Policies can't exceed 4 kilobytes \(KB\) in size\.
++ Policy names can't exceed 64 characters\. Additionally, they can only include alphanumeric characters, dashes, and underscores\.

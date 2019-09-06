@@ -2,7 +2,7 @@
 
 This getting started tutorial provides step\-by\-step instructions for you to set up Amazon Simple Email Service \(Amazon SES\) and send an email\. First, review the information in [Before You Begin with Amazon SES](before-you-begin.md)\. Then, send an email in one of the following ways\. You can also watch our [Getting Started with Amazon SES](https://www.youtube.com/watch?v=EKnK54TAKWg) video\.
 
-For information about Amazon SES email pricing, see the Amazon SES [Pricing](https://aws.amazon.com/ses/#pricing) page\.
+For information about Amazon SES email pricing, see the Amazon SES [Pricing](https://aws.amazon.com/ses/pricing) page\.
 
 ## Using the Amazon SES Console<a name="using-the-console-intro"></a>
 

@@ -4,6 +4,9 @@ Exim is an MTA that was originally developed for Unix\-like systems\. It is a ge
 
 To learn more about Exim, go to [http://www\.exim\.org](http://www.exim.org)\.
 
+**Note**  
+Exim is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
+
 **To configure integration with the Amazon SES US West \(Oregon\) endpoint using STARTTLS**
 
 1. Open the */etc/exim/exim\.conf* file for editing\. If the file does not exist, create it\. 

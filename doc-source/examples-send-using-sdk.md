@@ -113,7 +113,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ```
 
 ------
-#### [ Golang ]
+#### [ Go ]
 
 The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/)\. This code example assumes that you have installed the AWS SDK for Go, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
 

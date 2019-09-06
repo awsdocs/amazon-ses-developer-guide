@@ -8,7 +8,7 @@ This section includes procedures for constructing and sending raw email using th
 
 Simple Mail Transfer Protocol \(SMTP\) specifies how email messages are to be sent by defining the mail envelope and some of its parameters, but it does not concern itself with the content of the message\. Instead, the Internet Message Format \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\) defines how the message is to be constructed\.
 
-With the Internet Message Format specification, every email message consists of a header and a body\. The header consists of message metadata, and the body contains the message itself\. For more information about email headers and bodies, see [Email Format and Amazon SES](email-format.md)\.
+With the Internet Message Format specification, every email message consists of a header and a body\. The header consists of message metadata, and the body contains the message itself\. For more information about email headers and bodies, see [Email Format and Amazon SES](sending-concepts-email-format.md)\.
 
 ## Using MIME<a name="send-email-raw-mime"></a>
 
@@ -80,7 +80,7 @@ To encode an email address that is used in the message envelope, use Punycode en
 For example, to send an email to *张伟@example\.com*, use Punycode encoding on the local part of the address \(the part before the @ sign\)\. The resulting, encoded address is *xn\-\-cpqy30b@example\.com*\.
 
 **Note**  
-This rule only applies to email addresses that you specify message envelope, not the message headers\. When you use the `SendRawEmail` API, the addresses you specify in the `Source` and `Destinations` parameters define the envelope sender and recipients, respectively\.
+This rule only applies to email addresses that you specify in the message envelope, not the message headers\. When you use the `SendRawEmail` API, the addresses you specify in the `Source` and `Destinations` parameters define the envelope sender and recipients, respectively\.
 
 For more information about Punycode encoding, see [RFC 3492](https://tools.ietf.org/html/rfc3492)\.
 
@@ -119,7 +119,7 @@ For example, assume the body of your message contains the following text:
 If you choose to encode this text using base64 encoding, first specify the following header:
 
 ```
-Content-Type-Encoding: base64
+Content-Transfer-Encoding: base64
 ```
 
 Then, in the body section of the email, include the base64\-encoded text:

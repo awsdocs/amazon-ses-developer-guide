@@ -9,11 +9,9 @@ Now that you have published some Amazon SES email sending events to CloudWatch b
 1. In the left navigation pane, choose **Metrics**\.
 
 1. In the **All metrics** tab, choose **SES**\.
+**Tip**  
+You can also type `SES` into the search field\.
 
-   You can also type `SES` into the search field\.
+1. Choose the value source that you specified in [Adding a CloudWatch Event Destination](event-publishing-cloudwatch-tutorial-configuration-set.md#event-publishing-cloudwatch-tutorial-configuration-set-add-destination)\. For example, if you specified the message tag "category:books" as the value source, choose **category**\.
 
-1. Choose **Per configuration set**\.
-
-1. Select the metric to view\.
-
-   A graph appears in the details pane\.
+1. Choose the metric that you want to view\. A graph appears in the details pane\.

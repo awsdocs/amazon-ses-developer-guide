@@ -43,4 +43,4 @@ The cluster will take up to ten minutes to deploy\.
 
 ## Next Step<a name="event-publishing-elasticsearch-cluster-next-step"></a>
 
-[Step 2: Create a Kinesis Data Firehose Delivery Stream](event-publishing-elasticsearch-firehose-stream.md)
+ [Step 2: Create a Kinesis Data Firehose Delivery Stream](event-publishing-elasticsearch-firehose-stream.md) 

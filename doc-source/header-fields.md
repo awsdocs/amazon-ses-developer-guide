@@ -1,10 +1,12 @@
 # Appendix: Header Fields<a name="header-fields"></a>
 
-Amazon SES accepts any email headers that follow the format described in [RFC 822](https://www.ietf.org/rfc/rfc0822.txt)\.
+Amazon SES can accept all email headers that follow the format described in [RFC 822](https://www.ietf.org/rfc/rfc0822.txt)\.
 
-The following fields cannot appear more than once in a header:
+The following fields can't appear more than once in the header section of a message:
 +  Accept\-Language 
-+  acceptLanguage \(**Note:** This field is nonstandard\. If possible, use Accept\-Language instead\.\) 
++  acceptLanguage
+**Note**  
+This field is non\-standard\. If possible, you should use the Accept\-Language header instead\.
 +  Archived\-At 
 +  Auto\-Submitted 
 +  Bounces\-to 
@@ -22,7 +24,9 @@ The following fields cannot appear more than once in a header:
 +  Content\-MD5 
 +  Content\-Transfer\-Encoding 
 +  Content\-Type 
-+  Date \(**Note:** Amazon SES overrides any Date header you provide with the time that Amazon SES accepts the message\. The time zone of the Date header is UTC\.\)
++  Date
+**Note**  
+If you specify a Date header, Amazon SES overrides it with a timestamp that corresponds to the date and time in the UTC time zone when Amazon SES accepted the message\.
 +  Delivered\-To 
 +  Disposition\-Notification\-Options 
 +  Disposition\-Notification\-To 
@@ -41,7 +45,9 @@ The following fields cannot appear more than once in a header:
 +  List\-Subscribe 
 +  List\-Unsubscribe 
 +  Message\-Context 
-+  Message\-ID \(**Note:** Amazon SES overrides any Message\-ID header you provide\.\)
++  Message\-ID
+**Note**  
+If you provide a Message\-ID header, Amazon SES overrides the header with its own value\.
 +  MIME\-Version 
 +  Organization 
 +  Original\-From 
@@ -52,7 +58,9 @@ The following fields cannot appear more than once in a header:
 +  Priority 
 +  References 
 +  Reply\-To 
-+  Return\-Path \(**Note:** After Amazon SES uses any Return\-Path header you provide, it removes that header before sending the email\.\)
++  Return\-Path
+**Note**  
+If you specify a Return\-Path header, Amazon SES sends bounce and complaint notifications to the address that you specified\. However, the message that your recipients receive contains a different value for the Return\-Path header\.
 +  Return\-Receipt\-To 
 +  Sender 
 +  Solicitation 
