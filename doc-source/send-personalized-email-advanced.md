@@ -2,7 +2,7 @@
 
 The template feature in Amazon SES is based on the Handlebars template system\. You can use Handlebars to create templates that include advanced features, such as nested attributes, array iteration, basic conditional statements, and the creation of inline partials\. This section provides examples of these features\.
 
-Handlebars includes additional features beyond those documented in this section\. For more information, see [Built\-In Helpers](http://handlebarsjs.com/builtin_helpers.html) at [handlebarsjs\.com](http://handlebarsjs.com)\.
+Handlebars includes additional features beyond those documented in this section\. For more information, see [Built\-In Helpers](https://handlebarsjs.com/guide/builtin-helpers.html) at [handlebarsjs\.com](http://handlebarsjs.com)\.
 
 **Topics**
 + [Parsing Nested Attributes](#send-personalized-email-advanced-nested)
@@ -42,7 +42,7 @@ For example, you can organize recipient data into several general categories\. W
 }
 ```
 
-In your email templates, you can refer to nested attributes by providing the name of the parent attribute, followed by a period \(\.\), followed by the name of the attribute for which you want to include the value\. For example, if you use the data structure shown in the preceding example, and you want to include each recipient's first name in the email template, include the following text in your email template: `Hello {{Contact.FirstName}}!`
+In your email templates, you can refer to nested attributes by providing the name of the parent attribute, followed by a period \(\.\), followed by the name of the attribute for which you want to include the value\. For example, if you use the data structure shown in the preceding example, and you want to include each recipient's first name in the email template, include the following text in your email template: `Hello {{contact.firstName}}!`
 
 Handlebars can parse paths that are nested several levels deep, which means you have flexibility in how you structure your template data\.
 

@@ -2,6 +2,9 @@
 
 Before you start this tutorial, sign up for an AWS account \(if you don't already have one\), and use [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html) to register the domain you want to use to receive email\.
 
+**Note**  
+Amazon SES only supports email receiving in certain AWS Regions\. For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/ses) in the AWS General Reference\.
+
 ## Sign Up<a name="receiving-email-getting-started-sign-up"></a>
 
 If you already have an AWS account, you can skip this section\.

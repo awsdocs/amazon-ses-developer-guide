@@ -1,11 +1,13 @@
 # Set Up an Amazon SNS Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-sns"></a>
 
-An Amazon Simple Notification Service event destination notifies you about specific email sending events using Amazon SNS\. Because an Amazon SNS event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
+A event destination notifies you about specific email sending events using Amazon SNS\. Because an Amazon SNS event destination only exists within a configuration set, you have to [create a configuration set](event-publishing-create-configuration-set.md) before you add the event destination to the configuration set\.
 
 You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API operation to add an Amazon SNS event destination\.
 
 **Note**  
-It is also possible to receive notifications through Amazon SNS at the account level\. This means that you can receive Amazon SNS notifications every time a sending event occurs across your entire Amazon SES account\. By using event publishing rather than account\-level notifications, you can configure Amazon SES to only send notifications about specific event types, or only for emails sent using a particular configuration set\. For more information about setting up account\-level Amazon SNS notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-using-notifications.md)\.
+It's also possible to receive notifications through Amazon SNS at the account level\. This means that you can receive Amazon SNS notifications every time a sending event occurs across your entire Amazon SES account\. By using event publishing rather than account\-level notifications, you can configure Amazon SES to only send notifications about specific event types, or only for emails sent using a particular configuration set\. For more information about setting up account\-level Amazon SNS notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-activity-using-notifications.md)\.
+
+There are additional charges for sending messages to the endpoints that are subscribed to your Amazon SNS topics\. For more information, see [Amazon SNS Pricing](https://aws.amazon.com/sns/pricing/)\.
 
 **To add an Amazon SNS event destination to a configuration set**
 

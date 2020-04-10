@@ -120,7 +120,7 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
 
 ## Advanced Usage Example<a name="send-email-postfix-advanced"></a>
 
-This example shows how to send an email that uses a [configuration set](using-configuration-sets.md), and that uses MIME\-multipart encoding to send both a plain text and an HTML version of the message, along with an attachment\. It also includes a [link tag](sending-metric-faqs.md#sending-metric-faqs-clicks-q5), which can be used for categorizing click events\. The content of the email is specified in an external file, so that you do not have to manually type the commands in the Postfix session\.
+This example shows how to send an email that uses a [configuration set](using-configuration-sets.md), and that uses MIME\-multipart encoding to send both a plain text and an HTML version of the message, along with an attachment\. It also includes a [link tag](faqs-metrics.md#sending-metric-faqs-clicks-q5), which can be used for categorizing click events\. The content of the email is specified in an external file, so that you do not have to manually type the commands in the Postfix session\.
 
 **To send a multipart MIME email using Postfix**
 

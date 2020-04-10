@@ -24,7 +24,7 @@ HTTPS client errors \(4xx\) indicate that you need to revise the request to corr
 | InvalidQueryParameter | The AWS query string is malformed, does not adhere to AWS standards\. | 400 | All | 
 | MailFromDomainNotVerified | The message could not be sent because Amazon SES could not read the MX record required to use the specified MAIL FROM domain\.  | 400 | `SendEmail`, `SendRawEmail` | 
 | MalformedQueryString | The query string contains a syntax error\. | 404 | All | 
-| MessageRejected | Indicates that the action failed, and the message could not be sent\. Check the error stack for a description of what caused the error\. For more information about problems that can cause this error, see [Amazon SES Email Sending Errors](ses-errors.md)\. | 400 | `SendEmail`, `SendRawEmail` | 
+| MessageRejected | Indicates that the action failed, and the message could not be sent\. Check the error stack for a description of what caused the error\. For more information about problems that can cause this error, see [Amazon SES Email Sending Errors](troubleshoot-error-messages.md)\. | 400 | `SendEmail`, `SendRawEmail` | 
 | MissingAction | The request is missing an action or a required parameter\. | 400 | All | 
 | MissingAuthenticationToken | The request must contain either a valid \(registered\) AWS access key ID or X\.509 certificate\. | 403 | All | 
 | MissingParameter | A required parameter for the specified action is not supplied\. | 400 | All | 

@@ -1,48 +1,25 @@
-# Testing Email Sending Using the Command Line<a name="send-email-smtp-client-command-line"></a>
+# Test Your Connection to the Amazon SES SMTP Interface Using the Command Line<a name="send-email-smtp-client-command-line"></a>
 
-You can interact with the Amazon SES SMTP interface from the command line by using widely\-available applications\. In most cases, you only use these methods to test your ability to connect to the SMTP interface\. However, you can also use these methods to write your own applications that send email using Amazon SES\.
+You can interact with the Amazon SES SMTP interface from your operating system's command line\. The methods described in this section are intended to be used to test your connection to the Amazon SES SMTP endpoint, validate your SMTP credentials, and troubleshoot connection issues\. These procedures use tools and libraries that are included with most common operating systems\. 
 
-This section includes procedures for testing connections and sending email using both OpenSSL \(which is included with most Linux, macOS, and Unix distributions\) and Windows PowerShell \(which is included with most recent versions of Windows\)\.
+For additional information about troubleshooting SMTP connection problems, see [Amazon SES SMTP Issues](troubleshoot-smtp.md)\.
 
 ## Prerequisites<a name="send-email-smtp-client-command-line-prereqs"></a>
 
-In order to connect to the Amazon SES SMTP interface using the command line, you first have to obtain your SMTP credentials\. For more information about obtaining your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
-
-**Important**  
-Your SMTP credentials are different from your standard AWS credentials\. The two types of credentials aren't interchangeable\.
-
-If you plan to use OpenSSL to connect to the SMTP interface, you have to encode your SMTP credentials using base64 encoding\.
-
-**To encode your SMTP user name and password using base64**
-
-1. At the command line, enter the following command to encode your SMTP user name, replacing `SMTPUsername` with your SMTP user name:
-
-   ```
-   echo -n "SMTPUsername" | openssl enc -base64
-   ```
-
-   Make a note of the output of this command\.
-
-1. At the command line, enter the following command to encode your SMTP password, replacing `SMTPPassword` with your SMTP password:
-
-   ```
-   echo -n "SMTPPassword" | openssl enc -base64
-   ```
-
-   Make a note of the output of this command\.
+When you connect to the Amazon SES SMTP interface, you have to provide a set of SMTP credentials\. These SMTP credentials are different from your standard AWS credentials\. The two types of credentials aren't interchangeable\. For more information about obtaining your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
 
 ## Testing Your Connection to the Amazon SES SMTP Interface<a name="send-email-smtp-client-command-line-testing"></a>
 
 You can use the command line to test your connection to the Amazon SES SMTP interface without authenticating or sending any messages\. This procedure is useful for troubleshooting basic connectivity issues\.
 
-This section includes procedures for testing your connection using both OpenSSL \(which is included with most Linux, macOS, and Unix distributions\) and Windows PowerShell \(which is included with most recent versions of Windows\)\.
+This section includes procedures for testing your connection using both OpenSSL \(which is included with most Linux, macOS, and Unix distributions, and is also available for Windows\) and the `Test-NetConnection` cmdlet in PowerShell \(which is included with most recent versions of Windows\)\.
 
 ------
 #### [ Linux, macOS, or Unix ]
 
-There are two ways to connect to the Amazon SES SMTP interface with OpenSSL: using Explicit SSL over port 587, or using Implicit SSL over port 465\.
+There are two ways to connect to the Amazon SES SMTP interface with OpenSSL: using explicit SSL over port 587, or using implicit SSL over port 465\.
 
-**To connect to the SMTP interface using Explicit SSL**
+**To connect to the SMTP interface using explicit SSL**
 + At the command line, enter the following command to connect to the Amazon SES SMTP server:
 
   ```
@@ -65,9 +42,9 @@ There are two ways to connect to the Amazon SES SMTP interface with OpenSSL: usi
 
   The connection automatically closes after about 10 seconds of inactivity\.
 
-Alternatively, you can use Implicit SSL to connect to the SMTP interface over port 465\.
+Alternatively, you can use implicit SSL to connect to the SMTP interface over port 465\.
 
-**To connect to the SMTP interface using Implicit SSL**
+**To connect to the SMTP interface using implicit SSL**
 + At the command line, enter the following command to connect to the Amazon SES SMTP server:
 
   ```
@@ -91,25 +68,30 @@ Alternatively, you can use Implicit SSL to connect to the SMTP interface over po
   The connection automatically closes after about 10 seconds of inactivity\.
 
 ------
-#### [ Windows PowerShell ]
+#### [ PowerShell ]
 
-You can use the `Test-NetConnection` cmdlet to connect to the Amazon SES SMTP server\.
-+ In Windows PowerShell, enter the following command to connect to the Amazon SES SMTP server:
+You can use the [Test\-NetConnection](https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection) cmdlet in PowerShell to connect to the Amazon SES SMTP server\.
+
+**Note**  
+The `Test-NetConnection` cmdlet can determine whether your computer can connect to the Amazon SES SMTP endpoint\. However, it doesn't test whether your computer can make an implicit or explicit SSL connection to the SMTP endpoint\. To test an SSL connection, you can either install OpenSSL for Windows, or complete the procedure in [Using the Command Line to Send Email Using the Amazon SES SMTP Interface](#send-email-using-openssl) to send a test email\.
+
+**To connect to the SMTP interface using the `Test-NetConnection` cmdlet**
++ In PowerShell, enter the following command to connect to the Amazon SES SMTP server:
 
   ```
   Test-NetConnection -Port 587 -ComputerName email-smtp.us-west-2.amazonaws.com
   ```
 
-  In the preceding command, replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
+  In the preceding command, replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region, and replace *587* with the port number\. For more information about regional endpoints in Amazon SES, see [Regions and Amazon SES](regions.md)\.
 
   If the connection was successful, you see output that resembles the following example:
 
   ```
   ComputerName     : email-smtp.us-west-2.amazonaws.com
-  RemoteAddress    : 52.35.84.126
+  RemoteAddress    : 198.51.100.126
   RemotePort       : 587
   InterfaceAlias   : Ethernet
-  SourceAddress    : 172.31.20.46
+  SourceAddress    : 203.0.113.46
   TcpTestSucceeded : True
   ```
 
@@ -119,18 +101,32 @@ You can use the `Test-NetConnection` cmdlet to connect to the Amazon SES SMTP se
 
 You can also use the command line to send messages using the Amazon SES SMTP interface\. This procedure is useful for testing SMTP credentials and for testing the ability of specific recipients to receive messages that you send by using Amazon SES\.
 
-This section includes procedures for sending email using both OpenSSL \(which is included with most Linux, macOS, and Unix distributions\) and Windows PowerShell \(which is included with most recent versions of Windows\)\.
-
 ------
 #### [ Linux, macOS, or Unix ]
 
 When an email sender connects to an SMTP server, the client issues a standard set of requests, and the server replies to each request with a standard response\. This series of requests and responses is called an *SMTP conversation*\. When you connect to the Amazon SES SMTP server using OpenSSL, the server expects an SMTP conversation to occur\.
 
-In this example, you'll add all of the client requests to a text file, and then use that file as input to one of the OpenSSL commands listed in the previous section\.
+When you use OpenSSL to connect to the SMTP interface, you have to encode your SMTP credentials using base64 encoding\. This section includes procedures for encoding your credentials using base64\.
 
 **To send an email from the command line using the SMTP interface**
 
-1. In a text editor, create a new file\. Paste the following code into the file\.
+1. At the command line, enter the following command to encode your SMTP user name, replacing `SMTPUsername` with your SMTP user name:
+
+   ```
+   echo -n "SMTPUsername" | openssl enc -base64
+   ```
+
+   Make a note of the output of this command\.
+
+1. At the command line, enter the following command to encode your SMTP password, replacing `SMTPPassword` with your SMTP password:
+
+   ```
+   echo -n "SMTPPassword" | openssl enc -base64
+   ```
+
+   Make a note of the output of this command\.
+
+1. In a text editor, create a new file\. Paste the following code into the file:
 
    ```
    EHLO example.com
@@ -150,23 +146,25 @@ In this example, you'll add all of the client requests to a text file, and then 
    QUIT
    ```
 
-1. Make the following changes to the file you created in the previous step:
+1. Make the following changes to the file that you created in the previous step:
    + Replace *example\.com* with your sending domain\.
    + Replace *Base64EncodedSMTPUserName* with your base64\-encoded SMTP user name\.
    + Replace *Base64EncodedSMTPPassword* with your base64\-encoded SMTP password\.
    + Replace *sender@example\.com* with the email address you are sending from\. This identity must be verified\.
    + Replace *recipient@example\.com* with the destination email address\. If your Amazon SES account is still in the sandbox, this address must be verified\.
-   + Replace *ConfigSet* with the name of the configuration set that you want to use when you send this email\.
+   + Replace *ConfigSet* with the name of the [configuration set](using-configuration-sets.md) that you want to use when you send this email\.
+**Note**  
+If you don't want to use a configuration set, you can omit the entire line that begins with `X-SES-CONFIGURATION-SET`\.
 
    When you finish, save the file as `input.txt`\.
 
 1. At the command line, choose one of the following options:
-   + **To send using Explicit SSL over port 587** – Enter the following command:
+   + **To send using explicit SSL over port 587** – Enter the following command:
 
      ```
      openssl s_client -crlf -quiet -starttls smtp -connect email-smtp.us-west-2.amazonaws.com:587 < input.txt
      ```
-   + **To send using Implicit SSL over port 465** – Enter the following command:
+   + **To send using implicit SSL over port 465** – Enter the following command:
 
      ```
      openssl s_client -crlf -quiet -connect email-smtp.us-west-2.amazonaws.com:465 < input.txt
@@ -185,33 +183,139 @@ Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SE
 The connection closes automatically after about 10 seconds of inactivity\.
 
 ------
-#### [ Windows PowerShell ]
+#### [ PowerShell ]
 
-You can use the `Net.Mail.SmtpClient` class to send email through Windows PowerShell\.
+You can use the [Net\.Mail\.SmtpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.mail.smtpclient?view=netframework-4.8) class to send email using explicit SSL over port 587\.
 
-**To send an email using Windows PowerShell using the SMTP interface**
-+ In Windows PowerShell, enter the following command:
+**Note**  
+The `Net.Mail.SmtpClient` class is officially obsolete, and Microsoft recommends that you use third\-party libraries\. This code is intended for testing purposes only, and shouldn't be used for production workloads\.
 
-  ```
-  $EmailFrom = "sender@example.com"
-  $EmailTo = "recipient@example.com"
-  $Subject = "Test email sent from Amazon SES"
-  $Body = "This message was sent from Amazon SES using Windows PowerShell."
-  $SMTPServer = "email-smtp.us-west-2.amazonaws.com"
-  $SMTPClient = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
-  $SMTPClient.EnableSsl = $true
-  $SMTPClient.Credentials = New-Object System.Net.NetworkCredential("SMTPUserName", "SMTPPassword");
-  $SMTPClient.Send($EmailFrom, $EmailTo, $Subject, $Body)
-  Remove-Variable -Name SMTPClient
-  ```
+**To send an email through PowerShell using explicit SSL**
 
-  In the preceding command, make the following changes:
-  + Replace *sender@example\.com* with the email address that you want to send the message from\.
-  + Replace *recipient@example\.com* with the email address that you want to send the message to\.
-  + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
-  + Replace *SMTPUserName* with your SMTP user name\.
-  + Replace *SMTPPassword* with your SMTP password\.
+1. In a text editor, create a new file\. Paste the following code into the file:
 
-  If the message was accepted by Amazon SES, this command terminates without producing any output\.
+   ```
+   function SendEmail($Server, $Port, $Sender, $Recipient, $Subject, $Body) {
+       $Credentials = [Net.NetworkCredential](Get-Credential)
+   
+       $SMTPClient = New-Object Net.Mail.SmtpClient($Server, $Port)
+       $SMTPClient.EnableSsl = $true
+       $SMTPClient.Credentials = New-Object System.Net.NetworkCredential($Credentials.Username, $Credentials.Password);
+   
+       try {
+           Write-Output "Sending message..."
+           $SMTPClient.Send($Sender, $Recipient, $Subject, $Body)
+           Write-Output "Message successfully sent to $($Recipient)"
+       } catch [System.Exception] {
+           Write-Output "An error occurred:"
+           Write-Error $_
+       }
+   }
+   
+   function SendTestEmail(){
+       $Server = "email-smtp.us-west-2.amazonaws.com"
+       $Port = 587
+   
+       $Subject = "Test email sent from Amazon SES"
+       $Body = "This message was sent from Amazon SES using PowerShell (explicit SSL, port 587)."
+   
+       $Sender = "sender@example.com"
+       $Recipient = "recipient@example.com"
+   
+       SendEmail $Server $Port $Sender $Recipient $Subject $Body
+   }
+   
+   SendTestEmail
+   ```
+
+   When you finish, save the file as `SendEmail.ps1`\.
+
+1. Make the following changes to the file that you created in the previous step:
+   + Replace *sender@example\.com* with the email address that you want to send the message from\.
+   + Replace *recipient@example\.com* with the email address that you want to send the message to\.
+   + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
+
+1. In PowerShell, enter the following command:
+
+   ```
+   .\path\to\SendEmail.ps1
+   ```
+
+   In the preceding command, replace *path\\to\\SendEmail\.ps1* with the path to the file that you created in step 1\.
+
+1. When prompted, enter your SMTP user name and password\.
+
+Alternatively, you can use the [System\.Web\.Mail\.SmtpMail](https://docs.microsoft.com/en-us/dotnet/api/system.web.mail.smtpmail?view=netframework-4.8) class to send email using implicit SSL over port 465\.
+
+**Note**  
+The `System.Web.Mail.SmtpMail` class is officially obsolete, and Microsoft recommends that you use third\-party libraries\. This code is intended for testing purposes only, and shouldn't be used for production workloads\.
+
+**To send an email through PowerShell using implicit SSL**
+
+1. In a text editor, create a new file\. Paste the following code into the file:
+
+   ```
+   [System.Reflection.Assembly]::LoadWithPartialName("System.Web") > $null
+   
+   function SendEmail($Server, $Port, $Sender, $Recipient, $Subject, $Body) {
+       $Credentials = [Net.NetworkCredential](Get-Credential)
+   
+       $mail = New-Object System.Web.Mail.MailMessage
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserver", $Server)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpserverport", $Port)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpusessl", $true)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusername", $Credentials.UserName)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendpassword", $Credentials.Password)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpconnectiontimeout", $timeout / 1000)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/sendusing", 2)
+       $mail.Fields.Add("http://schemas.microsoft.com/cdo/configuration/smtpauthenticate", 1)
+   
+       $mail.From = $Sender
+       $mail.To = $Recipient
+       $mail.Subject = $Subject
+       $mail.Body = $Body
+   
+       try {
+           Write-Output "Sending message..."
+           [System.Web.Mail.SmtpMail]::Send($mail)
+           Write-Output "Message successfully sent to $($Recipient)"
+       } catch [System.Exception] {
+           Write-Output "An error occurred:"
+           Write-Error $_
+       }
+   }
+   
+   function SendTestEmail(){
+       $Server = "email-smtp.us-west-2.amazonaws.com"
+       $Port = 465
+       
+       $Subject = "Test email sent from Amazon SES"
+       $Body = "This message was sent from Amazon SES using PowerShell (implicit SSL, port 465)."
+   
+       $Sender = "sender@example.com"
+       $Recipient = "recipient@example.com"
+   
+       SendEmail $Server $Port $Sender $Recipient $Subject $Body
+   }
+   
+   SendTestEmail
+   ```
+
+   When you finish, save the file as `SendEmail.ps1`\.
+
+1. Make the following changes to the file that you created in the previous step:
+   + Replace *sender@example\.com* with the email address that you want to send the message from\.
+   + Replace *recipient@example\.com* with the email address that you want to send the message to\.
+   + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the URL of the Amazon SES SMTP endpoint for your AWS Region\. For more information, see [Regions and Amazon SES](regions.md)\.
+
+1. In PowerShell, enter the following command:
+
+   ```
+   .\path\to\SendEmail.ps1
+   ```
+
+   In the preceding command, replace *path\\to\\SendEmail\.ps1* with the path to the file that you created in step 1\.
+
+1. When prompted, enter your SMTP user name and password\.
 
 ------

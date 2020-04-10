@@ -7,7 +7,10 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 | Change | Description | Date Changed | 
 | --- | --- | --- | 
-| New feature | If your account is in good standing, and you're approaching the sending limits for your account, Amazon SES will automatically increase your limits\. For more information, see [Sending Limits](limits.md#limits-sending)\. |  | 
+| New feature | You can now use your own IP ranges to send email\. For more information, see [Using Your Own IP Addresses to Send Email Using Amazon SES](dedicated-ip-byo.md)\. | December 23, 2019 | 
+| New feature | You can now use your own public\-private key pair to complete the DKIM authentication process for a domain\. For more information, see [Provide Your Own DKIM Authentication Token in Amazon SES](send-email-authentication-dkim-bring-your-own.md)\. | December 13, 2019 | 
+| New feature | You can now use an [account\-level suppression list](sending-email-suppression-list.md) to automatically prevent sending messages to email addresses that previously resulted in a bounce or complaint\. | November 25, 2019 | 
+| New feature | If your account is in good standing, and you're approaching the sending quotas for your account, Amazon SES will automatically increase your quotas\. For more information, see [Increasing Your Amazon SES Sending Quotas](manage-sending-quotas-request-increase.md)\. |  | 
 | Documentation update | Added [information about deleting personal data from Amazon SES](deleting-personal-data.md)\. | March 13, 2018 | 
 | Open sourced documentation | The Amazon SES documentation is now available on [GitHub](https://github.com/awsdocs/amazon-ses-developer-guide)\. You can submit issues or request changes in the GitHub repository, or make changes directly and submit a pull request\. | February 22, 2018 | 
 | Documentation update | Added a section that provides information about [deleting personal data](deleting-personal-data.md) stored in Amazon SES\. | February 28, 2018 | 
@@ -38,13 +41,13 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 |  New feature  |  Updated for inbound email\.  |  September 28, 2015   | 
 |  New feature  |  Updated for sending authorization\.  |  July 8, 2015   | 
 |  New feature  |  Updated for AWS CloudTrail logging\.  |  May 7, 2015   | 
-|  Service update  |  Updated to reflect the consolidation of the Amazon SES limit increase forms and removed "production access" terminology\.  |  April 8, 2015   | 
+|  Service update  |  Updated to reflect the consolidation of the Amazon SES quotas increase forms and removed "production access" terminology\.  |  April 8, 2015   | 
 |  Service update  |  Updated with new requirements for domain verification TXT records\.  |  February 25, 2015   | 
 |  Documentation update  |  Added Enforcement FAQ\.  |  December 15, 2014   | 
 |  New feature  |  Updated for delivery notifications\.  |  June 23, 2014   | 
 |  New feature  |  Updated for subdomain support\.  |  March 19, 2014   | 
 |  New feature  |  Updated for Amazon SES expansion to the US West \(Oregon\) region\.  |  January 29, 2014   | 
-|  New feature  |  Updated for Amazon SES expansion to the EU \(Ireland\) region\.  |  January 15, 2014   | 
+|  New feature  |  Updated for Amazon SES expansion to the Europe \(Ireland\) region\.  |  January 15, 2014   | 
 |  New feature  |  Updated to reflect the changes in validation of Header Fields and MIME Types\.  |  November 6, 2013   | 
 |  Documentation update  |  Removed content on Sender ID\.  |  August 22, 2013   | 
 |  New feature  |  Updated to reflect the Amazon SES console redesign\.  |  June 19, 2013   | 
@@ -53,7 +56,7 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 |  Documentation update  |  Added MIME types\.  |  February 4, 2013   | 
 |  Documentation update  |  Included a Getting Started section to replace the stand\-alone Getting Started guide, restructured the Table of Contents, and updated the Sendmail integration instructions\.  |  January 21, 2013   | 
 |  Documentation update  |  Added troubleshooting sections on increasing throughput and SMTP issues\.  |  December 12, 2012   | 
-|  Documentation update  |  Restructured the information on sending limits\.  |  November 9, 2012   | 
+|  Documentation update  |  Restructured the information on sending quotas\.  |  November 9, 2012   | 
 |  New feature  |  Updated for the Amazon SES mailbox simulator\.   |  October 3, 2012   | 
 |  New feature  |  Updated for using a DKIM signature to sign email from a verified identity\.  |  July 17, 2012  | 
 |  New feature  |  Updated for receiving bounce and complaint feedback notifications through Amazon Simple Notification Service \(Amazon SNS\)\.  |  June 26, 2012  | 

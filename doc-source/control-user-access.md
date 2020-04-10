@@ -28,11 +28,11 @@ Then, depending on the `Action`, specify the `Resource` element as follows:
 
 **If the `Action` element only permits access to email\-sending APIs \(that is, `ses:SendEmail` and/or `ses:SendRawEmail`\):**
 + To allow the user to send from any identity in your AWS account, set `Resource` to \*
-+ To limit the identities that the user can send from, set `Resource` to the ARN\(s\) of the identities that you are permitting the user to use\.
++ To restrict the identities that a user is allowed to send from, set `Resource` to the ARNs of the identities that you are permitting the user to use\.
 
 **If the `Action` element permits access to all APIs:**
-+ If you do not want to limit the identities that the user can send from, set `Resource` to \*
-+ If you **do** want to limit the identities that the user can send from, you need to create two policies \(or two statements within one policy\):
++ If you don't want to restrict the identities that the user can send from, set `Resource` to \*
++ If you want to restrict the identities that a user is allowed to send from, you need to create two policies \(or two statements within one policy\):
   + One with `Action` set to an explicit list of the permitted non\-email\-sending APIs and `Resource` set to \*
   + One with `Action` set to one of the email\-sending APIs \(`ses:SendEmail` and/or `ses:SendRawEmail`\), and `Resource` set to the ARN\(s\) of the identities you are permitting the user to use\.
 
@@ -53,7 +53,7 @@ These email address condition keys apply only to the APIs noted in the following
 | `ses:Recipients` | Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\. | `SendEmail`, `SendRawEmail` | 
 | `ses:FromAddress` | Restricts the "From" address\. | `SendEmail`, `SendRawEmail`, `SendBounce` | 
 | `ses:FromDisplayName` | Restricts the "From" address that is used as the display name\.  | `SendEmail`, `SendRawEmail` | 
-| `ses:FeedbackAddress` | Restricts the "Return\-Path" address, which is the address where bounces and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](notifications-via-email.md)\. | `SendEmail`, `SendRawEmail` | 
+| `ses:FeedbackAddress` | Restricts the "Return\-Path" address, which is the address where bounces and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](monitor-sending-activity-using-notifications-email.md)\. | `SendEmail`, `SendRawEmail` | 
 
 ### Restricting General API Usage<a name="iam-and-ses-restrict-API-usage"></a>
 

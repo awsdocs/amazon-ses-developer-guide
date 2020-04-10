@@ -42,7 +42,7 @@ The method through which you can determine if the request has failed depends on 
 + If you are using an AWS SDK for a programming language that uses exceptions, the call to Amazon SES will throw a *MessageRejectedException*\. \(The name of the exception may vary slightly depending on the SDK\.\)
 + If you are using the SMTP interface, then the sender receives an SMTP response code, but how the error is conveyed depends on the sender's client\. Some clients may display an error code; others may not\.
 
-For information about errors that can occur when you send an email with Amazon SES, see [Amazon SES Email Sending Errors](ses-errors.md)\.
+For information about errors that can occur when you send an email with Amazon SES, see [Amazon SES Email Sending Errors](troubleshoot-error-messages.md)\.
 
 ## After Amazon SES Sends an Email<a name="sending-concepts-process-after-send"></a>
 
@@ -60,4 +60,4 @@ If the sender's request to Amazon SES succeeds, then Amazon SES sends the email 
 
   Make sure that your Amazon SES\-enabled program does not retry sending messages that generate an auto response\.
 **Tip**  
-You can use the Amazon SES mailbox simulator to test a successful delivery, bounce, complaint, OOTO, or what happens when an address is on the suppression list\. For more information, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
+You can use the Amazon SES mailbox simulator to test a successful delivery, bounce, complaint, OOTO, or what happens when an address is on the suppression list\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.

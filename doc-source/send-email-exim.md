@@ -1,58 +1,83 @@
 # Integrating Amazon SES with Exim<a name="send-email-exim"></a>
 
-Exim is an MTA that was originally developed for Unix\-like systems\. It is a general purpose mail program that is very flexible and configurable\.
-
-To learn more about Exim, go to [http://www\.exim\.org](http://www.exim.org)\.
+Exim is a Mail Transfer Agent \(MTA\) that is highly flexible and configurable\. To learn more about Exim, visit the [Exim website](http://www.exim.org)\.
 
 **Note**  
 Exim is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
 
-**To configure integration with the Amazon SES US West \(Oregon\) endpoint using STARTTLS**
+**To configure Exim to send email through Amazon SES**
 
-1. Open the */etc/exim/exim\.conf* file for editing\. If the file does not exist, create it\. 
+1. In a text editor, open the file `/etc/exim.conf.local`\. If the file doesn't exist, copy the template from `/etc/exim4/exim4.conf.template`\.
+
+1. In `/etc/exim.conf.local`, make the following changes:
+
+   1. In the `routers` section, after the `begin routers` line, add the following:
+
+      ```
+      send_via_ses:
+      driver = manualroute
+      domains = ! +local_domains
+      transport = ses_smtp
+      route_list = * email-smtp.us-west-2.amazonaws.com;
+      ```
+
+      In the preceding code, replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the SMTP endpoint that you want to use to send the message\. For more information, see [Regions and Amazon SES](regions.md)\.
+
+   1. In the `transports` section, after the `begin transports` line, add the following:
+
+      ```
+      ses_smtp:
+      driver = smtp
+      port = 587
+      hosts_require_auth = *
+      hosts_require_tls = *
+      ```
+
+   1. In the `authenticators` section, after the `begin authenticators` line, add the following:
+
+      ```
+      ses_login:
+      driver = plaintext
+      public_name = LOGIN
+      client_send = : USERNAME : PASSWORD
+      ```
+
+      In the preceding code, replace *USERNAME* with your SMTP username, and *PASSWORD* with your SMTP password\.
 **Important**  
-These instructions assume that you want to use Amazon SES in the US West \(Oregon\) AWS Region\. If you want to use a different region, replace all instances of *email\-smtp\.us\-west\-2\.amazonaws\.com* in these instructions with the SMTP endpoint of the desired region\. For a list of SMTP endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
+Your SMTP credentials are not the same as your AWS Access Key ID and Secret Access Key\. For information about obtaining your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
 
-1. In */etc/exim/exim\.conf*, make the following changes:
+1. Save `/etc/exim.conf.local`\.
 
-   1. In the *routers* section, after the *begin routers* line, add the following:
+1. When you finish updating the configuration, enter the following command to restart Exim\.
 
-      ```
-      1. send_via_ses:
-      2. driver = manualroute
-      3. domains = ! +local_domains
-      4. transport = ses_smtp
-      5. route_list = * email-smtp.us-west-2.amazonaws.com;
-      ```
-
-   1. In the *transports* section, after the *begin transports* line, add the following:
-
-      ```
-      1. ses_smtp:
-      2. driver = smtp
-      3. port = 587
-      4. hosts_require_auth = *
-      5. hosts_require_tls = *
-      ```
-
-   1. In the *authenticators* section, after the *begin authenticators* line, add the following, replacing USERNAME and PASSWORD with your SMTP user name and password:
-**Important**  
-Use your SMTP user name and password, not your AWS access key ID and secret access key\. Your SMTP credentials and your AWS credentials are not the same\. For information about how to obtain your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
-
-      ```
-      1. ses_login:
-      2. driver = plaintext
-      3. public_name = LOGIN
-      4. client_send = : USERNAME : PASSWORD
-      ```
-
-1. Save the */etc/exim/exim\.conf* file\.
-
-When you have finished updating the configuration, restart Exim\. At the command line, type the following command and press ENTER\.
-
- `sudo /etc/init.d/exim restart` 
-
+   ```
+   sudo /etc/init.d/exim4 restart
+   ```
 **Note**  
-This command may not be exactly the same on your particular server\.
+This command might differ depending on which operating system you use\.
 
-When you have completed this procedure, your outgoing email will be sent via Amazon SES\. To test your configuration, send an email message through your Exim server, and then verify that arrives at its destination\. If the message is not delivered, then check your system's mail log for errors\. On many systems, this is the /var/log/exim/main\.log file\.
+1. At the command line, complete the following steps to send a test message:
+
+   1. Enter the following command:
+
+      ```
+      exim -v sender@example.com
+      ```
+
+      In the preceding command, replace *recipient@example\.com* with the address that you want to send the message to\.
+
+   1. Enter the following, pressing Enter at the end of each line:
+
+      ```
+      From: sender@example.com
+      Subject: Test message
+      This is a test.
+      
+      .
+      ```
+
+      In the preceding command, replace *sender@example\.com* with the address that you want to send the message from\.
+
+      When you press Enter after the final period \(\.\), Exim begins the conversation with the SMTP server\. If the connection remains open after the message is sent, press Ctrl\+D to close it\.
+**Tip**  
+If the message isn't delivered, check your system's mail log for errors\. The Exim mail log is usually located at `/var/log/exim4/mainlog`\.

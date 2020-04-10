@@ -19,7 +19,7 @@ You can monitor email sending events in several ways\. The method you choose dep
 
 | Monitoring Method | Events You Can Monitor | How to Access the Data | Level of Detail | Granularity | 
 | --- | --- | --- | --- | --- | 
-|  Amazon SES console  |  Deliveries and rejects  |  [Sending Statistics page](monitor-using-console.md) in Amazon SES console  |  Count only  |  Across entire AWS account  | 
+|  Amazon SES console  |  Deliveries and rejects  |  [Sending Statistics page](monitor-sending-activity-console.md) in Amazon SES console  |  Count only  |  Across entire AWS account  | 
 |  Amazon SES console  |  Bounce and complaint rates  |  [Reputation Dashboard page](reputation-dashboard-dg.md) in Amazon SES console  |  Calculated rates only  |  Across entire AWS account  | 
 |  Amazon SES API  |  Deliveries, bounces, complaints, and rejects  |  `GetSendStatistics` API operation  |  Count only  |  Across entire AWS account  | 
 |  Amazon CloudWatch console  |  Sends, deliveries, opens, clicks, bounces, complaints, and rejects  |  CloudWatch console  Some metrics don't appear in CloudWatch until the associated event occurs\. For example, bounce metrics don't appear in CloudWatch until at least one email that you send bounces\.   |  Count only  |  Across entire AWS account  | 
@@ -27,14 +27,13 @@ You can monitor email sending events in several ways\. The method you choose dep
 |  Event publishing  |  Sends, deliveries, opens, clicks, bounces, complaints, rejects, and rendering failures\.  |  Amazon CloudWatch or Amazon Kinesis Data Firehose, or by Amazon SNS notification  |  Details on each event  |  Fine\-grained \(based on user\-definable email characteristics\)  | 
 
 **Note**  
-The metrics measured by email sending events may not align perfectly with your sending limits\. This discrepancy can be caused by email bounces and rejections, or by using the Amazon SES inbox simulator\. To find out how close you are to your sending limits, see [Monitoring Your Sending Limits](monitor-sending-limits.md)\.
+The metrics measured by email sending events may not align perfectly with your sending quotas\. This discrepancy can be caused by email bounces and rejections, or by using the Amazon SES inbox simulator\. To find out how close you are to your sending quotas, see [Monitoring Your Sending Quotas](manage-sending-quotas-monitor.md)\.
 
-For information on how to use each monitoring method, see the following topics:
-+ [Monitoring Your Sending Statistics Using the Amazon SES Console](monitor-using-console.md)
-+ [Monitoring Your Amazon SES Sender Reputation](monitor-sender-reputation.md)
-+ [Monitoring Your Usage Statistics Using the Amazon SES API](monitor-usage-statistics-api.md)
-+ [Monitoring Using Notifications](monitor-sending-using-notifications.md)
-+ [Monitoring Using Event Publishing](monitor-using-event-publishing.md)
+**Topics**
++ [Monitoring Your Sending Statistics Using the Amazon SES Console](monitor-sending-activity-console.md)
++ [Monitoring Your Usage Statistics Using the Amazon SES API](monitor-sending-activity-api.md)
++ [Monitoring Using Amazon SES Notifications](monitor-sending-activity-using-notifications.md)
++ [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)
 
 
 ****  

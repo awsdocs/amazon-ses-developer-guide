@@ -21,8 +21,8 @@ Even when you have your customers' best interests in mind, you may still encount
 + Avoid using a *no\-reply* address, such as *no\-reply@example\.com*, as your "From" or "Reply\-to" address\. Using a *no\-reply@* email address sends your recipients a clear message: that you aren't offering them a way to contact you, and that you're not interested in their feedback\.
 
 ## Authentication<a name="authentication-considerations"></a>
-+ Authenticate your domain with [SPF](spf.md) and SenderID\. These authentication methods confirm to email recipients that each email you send is actually from the domain it claims to be from\.
-+ Sign your outbound mail with [DKIM](dkim.md)\. This step confirms to recipients that the content has not been changed in transit between sender and receiver\.
++ Authenticate your domain with [SPF](send-email-authentication-spf.md) and SenderID\. These authentication methods confirm to email recipients that each email you send is actually from the domain it claims to be from\.
++ Sign your outbound mail with [DKIM](send-email-authentication-dkim.md)\. This step confirms to recipients that the content has not been changed in transit between sender and receiver\.
 + You can test your authentication settings for both SPF and DKIM by sending an email to an ISP\-based email address that you own, such as a personal Gmail or Hotmail account, and then viewing the message's headers\. The headers indicate whether your attempts to authenticate and sign the message were successful\.
 
 ## Building and Maintaining Your Lists<a name="building-and-maintaining-lists"></a>

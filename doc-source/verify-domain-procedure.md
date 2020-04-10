@@ -3,7 +3,7 @@
 The following procedure shows you how to verify a domain using the Amazon SES console\. If you want to use the Amazon SES API instead, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. 
 
 **Note**  
-As an alternative to completing the procedure in this section, you can also enable [Easy DKIM](easy-dkim.md)\. When Amazon SES detects that you've added the DKIM records to the DNS configuration for a domain, you can start sending email from that domain, even if you haven't already completed the procedure in this section\.
+As an alternative to completing the procedure in this section, you can also enable [Easy DKIM](send-email-authentication-dkim-easy.md)\. When Amazon SES detects that you've added the DKIM records to the DNS configuration for a domain, you can start sending email from that domain, even if you haven't already completed the procedure in this section\.
 
 **To verify a domain**
 
@@ -15,7 +15,13 @@ As an alternative to completing the procedure in this section, you can also enab
 
 1. Choose **Verify a New Domain**\.
 
-1. In the **Verify a New Domain** dialog box, enter the domain name\. If you want to set up DKIM signing for this domain, select the **Generate DKIM Settings** option\. \(For information about DKIM signing, see [Authenticating Email with DKIM in Amazon SES](dkim.md)\.\) Choose **Verify This Domain**\.
+1. In the **Verify a New Domain** dialog box, enter the domain name\.
+**Tip**  
+If your domain is *www\.example\.com*, enter *example\.com* as your domain\. The "www\." part isn't necessary, and the domain verification process won't succeed if you include it\.
+
+1. If you want to set up DKIM signing for this domain, choose **Generate DKIM Settings**\. For information about DKIM signing, see [Authenticating Email with DKIM in Amazon SES](send-email-authentication-dkim.md)\.
+
+1. Choose **Verify This Domain**\.
 
 1. In the **Verify a New Domain** dialog box, you will see a **Domain Verification Record Set** containing a **Name**, a **Type**, and a **Value**\. \(This information will also be available by choosing the domain name after you close the dialog box\.\)
 
@@ -34,4 +40,4 @@ As an alternative to completing the procedure in this section, you can also enab
 
 1. You can now use Amazon SES to send email from any address in the verified domain\. To send a test email, check the box next to the verified domain, and then choose **Send a Test Email**\.
 
-If the DNS settings are not correctly updated, you will receive a domain verification failure email from Amazon SES, and the domain will display a status of failed on the **Domains** tab\. If this happens, complete the steps on the troubleshooting page at [Amazon SES Email Address and Domain Verification Problems](domain-verification-problems.md)\. After you verify that your TXT was created correctly, choose the **retry** link next to the failed status notification to restart the domain verification process\.
+If the DNS settings are not correctly updated, you will receive a domain verification failure email from Amazon SES, and the domain will display a status of failed on the **Domains** tab\. If this happens, complete the steps on the troubleshooting page at [Common Domain Verification Problems](troubleshoot-verification.md#troubleshoot-verification-domain)\. After you verify that your TXT was created correctly, choose the **retry** link next to the failed status notification to restart the domain verification process\.

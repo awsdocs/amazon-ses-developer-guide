@@ -31,11 +31,30 @@ The link in the verification message expires 24 hours after the message was sent
 
 ## Verify an Email Address Using the Amazon SES API<a name="verify-email-addresses-api-procedure"></a>
 
-Use the [VerifyEmailIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation to create a new email identity\. When you execute this operation, a verification email is sent to the specified address\.
+You can use the [VerifyEmailIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation to create a new email identity\. An easy way to call this operation for individual identities is to use the AWS CLI\.
 
-To verify an email address using the AWS CLI, type the following command at the command line: aws ses verify\-email\-identity \-\-email\-address *sender@example\.com*
+**Note**  
+Before you complete the procedure in this section, you have to install and configure the AWS CLI\. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
-In the preceding command, replace *sender@example\.com* with the email address that you want to verify\.
+**To verify an email address by using the AWS CLI**
+
+1. At the command line, enter the following command:
+
+   ```
+   aws ses verify-email-identity --email-address sender@example.com
+   ```
+
+   In the preceding command, replace *sender@example\.com* with the email address that you want to verify\.
+
+   If the command executes successfully, it exits without providing any output\. 
+
+1. Check the inbox for the email address that you're verifying\. You'll receive a message with the following subject line: "Amazon Web Services \- Email Address Verification Request in region *RegionName*," where `RegionName` is the name of the AWS Region that you attempted to verify the email address in\.
+
+   Open the message, and then click the link in it\.
+**Note**  
+The link in the verification message expires 24 hours after the message was sent\. If 24 hours have passed since you received the verification email, repeat steps 1–5 to receive a verification email with a valid link\.
+
+1. In the Amazon SES console, under **Identity Management**, choose **Email Addresses**\. In the list of email addresses, locate the email address you're verifying\. If the email address was verified, the value in the **Status** column is "verified"\.
 
 For a script that can be used to verify several email identities in a single operation, see [Verify Multiple Email Addresses](sample-code-bulk-verify.md)\.
 

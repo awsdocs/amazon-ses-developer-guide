@@ -12,8 +12,6 @@ Each sending authorization policy is a JSON document that is attached to an iden
 + Policy\-wide information at the top of the document\.
 + One or more individual statements, each of which describes a set of permissions\.
 
-Each statement includes the core information about a single permission\. If a policy includes multiple statements, Amazon SES applies a logical OR across the statements at evaluation time\. Similarly, if an identity has multiple policies attached to it, Amazon SES applies a logical OR across the policies at evaluation time\.
-
 The following example policy grants AWS account ID *123456789012* permission to send from the verified domain *example\.com*\.
 
 ```
@@ -31,12 +29,14 @@ The following example policy grants AWS account ID *123456789012* permission to 
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
-17.       ]
-18.     }
-19.   ]
-20. }
+15.         "ses:SendEmail",
+16.         "ses:SendTemplatedEmail",
+17.         "ses:SendRawEmail",
+18.         "ses:SendBulkTemplatedEmail"
+19.       ]
+20.     }
+21.   ]
+22. }
 ```
 
 You can find more sending authorization policy examples at [Sending Authorization Policy Examples](sending-authorization-policy-examples.md)\.
@@ -56,8 +56,8 @@ There are two policy\-wide elements: `Id` and `Version`\. The following table pr
 
 |  Name  |  Description  |  Required  |  Valid Values  | 
 | --- | --- | --- | --- | 
-|   `Id`   |  Uniquely identifies the policy\.  |  No\.  |  Any string  | 
-|   `Version`   |  Specifies the policy access language version\.  |  No, but as a best practice, we recommend that you include this field with a value of "2012\-10\-17"\.  |  Any string  | 
+|   `Id`   |  Uniquely identifies the policy\.  |  No  |  Any string  | 
+|   `Version`   |  Specifies the policy access language version\.  |  No  |  Any string\. As a best practice, we recommend that you include this field with a value of "2012\-10\-17"\.  | 
 
 ### Statements Specific to the Policy<a name="sending-authorization-policy-statements"></a>
 
@@ -68,16 +68,16 @@ Sending authorization policies require at least one statement\. Each statement c
 
 |  Name  |  Description  |  Required  |  Valid Values  | 
 | --- | --- | --- | --- | 
-|   `Sid`   |  Uniquely identifies the statement\.  |  No\.  |  Any string\.  | 
-|   `Effect`   |  Specifies the result that you want the policy statement to return at evaluation time\.  |  No, although a statement without an effect is useless\.  |  "Allow" or "Deny"\.  | 
-|   `Resource`   |  Specifies the identity to which the policy applies\. This is the email address or domain that the identity owner is authorizing the delegate sender to use\.  |  Yes\.  |  An identity's ARN, as specified in the Amazon SES console\.  | 
-|   `Principal`   |  Specifies the AWS account, IAM user, or AWS service that receives the permission in the statement\.  |  Yes\.  |  A valid AWS account ID, IAM user ARN, or AWS service\. AWS account IDs and IAM user ARNs are specified using `"AWS"` \(for example, `"AWS": ["123456789012"]` or `"AWS": ["arn:aws:iam::123456789012:root"]`\)\. AWS service names are specified using `"Service"` \(for example, `"Service": ["cognito-idp.amazonaws.com"]`\)\.  For examples of the format of IAM user ARNs, see the [AWS General Reference](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam.html)\.  | 
-|   `Action`   |  Specifies the email sending action that the statement applies to\.  |  Yes\.  |  "ses:SendEmail", "ses:SendRawEmail" \(one or both\)\.  If you use the custom policy editor, you can also set the action to "ses:\*" to encompass both APIs\. If your sender will access Amazon SES through the SMTP interface, you must at least specify "ses:SendRawEmail", or use "ses:\*"\.  | 
-|   `Condition`   |  Specifies any restrictions or details about the permission\.  |  No\.  |  See the information about conditions following this table\.  | 
+|   `Sid`   |  Uniquely identifies the statement\.  |  No  |  Any string\.  | 
+|   `Effect`   |  Specifies the result that you want the policy statement to return at evaluation time\.  |  Yes  |  "Allow" or "Deny"\.  | 
+|   `Resource`   |  Specifies the identity to which the policy applies\. This is the email address or domain that the identity owner is authorizing the delegate sender to use\.  |  Yes  |  The Amazon Resource Name \(ARN\) of the email identity\.  | 
+|   `Principal`   |  Specifies the AWS account, IAM user, or AWS service that receives the permission in the statement\.  |  Yes  |  A valid AWS account ID, IAM user ARN, or AWS service\. AWS account IDs and IAM user ARNs are specified using `"AWS"` \(for example, `"AWS": ["123456789012"]` or `"AWS": ["arn:aws:iam::123456789012:root"]`\)\. AWS service names are specified using `"Service"` \(for example, `"Service": ["cognito-idp.amazonaws.com"]`\)\.  For examples of the format of IAM user ARNs, see the [AWS General Reference](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam.html)\.  | 
+|   `Action`   |  Specifies the email sending action that the statement applies to\.  |  Yes  |  "ses:SendEmail", "ses:SendRawEmail", "ses:SendTemplatedEmail", "ses:SendBulkTemplatedEmail" You can specify one or more of these operations\. You can also specify "ses:Send\*" to encompass all of these operations\. If the delegate sender plans to send email by using the SMTP interface, you have to specify "ses:SendRawEmail", or use "ses:Send\*"\.  | 
+|   `Condition`   |  Specifies any restrictions or details about the permission\.  |  No  |  See the information about conditions following this table\.  | 
 
 ### Conditions<a name="sending-authorization-policy-conditions"></a>
 
-A *condition* is any restriction about the permission in the statement\. The part of the statement that specifies the conditions can be the most detailed of all the parts\. A *key* is the specific characteristic that is the basis for access restriction, such as the date and time of the request\.
+A *condition* is any restriction about the permission in the statement\. The part of the statement that specifies the conditions can be the most detailed of all the parts\. A *key* is the specific characteristic that's the basis for access restriction, such as the date and time of the request\.
 
 You use both conditions and keys together to express the restriction\. For example, if you want to restrict the delegate sender from making requests to Amazon SES on your behalf after July 30, 2019, you use the condition called `DateLessThan`\. You use the key called `aws:CurrentTime` and set it to the value `2019-07-30T00:00:00Z`\. 
 
@@ -91,34 +91,33 @@ You can use any of the AWS\-wide keys listed at [Available Keys](https://docs.aw
 |   `ses:Recipients`   |  Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\.  | 
 |   `ses:FromAddress`   |  Restricts the "From" address\.  | 
 |   `ses:FromDisplayName`   |  Restricts the contents of the string that is used as the "From" display name \(sometimes called "friendly from"\)\. For example, the display name of "John Doe <johndoe@example\.com>" is John Doe\.  | 
-|   `ses:FeedbackAddress`   |  Restricts the "Return Path" address, which is the address where bounce and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](notifications-via-email.md)\.  | 
+|   `ses:FeedbackAddress`   |  Restricts the "Return Path" address, which is the address where bounce and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](monitor-sending-activity-using-notifications-email.md)\.  | 
 
-It is common to use the `StringEquals` and `StringLike` conditions with the Amazon SES keys\. These conditions are for case\-sensitive string matching\. For `StringLike`, the values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\. For example, the following condition specifies that the delegate sender can only send from a "From" address that starts with *invoicing* and ends with *example\.com*:
+You can use the `StringEquals` and `StringLike` conditions with Amazon SES keys\. These conditions are for case\-sensitive string matching\. For `StringLike`, the values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\. For example, the following condition specifies that the delegate sender can only send from a "From" address that starts with *invoicing* and ends with *@example\.com*:
 
 ```
 1. "Condition": {
 2.     "StringLike": {
-3.       "ses:FromAddress": "invoicing+.*@example.com"
+3.       "ses:FromAddress": "invoicing*@example.com"
 4.     }
 5. }
 ```
 
-**Note**  
-When you want to disallow access to an email address, you can use wildcards to ensure that you're completely preventing access to all variations of that address\. For example, to disallow sending from *admin@example\.com*, you can prevent access to alternatives such as *"admin"@example\.com* and *admin\+1@example\.com* by specifying the following condition:  
+You can also use the `StringNotLike` condition to prevent delegate senders from sending email from certain email addresses\. For example, you can disallow sending from *admin@example\.com*, as well as similar addresses such as *"admin"@example\.com*, *admin\+1@example\.com*, or *sender@admin\.example\.com*, by including the following condition in your policy statement:
 
 ```
 1. "Condition": {
 2.     "StringNotLike": {
-3.       "ses:FromAddress": "*admin*.example.com"
+3.       "ses:FromAddress": "*admin*example.com"
 4.     }
 5.  }
 ```
 
-For more information about how to specify conditions, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Condition) in the *IAM User Guide*\.
+For more information about how to specify conditions, see [IAM JSON Policy Elements: Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) in the *IAM User Guide*\.
 
 ## Policy Requirements<a name="sending-authorization-policy-restrictions"></a>
 
-Each policy must adhere to the following requirements:
+Policies must meet all of the following requirements:
 + Each policy has to include at least one statement\.
 + Each policy has to include at least one valid principal\.
 + Each policy has to specify one resource, and that resource has to be the ARN of the identity that the policy is attached to\.

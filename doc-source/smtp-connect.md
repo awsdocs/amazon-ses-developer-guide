@@ -7,7 +7,13 @@ The following table shows the Amazon SES SMTP endpoints for the AWS Regions wher
 | --- | --- | 
 |  US East \(N\. Virginia\)  |  email\-smtp\.us\-east\-1\.amazonaws\.com  | 
 |  US West \(Oregon\)  |  email\-smtp\.us\-west\-2\.amazonaws\.com  | 
-|  EU \(Ireland\)  |  email\-smtp\.eu\-west\-1\.amazonaws\.com  | 
+|  Asia Pacific \(Mumbai\)  |  email\-smtp\.ap\-south\-1\.amazonaws\.com  | 
+|  Asia Pacific \(Sydney\)  |  email\-smtp\.ap\-southeast\-2\.amazonaws\.com  | 
+|  Canada \(Central\)  |  email\-smtp\.ca\-central\-1\.amazonaws\.com  | 
+|  Europe \(Frankfurt\)  |  email\-smtp\.eu\-central\-1\.amazonaws\.com  | 
+|  Europe \(Ireland\)  |  email\-smtp\.eu\-west\-1\.amazonaws\.com  | 
+|  Europe \(London\)  |  email\-smtp\.eu\-west\-2\.amazonaws\.com  | 
+|  South America \(São Paulo\)  |  email\-smtp\.sa\-east\-1\.amazonaws\.com  | 
 
 The Amazon SES SMTP endpoint requires that all connections be encrypted using Transport Layer Security \(TLS\)\. \(Note that TLS is often referred to by the name of its predecessor protocol, SSL\.\) Amazon SES supports two mechanisms for establishing a TLS\-encrypted connection: STARTTLS and TLS Wrapper\. Check the documentation for your software to determine whether it supports STARTTLS, TLS Wrapper, or both\.
 

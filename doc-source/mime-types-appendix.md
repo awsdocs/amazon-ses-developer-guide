@@ -3,7 +3,7 @@
 You can send messages with attachments through Amazon SES by using the Multipurpose Internet Mail Extensions \(MIME\) standard\. Amazon SES accepts all file attachment types *except* for attachments with the file extensions in the following list\.
 
 **Note**  
-Some ISPs have further limitations \(such as restrictions regarding archived attachments\), so we recommend testing your email sending through major ISPs before you send your production email\.
+Some ISPs have further restrictions \(such as restrictions regarding archived attachments\), so we recommend testing your email sending through major ISPs before you send your production email\.
 
 
 |  |  |  |  |  | 

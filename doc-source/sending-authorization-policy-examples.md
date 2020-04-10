@@ -129,7 +129,7 @@ If you use a verified domain, you may want to create a policy that only allows t
 
 ## Restricting the Time at which the Delegate can Send Email<a name="sending-authorization-policy-example-time"></a>
 
-You can also configure your sender authorization policy so that a delegate sender can only send email at a certain time of day, or within a certain date range\. For example, if you plan to send an email campaign during the month of September 2018, you can use the following policy to limit the delegate's ability to send email to that month only\.
+You can also configure your sender authorization policy so that a delegate sender can only send email at a certain time of day, or within a certain date range\. For example, if you plan to send an email campaign during the month of September 2018, you can use the following policy to restrict the delegate's ability to send email to that month only\.
 
 ```
  1. {

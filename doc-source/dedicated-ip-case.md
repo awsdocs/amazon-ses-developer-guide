@@ -10,7 +10,7 @@ For a list of all of the Regions where Amazon SES is currently available, see [A
 
 ## Requesting Dedicated IP Addresses<a name="dedicated-ip-case-request"></a>
 
-The following steps show how to request dedicated IP addresses by creating a service limit increase case in the AWS Support Center\. You can use this process to request as many dedicated IP addresses as you need\.
+The following steps show how to request dedicated IP addresses by creating a service quota increase case in the AWS Support Center\. You can use this process to request as many dedicated IP addresses as you need\.
 
 **To request dedicated IP addresses**
 

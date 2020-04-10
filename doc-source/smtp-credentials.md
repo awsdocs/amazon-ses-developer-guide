@@ -3,7 +3,7 @@
 You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\. If you plan to use the SMTP interface to send email in multiple AWS Regions, you need to obtain a unique set of SMTP credentials for each Region\.
 
 **Important**  
-Your SMTP user name and password are different from your AWS access key ID and secret access key\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
+Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
 
 ## Obtaining Amazon SES SMTP Credentials Using the Amazon SES Console<a name="smtp-credentials-console"></a>
 
@@ -30,9 +30,11 @@ This is the only time that you can view your SMTP credentials\. We recommend tha
 
 1. Choose **Close Window**\.
 
-If you want to delete your SMTP credentials, go to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/) and delete the IAM user name that corresponds with your SMTP credentials\. To learn more, go to the [Using IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_DeletingUserFromAccount.html) guide\.
+You can view a list of existing SMTP credentials that you've created using this procedure by going to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. In the navigation pane, under **Access management**, choose **Users**\. Use the search bar to find all users that contain the text "ses\-smtp\-user"\.
 
-If you want to change your SMTP password, go to the IAM console and delete your existing IAM user, and then go to the Amazon SES console to re\-generate your SMTP credentials\.
+You can also use the IAM console to delete existing SMTP users\. To learn more about deleting users, see [https://docs\.aws\.amazon\.com/IAM/latest/UserGuide/Managing IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html) in the *IAM Getting Started Guide*\.
+
+If you want to change your SMTP password, delete your existing SMTP user in the IAM console\. Then, complete the procedures above to generate a new set of SMTP credentials\.
 
 ## Obtaining Amazon SES SMTP Credentials by Converting Existing AWS Credentials<a name="smtp-credentials-convert"></a>
 

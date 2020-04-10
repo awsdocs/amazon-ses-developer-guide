@@ -14,8 +14,8 @@ The following table lists resources that you may find useful as you work with Am
 | --- | --- | 
 |  [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)  |  The Amazon SES API Reference\. Contains complete descriptions of the API actions, parameters, and data types, and a list of errors that the service returns\.  | 
 |   [Amazon SES Pricing](https://aws.amazon.com/ses/pricing)   |  Pricing information for Amazon SES\.  | 
-|  [SES Sending Limits Increase case](https://aws.amazon.com/ses/extendedaccessrequest/)  |  The Support Center form to request an increase to your sending limits and move out of the sandbox\.  | 
-|  [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)   |  The forum in which Amazon SES users can post questions and discuss various Amazon SES topics\.  | 
+|  [SES Sending Limits Increase case](https://aws.amazon.com/ses/extendedaccessrequest/)  |  The Support Center form to request an increase to your sending quotas and move out of the sandbox\.  | 
+|  [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)   |  A forum where Amazon SES users can post questions and discuss various Amazon SES topics\.  | 
 |  [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)   |  The blog that contains blog posts and announcements by the Amazon SES team\.  | 
 |   [AWS Developer Tools](https://aws.amazon.com/developertools/)   |  Links to developer tools and resources that provide documentation, code samples, release notes, and other information to help you build innovative applications with AWS\.   | 
 |   [AWS Support Center](https://aws.amazon.com/premiumsupport/)   |  The hub for creating and managing your AWS Support cases\. Also includes links to other helpful resources, such as forums, technical FAQs, service health status, and AWS Trusted Advisor\.  | 

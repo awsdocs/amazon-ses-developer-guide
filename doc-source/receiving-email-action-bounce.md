@@ -12,7 +12,7 @@ The Amazon SNS topic you choose must be in the same AWS region as the Amazon SES
 You can type in your own values for these fields, or you can choose a template that fills in the SMTP Reply Code, SMTP Status Code, and Message fields with values based on the bounce reason\. The following templates are available:
 + **Mailbox Does Not Exist—** SMTP Reply Code = 550, SMTP Status Code = 5\.1\.1
 + **Message Too Large—** SMTP Reply Code = 552, SMTP Status Code = 5\.3\.4
-+ **Message Full—** SMTP Reply Code = 552, SMTP Status Code = 5\.2\.2
++ **Mailbox Full—** SMTP Reply Code = 552, SMTP Status Code = 5\.2\.2
 + **Message Content Rejected—** SMTP Reply Code = 500, SMTP Status Code = 5\.6\.1
 + **Unknown Failure—** SMTP Reply Code = 554, SMTP Status Code = 5\.0\.0
 + **Temporary Failure—** SMTP Reply Code = 450, SMTP Status Code = 4\.0\.0

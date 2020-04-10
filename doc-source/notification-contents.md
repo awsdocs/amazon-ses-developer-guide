@@ -204,7 +204,8 @@ Amazon SES provides notifications for hard bounces, as well as for soft bounces 
 |  `Undetermined`  |  `Undetermined`  |  The recipient's email provider sent a bounce message\. The bounce message didn't contain enough information for Amazon SES to determine the reason for the bounce\. The bounce email, which was sent to the address in the Return\-Path header of the email that resulted in the bounce, might contain additional information about the issue that caused the email to bounce\.  | 
 |  `Permanent`  |  `General`  |  The recipient's email provider sent a hard bounce message, but didn't specify the reason for the hard bounce\.   When you receive this type of bounce notification, you should immediately remove the recipient's email address from your mailing list\. Sending messages to addresses that produce hard bounces can have a negative impact on your reputation as a sender\. If you continue sending email to addresses that produce hard bounces, we might pause your ability to send additional email\.   | 
 |  `Permanent`  |  `NoEmail`  |  The intended recipient's email provider sent a bounce message indicating that the email address doesn't exist\.  When you receive this type of bounce notification, you should immediately remove the recipient's email address from your mailing list\. Sending messages to addresses that don't exist can have a negative impact on your reputation as a sender\. If you continue sending email to addresses that don't exist, we might pause your ability to send additional email\.   | 
-|  `Permanent`  |  `Suppressed`  |  The recipient's email address is on the Amazon SES suppression list because it has a recent history of producing hard bounces\. For information about removing an address from the Amazon SES suppression list, see [Removing an Email Address from the Amazon SES Suppression List](remove-from-suppression-list.md)\.  | 
+|  `Permanent`  |  `Suppressed`  |  The recipient's email address is on the Amazon SES suppression list because it has a recent history of producing hard bounces\. For information about removing an address from the Amazon SES suppression list, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.  | 
+|  `Permanent`  |  `OnAccountSuppressionList`  | Amazon SES has suppressed sending to this address because it is on the [account\-level suppression list](sending-email-suppression-list.md)\.  | 
 |  `Transient`  |  `General`  |  The recipient's email provider sent a general bounce message\. You might be able to send a message to the same recipient in the future if the issue that caused the message to bounce is resolved\.  If you send an email to a recipient who has an active automatic response rule \(such as an "out of the office" message\), you might receive this type of notification\. Even though the response has a notification type of `Bounce`, Amazon SES doesn't count automatic responses when it calculates the bounce rate for your account\.   | 
 |  `Transient`  |  `MailboxFull`  |  The recipient's email provider sent a bounce message because the recipient's inbox was full\. You might be able to send to the same recipient in the future when the mailbox is no longer full\.  | 
 |  `Transient`  |  `MessageTooLarge`  |  The recipient's email provider sent a bounce message because message you sent was too large\. You might be able to send a message to the same recipient if you reduce the size of the message\.  | 
@@ -221,6 +222,7 @@ The JSON object that contains information about complaints has the following fie
 |  `complainedRecipients`  |  A list that contains information about recipients that may have been responsible for the complaint\. For more information, see [Complained Recipients](#complained-recipients)\.  | 
 |  `timestamp`  |  The date and time when the ISP sent the complaint notification, in ISO 8601 format\. The date and time in this field might not be the same as the date and time when Amazon SES received the notification\.   | 
 |  `feedbackId`  |  A unique ID associated with the complaint\.  | 
+|  `complaintSubType`  | The value of the `complaintSubType` field can either be null or `OnAccountSuppressionList`\. If the value is `OnAccountSuppressionList`, Amazon SES accepted the message, but didn't attempt to send it because it was on the [account\-level suppression list](sending-email-suppression-list.md)\. | 
 
 Further, if a feedback report is attached to the complaint, the following fields may be present\.
 
@@ -235,7 +237,7 @@ The following is an example of a `complaint` object\.
 
 ```
 {
-   "userAgent":"AnyCompany Feedback Loop (V0.01)",
+   "userAgent":"ExampleCorp Feedback Loop (V0.01)",
    "complainedRecipients":[
       {
          "emailAddress":"recipient1@example.com"

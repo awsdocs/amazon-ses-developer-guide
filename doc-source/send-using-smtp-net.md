@@ -2,10 +2,10 @@
 
 The following procedure shows how to use [Microsoft Visual Studio](https://www.visualstudio.com/) to create a C\# console application that sends an email through Amazon SES\. The procedures in this section apply to Visual Studio 2017, but the process of creating C\# console applications is similar across Microsoft Visual Studio editions\.
 
-Before you perform the following procedure, complete the setup tasks described in [Before You Begin with Amazon SES](before-you-begin.md) and [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)\.
+Before you perform the following procedure, complete the setup tasks described in [Before You Begin with Amazon SES](send-email-getting-started-prerequisites.md) and [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)\.
 
 **Important**  
-In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](mailbox-simulator.md)\.
+In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
 
 **To send an email using the Amazon SES SMTP interface with C\#**
 

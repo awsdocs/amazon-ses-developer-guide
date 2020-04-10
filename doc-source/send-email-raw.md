@@ -12,7 +12,7 @@ With the Internet Message Format specification, every email message consists of 
 
 ## Using MIME<a name="send-email-raw-mime"></a>
 
-The SMTP protocol was originally designed to send email messages that only contained 7\-bit ASCII characters\. This limitation makes SMTP insufficient for non\-ASCII text encodings \(such as Unicode\), binary content, or attachments\. The Multipurpose Internet Mail Extensions standard \(MIME\) was developed to overcome these limitations, making it possible to send many other kinds of content using SMTP\.
+The SMTP protocol was originally designed to send email messages that only contained 7\-bit ASCII characters\. This specification makes SMTP insufficient for non\-ASCII text encodings \(such as Unicode\), binary content, or attachments\. The Multipurpose Internet Mail Extensions standard \(MIME\) was developed to make it possible to send many other kinds of content using SMTP\.
 
 The MIME standard works by breaking the message body into multiple parts and then specifying what is to be done with each part\. For example, one part of an email message body might be plain text, while another might be HTML\. In addition, MIME allows email messages to contain one or more attachments\. Message recipients can view the attachments from within their email clients, or they can save the attachments\.
 
@@ -135,7 +135,7 @@ IOCkueCliAo=
 ```
 
 **Note**  
-In some cases, you can use the 8bit `Content-Transfer-Encoding` in messages that you send using Amazon SES\. However, if Amazon SES has to make any changes to your messages \(for example, when you use [open and click tracking](sending-metric-faqs.md)\), 8\-bit\-encoded content might not appear correctly when it arrives in recipients' inboxes\. For this reason, you should always encode content that isn't 7\-bit ASCII\.
+In some cases, you can use the 8bit `Content-Transfer-Encoding` in messages that you send using Amazon SES\. However, if Amazon SES has to make any changes to your messages \(for example, when you use [open and click tracking](faqs-metrics.md)\), 8\-bit\-encoded content might not appear correctly when it arrives in recipients' inboxes\. For this reason, you should always encode content that isn't 7\-bit ASCII\.
 
 #### File Attachments<a name="send-email-mime-encoding-files"></a>
 
@@ -154,7 +154,7 @@ Amazon SES accepts most common file types\. For a list of file types that Amazon
 The Amazon SES API provides the `SendRawEmail` action, which lets you compose and send an email message in the format that you specify\. For a complete description of `SendRawEmail`, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **Note**  
-For tips on how to increase your email sending speed when you make multiple calls to `SendRawEmail`, see [Increasing Throughput with Amazon SES](throughput-problems.md)\.
+For tips on how to increase your email sending speed when you make multiple calls to `SendRawEmail`, see [Increasing Throughput with Amazon SES](troubleshoot-throughput-problems.md)\.
 
 The message body must contain a properly formatted, raw email message, with appropriate header fields and message body encoding\. Although it is possible to construct the raw message manually within an application, it is much easier to do so using existing mail libraries\. 
 

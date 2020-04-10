@@ -35,16 +35,42 @@ For Amazon SES to encrypt your emails, it must have permission to use the AWS KM
 Paste the following policy statement into the key policy to permit Amazon SES to use your custom master key when Amazon SES receives email on behalf of your AWS account\.
 
 ```
-1. {
-2.    "Sid": "AllowSESToEncryptMessagesBelongingToThisAccount", 
-3.    "Effect": "Allow",
-4.    "Principal": {"Service":"ses.amazonaws.com"},
-5.    "Action": ["kms:Encrypt", "kms:GenerateDataKey*"],
-6.    "Resource": "*"
-7. }
+{
+   "Sid": "AllowSESToEncryptMessagesBelongingToThisAccount", 
+   "Effect": "Allow",
+   "Principal": {
+       "Service":"ses.amazonaws.com"
+   },
+   "Action": [
+       "kms:Encrypt", 
+       "kms:GenerateDataKey*"
+   ],
+   "Resource": "*"
+}
 ```
 
-For more information about attaching policies to AWS KMS keys, see [Using Key Policies in AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*\.
+**Note**  
+Amazon SES uses the Amazon S3 [multipart upload API](https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html) to send large messages \(5 MB or larger\) to Amazon S3 buckets\. If you're using AWS KMS to send encrypted messages to an Amazon S3 bucket, and you plan to receive messages that are larger than 5 MB, then you should use the following policy statement instead of the statement in the preceding example:  
+
+```
+{
+   "Sid": "AllowSESToEncryptMessagesBelongingToThisAccount", 
+   "Effect": "Allow",
+   "Principal": {
+       "Service":"ses.amazonaws.com"
+   },
+   "Action": [
+        "kms:Encrypt", 
+        "kms:Decrypt", 
+        "kms:ReEncrypt*",
+        "kms:GenerateDataKey*",
+        "kms:DescribeKey"
+   ],
+   "Resource": "*"
+}
+```
+
+For more information about multipart uploads in Amazon S3, see [Multipart Upload API and Permissions](https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html) in the *Amazon Simple Storage Service Developer Guide*\. For more information about attaching policies to AWS KMS keys, see [Using Key Policies in AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*\.
 
 ## Give Amazon SES Permission to Invoke Your Lambda Function<a name="receiving-email-permissions-lambda"></a>
 

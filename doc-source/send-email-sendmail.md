@@ -19,7 +19,7 @@ Depending on which operating system distribution you use, you might also need to
 
 If you're using Amazon SES to send email from an Amazon EC2 instance, you should also complete the following steps:
 + If you're using Amazon SES to send email from an Amazon EC2 instance, you might need to assign an Elastic IP Address to your Amazon EC2 instance in order for receiving email providers to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
-+ If you're using Amazon SES to send email from an Amazon EC2 instance, you should complete the [Request to Remove Email Sending Limitations](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/ec2-email-limit-rdns-request) form\. Requesting this change removes the sending limit restrictions that Amazon EC2 applies to port 25 by default\.
++ If you're using Amazon SES to send email from an Amazon EC2 instance, you should complete the [Request to Remove Email Sending Limitations](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/ec2-email-limit-rdns-request) form\. Requesting this change removes the restrictions that Amazon EC2 applies to port 25 by default\.
 
 ## Configuring Sendmail<a name="send-email-sendmail-procedure"></a>
 
@@ -39,6 +39,7 @@ The procedure in this section assumes that you want to use Amazon SES in the US 
    ```
 
    In the preceding example, make the following changes:
+   + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the Amazon SES SMTP endpoint that you want to use\.
    + Replace *smtpUsername* with your Amazon SES SMTP username\.
    + Replace *smtpPassword* with your Amazon SES SMTP password\.
 **Note**  
@@ -57,6 +58,8 @@ Your SMTP username and password are different from your AWS Access Key ID and Se
    ```
    sudo sh -c 'echo "Connect:email-smtp.us-west-2.amazonaws.com RELAY" >> /etc/mail/access'
    ```
+
+   In the preceding command, replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the address of the Amazon SES SMTP endpoint that you want to use\.
 
 1. At the command line, type the following command to regenerate */etc/mail/access\.db*:
 
@@ -82,7 +85,9 @@ Your SMTP username and password are different from your AWS Access Key ID and Se
    FEATURE(masquerade_entire_domain)dnl
    ```
 
-   In the preceding text, replace *example\.com* with the domain that you're sending email from\.
+   In the preceding text, do the following:
+   + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the Amazon SES SMTP endpoint that you want to use\.
+   + Replace *example\.com* with the domain that you're sending email from\.
 
    When you finish, save the file\.
 

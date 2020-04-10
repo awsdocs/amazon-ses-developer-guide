@@ -8,9 +8,9 @@ Before you set up Amazon SES to receive your mail, you might find it helpful to 
 
 Amazon SES can provide you the email content in two ways: it can store the emails in an Amazon S3 bucket that you specify, or it can send you an Amazon SNS notification that contains a copy of the email\. Amazon SES delivers you the raw, unmodified email in Multipurpose Internet Mail Extensions \(MIME\) format\. For more information about MIME format, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\. 
 
-**How large of a limit on email size do you need?**
+**How large are the emails that you'll be receiving?**
 
-If you choose to store emails in an Amazon S3 bucket, the maximum email size \(including headers\) is 30 MB\. If you choose to receive your emails through Amazon SNS notifications, the maximum email size \(including headers\) is 150 KB\.
+If you store emails in an Amazon S3 bucket, the maximum email size \(including headers\) is 30 MB\. If you receive your emails through Amazon SNS notifications, the maximum email size \(including headers\) is 150 KB\.
 
 **How do you want to trigger the processing of your mail?**
 
@@ -47,3 +47,9 @@ If you want your mail to be delivered to an Amazon S3 bucket, published to an Am
 **How do you want to divide your mail stream?**
 
 Your domain most likely receives different classes of mail\. For example, some of your domain's mail, such as an email to *user@example\.com*, might be intended for a personal inbox\. Other mail, such as an email to *unsubscribe@example\.com*, might be better directed to automated systems instead\. You can use receipt rules to divide your incoming mail so that it can be processed differently\. For information about how to set up receipt rules, see [Creating Receipt Rules](receiving-email-receipt-rules.md)\.
+
+## Regional Availability<a name="receiving-email-consider-use-case-regions"></a>
+
+**Does Amazon SES support email receiving in your Region?**
+
+Amazon SES only supports email receiving in certain AWS Regions\. For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/ses) in the AWS General Reference\.

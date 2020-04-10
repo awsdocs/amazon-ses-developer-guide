@@ -14,9 +14,9 @@ For Amazon SES to publish events associated with an email, you must specify a co
 
 1. In the **Send Test Email** dialog box, for **Email Format**, choose **Raw**\.
 
-1. For the **To** address, type an address from the [Amazon SES mailbox simulator](mailbox-simulator.md), such as `complaint@simulator.amazonses.com` or `bounce@simulator.amazonses.com`\.
+1. For the **To** address, type an address from the [Amazon SES mailbox simulator](send-email-simulator.md), such as `complaint@simulator.amazonses.com` or `bounce@simulator.amazonses.com`\.
 
-1. Copy and paste the following message in its entirety into the **Message** text box, replacing `CONFIGURATION-SET-NAME` with the name of the configuration set you created in [Step 3: Set up a Configuration Set](event-publishing-elasticsearch-configuration-set.md), and replacing `FROM-ADDRESS` with the verified address you are sending this email from\.
+1. Copy and paste the following message in its entirety into the **Message** text box, replacing `CONFIGURATION-SET-NAME` with the name of the configuration set you created in [Step 1: Set up a Configuration Set](event-publishing-cloudwatch-tutorial-configuration-set.md), and replacing `FROM-ADDRESS` with the verified address you are sending this email from\.
 
    ```
    1. X-SES-MESSAGE-TAGS: campaign=book

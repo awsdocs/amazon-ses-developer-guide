@@ -1,9 +1,6 @@
 # Creating a Policy for Amazon SES Sending Authorization<a name="sending-authorization-identity-owner-tasks-policy"></a>
 
-To authorize a delegate sender to send emails for one of your identities, you create a sending authorization policy, and then attach that policy to the identity\. Identities can have zero policies, one policy, or multiple policies\. However, each policy may only be associated with one identity\.
-
-**Important**  
-Policies attached to email address identities override policies attached to the corresponding domain identities\. For example, say that you have verified *example\.com* and *user@example\.com*\. If you create a policy for *example\.com* that disallows a delegate sender, and you create a policy for *user@example\.com* that allows that delegate sender, the delegate sender will be able to send from *user@example\.com* if they specify the ARN of *user@example\.com* in the request to send the email\.
+To authorize a delegate sender to send emails using an email address or domain \(an *identity*\) that you own, you create a sending authorization policy, and then attach that policy to the identity\. An identity can have zero, one, or many policies\. However, a single policy can only be associated with a single identity\.
 
 You can create a sending authorization policy in the following ways:
 + **By using the Policy Generator** – You can create a simple policy by using the Policy Generator in the Amazon SES console\. In addition to specifying who can send the emails, you can constrain the email\-sending with conditions based on the time and date range in which emails can be sent, the "From" address, the "From" display name, the address to which bounces and complaints are sent, the recipient addresses, and the source IP\. You might also want to use the Policy Generator to create the structure of a simple policy and then customize it later by editing the policy\.
@@ -11,7 +8,11 @@ You can create a sending authorization policy in the following ways:
 
 This topic describes both methods\.
 
-## Using the Policy Generator<a name="sending-authorization-identity-owner-tasks-identity-policy-generator"></a>
+**Note**  
+Sending authorization policies that you attach to email address identities take precedence over policies that you attach to their corresponding domain identities\. For example, if you create a policy for *example\.com* that disallows a delegate sender, and you create a policy for *sender@example\.com* that allows the delegate sender, then the delegate sender can send email from *sender@example\.com*, but not from any other address on the *example\.com* domain\.  
+If you create a policy for *example\.com* that allows a delegate sender, and you create a policy for *sender@example\.com* that disallows the delegate sender, then the delegate sender can send email from any address on the *example\.com* domain, except for *sender@example\.com*\.
+
+## Creating a Policy Using the Policy Generator<a name="sending-authorization-identity-owner-tasks-identity-policy-generator"></a>
 
 You can use the Policy Generator to create a simple authorization policy by using the following procedure\.
 

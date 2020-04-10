@@ -5,7 +5,7 @@ You can use an AWS SDK to send email through Amazon SES\. AWS SDKs are available
 **Note**  
 If you have not already done so, complete the prerequisites listed in [Send an Email Through Amazon SES Using an AWS SDK](send-an-email-using-sdk.md) before you attempt to complete the tutorials in this section\.
 
-You can find additional code examples in [Amazon SES Code Examples](samplecodeindex.md)\.
+You can find additional code examples in [Amazon SES Code Examples](examples.md)\.
 
 **Topics**
 + [Send an Email Using the AWS SDK for \.NET](send-using-sdk-net.md)

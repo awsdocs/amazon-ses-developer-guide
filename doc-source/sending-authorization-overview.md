@@ -1,6 +1,6 @@
 # Overview of Amazon SES Sending Authorization<a name="sending-authorization-overview"></a>
 
-This topic provides an overview of the sending authorization process and then explains how the email sending features of Amazon SES, such as sending limits and notifications, work with sending authorization\.
+This topic provides an overview of the sending authorization process and then explains how the email sending features of Amazon SES, such as sending quotas and notifications, work with sending authorization\.
 
 This section uses the following terms:
 + **Identity** – An email address or domain that Amazon SES users use to send email\.
@@ -42,7 +42,7 @@ For more information about how the identity owner or delegate sender perform tho
 ## Attribution of Email Sending Features<a name="sending-authorization-attribution"></a>
 
 It is important to understand the role of the delegate sender and the identity owner with respect to Amazon SES email sending features such as daily sending quota, bounces and complaints, DKIM signing, feedback forwarding, and so on\. The attribution is the following:
-+ **Sending limits** – Email sent from the identity owner's identities count against the delegate sender's daily sending quota\.
++ **Sending quotas** – Email sent from the identity owner's identities count against the delegate sender's quotas\.
 + **Bounces and complaints** – Bounce and complaint events are recorded against the delegate sender's Amazon SES account, and can therefore impact the delegate sender's reputation\.
 + **DKIM signing** – If the identity owner has enabled Easy DKIM signing for an identity, all email sent from that identity will be DKIM\-signed, including email sent by the delegate sender\. Only the identity owner can control whether the emails are DKIM\-signed\.
 + **Notifications** – Both the identity owner and the delegate sender can set up notifications for bounces and complaints\. The email identity owner can also enable email feedback forwarding\. For information about setting up notifications, see [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md)\.

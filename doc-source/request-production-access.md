@@ -3,7 +3,7 @@
 To help prevent fraud and abuse, and to help protect your reputation as a sender, we apply certain restrictions to new Amazon SES accounts\. 
 
 We place all new accounts in the Amazon SES *sandbox*\. While your account is in the sandbox, you can use all of the features of Amazon SES\. However, when your account is in the sandbox, we apply the following restrictions to your account:
-+ You can only send mail **to** verified email addresses and domains, or to [the Amazon SES mailbox simulator](mailbox-simulator.md)\.
++ You can only send mail **to** verified email addresses and domains, or to [the Amazon SES mailbox simulator](send-email-simulator.md)\.
 + You can only send mail **from** verified email addresses and domains\.
 **Note**  
 This restriction applies even when your account isn't in the sandbox\.
@@ -32,19 +32,19 @@ If you're using Amazon SES to send email from an Amazon EC2 instance, you might 
    + For **Limit type**, choose **SES Sending Limits**\.
    + For **Mail Type**, choose the type of email that you plan to send\. If more than one value applies, choose the option that applies to the majority of the email that you plan to send\.
    + For **Website URL**, enter the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
-   + For **My email sending complies with the AWS Service Terms and AUP**, choose the option that applies to your use case\.
-   + For **I only send to recipients who have specifically requested my mail**, choose the option that applies to your use case\.
-   + For **I have a process to handle bounces and complaints**, choose the option that applies to your use case\.
+   + For **Describe how you will comply with AWS Service Terms and AUP**, explain how you plan to ensure that your email sending complies with both of these documents\.
+   + For **Describe how you will only send to recipients who have specifically requested your mail**, explain how you plan to manage your recipients' opt\-in and opt\-out preferences\.
+   + For **Describe the process that you will follow when you receive bounce and complaint notifications**, explain what you plan to do if an email results in a bounce or complaint event\.
 
 1. Under **Requests**, complete the following sections:
    + For **Region**, choose the AWS Region that your request applies to\.
-   + For **Limit**, choose the type of limit increase that you want to request\. You can choose from the following options:
+   + For **Limit**, choose the type of quota increase that you want to request\. You can choose from the following options:
      + **Desired Maximum Send Quota** – Choose this option if you want to request an increase to the number of emails that your account can send per 24\-hour period in the selected Region\. 
 
        **Desired Maximum Send Rate** – Choose this option if you want to request an increase to the number of emails that your account can send per second in the selected Region\. 
-   + For **New limit value**, enter the limit that you're requesting\. Only request the amount that you think you'll need\. Remember that you aren't guaranteed to receive the amount that you request\.
+   + For **New limit value**, enter the quota that you're requesting\. Only request the amount that you think you'll need\. Remember that you aren't guaranteed to receive the amount that you request\.
 
-     If you want to have your account removed from the sandbox, but don't want a sending limit increase, specify either a daily sending quota of 200 or a maximum send rate of 1, depending on the value you chose for **Limit**\. These are the default limits that Amazon SES applies to all accounts in the sandbox\. 
+     If you want to have your account removed from the sandbox, but don't want a sending quota increase, specify either a daily sending quota of 200 or a maximum send rate of 1, depending on the value you chose for **Limit**\. These are the default quotas that Amazon SES applies to all accounts in the sandbox\. 
 **Note**  
 If you want to request that we remove your account from the sandbox in another AWS Region, choose **Add another request**, and then complete the **Region**, **Limit**, and **New limit value** fields for that Region\. Repeat this process for each Region where you want to have your account removed from the sandbox\.
 

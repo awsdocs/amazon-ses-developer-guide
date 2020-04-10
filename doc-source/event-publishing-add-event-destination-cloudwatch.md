@@ -51,7 +51,7 @@ Message tags can include the numbers 0–9, the letters A–Z \(both uppercase a
    + **Email Header** – Amazon SES retrieves the dimension name and value from a header in the email\.
 **Note**  
 You can't use any of the following email headers as the **Dimension Name**: `Received`, `To`, `From`, `DKIM-Signature`, `CC`, `message-id`, or `Return-Path`\.
-   + **Link Tag** – Amazon SES retrieves the dimension name and value from a tag that you specified in a link\. For more information about adding tags to links, see [Can I tag links with unique identifiers?](sending-metric-faqs.md#sending-metric-faqs-clicks-q5)\.
+   + **Link Tag** – Amazon SES retrieves the dimension name and value from a tag that you specified in a link\. For more information about adding tags to links, see [Can I tag links with unique identifiers?](faqs-metrics.md#sending-metric-faqs-clicks-q5)\.
 
 1. For **Dimension Name**, type the name of the dimension that you want to pass to CloudWatch\. For **Default Value**, type the value of the dimension\.
 **Note**  

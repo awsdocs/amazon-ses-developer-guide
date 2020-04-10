@@ -58,9 +58,9 @@ You can only use an HTTPS domain for tracking link clicks\. Amazon SES only supp
 
    1. For **Query String Forwarding and Caching**, choose **Forward all, cache based on all**\.
 
-   1. \(Optional\) If you want to use a custom domain for your CloudFront distribution, rather than the domain CloudFront assigns, you can add an alternate domain name to your distribution\. This subdomain should also be verified in Amazon SES\. For more information, see [Adding and Moving Alternate Domain Names](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html) in the *Amazon CloudFront Developer Guide*\.
+   1. Add an alternate domain name to your distribution\. The subdomain that you use has to be verified in Amazon SES\. For more information, see [Configuring Alternate Domain Names and HTTPS](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-procedures.html) in the *Amazon CloudFront Developer Guide*\.
 
-   If you use a CDN other than CloudFront, you may need to complete similar steps\. For more information, refer to the documentation for your CDN\.
+   If you use a CDN other than CloudFront, you might need to complete similar steps\. For more information, refer to the documentation for your CDN\.
 
 1. If you use Route 53 to manage the DNS configuration for your domain and CloudFront as your CDN, create an Alias record in Route 53 that refers to your CloudFront distribution \(such as *d111111abcdef8\.cloudfront\.net*\)\. For more information, see [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) in the *Amazon Route 53 Developer Guide*\.
 

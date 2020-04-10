@@ -1,12 +1,12 @@
 # Regions and Amazon SES<a name="regions"></a>
 
-Amazon SES is available in several AWS Regions in North America and Europe\. In each Region, AWS maintains multiple Availability Zones\. These Availability Zones are physically isolated from each other, but are united by private, low\-latency, high\-throughput, and highly redundant network connections\. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency\.
+Amazon SES is available in several AWS Regions around the world\. In each Region, AWS maintains multiple Availability Zones\. These Availability Zones are physically isolated from each other, but are united by private, low\-latency, high\-throughput, and highly redundant network connections\. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency\.
 
 For a list of all of the Regions where Amazon SES is currently available, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *Amazon Web Services General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
 
 This section contains information that you need to know if you plan to use Amazon SES in multiple AWS Regions\. It discusses the following subjects:
 + [Amazon SES Regions and Endpoints](#region-endpoints)
-+ [Sandbox and Sending Limit Increases](#region-limit-increases)
++ [Sandbox and Sending Limit Increases](#region-quota-increases)
 + [Verification of Email Addresses and Domains](#region-verification)
 + [Easy DKIM](#region-dkim)
 + [Suppression List](#region-suppression-list)
@@ -29,13 +29,13 @@ If you've configured Amazon SES to receive email that's sent to your domain, you
 **Note**  
 The inbound SMTP URLs aren't IMAP server addresses\. In other words, you can't use them to receive email by using an application such as Outlook\. For a service that provides an IMAP server for incoming email, see [Amazon WorkMail](https://aws.amazon.com/workmail)\.
 
-## Sandbox and Sending Limit Increases<a name="region-limit-increases"></a>
+## Sandbox and Sending Limit Increases<a name="region-quota-increases"></a>
 
 The sandbox status for your account can differ between AWS Regions\. In other words, if your account has been removed from the sandbox in the US West \(Oregon\) Region, it might still be in the sandbox in the US East \(N\. Virginia\) Region, unless you've also had it removed from the sandbox in that Region\.
 
-Sending limits can also be different depending on the AWS Region\. For example, if your account is able to send 10 messages per second in the EU \(Ireland\) Region, you might be able to send more or fewer messages in other Regions\.
+Sending limits can also be different depending on the AWS Region\. For example, if your account is able to send 10 messages per second in the Europe \(Ireland\) Region, you might be able to send more or fewer messages in other Regions\.
 
-When you [submit a request to have your account removed from the sandbox](request-production-access.md), or when you [submit a request to have your account's sending limits increased](submit-extended-access-request.md), be sure to choose all of the AWS Regions that your request applies to\. You can submit several requests in a single Support Center case\.
+When you [submit a request to have your account removed from the sandbox](request-production-access.md), or when you [submit a request to have your account's sending quotas increased](manage-sending-quotas-request-increase-procedure.md), be sure to choose all of the AWS Regions that your request applies to\. You can submit several requests in a single Support Center case\.
 
 ## Verification of Email Addresses and Domains<a name="region-verification"></a>
 
@@ -43,11 +43,11 @@ Before you can send email using Amazon SES, you have to verify that you own the 
 
 ## Easy DKIM<a name="region-dkim"></a>
 
-You have to perform the Easy DKIM setup process for each Region where you want to use Easy DKIM\. That is, in each Region, you have to use the Amazon SES console or the Amazon SES API to generate TXT records\. Next, you have to add all of the TXT records to the DNS configuration for your domain\. For more information about setting up Easy DKIM, see [Easy DKIM in Amazon SES](easy-dkim.md)\.
+You have to perform the Easy DKIM setup process for each Region where you want to use Easy DKIM\. That is, in each Region, you have to use the Amazon SES console or the Amazon SES API to generate TXT records\. Next, you have to add all of the TXT records to the DNS configuration for your domain\. For more information about setting up Easy DKIM, see [Easy DKIM in Amazon SES](send-email-authentication-dkim-easy.md)\.
 
 ## Suppression List<a name="region-suppression-list"></a>
 
-Although each Region has a separate suppression list, if you remove an address from the suppression list of one Region, the address is removed from the suppression list of all Regions\. You remove addresses from the suppression list by using the Amazon SES console\. For more information about removing addresses from the suppression list, see [Removing an Email Address from the Amazon SES Suppression List](remove-from-suppression-list.md)\.
+Although each Region has a separate suppression list, if you remove an address from the suppression list of one Region, the address is removed from the suppression list of all Regions\. You remove addresses from the suppression list by using the Amazon SES console\. For more information about removing addresses from the suppression list, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.
 
 ## Feedback Notifications<a name="region-feedback-notifications"></a>
 
@@ -67,7 +67,7 @@ For additional security, we recommend that you delete credentials that were crea
 
 You can use the same custom MAIL FROM domain for verified identities in different AWS Regions\. If that is what you want to do, you only need to publish one MX record to the MAIL FROM domain's DNS server\. In this situation, bounce notifications are sent to the Amazon SES feedback endpoint in the Region that you specified in the MX record first\. Next Amazon SES redirects the bounces to the verified identity in the Region that sent the email\.
 
-Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [Setting a MAIL FROM Domain](mail-from-set.md)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
+Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [](mail-from.md#mail-from-set)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
 
 
 ****  
@@ -76,7 +76,13 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 | --- | --- | 
 |  US East \(N\. Virginia\)  |  feedback\-smtp\.us\-east\-1\.amazonses\.com  | 
 |  US West \(Oregon\)  |  feedback\-smtp\.us\-west\-2\.amazonses\.com  | 
-|  EU \(Ireland\)  |  feedback\-smtp\.eu\-west\-1\.amazonses\.com  | 
+|  Asia Pacific \(Mumbai\)  |  feedback\-smtp\.ap\-south\-1\.amazonses\.com  | 
+|  Asia Pacific \(Sydney\)  |  feedback\-smtp\.ap\-southeast\-2\.amazonses\.com  | 
+|  Canada \(Central\)  |  feedback\-smtp\.ca\-central\-1\.amazonses\.com  | 
+|  Europe \(Frankfurt\)  |  feedback\-smtp\.eu\-central\-1\.amazonses\.com  | 
+|  Europe \(Ireland\)  |  feedback\-smtp\.eu\-west\-1\.amazonses\.com  | 
+|  Europe \(London\)  |  feedback\-smtp\.eu\-west\-2\.amazonses\.com  | 
+|  South America \(São Paulo\)  |  feedback\-smtp\.sa\-east\-1\.amazonses\.com  | 
 
 ## Sending Authorization<a name="region-sending-authorization"></a>
 
@@ -84,9 +90,21 @@ Delegate senders can only send emails from the AWS Region where the identity own
 
 ## Email Receiving<a name="region-receive-email"></a>
 
-When you receive email with Amazon SES, all of the resources that you use must be in the same Region as the Amazon SES endpoint\.
+With the exception of Amazon S3 buckets, all of the AWS resources that you use for receiving email with Amazon SES have to be in the same AWS Region as the Amazon SES endpoint\. For example, if you use Amazon SES in the US West \(Oregon\) Region, then any Amazon SNS topics, AWS KMS keys, and Lambda functions that you use also have to be in the US West \(Oregon\) Region\. Similarly, to receive email with Amazon SES within a Region, you have to create an active receipt rule set in that Region\.
 
-For example, if you use the Amazon SES endpoint in US West \(Oregon\), then any Amazon S3 bucket, Amazon SNS topic, AWS KMS key, and Lambda function that you use must also be in US West \(Oregon\)\. Similarly, to receive mail with Amazon SES within a Region, you must have an active receipt rule set within that Region\.
+The following table lists the email receiving endpoints for all of the AWS Regions where Amazon SES supports email receiving: 
+
+
+****  
+
+| Region Name | Email Receiving Endpoint | 
+| --- | --- | 
+| US East \(N\. Virginia\) | inbound\-smtp\.us\-east\-1\.amazonaws\.com | 
+| US West \(Oregon\) | inbound\-smtp\.us\-west\-2\.amazonaws\.com | 
+| Europe \(Ireland\) | inbound\-smtp\.eu\-west\-1\.amazonaws\.com | 
+
+**Note**  
+Amazon SES doesn't support email receiving in the following Regions: Asia Pacific \(Mumbai\), Asia Pacific \(Sydney\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), and South America \(São Paulo\)\. 
 
 
 ****  

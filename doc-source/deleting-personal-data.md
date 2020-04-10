@@ -5,6 +5,7 @@ Depending on how you use it, Amazon SES might store certain data that could be c
 This chapter provides procedures for deleting various types of data that might be considered personal\.
 
 **Topics**
++ [Delete Email Addresses From the Account\-Level Suppression List](#deleting-personal-data-account-suppression-list)
 + [Delete Data About Email Sent Using Amazon SES](#deleting-personal-data-message-data)
 + [Delete Data About Identities](#deleting-personal-data-identities)
 + [Delete Sender Authentication Data](#deleting-personal-data-sender-authentication)
@@ -13,6 +14,21 @@ This chapter provides procedures for deleting various types of data that might b
 + [Delete Data in Email Templates](#deleting-personal-data-email-templates)
 + [Delete Data in Custom Verification Email Templates](#deleting-personal-data-cve-templates)
 + [Delete All Personal Data by Closing Your AWS Account](#deleting-personal-data-closing-account)
+
+## Delete Email Addresses From the Account\-Level Suppression List<a name="deleting-personal-data-account-suppression-list"></a>
+
+Amazon SES includes an optional account\-level suppression list\. When you enable this feature, email addresses are automatically added to a suppression list when they result in a bounce or complaint\. Email addresses remain on this list until you delete them\. For more information about the account\-level suppression list, see [Using the Account\-Level Suppression List](sending-email-suppression-list.md)\.
+
+You can remove email addresses from the account\-level suppression list by using the `DeleteSuppressedDestination` operation in the [Amazon SES API v2](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteSuppressedDestination.html)\. This section includes a procedure for deleting email addresses by using the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
+
+**To remove an address from the account\-level suppression list by using the AWS CLI**
++ At the command line, enter the following command:
+
+  ```
+  aws sesv2 delete-suppressed-destination --email-address recipient@example.com
+  ```
+
+  In the preceding command, replace *recipient@example\.com* with the email address that you want to remove from the account\-level suppression list\.
 
 ## Delete Data About Email Sent Using Amazon SES<a name="deleting-personal-data-message-data"></a>
 

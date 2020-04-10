@@ -8,6 +8,9 @@ Amazon Simple Email Service \(Amazon SES\) is a mail server that can both send a
 
 When you receive email, Amazon SES processes it according to instructions you provide\. For example, Amazon SES can deliver incoming mail to an Amazon S3 bucket, publish it to an Amazon SNS topic, or send it to Amazon WorkMail\. You can also create rules that explicitly block or allow all messages from specific IP address ranges, or that automatically send bounce messages when messages are sent to specific email addresses\.
 
+**Note**  
+Amazon SES only supports email receiving in certain AWS Regions\. For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/ses) in the AWS General Reference\.
+
 The following sections contain the information you need to understand, set up, and use Amazon SES to receive your mail\.
 + [Email\-Receiving Concepts](receiving-email-concepts.md)
 + [Getting Started Receiving Email](receiving-email-getting-started.md)

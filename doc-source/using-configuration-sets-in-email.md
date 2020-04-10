@@ -13,4 +13,4 @@ This guide includes code examples for sending email using Postfix, the AWS SDKs,
 + [Send an Email Through Amazon SES Using an AWS SDK](send-an-email-using-sdk.md)
 + [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)
 
-You can find additional code examples in the [Amazon SES Code Examples](samplecodeindex.md) section\.
+You can find additional code examples in the [Amazon SES Code Examples](examples.md) section\.
