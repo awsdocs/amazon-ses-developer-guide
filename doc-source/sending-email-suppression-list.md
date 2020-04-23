@@ -108,6 +108,77 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   In the preceding example, replace *recipient@example\.com* with the email address that you want to add to the account\-level suppression list, and *BOUNCE* with the reason that you're adding the address to the suppression list \(acceptable values are `BOUNCE` and `COMPLAINT`\)\.
 
+## Viewing a List of Addresses That are on the Account\-Level Suppression List<a name="sending-email-suppression-list-view-entries"></a>
+
+You can view a list of all of the email addresses that are on the account\-level suppression list for your account by using the [ListSuppressedDestinations](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_ListSuppressedDestinations.html) operation in the Amazon SES API v2\.
+
+**Note**  
+The following procedure assumes that you've already installed the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
+
+**To view a list of all of the email addresses that are on the account\-level suppression list**
++ At the command line, enter the following command:
+
+  ```
+  aws sesv2 list-suppressed-destinations
+  ```
+
+The preceding command returns all of the email addresses that are in the account\-level suppression list for your account\. The output resembles the following example:
+
+```
+{
+    "SuppressedDestinationSummaries": [
+        {
+            "EmailAddress": "recipient2@example.com",
+            "Reason": "COMPLAINT",
+            "LastUpdateTime": 1586552585.077
+        },
+        {
+            "EmailAddress": "recipient0@example.com",
+            "Reason": "COMPLAINT",
+            "LastUpdateTime": 1586552666.613
+        },
+        {
+            "EmailAddress": "recipient1@example.com",
+            "Reason": "BOUNCE",
+            "LastUpdateTime": 1586556479.141
+        }
+    ]
+}
+```
+
+You can use the `StartDate` option to only show email addresses that were added to the list *after* a certain date\.
+
+**To view a list of addresses that were added to the account\-level suppression list after a specific date**
++ At the command line, enter the following command:
+
+  ```
+  aws sesv2 list-suppressed-destinations --start-date 1604394130
+  ```
+
+  In the preceding command, replace *1604394130* with the Unix timestamp of the start date\.
+
+You can also use the `EndDate` option to only show email addresses that were added to the list *before* a certain date\.
+
+**To view a list of addresses that were added to the account\-level suppression list before a specific date**
++ At the command line, enter the following command:
+
+  ```
+  aws sesv2 list-suppressed-destinations --end-date 1611126000
+  ```
+
+  In the preceding command, replace *1611126000* with the Unix timestamp of the end date\.
+
+On the Linux, macOS, or Unix command line, you can also use the built\-in `grep` utility to search for specific addresses or domains\.
+
+**To search the account\-level suppression list for a specific address**
++ At the command line, enter the following command:
+
+  ```
+  aws sesv2 list-suppressed-destinations | grep -A2 'example.com'
+  ```
+
+  In the preceding command, replace *example\.com* with the string of text \(such as the address or domain\) that you want to search for\.
+
 ## Removing an Email Address from the Suppression List for Your Account<a name="sending-email-suppression-list-manual-delete"></a>
 
 If an address is on the suppression list for your account, but you know that the address shouldn't be on the list, you can manually remove it by using [DeleteSuppressedDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteSuppressedDestination.html) operation in the Amazon SES API v2\.
@@ -138,7 +209,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   In the preceding example, replace *recipient@example\.com* with the email address that you want to remove from the account\-level suppression list\.
 
-## Disabling the Account\-Level Suppression List<a name="sending-email-suppression-list-enabling"></a>
+## Disabling the Account\-Level Suppression List<a name="sending-email-suppression-list-disabling"></a>
 
 You can use the [PutAccountSuppressionAttributes](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_PutAccountSuppressionAttributes.html) operation in the Amazon SES API v2 to effectively disable the account\-level suppression list by removing the values from the `suppressed-reasons` attribute\.
 
