@@ -7,6 +7,8 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 | Change | Description | Date Changed | 
 | --- | --- | --- | 
+| New feature | You can now [create Amazon SES endpoints in Amazon Virtual Private Cloud](send-email-set-up-vpc-endpoints.md) \(Amazon VPC\)\. | April 29, 2020 | 
+| New feature | Amazon SES is now available in [three additional AWS Regions](regions.md): Canada \(Central\), Europe \(London\), and South America \(São Paulo\)\. | April 1, 2020 | 
 | New feature | You can now use your own IP ranges to send email\. For more information, see [Using Your Own IP Addresses to Send Email Using Amazon SES](dedicated-ip-byo.md)\. | December 23, 2019 | 
 | New feature | You can now use your own public\-private key pair to complete the DKIM authentication process for a domain\. For more information, see [Provide Your Own DKIM Authentication Token in Amazon SES](send-email-authentication-dkim-bring-your-own.md)\. | December 13, 2019 | 
 | New feature | You can now use an [account\-level suppression list](sending-email-suppression-list.md) to automatically prevent sending messages to email addresses that previously resulted in a bounce or complaint\. | November 25, 2019 | 

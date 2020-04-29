@@ -60,6 +60,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Getting Your SMTP Credentials for Amazon SES](get-smtp-credentials.md)
       + [Moving Out of the Amazon SES Sandbox](request-production-access.md)
       + [Configuring Custom Domains to Handle Open and Click Tracking](configure-custom-open-click-domains.md)
+      + [Setting Up VPC Endpoints with Amazon SES](send-email-set-up-vpc-endpoints.md)
    + [Sending Your Email with Amazon SES](choose-email-sending-method.md)
       + [Using the Amazon SES SMTP Interface to Send Email](send-email-smtp.md)
          + [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)
