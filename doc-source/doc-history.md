@@ -7,6 +7,7 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 | Change | Description | Date Changed | 
 | --- | --- | --- | 
+| New feature | Amazon SES is now available in [AWS GovCloud \(US\)](regions.md)\. | April 30, 2020 | 
 | New feature | You can now [create Amazon SES endpoints in Amazon Virtual Private Cloud](send-email-set-up-vpc-endpoints.md) \(Amazon VPC\)\. | April 29, 2020 | 
 | New feature | Amazon SES is now available in [three additional AWS Regions](regions.md): Canada \(Central\), Europe \(London\), and South America \(São Paulo\)\. | April 1, 2020 | 
 | New feature | You can now use your own IP ranges to send email\. For more information, see [Using Your Own IP Addresses to Send Email Using Amazon SES](dedicated-ip-byo.md)\. | December 23, 2019 | 

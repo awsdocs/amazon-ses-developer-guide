@@ -2,7 +2,7 @@
 
 Amazon SES is available in several AWS Regions around the world\. In each Region, AWS maintains multiple Availability Zones\. These Availability Zones are physically isolated from each other, but are united by private, low\-latency, high\-throughput, and highly redundant network connections\. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency\.
 
-For a list of all of the Regions where Amazon SES is currently available, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *Amazon Web Services General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
+For a list of all of the Amazon SES Regional endpoints, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the *Amazon Web Services General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
 
 This section contains information that you need to know if you plan to use Amazon SES in multiple AWS Regions\. It discusses the following subjects:
 + [Amazon SES Regions and Endpoints](#region-endpoints)
@@ -67,7 +67,7 @@ For additional security, we recommend that you delete credentials that were crea
 
 You can use the same custom MAIL FROM domain for verified identities in different AWS Regions\. If that is what you want to do, you only need to publish one MX record to the MAIL FROM domain's DNS server\. In this situation, bounce notifications are sent to the Amazon SES feedback endpoint in the Region that you specified in the MX record first\. Next Amazon SES redirects the bounces to the verified identity in the Region that sent the email\.
 
-Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [](mail-from.md#mail-from-set)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
+Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [Setting Up a Custom MAIL FROM Domain](mail-from.md)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
 
 
 ****  
@@ -83,6 +83,7 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 |  Europe \(Ireland\)  |  feedback\-smtp\.eu\-west\-1\.amazonses\.com  | 
 |  Europe \(London\)  |  feedback\-smtp\.eu\-west\-2\.amazonses\.com  | 
 |  South America \(São Paulo\)  |  feedback\-smtp\.sa\-east\-1\.amazonses\.com  | 
+|  AWS GovCloud \(US\)  |  feedback\-smtp\.us\-gov\-west\-1\.amazonses\.com  | 
 
 ## Sending Authorization<a name="region-sending-authorization"></a>
 
@@ -104,7 +105,7 @@ The following table lists the email receiving endpoints for all of the AWS Regio
 | Europe \(Ireland\) | inbound\-smtp\.eu\-west\-1\.amazonaws\.com | 
 
 **Note**  
-Amazon SES doesn't support email receiving in the following Regions: Asia Pacific \(Mumbai\), Asia Pacific \(Sydney\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), and South America \(São Paulo\)\. 
+Amazon SES doesn't support email receiving in the following Regions: Asia Pacific \(Mumbai\), Asia Pacific \(Sydney\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), South America \(São Paulo\), and AWS GovCloud \(US\)\. 
 
 
 ****  

@@ -14,6 +14,7 @@ The following table shows the Amazon SES SMTP endpoints for the AWS Regions wher
 |  Europe \(Ireland\)  |  email\-smtp\.eu\-west\-1\.amazonaws\.com  | 
 |  Europe \(London\)  |  email\-smtp\.eu\-west\-2\.amazonaws\.com  | 
 |  South America \(São Paulo\)  |  email\-smtp\.sa\-east\-1\.amazonaws\.com  | 
+|  AWS GovCloud \(US\)  |  email\-smtp\.us\-gov\-west\-1\.amazonaws\.com  | 
 
 The Amazon SES SMTP endpoint requires that all connections be encrypted using Transport Layer Security \(TLS\)\. \(Note that TLS is often referred to by the name of its predecessor protocol, SSL\.\) Amazon SES supports two mechanisms for establishing a TLS\-encrypted connection: STARTTLS and TLS Wrapper\. Check the documentation for your software to determine whether it supports STARTTLS, TLS Wrapper, or both\.
 
