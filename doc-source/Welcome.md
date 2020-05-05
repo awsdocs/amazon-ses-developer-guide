@@ -43,7 +43,7 @@ This guide contains the following sections:
 | [Controlling Access](control-user-access.md) | Shows you how to use Amazon SES with AWS Identity and Access Management \(IAM\) to specify which Amazon SES API actions a user can perform on which Amazon SES resources\. | 
 | [Logging API Calls](logging-using-cloudtrail.md) | Provides a list of Amazon SES APIs that can be logged using AWS CloudTrail\. | 
 | [Using Credentials](using-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
-| [Using the API](using-the-api.md) | Describes how to use the Amazon SES Query API\. | 
+| [Using the API](using-ses-api.md) | Describes how to interact with the Amazon SES API\. | 
 | [Regions](regions.md) | Contains information about using Amazon SES in multiple AWS Regions\. | 
 |  [Quotas](quotas.md)  |  Provides a list of quotas that apply to Amazon SES\.  | 
 |  [Resources](resources.md)  |  Lists resources that you may find useful as you work with Amazon SES  | 

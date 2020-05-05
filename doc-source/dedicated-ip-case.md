@@ -19,12 +19,12 @@ The following steps show how to request dedicated IP addresses by creating a ser
 1. On the **Support** menu, choose **Support Center**, as shown in the following image\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/console_region_selector.png)
 
-1. On the **My support cases** tab, choose **Create case**\.
+1. Choose **Create case**\.
 
 1. Under **Create case**, choose **Service limit increase**\.
 
 1. Under **Case classification**, complete the following sections:
-   + For **Limit type**, choose **SES Service Limits**\.
+   + For **Limit type**, choose **SES Sending Limits**\.
    + For **Mail Type**, choose the type of email that you plan to send using your dedicated IP address\. If multiple values apply, choose the option that applies to the majority of the email that you plan to send\.
    + For **Website URL**, enter the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
    + For **My email sending complies with the AWS Service Terms and AUP**, choose the option that applies to your use case\.
@@ -66,7 +66,7 @@ The process of relinquishing a dedicated IP address can't be reversed\. If you r
 1. Under **Create case**, choose **Service limit increase**\.
 
 1. Under **Case classification**, complete the following sections:
-   + For **Limit type**, choose **SES Service Limits**\.
+   + For **Limit type**, choose **SES Sending Limits**\.
    + For **Mail Type**, choose any value\. 
    + For **My email sending complies with the AWS Service Terms and AUP**, choose the option that applies to your use case\.
    + For **I only send to recipients who have specifically requested my mail**, choose the option that applies to your use case\.

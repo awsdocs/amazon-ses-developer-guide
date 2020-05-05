@@ -118,13 +118,25 @@ The procedures in this section re\-enable email sending for your configuration s
 
 **To re\-enable email sending**
 
-1. At the command line, type the following command to re\-enable email sending for the configuration set: aws ses update\-configuration\-set\-sending\-enabled \-\-configuration\-set\-name *ConfigSet* \-\-enabled \-\-region *us\-west\-2*
+1. At the command line, type the following command to re\-enable email sending for the configuration set:
+
+   ```
+   aws ses update-configuration-set-sending-enabled \
+   --configuration-set-name ConfigSet \
+   --enabled
+   ```
 
    In the preceding command, replace *ConfigSet* with the name of the configuration set for which you want to pause email sending, and replace *us\-west\-2* with the region in which you want to automatically pause email sending\.
 
-1. At the command line, type the following command to ensure that email sending is enabled: aws ses describe\-configuration\-set \-\-configuration\-set\-name *ConfigSet* \-\-region *us\-west\-2*
+1. At the command line, type the following command to ensure that email sending is enabled:
 
-   You will see output similar to the following:
+   ```
+   aws ses describe-configuration-set \
+   --configuration-set-name ConfigSet \
+   --configuration-set-attribute-names reputationOptions
+   ```
+
+   The command produces output that resembles the following example:
 
    ```
    {                           
@@ -224,15 +236,27 @@ The procedures in this section are optional, but we recommend that you complete 
 
    If the value of `SendingEnabled` is `true`, then email sending is currently enabled for the configuration set\.
 
-1. At the command line, type the following command to temporarily change the alarm state to `ALARM`: aws cloudwatch set\-alarm\-state \-\-alarm\-name *MyAlarm* \-\-state\-value ALARM \-\-state\-reason "Testing execution of Lambda function" \-\-region *us\-west\-2*
+1. At the command line, type the following command to temporarily change the alarm state to `ALARM`:
+
+   ```
+   aws cloudwatch set-alarm-state \
+   --alarm-name MyAlarm \
+   --state-value ALARM \
+   --state-reason "Testing execution of Lambda function"
+   ```
 
    Replace *MyAlarm* in the preceding command with the name of the alarm you created in [Part 6: Create a CloudWatch Alarm](#monitoring-sender-reputation-pausing-configuration-set-part-6)\.
 **Note**  
 When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
 
-1. At the command line, type the following command to check the email sending status for the configuration set: aws ses describe\-configuration\-set \-\-configuration\-set\-name *ConfigSet*
+1. At the command line, type the following command to check the email sending status for the configuration set:
 
-   If the Lambda function executed successfully, you see the following output:
+   ```
+   aws ses describe-configuration-set \
+   --configuration-set-name ConfigSet
+   ```
+
+   If the Lambda function executed successfully, you see output that resembles the following example:
 
    ```
    {                           

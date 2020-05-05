@@ -175,33 +175,35 @@ When you add an Amazon SNS action to your receipt rule, the notification contain
 
 ```
 {
-    "Records": [
+    'Records': [
         {
-            "EventSource": "aws:sns",
-            "EventVersion": "1.0",
-            "EventSubscriptionArn": "arn:aws:sns:us-east-1:123456789012:IncomingEmail:12345678",
-            "Sns": {
-                "Type": "Notification",
-                "MessageId": "EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000",
-                "TopicArn": "arn:aws:sns:us-east-1:123456789012:IncomingEmail",
-                "Subject": "Amazon SES Email Receipt Notification",
-                "Message": <message content>,
-                "Timestamp": "2019-09-06T18:52:16.076Z",
-                "SignatureVersion": "1",
-                "Signature": "012345678901example==",
-                "SigningCertUrl": "https://sns.us-east-1.amazonaws.com/SimpleNotificationService
-                                   -01234567890123456789012345678901.pem",
-                "UnsubscribeUrl": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&
+            'EventSource': 'aws:sns',
+            'EventVersion': '1.0',
+            'EventSubscriptionArn': 'arn:aws:sns:us-east-1:123456789012:IncomingEmail:12345678',
+            'Sns': {
+                'Type': 'Notification',
+                'MessageId': 'EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000',
+                'TopicArn': 'arn:aws:sns:us-east-1:123456789012:IncomingEmail',
+                'Subject': 'Amazon SES Email Receipt Notification',
+                'Message': <message content—see below>,
+                'Timestamp': '2019-09-06T18:52:16.076Z',
+                'SignatureVersion': '1',
+                'Signature': '012345678901example==',
+                'SigningCertUrl': 'https://sns.us-east-1.amazonaws.com/SimpleNotificationService
+                                   -01234567890123456789012345678901.pem',
+                'UnsubscribeUrl': 'https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&
                                    SubscriptionArn=arn:aws:sns:us-east-1:0123456789012:IncomingEmail:
-                                   0b863538-3f32-462e-9c89-8d8e0example",
-                "MessageAttributes": {}
+                                   0b863538-3f32-462e-9c89-8d8e0example',
+                'MessageAttributes': {}
             }
         }
     ]
 }
 ```
 
-The `Message` attribute contains the headers and content of the message\. The following example shows the values that are contained in the `Message` attribute\.
+The `Message` attribute contains a JSON\-encoded string\. This string contains the headers and content of the message\. The message body itself is base64 encoded\. If you want to use the message body in your Lambda function, you first have to decode the `Message` attribute, and then decode the `Content` object\.
+
+The following example shows the values that are contained in the `Message` attribute\.
 
 ```
 {

@@ -87,9 +87,11 @@ Your SMTP username and password are different from your AWS Access Key ID and Se
 
    In the preceding text, do the following:
    + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the Amazon SES SMTP endpoint that you want to use\.
-   + Replace *example\.com* with the domain that you're sending email from\.
+   + Replace *example\.com* with the domain that you want to use to send email\.
 
    When you finish, save the file\.
+**Note**  
+Amazon EC2 restricts communications over port 25 by default\. If you're using Sendmail in an Amazon EC2 instance, you should complete the [Request to Remove Email Sending Limitations](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/ec2-email-limit-rdns-request)\.
 
 1. At the command line, type the following command to make *sendmail\.cf* writeable:
 

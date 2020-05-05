@@ -110,4 +110,4 @@ else:
 
 ## Using the Amazon SES SMTP interface<a name="sending-authorization-delegate-sender-tasks-smtp"></a>
 
-When you use the Amazon SES SMTP interface for cross\-account sending, you must include the `X-SES-SOURCE-ARN`, `X-SES-FROM-ARN` and `X-SES-RETURN-PATH-ARN` headers in your message\. Pass these headers after you issue the `DATA` command in the SMTP conversation\.
+When you use the Amazon SES SMTP interface for cross\-account sending, you have to include the `X-SES-SOURCE-ARN`, `X-SES-FROM-ARN` and `X-SES-RETURN-PATH-ARN` headers in your message\. Pass these headers after you issue the `DATA` command in the SMTP conversation\.
