@@ -231,7 +231,7 @@ The following text is automatically added to the end of every custom verificatio
 
 *If you did not request to verify this email address, please disregard this message\. If you have any concerns, please forward this message to the following email address along with your questions or comments\. *
 
-The *email address* link in this text refers to [ses\-review@amazon\.com](mailto:ses-review@amazon.com), an inbox that is actively monitored by the Amazon SES team\.
+The *email address* link in this text refers to aws\-email\-domain\-verification@amazon\.com, an inbox that is actively monitored by the Amazon SES team\.
 
 ### Q11\. Are custom verification emails DKIM\-signed?<a name="send-email-verify-address-custom-faq-q11"></a>
 

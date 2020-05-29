@@ -38,7 +38,7 @@ You should do the following:
 + If your situation allows it, stop sending mail until you fix the problem\. You can still send email while your account is under review\. However, if you continue to send mail without making changes, you might inadvertently make the issue worse\.
 + Look at the email you received from us for a summary of the issue\.
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
-+ After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
++ After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
 ### Q6\. What's a review?<a name="pr-q6"></a>
@@ -47,10 +47,7 @@ You can request that we review our decision to place your under review\. See the
 
 ### Q7\. How do I request a review?<a name="pr-q7"></a>
 
-To request a review, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\.
-
-**Important**  
-To protect the security of your account, we can only respond to review requests that are sent from the email address associated with your AWS account\.
+To request a review, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\.
 
 In your request, provide the following information:
 + Information about the root cause of the event that caused your account to be placed under review\.
@@ -81,7 +78,7 @@ In either of these situations, we automatically send you a notification when we 
 
 ### Q12\. What if I make my fixes shortly before the review period expires?<a name="pr-q12"></a>
 
-Send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, let us know that you've resolved the issue\.
+Sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your reply to the case, let us know that you've resolved the issue\.
 
 ### Q13\. Can I get help from my AWS representative or Premium Support?<a name="pr-q13"></a>
 
@@ -124,7 +121,7 @@ You can still use other AWS services while your account's ability to send email 
 You should do the following:
 + Look at the email you received from us for a summary of the issue\.
 + Investigate your sending to determine what aspect of your sending specifically triggered the issue\.
-+ After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
++ After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
 ### Q6\. What's a review?<a name="sp-q6"></a>
@@ -133,10 +130,7 @@ You can request that we review our decision to place your under review\. See the
 
 ### Q7\. How do I request a review?<a name="sp-q7"></a>
 
-To request a review, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. 
-
-**Important**  
-To protect the security of your account, we can only respond to requests that are sent from the email address associated with your AWS account\.
+To request a review, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. 
 
 In your request, provide the following information:
 + Information about what caused the issue\.
@@ -169,7 +163,7 @@ High bounce rates are often used by entities such as email providers and anti\-s
 
 ### Q2\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of my account's bounce rate?<a name="bn-q2"></a>
 
-Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. Also include the following information:
+Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. Also include the following information:
 + The method you use to track your bounces
 + How you ensure that the email addresses of new recipients are valid prior to sending to them\. For example, which of the recommendations are you following in [Q11\. What can I do to minimize bounces?](#bn-q11)
 
@@ -232,7 +226,7 @@ High complaint rates are often used by entities such as email providers and anti
 
 ### Q3\. What should I do if I receive a notice saying that my account is under review or that my sending is paused because of an issue with complaints?<a name="cm-q3"></a>
 
-Review your list acquisition process and the content of your emails to try to understand why your recipients might not appreciate the email they're receiving from you\. Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
+Review your list acquisition process and the content of your emails to try to understand why your recipients might not appreciate the email they're receiving from you\. Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 
 ### Q4\. What can I do to minimize complaints?<a name="cm-q4"></a>
 
@@ -323,7 +317,7 @@ To protect the identities of the recipients who complained, we can't provide cop
 
 #### Q6\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of direct complaints?<a name="cm-direct-q6"></a>
 
-Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
+Immediately change your sending processes so that you're only sending messages recipients who have specifically signed up to receive them\. Also, ensure that you're sending the type of content that your recipients signed up to receive\. After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 
 If you don't request a review within three weeks, and we continue to receive direct recipient complaints, we might pause your account's ability to send email\.
 
@@ -353,7 +347,7 @@ No\. Email providers typically don't provide an example email\.
 
 #### Q6\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of email provider complaints?<a name="cm-email-provider-q6"></a>
 
-Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If you don't request a review within three weeks, and we continue to receive complaints from providers, we might pause your account's ability to send additional email\.
+Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If you don't request a review within three weeks, and we continue to receive complaints from providers, we might pause your account's ability to send additional email\.
 
 ## Spamtrap FAQ<a name="e-faq-st"></a>
 
@@ -375,7 +369,7 @@ We review the reports\. If we determine that your account is sending email to sp
 
 ### Q5\. What should I do if a receive a notice saying that my account is under review or that my sending is paused because of an issue with spamtraps?<a name="st-q5"></a>
 
-First, you should address the issue that caused us to place your account under review or pause your ability to send email\. Next, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we'll cancel the review period or remove the sending pause from your account\.
+First, you should address the issue that caused us to place your account under review or pause your ability to send email\. Next, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we'll cancel the review period or remove the sending pause from your account\.
 
 Because of the way that spamtrap hits are reported, it may take three weeks or more before we are able to determine if the changes you made solved the issue\. 
 
@@ -424,14 +418,14 @@ When we place your account under review or pause your account's ability to send 
 
 Unsolicited emails are emails that the recipient didn't explicitly ask to receive\. This includes cases in which a recipient signs up for a certain type of mail \(for example, notifications\), and instead is sent a different type of mail \(for example, advertisements\)\.
 
-When we place your account under review or pause your account's ability to send email, we send you a notification\. If you receive a notification stating that we're taking one of these actions because of an issue with unsolicited email, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, include the following information:
+When we place your account under review or pause your account's ability to send email, we send you a notification\. If you receive a notification stating that we're taking one of these actions because of an issue with unsolicited email, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, include the following information:
 + Are all the messages that you send specifically requested by the recipient, and do they comply with the [AWS Acceptable Use Policy](https://aws.amazon.com/aup/)?
 + Have you acquired email addresses in any way other than a customer specifically interacting with you or your website and requesting emails from it? You should explain how you acquired your mailing list\.
 + How do your subscribe and unsubscribe processes work? You should include your opt\-in and opt\-out links\.
 
 ### Q4\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of a manual review?<a name="mi-q4"></a>
 
-Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we'll cancel the review period on your account\.
+Identify the cause of the issue, and then correct it\. After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we'll cancel the review period on your account\.
 
 ### Q5\. What types of problems do you view as "correctable?"<a name="mi-q5"></a>
 
@@ -439,7 +433,4 @@ Generally, we believe the situation is correctable if you have a history of good
 
 ### Q6\. What if I can't find the source of the problem?<a name="mi-q6"></a>
 
-You can send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account and request a sample of the mail that caused the issue\.
-
-**Important**  
-To protect the security of your account, we can only respond to requests that are sent from the email address associated with your AWS account\.
+You can sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf and request a sample of the mail that caused the issue\.

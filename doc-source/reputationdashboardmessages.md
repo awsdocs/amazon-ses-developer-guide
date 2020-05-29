@@ -51,19 +51,19 @@ For best results, maintain a bounce rate below 5%\. Higher bounce rates can impa
 
 If you haven't done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email Program Success Metrics](success-metrics.md)\.
 
-Next, determine which email addresses are bouncing, and create and implement a plan for reducing or eliminating these bounces\. If your account's ability to send email has already been paused, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) to request a list of recent complaints\.
+Next, determine which email addresses are bouncing, and create and implement a plan for reducing or eliminating these bounces\. If your account's ability to send email has already been paused, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\.
 
 ### If your account is under review<a name="reputationdashboard-bounce-probation"></a>
 
 At the end of the review period, if the bounce rate for your account remains above 10%, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your email, describe the changes you implemented\. If we agree that the changes will reduce your bounce rate, we adjust our calculations to only consider bounces received after your changes were implemented\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your response to the case, describe the changes you implemented\. If we agree that the changes will reduce your bounce rate, we adjust our calculations to only consider bounces received after your changes were implemented\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-bounce-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you implement changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you implement changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Complaint Rate Notification<a name="reputationdashboard-complaint"></a>
 
@@ -83,7 +83,7 @@ For best results, maintain a complaint rate below 0\.1%\. Higher complaint rates
 
 If you haven't done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email Program Success Metrics](success-metrics.md)\.
 
-Next, determine which messages you are sending that result in complaints, and implement a plan for reducing these complaints\. If your account's ability to send email has already been paused, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) to request a list of recent complaints\.
+Next, determine which messages you are sending that result in complaints, and implement a plan for reducing these complaints\. If your account's ability to send email has already been paused, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf
 
 While you should immediately stop sending to addresses that have complained, it is important that you identify the factors that are causing recipients to issue complaints\. After you identify these factors, adjust your email sending behaviors to address them\.
 
@@ -91,13 +91,13 @@ While you should immediately stop sending to addresses that have complained, it 
 
 At the end of the review period, if the complaint rate for your account remains above 0\.5%, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your email, describe the changes you implemented\. If we agree that the changes will reduce your complaint rate, we adjust our calculations to only consider the complaints that were received after you implemented the changes\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your response to the case, describe the changes you implemented\. If we agree that the changes will reduce your complaint rate, we adjust our calculations to only consider the complaints that were received after you implemented the changes\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-complaint-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Anti\-Spam Organization Notification<a name="reputationdashboard-antispamorg"></a>
 
@@ -117,13 +117,13 @@ To resolve this issue, you need to determine what aspects of your email sending 
 
 At the end of the review period, if the anti\-spam organization continues to identify the email sent from your account as problematic, we might pause your account's ability to send email until you resolve the issue\. 
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the review period to ensure that we're only analyzing the anti\-spam organization notifications we have received after you implemented your changes\. At the end of this extended review period, your account is no longer listed by the anti\-spam organization, we will remove the review period for your account\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we will extend the review period to ensure that we're only analyzing the anti\-spam organization notifications we have received after you implemented your changes\. At the end of this extended review period, your account is no longer listed by the anti\-spam organization, we will remove the review period for your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-antispamorg-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Direct Feedback Notification<a name="reputationdashboard-directfeedback"></a>
 
@@ -147,13 +147,13 @@ Additionally, you should purge your lists of addresses that haven't interacted w
 
 At the end of the review period, if Amazon SES continues to receive a significant number of direct complaints about messages sent from your account, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we cancel the review period on your account\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we cancel the review period on your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-directfeedback-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Domain Blocklist Notification<a name="reputationdashboard-domainblocklist"></a>
 
@@ -175,13 +175,13 @@ The Spamhaus Domain Blocklist isn't affiliated with Amazon SES or AWS\. We make 
 
 We look for references to blacklisted domains in the emails that you send during the review period\. If your emails still contain a significant number of references to blacklisted domains, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of blocklisted domains present in your email after you put your changes in place\. At the end of this extended review period, if the number of domain blocklist notifications has been reduced or eliminated, and we believe that you've taken steps to prevent this issue from occurring again in the future, we cancel the review period for your account\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of blocklisted domains present in your email after you put your changes in place\. At the end of this extended review period, if the number of domain blocklist notifications has been reduced or eliminated, and we believe that you've taken steps to prevent this issue from occurring again in the future, we cancel the review period for your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-domainblocklist-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Internal Review Notification<a name="reputationdashboard-internalreview"></a>
 
@@ -219,7 +219,7 @@ The Spamhaus Domain Blocklist isn't affiliated with Amazon SES or AWS\. We make 
 
 ### If your account is under review, or if your account's ability to send email is paused<a name="reputationdashboard-internalreview-probation-suspended"></a>
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we cancel the review period or remove the sending pause from your account\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we cancel the review period or remove the sending pause from your account\.
 
 If we remove a review period or sending pause from your account, and we observe the same issue at a later time, we might place your account under review or pause your ability to send email again\. In extreme cases, or if we observe repeated instances of the same issue, we might permanently suspend your account's ability to send email\.
 
@@ -243,13 +243,13 @@ To resolve this issue, you need to determine which aspects of your email sending
 
 At the end of the review period, if the mailbox provider continues to identify the email sent from your account as being problematic, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we will extend the review period to ensure that we're only analyzing the number of mailbox provider notifications we receive after you implement your changes\. At the end of this extended review period, if the mailbox provider no longer reports your account as being problematic, we might remove the review from your account\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we will extend the review period to ensure that we're only analyzing the number of mailbox provider notifications we receive after you implement your changes\. At the end of this extended review period, if the mailbox provider no longer reports your account as being problematic, we might remove the review from your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-mailboxprovider-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Recipient Feedback Notification<a name="reputationdashboard-recipientfeedback"></a>
 
@@ -275,13 +275,13 @@ Additionally, you should purge your lists of addresses that haven't interacted w
 
 At the end of the review period, if the mailbox provider continues to report a significant number of complaints, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of mailbox provider complaints that we receive after you implement your changes\. At the end of this extended review period, if the number of mailbox provider complaints has been reduced or eliminated, we might remove the review from your account\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of mailbox provider complaints that we receive after you implement your changes\. At the end of this extended review period, if the number of mailbox provider complaints has been reduced or eliminated, we might remove the review from your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-recipientfeedback-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Related Account Notification<a name="reputationdashboard-relatedaccount"></a>
 
@@ -295,7 +295,7 @@ We have detected serious problems related to emails sent from another Amazon SES
 
 When we pause an account's ability to send email, we always send information about the reasons for the sending pause to the owner of that account\. Refer to the email we sent to the owner of the related account for more information\.
 
-You should address the issues with the related account first\. After you implement changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we cancel the review period or remove the sending pause from your account\.
+You should address the issues with the related account first\. After you implement changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\. If we agree that the changes you've made appropriately address the issue, we cancel the review period or remove the sending pause from your account\.
 
 ## Spamtrap Notification<a name="reputationdashboard-spamtrap"></a>
 
@@ -319,13 +319,13 @@ Additionally, you should purge your lists of addresses that haven't interacted w
 
 At the end of the review period, if messages are still being sent to spamtrap addresses from your account, we might pause your account's ability to send email until you resolve the issue\.
 
-If you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of spamtrap reports we receive after you implement your changes\. At the end of this extended review period, if the number of spamtrap reports has been reduced or eliminated, we might remove the review from your account\.
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of spamtrap reports we receive after you implement your changes\. At the end of this extended review period, if the number of spamtrap reports has been reduced or eliminated, we might remove the review from your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-spamtrap-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 ## Vulnerable Site Notification<a name="reputationdashboard-vulnerablesite"></a>
 
@@ -339,13 +339,13 @@ Most often in these situations, a third party is abusing a feature of your websi
 
 ### What you can do to resolve the issue<a name="reputationdashboard-vulnerablesite-whattodo"></a>
 
-First, identify features of your website or applications that might allow third parties to send emails using Amazon SES without your knowledge\. To request a sample of the messages we believe were sent in this manner, email us at [ses\-review@amazon\.com](mailto:ses-review@amazon.com)\.
+First, identify features of your website or applications that might allow third parties to send emails using Amazon SES without your knowledge\. In your Support Center case, you can request a sample of the messages we believe were sent in this manner\.
 
 Next, modify your application or website to prevent unsolicited sending\. For example, add a CAPTCHA, limit the rate at which emails can be sent, remove the ability of users to submit custom content, require users to log in to send email, and remove the ability for the application to generate multiple simultaneous notifications\.
 
 ### If your account is under review, or if your account's ability to send email is paused<a name="reputationdashboard-vulnerablesite-probation-suspended"></a>
 
-When you have implemented changes that you believe will resolve the issue, send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
 If we remove a review period or sending pause from your account, and we observe the same issue later, we might place your account under review or pause your ability to send email again\. If we observe extreme issues or repeated instances of the same issue, we might permanently suspend your account's ability to send email\.
 
@@ -361,4 +361,4 @@ An automatic or human review has identified issues that aren't listed in the pre
 
 ### What you can do to resolve the issue<a name="reputationdashboard-other-whattodo"></a>
 
-Refer to the email you received from us for details on the specific issue\. If possible, address this issue and send an email to [ses\-review@amazon\.com](mailto:ses-review@amazon.com) from the email address associated with your AWS account\. In your email, describe the changes you implemented\. Depending on your specific situation and the nature of the issues we discovered, we might end the review period or restore your account's ability to send email\.
+Refer to the Support Center case that we opened on your behalf for details on the specific issue\. To access Support Center, sign into the AWS Console and then choose Support Center\. In your response to the case, describe the changes you implemented\. Depending on your specific situation and the nature of the issues we discovered, we might end the review period or restore your account's ability to send email\.
