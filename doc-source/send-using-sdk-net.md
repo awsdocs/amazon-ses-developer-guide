@@ -1,4 +1,4 @@
-# Send an Email Using the AWS SDK for \.NET<a name="send-using-sdk-net"></a>
+# Send an email using the AWS SDK for \.NET<a name="send-using-sdk-net"></a>
 
 The following procedure shows you how to send an email through Amazon SES using [Visual Studio](https://www.visualstudio.com/) and the AWS SDK for \.NET\.
 
@@ -14,10 +14,10 @@ In this getting started tutorial, you send an email to yourself so that you can 
 ## Prerequisites<a name="send-using-sdk-net-prerequisites"></a>
 
 Before you begin, perform the following tasks:
-+ **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
-+ **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
++ **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\. 
++ **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
 + **Install Visual Studio**—Visual Studio is available at [https://www\.visualstudio\.com/](https://www.visualstudio.com/)\.
-+ **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
++ **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ## Procedure<a name="send-using-sdk-net-procedure"></a>
 
@@ -152,7 +152,7 @@ The following procedure shows how to send an email through Amazon SES using the 
    ```
 
 1. In the code editor, do the following:
-   + Replace *sender@example\.com* with the "From:" email address\. This address must be verified\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
+   + Replace *sender@example\.com* with the "From:" email address\. This address must be verified\. For more information, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
    + Replace *recipient@example\.com* with the "To:" address\. If your account is still in the sandbox, this address must also be verified\.
    + Replace *ConfigSet* with the name of the configuration set to use when sending this email\.
    + Replace *USWest2* with the name of the AWS Region endpoint you use to send email using Amazon SES\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.

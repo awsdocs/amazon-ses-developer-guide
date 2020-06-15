@@ -1,4 +1,4 @@
-# Amazon SES Domain Verification TXT Records<a name="dns-txt-records"></a>
+# Amazon SES domain verification TXT records<a name="dns-txt-records"></a>
 
 Your domain is associated with a set of Domain Name System \(DNS\) records that you manage through your DNS provider\. A TXT record is a type of DNS record that provides additional information about your domain\. Each TXT record consists of a name and a value\.
 

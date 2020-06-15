@@ -10,7 +10,7 @@ The procedure in this section shows you how to set up Easy DKIM for a domain\. I
 
 1. In the list of domains, choose the domain that you want to set up Easy DKIM for\.
 **Note**  
-If you haven't started the verification process for the domain yet, see the procedures at [Verifying a Domain With Amazon SES](verify-domain-procedure.md)\.
+If you haven't started the verification process for the domain yet, see the procedures at [Verifying a domain with Amazon SES](verify-domain-procedure.md)\.
 
 1. Under **DKIM**, choose **Generate DKIM Settings**\.
 

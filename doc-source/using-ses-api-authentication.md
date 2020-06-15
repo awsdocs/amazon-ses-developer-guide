@@ -1,4 +1,4 @@
-# Request Authentication and Amazon SES<a name="using-ses-api-authentication"></a>
+# Authenticating requests to the Amazon SES API<a name="using-ses-api-authentication"></a>
 
 When you make a request to the Amazon SES API, you have to prove that you're the account holder so that Amazon SES can verify whether you're registered to use services offered by AWS\. If either test fails, Amazon SES returns an error and doesn't process the request\.
 

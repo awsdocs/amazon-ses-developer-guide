@@ -5,7 +5,7 @@ When you set up Easy DKIM for an identity, Amazon SES automatically adds a 1024\
 **Note**  
 To set up Easy DKIM, you have to modify the DNS settings for your domain\. If you use Route 53 as your DNS provider, Amazon SES can automatically create the appropriate records for you\. If you use another DNS provider, see your provider's documentation to learn more about changing the DNS settings for your domain\.
 
-When you successfully configure Easy DKIM, you can start sending email from the DKIM enabled domain, even if you haven't completed the procedures in [Verifying a Domain With Amazon SES](verify-domain-procedure.md)\.
+When you successfully configure Easy DKIM, you can start sending email from the DKIM enabled domain, even if you haven't completed the procedures in [Verifying a domain with Amazon SES](verify-domain-procedure.md)\.
 
 ## Easy DKIM Considerations<a name="send-email-authentication-dkim-easy-considerations"></a>
 

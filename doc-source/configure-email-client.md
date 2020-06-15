@@ -5,7 +5,7 @@ After you obtain your [SMTP user name and password](smtp-credentials.md), you ca
 The following procedures show how to configure [Mozilla Thunderbird](https://www.mozilla.org/thunderbird/) to send email by using Amazon SES\. You might be able to configure other email clients to send email through Amazon SES\. See the documentation for your email client for more information\.
 
 **Note**  
-These procedures show you how to set up Mozilla Thunderbird to *send* email using Amazon SES\. However, you can't use Thunderbird to *receive* email that is sent to your Amazon SES email addresses\. For more information about receiving email with Amazon SES, see [Receiving Email with Amazon SES](receiving-email.md)\.
+These procedures show you how to set up Mozilla Thunderbird to *send* email using Amazon SES\. However, you can't use Thunderbird to *receive* email that is sent to your Amazon SES email addresses\. For more information about receiving email with Amazon SES, see [Receiving email with Amazon SES](receiving-email.md)\.
 
 ## Configuring Mozilla Thunderbird to Send Email Using Amazon SES<a name="configure-email-client-thunderbird"></a>
 

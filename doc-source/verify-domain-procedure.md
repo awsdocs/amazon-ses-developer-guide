@@ -1,4 +1,4 @@
-# Verifying a Domain With Amazon SES<a name="verify-domain-procedure"></a>
+# Verifying a domain with Amazon SES<a name="verify-domain-procedure"></a>
 
 The following procedure shows you how to verify a domain using the Amazon SES console\. If you want to use the Amazon SES API instead, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. 
 
@@ -25,7 +25,7 @@ If your domain is *www\.example\.com*, enter *example\.com* as your domain\. The
 
 1. In the **Verify a New Domain** dialog box, you will see a **Domain Verification Record Set** containing a **Name**, a **Type**, and a **Value**\. \(This information will also be available by choosing the domain name after you close the dialog box\.\)
 
-   To complete domain verification, add a TXT record with the displayed **Name** and **Value** to your domain's DNS server\. For information about Amazon SES TXT records and general guidance about how to add a TXT record to a DNS server, see [Amazon SES Domain Verification TXT Records](dns-txt-records.md)\. In particular:
+   To complete domain verification, add a TXT record with the displayed **Name** and **Value** to your domain's DNS server\. For information about Amazon SES TXT records and general guidance about how to add a TXT record to a DNS server, see [Amazon SES domain verification TXT records](dns-txt-records.md)\. In particular:
    + If your DNS provider does not allow underscores in record names, you can omit *\_amazonses* from the **Name**\.
    + To help you easily identify this record within your domain's DNS settings, you can optionally prefix the **Value** with *amazonses:* 
    + Some DNS providers automatically append the domain name to DNS record names\. To avoid duplication of the domain name, you can add a period to the end of the domain name in the DNS record\. This indicates that the record name is fully qualified and the DNS provider need not append an additional domain name\.  

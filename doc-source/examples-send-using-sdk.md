@@ -1,4 +1,4 @@
-# Sending Email using AWS SDKs<a name="examples-send-using-sdk"></a>
+# Sending email using AWS SDKs<a name="examples-send-using-sdk"></a>
 
 The AWS SDKs contain built\-in methods for interacting with Amazon SES and several other AWS services\. If you plan to use Amazon SES along with other AWS services, we recommend that you use an SDK\. To learn more about the AWS SDKs, see [Tools for Amazon Web Services](https://aws.amazon.com/tools/?nc1=h_ls#sdk)
 
@@ -7,7 +7,7 @@ In this section, you will find code examples in several programming languages th
 ------
 #### [ C\# ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net/)\. This code example assumes that you have installed the AWS SDK for \.NET, and that you've created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net/)\. This code example assumes that you have installed the AWS SDK for \.NET, and that you've created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key in the SDK Store\. For more information, see [Configuring AWS credentials](https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/net-dg-config-creds.html) in the AWS SDK for \.NET Developer Guide\. This example doesn't function unless you specify your credentials using one of these methods\.
@@ -115,7 +115,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ------
 #### [ Go ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/)\. This code example assumes that you have installed the AWS SDK for Go, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Go](https://aws.amazon.com/sdk-for-go/)\. This code example assumes that you have installed the AWS SDK for Go, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
@@ -237,7 +237,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ------
 #### [ Java SDK v1 ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/)\. This code example assumes that you have installed the AWS SDK for Java, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/)\. This code example assumes that you have installed the AWS SDK for Java, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ```
  1. package com.amazonaws.samples;
@@ -317,7 +317,7 @@ The following code example is a complete solution for sending email through Amaz
 ------
 #### [ Java SDK v2 ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Java 2\.x](https://aws.amazon.com/sdk-for-java/) and the [JavaMail API](https://github.com/javaee/javamail/releases)\. This code example assumes that you have installed the SDK for Java 2\.x, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Java 2\.x](https://aws.amazon.com/sdk-for-java/) and the [JavaMail API](https://github.com/javaee/javamail/releases)\. This code example assumes that you have installed the SDK for Java 2\.x, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ```
 package com.example.ses;
@@ -553,7 +553,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ------
 #### [ PHP ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for PHP](https://aws.amazon.com/sdk-for-php/)\. This code example assumes that you have installed the AWS SDK for PHP, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for PHP](https://aws.amazon.com/sdk-for-php/)\. This code example assumes that you have installed the AWS SDK for PHP, and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
@@ -639,7 +639,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ------
 #### [ Python ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/sdk-for-python/)\. This code example assumes that you have installed the AWS SDK for Python \(Boto\), and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/sdk-for-python/)\. This code example assumes that you have installed the AWS SDK for Python \(Boto\), and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.
@@ -733,7 +733,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
 ------
 #### [ Ruby ]
 
-The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/)\. This code example assumes that you've installed the AWS SDK for Ruby, and that you've created a shared credentials file\. For more information about installing the SDK for Ruby, see [Installing the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-install.html) in the *AWS SDK for Ruby Developer Guide*\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following code example is a complete solution for sending email through Amazon SES using the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/)\. This code example assumes that you've installed the AWS SDK for Ruby, and that you've created a shared credentials file\. For more information about installing the SDK for Ruby, see [Installing the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-install.html) in the *AWS SDK for Ruby Developer Guide*\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 **Important**  
 You use a shared credentials file to pass your AWS access key ID and secret access key\. As an alternative to using a shared credentials file, you can specify your AWS access key ID and secret access key by setting two environment variables \(`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively\)\. This example doesn't function unless you specify your credentials using one of these methods\.

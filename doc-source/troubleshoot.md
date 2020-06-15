@@ -1,4 +1,4 @@
-# Troubleshoot Amazon SES Issues<a name="troubleshoot"></a>
+# Troubleshoot Amazon SES issues<a name="troubleshoot"></a>
 
 This section contains the following topics that may help you when you encounter problems: 
 + For information about domain verification problems that you might encounter, see [Amazon SES Email Address and Domain Verification Problems](troubleshoot-verification.md)\.
@@ -9,9 +9,9 @@ This section contains the following topics that may help you when you encounter 
 + For a list of errors that can occur when you send an email with Amazon SES, see [Amazon SES Email Sending Errors](troubleshoot-error-messages.md)\.
 + For tips on how to increase your email sending speed when you make multiple calls to Amazon SES using either the API or the SMTP interface, see [Increasing Throughput with Amazon SES](troubleshoot-throughput-problems.md)\.
 + For solutions to common problems that you might encounter when you use Amazon SES through its Simple Mail Transfer Protocol \(SMTP\) interface, as well as a list of SMTP response codes that Amazon SES returns, see [Amazon SES SMTP Issues](troubleshoot-smtp.md)\. 
-+ For a list of error codes that are returned by the Amazon SES Query \(HTTPS\) API, see [API Error Codes Returned by Amazon SES](using-ses-api-error-codes.md)\.
++ For a list of error codes that are returned by the Amazon SES Query \(HTTPS\) API, see [Error codes returned by the Amazon SES API](using-ses-api-error-codes.md)\.
 + For a description of common issues related to our sending review process, and how to handle them, see [](faqs-enforcement.md)\.
-+ For a discussion about how IP blacklists affect your sending with Amazon SES, see [Amazon SES IP Blacklist FAQs](faqs-blacklists.md)\.
++ For a discussion about how IP blacklists affect your sending with Amazon SES, see [Amazon SES IP blacklist FAQs](faqs-blacklists.md)\.
 
 If you are calling the Amazon SES API directly, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) for the HTTP errors that you might receive\.
 

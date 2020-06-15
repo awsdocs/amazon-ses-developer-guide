@@ -4,7 +4,7 @@ This topic provides an overview of the sending authorization process and then ex
 
 This section uses the following terms:
 + **Identity** – An email address or domain that Amazon SES users use to send email\.
-+ **Identity owner** – An Amazon SES user who has verified ownership of an email address or domain by using the procedures described in [Verifying Identities](verify-addresses-and-domains.md)\. 
++ **Identity owner** – An Amazon SES user who has verified ownership of an email address or domain by using the procedures described in [Verifying identities](verify-addresses-and-domains.md)\. 
 + **Delegate sender** – An entity that is authorized to send email from an identity it does not own\. An AWS account, an AWS Identity and Access Management \(IAM\) user, or an AWS service can have this *cross\-account* authority\.
 + **Sending authorization policy** – A document that you attach to an identity to specify who may send for that identity and under which conditions\.
 + **Amazon Resource Name \(ARN\)** – A standardized way to uniquely identify an AWS resource across all AWS services\. In the case of sending authorization, the resource is the identity that the identity owner wants the delegate sender to use\. An example of an ARN is *arn:aws:ses:us\-west\-2:123456789012:identity/example\.com*\. 
@@ -21,7 +21,7 @@ The following diagram shows the high\-level relationship between sending authori
 
 The sending authorization process consists of the following steps:
 
-1. The identity owner verifies an identity with Amazon SES by using the Amazon SES console or the Amazon SES API\. For information about the verification procedure, see [Verifying Identities](verify-addresses-and-domains.md)\.
+1. The identity owner verifies an identity with Amazon SES by using the Amazon SES console or the Amazon SES API\. For information about the verification procedure, see [Verifying identities](verify-addresses-and-domains.md)\.
 
 1. The delegate sender gives the identity owner the AWS account ID, IAM user ARN, or AWS service name of the entity that will do the sending\.
 
@@ -45,7 +45,7 @@ It is important to understand the role of the delegate sender and the identity o
 + **Sending quotas** – Email sent from the identity owner's identities count against the delegate sender's quotas\.
 + **Bounces and complaints** – Bounce and complaint events are recorded against the delegate sender's Amazon SES account, and can therefore impact the delegate sender's reputation\.
 + **DKIM signing** – If the identity owner has enabled Easy DKIM signing for an identity, all email sent from that identity will be DKIM\-signed, including email sent by the delegate sender\. Only the identity owner can control whether the emails are DKIM\-signed\.
-+ **Notifications** – Both the identity owner and the delegate sender can set up notifications for bounces and complaints\. The email identity owner can also enable email feedback forwarding\. For information about setting up notifications, see [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md)\.
-+ **Verification** – Identity owners are responsible for following the procedure in [Verifying Identities](verify-addresses-and-domains.md) to verify that they own the email addresses and domains that they are authorizing delegate senders to use\. Delegate senders do not need to verify any email addresses or domains specifically for sending authorization\.
++ **Notifications** – Both the identity owner and the delegate sender can set up notifications for bounces and complaints\. The email identity owner can also enable email feedback forwarding\. For information about setting up notifications, see [Monitoring your Amazon SES sending activity](monitor-sending-activity.md)\.
++ **Verification** – Identity owners are responsible for following the procedure in [Verifying identities](verify-addresses-and-domains.md) to verify that they own the email addresses and domains that they are authorizing delegate senders to use\. Delegate senders do not need to verify any email addresses or domains specifically for sending authorization\.
 + **AWS Regions** – The delegate sender must send the emails from the AWS Region in which the identity owner's identity is verified\. The sending authorization policy that gives permission to the delegate sender must be attached to the identity in that region\.
 + **Billing** – All messages that are sent from the delegate sender's account, including emails that the delegate sender sends using the identity owner's addresses, are billed to the delegate sender\. 

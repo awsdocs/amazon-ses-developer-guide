@@ -11,8 +11,8 @@ Before you complete the procedures in this section, you have to perform the foll
 + Uninstall Sendmail, if it's already installed on your system\. The procedure for completing this step varies depending on the operating system you use\.
 + Install Postfix\. The procedure for completing this step varies depending on the operating system you use\.
 + Install a SASL authentication package\. The procedure for completing this step varies depending on the operating system you use\. For example, if you use a RedHat\-based system, you should install the `cyrus-sasl-plain` package\. If you use a Debian\- or Ubuntu\-based system, you should install the `libsasl2-modules` package\.
-+ Verify an email address or domain to use for sending email\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
-+ If your account is still in the sandbox, you can only send email to verified email addresses\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
++ Verify an email address or domain to use for sending email\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\.
++ If your account is still in the sandbox, you can only send email to verified email addresses\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 ## Configuring Postfix<a name="send-email-postfix"></a>
 

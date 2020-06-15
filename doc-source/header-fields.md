@@ -1,4 +1,4 @@
-# Appendix: Header Fields<a name="header-fields"></a>
+# Header fields<a name="header-fields"></a>
 
 Amazon SES can accept all email headers that follow the format described in [RFC 822](https://www.ietf.org/rfc/rfc0822.txt)\.
 

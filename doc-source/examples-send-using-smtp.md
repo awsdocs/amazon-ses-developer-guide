@@ -1,4 +1,4 @@
-# Sending Email using the Amazon SES SMTP Interface<a name="examples-send-using-smtp"></a>
+# Sending email using the Amazon SES SMTP Interface<a name="examples-send-using-smtp"></a>
 
 Several programming languages include standard libraries for sending email using SMTP\. You can use these libraries to create email sending applications that are lightweight and highly configurable\.
 

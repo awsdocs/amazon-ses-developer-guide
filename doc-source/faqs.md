@@ -1,4 +1,4 @@
-# Amazon SES Frequently Asked Questions \(FAQs\)<a name="faqs"></a>
+# Amazon SES frequently asked questions \(FAQs\)<a name="faqs"></a>
 
 
 |  | 
@@ -8,6 +8,6 @@
 This section contains answers to several frequently asked questions related to using Amazon SES\. 
 
 **Topics**
-+ [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)
-+ [Amazon SES IP Blacklist FAQs](faqs-blacklists.md)
-+ [Amazon SES Email Sending Metrics FAQs](faqs-metrics.md)
++ [Amazon SES Sending review process FAQs](faqs-enforcement.md)
++ [Amazon SES IP blacklist FAQs](faqs-blacklists.md)
++ [Amazon SES email sending metrics FAQs](faqs-metrics.md)

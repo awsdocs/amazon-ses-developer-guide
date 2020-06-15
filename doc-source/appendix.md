@@ -1,8 +1,8 @@
-# Amazon SES Developer Guide Appendix<a name="appendix"></a>
+# Amazon SES Developer Guide appendix<a name="appendix"></a>
 
 This appendix contains supplementary information about sending emails through Amazon Simple Email Service \(Amazon SES\)\.
-+ For the header field requirements for emails that you send through Amazon SES, see [Appendix: Header Fields](header-fields.md)\.
-+ For a list of attachment types that Amazon SES does not accept, see [Appendix: Unsupported Attachment Types](mime-types-appendix.md)\.
++ For the header field requirements for emails that you send through Amazon SES, see [Header fields](header-fields.md)\.
++ For a list of attachment types that Amazon SES does not accept, see [Unsupported attachment types](mime-types-appendix.md)\.
 
 
 ****  

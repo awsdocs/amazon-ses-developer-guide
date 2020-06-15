@@ -1,4 +1,4 @@
-# Logging Amazon SES API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
+# Logging Amazon SES API calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
 Amazon SES is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in Amazon SES\. CloudTrail captures API calls for Amazon SES as events\. The calls captured include calls from the Amazon SES console and code calls to the Amazon SES API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Amazon SES\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to Amazon SES, the IP address from which the request was made, who made the request, when it was made, and additional details\. 
 

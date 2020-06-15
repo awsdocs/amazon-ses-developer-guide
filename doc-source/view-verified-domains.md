@@ -1,4 +1,4 @@
-# Listing Domain Identities in Amazon SES<a name="view-verified-domains"></a>
+# Listing domain identities in Amazon SES<a name="view-verified-domains"></a>
 
 To view your verified domains, follow the procedure below\.
 

@@ -1,4 +1,4 @@
-# Amazon SES Developer Guide Document History<a name="doc-history"></a>
+# Amazon SES Developer Guide document history<a name="doc-history"></a>
 
 The following table lists the major changes to the *Amazon Simple Email Service \(Amazon SES\) Developer Guide*\.
 

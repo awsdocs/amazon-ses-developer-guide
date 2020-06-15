@@ -12,7 +12,7 @@ The rate at which Amazon SES accepts your messages can be less than the maximum 
 
 Your Amazon SES sending quotas are separate for each AWS Region\. For information about using Amazon SES in multiple AWS Regions, see [Regions and Amazon SES](regions.md)\.
 
-When your account is in the Amazon SES sandbox, you can only send 200 messages per 24\-hour period, and your maximum sending rate is one message per second\. When you submit a request to have your account removed from the sandbox, you can also request that your quotas are increased at the same time\. For more information about having your account removed from the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+When your account is in the Amazon SES sandbox, you can only send 200 messages per 24\-hour period, and your maximum sending rate is one message per second\. When you submit a request to have your account removed from the sandbox, you can also request that your quotas are increased at the same time\. For more information about having your account removed from the sandbox, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 When your account has been removed from the sandbox, you can request additional quota increases at any time by creating a new case in the AWS Support Center\. For more information, see [Increasing Your Amazon SES Sending Quotas](manage-sending-quotas-request-increase.md)\.
 

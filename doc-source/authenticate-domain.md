@@ -1,3 +1,3 @@
-# Setting up SPF Records for Amazon SES<a name="authenticate-domain"></a>
+# Setting up SPF records for Amazon SES<a name="authenticate-domain"></a>
 
 An SPF record indicates to ISPs that you have authorized Amazon SES to send mail for your domain\. When you use Amazon SES, your decision about whether to publish an SPF record depends on whether you only require your email to pass an SPF check by the receiving mail server, or if you want your email to comply with the additional requirements needed to pass Domain\-based Message Authentication, Reporting and Conformance \(DMARC\) authentication based on SPF\. For more information, see [Authenticating Email with SPF in Amazon SES](send-email-authentication-spf.md)\.

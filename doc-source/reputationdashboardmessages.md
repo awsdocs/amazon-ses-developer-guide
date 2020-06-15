@@ -23,14 +23,14 @@ When you use the reputation dashboard, you see a message describing the status o
 + **Healthy** – There are no issues currently impacting your account\.
 + **Under review** – Your account is under review\. If the issues that caused us to place your account under review aren't resolved by the end of the review period, we might pause your account's ability to send email\.
 + **Pending end of review decision** – Your account is under review\. Because of the nature of the issues that caused us to place your account under review, we need to perform a manual review of your account before we take any further action\.
-+ **Sending paused** – We've paused your account's ability to send email\. While your account's ability to send email is paused, you won't be able to send email using Amazon SES\. You can request that we review this decision\. To learn more about requesting a review, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
++ **Sending paused** – We've paused your account's ability to send email\. While your account's ability to send email is paused, you won't be able to send email using Amazon SES\. You can request that we review this decision\. To learn more about requesting a review, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 + **Pending sending pause** – Your account is under review\. The issues that caused us to place your account under review haven't been resolved\. In this situation, we typically pause your account's ability to send email\. However, because of the nature of your account, we need to review your account before any further action is taken\.
 
 Additionally, the **Bounce Rate** and **Complaint Rate** sections of the reputation dashboard display status summaries for their respective metrics\. The following is a list of possible metric status values:
 + **Healthy** – The metric is within normal levels\.
 + **Almost healed** – The metric caused your account to be placed under review\. Since the review period began, the metric has stayed below the maximum rate\. If the metric remains below the maximum rate, the status of this metric changes to **Healthy** before the review period ends\.
 + **Under review** – The metric caused your account to be placed under review, and is still above the maximum rate\. If the issue that caused the metric to exceed the maximum rate is not resolved by the end of the review period, we might pause your account's ability to send email\.
-+ **Sending pause** – The metric caused us to pause your account's ability to send email\. While your account's ability to send email is paused, you can't send email using Amazon SES\. You can request that we review this decision\. To learn more about submitting a request for review, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
++ **Sending pause** – The metric caused us to pause your account's ability to send email\. While your account's ability to send email is paused, you can't send email using Amazon SES\. You can request that we review this decision\. To learn more about submitting a request for review, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 + **Pending sending pause** – The metric caused us to place your account under review\. The issues that caused this review period haven't been resolved\. These issues might cause us to pause your account's ability to send email\. A member of the Amazon SES team has to review your account before we take any further action\.
 
 ## Bounce Rate Notification<a name="reputationdashboard-bounce"></a>
@@ -49,7 +49,7 @@ For best results, maintain a bounce rate below 5%\. Higher bounce rates can impa
 
 ### What you can do to resolve the issue<a name="reputationdashboard-bounce-whattodo"></a>
 
-If you haven't done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email Program Success Metrics](success-metrics.md)\.
+If you haven't done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email program success metrics](success-metrics.md)\.
 
 Next, determine which email addresses are bouncing, and create and implement a plan for reducing or eliminating these bounces\. If your account's ability to send email has already been paused, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\.
 
@@ -61,7 +61,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-bounce-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you implement changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -81,7 +81,7 @@ For best results, maintain a complaint rate below 0\.1%\. Higher complaint rates
 
 ### What you can do to resolve the issue<a name="reputationdashboard-complaint-whattodo"></a>
 
-If you haven't done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email Program Success Metrics](success-metrics.md)\.
+If you haven't done so already, put a process in place to capture and manage bounces and complaints\. All Amazon SES accounts are required to have these processes in place\. For more information, see [Email program success metrics](success-metrics.md)\.
 
 Next, determine which messages you are sending that result in complaints, and implement a plan for reducing these complaints\. If your account's ability to send email has already been paused, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf
 
@@ -95,7 +95,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-complaint-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -121,7 +121,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-antispamorg-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -139,9 +139,9 @@ Recipients can complain to Amazon SES when they receive messages that they didn'
 
 ### What you can do to resolve the issue<a name="reputationdashboard-directfeedback-whattodo"></a>
 
-We recommend that you implement a double opt\-in strategy, as described in [Building and Maintaining Your Lists](tips-and-best-practices.md#building-and-maintaining-lists), for acquiring new addresses, and that you only send email to addresses that complete the double opt\-in process\.
+We recommend that you implement a double opt\-in strategy, as described in [Building and maintaining your lists](tips-and-best-practices.md#building-and-maintaining-lists), for acquiring new addresses, and that you only send email to addresses that complete the double opt\-in process\.
 
-Additionally, you should purge your lists of addresses that haven't interacted with your emails recently\. You can use open and click tracking, as described in [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md), to determine which users are viewing and interacting with the content you send\.
+Additionally, you should purge your lists of addresses that haven't interacted with your emails recently\. You can use open and click tracking, as described in [Monitoring your Amazon SES sending activity](monitor-sending-activity.md), to determine which users are viewing and interacting with the content you send\.
 
 ### If your account is under review<a name="reputationdashboard-directfeedback-probation"></a>
 
@@ -151,7 +151,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-directfeedback-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -179,7 +179,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-domainblocklist-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -223,7 +223,7 @@ When you have implemented changes that you believe will resolve the issue, sign 
 
 If we remove a review period or sending pause from your account, and we observe the same issue at a later time, we might place your account under review or pause your ability to send email again\. In extreme cases, or if we observe repeated instances of the same issue, we might permanently suspend your account's ability to send email\.
 
-See [Amazon SES Sending Review Process FAQs](faqs-enforcement.md) for more information about what to do if your account is under review, or your account's ability to send email is paused\.
+See [Amazon SES Sending review process FAQs](faqs-enforcement.md) for more information about what to do if your account is under review, or your account's ability to send email is paused\.
 
 ## Mailbox Provider Notification<a name="reputationdashboard-mailboxprovider"></a>
 
@@ -247,7 +247,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-mailboxprovider-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -267,9 +267,9 @@ We are unable to provide a list of the specific email addresses that are reporti
 
 To resolve this issue, you need to determine which aspects of your email sending program might be causing your recipients to issue complaints against the email messages they receive from you\. After you identify these factors, change your email sending practices to correct them\.
 
-To acquire new addresses, we recommend that you implement a double opt\-in strategy, as described in [Building and Maintaining Your Lists](tips-and-best-practices.md#building-and-maintaining-lists)\. We recommend that you only send email to addresses that have completed the double opt\-in process\.
+To acquire new addresses, we recommend that you implement a double opt\-in strategy, as described in [Building and maintaining your lists](tips-and-best-practices.md#building-and-maintaining-lists)\. We recommend that you only send email to addresses that have completed the double opt\-in process\.
 
-Additionally, you should purge your lists of addresses that haven't interacted with your emails recently\. You can use open and click tracking, as described in [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md), to determine which users are viewing and interacting with the content you send\.
+Additionally, you should purge your lists of addresses that haven't interacted with your emails recently\. You can use open and click tracking, as described in [Monitoring your Amazon SES sending activity](monitor-sending-activity.md), to determine which users are viewing and interacting with the content you send\.
 
 ### If your account is under review<a name="reputationdashboard-recipientfeedback-probation"></a>
 
@@ -279,7 +279,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-recipientfeedback-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -311,9 +311,9 @@ A spamtrap is a dormant email address that is used exclusively to lure unsolicit
 
 We can't reveal the email addresses associated with the spamtrap you encountered\. These addresses are closely guarded by the organizations that own them, and once the addresses are known, they become worthless\.
 
-Sending email to spamtrap addresses typically indicates that there is an issue with how you acquire your customers' email addresses\. For example, purchased lists of email addresses can contain spamtrap addresses, which is why sending to purchased or rented lists is prohibited by the Amazon SES terms of service\. To acquire new addresses, we recommend that you implement a double opt\-in strategy, as described in [Building and Maintaining Your Lists](tips-and-best-practices.md#building-and-maintaining-lists)\. We recommend that you only send email to addresses that have completed the double opt\-in process\.
+Sending email to spamtrap addresses typically indicates that there is an issue with how you acquire your customers' email addresses\. For example, purchased lists of email addresses can contain spamtrap addresses, which is why sending to purchased or rented lists is prohibited by the Amazon SES terms of service\. To acquire new addresses, we recommend that you implement a double opt\-in strategy, as described in [Building and maintaining your lists](tips-and-best-practices.md#building-and-maintaining-lists)\. We recommend that you only send email to addresses that have completed the double opt\-in process\.
 
-Additionally, you should purge your lists of addresses that haven't interacted with your emails recently\. You can use open and click tracking, as described in [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md), to determine which users are viewing and interacting with the content you send\.
+Additionally, you should purge your lists of addresses that haven't interacted with your emails recently\. You can use open and click tracking, as described in [Monitoring your Amazon SES sending activity](monitor-sending-activity.md), to determine which users are viewing and interacting with the content you send\.
 
 ### If your account is under review<a name="reputationdashboard-spamtrap-probation"></a>
 
@@ -323,7 +323,7 @@ If you have implemented changes that you believe will resolve the issue, sign in
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-spamtrap-suspended"></a>
 
-You can request that we reconsider this decision\. For more information, see [Amazon SES Sending Review Process FAQs](faqs-enforcement.md)\.
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 
@@ -349,7 +349,7 @@ When you have implemented changes that you believe will resolve the issue, sign 
 
 If we remove a review period or sending pause from your account, and we observe the same issue later, we might place your account under review or pause your ability to send email again\. If we observe extreme issues or repeated instances of the same issue, we might permanently suspend your account's ability to send email\.
 
-See [Amazon SES Sending Review Process FAQs](faqs-enforcement.md) for more information about what to do if your account is under review, or your account's ability to send email is paused\.
+See [Amazon SES Sending review process FAQs](faqs-enforcement.md) for more information about what to do if your account is under review, or your account's ability to send email is paused\.
 
 ## Other Notification<a name="reputationdashboard-other"></a>
 

@@ -1,4 +1,4 @@
-# Appendix: Unsupported Attachment Types<a name="mime-types-appendix"></a>
+# Unsupported attachment types<a name="mime-types-appendix"></a>
 
 You can send messages with attachments through Amazon SES by using the Multipurpose Internet Mail Extensions \(MIME\) standard\. Amazon SES accepts all file attachment types *except* for attachments with the file extensions in the following list\.
 

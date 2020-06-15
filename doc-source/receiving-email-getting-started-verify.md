@@ -16,7 +16,7 @@ To complete the procedure in this section, sign in to the AWS Management Console
 
 1. On the **Verify a New Domain** dialog box, choose **Use Route 53**\.
 **Note**  
-If you don't see the **Use Route 53** button, your domain may not be registered with Route 53\. If you used another service to register your domain, you can verify the domain by completing the procedures in [Verifying a Domain With Amazon SES](verify-domain-procedure.md)\.
+If you don't see the **Use Route 53** button, your domain may not be registered with Route 53\. If you used another service to register your domain, you can verify the domain by completing the procedures in [Verifying a domain with Amazon SES](verify-domain-procedure.md)\.
 
 1. On the **Use Route 53** dialog box, select **Domain Verification Record** and **Email Receiving Record**\. Then, under **Hosted Zones**, select the name of the Hosted Zone you want to use\. If you haven't made any changes to the domain you registered using Route 53, there should only be one option available in the **Hosted Zones** section\.
 **Important**  

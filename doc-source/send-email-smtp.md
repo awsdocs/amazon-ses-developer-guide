@@ -15,13 +15,13 @@ To send email using the Amazon SES SMTP interface, you need the following:
 **Important**  
 Your SMTP user name and password aren't identical to your AWS access keys or the credentials that you use to sign in to the Amazon SES console\. For information about how to generate your SMTP user name and password, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
 + Client software that can communicate using Transport Layer Security \(TLS\)\. For more information, see [Connecting to the Amazon SES SMTP Endpoint](smtp-connect.md)\.
-+ An email address that you've verified with Amazon SES\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
++ An email address that you've verified with Amazon SES\. For more information, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
 + Increased sending quotas, if you want to send large quantities of email\. For more information, see [Managing Your Amazon SES Sending Quotas](manage-sending-quotas.md)\.
 
 Then, you can send email by doing the following:
 + To configure an email client to send email through Amazon SES, see [Configuring Email Clients to Send Through Amazon SES](configure-email-client.md)\.
 **Note**  
-You can only use email clients to *send* email through Amazon SES\. You can't use email clients to *receive* email through Amazon SES\. However, there are other ways to receive email that's sent to domains that you use with Amazon SES\. For more information about receiving email with Amazon SES, see [Receiving Email with Amazon SES](receiving-email.md)\.  
+You can only use email clients to *send* email through Amazon SES\. You can't use email clients to *receive* email through Amazon SES\. However, there are other ways to receive email that's sent to domains that you use with Amazon SES\. For more information about receiving email with Amazon SES, see [Receiving email with Amazon SES](receiving-email.md)\.  
 If you need a solution that can both send and receive email by using an email client, consider using [Amazon WorkMail](https://aws.amazon.com/workmail)\.
 + To configure SMTP\-enabled software to send email through the Amazon SES SMTP interface, see [Sending Email Through Amazon SES From Software Packages](send-email-smtp-software-package.md)\.
 + To program an application to send email through Amazon SES, see [Sending Email Through Amazon SES From Your Application](send-email-smtp-app.md)\.

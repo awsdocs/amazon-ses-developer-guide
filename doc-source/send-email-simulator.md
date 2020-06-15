@@ -43,7 +43,7 @@ Save the file as `sample.txt`, attach it to an email, and then send the email to
 **Note**  
 Rejected emails—including those that you send by using the procedure above—count against your daily sending quota\. We bill you for each message that you send, including rejected messages\.
 
-To learn more about EICAR test files, see the [EICAR test file page on Wikipedia](https://en.wikipedia.org/wiki/EICAR_test_file)\. For code examples that you can use to send messages with attachments, see [Sending Raw Email using AWS SDKs](examples-send-raw-using-sdk.md)\.
+To learn more about EICAR test files, see the [EICAR test file page on Wikipedia](https://en.wikipedia.org/wiki/EICAR_test_file)\. For code examples that you can use to send messages with attachments, see [Sending raw email using AWS SDKs](examples-send-raw-using-sdk.md)\.
 
 
 ****  

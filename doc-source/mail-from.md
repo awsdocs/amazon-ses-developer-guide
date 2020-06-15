@@ -1,10 +1,10 @@
-# Setting Up a Custom MAIL FROM Domain<a name="mail-from"></a>
+# Setting up a custom MAIL FROM domain<a name="mail-from"></a>
 
 When an email is sent, it has two addresses that indicate its source: a From address that's displayed to the message recipient, and a MAIL FROM address that indicates where the message originated\. The MAIL FROM address is sometimes called the *envelope sender*, *envelope from*, *bounce address*, or *Return Path* address\. Mail servers use the MAIL FROM address to return bounce messages and other error notifications\. The MAIL FROM address is usually only viewable by recipients if they view the source code for the message\.
 
  Amazon SES sets the MAIL FROM domain for the messages that you send to a default value unless you specify your own domain\. This section discusses the benefits of setting up a custom MAIL FROM domain, and includes setup procedures\.
 
-## Why Use a Custom MAIL FROM Domain?<a name="mail-from-overview"></a>
+## Why use a custom MAIL FROM domain?<a name="mail-from-overview"></a>
 
 By default, messages that you send through Amazon SES use a subdomain of *amazonses\.com* as the MAIL FROM domain\. Sender Policy Framework \(SPF\) authentication successfully validates these messages because the default MAIL FROM domain matches the application that sent the email— in this case, Amazon SES\.
 
@@ -12,14 +12,14 @@ While this level of authentication is sufficient for many senders, other senders
 
 There are two ways to achieve DMARC validation: using [Sender Policy Framework](send-email-authentication-spf.md) \(SPF\), and using [DomainKeys Identified Mail](send-email-authentication-dkim.md) \(DKIM\)\. The only way to comply with DMARC through SPF is to use a custom MAIL FROM domain, because SPF validation requires the domain in the From address to match the MAIL FROM domain\. By using your own MAIL FROM domain, you have the flexibility to use SPF, DKIM, or both to achieve DMARC validation\.
 
-## Choosing a MAIL FROM Domain<a name="mail-from-requirements"></a>
+## Choosing a MAIL FROM domain<a name="mail-from-requirements"></a>
 
 The subdomain you use for your MAIL FROM domain has to meet the following requirements:
 + The MAIL FROM domain has to be a subdomain of the verified identity \(email address or domain\) that you send email from\. For example, *mail\.example\.com* is a valid MAIL FROM domain for the domain *example\.com*\.
 + The MAIL FROM domain shouldn't be a domain that you send email from\. If you have to use the MAIL FROM domain in a From address, either [disable email feedback forwarding](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-disabling) and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email Feedback Forwarding Destination](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-destination)\.
 + The MAIL FROM domain shouldn't be a domain that you use to receive email\.
 
-## Configuring the MAIL FROM Domain<a name="mail-from-set"></a>
+## Configuring the MAIL FROM domain<a name="mail-from-set"></a>
 
 The process of setting up a custom MAIL FROM domain requires you to add records to the DNS configuration for the domain\. You have to publish an MX record so that your domain can receive the bounce and complaint notifications that email providers send you\. You also have to publish an SPF record in order to prove that Amazon SES is authorized to send email from your domain\.
 
@@ -35,7 +35,7 @@ You can configure a MAIL FROM domain for an entire domain\. When you do, all of 
 
 1. In the navigation pane, under **Identity Management**, choose **Domains**\.
 
-1. In the list of domains, confirm that the parent domain of the MAIL FROM domain is verified\. If the domain isn't verified, complete the procedures at [Verifying Domains in Amazon SES](verify-domains.md) to verify the domain\. Otherwise, choose the domain and proceed to the next step\.
+1. In the list of domains, confirm that the parent domain of the MAIL FROM domain is verified\. If the domain isn't verified, complete the procedures at [Verifying domains in Amazon SES](verify-domains.md) to verify the domain\. Otherwise, choose the domain and proceed to the next step\.
 
 1. Under **MAIL FROM Domain**, choose **Set MAIL FROM Domain**\.
 
@@ -81,7 +81,7 @@ You can't set up a custom MAIL FROM domain for addresses on a domain that you do
 
 1. In the navigation pane, under **Identity Management**, choose **Email Addresses**\.
 
-1. In the list of email addresses, confirm that the email address that you want to set up a custom MAIL FROM domain for is verified\. If the email address isn't verified, complete the procedures at [Verifying Email Addresses in Amazon SES](verify-email-addresses.md) to verify the email address\. Otherwise, choose the email address and proceed to the next step\.
+1. In the list of email addresses, confirm that the email address that you want to set up a custom MAIL FROM domain for is verified\. If the email address isn't verified, complete the procedures at [Verifying email addresses in Amazon SES](verify-email-addresses.md) to verify the email address\. Otherwise, choose the email address and proceed to the next step\.
 
 1. Under **MAIL FROM Domain**, choose **Set MAIL FROM Domain**\.
 
@@ -114,7 +114,7 @@ To successfully set up a custom MAIL FROM domain with Amazon SES, you must publi
 
    When Amazon SES detects that the records are in place, you receive an email informing you that your custom MAIL FROM domain was set up successfully\. Depending on your DNS provider, there might be a delay of up to 72 hours before Amazon SES detects the MX record\.
 
-## MAIL FROM Domain Setup States with Amazon SES<a name="mail-from-states"></a>
+## MAIL FROM domain setup states with Amazon SES<a name="mail-from-states"></a>
 
 After you configure an identity to use a custom MAIL FROM domain, the state of the setup is "pending" while Amazon SES attempts to detect the required MX record in your DNS settings\. The state then changes depending on whether Amazon SES detects the MX record\. The following table describes the email\-sending behavior, and the Amazon SES actions associated with each state\. Each time the state changes, Amazon SES sends a notification to the email address associated with your AWS account\.
 

@@ -31,7 +31,7 @@ For an email to comply with DMARC based on SPF, both of the following conditions
 + The domain in the From address of the email header must align with the MAIL FROM domain that the sending mail server specifies to the receiving mail server\. If the domain's DMARC policy for SPF specifies strict alignment, the From and MAIL FROM domains must match exactly\. If the domain's DMARC policy for SPF specifies relaxed alignment, the MAIL FROM domain can be a subdomain of the domain in the From header\.
 
 To comply with these requirements, complete the following steps:
-+ Set up a custom MAIL FROM domain by completing the procedures in [Setting Up a Custom MAIL FROM Domain](mail-from.md)\.
++ Set up a custom MAIL FROM domain by completing the procedures in [Setting up a custom MAIL FROM domain](mail-from.md)\.
 + Ensure that your sending domain uses a relaxed policy for SPF\. If you have not changed your domain's policy alignment, it will use a relaxed policy by default\.
 **Note**  
 You can determine your domain's DMARC alignment for SPF by typing the following command at the command line, replacing `example.com` with your domain:  

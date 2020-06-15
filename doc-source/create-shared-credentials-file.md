@@ -1,4 +1,4 @@
-# Create a Shared Credentials File<a name="create-shared-credentials-file"></a>
+# Create a shared credentials file<a name="create-shared-credentials-file"></a>
 
 The following procedure shows how to create a shared credentials file in your home directory\. For the SDK sample code to function properly, you must create this file\.
 

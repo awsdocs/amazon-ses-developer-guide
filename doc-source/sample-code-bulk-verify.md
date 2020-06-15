@@ -1,4 +1,4 @@
-# Verify Multiple Email Addresses<a name="sample-code-bulk-verify"></a>
+# Verify multiple email addresses<a name="sample-code-bulk-verify"></a>
 
 If you are migrating to Amazon SES from another email\-sending solution, you may already have a long list of email addresses that you want to use to send email\. The Python script in this example accepts a JSON\-formatted list of email addresses as an input\. The following example shows the structure of the input file:
 
@@ -16,7 +16,7 @@ If you are migrating to Amazon SES from another email\-sending solution, you may
 ]
 ```
 
-The following script reads the input file and attempts to validate all of the email addresses contained in the file\. This code example assumes that you have installed the AWS SDK for Python \(Boto\), and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+The following script reads the input file and attempts to validate all of the email addresses contained in the file\. This code example assumes that you have installed the AWS SDK for Python \(Boto\), and that you have created a shared credentials file\. For more information about creating a shared credentials file, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ```
  1. import json     #Python standard library

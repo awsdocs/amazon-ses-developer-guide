@@ -1,11 +1,11 @@
-# Send an Email Using the Amazon SES Console<a name="send-an-email-from-console"></a>
+# Send an email using the Amazon SES console<a name="send-an-email-from-console"></a>
 
 The easiest way to send an email with Amazon SES is to use the Amazon SES console\. Because the console requires you to manually enter information, you typically only use it to send test emails\. After you get started with Amazon SES, you will most likely send your emails using either the Amazon SES SMTP interface or API, but the console is useful for monitoring your sending activity\.
 
 **Important**  
 In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
 
-Before you follow these steps, make sure you review the setup instructions in [Before You Begin with Amazon SES](send-email-getting-started-prerequisites.md)\.
+Before you follow these steps, make sure you review the setup instructions in [Before you begin with Amazon SES](send-email-getting-started-prerequisites.md)\.
 
 **To send an email message from the Amazon SES console**
 
@@ -13,7 +13,7 @@ Before you follow these steps, make sure you review the setup instructions in [B
 **Note**  
 If you are not currently signed in to your AWS account, this link takes you to a sign\-in page\. After you sign in, you are directed to the Amazon SES console\. 
 
-1. In the navigation pane on the left side of the Amazon SES console, under **Identity Management**, choose **Email Addresses** to view the email address that you verified in [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
+1. In the navigation pane on the left side of the Amazon SES console, under **Identity Management**, choose **Email Addresses** to view the email address that you verified in [Verifying email addresses in Amazon SES](verify-email-addresses.md)\.
 
 1. In the list of identities, check the box next to email address that you have verified\.
 
@@ -37,7 +37,7 @@ If you are not currently signed in to your AWS account, this link takes you to a
      11. </html>
      ```
 
-1. For **Send Test Email**, fill out the rest of the fields\. If you are still in the Amazon SES sandbox, make sure that the address in the **To** field is a verified email address\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
+1. For **Send Test Email**, fill out the rest of the fields\. If you are still in the Amazon SES sandbox, make sure that the address in the **To** field is a verified email address\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\. 
 
 1. Choose **Send Test Email**\.
 

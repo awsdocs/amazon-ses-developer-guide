@@ -1,4 +1,4 @@
-# Amazon SES Quick Start<a name="quick-start"></a>
+# Amazon SES Quick start<a name="quick-start"></a>
 
 
 |  | 
@@ -22,13 +22,13 @@ For instructions, see [Signing up for AWS](sign-up-for-aws.md)\.
 
 Before you can send email from your email address through Amazon SES, you need to show Amazon SES that you own the email address by verifying it\.
 
-For instructions, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\.
+For instructions, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\.
 
 ## Step 3: Send your first email<a name="quick-start-send-email-to-yourself"></a>
 
 You can send an email simply by using the Amazon SES console\. As a new user, your account is in a test environment called the sandbox, so you can only send email to and from email addresses that you have verified\.
 
-For instructions, see [Send an Email Using the Amazon SES Console](send-an-email-from-console.md)\.
+For instructions, see [Send an email using the Amazon SES console](send-an-email-from-console.md)\.
 
 ## Step 4: Consider how you will handle bounces and complaints<a name="quick-start-feedback"></a>
 
@@ -38,12 +38,12 @@ Before the next step, you need to think about how you will handle bounces and co
 
 To be able to send emails to unverified email addresses and to raise the number of emails you can send per day and how fast you can send them, your account needs to be moved out of the sandbox\. This process involves opening an SES Sending Limits Increase case in Support Center\.
 
-For more information about the sandbox restrictions and how to apply to move out of the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+For more information about the sandbox restrictions and how to apply to move out of the sandbox, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 ## Next steps<a name="quick-start-next-steps"></a>
 + After you send a few test emails to yourself, use the Amazon SES mailbox simulator for further testing because emails to the mailbox simulator do not count towards your sending quota or your bounce and complaint rates\. For more information on the mailbox simulator, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
-+ Monitor your sending activity, such as the number of emails that you have sent and the number that have bounced or received complaints\. For more information, see [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md)\.
-+ Verify entire domains so that you can send email from any email address in your domain without verifying addresses individually\. For more information, see [Verifying Domains in Amazon SES](verify-domains.md)\.
++ Monitor your sending activity, such as the number of emails that you have sent and the number that have bounced or received complaints\. For more information, see [Monitoring your Amazon SES sending activity](monitor-sending-activity.md)\.
++ Verify entire domains so that you can send email from any email address in your domain without verifying addresses individually\. For more information, see [Verifying domains in Amazon SES](verify-domains.md)\.
 + Increase the chance that your emails will be delivered to your recipients' inboxes instead of junk boxes by authenticating your emails\. For more information, see [Authenticating Your Email in Amazon SES](send-email-authentication.md)\.
 
 

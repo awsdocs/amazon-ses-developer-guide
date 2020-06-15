@@ -1,4 +1,4 @@
-# Amazon SES Resources<a name="resources"></a>
+# Amazon SES resources<a name="resources"></a>
 
 
 |  | 

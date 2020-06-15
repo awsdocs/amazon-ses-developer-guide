@@ -1,4 +1,4 @@
-# Send an Email Using the AWS SDK for PHP<a name="send-using-sdk-php"></a>
+# Send an email using the AWS SDK for PHP<a name="send-using-sdk-php"></a>
 
 This topic shows how to use the [AWS SDK for PHP](https://aws.amazon.com/sdk-for-php/) to send an email through Amazon SES\. 
 
@@ -8,11 +8,11 @@ In this tutorial, you send an email to yourself so that you can check to see if 
 ## Prerequisites<a name="send-using-sdk-php-prerequisites"></a>
 
 Before you begin, perform the following tasks:
-+ **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
-+ **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
++ **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\. 
++ **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
 + **Install PHP**—PHP is available at [http://php\.net/downloads\.php](http://php.net/downloads.php)\. This tutorial requires PHP version 5\.5 or higher\. After you install PHP, add the path to PHP in your environment variables so that you can run PHP from any command prompt\. The code in this tutorial was tested using PHP 7\.2\.7\.
 + **Install the AWS SDK for PHP version 3**—For download and installation instructions, see the [AWS SDK for PHP documentation](https://docs.aws.amazon.com/aws-sdk-php/v3/guide/getting-started/installation.html)\. The code in this tutorial was tested using version 3\.64\.13 of the SDK\. 
-+ **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
++ **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ## Procedure<a name="send-using-sdk-php-procedure"></a>
 
@@ -102,9 +102,9 @@ The following procedure shows how to send an email through Amazon SES using the 
 
 1. In `amazon-ses-sample.php`, replace the following with your own values:
    + **`path_to_sdk_inclusion`**—Replace with the path required to include the AWS SDK for PHP in the program\. For more information, see the [AWS SDK for PHP documentation](https://docs.aws.amazon.com/aws-sdk-php/v3/guide/getting-started/basic-usage.html)\. 
-   + **`sender@example.com`**—Replace with an email address that you have verified with Amazon SES\. For more information, see [Verifying Identities](verify-addresses-and-domains.md)\. Email addresses in Amazon SES are case\-sensitive\. Make sure that the address you enter is exactly the same as the one you verified\.
-   + **`recipient1@example.com`, `recipient2@example.com`**—Replace with the addresses of your recipients\. If your account is still in the sandbox, your recipients' addresses must also be verified\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
-   + **\(Optional\) `ConfigSet`**—If you want to use a configuration set when sending this email, replace this value with the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES Configuration Sets](using-configuration-sets.md)\.
+   + **`sender@example.com`**—Replace with an email address that you have verified with Amazon SES\. For more information, see [Verifying identities](verify-addresses-and-domains.md)\. Email addresses in Amazon SES are case\-sensitive\. Make sure that the address you enter is exactly the same as the one you verified\.
+   + **`recipient1@example.com`, `recipient2@example.com`**—Replace with the addresses of your recipients\. If your account is still in the sandbox, your recipients' addresses must also be verified\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
+   + **\(Optional\) `ConfigSet`**—If you want to use a configuration set when sending this email, replace this value with the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES configuration sets](using-configuration-sets.md)\.
    + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a region other than US West \(Oregon\), replace this with the region you want to use\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. Save `amazon-ses-sample.php`\.

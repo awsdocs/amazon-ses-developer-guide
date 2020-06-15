@@ -1,4 +1,4 @@
-# Amazon SES API Requests<a name="using-ses-api-requests"></a>
+# Amazon SES API requests<a name="using-ses-api-requests"></a>
 
 You can call the Amazon SES API directly by making requests to an Amazon SES API endpoint\. Requests to the Amazon SES API are simple HTTPS requests that use the GET or POST method\. API requests have to contain an `Action` parameter to indicate the action to be performed\.
 
@@ -43,7 +43,7 @@ In Amazon SES, spaces are not allowed in any of the parameter values\. In this g
 + Represented by a plus sign \("\+"\)\. Within a request, a plus sign is reserved as a shorthand notation for a space\. \(If you want to include a literal, uninterpreted plus sign in any parameter, you must URL\-encode it as `%2B`\.\)
 
 **Note**  
-Every request must be accompanied by an `X-Amzn-Authorization` HTTP header\. For more information, see [Request Authentication and Amazon SES](using-ses-api-authentication.md)\.
+Every request must be accompanied by an `X-Amzn-Authorization` HTTP header\. For more information, see [Authenticating requests to the Amazon SES API](using-ses-api-authentication.md)\.
 
 ## Structure of a POST Request<a name="using-ses-api-requests-post"></a>
 
@@ -81,7 +81,7 @@ Amazon SES also accepts POST requests\. With a POST request, you send the parame
    + `Content-Type`, with the value set to `application/x-www-form-urlencoded`
    + `Content-Length`
    + `Date`
-   + `X-Amzn-Authorization` \(For more information, see [Request Authentication and Amazon SES](using-ses-api-authentication.md)\.\) 
+   + `X-Amzn-Authorization` \(For more information, see [Authenticating requests to the Amazon SES API](using-ses-api-authentication.md)\.\) 
 
 1. Send the completed request\.
 

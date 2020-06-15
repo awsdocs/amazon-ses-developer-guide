@@ -3,14 +3,14 @@
 To verify an email address or domain with Amazon SES, you initiate the process using either the Amazon SES console or the Amazon SES API\. This section contains information that may help resolve issues with the verification process\.
 
 ## Common Email Verification Problems<a name="troubleshoot-verification-email"></a>
-+ **The verification email didn't arrive** – If you complete the procedures in [Verifying Email Addresses in Amazon SES](verify-email-addresses.md) but you don't receive the verification email within a few minutes, complete the following steps:
++ **The verification email didn't arrive** – If you complete the procedures in [Verifying email addresses in Amazon SES](verify-email-addresses.md) but you don't receive the verification email within a few minutes, complete the following steps:
   + Check the spam or junk mail folder for the email address you're attempting to verify\.
   + Confirm that the address that you're trying to verify is able to receive email\. Using a separate email address \(such as your personal email address\), send a test email to the address that you want to verify\.
   + Check [the list of verified addresses in the Amazon SES console](https://console.aws.amazon.com/ses/home#verified-senders-email:)\. Make sure that there aren't any errors in the email address that you're attempting to verify\.
 
 ## Common Domain Verification Problems<a name="troubleshoot-verification-domain"></a>
 
-If you attempt to verify a domain using the procedure in [Verifying Domains in Amazon SES](verify-domains.md) and you encounter problems, review the possible causes and solutions below\.
+If you attempt to verify a domain using the procedure in [Verifying domains in Amazon SES](verify-domains.md) and you encounter problems, review the possible causes and solutions below\.
 + **You're attempting to verify a domain that you don't own** – You can't verify a domain that you don't own\. For example, if you want to send email through Amazon SES from an address on the *gmail\.com* domain, you need to [verify that email address specifically](verify-email-addresses.md)\. You can't verify the entire *gmail\.com* domain\.
 + **Your DNS provider doesn't allow underscores in TXT record names** – Some DNS providers don't allow you to include the underscore character in the DNS record names for your domain\. If this is true for your provider, you can omit *\_amazonses* from the name of the TXT record\.
 + **Your DNS provider appended the domain name to the end of the TXT record** – Some DNS providers automatically append the name of your domain to the attribute name of TXT record\. For example, if you create a record where the attribute name is *\_amazonses\.example\.com*, the provider might append the domain name, resulting in *\_amazonses\.example\.com\.example\.com*\)\. To avoid duplication of the domain name, add a period to the end of the domain name when you create the TXT record\. This step tells your DNS provider that it isn't necessary to append the domain name to the TXT record\.

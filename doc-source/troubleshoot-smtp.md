@@ -6,7 +6,7 @@ To learn more about sending email through the Amazon SES SMTP interface, see [Us
 + **You can't connect to the Amazon SES SMTP endpoint\.**
 
   Problems connecting to the Amazon SES SMTP endpoint are most commonly related to the following issues:
-  + **Incorrect credentials** – The credentials that you use to connect to the SMTP endpoint are different from your AWS credentials\. To obtain your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
+  + **Incorrect credentials** – The credentials that you use to connect to the SMTP endpoint are different from your AWS credentials\. To obtain your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
   + **Network or firewall issues** – Your network might be blocking outbound connections over the port you're trying to send email from\. To determine if an issue on your local network is causing connection issues, type the following command at the command line, replacing `port` with the port you're trying to use \(typically 465, 587, 2465, or 2587\): `telnet email-smtp.us-west-2.amazonaws.com port`
 
     If you are able to connect to the SMTP server using this command, and you are trying to connect to Amazon SES using TLS Wrapper or STARTTLS, complete the procedures shown in [Test Your Connection to the Amazon SES SMTP Interface Using the Command Line](send-email-smtp-client-command-line.md)\.

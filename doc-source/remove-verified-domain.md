@@ -1,4 +1,4 @@
-# Deleting a Domain Identity in Amazon SES<a name="remove-verified-domain"></a>
+# Deleting a domain identity in Amazon SES<a name="remove-verified-domain"></a>
 
 To remove a verified domain, follow the procedure below\.
 

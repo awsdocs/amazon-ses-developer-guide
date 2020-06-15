@@ -1,8 +1,8 @@
-# Listing Email Identities in Amazon SES<a name="list-email-addresses-procedure"></a>
+# Listing email identities in Amazon SES<a name="list-email-addresses-procedure"></a>
 
 You can display a list of email identities by using the Amazon SES console or the [ListIdentities](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html) API operation\.
 
-## Viewing a List of Email Identities in Amazon SES<a name="list-email-addresses-procedure-console"></a>
+## Viewing a list of email identities in Amazon SES<a name="list-email-addresses-procedure-console"></a>
 
 You can use the Amazon SES console and API to view a list of email addresses that are verified or are pending verification, as well as those that failed the verification process\.
 
@@ -19,7 +19,7 @@ These procedures only display a list of email addresses for the selected AWS Reg
 
    The Email Addresses page displays a list of email addresses that are verified, that are pending verification, and that failed the verification process\. Click an email address to view additional information about it\.
 
-## Viewing a List of Email Identities Using the Amazon SES API<a name="list-email-addresses-procedure-console"></a>
+## Viewing a list of email identities using the Amazon SES API<a name="list-email-addresses-procedure-console"></a>
 
 Use the [ListIdentities](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListIdentities.html) API operation to view a list of all email identities, regardless of their statuses\. You can also use the [GetIdentityVerificationAttributes](https://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html) operation to find the verification status of a given identity\.
 

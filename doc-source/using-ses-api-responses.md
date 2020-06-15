@@ -1,4 +1,4 @@
-# Amazon SES API Responses<a name="using-ses-api-responses"></a>
+# Amazon SES API responses<a name="using-ses-api-responses"></a>
 
  In response to an API request, Amazon SES returns an XML data structure that contains the results of the request\.
 

@@ -13,7 +13,7 @@ If you have been authorized to send emails on behalf of someone else, then you a
 + [Delegate Sender Tasks](sending-authorization-delegate-sender-tasks.md)
 
 **Note**  
-You can also control access to Amazon SES by using IAM policies\. IAM policies constrain what individual IAM users can do, while sending authorization policies constrain how individual verified identities can be used\. Further, only sending authorization policies can grant cross\-account access\. For more information about using IAM policies with Amazon SES, see [Controlling Access to Amazon SES](control-user-access.md)\.
+You can also control access to Amazon SES by using IAM policies\. IAM policies constrain what individual IAM users can do, while sending authorization policies constrain how individual verified identities can be used\. Further, only sending authorization policies can grant cross\-account access\. For more information about using IAM policies with Amazon SES, see [Controlling access to Amazon SES](control-user-access.md)\.
 
 
 ****  

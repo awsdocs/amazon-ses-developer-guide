@@ -1,4 +1,4 @@
-# What Is Amazon SES?<a name="Welcome"></a>
+# What is Amazon SES?<a name="Welcome"></a>
 
 
 |  | 
@@ -38,11 +38,11 @@ This guide contains the following sections:
 
 | Section | Description | 
 | --- | --- | 
-| [Sending Email](send-email.md) | Describes how you can send email using Amazon SES\. | 
-| [Receiving Email](receiving-email.md) | Describes how you can receive email using Amazon SES\. | 
-| [Controlling Access](control-user-access.md) | Shows you how to use Amazon SES with AWS Identity and Access Management \(IAM\) to specify which Amazon SES API actions a user can perform on which Amazon SES resources\. | 
-| [Logging API Calls](logging-using-cloudtrail.md) | Provides a list of Amazon SES APIs that can be logged using AWS CloudTrail\. | 
-| [Using Credentials](using-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
+| [Sending email](send-email.md) | Describes how you can send email using Amazon SES\. | 
+| [Receiving email](receiving-email.md) | Describes how you can receive email using Amazon SES\. | 
+| [Controlling access](control-user-access.md) | Shows you how to use Amazon SES with AWS Identity and Access Management \(IAM\) to specify which Amazon SES API actions a user can perform on which Amazon SES resources\. | 
+| [Logging API calls](logging-using-cloudtrail.md) | Provides a list of Amazon SES APIs that can be logged using AWS CloudTrail\. | 
+| [Using credentials](using-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
 | [Using the API](using-ses-api.md) | Describes how to interact with the Amazon SES API\. | 
 | [Regions](regions.md) | Contains information about using Amazon SES in multiple AWS Regions\. | 
 |  [Quotas](quotas.md)  |  Provides a list of quotas that apply to Amazon SES\.  | 

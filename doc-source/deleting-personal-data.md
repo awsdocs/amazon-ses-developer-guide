@@ -1,4 +1,4 @@
-# Deleting Personal Data from Amazon SES<a name="deleting-personal-data"></a>
+# Deleting personal data from Amazon SES<a name="deleting-personal-data"></a>
 
 Depending on how you use it, Amazon SES might store certain data that could be considered personal\. For example, in order to send email using Amazon SES, you must provide at least one verified identity \(an email address or a domain\)\. You can use the Amazon SES console or the Amazon SES API to permanently delete this personal data\.
 

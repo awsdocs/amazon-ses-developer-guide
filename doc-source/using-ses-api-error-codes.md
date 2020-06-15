@@ -1,4 +1,4 @@
-# API Error Codes Returned by Amazon SES<a name="using-ses-api-error-codes"></a>
+# Error codes returned by the Amazon SES API<a name="using-ses-api-error-codes"></a>
 
 This topic contains a list of error codes that are returned by the Amazon SES API\. For more information about the Amazon SES API, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 

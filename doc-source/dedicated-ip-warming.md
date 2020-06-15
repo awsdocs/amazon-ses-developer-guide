@@ -4,7 +4,7 @@ When determining whether to accept or reject a message, email service providers 
 
 When you start sending email from a new IP address, you should gradually increase the amount of email you send from that address before using it to its full capacity\. This process is called *warming up* the IP address\.
 
-The amount of time required to warm up an IP address varies between email providers\. For some email providers, you can establish a positive reputation in around two weeks, while for others it may take up to six weeks\. When warming up a new IP address, you should send emails to your most active users to ensure that your complaint rate remains low\. You should also carefully examine your bounce messages and send less email if you receive a high number of blocking or throttling notifications\. For information about monitoring your bounces, see [Monitoring Your Amazon SES Sending Activity](monitor-sending-activity.md)\.
+The amount of time required to warm up an IP address varies between email providers\. For some email providers, you can establish a positive reputation in around two weeks, while for others it may take up to six weeks\. When warming up a new IP address, you should send emails to your most active users to ensure that your complaint rate remains low\. You should also carefully examine your bounce messages and send less email if you receive a high number of blocking or throttling notifications\. For information about monitoring your bounces, see [Monitoring your Amazon SES sending activity](monitor-sending-activity.md)\.
 
 ## Automatically Warm up Dedicated IP Addresses<a name="dedicated-ip-auto-warm-up"></a>
 

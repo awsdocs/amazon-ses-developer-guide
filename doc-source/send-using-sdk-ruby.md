@@ -1,4 +1,4 @@
-# Send an Email Using the AWS SDK for Ruby<a name="send-using-sdk-ruby"></a>
+# Send an email using the AWS SDK for Ruby<a name="send-using-sdk-ruby"></a>
 
 This topic shows how to use the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/) to send an email through Amazon SES\. 
 
@@ -8,11 +8,11 @@ In this tutorial, you send an email to yourself so that you can check to see if 
 ## Prerequisites<a name="send-using-sdk-ruby-prerequisites"></a>
 
 Before you begin, perform the following tasks:
-+ **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)\. 
-+ **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
++ **Verify your email address with Amazon SES**—Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\. 
++ **Get your AWS credentials**—You need an AWS access key ID and AWS secret access key to access Amazon SES using an SDK\. You can find your credentials by using the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page of the AWS Management Console\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
 + **Install Ruby**—Ruby is available at [https://www\.ruby\-lang\.org/en/downloads/](https://www.ruby-lang.org/en/downloads/)\. The code in this tutorial was tested using Ruby 1\.9\.3\. After you install Ruby, add the path to Ruby in your environment variables so that you can run Ruby from any command prompt\.
 + **Install the AWS SDK for Ruby**—For download and installation instructions, see [Installing the AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/setup-install.html) in the *AWS SDK for Ruby Developer Guide*\. The sample code in this tutorial was tested using version 2\.9\.36 of the AWS SDK for Ruby\.
-+ **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
++ **Create a shared credentials file**—For the sample code in this section to function properly, you must create a shared credentials file\. For more information, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ## Procedure<a name="send-using-sdk-ruby-procedure"></a>
 
@@ -101,8 +101,8 @@ The following procedure shows how to send an email through Amazon SES using the 
    ```
 
 1. In `amazon-ses-sample.rb`, replace the following with your own values:
-   + **`sender@example.com`**—Replace with an email address that you have verified with Amazon SES\. For more information, see [Verifying Identities](verify-addresses-and-domains.md)\. Email addresses in Amazon SES are case\-sensitive\. Make sure that the address you enter is exactly the same as the one you verified\.
-   + **`recipient@example.com`**—Replace with the address of the recipient\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
+   + **`sender@example.com`**—Replace with an email address that you have verified with Amazon SES\. For more information, see [Verifying identities](verify-addresses-and-domains.md)\. Email addresses in Amazon SES are case\-sensitive\. Make sure that the address you enter is exactly the same as the one you verified\.
+   + **`recipient@example.com`**—Replace with the address of the recipient\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\. Make sure that the address you enter is exactly the same as the one you verified\.
    + **\(Optional\) `us-west-2`**—If you want to use Amazon SES in a region other than US West \(Oregon\), replace this with the region you want to use\. For a list of regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
 1. Save `amazon-ses-sample.rb`\.

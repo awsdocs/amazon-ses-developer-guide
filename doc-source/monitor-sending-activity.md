@@ -1,4 +1,4 @@
-# Monitoring Your Amazon SES Sending Activity<a name="monitor-sending-activity"></a>
+# Monitoring your Amazon SES sending activity<a name="monitor-sending-activity"></a>
 
 Amazon SES provides methods to monitor your sending activity\. We recommend that you implement these methods so that you can keep track of important measures, such as your account's bounce, complaint and reject rates\. Excessively high bounce and complaint rates may jeopardize your ability to send emails using Amazon SES\. 
 

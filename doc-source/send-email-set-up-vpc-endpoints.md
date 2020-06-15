@@ -1,4 +1,4 @@
-# Setting Up VPC Endpoints with Amazon SES<a name="send-email-set-up-vpc-endpoints"></a>
+# Setting up VPC endpoints with Amazon SES<a name="send-email-set-up-vpc-endpoints"></a>
 
 Many Amazon SES customers have corporate policies in place that limit the ability of their internal systems to connect to the public internet\. These policies prevent these customers from using the public Amazon SES endpoints\.
 
@@ -12,7 +12,7 @@ Before you complete the procedure in this section, you have to complete the foll
 + Create a Virtual Private Cloud\. For procedures, see [Getting started with IPv4 for Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/getting-started-ipv4.html)\. 
 + Launch an Amazon EC2 instance in your VPC\. For more information, see [Launching an EC2 instance into your default VPC](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#launching-into)\.
 
-## Setting Up Amazon SES in Amazon VPC<a name="send-email-set-up-vpc-endpoints-procedure"></a>
+## Setting up Amazon SES in Amazon VPC<a name="send-email-set-up-vpc-endpoints-procedure"></a>
 
 The process of setting up a VPC endpoint to use with Amazon SES consists of a few separate steps\. First, you have to identify the private IP address of the Amazon EC2 instance that you want to use with the VPC endpoint\. Next, you create a security group that allows the instance to communicate with SMTP ports\. After that, you create a VPC endpoint for Amazon SES\. Finally, you test the connection to the VPC endpoint to ensure that it's configured properly\.
 
@@ -60,7 +60,7 @@ In Amazon EC2, a *security group* lets you control inbound and outbound communic
 
 1. When you finish, choose **Create security group**\.
 
-### Step 3: Create the VPC Endpoint<a name="send-email-set-up-vpc-endpoints-procedure-step-3"></a>
+### Step 3: Create the VPC endpoint<a name="send-email-set-up-vpc-endpoints-procedure-step-3"></a>
 
 In Amazon VPC, a *VPC endpoint* lets you connect your VPC to supported AWS services\. In this case, you configure Amazon VPC so that your Amazon EC2 security group can connect to Amazon SES\.
 
@@ -87,7 +87,7 @@ In Amazon VPC, a *VPC endpoint* lets you connect your VPC to supported AWS servi
 1. Choose **Create endpoint**\. Wait approximately 5 minutes while Amazon VPC creates the endpoint\. When the endpoint is ready to use, the value in the **Status** column changes to "available", as shown in the following image\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/send-email-set-up-vpc-endpoint-5.png)
 
-### Step 4: Test the Connection to the VPC Endpoint<a name="send-email-set-up-vpc-endpoints-procedure-step-4"></a>
+### Step 4: Test the connection to the VPC endpoint<a name="send-email-set-up-vpc-endpoints-procedure-step-4"></a>
 
 When you complete the process of configuring the VPC endpoint, you should test the connection to ensure that the VPC endpoint is configured properly\. You can test the connection by using command\-line tools that are included with most operating systems\.
 
@@ -101,4 +101,4 @@ When you complete the process of configuring the VPC endpoint, you should test t
 
 1. Send a test email by completing the procedure in [Using the Command Line to Send Email Using the Amazon SES SMTP Interface](send-email-smtp-client-command-line.md#send-email-using-openssl)\.
 **Note**  
-You have to verify an email address or domain before you can send email through Amazon SES\. For more information about verifying identities, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
+You have to verify an email address or domain before you can send email through Amazon SES\. For more information about verifying identities, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.

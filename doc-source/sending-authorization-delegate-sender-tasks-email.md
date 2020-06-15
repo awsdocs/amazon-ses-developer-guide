@@ -6,7 +6,7 @@ There are different ways that you can specify the identity's ARN when you send a
 
 **Important**  
 To successfully send an email, you have to connect to the Amazon SES endpoint in the AWS Region that the identity owner verified the identity in\.  
-Additionally, the AWS accounts of **both** the identity owner and the delegate sender have to be removed from the sandbox before either account can send email to non\-verified addresses\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+Additionally, the AWS accounts of **both** the identity owner and the delegate sender have to be removed from the sandbox before either account can send email to non\-verified addresses\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 ## Using the Amazon SES API<a name="sending-authorization-delegate-sender-tasks-api"></a>
 

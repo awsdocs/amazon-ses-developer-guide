@@ -1,4 +1,4 @@
-# Email Program Success Metrics<a name="success-metrics"></a>
+# Email program success metrics<a name="success-metrics"></a>
 
 There are several metrics that help measure the success of your email program\.
 
@@ -23,7 +23,7 @@ When you receive bounces, it's vital that you respond to them appropriately by o
 + If an email address hard bounces, immediately remove that address from your lists\. Do not attempt to re\-send messages to hard\-bouncing addresses\. Repeated hard bounces add up, and ultimately harm your reputation with the recipient's ISP\.
 + Make sure that the address you use to receive bounce notifications is able to receive email\. For more information about setting up bounce and complaint notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-activity-using-notifications.md)\.
 + If your inbound email comes to you from an ISP, instead of through your own internal servers, an influx of bounce notifications can land in your spam folder or be dropped completely\. Ideally, you should not use a hosted email address to receive bounces\. If you must, however, then check the spam folder often, and don't mark the bounce messages as spam\. In Amazon SES, you can specify the address that bounce notifications are sent to\.
-+ Usually, a bounce provides the address of the mailbox refusing delivery\. However, if you need more granular data to map a recipient address to a particular email campaign, include an X\-header with a value you can trace back to your internal tracking system\. For more information, see [Appendix: Header Fields](header-fields.md)\.
++ Usually, a bounce provides the address of the mailbox refusing delivery\. However, if you need more granular data to map a recipient address to a particular email campaign, include an X\-header with a value you can trace back to your internal tracking system\. For more information, see [Header fields](header-fields.md)\.
 
 ## Complaints<a name="metrics-complaints"></a>
 

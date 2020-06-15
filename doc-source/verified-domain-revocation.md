@@ -1,4 +1,4 @@
-# Amazon SES Domain Verification Revocation<a name="verified-domain-revocation"></a>
+# Amazon SES domain verification revocation<a name="verified-domain-revocation"></a>
 
 Amazon SES periodically reviews domain verification status, and revokes verification in cases where it is no longer valid\. If Amazon SES is unable to detect the TXT record information required to confirm ownership of a domain, you will receive an **Amazon SES Domain Verification REVOCATION WARNING** email from Amazon SES\.
 

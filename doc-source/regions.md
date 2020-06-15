@@ -39,7 +39,7 @@ When you [submit a request to have your account removed from the sandbox](reques
 
 ## Verification of Email Addresses and Domains<a name="region-verification"></a>
 
-Before you can send email using Amazon SES, you have to verify that you own the email address or domain that you plan to send from\. The verification status of email addresses and domains also differs across AWS Regions\. For example, if you verify a domain in the US West \(Oregon\) Region, you can't use that domain to send email in the US East \(N\. Virginia\) Region until you complete the verification process again for that Region\. For more information about verifying email addresses and domains, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
+Before you can send email using Amazon SES, you have to verify that you own the email address or domain that you plan to send from\. The verification status of email addresses and domains also differs across AWS Regions\. For example, if you verify a domain in the US West \(Oregon\) Region, you can't use that domain to send email in the US East \(N\. Virginia\) Region until you complete the verification process again for that Region\. For more information about verifying email addresses and domains, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
 
 ## Easy DKIM<a name="region-dkim"></a>
 
@@ -67,7 +67,7 @@ For additional security, we recommend that you delete credentials that were crea
 
 You can use the same custom MAIL FROM domain for verified identities in different AWS Regions\. If that is what you want to do, you only need to publish one MX record to the MAIL FROM domain's DNS server\. In this situation, bounce notifications are sent to the Amazon SES feedback endpoint in the Region that you specified in the MX record first\. Next Amazon SES redirects the bounces to the verified identity in the Region that sent the email\.
 
-Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [Setting Up a Custom MAIL FROM Domain](mail-from.md)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
+Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [Setting up a custom MAIL FROM domain](mail-from.md)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
 
 
 ****  

@@ -1,4 +1,4 @@
-# Controlling Access to Amazon SES<a name="control-user-access"></a>
+# Controlling access to Amazon SES<a name="control-user-access"></a>
 
 You can use AWS Identity and Access Management \(IAM\) with Amazon Simple Email Service \(Amazon SES\) to specify which Amazon SES API actions an IAM user, group, or role can perform\. \(In this topic we refer to these entities collectively as *user*\.\) You can also control which email addresses the user can use for the "From", recipient, and "Return\-Path" addresses of emails\.
 

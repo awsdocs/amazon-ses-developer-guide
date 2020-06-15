@@ -1,8 +1,8 @@
-# Send an Email Using SMTP with C\#<a name="send-using-smtp-net"></a>
+# Send an email using SMTP with C\#<a name="send-using-smtp-net"></a>
 
 The following procedure shows how to use [Microsoft Visual Studio](https://www.visualstudio.com/) to create a C\# console application that sends an email through Amazon SES\. The procedures in this section apply to Visual Studio 2017, but the process of creating C\# console applications is similar across Microsoft Visual Studio editions\.
 
-Before you perform the following procedure, complete the setup tasks described in [Before You Begin with Amazon SES](send-email-getting-started-prerequisites.md) and [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)\.
+Before you perform the following procedure, complete the setup tasks described in [Before you begin with Amazon SES](send-email-getting-started-prerequisites.md) and [Send an email through Amazon SES using SMTP](send-an-email-using-smtp.md)\.
 
 **Important**  
 In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
@@ -124,18 +124,18 @@ You can select a later version of the \.NET Framework if necessary\.
 1. In `Program.cs`, replace the following email addresses with your own values:
 **Important**  
 The email addresses are case\-sensitive\. Make sure that the addresses are exactly the same as the ones you verified\.
-   + `SENDER@EXAMPLE.COM`—Replace with your "From" email address\. You must verify this address before you run this program\. For more information, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
-   + `RECIPIENT@EXAMPLE.COM`—Replace with your "To" email address\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+   + `SENDER@EXAMPLE.COM`—Replace with your "From" email address\. You must verify this address before you run this program\. For more information, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
+   + `RECIPIENT@EXAMPLE.COM`—Replace with your "To" email address\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 1. In `Program.cs`, replace the following SMTP credentials with the values that you obtained in [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md):
 **Important**  
-Your SMTP credentials are different from your AWS credentials\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
+Your SMTP credentials are different from your AWS credentials\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
    + YOUR\_SMTP\_USERNAME—Replace with your SMTP username\. Note that your SMTP username credential is a 20\-character string of letters and numbers, not an intelligible name\.
    + YOUR\_SMTP\_PASSWORD—Replace with your SMTP password\.
 
 1. \(Optional\) If you want to use an Amazon SES SMTP endpoint in a Region other than US West \(Oregon\), change the value of the variable `HOST` to the endpoint you want to use\. For a list of SMTP endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 
-1. \(Optional\) If you want to use a configuration set when sending this email, change the value of the variable `CONFIGSET` to the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES Configuration Sets](using-configuration-sets.md)\.
+1. \(Optional\) If you want to use a configuration set when sending this email, change the value of the variable `CONFIGSET` to the name of the configuration set\. For more information about configuration sets, see [Using Amazon SES configuration sets](using-configuration-sets.md)\.
 
 1. Save `Program.cs`\.
 

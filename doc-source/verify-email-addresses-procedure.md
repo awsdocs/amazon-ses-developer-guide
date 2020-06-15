@@ -1,8 +1,8 @@
-# Verifying an Email Address<a name="verify-email-addresses-procedure"></a>
+# Verifying an email address<a name="verify-email-addresses-procedure"></a>
 
 You can verify email addresses by using the Amazon SES console or the [VerifyEmailIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation\.
 
-## Verifying an Email Address Using the Amazon SES Console<a name="verify-email-addresses-procedure-console"></a>
+## Verifying an email address using the Amazon SES console<a name="verify-email-addresses-procedure-console"></a>
 
 Complete the procedure in this section to verify an email address using the Amazon SES console\.
 
@@ -29,7 +29,7 @@ The link in the verification message expires 24 hours after the message was sent
 
 1. In the Amazon SES console, under **Identity Management**, choose **Email Addresses**\. In the list of email addresses, locate the email address you're verifying\. If the email address was verified, the value in the **Status** column is "verified"\.
 
-## Verify an Email Address Using the Amazon SES API<a name="verify-email-addresses-api-procedure"></a>
+## Verify an email address using the Amazon SES API<a name="verify-email-addresses-api-procedure"></a>
 
 You can use the [VerifyEmailIdentity](https://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html) API operation to create a new email identity\. An easy way to call this operation for individual identities is to use the AWS CLI\.
 
@@ -56,9 +56,9 @@ The link in the verification message expires 24 hours after the message was sent
 
 1. In the Amazon SES console, under **Identity Management**, choose **Email Addresses**\. In the list of email addresses, locate the email address you're verifying\. If the email address was verified, the value in the **Status** column is "verified"\.
 
-For a script that can be used to verify several email identities in a single operation, see [Verify Multiple Email Addresses](sample-code-bulk-verify.md)\.
+For a script that can be used to verify several email identities in a single operation, see [Verify multiple email addresses](sample-code-bulk-verify.md)\.
 
-## Troubleshoot Email Address Verification<a name="verify-email-addresses-troubleshooting"></a>
+## Troubleshoot email address verification<a name="verify-email-addresses-troubleshooting"></a>
 
 If you attempted to verify an email address, but didn't receive a verification email from AWS, try the following troubleshooting steps:
 + Check the Junk Mail folder in your email client\.

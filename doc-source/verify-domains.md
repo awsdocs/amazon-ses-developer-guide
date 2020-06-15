@@ -1,13 +1,13 @@
-# Verifying Domains in Amazon SES<a name="verify-domains"></a>
+# Verifying domains in Amazon SES<a name="verify-domains"></a>
 
 Amazon SES requires that you verify your email address or domain, to confirm that you own it and to prevent others from using it\. When you verify an entire domain, you are verifying all email addresses from that domain, so you don't need to verify email addresses from that domain individually\. For example, if you verify the domain *example\.com*, you can send email from *user1@example\.com*, *user2@example\.com*, or any other user at *example\.com*\.
 
 You can manage your verified domains by using the Amazon SES console or the Amazon SES API\. For a complete description of API actions related to domain verification, go to the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. This section, which demonstrates the actions using the Amazon SES console, contains the following topics:
-+ [Verifying a Domain With Amazon SES](verify-domain-procedure.md)
-+ [Listing Domain Identities in Amazon SES](view-verified-domains.md)
-+ [Deleting a Domain Identity in Amazon SES](remove-verified-domain.md)
-+ [Amazon SES Domain Verification Revocation](verified-domain-revocation.md)
-+ [Amazon SES Domain Verification TXT Records](dns-txt-records.md)
++ [Verifying a domain with Amazon SES](verify-domain-procedure.md)
++ [Listing domain identities in Amazon SES](view-verified-domains.md)
++ [Deleting a domain identity in Amazon SES](remove-verified-domain.md)
++ [Amazon SES domain verification revocation](verified-domain-revocation.md)
++ [Amazon SES domain verification TXT records](dns-txt-records.md)
 
 Important notes about domain verification are as follows:
 + Amazon SES has endpoints in multiple AWS regions, and domain verification applies to each AWS region separately\. You must perform the entire domain verification procedure for each region in which you want to send from a given domain\. If you want to verify the same domain in multiple regions and your DNS provider does not allow you to have multiple TXT records with the same name, see the workarounds in [Common Domain Verification Problems](troubleshoot-verification.md#troubleshoot-verification-domain)\. 

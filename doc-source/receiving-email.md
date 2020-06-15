@@ -1,4 +1,4 @@
-# Receiving Email with Amazon SES<a name="receiving-email"></a>
+# Receiving email with Amazon SES<a name="receiving-email"></a>
 
 Amazon Simple Email Service \(Amazon SES\) is a mail server that can both send and receive mail on your behalf\. When you use Amazon SES to receive your mail, Amazon SES handles underlying mail\-receiving operations, such as:
 + communicating with other mail servers

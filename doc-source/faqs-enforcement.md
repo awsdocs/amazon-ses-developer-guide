@@ -1,18 +1,18 @@
-# Amazon SES Sending Review Process FAQs<a name="faqs-enforcement"></a>
+# Amazon SES Sending review process FAQs<a name="faqs-enforcement"></a>
 
 We monitor the email that's sent through Amazon SES to make sure that the service isn't being used to deliver malicious, unsolicited, or low\-quality email\. If we determine that a user is sending content that falls into one of these categories, we take actions on that account\. We call this process our *sending review process*\.
 
 In many cases, when we detect an issue with an account, we place that account [under review](#e-faq-pr)\. In other cases, we [pause the account's ability to send email](#e-faq-sp)\. We take these actions to protect each account's sender reputation, and to prevent other Amazon SES users from experiencing service interruptions and deliverability issues\.
 
 **Topics**
-+ [Account Under Review FAQ](#e-faq-pr)
-+ [Sending Pause FAQ](#e-faq-sp)
++ [Account under review FAQ](#e-faq-pr)
++ [Sending pause FAQ](#e-faq-sp)
 + [Bounce FAQ](#e-faq-bn)
 + [Complaint FAQ](#e-faq-cm)
 + [Spamtrap FAQ](#e-faq-st)
-+ [Manual Investigation FAQ](#e-faq-mi)
++ [Manual investigation FAQ](#e-faq-mi)
 
-## Account Under Review FAQ<a name="e-faq-pr"></a>
+## Account under review FAQ<a name="e-faq-pr"></a>
 
 ### Q1\. I received a message stating that my account is under review\. What does that mean?<a name="pr-q1"></a>
 
@@ -84,7 +84,7 @@ Sign into the AWS Console and go to Support Center\. Reply to the case we opened
 
 If you're already working with an AWS account representative, we'll automatically contact him or her when your account is placed under review\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
 
-## Sending Pause FAQ<a name="e-faq-sp"></a>
+## Sending pause FAQ<a name="e-faq-sp"></a>
 
 ### Q1\. I received a message stating that my account's ability to send email is paused\. What does that mean?<a name="sp-q1"></a>
 
@@ -218,7 +218,7 @@ First, be sure that you're aware of your bounces \(see [Q7\. How can I find out 
 
 ### Q1\. What's a complaint?<a name="cm-q1"></a>
 
-A complaint occurs when a recipient reports that they don't want to receive an email\. They might have clicked the "Report spam" button in their email client, complained to their email provider, notified Amazon SES directly, or through some other method\. This topic includes general information about complaints\. If your notification contains specific information about the source of the complaints, also read the relevant topic: [Amazon SES Complaints Through Feedback Loops FAQ](#cm-feedback-loop), [Amazon SES Complaints Directly from Recipients FAQ](#cm-direct), or [Amazon SES Complaints Through Email Providers FAQ](#cm-email-provider)\.
+A complaint occurs when a recipient reports that they don't want to receive an email\. They might have clicked the "Report spam" button in their email client, complained to their email provider, notified Amazon SES directly, or through some other method\. This topic includes general information about complaints\. If your notification contains specific information about the source of the complaints, also read the relevant topic: [Amazon SES complaints through feedback loops FAQ](#cm-feedback-loop), [Amazon SES complaints directly from recipients FAQ](#cm-direct), or [Amazon SES complaints through email providers FAQ](#cm-email-provider)\.
 
 ### Q2\. Why do you care about my complaints?<a name="cm-q2"></a>
 
@@ -230,7 +230,7 @@ Review your list acquisition process and the content of your emails to try to un
 
 ### Q4\. What can I do to minimize complaints?<a name="cm-q4"></a>
 
-First, be sure that you monitor the complaints that Amazon SES can notify you about, which are complaints that Amazon SES receives through feedback loops \(see the [Amazon SES Complaints Through Feedback Loops FAQ](#cm-feedback-loop)\)\. Then follow these guidelines:
+First, be sure that you monitor the complaints that Amazon SES can notify you about, which are complaints that Amazon SES receives through feedback loops \(see the [Amazon SES complaints through feedback loops FAQ](#cm-feedback-loop)\)\. Then follow these guidelines:
 + Do not buy, rent, or share email addresses\. Use only addresses that specifically requested your mail\.
 + Use double opt\-in to sign up new users\. That is, when users sign up, send them a confirmation email that they need to click before receiving any additional mail\. This prevents people from signing up other people as well as accidental sign\-ups\.
 + Monitor engagement with the mail you send and stop sending to recipients who don't open or click your messages\.
@@ -239,7 +239,7 @@ First, be sure that you monitor the complaints that Amazon SES can notify you ab
 + Ensure that your mail is clearly from you and can't be confused for something else\.
 + Provide users an obvious and easy way to unsubscribe from your mail\.
 
-### Amazon SES Complaints Through Feedback Loops FAQ<a name="cm-feedback-loop"></a>
+### Amazon SES complaints through feedback loops FAQ<a name="cm-feedback-loop"></a>
 
 This topic provides information about complaints that Amazon SES receives from email providers through feedback loops\. For general information that applies to all types of complaints, see the [Complaint FAQ](#e-faq-cm)\.
 
@@ -289,7 +289,7 @@ Unfortunately, we can't give you a comprehensive list\. However, you can monitor
 
 We can't send you a sample email upon request, but you might find this information in the complaint notification\. For more information, see [Q8\. How can I find out which email addresses complained?](#cm-feedback-loop-q8)\.
 
-### Amazon SES Complaints Directly from Recipients FAQ<a name="cm-direct"></a>
+### Amazon SES complaints directly from recipients FAQ<a name="cm-direct"></a>
 
 This topic provides information about complaints that Amazon SES receives directly from recipients\. For general information that applies to all types of complaints, see the [Complaint FAQ](#e-faq-cm)\.
 
@@ -299,7 +299,7 @@ Multiple recipients directly contacted Amazon SES about your mail through email 
 
 #### Q2\. Are these complaints included in the complaint rate statistic shown in the Amazon SES console and returned by the GetSendStatistics API?<a name="cm-direct-q2"></a>
 
-No\. The complaint rate statistic you retrieve using the Amazon SES console or the `GetSendStatistics` API only includes complaints that Amazon SES receives through feedback loops\. For more information about those types of complaints, see the [Amazon SES Complaints Through Feedback Loops FAQ](#cm-feedback-loop)\.
+No\. The complaint rate statistic you retrieve using the Amazon SES console or the `GetSendStatistics` API only includes complaints that Amazon SES receives through feedback loops\. For more information about those types of complaints, see the [Amazon SES complaints through feedback loops FAQ](#cm-feedback-loop)\.
 
 #### Q3\. Why haven't I heard about these complaints through email feedback notifications or through Amazon SNS?<a name="cm-direct-q3"></a>
 
@@ -321,13 +321,13 @@ Immediately change your sending processes so that you're only sending messages r
 
 If you don't request a review within three weeks, and we continue to receive direct recipient complaints, we might pause your account's ability to send email\.
 
-### Amazon SES Complaints Through Email Providers FAQ<a name="cm-email-provider"></a>
+### Amazon SES complaints through email providers FAQ<a name="cm-email-provider"></a>
 
 This topic provides information about complaints that Amazon SES receives through email providers \(also called *mailbox providers*\)\. For general information that applies to all types of complaints, see the [Complaint FAQ](#e-faq-cm)\.
 
 #### Q1\. How is this type of complaint reported?<a name="cm-email-provider-q1"></a>
 
-An email provider reported to Amazon SES that a significant number of its customers marked your emails as spam\. The report was provided to Amazon SES through a means other than the feedback loops described in the [Amazon SES Complaints Through Feedback Loops FAQ](#cm-feedback-loop)\.
+An email provider reported to Amazon SES that a significant number of its customers marked your emails as spam\. The report was provided to Amazon SES through a means other than the feedback loops described in the [Amazon SES complaints through feedback loops FAQ](#cm-feedback-loop)\.
 
 #### Q2\. Are these complaints included in the complaint rate statistic shown in the Amazon SES console and returned by the GetSendStatistics API?<a name="cm-email-provider-q2"></a>
 
@@ -392,7 +392,7 @@ To reduce the risk of sending to spamtraps, follow these guidelines:
 + Be very careful with re\-engagement campaigns where you intentionally contact people who haven't interacted with you recently\. These efforts tend to be highly risky, and can often cause problems not only with spamtrap sending, but also with bounces and complaints\.
 + Send an opt\-in message to your entire mailing list and keep only the recipients who click on the verification link\. In addition to removing inactive recipients from your list, this procedure also helps remove spamtrap addresses\. However, we don't recommend using this technique if you think that your mailing list might contain a lot of bad addresses, or if your account already has a problem with bounces, because it might cause your account's bounce rate to increase further\.
 
-## Manual Investigation FAQ<a name="e-faq-mi"></a>
+## Manual investigation FAQ<a name="e-faq-mi"></a>
 
 ### Q1\. What should I do if I receive a notification stating that my account is under review or that my sending is paused because of a manual investigation?<a name="mi-q1"></a>
 

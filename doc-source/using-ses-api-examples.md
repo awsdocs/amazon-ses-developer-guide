@@ -1,4 +1,4 @@
-# GET and POST Examples for Amazon SES<a name="using-ses-api-examples"></a>
+# GET and POST examples for the Amazon SES API<a name="using-ses-api-examples"></a>
 
 This section contains examples of requests that you can issue against the Amazon SES API\.
 

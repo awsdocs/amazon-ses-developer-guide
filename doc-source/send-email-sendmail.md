@@ -13,9 +13,9 @@ Before you complete the procedure in this section, you should complete the follo
 + Install the Sendmail package on your server\. 
 **Note**  
 Depending on which operating system distribution you use, you might also need to install the following packages: `sendmail-cf`, `m4`, and `cyrus-sasl-plain`\.
-+ Verify an identity to use as your From address\. For more information, see [Verifying Email Addresses in Amazon SES](verify-email-addresses.md)
++ Verify an identity to use as your From address\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)
 
-  If your account is still in the Amazon SES sandbox, you also have to verify the addresses that you send email to\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+  If your account is still in the Amazon SES sandbox, you also have to verify the addresses that you send email to\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 If you're using Amazon SES to send email from an Amazon EC2 instance, you should also complete the following steps:
 + If you're using Amazon SES to send email from an Amazon EC2 instance, you might need to assign an Elastic IP Address to your Amazon EC2 instance in order for receiving email providers to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.

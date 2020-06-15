@@ -1,4 +1,4 @@
-# Monitoring Your Amazon SES Sender Reputation<a name="monitor-sender-reputation"></a>
+# Monitoring your Amazon SES sender reputation<a name="monitor-sender-reputation"></a>
 
 Amazon SES actively tracks several metrics that may cause your reputation as a sender to be damaged, or that could cause your email delivery rates to decline\. Two important metrics that we consider in this process are the bounce and complaint rates for your account\. If the bounce or complaint rates for your account are too high, we might place your account under review or pause your account's ability to send email\.
 

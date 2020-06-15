@@ -1,11 +1,11 @@
-# Amazon SES Email\-Sending Concepts<a name="sending-concepts"></a>
+# Amazon SES email\-sending concepts<a name="sending-concepts"></a>
 
 The following sections contain information about how Amazon SES sends your mail\.
 
 **Topics**
-+ [Amazon SES and Deliverability](sending-concepts-deliverability.md)
-+ [Amazon SES Email\-Sending Process](sending-concepts-process.md)
-+ [Email Format and Amazon SES](sending-concepts-email-format.md)
++ [Amazon SES and deliverability](sending-concepts-deliverability.md)
++ [Amazon SES email\-sending process](sending-concepts-process.md)
++ [Email format and Amazon SES](sending-concepts-email-format.md)
 
 
 ****  

@@ -1,12 +1,12 @@
-# Service Quotas in Amazon SES<a name="quotas"></a>
+# Service quotas in Amazon SES<a name="quotas"></a>
 
 The following sections list and describe the quotas that apply to Amazon SES resources and operations\. Some quotas can be increased, while others can't\. To determine whether you can request an increase for a quota, refer to the **Eligible for Increase** column in each section\. 
 
-## Email Sending Quotas<a name="quotas-email-sending"></a>
+## Email sending quotas<a name="quotas-email-sending"></a>
 
 The following quotas apply to sending email through Amazon SES\.
 
-### Sending Quotas<a name="quotas-sending"></a>
+### Sending quotas<a name="quotas-sending"></a>
 
 **Note**  
 Quotas are based on the number of recipients, rather than on the number of messages\.
@@ -19,7 +19,7 @@ Quotas are based on the number of recipients, rather than on the number of messa
 | Number of emails that can be sent per 24\-hour period |  If your account is in the sandbox, you can send up to 200 emails per 24\-hour period\. If your account is out of the sandbox, this number varies based on your specific use case\.  This value was referred to in the past as your "sending quota\."   |  [Yes](manage-sending-quotas-request-increase.md)  | 
 | Number of emails that can be sent per second \(sending rate\) |  If your account is in the sandbox, you can send 1 email per second\. If your account is out of the sandbox, this rate varies based on your specific use case\.  |  [Yes](manage-sending-quotas-request-increase.md)  | 
 
-### Message Quotas<a name="quotas-message"></a>
+### Message quotas<a name="quotas-message"></a>
 
 
 ****  
@@ -28,7 +28,7 @@ Quotas are based on the number of recipients, rather than on the number of messa
 | --- | --- | --- | 
 |  Maximum message size \(including attachments\)  |  10 MB per message \(after base64 encoding\)\.  |  No  | 
 
-### Sender and Recipient Quotas<a name="quotas-sender-recipient"></a>
+### Sender and recipient quotas<a name="quotas-sender-recipient"></a>
 
 
 ****  
@@ -38,7 +38,7 @@ Quotas are based on the number of recipients, rather than on the number of messa
 |  Maximum number of recipients per message  |  50 recipients per message\.  A recipient is any "To", "CC", or "BCC" address\.   |  No  | 
 |  Maximum number of identities that you can verify  |  10,000 identities per AWS Region\.  An *identity* is a domain or email address that you use to send email through Amazon SES\.   |  No  | 
 
-### Quotas Related to Event Publishing<a name="quotas-publishing"></a>
+### Quotas related to event publishing<a name="quotas-publishing"></a>
 
 
 ****  
@@ -50,7 +50,7 @@ Quotas are based on the number of recipients, rather than on the number of messa
 |  Maximum number of event destinations per configuration set  |  10  |  No  | 
 |  Maximum number of dimensions per CloudWatch event destination  |  10  |  No  | 
 
-### Email Template Quotas<a name="quotas-templates"></a>
+### Email template quotas<a name="quotas-templates"></a>
 
 
 ****  
@@ -62,7 +62,7 @@ Quotas are based on the number of recipients, rather than on the number of messa
 |  Maximum number of replacement values in each template  |  Unlimited  |  N/A  | 
 | Maximum number of recipients for each templated email | 50 destinations\. A *destination* is any email address on the "To", "CC", or "BCC" lines\.  The number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\.   |  No  | 
 
-## Quotas Related to Email Receiving<a name="quotas-email-receiving"></a>
+## Quotas related to email receiving<a name="quotas-email-receiving"></a>
 
 The following table lists the quotas associated with receiving email through Amazon SES\.
 
@@ -79,11 +79,11 @@ The following table lists the quotas associated with receiving email through Ama
 |  Maximum email size \(including headers\) that can be stored in an Amazon S3 bucket  |  30 MB  |  No  | 
 |  Maximum email size \(including headers\) that can be published using an Amazon SNS notification  |  150 KB  |  No  | 
 
-## General Quotas<a name="quotas-email-general"></a>
+## General quotas<a name="quotas-email-general"></a>
 
 The following table lists quotas that apply to both sending and receiving email through Amazon SES\.
 
-### Amazon SES API Quotas<a name="quotas-api"></a>
+### Amazon SES API quotas<a name="quotas-api"></a>
 
 
 ****  

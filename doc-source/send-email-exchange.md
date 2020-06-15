@@ -40,7 +40,7 @@ Follow only one of the following procedures \(Microsoft Exchange GUI or Windows 
 
 1. Select **Basic authentication**, then select **Offer basic authentication only after starting TLS**, and then enter your Amazon SES SMTP user name and password\.
 **Important**  
-Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.  
+Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.  
 ![\[Enter SMTP credentials\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/exchange_integration_smtp_credentials.png)
 
 1. Choose **Next**\.
@@ -69,7 +69,7 @@ Your SMTP user name and password are not the same as your AWS access key ID and 
 
 1. In the dialog box, enter your Amazon SES SMTP user name and password and then choose **OK**\.
 **Important**  
-Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
+Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
 
 1. At the command prompt, type the following line, replacing ENDPOINT with an Amazon SES SMTP endpoint \(for example, *email\-smtp\.us\-west\-2\.amazonaws\.com*\)\. For a list of endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
 

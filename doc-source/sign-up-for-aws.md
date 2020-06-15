@@ -10,7 +10,7 @@ You have to create an AWS account before you can use Amazon SES or other AWS ser
 
 1. Follow the on\-screen instructions\.
 
-## Next Steps<a name="w3aab9c23c13b7"></a>
+## Next steps<a name="w3aab9c23c13b7"></a>
 
 After you create your AWS account, you can start setting up Amazon SES\.
 + To start sending email with Amazon SES, you first have to [verify an identity](verify-addresses-and-domains.md)\. An *identity* is an email address or domain that your email is sent from\. 
@@ -20,4 +20,4 @@ After you create your AWS account, you can start setting up Amazon SES\.
   + You can send a maximum of 200 messages per 24\-hour period\.
   + You can send a maximum of one message per second\.
 
-  For information about moving out of the sandbox, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+  For information about moving out of the sandbox, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.

@@ -10,7 +10,7 @@ X-SES-CONFIGURATION-SET: ConfigSet
 
 This guide includes code examples for sending email using Postfix, the AWS SDKs, and the Amazon SES SMTP interface\. Each of these examples includes a method of specifying a configuration set\. To see step\-by\-step procedures for sending emails that include references to configuration sets, see the following: 
 + [Integrating Amazon SES with Postfix](postfix.md)
-+ [Send an Email Through Amazon SES Using an AWS SDK](send-an-email-using-sdk.md)
-+ [Send an Email Through Amazon SES Using SMTP](send-an-email-using-smtp.md)
++ [Send an email through Amazon SES using an AWS SDK](send-an-email-using-sdk.md)
++ [Send an email through Amazon SES using SMTP](send-an-email-using-smtp.md)
 
-You can find additional code examples in the [Amazon SES Code Examples](examples.md) section\.
+You can find additional code examples in the [Amazon SES code examples](examples.md) section\.

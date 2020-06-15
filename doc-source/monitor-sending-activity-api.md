@@ -38,7 +38,7 @@ You can also call the `GetSendStatistics` operation using the AWS SDKs\. This se
 + [Code example for the AWS SDK for Ruby](#code-example-getsendstatistics-ruby)
 
 **Note**  
-These code examples assume that you have created an AWS shared credentials file that contains your AWS Access Key ID, your AWS Secret Access Key, and your preferred AWS Region\. For more information, see [Create a Shared Credentials File](create-shared-credentials-file.md)\.
+These code examples assume that you have created an AWS shared credentials file that contains your AWS Access Key ID, your AWS Secret Access Key, and your preferred AWS Region\. For more information, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
 ### Calling `GetSendStatistics` Using the AWS SDK for Go<a name="code-example-getsendstatistics-golang"></a>
 

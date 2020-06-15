@@ -1,4 +1,4 @@
-# Using Custom Verification Email Templates<a name="send-email-verify-address-custom"></a>
+# Using custom verification email templates<a name="send-email-verify-address-custom"></a>
 
 When you attempt to verify an email address, Amazon SES sends an email to that address that resembles the example shown in the following image\.
 
@@ -9,15 +9,15 @@ Several Amazon SES customers build applications \(such as email marketing suites
 If your Amazon SES use case requires your customers to have their email addresses verified for use with Amazon SES, you can create customized verification emails\. These customized emails help reduce customer confusion and increase the rates at which your customers complete the registration process\.
 
 **Note**  
-To use this feature, your Amazon SES account has to be out of the sandbox\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+To use this feature, your Amazon SES account has to be out of the sandbox\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 **Topics**
-+ [Creating a Custom Verification Email Template](#send-email-verify-address-custom-creating)
-+ [Editing a Custom Verification Email Template](#send-email-verify-address-custom-editing)
-+ [Sending Verification Emails Using Custom Templates](#send-email-verify-address-custom-sending)
-+ [Custom Verification Email Frequently Asked Questions](#send-email-verify-address-custom-faq)
++ [Creating a custom verification email template](#send-email-verify-address-custom-creating)
++ [Editing a custom verification email template](#send-email-verify-address-custom-editing)
++ [Sending verification emails using custom templates](#send-email-verify-address-custom-sending)
++ [Custom verification email frequently asked questions](#send-email-verify-address-custom-faq)
 
-## Creating a Custom Verification Email Template<a name="send-email-verify-address-custom-creating"></a>
+## Creating a custom verification email template<a name="send-email-verify-address-custom-creating"></a>
 
 To create a custom verification email, use the `CreateCustomVerificationEmailTemplate` API operation\. This operation takes the following inputs:
 
@@ -29,7 +29,7 @@ To create a custom verification email, use the `CreateCustomVerificationEmailTem
 | TemplateName | The name of the template\. The name you specify must be unique\. | 
 | FromEmailAddress | The email address that the verification email is sent from\. The address or domain you specify must be verified for use with your Amazon SES account\. The `FromEmailAddress` attribute doesn't support display names \(also known as "friendly from" names\)\.  | 
 | TemplateSubject | The subject line of the verification email\. | 
-| TemplateContent | The body of the email\. The email body can contain HTML, with certain restrictions\. For more information, see [Custom Verification Email Frequently Asked Questions](#send-email-verify-address-custom-faq)\. | 
+| TemplateContent | The body of the email\. The email body can contain HTML, with certain restrictions\. For more information, see [Custom verification email frequently asked questions](#send-email-verify-address-custom-faq)\. | 
 | SuccessRedirectionURL | The URL that users are sent to if their email addresses are successfully verified\. | 
 | FailureRedirectionURL | The URL that users are sent to if their email addresses are not successfully verified\. | 
 
@@ -73,11 +73,11 @@ To make the preceding example easier to read, the `TemplateContent` attribute co
 
 1. Optionally, you can confirm that the template was created by typing the following command: aws ses list\-custom\-verification\-email\-templates
 
-## Editing a Custom Verification Email Template<a name="send-email-verify-address-custom-editing"></a>
+## Editing a custom verification email template<a name="send-email-verify-address-custom-editing"></a>
 
 You can edit a custom verification email template using the `UpdateCustomVerificationEmailTemplate` operation\. This operation accepts the same inputs as the `CreateCustomVerificationEmailTemplate` operation \(that is, the `TemplateName`, `FromEmailAddress`, `TemplateSubject`, `TemplateContent`, `SuccessRedirectionURL`, and `FailureRedirectionURL` attributes\)\. However, with the `UpdateCustomVerificationEmailTemplate` operation, none of these attributes are required\. When you pass a value for `TemplateName` that is the same as the name of an existing custom verification email template, the attributes you specify overwrite the attributes that were originally in the template\.
 
-## Sending Verification Emails Using Custom Templates<a name="send-email-verify-address-custom-sending"></a>
+## Sending verification emails using custom templates<a name="send-email-verify-address-custom-sending"></a>
 
 After you create at least one custom verification email template, you can send it to your customers by calling the [SendCustomVerificationEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendCustomVerificationEmail.html) API operation\. You can call the `SendCustomVerificationEmail` operation by using any of the AWS SDKs or the AWS CLI\. The `SendCustomVerificationEmail` operation takes the following inputs:
 
@@ -92,11 +92,11 @@ After you create at least one custom verification email template, you can send i
 
 For example, assume your customers register for your service using a form in your application\. When the customer completes the form and submits it, your application calls the `SendCustomVerificationEmail` operation, passing the customer's email address and the name of the template you want to use\. 
 
-Your customer receives an email that uses the customized email template you created\. Amazon SES automatically adds a unique link to the recipient, as well as a brief disclaimer\. The following image shows a sample verification email that uses the template created in [Creating a Custom Verification Email Template](#send-email-verify-address-custom-creating)\.
+Your customer receives an email that uses the customized email template you created\. Amazon SES automatically adds a unique link to the recipient, as well as a brief disclaimer\. The following image shows a sample verification email that uses the template created in [Creating a custom verification email template](#send-email-verify-address-custom-creating)\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/cve_sample_message.png)
 
-## Custom Verification Email Frequently Asked Questions<a name="send-email-verify-address-custom-faq"></a>
+## Custom verification email frequently asked questions<a name="send-email-verify-address-custom-faq"></a>
 
 This section contains answers to frequently asked questions about the custom verification email template feature\.
 
@@ -252,4 +252,4 @@ If you're unable to use the custom verification email template operations in an 
 
 ### Q13\. Why do I receive `ProductionAccessNotGranted` errors when I send custom verification emails?<a name="send-email-verify-address-custom-faq-q13"></a>
 
-The `ProductionAccessNotGranted` error indicates that your account is still in the Amazon SES sandbox\. You can only send custom verification emails if your account has been removed from the sandbox\. For more information, see [Moving Out of the Amazon SES Sandbox](request-production-access.md)\.
+The `ProductionAccessNotGranted` error indicates that your account is still in the Amazon SES sandbox\. You can only send custom verification emails if your account has been removed from the sandbox\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.

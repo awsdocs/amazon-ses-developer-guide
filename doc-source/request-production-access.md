@@ -1,4 +1,4 @@
-# Moving Out of the Amazon SES Sandbox<a name="request-production-access"></a>
+# Moving out of the Amazon SES sandbox<a name="request-production-access"></a>
 
 To help prevent fraud and abuse, and to help protect your reputation as a sender, we apply certain restrictions to new Amazon SES accounts\. 
 
@@ -66,7 +66,7 @@ In order to prevent our systems from being used to send unsolicited or malicious
 
 We might not be able to grant your request if your use case doesn't align with our policies\.
 
-## Checking the Sandbox Status for Your Account<a name="request-production-access-check-status"></a>
+## Checking the sandbox status for your account<a name="request-production-access-check-status"></a>
 
 You can use the Amazon SES console to determine if your account is still in the sandbox\.
 

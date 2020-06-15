@@ -1,4 +1,4 @@
-# Amazon SES IP Blacklist FAQs<a name="faqs-blacklists"></a>
+# Amazon SES IP blacklist FAQs<a name="faqs-blacklists"></a>
 
 IP blacklists are intended to inform email providers of internet addresses suspected of sending unwanted email\. Blacklists are sometimes called *Realtime Blackhole Lists* \(RBLs\) or *DNS\-based Blackhole Lists* \(DNSBLs\)\.
 

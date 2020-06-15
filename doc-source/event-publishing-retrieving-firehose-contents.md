@@ -199,4 +199,4 @@ The JSON object that contains information about a `Click` event will always cont
 |  `timestamp`  |  The date and time when the click event occurred in ISO8601 format \(*YYYY\-MM\-DDThh:mm:ss\.sZ*\)\.  | 
 |  `userAgent`  |  The user agent of the client that the recipient used to click a link in the email\.  | 
 |  `link`  |  The URL of the link that the recipient clicked\.  | 
-|  `linkTags`  |  A list of tags that were added to the link using the `ses:tags` attribute\. For more information about adding tags to links in your emails, see [Q5\. Can I tag links with unique identifiers?](faqs-metrics.md#sending-metric-faqs-clicks-q5) in the [Amazon SES Email Sending Metrics FAQs](faqs-metrics.md)\.  | 
+|  `linkTags`  |  A list of tags that were added to the link using the `ses:tags` attribute\. For more information about adding tags to links in your emails, see [Q5\. Can I tag links with unique identifiers?](faqs-metrics.md#sending-metric-faqs-clicks-q5) in the [Amazon SES email sending metrics FAQs](faqs-metrics.md)\.  | 

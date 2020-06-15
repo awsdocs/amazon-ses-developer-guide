@@ -3,7 +3,7 @@
 You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\. If you plan to use the SMTP interface to send email in multiple AWS Regions, you need to obtain a unique set of SMTP credentials for each Region\.
 
 **Important**  
-Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Using Credentials With Amazon SES](using-credentials.md)\.
+Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
 
 ## Obtaining Amazon SES SMTP Credentials Using the Amazon SES Console<a name="smtp-credentials-console"></a>
 
@@ -60,7 +60,7 @@ To enable the IAM user to send email using the Amazon SES SMTP interface, you ne
   }
   ```
 
-  For more information about using Amazon SES with IAM, see [Controlling Access to Amazon SES](control-user-access.md)\.
+  For more information about using Amazon SES with IAM, see [Controlling access to Amazon SES](control-user-access.md)\.
 
 **Note**  
 Although you can generate Amazon SES SMTP credentials for any IAM user, we recommend that you create a separate IAM user when you generate your SMTP credentials\. For information about why it is good practice to create users for specific purposes, go to [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html)\.

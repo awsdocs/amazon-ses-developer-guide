@@ -26,7 +26,7 @@ The following procedure shows how to set up Amazon SES sending in JIRA, a popula
 
    1. **Name**—A descriptive name for this server\.
 
-   1. **From address**—The address from which email will be sent\. You will need to verify this email address with Amazon SES before you can send from it\. For more information about verification, see [Verifying Identities in Amazon SES](verify-addresses-and-domains.md)\.
+   1. **From address**—The address from which email will be sent\. You will need to verify this email address with Amazon SES before you can send from it\. For more information about verification, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
 
    1. **Email prefix**—A string that JIRA prepends to each subject line prior to sending\.
 

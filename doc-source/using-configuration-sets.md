@@ -1,4 +1,4 @@
-# Using Amazon SES Configuration Sets<a name="using-configuration-sets"></a>
+# Using Amazon SES configuration sets<a name="using-configuration-sets"></a>
 
 Configuration sets are groups of rules that you can apply to the emails you send using Amazon SES\. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email\. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email\. For more information about specifying configuration sets in your emails, see [Specifying a Configuration Set When You Send Email](using-configuration-sets-in-email.md)\.
 

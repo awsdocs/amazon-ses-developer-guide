@@ -8,7 +8,7 @@ This section includes procedures for constructing and sending raw email using th
 
 Simple Mail Transfer Protocol \(SMTP\) specifies how email messages are to be sent by defining the mail envelope and some of its parameters, but it does not concern itself with the content of the message\. Instead, the Internet Message Format \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\) defines how the message is to be constructed\.
 
-With the Internet Message Format specification, every email message consists of a header and a body\. The header consists of message metadata, and the body contains the message itself\. For more information about email headers and bodies, see [Email Format and Amazon SES](sending-concepts-email-format.md)\.
+With the Internet Message Format specification, every email message consists of a header and a body\. The header consists of message metadata, and the body contains the message itself\. For more information about email headers and bodies, see [Email format and Amazon SES](sending-concepts-email-format.md)\.
 
 ## Using MIME<a name="send-email-raw-mime"></a>
 
@@ -147,7 +147,7 @@ To attach a file to an email, you have to encode the attachment using base64 enc
 + **Content\-Disposition**: Specifies how the recipient's email client should handle the content\. For attachments, this value is `Content-Disposition: attachment`\.
 + **Content\-Transfer\-Encoding**: The scheme that was used to encode the attachment\. For file attachments, this value is almost always `base64`\.
 
-Amazon SES accepts most common file types\. For a list of file types that Amazon SES doesn't accept, see [Appendix: Unsupported Attachment Types](mime-types-appendix.md)\.
+Amazon SES accepts most common file types\. For a list of file types that Amazon SES doesn't accept, see [Unsupported attachment types](mime-types-appendix.md)\.
 
 ## Sending a Raw Email Using the Amazon SES API<a name="send-email-raw-api"></a>
 
