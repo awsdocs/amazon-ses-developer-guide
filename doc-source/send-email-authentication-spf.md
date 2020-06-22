@@ -25,6 +25,7 @@ The following table includes links to the documentation for several common provi
 |  Namecheap  |  [How do I add TXT/SPF/DKIM/DMARC records for my domain? ](https://www.namecheap.com/support/knowledgebase/article.aspx/317/2237/how-do-i-add-txtspfdkimdmarc-records-for-my-domain) \(external link\)  | 
 |  Names\.co\.uk  |  [Changing your domains DNS Settings](https://www.names.co.uk/support/1156-changing_your_domains_dns_settings.html) \(external link\)  | 
 |  Wix  |  [Adding or Updating SPF Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-spf-records-in-your-wix-account) \(external link\)  | 
+|  Hostinger  |  [How to enable or add SPF records in Your Hostinger Account](https://www.hostinger.com/how-to/how-to-enable-or-add-spf-records) \(external link\)  | 
 
 If your domain doesn't have an existing SPF record, publish a TXT record with the following value\. The name of the record can be blank or @, depending on your DNS service\.
 
