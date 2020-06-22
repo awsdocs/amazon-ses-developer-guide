@@ -56,6 +56,7 @@ The procedures for creating an MX record for your domain depend on which DNS pro
 |  Namecheap  |  [How can I set up MX records required for mail service? ](https://www.namecheap.com/support/knowledgebase/article.aspx/322/2237/how-can-i-set-up-mx-records-required-for-mail-service) \(external link\)  | 
 |  Names\.co\.uk  |  [Changing your domain's DNS settings](https://www.names.co.uk/support/domains/1156-changing_your_domains_dns_settings.html) \(external link\)  | 
 |  Wix  |  [Adding or Updating MX Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-mx-records-in-your-wix-account) \(external link\)  | 
+|  Hostinger  |  [How can I edit MX records in Your Hostinger Account](https://www.hostinger.com/how-to/how-can-i-edit-mx-records) \(external link\)  | 
 
 
 ****  
