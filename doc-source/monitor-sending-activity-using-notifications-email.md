@@ -1,21 +1,21 @@
-# Amazon SES Notifications Through Email<a name="monitor-sending-activity-using-notifications-email"></a>
+# Amazon SES notifications sent by email<a name="monitor-sending-activity-using-notifications-email"></a>
 
 Amazon SES can send you email when you receive bounces and complaints by using a process called *email feedback forwarding*\.
 
 In order to send email using Amazon SES, you must configure it to send bounce and complaint notifications by using one of the following methods:
 + By enabling email feedback forwarding\. The procedure for setting up this type of notification is included in this section\.
-+ By sending notifications to an Amazon SNS topic\. For more information, see [Amazon SES Notifications Through Amazon SNS](monitor-sending-activity-using-notifications-sns.md)\.
-+ By publishing event notifications\. For more information, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\.
++ By sending notifications to an Amazon SNS topic\. For more information, see [Amazon SES notifications sent through Amazon SNS](monitor-sending-activity-using-notifications-sns.md)\.
++ By publishing event notifications\. For more information, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\.
 
 **Important**  
-For several important points about notifications, see [Monitoring Using Amazon SES Notifications](monitor-sending-activity-using-notifications.md)\.
+For several important points about notifications, see [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\.
 
 **Topics**
-+ [Enabling Email Feedback Forwarding](#monitor-sending-activity-using-notifications-email-enabling)
-+ [Disabling Email Feedback Forwarding](#monitor-sending-activity-using-notifications-email-disabling)
-+ [Email Feedback Forwarding Destination](#monitor-sending-activity-using-notifications-email-destination)
++ [Enabling email feedback forwarding](#monitor-sending-activity-using-notifications-email-enabling)
++ [Disabling email feedback forwarding](#monitor-sending-activity-using-notifications-email-disabling)
++ [Email feedback forwarding destination](#monitor-sending-activity-using-notifications-email-destination)
 
-## Enabling Email Feedback Forwarding<a name="monitor-sending-activity-using-notifications-email-enabling"></a>
+## Enabling email feedback forwarding<a name="monitor-sending-activity-using-notifications-email-enabling"></a>
 
 Email feedback forwarding is enabled by default\. If you previously disabled it, you can enable it by following the procedures in this section\.
 
@@ -37,7 +37,7 @@ Changes you make on this page may take a few minutes to take effect\.
 
 You can also enable bounce and complaint notifications through email by using the [ SetIdentityFeedbackForwardingEnabled](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\.
 
-## Disabling Email Feedback Forwarding<a name="monitor-sending-activity-using-notifications-email-disabling"></a>
+## Disabling email feedback forwarding<a name="monitor-sending-activity-using-notifications-email-disabling"></a>
 
 If you set up a different method of providing bounce and complaint notifications, you can disable email feedback forwarding so that you don't receive multiple notifications when a bounce or complaint event occurs\.
 
@@ -63,7 +63,7 @@ Changes you make on this page might take a few minutes to take effect\.
 
 You can also disable bounce and complaint notifications through email by using the [SetIdentityFeedbackForwardingEnabled](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityFeedbackForwardingEnabled.html) API operation\. 
 
-## Email Feedback Forwarding Destination<a name="monitor-sending-activity-using-notifications-email-destination"></a>
+## Email feedback forwarding destination<a name="monitor-sending-activity-using-notifications-email-destination"></a>
 
 When you receive notifications by email, Amazon SES rewrites the `From` header and sends the notification to you\. The address to which Amazon SES forwards the notification depends on how you sent the original message\.
 

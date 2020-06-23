@@ -6,7 +6,7 @@ This topic contains information that will help you configure Amazon SES so that 
 
 ## Setting Up the DMARC Policy on Your Domain<a name="send-email-authentication-dmarc-dns"></a>
 
-To set up DMARC, you have to modify the DNS settings for your domain\. The DNS settings for your domain should include a TXT record that specifies the domain's DMARC settings\. The procedures for adding TXT records to your DNS configuration depend on which DNS or hosting provider you use\. If you use Route 53, see [Working with Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/rrsets-working-with.html) in the *Amazon Route 53 Developer Guide*\. If you use another provider, see the DNS configuration documentation for your provider\.
+To set up DMARC, you have to modify the DNS settings for your domain\. The DNS settings for your domain should include a TXT record that specifies the domain's DMARC settings\. The procedures for adding TXT records to your DNS configuration depend on which DNS or hosting provider you use\. If you use Route 53, see [Working with Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/rrsets-working-with.html) in the *Amazon Route 53 Developer Guide*\. If you use another provider, see the DNS configuration documentation for your provider\.
 
 The name of the TXT record you create should be `_dmarc.example.com`, where `example.com` is your domain\. The value of the TXT record contains the DMARC policy that applies to your domain\. The following is an example of a TXT record that contains a DMARC policy:
 

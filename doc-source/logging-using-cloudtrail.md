@@ -62,7 +62,7 @@ SendRawEmail
 SendTemplatedEmail
 SendBulkTemplatedEmail
 SendCustomVerificationEmail
-You can use event publishing to record events related to email sending\. For more information, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\.
+You can use event publishing to record events related to email sending\. For more information, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\.
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
 + Whether the request was made with root or AWS Identity and Access Management \(IAM\) user credentials\.

@@ -1,4 +1,4 @@
-# Configuring Amazon SNS Notifications for Amazon SES<a name="configure-sns-notifications"></a>
+# Configuring Amazon SNS notifications for Amazon SES<a name="configure-sns-notifications"></a>
 
 Amazon SES can notify you of your bounces, complaints, and deliveries through [Amazon Simple Notification Service \(Amazon SNS\)](https://aws.amazon.com/sns)\.
 
@@ -6,9 +6,9 @@ You can configure notifications in the Amazon SES console, or by using the Amazo
 
 **Topics**
 + [Prerequisites](#configure-feedback-notifications-prerequisites)
-+ [Configuring Notifications Using the Amazon SES Console](#configure-feedback-notifications-console)
-+ [Configuring Notifications Using the Amazon SES API](#configure-feedback-notifications-api)
-+ [Troubleshooting Feedback Notifications](#configure-feedback-notifications-troubleshooting)
++ [Configuring notifications using the Amazon SES console](#configure-feedback-notifications-console)
++ [Configuring notifications using the Amazon SES API](#configure-feedback-notifications-api)
++ [Troubleshooting feedback notifications](#configure-feedback-notifications-troubleshooting)
 
 ## Prerequisites<a name="configure-feedback-notifications-prerequisites"></a>
 
@@ -42,7 +42,7 @@ Complete the following steps before you set up Amazon SNS notifications in Amazo
    }
    ```
 
-## Configuring Notifications Using the Amazon SES Console<a name="configure-feedback-notifications-console"></a>
+## Configuring notifications using the Amazon SES console<a name="configure-feedback-notifications-console"></a>
 
 **To configure notifications using the Amazon SES console**
 
@@ -78,7 +78,7 @@ You will be charged standard Amazon SNS rates for bounce, complaint, and deliver
 **Note**  
 If an attempt to publish to your Amazon SNS topic fails because the topic has been deleted or your AWS account no longer has permissions to publish to it, Amazon SES removes the configuration for that topic\. Additionally, Amazon SES re\-enables bounce and complaint email notifications for the identity, and you receive a notification of the change by email\. If multiple identities are configured to use the topic, the topic configuration for each identity is changed when each identity experiences a failure to publish to the topic\.
 
-## Configuring Notifications Using the Amazon SES API<a name="configure-feedback-notifications-api"></a>
+## Configuring notifications using the Amazon SES API<a name="configure-feedback-notifications-api"></a>
 
 You can also configure bounce, complaint, and delivery notifications by using the Amazon SES API\. Use the following operations to configure notifications:
 + [SetIdentityNotificationTopic](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html)
@@ -88,7 +88,7 @@ You can also configure bounce, complaint, and delivery notifications by using th
 
 You can use these API actions to write a customized front\-end application for notifications\. For a complete description of the API actions related to notifications, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
-## Troubleshooting Feedback Notifications<a name="configure-feedback-notifications-troubleshooting"></a>
+## Troubleshooting feedback notifications<a name="configure-feedback-notifications-troubleshooting"></a>
 
 **Not receiving notifications**  
 If you aren't receiving notifications, make sure that you subscribed an endpoint to the topic that the notifications are sent through\. When you subscribe an email endpoint to a topic, you receive an email asking you to confirm your subscription\. You have to confirm your subscription before you start receiving email notifications\. For more information, see [Getting Started](https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html) in the *Amazon Simple Notification Service Developer Guide*\.

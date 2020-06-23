@@ -21,17 +21,17 @@ If your DNS provider does not allow DNS record names to contain underscores, you
 **Note**  
 Amazon SES previously allowed TXT record names to contain *amazonses* without an underscore\. If you have already verified a domain and your TXT record contains *amazonses* without an underscore, your domain will continue to be verified; there is no action required on your part\. However, any new domains that you verify will require that *amazonses* in the TXT record name is either preceded by an underscore, or *\_amazonses* is removed from the TXT record name entirely\.
 
-You can find troubleshooting information and instructions on how to check your domain verification settings in [Common Domain Verification Problems](troubleshoot-verification.md#troubleshoot-verification-domain)\. 
+You can find troubleshooting information and instructions on how to check your domain verification settings in [Common domain verification problems](troubleshoot-verification.md#troubleshoot-verification-domain)\. 
 
 ## Adding a TXT Record to Your Domain's DNS Server<a name="add-dns-txt-record"></a>
 
-The procedure for adding TXT records to your domain's DNS server depends on who provides your DNS service\. Your DNS provider might be Amazon Route 53 or another domain name registrar such as GoDaddy\. This section provides procedures for adding a TXT record to Route 53, as well as generic procedures that apply to other DNS providers\.
+The procedure for adding TXT records to your domain's DNS server depends on who provides your DNS service\. Your DNS provider might be Amazon Route 53 or another domain name registrar such as GoDaddy\. This section provides procedures for adding a TXT record to Route 53, as well as generic procedures that apply to other DNS providers\.
 
-### Procedures for Amazon Route 53<a name="add-dns-txt-record-route53"></a>
+### Procedures for Amazon Route 53<a name="add-dns-txt-record-route53"></a>
 
-When you begin [the process of verifying a new domain](verify-domain-procedure.md) for use with Amazon SES, you can automatically add the domain verification TXT record to your Route 53 configuration\. However, if you choose not to add the TXT record automatically, you can add the TXT record to your Route 53 configuration manually by completing the procedure in this section\.
+When you begin [the process of verifying a new domain](verify-domain-procedure.md) for use with Amazon SES, you can automatically add the domain verification TXT record to your Route 53 configuration\. However, if you choose not to add the TXT record automatically, you can add the TXT record to your Route 53 configuration manually by completing the procedure in this section\.
 
-**To add a TXT record to the DNS record for your Route 53\-managed domain**
+**To add a TXT record to the DNS record for your Route 53\-managed domain**
 
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
@@ -41,7 +41,7 @@ When you begin [the process of verifying a new domain](verify-domain-procedure.m
 
 1. Expand the **Verification** section\. Copy the value shown next to **TXT Value**\.
 
-1. Open the Route 53 console at [https://console\.aws\.amazon\.com/route53/](https://console.aws.amazon.com/route53/)\.
+1. Open the Route 53 console at [https://console\.aws\.amazon\.com/route53/](https://console.aws.amazon.com/route53/)\.
 
 1. In the navigation pane, choose **Hosted Zones**\.
 
@@ -77,4 +77,4 @@ The procedures for adding TXT records to the DNS configurations vary from provid
 **Important**  
 Some DNS providers, such as GoDaddy, automatically append the domain name to the end of DNS records\. Adding a record that already contains the domain name \(such as *\_amazonses\.example\.com*\) might result in the duplication of the domain name \(such as *\_amazonses\.example\.com\.example\.com*\)\. To avoid duplication of the domain name, add a period to the end of the domain name in the DNS record, or just omit your domain from the record name\. See the documentation provided by your DNS provider for more information\.
 
-1. Save your changes\. DNS record updates can take up to 48 hours to take effect, but they often take effect much sooner\. You can verify that the TXT record is correctly published by using the procedure in [How to Check Domain Verification Settings](troubleshoot-verification.md#troubleshoot-verification-domain-dns)\.
+1. Save your changes\. DNS record updates can take up to 48 hours to take effect, but they often take effect much sooner\. You can verify that the TXT record is correctly published by using the procedure in [Checking domain verification settings](troubleshoot-verification.md#troubleshoot-verification-domain-dns)\.

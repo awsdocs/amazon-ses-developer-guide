@@ -1,8 +1,8 @@
-# Set Up a Kinesis Data Firehose Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-firehose"></a>
+# Set up a Kinesis Data Firehose event destination for Amazon SES event publishing<a name="event-publishing-add-event-destination-firehose"></a>
 
-An Amazon Kinesis Data Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Data Firehose\. Because a Kinesis Data Firehose event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
+An Amazon Kinesis Data Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Data Firehose\. Because a Kinesis Data Firehose event destination exists within a configuration set only, you first have to [create a configuration set](event-publishing-create-configuration-set.md)\. Next, you add the event destination to the configuration set\.
 
-You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API to add a Kinesis Data Firehose event destination\. 
+This section includes a procedure for creating an event destination by using the Amazon SES console\. You can also use the [UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2 destination to create and update event destinations\. 
 
 **To add a Kinesis Data Firehose event destination to a configuration set \(console\)**
 
@@ -22,9 +22,12 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
    + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
    + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
    + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-   + **Opens** – The recipient received the message and opened it in his or her email client\.
-   + **Clicks** – The recipient clicked one or more links contained in the email\.
-   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Opens** – The recipient received the message and opened it in their email client\.
+   + **Clicks** – The recipient clicked one or more links in the email\.
+   + **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Delivery Delays** – The email couldn't be delivered to the recipient because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
+**Note**  
+To add the `DELIVERY_DELAY` event type to an event destination, you have to use the [ UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2\. Currently, you can't add this event type to a configuration set by using the Amazon SES console\.
 
 1. Select **Enabled**\.
 

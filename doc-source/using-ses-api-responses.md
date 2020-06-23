@@ -6,7 +6,7 @@ Every Amazon SES response includes a request ID in a `RequestId` element\. The v
 
 Successful Amazon SES responses also include one or more message IDs\. You can think of a message ID as a receipt for an email message that Amazon SES sends\. If a message is rejected or bounced, the message ID will appear in any complaint or bounce notifications that you receive; you can then use the message ID to identify any problematic email messages that you have sent, and take corrective action\.
 
-## Structure of a Successful Response<a name="using-ses-api-responses-structure"></a>
+## Structure of a successful response<a name="using-ses-api-responses-structure"></a>
 
 If the request succeeded, the main response element is named after the action, but with "Response" appended\. For example, `SendEmailResponse` is the response element returned for a successful `SendEmail` request\. This element contains the following child elements:
 + `ResponseMetadata`, which contains the `RequestId` child element\.
@@ -27,7 +27,7 @@ The following is an example of a successful response\.
 8. </SendEmailResponse>
 ```
 
-## Structure of an Amazon SES API Error Response<a name="using-ses-api-responses-structure-error"></a>
+## Structure of an Amazon SES API error response<a name="using-ses-api-responses-structure-error"></a>
 
 If a request is unsuccessful, the main response element is called `ErrorResponse` regardless of the action that was called\. This element contains an `Error` element and a `RequestId` element\. Each `Error` includes:
 + A `Type` element that identifies whether the error was a receiver or sender error

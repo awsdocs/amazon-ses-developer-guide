@@ -1,28 +1,30 @@
-# Contents of Amazon SES Event Data Published to Kinesis Data Firehose<a name="event-publishing-retrieving-firehose-contents"></a>
+# Contents of event data that Amazon SES publishes to Kinesis Data Firehose<a name="event-publishing-retrieving-firehose-contents"></a>
 
 Amazon SES publishes email sending event records to Amazon Kinesis Data Firehose in JSON format\. When publishing events to Kinesis Data Firehose, Amazon SES follows each JSON record with a newline character\.
 
-The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `bounce`, `complaint`, `delivery`, `send`, `reject`, `open` or `click` object, depending on the type of event\.
+The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `Bounce`, `Complaint`, `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Rendering Failure`, or `DeliveryDelay` object, depending on the type of event\.
 
-See the following sections for descriptions of the different types of objects:
+**Topics**
 + [Top\-level JSON object](#event-publishing-retrieving-firehose-contents-top-level-json-object)
-+ [`mail` object](#event-publishing-retrieving-firehose-contents-mail-object)
-+ [`bounce` object](#event-publishing-retrieving-firehose-contents-bounce-object)
-+ [`complaint` object](#event-publishing-retrieving-firehose-contents-complaint-object)
-+ [`delivery` object](#event-publishing-retrieving-firehose-contents-delivery-object)
-+ [`send` object](#event-publishing-retrieving-firehose-contents-send-object)
-+ [`reject` object](#event-publishing-retrieving-firehose-contents-reject-object)
-+ [`open` object](#event-publishing-retrieving-firehose-contents-open-object)
-+ [`click` object](#event-publishing-retrieving-firehose-contents-click-object)
++ [Mail object](#event-publishing-retrieving-firehose-contents-mail-object)
++ [Bounce object](#event-publishing-retrieving-firehose-contents-bounce-object)
++ [Complaint object](#event-publishing-retrieving-firehose-contents-complaint-object)
++ [Delivery object](#event-publishing-retrieving-firehose-contents-delivery-object)
++ [Send object](#event-publishing-retrieving-firehose-contents-send-object)
++ [Reject object](#event-publishing-retrieving-firehose-contents-reject-object)
++ [Open object](#event-publishing-retrieving-firehose-contents-open-object)
++ [Click object](#event-publishing-retrieving-firehose-contents-click-object)
++ [Rendering Failure object](#event-publishing-retrieving-firehose-contents-failure-object)
++ [DeliveryDelay object](#event-publishing-retrieving-firehose-delivery-delay-object)
 
-## Top\-Level JSON Object<a name="event-publishing-retrieving-firehose-contents-top-level-json-object"></a>
+## Top\-level JSON object<a name="event-publishing-retrieving-firehose-contents-top-level-json-object"></a>
 
 The top\-level JSON object in an email sending event record contains the following fields\.
 
 
 | Field Name | Description | 
 | --- | --- | 
-|  `eventType`  |  A string that describes the type of event\. Possible values: `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Bounce`, `Complaint`, or `Rendering Failure`\.  | 
+|  `eventType`  |  A string that describes the type of event\. Possible values: `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Bounce`, `Complaint`, `Rendering Failure`, or `DeliveryDelay`\.  | 
 |  `mail`  |  A JSON object that contains information about the email that produced the event\.  | 
 |  `bounce`  |  This field is only present if `eventType` is `Bounce`\. It contains information about the bounce\.  | 
 |  `complaint`  |  This field is only present if `eventType` is `Complaint`\. It contains information about the complaint\.  | 
@@ -32,8 +34,9 @@ The top\-level JSON object in an email sending event record contains the followi
 |  `open`  |  This field is only present if `eventType` is `Open`\. It contains information about the open event\.  | 
 |  `click`  |  This field is only present if `eventType` is `Click`\. It contains information about the click event\.  | 
 | `failure` | This field is only present if `eventType` is `Rendering Failure`\. It contains information about the rendering failure event\. | 
+|  `deliveryDelay`  |  This field is only present if `eventType` is `DeliveryDelay`\. It contains information about the delayed delivery of an email\.  | 
 
-## Mail Object<a name="event-publishing-retrieving-firehose-contents-mail-object"></a>
+## Mail object<a name="event-publishing-retrieving-firehose-contents-mail-object"></a>
 
 Each email sending event record contains information about the original email in the `mail` object\. The JSON object that contains information about a `mail` object has the following fields\.
 
@@ -50,7 +53,7 @@ Each email sending event record contains information about the original email in
 |  `headers`  |  A list of the email's original headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `headers` field is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
 |  `commonHeaders`  |  A list of the email's original, commonly used headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `commonHeaders` field is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
 
-## Bounce Object<a name="event-publishing-retrieving-firehose-contents-bounce-object"></a>
+## Bounce object<a name="event-publishing-retrieving-firehose-contents-bounce-object"></a>
 
 The JSON object that contains information about a `Bounce` event will always have the following fields\.
 
@@ -64,7 +67,7 @@ The JSON object that contains information about a `Bounce` event will always hav
 |  `feedbackId`  |  A unique ID for the bounce\.  | 
 |  `reportingMTA`  |  The value of the `Reporting-MTA` field from the DSN\. This is the value of the Message Transfer Authority \(MTA\) that attempted to perform the delivery, relay, or gateway operation described in the DSN\.  This field only appears if a delivery status notification \(DSN\) was attached to the bounce\.   | 
 
-### Bounced Recipients<a name="event-publishing-retrieving-firehose-contents-bounced-recipients"></a>
+### Bounced recipients<a name="event-publishing-retrieving-firehose-contents-bounced-recipients"></a>
 
 A bounce event may pertain to a single recipient or to multiple recipients\. The `bouncedRecipients` field holds a list of objects—one object per recipient to whom the bounce event pertains—and will always contain the following field\.
 
@@ -82,7 +85,7 @@ Optionally, if a DSN is attached to the bounce, the following fields may also be
 |  `status`  |  The value of the `Status` field from the DSN\. This is the per\-recipient transport\-independent status code that indicates the delivery status of the message\.  | 
 |  `diagnosticCode`  |  The status code issued by the reporting MTA\. This is the value of the `Diagnostic-Code` field from the DSN\. This field may be absent in the DSN \(and therefore also absent in the JSON\)\.  | 
 
-### Bounce Types<a name="event-publishing-retrieving-firehose-contents-bounce-types"></a>
+### Bounce types<a name="event-publishing-retrieving-firehose-contents-bounce-types"></a>
 
 Each bounce event will be of one of the types shown in the following table\.
 
@@ -102,7 +105,7 @@ The event publishing system only publishes hard bounces and soft bounces that wi
 |  `Transient`  |  `ContentRejected`  |  Amazon SES received a content rejected bounce\. You may be able to successfully send to this recipient if you change the content of the message\.  | 
 |  `Transient`  |  `AttachmentRejected`  |  Amazon SES received an attachment rejected bounce\. You may be able to successfully send to this recipient if you remove or change the attachment\.  | 
 
-## Complaint Object<a name="event-publishing-retrieving-firehose-contents-complaint-object"></a>
+## Complaint object<a name="event-publishing-retrieving-firehose-contents-complaint-object"></a>
 
 The JSON object that contains information about a `Complaint` event has the following fields\.
 
@@ -123,7 +126,7 @@ Further, if a feedback report is attached to the complaint, the following fields
 |  `complaintFeedbackType`  |  The value of the `Feedback-Type` field from the feedback report received from the ISP\. This contains the type of feedback\.  | 
 |  `arrivalDate`  |  The value of the `Arrival-Date` or `Received-Date` field from the feedback report in ISO8601 format \(*YYYY\-MM\-DDThh:mm:ss\.sZ*\)\. This field may be absent in the report \(and therefore also absent in the JSON\)\.  | 
 
-### Complained Recipients<a name="event-publishing-retrieving-firehose-contents-complained-recipients"></a>
+### Complained recipients<a name="event-publishing-retrieving-firehose-contents-complained-recipients"></a>
 
 The `complainedRecipients` field contains a list of recipients that may have submitted the complaint\. 
 
@@ -137,7 +140,7 @@ JSON objects in this list contain the following field\.
 | --- | --- | 
 |  `emailAddress`  |  The email address of the recipient\.  | 
 
-### Complaint Types<a name="event-publishing-retrieving-firehose-contents-complaint-types"></a>
+### Complaint types<a name="event-publishing-retrieving-firehose-contents-complaint-types"></a>
 
 You may see the following complaint types in the `complaintFeedbackType` field as assigned by the reporting ISP, according to the [Internet Assigned Numbers Authority website](https://www.iana.org/assignments/marf-parameters/marf-parameters.xml#marf-parameters-2):
 
@@ -151,7 +154,7 @@ You may see the following complaint types in the `complaintFeedbackType` field a
 |  `other`  |  Indicates any other feedback that does not fit into other registered types\.  | 
 |  `virus`  |  Reports that a virus is found in the originating message\.  | 
 
-## Delivery Object<a name="event-publishing-retrieving-firehose-contents-delivery-object"></a>
+## Delivery object<a name="event-publishing-retrieving-firehose-contents-delivery-object"></a>
 
 The JSON object that contains information about a `Delivery` event will always have the following fields\.
 
@@ -164,11 +167,11 @@ The JSON object that contains information about a `Delivery` event will always h
 |  `smtpResponse`  |  The SMTP response message of the remote ISP that accepted the email from Amazon SES\. This message will vary by email, by receiving mail server, and by receiving ISP\.  | 
 |  `reportingMTA`  |  The host name of the Amazon SES mail server that sent the mail\.  | 
 
-## Send Object<a name="event-publishing-retrieving-firehose-contents-send-object"></a>
+## Send object<a name="event-publishing-retrieving-firehose-contents-send-object"></a>
 
 The JSON object that contains information about a `send` event is always empty\.
 
-## Reject Object<a name="event-publishing-retrieving-firehose-contents-reject-object"></a>
+## Reject object<a name="event-publishing-retrieving-firehose-contents-reject-object"></a>
 
 The JSON object that contains information about a `Reject` event will always have the following fields\.
 
@@ -177,7 +180,7 @@ The JSON object that contains information about a `Reject` event will always hav
 | --- | --- | 
 |  `reason`  |  The reason the email was rejected\. The only possible value is `Bad content`, which means that Amazon SES detected that the email contained a virus\. When a message is rejected, Amazon SES stops processing it, and doesn't attempt to deliver it to the recipient's mail server\.  | 
 
-## Open Object<a name="event-publishing-retrieving-firehose-contents-open-object"></a>
+## Open object<a name="event-publishing-retrieving-firehose-contents-open-object"></a>
 
 The JSON object that contains information about a `Open` event will always contain the following fields\.
 
@@ -188,7 +191,7 @@ The JSON object that contains information about a `Open` event will always conta
 |  `timestamp`  |  The date and time when the open event occurred in ISO8601 format \(*YYYY\-MM\-DDThh:mm:ss\.sZ*\)\.  | 
 |  `userAgent`  |  The user agent of the device or email client that the recipient used to open the email\.  | 
 
-## Click Object<a name="event-publishing-retrieving-firehose-contents-click-object"></a>
+## Click object<a name="event-publishing-retrieving-firehose-contents-click-object"></a>
 
 The JSON object that contains information about a `Click` event will always contain the following fields\.
 
@@ -200,3 +203,37 @@ The JSON object that contains information about a `Click` event will always cont
 |  `userAgent`  |  The user agent of the client that the recipient used to click a link in the email\.  | 
 |  `link`  |  The URL of the link that the recipient clicked\.  | 
 |  `linkTags`  |  A list of tags that were added to the link using the `ses:tags` attribute\. For more information about adding tags to links in your emails, see [Q5\. Can I tag links with unique identifiers?](faqs-metrics.md#sending-metric-faqs-clicks-q5) in the [Amazon SES email sending metrics FAQs](faqs-metrics.md)\.  | 
+
+## Rendering Failure object<a name="event-publishing-retrieving-firehose-contents-failure-object"></a>
+
+The JSON object that contains information about a `Rendering Failure` event has the following fields\.
+
+
+| Field Name | Description | 
+| --- | --- | 
+|  `templateName`  |  The name of the template used to send the email\.  | 
+|  `errorMessage`  |  A message that provides more information about the rendering failure\.  | 
+
+## DeliveryDelay object<a name="event-publishing-retrieving-firehose-delivery-delay-object"></a>
+
+The JSON object that contains information about a `DeliveryDelay` event has the following fields\.
+
+
+| Field Name | Description | 
+| --- | --- | 
+|  `delayType`  |  The type of delay\. Possible values are: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/event-publishing-retrieving-firehose-contents.html)  | 
+|  `delayedRecipients`  |  An object that contains information about the recipient of the email\.  | 
+|  `expirationTime`  |  The date and time when Amazon SES will stop trying to deliver the message\. This value is shown in ISO 8601 format\.  | 
+|  `reportingMTA`  |  The IP address of the Message Transfer Agent \(MTA\) that reported the delay\.  | 
+|  `timestamp`  |  The date and time when the delay occurred, shown in ISO 8601 format\.  | 
+
+### Delayed recipients<a name="event-publishing-retrieving-firehose-contents-delivery-delay-object-recipients"></a>
+
+The `delayedRecipients` object contains the following values\.
+
+
+| Field Name | Description | 
+| --- | --- | 
+|  `emailAddress`  |  The email address that resulted in the delivery of the message being delayed\.  | 
+|  `status`  |  The SMTP status code associated with the delivery delay\.  | 
+|  `diagnosticCode`  |  The diagnostic code provided by the receiving Message Transfer Agent \(MTA\)\.   | 

@@ -42,7 +42,7 @@ The method through which you can determine if the request has failed depends on 
 + If you are using an AWS SDK for a programming language that uses exceptions, the call to Amazon SES will throw a *MessageRejectedException*\. \(The name of the exception may vary slightly depending on the SDK\.\)
 + If you are using the SMTP interface, then the sender receives an SMTP response code, but how the error is conveyed depends on the sender's client\. Some clients may display an error code; others may not\.
 
-For information about errors that can occur when you send an email with Amazon SES, see [Amazon SES Email Sending Errors](troubleshoot-error-messages.md)\.
+For information about errors that can occur when you send an email with Amazon SES, see [Amazon SES email sending errors](troubleshoot-error-messages.md)\.
 
 ## After Amazon SES sends an email<a name="sending-concepts-process-after-send"></a>
 

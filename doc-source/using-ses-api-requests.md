@@ -5,7 +5,7 @@ You can call the Amazon SES API directly by making requests to an Amazon SES API
 **Important**  
 Amazon SES doesn't support HTTP requests\. You have to use HTTPS instead\.
 
-## Structure of a GET Request<a name="using-ses-api-requests-get"></a>
+## Structure of a GET request<a name="using-ses-api-requests-get"></a>
 
 This guide presents the Amazon SES GET requests as URLs\. Each URL consists of the following:
 + **Endpoint—**The resource the request is acting on\. For a list of endpoint URLs for the AWS Regions where Amazon SES is available, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
@@ -45,7 +45,7 @@ In Amazon SES, spaces are not allowed in any of the parameter values\. In this g
 **Note**  
 Every request must be accompanied by an `X-Amzn-Authorization` HTTP header\. For more information, see [Authenticating requests to the Amazon SES API](using-ses-api-authentication.md)\.
 
-## Structure of a POST Request<a name="using-ses-api-requests-post"></a>
+## Structure of a POST request<a name="using-ses-api-requests-post"></a>
 
 Amazon SES also accepts POST requests\. With a POST request, you send the parameters as a form in the HTTP request body as described in the following procedure\.
 
@@ -81,7 +81,7 @@ Amazon SES also accepts POST requests\. With a POST request, you send the parame
    + `Content-Type`, with the value set to `application/x-www-form-urlencoded`
    + `Content-Length`
    + `Date`
-   + `X-Amzn-Authorization` \(For more information, see [Authenticating requests to the Amazon SES API](using-ses-api-authentication.md)\.\) 
+   + `Authorization` \(For more information, see [Authenticating requests to the Amazon SES API](using-ses-api-authentication.md)\.\) 
 
 1. Send the completed request\.
 
@@ -90,7 +90,7 @@ Amazon SES also accepts POST requests\. With a POST request, you send the parame
     2. Date: Thu, 26 May 2011 06:49:50 GMT
     3. Host: email.us-west-2.amazonaws.com
     4. Content-Type: application/x-www-form-urlencoded
-    5. X-Amzn-Authorization: AWS3 AWSAccessKeyId=AKIAIOSFODNN7EXAMPLE,Signature=lBP67vCvGlDMBQ=dofZxg8E8SUEXAMPLE,Algorithm=HmacSHA256,SignedHeaders=Date;Host
+    5. Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE,SignedHeaders=Date;x-amz-date,Signature=9d63c3b5b7623d1fa3dc7fd1547313b9546c6d0fbbb6773a420613b7EXAMPLE
     6. Content-Length: 230
     7. 
     8. Action=SendEmail
@@ -99,8 +99,6 @@ Amazon SES also accepts POST requests\. With a POST request, you send the parame
    11. &Message.Subject.Data=This%20is%20the%20subject%20line.
    12. &Message.Body.Text.Data=Hello.%20I%20hope%20you%20are%20having%20a%20good%20day.
    ```
-
-The `X-Amzn-Authorization` header you provide is the same header you would provide if you sent a GET request\.
 
 **Note**  
 Your HTTP client typically adds other items to the HTTP request as required by the version of HTTP that the client uses\. We don't include those additional items in the examples in this guide\.

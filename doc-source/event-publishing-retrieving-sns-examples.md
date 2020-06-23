@@ -1,20 +1,21 @@
-# Examples of Amazon SES Event Data Published to Amazon SNS<a name="event-publishing-retrieving-sns-examples"></a>
+# Examples of event data that Amazon SES publishes to Amazon SNS<a name="event-publishing-retrieving-sns-examples"></a>
 
-This section provides examples of each type of email sending event record that Amazon SES publishes to Amazon SNS\.
+This section provides examples of the types of email sending event records that Amazon SES publishes to Amazon SNS\.
 
 **Topics**
-+ [Bounce Record](#event-publishing-retrieving-sns-bounce)
-+ [Complaint Record](#event-publishing-retrieving-sns-complaint)
-+ [Delivery Record](#event-publishing-retrieving-sns-delivery)
-+ [Send Email Record](#event-publishing-retrieving-sns-send)
-+ [Reject Event Record](#event-publishing-retrieving-sns-reject)
-+ [Open Event Record](#event-publishing-retrieving-sns-open)
-+ [Click Event Record](#event-publishing-retrieving-sns-click)
-+ [Rendering Failure Event Record](#event-publishing-retrieving-sns-failure)
++ [Bounce record](#event-publishing-retrieving-sns-bounce)
++ [Complaint record](#event-publishing-retrieving-sns-complaint)
++ [Delivery record](#event-publishing-retrieving-sns-delivery)
++ [Send record](#event-publishing-retrieving-sns-send)
++ [Reject record](#event-publishing-retrieving-sns-reject)
++ [Open record](#event-publishing-retrieving-sns-open)
++ [Click record](#event-publishing-retrieving-sns-click)
++ [Rendering Failure record](#event-publishing-retrieving-sns-failure)
++ [DeliveryDelay record](#event-publishing-retrieving-sns-delayed-delivery)
 
-## Bounce Record<a name="event-publishing-retrieving-sns-bounce"></a>
+## Bounce record<a name="event-publishing-retrieving-sns-bounce"></a>
 
-The following is an example of a `bounce` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Bounce` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -94,9 +95,9 @@ The following is an example of a `bounce` event record that Amazon SES publishes
 75. }
 ```
 
-## Complaint Record<a name="event-publishing-retrieving-sns-complaint"></a>
+## Complaint record<a name="event-publishing-retrieving-sns-complaint"></a>
 
-The following is an example of a `complaint` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Complaint` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -172,9 +173,9 @@ The following is an example of a `complaint` event record that Amazon SES publis
 71. }
 ```
 
-## Delivery Record<a name="event-publishing-retrieving-sns-delivery"></a>
+## Delivery record<a name="event-publishing-retrieving-sns-delivery"></a>
 
-The following is an example of a `delivery` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Delivery` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -261,9 +262,9 @@ The following is an example of a `delivery` event record that Amazon SES publish
 82. }
 ```
 
-## Send Email Record<a name="event-publishing-retrieving-sns-send"></a>
+## Send record<a name="event-publishing-retrieving-sns-send"></a>
 
-The following is an example of a `send` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Send` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -339,9 +340,9 @@ The following is an example of a `send` event record that Amazon SES publishes t
 71. }
 ```
 
-## Reject Event Record<a name="event-publishing-retrieving-sns-reject"></a>
+## Reject record<a name="event-publishing-retrieving-sns-reject"></a>
 
-The following is an example of a `reject` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Reject` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -419,9 +420,9 @@ The following is an example of a `reject` event record that Amazon SES publishes
 73. }
 ```
 
-## Open Event Record<a name="event-publishing-retrieving-sns-open"></a>
+## Open record<a name="event-publishing-retrieving-sns-open"></a>
 
-The following is an example of an `open` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of an `Open` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -504,9 +505,9 @@ The following is an example of an `open` event record that Amazon SES publishes 
 78. }
 ```
 
-## Click Event Record<a name="event-publishing-retrieving-sns-click"></a>
+## Click record<a name="event-publishing-retrieving-sns-click"></a>
 
-The following is an example of a `click` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Click` event record that Amazon SES publishes to Amazon SNS\. 
 
 ```
  1. {
@@ -602,7 +603,7 @@ The following is an example of a `click` event record that Amazon SES publishes 
 91. }
 ```
 
-## Rendering Failure Event Record<a name="event-publishing-retrieving-sns-failure"></a>
+## Rendering Failure record<a name="event-publishing-retrieving-sns-failure"></a>
 
 The following is an example of a `Rendering Failure` event record that Amazon SES publishes to Amazon SNS\. 
 
@@ -630,4 +631,40 @@ The following is an example of a `Rendering Failure` event record that Amazon SE
 21.     "templateName":"MyTemplate"
 22.   }
 23. }
+```
+
+## DeliveryDelay record<a name="event-publishing-retrieving-sns-delayed-delivery"></a>
+
+The following is an example of a `DeliveryDelay` event record that Amazon SES publishes to Amazon SNS\. 
+
+```
+ 1. {
+ 2.   "eventType": "DeliveryDelay",
+ 3.   "mail":{
+ 4.     "timestamp":"2020-06-16T00:15:40.641Z",
+ 5.     "source":"sender@example.com",
+ 6.     "sourceArn":"arn:aws:ses:us-east-1:123456789012:identity/sender@example.com",
+ 7.     "sendingAccountId":"123456789012",
+ 8.     "messageId":"EXAMPLE7c191be45-e9aedb9a-02f9-4d12-a87d-dd0099a07f8a-000000",
+ 9.     "destination":[
+10.       "recipient@example.com"
+11.     ],
+12.     "headersTruncated":false,
+13.     "tags":{
+14.       "ses:configuration-set":[
+15.         "ConfigSet"
+16.       ]
+17.     }
+18.   },
+19.   "deliveryDelay": {
+20.     "timestamp": "2020-06-16T00:25:40.095Z",
+21.     "delayType": "TransientCommunicationFailure",
+22.     "expirationTime": "2020-06-16T00:25:40.914Z",
+23.     "delayedRecipients": [{
+24.       "emailAddress": "recipient@example.com",
+25.       "status": "4.4.1",
+26.       "diagnosticCode": "smtp; 421 4.4.1 Unable to connect to remote host"
+27.     }]
+28.   }
+29. }
 ```

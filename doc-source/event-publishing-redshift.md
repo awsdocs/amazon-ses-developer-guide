@@ -1,4 +1,4 @@
-# Analyze Email Sending Events With Amazon Redshift<a name="event-publishing-redshift"></a>
+# Analyze email sending events with Amazon Redshift<a name="event-publishing-redshift"></a>
 
 In this tutorial, you publish Amazon SES email sending events to an Amazon Kinesis Data Firehose delivery stream that publishes data to Amazon Redshift\. You then connect to the Amazon Redshift database and use a SQL query tool to query the database for Amazon SES email sending events that meet certain criteria\.
 

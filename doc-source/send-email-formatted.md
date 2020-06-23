@@ -9,4 +9,4 @@ The email address string must be 7\-bit ASCII\. If you want to send to or from e
 
 For an example of how to compose a formatted message using the AWS SDK for Java or the AWS SDK for \.NET, see [Send an email using the AWS SDK for Java](send-using-sdk-java.md) or [Send an email using the AWS SDK for \.NET](send-using-sdk-net.md), respectively\.
 
-For tips on how to increase your email sending speed when you make multiple calls to `SendEmail`, see [Increasing Throughput with Amazon SES](troubleshoot-throughput-problems.md)\.
+For tips on how to increase your email sending speed when you make multiple calls to `SendEmail`, see [Increasing throughput with Amazon SES](troubleshoot-throughput-problems.md)\.

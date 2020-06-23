@@ -7,7 +7,7 @@ Because your bounce and complaint rate are so important to the health of your ac
 This section contains information about accessing the reputation dashboard, interpreting the information it contains, and setting up systems to actively notify you of factors that could impact your sender reputation\.
 
 **Topics**
-+ [Using the Reputation Dashboard to Track Bounce and Complaint Rates](reputation-dashboard-dg.md)
-+ [Reputation Dashboard Messages](reputationdashboardmessages.md)
-+ [Creating Reputation Monitoring Alarms Using CloudWatch](reputationdashboard-cloudwatch-alarm.md)
-+ [Automatically Pausing Email Sending](monitoring-sender-reputation-pausing.md)
++ [Using the reputation dashboard to track bounce and complaint rates](reputation-dashboard-dg.md)
++ [Reputation dashboard messages](reputationdashboardmessages.md)
++ [Creating reputation monitoring alarms using CloudWatch](reputationdashboard-cloudwatch-alarm.md)
++ [Automatically pausing email sending](monitoring-sender-reputation-pausing.md)

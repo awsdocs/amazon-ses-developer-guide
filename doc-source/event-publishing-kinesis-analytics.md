@@ -1,4 +1,4 @@
-# Analyze Email Sending Events With Amazon Kinesis Data Analytics<a name="event-publishing-kinesis-analytics"></a>
+# Analyze email sending events with Amazon Kinesis Data Analytics<a name="event-publishing-kinesis-analytics"></a>
 
 Amazon Kinesis Data Analytics enables you to process and analyze streaming data using SQL\. You can use Amazon Kinesis Data Analytics to analyze your Amazon SES email sending events\.
 

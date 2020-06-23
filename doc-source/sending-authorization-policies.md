@@ -91,7 +91,7 @@ You can use any of the AWS\-wide keys listed at [Available Keys](https://docs.aw
 |   `ses:Recipients`   |  Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\.  | 
 |   `ses:FromAddress`   |  Restricts the "From" address\.  | 
 |   `ses:FromDisplayName`   |  Restricts the contents of the string that is used as the "From" display name \(sometimes called "friendly from"\)\. For example, the display name of "John Doe <johndoe@example\.com>" is John Doe\.  | 
-|   `ses:FeedbackAddress`   |  Restricts the "Return Path" address, which is the address where bounce and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](monitor-sending-activity-using-notifications-email.md)\.  | 
+|   `ses:FeedbackAddress`   |  Restricts the "Return Path" address, which is the address where bounce and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES notifications sent by email](monitor-sending-activity-using-notifications-email.md)\.  | 
 
 You can use the `StringEquals` and `StringLike` conditions with Amazon SES keys\. These conditions are for case\-sensitive string matching\. For `StringLike`, the values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\. For example, the following condition specifies that the delegate sender can only send from a "From" address that starts with *invoicing* and ends with *@example\.com*:
 

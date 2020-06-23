@@ -1,23 +1,23 @@
-# Amazon SES Email Address and Domain Verification Problems<a name="troubleshoot-verification"></a>
+# Email address and domain verification problems<a name="troubleshoot-verification"></a>
 
 To verify an email address or domain with Amazon SES, you initiate the process using either the Amazon SES console or the Amazon SES API\. This section contains information that may help resolve issues with the verification process\.
 
-## Common Email Verification Problems<a name="troubleshoot-verification-email"></a>
+## Common email verification problems<a name="troubleshoot-verification-email"></a>
 + **The verification email didn't arrive** – If you complete the procedures in [Verifying email addresses in Amazon SES](verify-email-addresses.md) but you don't receive the verification email within a few minutes, complete the following steps:
   + Check the spam or junk mail folder for the email address you're attempting to verify\.
   + Confirm that the address that you're trying to verify is able to receive email\. Using a separate email address \(such as your personal email address\), send a test email to the address that you want to verify\.
   + Check [the list of verified addresses in the Amazon SES console](https://console.aws.amazon.com/ses/home#verified-senders-email:)\. Make sure that there aren't any errors in the email address that you're attempting to verify\.
 
-## Common Domain Verification Problems<a name="troubleshoot-verification-domain"></a>
+## Common domain verification problems<a name="troubleshoot-verification-domain"></a>
 
 If you attempt to verify a domain using the procedure in [Verifying domains in Amazon SES](verify-domains.md) and you encounter problems, review the possible causes and solutions below\.
 + **You're attempting to verify a domain that you don't own** – You can't verify a domain that you don't own\. For example, if you want to send email through Amazon SES from an address on the *gmail\.com* domain, you need to [verify that email address specifically](verify-email-addresses.md)\. You can't verify the entire *gmail\.com* domain\.
 + **Your DNS provider doesn't allow underscores in TXT record names** – Some DNS providers don't allow you to include the underscore character in the DNS record names for your domain\. If this is true for your provider, you can omit *\_amazonses* from the name of the TXT record\.
 + **Your DNS provider appended the domain name to the end of the TXT record** – Some DNS providers automatically append the name of your domain to the attribute name of TXT record\. For example, if you create a record where the attribute name is *\_amazonses\.example\.com*, the provider might append the domain name, resulting in *\_amazonses\.example\.com\.example\.com*\)\. To avoid duplication of the domain name, add a period to the end of the domain name when you create the TXT record\. This step tells your DNS provider that it isn't necessary to append the domain name to the TXT record\.
 + **Your DNS provider modified the DNS record value** – Some providers automatically modify DNS record values to use only lowercase letters\. Amazon SES only verifies your domain when it detects a verification record for which the attribute value exactly matches the value that Amazon SES provided when you started the domain verification process\. If the DNS provider for your domain changes your TXT record values to use only lowercase letters, contact the DNS provider for additional assistance\.
-+ **You want to verify the same domain multiple times** – You might need to verify your domain more than once because you're sending in different regions, or because you're using the same domain to send from multiple AWS accounts\. If your DNS provider doesn't allow you to have more than one TXT record with the same attribute name, you might still be able to verify two domains\. If your DNS provider allows it, you can assign multiple attribute values to the same TXT record\. For example, if your DNS is managed by Amazon Route 53, you can set up multiple values for the same TXT record by completing the following steps: 
++ **You want to verify the same domain multiple times** – You might need to verify your domain more than once because you're sending in different regions, or because you're using the same domain to send from multiple AWS accounts\. If your DNS provider doesn't allow you to have more than one TXT record with the same attribute name, you might still be able to verify two domains\. If your DNS provider allows it, you can assign multiple attribute values to the same TXT record\. For example, if your DNS is managed by Amazon Route 53, you can set up multiple values for the same TXT record by completing the following steps: 
 
-  1. In the Route 53 console, choose the TXT record you created when you verified your domain in the first region\.
+  1. In the Route 53 console, choose the TXT record you created when you verified your domain in the first region\.
 
   1. In the **Value** box, go to the end of the existing attribute value, and then press Enter\.
 
@@ -25,7 +25,7 @@ If you attempt to verify a domain using the procedure in [Verifying domains in A
 
   If your DNS provider doesn't let you to assign multiple values to the same TXT record, you can verify the domain once with *\_amazonses* in the attribute name of the TXT record, and another time with *\_amazonses* removed from the attribute name\. The downside of this solution is that you can only verify the same domain two times\.
 
-## How to Check Domain Verification Settings<a name="troubleshoot-verification-domain-dns"></a>
+## Checking domain verification settings<a name="troubleshoot-verification-domain-dns"></a>
 
 You can check that your Amazon SES domain verification TXT record is published correctly to your DNS server by using the following procedure\. This procedure uses the [nslookup](http://en.wikipedia.org/wiki/Nslookup) tool, which is available for Windows and Linux\. On Linux, you can also use [dig](http://en.wikipedia.org/wiki/Dig_(command))\.
 

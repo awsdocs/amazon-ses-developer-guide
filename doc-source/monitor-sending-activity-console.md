@@ -1,4 +1,4 @@
-# Monitoring Your Sending Statistics Using the Amazon SES Console<a name="monitor-sending-activity-console"></a>
+# Monitoring your sending statistics using the Amazon SES console<a name="monitor-sending-activity-console"></a>
 
 You can monitor the number of emails delivered from your account, as well as the number of messages that have been rejected, directly from the Amazon SES console\. The delivery and rejection rates for your account are displayed on the Sending Statistics page\.
 

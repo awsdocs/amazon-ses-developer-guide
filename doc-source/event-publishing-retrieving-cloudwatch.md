@@ -1,10 +1,10 @@
-# Retrieving Amazon SES Event Data from CloudWatch<a name="event-publishing-retrieving-cloudwatch"></a>
+# Retrieving Amazon SES event data from CloudWatch<a name="event-publishing-retrieving-cloudwatch"></a>
 
 Amazon SES can publish metrics for your email sending events to Amazon CloudWatch\. When you publish event data to CloudWatch, it provides these metrics as an ordered set of time\-series data\. You can use these metrics to monitor the performance of your email sending\. For example, you can monitor the complaint metric and set a CloudWatch alarm to trigger when the metric exceeds a certain value\.
 
 There are two levels of granularity at which Amazon SES can publish these events to CloudWatch:
 + **Across your AWS account** – These coarse metrics, which correspond to the metrics you monitor using the Amazon SES console and the `GetSendStatistics` API, are totals across your entire AWS account\. Amazon SES publishes these metrics to CloudWatch automatically\.
-+ **Fine\-grained** – These metrics are categorized by email characteristics that you define using *message tags*\. To publish these metrics to CloudWatch, you must [set up event publishing](event-publishing-setting-up.md) with a CloudWatch event destination and [specify a configuration set](event-publishing-send-email.md) when you send an email\. You can also specify message tags or use [auto\-tags](monitor-using-event-publishing.md#event-publishing-how-works) that Amazon SES automatically provides\.
++ **Fine\-grained** – These metrics are categorized by email characteristics that you define using *message tags*\. To publish these metrics to CloudWatch, you have to [set up event publishing](monitor-sending-using-event-publishing-setup.md) with a CloudWatch event destination and [specify a configuration set](event-publishing-send-email.md) when you send an email\. You can also specify message tags or use [auto\-tags](monitor-using-event-publishing.md#event-publishing-how-works) that Amazon SES automatically provides\.
 
 This section describes the available metrics and how to view the metrics in CloudWatch\.
 
@@ -16,13 +16,16 @@ You can publish following Amazon SES email sending metrics to CloudWatch:
 + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
 + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
 + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-+ **Opens** – The recipient received the message and opened it in his or her email client\.
-+ **Clicks** – The recipient clicked one or more links contained in the email\.
-+ **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
++ **Opens** – The recipient received the message and opened it in their email client\.
++ **Clicks** – The recipient clicked one or more links in the email\.
++ **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
++ **Delivery Delays** – The email couldn't be delivered to the recipient because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
+**Note**  
+To add the `DELIVERY_DELAY` event type to an event destination, you have to use the [ UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2\. Currently, you can't add this event type to a configuration set by using the Amazon SES console\.
 
 ## Available Dimensions<a name="event-publishing-retrieving-cloudwatch-dimensions"></a>
 
-CloudWatch uses the dimension names that you specify when you add a CloudWatch event destination to a configuration set in Amazon SES\. For more information, see [Set Up a CloudWatch Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-cloudwatch.md)\.
+CloudWatch uses the dimension names that you specify when you add a CloudWatch event destination to a configuration set in Amazon SES\. For more information, see [Set up a CloudWatch event destination for event publishing](event-publishing-add-event-destination-cloudwatch.md)\.
 
 ## Viewing Amazon SES Metrics in the CloudWatch Console<a name="event-publishing-retrieving-cloudwatch-console"></a>
 

@@ -1,4 +1,4 @@
-# Monitoring Your Usage Statistics Using the Amazon SES API<a name="monitor-sending-activity-api"></a>
+# Monitoring your usage statistics using the Amazon SES API<a name="monitor-sending-activity-api"></a>
 
 The Amazon SES API provides the `GetSendStatistics` operation, which returns information about your service usage\. We recommend that you check your sending statistics regularly, so that you can make adjustments if needed\.
 
@@ -12,10 +12,10 @@ When you call the `GetSendStatistics` operation, you receive a list of data poin
 For a complete description of the `GetSendStatistics` operation, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/GetSendStatistics.html)\.
 
 In this section, you will find the following topics:
-+ [Calling the `GetSendStatistics` API Operation Using the AWS CLI](#monitor-sending-activity-api-cli)
-+ [Calling the `GetSendStatistics` Operation Programmatically](#monitor-sending-activity-api-sdk)
++ [Calling the `GetSendStatistics` API operation using the AWS CLI](#monitor-sending-activity-api-cli)
++ [Calling the `GetSendStatistics` operation programmatically](#monitor-sending-activity-api-sdk)
 
-## Calling the `GetSendStatistics` API Operation Using the AWS CLI<a name="monitor-sending-activity-api-cli"></a>
+## Calling the `GetSendStatistics` API operation using the AWS CLI<a name="monitor-sending-activity-api-cli"></a>
 
 The easiest way to call the `GetSendStatistics` API operation is to use the [AWS Command Line Interface](https://aws.amazon.com/cli) \(AWS CLI\)\.
 
@@ -29,7 +29,7 @@ The easiest way to call the `GetSendStatistics` API operation is to use the [AWS
 
    If the AWS CLI is properly configured, you see a list of sending statistics in JSON format\. Each JSON object includes aggregated sending statistics for a 15\-minute period\.
 
-## Calling the `GetSendStatistics` Operation Programmatically<a name="monitor-sending-activity-api-sdk"></a>
+## Calling the `GetSendStatistics` operation programmatically<a name="monitor-sending-activity-api-sdk"></a>
 
 You can also call the `GetSendStatistics` operation using the AWS SDKs\. This section includes code examples for the AWS SDKs for Go, PHP, Python, and Ruby\. Choose one of the following links to view code examples for that language:
 + [Code example for the AWS SDK for Go](#code-example-getsendstatistics-golang)
@@ -40,7 +40,7 @@ You can also call the `GetSendStatistics` operation using the AWS SDKs\. This se
 **Note**  
 These code examples assume that you have created an AWS shared credentials file that contains your AWS Access Key ID, your AWS Secret Access Key, and your preferred AWS Region\. For more information, see [Create a shared credentials file](create-shared-credentials-file.md)\.
 
-### Calling `GetSendStatistics` Using the AWS SDK for Go<a name="code-example-getsendstatistics-golang"></a>
+### Calling `GetSendStatistics` using the AWS SDK for Go<a name="code-example-getsendstatistics-golang"></a>
 
 ```
  1. package main
@@ -92,7 +92,7 @@ These code examples assume that you have created an AWS shared credentials file 
 47. }
 ```
 
-### Calling `GetSendStatistics` Using the AWS SDK for PHP<a name="code-example-getsendstatistics-php"></a>
+### Calling `GetSendStatistics` using the AWS SDK for PHP<a name="code-example-getsendstatistics-php"></a>
 
 ```
  1. <?php
@@ -123,7 +123,7 @@ These code examples assume that you have created an AWS shared credentials file 
 26. ?>
 ```
 
-### Calling `GetSendStatistics` Using the AWS SDK for Python \(Boto\)<a name="code-example-getsendstatistics-python"></a>
+### Calling `GetSendStatistics` using the AWS SDK for Python \(Boto\)<a name="code-example-getsendstatistics-python"></a>
 
 ```
  1. import boto3 #pip install boto3
@@ -141,7 +141,7 @@ These code examples assume that you have created an AWS shared credentials file 
 13.     print(json.dumps(response, indent=4, sort_keys=True, default=str))
 ```
 
-### Calling `GetSendStatistics` Using the AWS SDK for Ruby<a name="code-example-getsendstatistics-ruby"></a>
+### Calling `GetSendStatistics` using the AWS SDK for Ruby<a name="code-example-getsendstatistics-ruby"></a>
 
 ```
  1. require 'aws-sdk' # gem install aws-sdk

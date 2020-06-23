@@ -1,4 +1,4 @@
-# Troubleshooting DKIM Problems in Amazon SES<a name="troubleshoot-dkim"></a>
+# Troubleshooting DKIM problems in Amazon SES<a name="troubleshoot-dkim"></a>
 
 This section lists some of the problems that you may encounter when you configure DKIM authentication in Amazon SES\. If you attempt to set up DKIM and you encounter problems, review the possible causes and solutions below\.
 
@@ -25,7 +25,7 @@ If you receive a `BadRequestException` error, do the following:
 + Make sure that you've removed the header and footer lines from the public key, and that you've removed all of the line breaks from the public key\.
 
 **When using Easy DKIM, your DNS servers successfully return the Amazon SES DKIM CNAME records, but return `SERVFAIL` for the domain verification TXT record\.**  
-Your DNS provider might not be able to redirect CNAME records\. Amazon SES and ISPs query for TXT records\. To comply with the DKIM specification, your DNS servers have to be able to respond to TXT record queries as well as CNAME record queries\. If your DNS provider isn't able to respond to TXT record queries, an alternative is to use Route 53 as your DNS hosting provider\.
+Your DNS provider might not be able to redirect CNAME records\. Amazon SES and ISPs query for TXT records\. To comply with the DKIM specification, your DNS servers have to be able to respond to TXT record queries as well as CNAME record queries\. If your DNS provider isn't able to respond to TXT record queries, an alternative is to use Route 53 as your DNS hosting provider\.
 
 **Your emails contain two DKIM signatures**  
 The extra DKIM signature, which contains `d=amazonses.com`, is automatically added by Amazon SES\. You can ignore it\.

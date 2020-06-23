@@ -1,4 +1,4 @@
-# Amazon SES SMTP Issues<a name="troubleshoot-smtp"></a>
+# Amazon SES SMTP issues<a name="troubleshoot-smtp"></a>
 
 This section contains solutions for several common issues related to sending email through the Amazon SES Simple Mail Transfer Protocol \(SMTP\) interface\. It also contains a list of SMTP response codes that Amazon SES returns\.
 
@@ -31,7 +31,7 @@ To learn more about sending email through the Amazon SES SMTP interface, see [Us
 
   The IP addresses for the Amazon SES SMTP endpoints reside behind load balancers\. As a result, these IP addresses change frequently\. It's not possible to provide a definitive list of all of the IP addresses for the Amazon SES endpoints\. We recommend that you whitelist the `amazonses.com` domain, rather than whitelisting individual IP addresses\.
 
-## SMTP Response Codes That Amazon SES Returns<a name="troubleshoot-smtp-response-codes"></a>
+## SMTP response codes returned by Amazon SES<a name="troubleshoot-smtp-response-codes"></a>
 
 This section contains a list of response codes that the Amazon SES SMTP interface returns\.
 

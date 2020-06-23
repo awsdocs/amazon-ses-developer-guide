@@ -1,4 +1,4 @@
-# Set Up a CloudWatch Event Destination for Amazon SES Event Publishing<a name="event-publishing-add-event-destination-cloudwatch"></a>
+# Set up a CloudWatch event destination for event publishing<a name="event-publishing-add-event-destination-cloudwatch"></a>
 
 You can use Amazon CloudWatch event destinations to publish Amazon SES email sending events to CloudWatch\. Because a CloudWatch event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
 
@@ -16,9 +16,9 @@ This section provides information to help you choose your dimensions, and then s
 
 The procedure in this section shows how to add a CloudWatch event destination to a configuration set\.
 
-You can also use the `UpdateConfigurationSetEventDestination` API operation to create event destinations\. For more information about using the API, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
+You can also use the [UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2 to create and modify event destinations\.
 
-**To add a CloudWatch event destination to a configuration set \(console\)**
+**To add a CloudWatch event destination to a configuration set by using the console**
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
@@ -38,16 +38,19 @@ You can also use the `UpdateConfigurationSetEventDestination` API operation to c
    + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
    + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
    + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-   + **Opens** – The recipient received the message and opened it in his or her email client\.
-   + **Clicks** – The recipient clicked one or more links contained in the email\.
-   + **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Opens** – The recipient received the message and opened it in their email client\.
+   + **Clicks** – The recipient clicked one or more links in the email\.
+   + **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
+   + **Delivery Delays** – The email couldn't be delivered to the recipient because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
+**Note**  
+To add the `DELIVERY_DELAY` event type to an event destination, you have to use the [ UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2\. Currently, you can't add this event type to a configuration set by using the Amazon SES console\.
 
 1. For **Value Source**, specify how Amazon SES will obtain the data that it passes to CloudWatch\. The following value sources are available:
-   + **Message Tag** – Amazon SES retrieves the dimension name and value from a tag that you specify by using the `X-SES-MESSAGE-TAGS` header or the `Tags` API parameter\. For more information about using message tags, see [Step 3: Send Email Using Amazon SES Event Publishing](event-publishing-send-email.md)\.
+   + **Message Tag** – Amazon SES retrieves the dimension name and value from a tag that you specify by using the `X-SES-MESSAGE-TAGS` header or the `Tags` API parameter\. For more information about using message tags, see [Step 3: Specify your configuration set when you send email](event-publishing-send-email.md)\.
 **Note**  
 Message tags can include the numbers 0–9, the letters A–Z \(both uppercase and lowercase\), hyphens \(\-\), and underscores \(\_\)\.
 
-     You can also use the **Message Tag** value source to create dimensions based on Amazon SES auto\-tags\. To use an auto\-tag, type the complete name of the auto\-tag as the **Dimension Name**\. For example, to create a dimension based on the configuration set auto\-tag, use `ses:configuration-set` for the **Dimension Name**, and the name of the configuration set for the **Default Value**\. For a complete list of auto\-tags, see [How Event Publishing Works](monitor-using-event-publishing.md#event-publishing-how-works)\.
+     You can also use the **Message Tag** value source to create dimensions based on Amazon SES auto\-tags\. To use an auto\-tag, type the complete name of the auto\-tag as the **Dimension Name**\. For example, to create a dimension based on the configuration set auto\-tag, use `ses:configuration-set` for the **Dimension Name**, and the name of the configuration set for the **Default Value**\. For a complete list of auto\-tags, see [How event publishing works](monitor-using-event-publishing.md#event-publishing-how-works)\.
    + **Email Header** – Amazon SES retrieves the dimension name and value from a header in the email\.
 **Note**  
 You can't use any of the following email headers as the **Dimension Name**: `Received`, `To`, `From`, `DKIM-Signature`, `CC`, `message-id`, or `Return-Path`\.

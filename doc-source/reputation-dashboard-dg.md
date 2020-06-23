@@ -1,4 +1,4 @@
-# Using the Reputation Dashboard to Track Bounce and Complaint Rates<a name="reputation-dashboard-dg"></a>
+# Using the reputation dashboard to track bounce and complaint rates<a name="reputation-dashboard-dg"></a>
 
 The reputation dashboard contains the same information that the Amazon SES team sees when determining the health of individual accounts\.
 
@@ -24,7 +24,7 @@ The **Bounce Rate** and **Complaint Rate** sections also include status messages
 **Under review** – The metric caused your account to be placed under review, and is still above the maximum rate\. If the issue that caused the metric to exceed the maximum rate is not resolved by the end of the review period, we might pause your account's ability to send email\.
 **Sending pause** – The metric caused us to pause your account's ability to send email\. While your account's ability to send email is paused, you can't send email using Amazon SES\. You can request that we review this decision\. To learn more about submitting a request for review, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 **Pending sending pause** – The metric caused us to place your account under review\. The issues that caused this review period haven't been resolved\. These issues might cause us to pause your account's ability to send email\. A member of the Amazon SES team has to review your account before we take any further action\.
-   + *Other Notifications* – If your account is experiencing reputation\-related issues that are not related to bounces or complaints, a brief message will be shown here\. For more information about the notifications that can be shown in this area, see [Reputation Dashboard Messages](reputationdashboardmessages.md)\.
+   + *Other Notifications* – If your account is experiencing reputation\-related issues that are not related to bounces or complaints, a brief message will be shown here\. For more information about the notifications that can be shown in this area, see [Reputation dashboard messages](reputationdashboardmessages.md)\.
 
 **Note**  
 The reputation dashboard is available to all users who have access to the AWS console\. You can't use IAM policies to restrict access to the reputation dashboard\.

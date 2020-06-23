@@ -1,10 +1,10 @@
-# Step 2: Add an Event Destination Using Amazon SES<a name="event-publishing-add-event-destination"></a>
+# Step 2: Add an event destination<a name="event-publishing-add-event-destination"></a>
 
-Event destinations represent AWS services to which you publish email sending events such as bounces, complaints, deliveries, sent emails, and rejected emails\. Each event destination that you set up belongs to one, and only one, configuration set\. When you set up an event destination with Amazon SES, you choose the AWS service destination, and you specify parameters associated with that destination\. 
+Event destinations are places that you publish Amazon SES events to\. Each event destination that you set up belongs to one, and only one, configuration set\. When you set up an event destination with Amazon SES, you choose the AWS service destination, and you specify parameters associated with that destination\. 
 
-There are three event destinations: Amazon CloudWatch, Amazon Kinesis Data Firehose, and Amazon Simple Notification Service \(Amazon SNS\)\. The event destination that you choose depends on the level of detail you want about the events, and the way in which you want to receive the event information\. If you simply want a running total of each type of event \(for example, so that you can set an alarm when the total gets too high\), use CloudWatch\. If you want detailed event records that you can output to another service such as Amazon Elasticsearch Service or Amazon Redshift for analysis, choose Kinesis Data Firehose\. If you want to receive notifications when certain events occur, choose Amazon SNS\.
+When you set up an event destination, you can choose to send events to one of the following AWS services: Amazon CloudWatch, Amazon Kinesis Data Firehose, and Amazon Simple Notification Service \(Amazon SNS\)\. The event destination that you choose depends on the level of detail you want about the events, and the way you want to receive the event information\. If you simply want a running total of each type of event \(for example, so that you can set an alarm when the total gets too high\), you can use CloudWatch\. If you want detailed event records that you can output to another service such as Amazon Elasticsearch Service or Amazon Redshift for analysis, you can use Kinesis Data Firehose\. If you want to receive notifications when certain events occur, you can use Amazon SNS\.
 
 **Topics**
-+ [Set Up a CloudWatch Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-cloudwatch.md)
-+ [Set Up a Kinesis Data Firehose Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-firehose.md)
-+ [Set Up an Amazon SNS Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-sns.md)
++ [Set up a CloudWatch event destination for event publishing](event-publishing-add-event-destination-cloudwatch.md)
++ [Set up a Kinesis Data Firehose event destination for Amazon SES event publishing](event-publishing-add-event-destination-firehose.md)
++ [Set up an Amazon SNS event destination for event publishing](event-publishing-add-event-destination-sns.md)

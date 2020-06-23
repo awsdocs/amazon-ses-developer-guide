@@ -24,7 +24,7 @@ The procedure in this section is optional, but highly recommended\.
 
    For procedures, see [Subscribe to a Topic](https://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
-1. Complete the procedures in [Set Up an Amazon SNS Event Destination for Amazon SES Event Publishing](event-publishing-add-event-destination-sns.md) to set up your configuration sets to publish Rendering Failure events to your Amazon SNS topic\.
+1. Complete the procedures in [Set up an Amazon SNS event destination for event publishing](event-publishing-add-event-destination-sns.md) to set up your configuration sets to publish Rendering Failure events to your Amazon SNS topic\.
 
 ## Part 2: Create an Email Template<a name="send-personalized-email-create-template"></a>
 

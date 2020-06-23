@@ -2,7 +2,7 @@
 
 You can interact with the Amazon SES SMTP interface from your operating system's command line\. The methods described in this section are intended to be used to test your connection to the Amazon SES SMTP endpoint, validate your SMTP credentials, and troubleshoot connection issues\. These procedures use tools and libraries that are included with most common operating systems\. 
 
-For additional information about troubleshooting SMTP connection problems, see [Amazon SES SMTP Issues](troubleshoot-smtp.md)\.
+For additional information about troubleshooting SMTP connection problems, see [Amazon SES SMTP issues](troubleshoot-smtp.md)\.
 
 ## Prerequisites<a name="send-email-smtp-client-command-line-prereqs"></a>
 

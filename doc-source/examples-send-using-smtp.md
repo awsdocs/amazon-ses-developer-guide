@@ -305,109 +305,233 @@ The following code example is a complete solution for sending email through the 
 ```
 
 ------
+#### [ JavaScript ]
+
+The following code example is a complete solution for sending email through the Amazon SES SMTP interface by using the [NodeMailer](https://nodemailer.com) module in Node\.js\. 
+
+In order to run this code example, you first have to obtain SMTP credentials\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. You must also install the [NodeMailer](https://nodemailer.com) module\. 
+
+```
+/*
+This code uses callbacks to handle asynchronous function responses.
+It currently demonstrates using an async-await pattern.
+AWS supports both the async-await and promises patterns.
+For more information, see the following:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/calling-services-asynchronously.html
+https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html
+*/
+
+"use strict";
+const nodemailer = require("nodemailer");
+
+// If you're using Amazon SES in a region other than US West (Oregon),
+// replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
+// endpoint in the appropriate AWS Region.
+const smtpEndpoint = "email-smtp.us-west-2.amazonaws.com";
+
+// The port to use when connecting to the SMTP server.
+const port = 587;
+
+// Replace sender@example.com with your "From" address.
+// This address must be verified with Amazon SES.
+const senderAddress = "Mary Major <sender@example.com>";
+
+// Replace recipient@example.com with a "To" address. If your account
+// is still in the sandbox, this address must be verified. To specify
+// multiple addresses, separate each address with a comma.
+var toAddresses = "recipient@example.com";
+
+// CC and BCC addresses. If your account is in the sandbox, these
+// addresses have to be verified. To specify multiple addresses, separate
+// each address with a comma.
+var ccAddresses = "cc-recipient0@example.com,cc-recipient1@example.com";
+var bccAddresses = "bcc-recipient@example.com";
+
+// Replace smtp_username with your Amazon SES SMTP user name.
+const smtpUsername = "AKIAIOSFODNN7EXAMPLE";
+
+// Replace smtp_password with your Amazon SES SMTP password.
+const smtpPassword = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY";
+
+// (Optional) the name of a configuration set to use for this message.
+var configurationSet = "ConfigSet";
+
+// The subject line of the email
+var subject = "Amazon SES test (Nodemailer)";
+
+// The email body for recipients with non-HTML email clients.
+var body_text = `Amazon SES Test (Nodemailer)
+---------------------------------
+This email was sent through the Amazon SES SMTP interface using Nodemailer.
+`;
+
+// The body of the email for recipients whose email clients support HTML content.
+var body_html = `<html>
+<head></head>
+<body>
+  <h1>Amazon SES Test (Nodemailer)</h1>
+  <p>This email was sent with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>
+        using <a href='https://nodemailer.com'>Nodemailer</a> for Node.js.</p>
+</body>
+</html>`;
+
+// The message tags that you want to apply to the email.
+var tag0 = "key0=value0";
+var tag1 = "key1=value1";
+
+async function main(){
+
+  // Create the SMTP transport.
+  let transporter = nodemailer.createTransport({
+    host: smtpEndpoint,
+    port: port,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: smtpUsername,
+      pass: smtpPassword
+    }
+  });
+
+  // Specify the fields in the email.
+  let mailOptions = {
+    from: senderAddress,
+    to: toAddresses,
+    subject: subject,
+    cc: ccAddresses,
+    bcc: bccAddresses,
+    text: body_text,
+    html: body_html,
+    // Custom headers for configuration set and message tags.
+    headers: {
+      'X-SES-CONFIGURATION-SET': configurationSet,
+      'X-SES-MESSAGE-TAGS': tag0,
+      'X-SES-MESSAGE-TAGS': tag1
+    }
+  };
+
+  // Send the email.
+  let info = await transporter.sendMail(mailOptions)
+
+  console.log("Message sent! Message ID: ", info.messageId);
+}
+
+main().catch(console.error);
+```
+
+------
 #### [ Perl ]
 
 The following code example is a complete solution for sending email through the Amazon SES SMTP interface using Perl\. In order to run this code example, you must obtain SMTP credentials; for more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. You must also install the [Email::Sender](https://metacpan.org/pod/Email::Sender), [Email::MIME](https://metacpan.org/pod/Email::MIME), and [Try::Tiny](https://metacpan.org/pod/Try::Tiny) modules from [CPAN](https://www.cpan.org/)\.
 
 ```
- 1. #!/usr/bin/perl 
- 2. use warnings;
- 3. use strict;
- 4. use Email::Sender::Simple qw(sendmail);
- 5. use Email::Sender::Transport::SMTP;
- 6. use Email::MIME;
- 7. use Try::Tiny;
- 8. 
- 9. # Replace sender@example.com with your "From" address. 
-10. # This address must be verified.
-11. my $sender = 'Sender name <sender@example.com>';
-12. 
-13. # Replace recipient@example.com with a "To" address. If your account 
-14. # is still in the sandbox, this address must be verified.
-15. my $recipient = 'recipient@example.com';
-16. 
-17. # Replace smtp_username with your Amazon SES SMTP user name.
-18. my $smtp_username = "smtp_username";
-19. 
-20. # Replace smtp_password with your Amazon SES SMTP password.
-21. my $smtp_password = "smtp_password";
-22. 
-23. # (Optional) the name of a configuration set to use for this message.
-24. # If you comment out this line, you also need to remove or comment out
-25. # the "X-SES-CONFIGURATION-SET:" header below.
-26. my $configset = "ConfigSet";
-27. 
-28. # If you're using Amazon SES in an AWS Region other than US West (Oregon), 
-29. # replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
-30. # endpoint in the appropriate region.
-31. my $host = "email-smtp.us-west-2.amazonaws.com";
-32. my $port = 587;
-33. 
-34. # The subject line of the email.
-35. my $subject = "Amazon SES Test (Perl)";
-36. 
-37. # The HTML body for the email.
-38. my $htmlbody = <<'END_HTML';
-39. <html>
-40.   <head></head>
-41.   <body>
-42.     <h1>Amazon SES SMTP Email Test</h1>
-43.     <p>This email was sent with Amazon SES using the 
-44.       <a href='https://www.perl.org/'>Perl</a>
-45.       <a href='http://search.cpan.org/~rjbs/Email-Sender-1.300031/'>
-46.         Email::Sender</a> library.</p>
-47.   </body>
-48. </html>
-49. END_HTML
-50. 
-51. # The email body for recipients with non-HTML email clients.
-52. my $textbody = "Amazon SES Test\r\n"
-53.              . "This message was sent with Amazon SES using the Perl "
-54.              . "Email::Sender module.";
-55. 
-56. # Create the SMTP transport.
-57. my $transport = Email::Sender::Transport::SMTP->new(
-58.   host          => "$host",
-59.   port          => "$port",
-60.   ssl           => 'starttls',
-61.   sasl_username => "$smtp_username",
-62.   sasl_password => "$smtp_password",
-63. );
-64. 
-65. # Build a multipart MIME message with an HTML part and a text part.
-66. my $message = Email::MIME->create(
-67.     attributes  => {
-68.         content_type => 'multipart/alternative',
-69.         charset      => 'UTF-8',
-70.     },
-71.     header_str  => [
-72.         From    => "$sender",
-73.         To      => "$recipient",
-74.         Subject => "$subject",
-75.     ],
-76.     parts => [
-77.         Email::MIME->create(
-78.             attributes => { content_type => 'text/plain' },
-79.             body       => "$textbody",
-80.         ),
-81.         Email::MIME->create(
-82.             attributes => { content_type => 'text/html' },
-83.             body       => "$htmlbody",
-84.         )
-85.     ],
-86. );
-87. 
-88. # Add the configuration set header to the MIME message.
-89. $message->header_str_set( 'X-SES-CONFIGURATION-SET' => "$configset" );
-90. 
-91. # Try to send the email using the sendmail function from 
-92. # Email::Sender::Simple.
-93. try {
-94.   sendmail($message, { transport => $transport });
-95. # If something goes wrong, print an error message.
-96. } catch {
-97.   die "Error sending email: $_";
-98. };
+/*
+This code uses callbacks to handle asynchronous function responses.
+It currently demonstrates using an async-await pattern.
+AWS supports both the async-await and promises patterns.
+For more information, see the following:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/calling-services-asynchronously.html
+https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html
+*/
+
+"use strict";
+const nodemailer = require("nodemailer");
+
+// If you're using Amazon SES in a region other than US West (Oregon),
+// replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP
+// endpoint in the appropriate AWS Region.
+const smtpEndpoint = "email-smtp.us-west-2.amazonaws.com";
+
+// The port to use when connecting to the SMTP server.
+const port = 587;
+
+// Replace sender@example.com with your "From" address.
+// This address must be verified with Amazon SES.
+const senderAddress = "Mary Major <sender@example.com>";
+
+// Replace recipient@example.com with a "To" address. If your account
+// is still in the sandbox, this address must be verified. To specify
+// multiple addresses, separate each address with a comma.
+var toAddresses = "recipient@example.com";
+
+// CC and BCC addresses. If your account is in the sandbox, these
+// addresses have to be verified. To specify multiple addresses, separate
+// each address with a comma.
+var ccAddresses = "cc-recipient0@example.com,cc-recipient1@example.com";
+var bccAddresses = "bcc-recipient@example.com";
+
+// Replace smtp_username with your Amazon SES SMTP user name.
+const smtpUsername = "AKIAIOSFODNN7EXAMPLE";
+
+// Replace smtp_password with your Amazon SES SMTP password.
+const smtpPassword = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY";
+
+// (Optional) the name of a configuration set to use for this message.
+var configurationSet = "ConfigSet";
+
+// The subject line of the email
+var subject = "Amazon SES test (Nodemailer)";
+
+// The email body for recipients with non-HTML email clients.
+var body_text = `Amazon SES Test (Nodemailer)
+---------------------------------
+This email was sent through the Amazon SES SMTP interface using Nodemailer.
+`;
+
+// The body of the email for recipients whose email clients support HTML content.
+var body_html = `<html>
+<head></head>
+<body>
+  <h1>Amazon SES Test (Nodemailer)</h1>
+  <p>This email was sent with <a href='https://aws.amazon.com/ses/'>Amazon SES</a>
+        using <a href='https://nodemailer.com'>Nodemailer</a> for Node.js.</p>
+</body>
+</html>`;
+
+// The message tags that you want to apply to the email.
+var tag0 = "key0=value0";
+var tag1 = "key1=value1";
+
+async function main(){
+
+  // Create the SMTP transport.
+  let transporter = nodemailer.createTransport({
+    host: smtpEndpoint,
+    port: port,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: smtpUsername,
+      pass: smtpPassword
+    }
+  });
+
+  // Specify the fields in the email.
+  let mailOptions = {
+    from: senderAddress,
+    to: toAddresses,
+    subject: subject,
+    cc: ccAddresses,
+    bcc: bccAddresses,
+    text: body_text,
+    html: body_html,
+    // Custom headers for configuration set and message tags.
+    headers: {
+      'X-SES-CONFIGURATION-SET': configurationSet,
+      'X-SES-MESSAGE-TAGS': tag0,
+      'X-SES-MESSAGE-TAGS': tag1
+    }
+  };
+
+  // Send the email.
+  let info = await transporter.sendMail(mailOptions)
+
+  console.log("Message sent! Message ID: ", info.messageId);
+}
+
+main().catch(console.error);
 ```
 
 ------

@@ -94,7 +94,7 @@ To encode a message header, use MIME encoded\-word syntax\. MIME encoded word sy
 
 The value of `encoding` can be either `Q` or `B`\. If the value of encoding is `Q`, then the value `encoded-text` has to use Q\-encoding\. If the value of encoding is `B`, then the value of `encoded-text` has to use base64 encoding\.
 
-For example, if you want to use the string "Як ти поживаєш?" in the subject line of an email, you can use either of the following encodings:
+For example, if you want to use the string "Як ти поживаєш?" in the subject line of an email, you can use either of the following encodings:
 + **Q\-encoding**
 
   ```
@@ -154,7 +154,7 @@ Amazon SES accepts most common file types\. For a list of file types that Amazon
 The Amazon SES API provides the `SendRawEmail` action, which lets you compose and send an email message in the format that you specify\. For a complete description of `SendRawEmail`, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 
 **Note**  
-For tips on how to increase your email sending speed when you make multiple calls to `SendRawEmail`, see [Increasing Throughput with Amazon SES](troubleshoot-throughput-problems.md)\.
+For tips on how to increase your email sending speed when you make multiple calls to `SendRawEmail`, see [Increasing throughput with Amazon SES](troubleshoot-throughput-problems.md)\.
 
 The message body must contain a properly formatted, raw email message, with appropriate header fields and message body encoding\. Although it is possible to construct the raw message manually within an application, it is much easier to do so using existing mail libraries\. 
 

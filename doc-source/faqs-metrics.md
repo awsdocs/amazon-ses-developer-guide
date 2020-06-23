@@ -53,7 +53,7 @@ Open tracking is available to all Amazon SES users by default\. To use open trac
 
 1. In every email for which you want to track opens, specify the configuration set that you created in step 1\.
 
-For a more detailed explanation of this process, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\.
+For a more detailed explanation of this process, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\.
 
 ### Q3\. Can I omit the open tracking pixel from certain emails?<a name="sending-metric-faqs-opens-q3"></a>
 

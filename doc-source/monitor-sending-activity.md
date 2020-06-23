@@ -10,9 +10,12 @@ The metrics that you can measure using Amazon SES are referred to as *email send
 + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
 + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
 + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-+ **Opens** – The recipient received the message and opened it in his or her email client\.
-+ **Clicks** – The recipient clicked one or more links contained in the email\.
-+ **Rendering Failures** – The email was not sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
++ **Opens** – The recipient received the message and opened it in their email client\.
++ **Clicks** – The recipient clicked one or more links in the email\.
++ **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
++ **Delivery Delays** – The email couldn't be delivered to the recipient because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
+**Note**  
+To add the `DELIVERY_DELAY` event type to an event destination, you have to use the [ UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2\. Currently, you can't add this event type to a configuration set by using the Amazon SES console\.
 
 You can monitor email sending events in several ways\. The method you choose depends on the type of event you want to monitor, the granularity and level of detail you want to monitor it with, and the location where you want Amazon SES to publish the data\. You're required to use either feedback notifications or event publishing to track bounce and complaint events\. You can also choose to use multiple monitoring methods\. The characteristics of each method are listed in the following table\.
 
@@ -30,10 +33,10 @@ You can monitor email sending events in several ways\. The method you choose dep
 The metrics measured by email sending events may not align perfectly with your sending quotas\. This discrepancy can be caused by email bounces and rejections, or by using the Amazon SES inbox simulator\. To find out how close you are to your sending quotas, see [Monitoring Your Sending Quotas](manage-sending-quotas-monitor.md)\.
 
 **Topics**
-+ [Monitoring Your Sending Statistics Using the Amazon SES Console](monitor-sending-activity-console.md)
-+ [Monitoring Your Usage Statistics Using the Amazon SES API](monitor-sending-activity-api.md)
-+ [Monitoring Using Amazon SES Notifications](monitor-sending-activity-using-notifications.md)
-+ [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)
++ [Monitoring your sending statistics using the Amazon SES console](monitor-sending-activity-console.md)
++ [Monitoring your usage statistics using the Amazon SES API](monitor-sending-activity-api.md)
++ [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)
++ [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)
 
 
 ****  

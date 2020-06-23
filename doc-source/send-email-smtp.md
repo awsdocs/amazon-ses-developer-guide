@@ -5,7 +5,7 @@ To send production email through Amazon SES, you can use the Simple Mail Transfe
 Amazon SES sends email using SMTP, which is the most common email protocol on the internet\. You can send email through Amazon SES by using a variety of SMTP\-enabled programming languages and software to connect to the Amazon SES SMTP interface\. This section explains how to get your Amazon SES SMTP credentials, how to send email by using the SMTP interface, and how to configure several pieces of software and mail servers to use Amazon SES for email sending\.
 
 **Note**  
-For solutions to common problems that you might encounter when you use Amazon SES through its SMTP interface, see [Amazon SES SMTP Issues](troubleshoot-smtp.md)\. 
+For solutions to common problems that you might encounter when you use Amazon SES through its SMTP interface, see [Amazon SES SMTP issues](troubleshoot-smtp.md)\. 
 
 To send email using the Amazon SES SMTP interface, you need the following:
 + An AWS account\. For more information, see [Signing up for AWS](sign-up-for-aws.md)\.
@@ -28,7 +28,7 @@ If you need a solution that can both send and receive email by using an email cl
 + To configure your existing email server to send all of your outgoing mail through Amazon SES, see [Integrating Amazon SES with Your Existing Email Server](send-email-smtp-existing-server.md)\.
 + To interact with the Amazon SES SMTP interface using the command line, which can be useful for testing, see [Test Your Connection to the Amazon SES SMTP Interface Using the Command Line](send-email-smtp-client-command-line.md)\.
 
-For a list of SMTP response codes, see [SMTP Response Codes That Amazon SES Returns](troubleshoot-smtp.md#troubleshoot-smtp-response-codes)\.
+For a list of SMTP response codes, see [SMTP response codes returned by Amazon SES](troubleshoot-smtp.md#troubleshoot-smtp-response-codes)\.
 
 ## Email Information to Provide<a name="smtp-parameters"></a>
 

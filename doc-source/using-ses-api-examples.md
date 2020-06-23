@@ -2,7 +2,7 @@
 
 This section contains examples of requests that you can issue against the Amazon SES API\.
 
-## Example GET Request<a name="using-ses-api-examples-get"></a>
+## Example GET request<a name="using-ses-api-examples-get"></a>
 
 The following code is an example of a GET request\. It includes a calculated signature\. Notice that all of the parameters in the request are URL\-encoded\.
 
@@ -18,7 +18,7 @@ The following code is an example of a GET request\. It includes a calculated sig
 9. &Algorithm=HMACSHA256
 ```
 
-## Example POST Request<a name="using-ses-api-examples-post"></a>
+## Example POST request<a name="using-ses-api-examples-post"></a>
 
 The following code is an example of a POST request\. It includes a calculated signature\. Notice that all of the parameters in the request are URL\-encoded\.
 

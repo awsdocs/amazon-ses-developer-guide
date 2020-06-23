@@ -1,4 +1,4 @@
-# Graph Events in Amazon CloudWatch<a name="event-publishing-cloudwatch-tutorial"></a>
+# Graph email sending events in Amazon CloudWatch<a name="event-publishing-cloudwatch-tutorial"></a>
 
 In this tutorial, you publish Amazon SES email sending events to Amazon CloudWatch and then graph the events using the CloudWatch console\.
 

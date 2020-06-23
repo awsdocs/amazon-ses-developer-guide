@@ -1,4 +1,4 @@
-# Increasing Throughput with Amazon SES<a name="troubleshoot-throughput-problems"></a>
+# Increasing throughput with Amazon SES<a name="troubleshoot-throughput-problems"></a>
 
 When you send emails, you can call Amazon SES as frequently as your maximum send rate allows\. \(For more information about your maximum send rate, see [Managing Your Amazon SES Sending Quotas](manage-sending-quotas.md)\.\) However, each call to Amazon SES takes time to complete\.
 
@@ -13,4 +13,4 @@ If you are making multiple calls to Amazon SES using the Amazon SES API or the S
 + **Consider using the Amazon SES query API instead of the SMTP endpoint**—Using the Amazon SES query API enables you to submit the email send request using a single network call, whereas interfacing with the SMTP endpoint involves an SMTP conversation which consists of multiple network requests \(for example, EHLO, MAIL FROM, RCPT TO, DATA, QUIT\)\. For more information about the Amazon SES query API, see [Using the Amazon SES API to Send Email](send-email-api.md)\.
 + **Use the Amazon SES mailbox simulator to test your maximum throughput**—To test any changes you may implement, you can use the mailbox simulator\. The mailbox simulator can help you to determine your system’s maximum throughput without using up your daily sending quota\. For information about the mailbox simulator, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
 
-If you are accessing Amazon SES through its SMTP interface, see [Amazon SES SMTP Issues](troubleshoot-smtp.md) for specific SMTP\-related issues that may affect throughput\.
+If you are accessing Amazon SES through its SMTP interface, see [Amazon SES SMTP issues](troubleshoot-smtp.md) for specific SMTP\-related issues that may affect throughput\.

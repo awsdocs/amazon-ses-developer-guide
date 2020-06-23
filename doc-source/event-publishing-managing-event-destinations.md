@@ -1,6 +1,6 @@
 # Managing Amazon SES Event Destinations<a name="event-publishing-managing-event-destinations"></a>
 
-Event destinations allow you to publish email sending metrics—including the numbers of sends, deliveries, opens, clicks, bounces, and complaints—to other AWS products\. To learn more about setting up event publishing, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\. 
+Event destinations allow you to publish email sending metrics—including the numbers of sends, deliveries, opens, clicks, bounces, and complaints—to other AWS products\. To learn more about setting up event publishing, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\. 
 
 ## Updating an Event Destination<a name="event-publishing-managing-event-destinations-updating"></a>
 

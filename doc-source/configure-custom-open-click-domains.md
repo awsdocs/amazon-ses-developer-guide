@@ -62,7 +62,7 @@ You can only use an HTTPS domain for tracking link clicks\. Amazon SES only supp
 
    If you use a CDN other than CloudFront, you might need to complete similar steps\. For more information, refer to the documentation for your CDN\.
 
-1. If you use Route 53 to manage the DNS configuration for your domain and CloudFront as your CDN, create an Alias record in Route 53 that refers to your CloudFront distribution \(such as *d111111abcdef8\.cloudfront\.net*\)\. For more information, see [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) in the *Amazon Route 53 Developer Guide*\.
+1. If you use Route 53 to manage the DNS configuration for your domain and CloudFront as your CDN, create an Alias record in Route 53 that refers to your CloudFront distribution \(such as *d111111abcdef8\.cloudfront\.net*\)\. For more information, see [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) in the *Amazon Route 53 Developer Guide*\.
 
    Otherwise, in the DNS configuration for your subdomain, add a CNAME record that refers to the address of your CDN\.
 
@@ -84,7 +84,7 @@ After you configure your domain to handle open and click tracking redirects, you
 
 1. In the list of configuration sets, select the box next to the configuration set you created in the previous step\. On the **Actions** menu, choose **Edit**\.
 
-1. On the **Event Destinations** tab, for **Add Destination**, choose an event destination type\. For more information about the options in this menu, see [Step 2: Add Event Destination](event-publishing-add-event-destination.md)\.
+1. On the **Event Destinations** tab, for **Add Destination**, choose an event destination type\. For more information about the options in this menu, see [Step 2: Add event destination](event-publishing-add-event-destination.md)\.
 
 1. For **Event types**, choose either **Click**, **Open**, or both, depending on the types of events you want to track\.
 
@@ -92,6 +92,6 @@ After you configure your domain to handle open and click tracking redirects, you
 
 1. For **Select a verified domain**, choose the domain that you want to use for open and click event tracking\. In the text field to the left of the menu, you can optionally specify a subdomain of the parent domain\. 
 
-1. Configure the remaining options as you normally would\. For more information about setting up event destinations, see [Step 2: Add Event Destination](event-publishing-add-event-destination.md)\.
+1. Configure the remaining options as you normally would\. For more information about setting up event destinations, see [Step 2: Add event destination](event-publishing-add-event-destination.md)\.
 
 1. Choose **Save**\.

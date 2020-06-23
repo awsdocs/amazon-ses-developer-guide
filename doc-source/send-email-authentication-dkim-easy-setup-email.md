@@ -20,7 +20,7 @@ If you already set up Easy DKIM for the domain that the email address belongs to
 1. Copy the three CNAME records that appear in this section\. Alternatively, you can choose **Download Record Set as CSV** to save a copy of the records to your computer\.
 
 1. Add the CNAME records to the DNS configuration for your domain\. To update the DNS records for your domain:
-   + **If you use Route 53 as your DNS provider** – Complete the procedures shown in [Editing Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-editing.html) in the *Amazon Route 53 Developer Guide*\.
+   + **If you use Route 53 as your DNS provider** – Complete the procedures shown in [Editing Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-editing.html) in the *Amazon Route 53 Developer Guide*\.
    + **If you use another DNS provider** – Different providers have different procedures for updating DNS records\. See the documentation provided by your DNS provider for more information\.
 **Note**  
 A small number of DNS providers don't allow you to include underscores \(\_\) in record names\. However, the underscore in the DKIM record name is required\. If your DNS provider doesn't allow you to enter an underscore in the record name, contact the provider's customer support team for assistance\.

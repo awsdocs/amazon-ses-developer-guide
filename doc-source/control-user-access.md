@@ -53,7 +53,7 @@ These email address condition keys apply only to the APIs noted in the following
 | `ses:Recipients` | Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\. | `SendEmail`, `SendRawEmail` | 
 | `ses:FromAddress` | Restricts the "From" address\. | `SendEmail`, `SendRawEmail`, `SendBounce` | 
 | `ses:FromDisplayName` | Restricts the "From" address that is used as the display name\.  | `SendEmail`, `SendRawEmail` | 
-| `ses:FeedbackAddress` | Restricts the "Return\-Path" address, which is the address where bounces and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES Notifications Through Email](monitor-sending-activity-using-notifications-email.md)\. | `SendEmail`, `SendRawEmail` | 
+| `ses:FeedbackAddress` | Restricts the "Return\-Path" address, which is the address where bounces and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES notifications sent by email](monitor-sending-activity-using-notifications-email.md)\. | `SendEmail`, `SendRawEmail` | 
 
 ### Restricting General API Usage<a name="iam-and-ses-restrict-API-usage"></a>
 

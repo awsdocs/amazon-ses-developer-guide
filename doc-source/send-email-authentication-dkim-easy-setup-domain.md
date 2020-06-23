@@ -20,7 +20,7 @@ If you haven't started the verification process for the domain yet, see the proc
 ![\[\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/dkim_existing_dns.png)
 
 1. Add the CNAME records to the DNS configuration for your domain\. To update the DNS records for your domain:
-   + **If you use Route 53 as your DNS provider** – If you use Route 53 on the same account that you use when you send email using Amazon SES, choose **Use Route 53** to automatically update the DNS settings for your domain\. Otherwise, complete the procedures shown in [Editing Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-editing.html) in the *Amazon Route 53 Developer Guide*\.
+   + **If you use Route 53 as your DNS provider** – If you use Route 53 on the same account that you use when you send email using Amazon SES, choose **Use Route 53** to automatically update the DNS settings for your domain\. Otherwise, complete the procedures shown in [Editing Records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-editing.html) in the *Amazon Route 53 Developer Guide*\.
    + **If you use another DNS provider** – Different providers have different procedures for updating DNS records\. The following table lists links to the documentation for several common providers\. This list isn't exhaustive and inclusion in this list isn’t an endorsement or recommendation of any company’s products or services\. If your provider isn't listed in the table, you can probably use the domain with Amazon SES\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim-easy-setup-domain.html)
 **Note**  

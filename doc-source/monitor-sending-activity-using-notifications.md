@@ -1,15 +1,15 @@
-# Monitoring Using Amazon SES Notifications<a name="monitor-sending-activity-using-notifications"></a>
+# Monitoring Amazon SES email sending using notifications<a name="monitor-sending-activity-using-notifications"></a>
 
-In order to send email using Amazon SES, you must have a system in place for managing bounces and complaints\. Amazon SES can notify you of bounce or complaint events in three ways: by sending a notification email, by notifying an Amazon SNS topic, or by publishing sending events\. This section contains information about setting up Amazon SES to send certain kinds of notifications by email or by notifying an Amazon SNS topic\. For more information about publishing sending events, see [Monitoring Using Amazon SES Event Publishing](monitor-using-event-publishing.md)\.
+In order to send email using Amazon SES, you must have a system in place for managing bounces and complaints\. Amazon SES can notify you of bounce or complaint events in three ways: by sending a notification email, by notifying an Amazon SNS topic, or by publishing sending events\. This section contains information about setting up Amazon SES to send certain kinds of notifications by email or by notifying an Amazon SNS topic\. For more information about publishing sending events, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\.
 
 You can set up notifications using the Amazon SES console or the Amazon SES API\.
 
 **Topics**
-+ [Important Considerations](#monitor-sending-activity-using-notifications-considerations)
-+ [Amazon SES Notifications Through Email](monitor-sending-activity-using-notifications-email.md)
-+ [Amazon SES Notifications Through Amazon SNS](monitor-sending-activity-using-notifications-sns.md)
++ [Important considerations](#monitor-sending-activity-using-notifications-considerations)
++ [Amazon SES notifications sent by email](monitor-sending-activity-using-notifications-email.md)
++ [Amazon SES notifications sent through Amazon SNS](monitor-sending-activity-using-notifications-sns.md)
 
-## Important Considerations<a name="monitor-sending-activity-using-notifications-considerations"></a>
+## Important considerations<a name="monitor-sending-activity-using-notifications-considerations"></a>
 
 There are several important points to consider when you set up Amazon SES to send notifications:
 + Email and Amazon SNS notifications apply to individual identities \(the verified email addresses or domains you use to send email\)\. When you enable notifications for an identity, Amazon SES only sends notifications for emails sent from that identity, and only in the AWS Region you configured notifications in\.
