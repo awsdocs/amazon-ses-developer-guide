@@ -61,7 +61,7 @@ This command might differ depending on which operating system you use\.
    1. Enter the following command:
 
       ```
-      exim -v sender@example.com
+      exim -v recipient@example.com
       ```
 
       In the preceding command, replace *recipient@example\.com* with the address that you want to send the message to\.
