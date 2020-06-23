@@ -475,7 +475,7 @@ You use a shared credentials file to pass your AWS access key ID and secret acce
  7. 
  8. // Replace sender@example.com with your "From" address.
  9. // This address must be verified with Amazon SES.
-10. const sender = "Sender Name <sender@recipient.com>";
+10. const sender = "Sender Name <sender@example.com>";
 11. 
 12. // Replace recipient@example.com with a "To" address. If your account 
 13. // is still in the sandbox, this address must be verified.
