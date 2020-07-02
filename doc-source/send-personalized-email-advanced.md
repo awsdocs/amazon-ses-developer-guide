@@ -1,16 +1,16 @@
-# Advanced Email Personalization<a name="send-personalized-email-advanced"></a>
+# Advanced email personalization<a name="send-personalized-email-advanced"></a>
 
 The template feature in Amazon SES is based on the Handlebars template system\. You can use Handlebars to create templates that include advanced features, such as nested attributes, array iteration, basic conditional statements, and the creation of inline partials\. This section provides examples of these features\.
 
 Handlebars includes additional features beyond those documented in this section\. For more information, see [Built\-In Helpers](https://handlebarsjs.com/guide/builtin-helpers.html) at [handlebarsjs\.com](http://handlebarsjs.com)\.
 
 **Topics**
-+ [Parsing Nested Attributes](#send-personalized-email-advanced-nested)
-+ [Iterating Through Lists](#send-personalized-email-advanced-iterating)
-+ [Using Basic Conditional Statements](#send-personalized-email-advanced-conditionals)
++ [Parsing nested attributes](#send-personalized-email-advanced-nested)
++ [Iterating through lists](#send-personalized-email-advanced-iterating)
++ [Using basic conditional statements](#send-personalized-email-advanced-conditionals)
 + [Creating Inline Partials](#send-personalized-email-advanced-inline-partials)
 
-## Parsing Nested Attributes<a name="send-personalized-email-advanced-nested"></a>
+## Parsing nested attributes<a name="send-personalized-email-advanced-nested"></a>
 
 Handlebars includes support for nested paths, which makes it easy to organize complex customer data, and then refer to that data in your email templates\.
 
@@ -46,7 +46,7 @@ In your email templates, you can refer to nested attributes by providing the nam
 
 Handlebars can parse paths that are nested several levels deep, which means you have flexibility in how you structure your template data\.
 
-## Iterating Through Lists<a name="send-personalized-email-advanced-iterating"></a>
+## Iterating through lists<a name="send-personalized-email-advanced-iterating"></a>
 
 The `each` helper function iterates through items in an array\. The following code is an example of an email template that uses the `each` helper function to create an itemized list of each recipient's interests\.
 
@@ -113,7 +113,7 @@ When you send an email to the recipients listed in the preceding example using t
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/send-personalized-email-advanced-condition-interest.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/)
 
-## Using Basic Conditional Statements<a name="send-personalized-email-advanced-conditionals"></a>
+## Using basic conditional statements<a name="send-personalized-email-advanced-conditionals"></a>
 
 This section builds on the example described in the previous section\. The example in the previous section uses the `each` helper to iterate through a list of interests\. However, recipients for whom no interests are specified receive an email that contains an empty list\. By using the `{{if}}` helper, you can format the email differently if a certain attribute is present in the template data\. The following code uses the `{{if}}` helper to display the bulleted list from the preceding section if the `Subscription` array contains any values\. If the array is empty, a different block of text is displayed\.
 

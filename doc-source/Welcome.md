@@ -1,9 +1,7 @@
 # What is Amazon SES?<a name="Welcome"></a>
 
-
-|  | 
-| --- |
-| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
+****  
+**Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\.**
 
 Welcome to the Amazon Simple Email Service \(Amazon SES\) Developer Guide\. [Amazon SES](https://aws.amazon.com/ses) is an email platform that provides an easy, cost\-effective way for you to send and receive email using your own email addresses and domains\.
 

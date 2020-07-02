@@ -212,7 +212,7 @@ First, be sure that you're aware of your bounces \(see [Q7\. How can I find out 
 + Ensure that you're not structuring sign\-ups to encourage people to use fictional addresses\. For example, don't provide any added value or benefits until recipients verify their addresses\.
 + If you have an "email a friend" feature, use CAPTCHA or a similar mechanism to discourage automated use of the feature, and don't allow users to insert arbitrary content\.
 + If you're using Amazon SES for system notifications, ensure that you're sending the notifications to real addresses that can receive mail\. Also consider turning off notifications that you don't need\.
-+ If you're testing a new system, be sure you're either sending to real addresses that can receive email, or you're using the Amazon SES mailbox simulator\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\. 
++ If you're testing a new system, be sure you're either sending to real addresses that can receive email, or you're using the Amazon SES mailbox simulator\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\. 
 
 ## Complaint FAQ<a name="e-faq-cm"></a>
 

@@ -99,6 +99,6 @@ When you complete the process of configuring the VPC endpoint, you should test t
 
    For information about connecting to Windows instances, see [Getting started](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html#ec2-connect-to-instance-windows) in the *Amazon EC2 User Guide for Windows Instances*\.
 
-1. Send a test email by completing the procedure in [Using the Command Line to Send Email Using the Amazon SES SMTP Interface](send-email-smtp-client-command-line.md#send-email-using-openssl)\.
+1. Send a test email by completing the procedure in [Using the command line to send email using the Amazon SES SMTP interface](send-email-smtp-client-command-line.md#send-email-using-openssl)\.
 **Note**  
 You have to verify an email address or domain before you can send email through Amazon SES\. For more information about verifying identities, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.

@@ -60,18 +60,18 @@ When you send an email with Amazon SES, the email information you need to provid
 ### Amazon SES API<a name="sending-concepts-email-required-information-api"></a>
 
 If you call the Amazon SES API directly, you call either the `SendEmail` or the `SendRawEmail` API\. The amount of information you need to provide depends on which API you call\.
-+ The `SendEmail API` requires you to provide only a source address, destination address, message subject, and a message body\. You can optionally provide "Reply\-To" addresses\. When you call this API, Amazon SES automatically assembles a properly formatted multi\-part Multipurpose Internet Mail Extensions \(MIME\) email message optimized for display by email client software\. For more information, see [Sending Formatted Email Using the Amazon SES API](send-email-formatted.md)\.
-+ The `SendRawEmail` API provides you the flexibility to format and send your own raw email message by specifying headers, MIME parts, and content types\. `SendRawEmail` is typically used by advanced users\. You need to provide the body of the message and all header fields that are specified as required in the Internet Message Format specification \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\)\. For more information, see [Sending Raw Email Using the Amazon SES API](send-email-raw.md)\.
++ The `SendEmail API` requires you to provide only a source address, destination address, message subject, and a message body\. You can optionally provide "Reply\-To" addresses\. When you call this API, Amazon SES automatically assembles a properly formatted multi\-part Multipurpose Internet Mail Extensions \(MIME\) email message optimized for display by email client software\. For more information, see [Sending formatted email using the Amazon SES API](send-email-formatted.md)\.
++ The `SendRawEmail` API provides you the flexibility to format and send your own raw email message by specifying headers, MIME parts, and content types\. `SendRawEmail` is typically used by advanced users\. You need to provide the body of the message and all header fields that are specified as required in the Internet Message Format specification \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\)\. For more information, see [Sending raw email using the Amazon SES API](send-email-raw.md)\.
 
 If you use an AWS SDK to call the Amazon SES API, you provide the information listed above to the corresponding functions \(for example, `SendEmail` and `SendRawEmail` for Java\)\.
 
-For more information about sending email using the Amazon SES API, see [Using the Amazon SES API to Send Email](send-email-api.md)\.
+For more information about sending email using the Amazon SES API, see [Using the Amazon SES API to send email](send-email-api.md)\.
 
 ### Amazon SES SMTP interface<a name="sending-concepts-email-required-information-smtp"></a>
 
 When you access Amazon SES through the SMTP interface, your SMTP client application assembles the message, so the information you need to provide depends on the application you are using\. At a minimum, the SMTP exchange between a client and a server requires a source address, a destination address, and message data\. If you are using the SMTP interface and have feedback forwarding enabled, then your bounces, complaints, and delivery notifications are sent to the "MAIL FROM" address\. Any "Reply\-To" address that you specify is not used\.
 
-For more information about sending email using the Amazon SES SMTP interface, see [Using the Amazon SES SMTP Interface to Send Email](send-email-smtp.md)\.
+For more information about sending email using the Amazon SES SMTP interface, see [Using the Amazon SES SMTP interface to send email](send-email-smtp.md)\.
 
 ### Amazon SES console<a name="sending-concepts-email-required-information-console"></a>
 

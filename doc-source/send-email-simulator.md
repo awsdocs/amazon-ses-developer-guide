@@ -1,4 +1,4 @@
-# Testing Email Sending in Amazon SES<a name="send-email-simulator"></a>
+# Testing email sending in Amazon SES<a name="send-email-simulator"></a>
 
 Amazon SES includes a mailbox simulator that you can use to test how your application handles different email sending scenarios\. The mailbox simulator is useful when, for example, you need to test an email sending application without creating fictitious email addresses, or when you need to find your system's maximum throughput without impacting your daily sending quota\.
 

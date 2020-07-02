@@ -1,8 +1,14 @@
-# Considering Your Use Case for Amazon SES Email Receiving<a name="receiving-email-consider-use-case"></a>
+# Considering your use case for Amazon SES email receiving<a name="receiving-email-consider-use-case"></a>
 
 Before you set up Amazon SES to receive your mail, you might find it helpful to consider the following questions\.
 
-## Email Content<a name="receiving-email-consider-use-case-content"></a>
+## General considerations<a name="receiving-email-consider-use-case-general"></a>
+
+**Is your Amazon SES account still in the sandbox?**
+
+If you haven't already done so, complete the procedure in [Moving out of the Amazon SES sandbox](request-production-access.md) to have your account removed from the Amazon SES sandbox\.
+
+## Email content<a name="receiving-email-consider-use-case-content"></a>
 
 **How do you want Amazon SES to pass you the email content?**
 
@@ -24,7 +30,7 @@ After your mail is delivered, you will want to process it with your own code\. F
 
 Amazon SES integrates with AWS Key Management Service \(AWS KMS\) to optionally encrypt the mail it writes to your Amazon S3 bucket\. Amazon SES uses client\-side encryption to encrypt your mail before writing it to Amazon S3\. This means that you must decrypt the content on your side after retrieving the mail from Amazon S3\. The [AWS SDK for Java](https://aws.amazon.com/sdk-for-java/) and [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/) provide a client that can handle the decryption for you\. Amazon SES can encrypt the emails for you only if you choose for your emails to be delivered to an Amazon S3 bucket\.
 
-## Unwanted Mail<a name="receiving-email-consider-use-case-unwanted"></a>
+## Unwanted mail<a name="receiving-email-consider-use-case-unwanted"></a>
 
 **At what point in the email\-receiving process do you want to reject unwanted mail?**
 
@@ -32,24 +38,24 @@ When a sender tries to send an email to a recipient, the sender's email server e
 
 You can reject incoming email at two points in the email receiving process: during the SMTP conversation, and after the SMTP conversation\. You use *IP address filters* to reject messages during the SMTP conversation, and *receipt rules* to reject emails after the SMTP conversation\.
 
-You can use IP address filters to reject email that originates from specific IP addresses\. The benefit of using IP address filters to reject unwanted mail is that we don't charge you for messages that are rejected during the SMTP conversation\. The drawback to using IP address filters is that they reject email from the IP addresses you specify without performing any analysis on the actual content of the messages\. For more information about IP address filters, see [Creating IP Address Filters for Amazon SES Email Receiving](receiving-email-ip-filters.md)\.
+You can use IP address filters to reject email that originates from specific IP addresses\. The benefit of using IP address filters to reject unwanted mail is that we don't charge you for messages that are rejected during the SMTP conversation\. The drawback to using IP address filters is that they reject email from the IP addresses you specify without performing any analysis on the actual content of the messages\. For more information about IP address filters, see [Creating IP address filters for Amazon SES email receiving](receiving-email-ip-filters.md)\.
 
-You can use receipt rules to send a bounce notification to the sender of an email based on the address \(or domain, or subdomain\) that the message was sent to\. The benefit of using receipt rules is that you can perform additional analysis on incoming messages before you send a bounce notification to the sender\. For example, you can use AWS Lambda to send bounce notifications only when messages fail DKIM authentication or are identified as spam\. The drawback to using receipt rules is that, because receipt rules are processed after the SMTP conversation, we bill you for each message that you receive\. You might also be charged if you use Lambda to analyze the content of incoming messages\. For more information about receipt rules, see [Creating Receipt Rules for Amazon SES Email Receiving](receiving-email-receipt-rules.md)\. For more information about using Lambda to analyze incoming email, see [Lambda Function Examples](receiving-email-action-lambda-example-functions.md)\. 
+You can use receipt rules to send a bounce notification to the sender of an email based on the address \(or domain, or subdomain\) that the message was sent to\. The benefit of using receipt rules is that you can perform additional analysis on incoming messages before you send a bounce notification to the sender\. For example, you can use AWS Lambda to send bounce notifications only when messages fail DKIM authentication or are identified as spam\. The drawback to using receipt rules is that, because receipt rules are processed after the SMTP conversation, we bill you for each message that you receive\. You might also be charged if you use Lambda to analyze the content of incoming messages\. For more information about receipt rules, see [Creating receipt rules for Amazon SES fmail receiving](receiving-email-receipt-rules.md)\. For more information about using Lambda to analyze incoming email, see [Lambda function examples](receiving-email-action-lambda-example-functions.md)\. 
 
-## Using Other AWS Services<a name="receiving-email-consider-use-case-permissions"></a>
+## Using other AWS services<a name="receiving-email-consider-use-case-permissions"></a>
 
 **Have you set up the appropriate permissions?**
 
-If you want your mail to be delivered to an Amazon S3 bucket, published to an Amazon SNS topic you don't own, trigger a Lambda function, or use a custom master AWS KMS key, you need to give Amazon SES permission to access those resources\. To give Amazon SES access, you create policies on resources from the consoles or APIs for those AWS services\. For more information [Giving Permissions](receiving-email-permissions.md)\.
+If you want your mail to be delivered to an Amazon S3 bucket, published to an Amazon SNS topic you don't own, trigger a Lambda function, or use a custom master AWS KMS key, you need to give Amazon SES permission to access those resources\. To give Amazon SES access, you create policies on resources from the consoles or APIs for those AWS services\. For more information [Giving permission](receiving-email-permissions.md)\.
 
-## Mail Streams<a name="receiving-email-consider-use-case-streams"></a>
+## Mail streams<a name="receiving-email-consider-use-case-streams"></a>
 
 **How do you want to divide your mail stream?**
 
-Your domain most likely receives different classes of mail\. For example, some of your domain's mail, such as an email to *user@example\.com*, might be intended for a personal inbox\. Other mail, such as an email to *unsubscribe@example\.com*, might be better directed to automated systems instead\. You can use receipt rules to divide your incoming mail so that it can be processed differently\. For information about how to set up receipt rules, see [Creating Receipt Rules](receiving-email-receipt-rules.md)\.
+Your domain most likely receives different classes of mail\. For example, some of your domain's mail, such as an email to *user@example\.com*, might be intended for a personal inbox\. Other mail, such as an email to *unsubscribe@example\.com*, might be better directed to automated systems instead\. You can use receipt rules to divide your incoming mail so that it can be processed differently\. For information about how to set up receipt rules, see [Creating receipt rules](receiving-email-receipt-rules.md)\.
 
-## Regional Availability<a name="receiving-email-consider-use-case-regions"></a>
+## Regional availability<a name="receiving-email-consider-use-case-regions"></a>
 
 **Does Amazon SES support email receiving in your Region?**
 
-Amazon SES only supports email receiving in certain AWS Regions\. For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/ses) in the AWS General Reference\.
+Amazon SES only supports email receiving in certain AWS Regions\. For a complete list of Regions where email receiving is supported, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the AWS General Reference\.

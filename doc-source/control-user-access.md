@@ -7,9 +7,9 @@ For example, you can create an IAM policy that allows users in your organization
 To use IAM, you define an IAM policy, which is a document that explicitly defines permissions, and attach the policy to a user\. To learn how to create IAM policies, see the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html)\. Other than applying the restrictions you set in your policy, there are no changes to how users interact with Amazon SES or in how Amazon SES carries out requests\.
 
 **Note**  
-You can also control access to Amazon SES by using sending authorization policies\. Whereas IAM policies constrain what individual IAM users can do, sending authorization policies constrain how individual verified identities can be used\. Further, only sending authorization policies can grant cross\-account access\. For more information about sending authorization, see [Using Sending Authorization with Amazon SES](sending-authorization.md)\.
+You can also control access to Amazon SES by using sending authorization policies\. Whereas IAM policies constrain what individual IAM users can do, sending authorization policies constrain how individual verified identities can be used\. Further, only sending authorization policies can grant cross\-account access\. For more information about sending authorization, see [Using sending authorization with Amazon SES](sending-authorization.md)\.
 
-If you are looking for information about how to generate Amazon SES SMTP credentials for an existing IAM user, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
+If you are looking for information about how to generate Amazon SES SMTP credentials for an existing IAM user, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 
 ## Creating IAM Policies for Access to Amazon SES<a name="iam-and-ses"></a>
 

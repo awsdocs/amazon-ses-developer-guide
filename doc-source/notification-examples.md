@@ -1,4 +1,4 @@
-# Amazon SNS Notification Examples for Amazon SES<a name="notification-examples"></a>
+# Amazon SNS notification examples for Amazon SES<a name="notification-examples"></a>
 
 The following sections provide examples of the three types of notifications:
 + For bounce notification examples, see [Amazon SNS Bounce Notification Examples](#notification-examples-bounce)\.

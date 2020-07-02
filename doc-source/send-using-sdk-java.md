@@ -3,7 +3,7 @@
 The following procedure shows you how to use [Eclipse IDE for Java EE Developers](http://www.eclipse.org/) and [AWS Toolkit for Eclipse](https://docs.aws.amazon.com/AWSToolkitEclipse/latest/GettingStartedGuide/) to create an AWS SDK project and modify the Java code to send an email through Amazon SES\. 
 
 **Important**  
-In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
+In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\.
 
 ## Prerequisites<a name="send-using-sdk-java-prerequisites"></a>
 

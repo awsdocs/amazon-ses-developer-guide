@@ -1,8 +1,8 @@
-# Lambda Function Examples<a name="receiving-email-action-lambda-example-functions"></a>
+# Lambda function examples<a name="receiving-email-action-lambda-example-functions"></a>
 
 This topic contains examples of Lambda functions that control mail flow\.
 
-## Example 1: Drops Spam<a name="receiving-email-action-lambda-example-functions-1"></a>
+## Example 1: Drop spam<a name="receiving-email-action-lambda-example-functions-1"></a>
 
 This example stops processing messages that have at least one spam indicator\.
 
@@ -27,7 +27,7 @@ exports.handler = function(event, context, callback) {
 };
 ```
 
-## Example 2: Continues if Particular Header<a name="receiving-email-action-lambda-example-functions-2"></a>
+## Example 2: Continue if a particular header is found<a name="receiving-email-action-lambda-example-functions-2"></a>
 
 This example continues processing the current rule only if the email contains a specific header value\.
 
@@ -55,7 +55,7 @@ exports.handler = function(event, context, callback) {
 };
 ```
 
-## Example 3: Retrieves Email from Amazon S3<a name="receiving-email-action-lambda-example-functions-3"></a>
+## Example 3: Retrieve email from Amazon S3<a name="receiving-email-action-lambda-example-functions-3"></a>
 
 This example gets the raw email from Amazon S3 and processes it\.
 
@@ -93,7 +93,7 @@ exports.handler = function(event, context, callback) {
 };
 ```
 
-## Example 4: Bounces Messages that Fail DMARC Authentication<a name="receiving-email-action-lambda-example-functions-4"></a>
+## Example 4: Bounce messages that fail DMARC authentication<a name="receiving-email-action-lambda-example-functions-4"></a>
 
 This examples sends a bounce message if an incoming email fails DMARC authentication\.
 

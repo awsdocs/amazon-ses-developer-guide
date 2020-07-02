@@ -1,4 +1,4 @@
-# Sending Personalized Email Using the Amazon SES API<a name="send-personalized-email-api"></a>
+# Sending personalized email using the Amazon SES API<a name="send-personalized-email-api"></a>
 
 You can use the `CreateTemplate` API operation to create email templates\. These templates include a subject line, and the text and HTML parts of the email body\. The subject and body sections may also contain unique values that are personalized for each recipient\.
 
@@ -6,11 +6,11 @@ There are a few limits and other considerations when using these features:
 + You can create up to 10,000 email templates per Amazon SES account\.
 + Each template can be up to 500KB in size, including both the text and HTML parts\.
 + You can include an unlimited number of replacement variables in each template\.
-+ You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients, as well as CC and BCC recipients\. Note that the number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing Your Amazon SES Sending Quotas](manage-sending-quotas.md)\.
++ You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients, as well as CC and BCC recipients\. Note that the number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing Your Amazon SES sending quotas](manage-sending-quotas.md)\.
 
 This section includes procedures for creating email templates and for sending personalized emails\.
 
-## Part 1: Set up Rendering Failure Event Notifications<a name="send-personalized-email-set-up-notifications"></a>
+## Part 1: Set up rendering failure event notifications<a name="send-personalized-email-set-up-notifications"></a>
 
  If you send an email that contains invalid personalization content, Amazon SES might accept the message, but won't be able to deliver it\. For this reason, if you plan to send personalized email, you should configure Amazon SES to send Rendering Failure event notifications through Amazon SNS\. When you receive a Rendering Failure event notification, you can identify which message contained the invalid content, fix the issues, and send the message again\.
 
@@ -26,7 +26,7 @@ The procedure in this section is optional, but highly recommended\.
 
 1. Complete the procedures in [Set up an Amazon SNS event destination for event publishing](event-publishing-add-event-destination-sns.md) to set up your configuration sets to publish Rendering Failure events to your Amazon SNS topic\.
 
-## Part 2: Create an Email Template<a name="send-personalized-email-create-template"></a>
+## Part 2: Create an email template<a name="send-personalized-email-create-template"></a>
 
 The instructions in this section assume that you are using the AWS CLI, and that you configured it to interact with your AWS account\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
@@ -57,11 +57,11 @@ The instructions in this section assume that you are using the AWS CLI, and that
 
 1. At the command line, type the following command to create a new template using the `CreateTemplate` API operation: aws ses create\-template \-\-cli\-input\-json file://mytemplate\.json
 
-## Part 3: Sending the Personalized Email<a name="send-personalized-email-api-operations"></a>
+## Part 3: Sending the personalized email<a name="send-personalized-email-api-operations"></a>
 
 After you create an email template, you can use it to send email\. There are two API operations that you can use to send emails using templates: `SendTemplatedEmail`, and `SendBulkTemplatedEmail`\. The `SendTemplatedEmail` operation is useful for sending a customized email to a single destination \(a collection of "To," "CC," and "BCC" recipients who will receive the same email\)\. The `SendBulkTemplatedEmail` operation is useful for sending unique emails to multiple destinations in a single call to the Amazon SES API\. This section provides examples of how to use the AWS CLI to send email using both of these operations\.
 
-### Sending Templated Email to a Single Destination<a name="send-templated-email-single-destination"></a>
+### Sending templated email to a single destination<a name="send-templated-email-single-destination"></a>
 
 You can use the `SendTemplatedEmail` operation to send an email to a single destination\. All of the recipients in the `Destination` object will receive the same email\.
 
@@ -87,15 +87,19 @@ You can use the `SendTemplatedEmail` operation to send an email to a single dest
    + **Template** – The name of the template to apply to the email\.
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up rendering failure event notifications](#send-personalized-email-set-up-notifications)\.
    + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendTemplatedEmail` operation, all recipients receive the same email\.
    + **TemplateData** – An escaped JSON string that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
 
 1. Change the values in the code above to meet your needs, and then save the file as `myemail.json`\.
 
-1. At the command line, type the following command to send the email: aws ses send\-templated\-email \-\-cli\-input\-json file://myemail\.json
+1. At the command line, type the following command to send the email:
 
-### Sending Templated Email to Multiple Destinations<a name="send-templated-email-multiple-destinations"></a>
+   ```
+   aws ses send-templated-email --cli-input-json file://myemail.json
+   ```
+
+### Sending templated email to multiple destinations<a name="send-templated-email-multiple-destinations"></a>
 
 You can use the `SendBulkTemplatedEmail` operation to send an email to several destinations in a single call to the API\. Amazon SES sends a unique email to the recipient or recipients in each `Destination` object\.
 
@@ -151,7 +155,7 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
    + **Template** – The name of the template to apply to the email\.
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure Event Notifications](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up rendering failure event notifications](#send-personalized-email-set-up-notifications)\.
    + **Destinations** – An array that contains one or more Destinations\.
      + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendBulkTemplatedEmail` operation, all recipients within the same `Destination` object receive the same email\.
      + **ReplacementTemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
@@ -159,4 +163,8 @@ We recommend that you use a configuration set that is configured to publish Rend
 
 1. Change the values in the code above to meet your needs, and then save the file as `mybulkemail.json`\.
 
-1. At the command line, type the following command to send the bulk email: aws ses send\-bulk\-templated\-email \-\-cli\-input\-json file://mybulkemail\.json
+1. At the command line, type the following command to send the bulk email:
+
+   ```
+   aws ses send-bulk-templated-email --cli-input-json file://mybulkemail.json
+   ```

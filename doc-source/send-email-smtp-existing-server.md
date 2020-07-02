@@ -1,4 +1,4 @@
-# Integrating Amazon SES with Your Existing Email Server<a name="send-email-smtp-existing-server"></a>
+# Integrating Amazon SES with your existing email server<a name="send-email-smtp-existing-server"></a>
 
 If you currently administer your own email server, you can use the Amazon SES SMTP endpoint to send all of your outgoing email to Amazon SES\. There is no need to modify your existing email clients and applications; the changeover to Amazon SES will be transparent to them\.
 

@@ -1,4 +1,4 @@
-# Managing Your Amazon SES Sending Quotas<a name="manage-sending-quotas"></a>
+# Managing Your Amazon SES sending quotas<a name="manage-sending-quotas"></a>
 
 Your Amazon SES account has a set of sending quotas that regulate the number of email messages that you can send and the rate at which you can send them\. Sending quotas benefit all Amazon SES customers because they help to maintain the trusted relationship between Amazon SES and email providers\. Sending quotas help you to gradually ramp up your sending activity and decrease the likelihood that email providers block your emails because of sudden, unexpected spikes in your email sending volume or rate\.
 

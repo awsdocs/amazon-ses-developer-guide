@@ -1,8 +1,8 @@
-# Using the Account\-Level Suppression List<a name="sending-email-suppression-list"></a>
+# Using the account\-level suppression list<a name="sending-email-suppression-list"></a>
 
 Amazon SES includes an *account\-level suppression list* that applies to your AWS account in the current AWS Region\. This suppression list prevents you from sending email to addresses that previously produced a bounce or complaint event\. When you configure the account\-level suppression list, you specify whether addresses should be added to the list when they result in hard bounces, when they result in complaints, or both\. You can manually add or remove addresses from the account\-level suppression list by using the Amazon SES API v2\.
 
-Amazon SES also includes a global suppression list\. For more information, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.
+Amazon SES also includes a global suppression list\. For more information, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.
 
 ## Account\-Level Suppression List Considerations<a name="sending-email-suppression-list-considerations"></a>
 

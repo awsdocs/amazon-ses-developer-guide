@@ -5,7 +5,7 @@ This example uses the [Eclipse IDE](http://www.eclipse.org/) and the [JavaMail A
 Before you perform the following procedure, complete the setup tasks described in [Before you begin with Amazon SES](send-email-getting-started-prerequisites.md) and [Send an email through Amazon SES using SMTP](send-an-email-using-smtp.md)\.
 
 **Important**  
-In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
+In this getting started tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\.
 
 **To send an email using the Amazon SES SMTP interface with Java**
 
@@ -143,7 +143,7 @@ The email addresses are case\-sensitive\. Make sure that the addresses are exact
    + `SENDER@EXAMPLE.COM`—Replace with your "From" email address\. You must verify this address before you run this program\. For more information, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
    + `RECIPIENT@EXAMPLE.COM`—Replace with your "To" email address\. If your account is still in the sandbox, you must verify this address before you use it\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
-1. In `AmazonSESSample.java`, replace the following SMTP credentials with the values that you obtained in [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md):
+1. In `AmazonSESSample.java`, replace the following SMTP credentials with the values that you obtained in [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md):
 **Important**  
 Your SMTP credentials are different from your AWS credentials\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
    + `YOUR_SMTP_USERNAME`—Replace with your SMTP username credential\. Note that your SMTP username credential is a 20\-character string of letters and numbers, not an intelligible name\.

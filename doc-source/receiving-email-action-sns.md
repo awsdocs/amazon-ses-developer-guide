@@ -1,4 +1,4 @@
-# SNS Action<a name="receiving-email-action-sns"></a>
+# SNS action<a name="receiving-email-action-sns"></a>
 
 The **SNS** action publishes the mail using an Amazon SNS notification\. The notification includes the complete email content\. This action has the following options\.
 + **SNS Topic—**The name or ARN of the Amazon SNS topic to which to publish the emails\. The Amazon SNS notifications will contain a raw, unmodified copy of the email, which is typically in Multipurpose Internet Mail Extensions \(MIME\) format\. For more information about MIME format, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\.

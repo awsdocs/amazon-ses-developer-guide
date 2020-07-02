@@ -60,4 +60,4 @@ If the sender's request to Amazon SES succeeds, then Amazon SES sends the email 
 
   Make sure that your Amazon SES\-enabled program does not retry sending messages that generate an auto response\.
 **Tip**  
-You can use the Amazon SES mailbox simulator to test a successful delivery, bounce, complaint, OOTO, or what happens when an address is on the suppression list\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
+You can use the Amazon SES mailbox simulator to test a successful delivery, bounce, complaint, OOTO, or what happens when an address is on the suppression list\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\.

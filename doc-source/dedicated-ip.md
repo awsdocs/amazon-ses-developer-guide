@@ -1,4 +1,4 @@
-# Using Dedicated IP Addresses with Amazon SES<a name="dedicated-ip"></a>
+# Using dedicated IP addresses with Amazon SES<a name="dedicated-ip"></a>
 
 When you create a new Amazon SES account, your emails are sent from IP addresses that are shared with other Amazon SES users\. For [an additional monthly charge](https://aws.amazon.com/ses/pricing), you can lease dedicated IP addresses that are reserved for your exclusive use\. Both of these options offer unique benefits and drawbacks, which are summarized in the following table; click an item in the **Benefit** column for additional information about that benefit\.
 

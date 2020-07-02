@@ -1,9 +1,7 @@
 # Amazon SES Quick start<a name="quick-start"></a>
 
-
-|  | 
-| --- |
-| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
+****  
+**Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\.**
 
 This procedure leads you through the steps to sign up for AWS, verify your email address, send your first email, consider how you will handle bounces and complaints, and move out of the Amazon Simple Email Service \(Amazon SES\) sandbox\.
 
@@ -41,10 +39,10 @@ To be able to send emails to unverified email addresses and to raise the number 
 For more information about the sandbox restrictions and how to apply to move out of the sandbox, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 ## Next steps<a name="quick-start-next-steps"></a>
-+ After you send a few test emails to yourself, use the Amazon SES mailbox simulator for further testing because emails to the mailbox simulator do not count towards your sending quota or your bounce and complaint rates\. For more information on the mailbox simulator, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
++ After you send a few test emails to yourself, use the Amazon SES mailbox simulator for further testing because emails to the mailbox simulator do not count towards your sending quota or your bounce and complaint rates\. For more information on the mailbox simulator, see [Testing email sending in Amazon SES](send-email-simulator.md)\.
 + Monitor your sending activity, such as the number of emails that you have sent and the number that have bounced or received complaints\. For more information, see [Monitoring your Amazon SES sending activity](monitor-sending-activity.md)\.
 + Verify entire domains so that you can send email from any email address in your domain without verifying addresses individually\. For more information, see [Verifying domains in Amazon SES](verify-domains.md)\.
-+ Increase the chance that your emails will be delivered to your recipients' inboxes instead of junk boxes by authenticating your emails\. For more information, see [Authenticating Your Email in Amazon SES](send-email-authentication.md)\.
++ Increase the chance that your emails will be delivered to your recipients' inboxes instead of junk boxes by authenticating your emails\. For more information, see [Authenticating your email in Amazon SES](send-email-authentication.md)\.
 
 
 ****  

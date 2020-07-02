@@ -3,13 +3,13 @@
 This example uses the PHPMailer class to send email through Amazon SES using the SMTP interface\. 
 
 **Important**  
-In this tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
+In this tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\.
 
 ## Prerequisites<a name="send-using-smtp-php-prerequisites"></a>
 
 Before you begin, perform the following tasks:
 + **Verify your email address with Amazon SES**— Before you can send an email with Amazon SES, you must verify that you own the sender's email address\. If your account is still in the Amazon SES sandbox, you must also verify the recipient email address\. The easiest way to verify email addresses is by using the Amazon SES console\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\. 
-+ **Get your SMTP credentials**—You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\. Your SMTP credentials are **not** the same as your AWS credentials\. You can find your SMTP credentials by going to the [SMTP Settings](https://console.aws.amazon.com/ses/home?#smtp-settings:) page of the Amazon SES console\. For more information about SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
++ **Get your SMTP credentials**—You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\. Your SMTP credentials are **not** the same as your AWS credentials\. You can find your SMTP credentials by going to the [SMTP Settings](https://console.aws.amazon.com/ses/home?#smtp-settings:) page of the Amazon SES console\. For more information about SMTP credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 + **Install PHP**—PHP is available at [http://php\.net/downloads\.php](https://php.net/downloads.php)\. After you install PHP, add the path to PHP in your environment variables so that you can run PHP from any command prompt\.
 + **Install the Composer dependency manager**—The Composer dependency manager will enable you to download and install the PHPMailer class and its dependencies\. To install Composer, follow the installation instructions at [https://getcomposer\.org/download](https://getcomposer.org/download)\.
 + **Install the PHPMailer class**— After you install Composer, run the following command to install PHPMailer: 

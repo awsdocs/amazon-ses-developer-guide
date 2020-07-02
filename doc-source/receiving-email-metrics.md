@@ -1,4 +1,4 @@
-# Viewing Metrics for Amazon SES Email Receiving<a name="receiving-email-metrics"></a>
+# Viewing metrics for Amazon SES email receiving<a name="receiving-email-metrics"></a>
 
 You can use Amazon CloudWatch \(CloudWatch\) to view failure metrics for your receipt rules\. You'll find the metrics under **SES/Rule Metrics**\.
 

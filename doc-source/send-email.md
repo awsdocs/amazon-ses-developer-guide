@@ -1,9 +1,7 @@
 # Sending email with Amazon SES<a name="send-email"></a>
 
-
-|  | 
-| --- |
-| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
+****  
+**Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\.**
 
 When you send an email, you are sending it through some type of outbound email server\. That email server might be provided by your Internet service provider \(ISP\), your company's IT department, or you might have set it up yourself\. The email server accepts your email content, formats it to comply with email standards, and then sends the email out over the Internet\. The email may pass through other servers until it eventually reaches a receiver \(an entity, such as an ISP, that receives the email on behalf of the recipient\)\. The receiver then delivers the email to the recipient\. The following diagram illustrates the basic email\-sending process\.
 
@@ -39,13 +37,13 @@ Then you can learn about sending email with Amazon SES in more detail by reading
 | Section | Description | 
 | --- | --- | 
 | [Setting up email](send-email-set-up.md) | Shows you how to sign up for AWS, get your AWS access keys, download an AWS SDK, verify email addresses or domains, and move out of the Amazon SES sandbox\. | 
-| [Using the SMTP Interface](send-email-smtp.md) | Shows you how to get your Amazon SES SMTP credentials, connect to the Amazon SES SMTP endpoint, and provides examples of how to configure email clients and software packages to send email through Amazon SES\. Also explains how to configure your existing email server to send all outgoing emails through Amazon SES\. | 
+| [Using the SMTP interface](send-email-smtp.md) | Shows you how to get your Amazon SES SMTP credentials, connect to the Amazon SES SMTP endpoint, and provides examples of how to configure email clients and software packages to send email through Amazon SES\. Also explains how to configure your existing email server to send all outgoing emails through Amazon SES\. | 
 | [Using the API](send-email-api.md) | Shows you how to send formatted and raw emails by using the Amazon SES API\. Explains how to use non\-standard characters and send attachments by using the Multipurpose Internet Mail Extensions \(MIME\) standard when you send raw emails\. | 
-| [Authenticating Your Email](send-email-authentication.md) | Shows you how to use DKIM with Amazon SES to show ISPs that you own the domain you are sending from\. | 
-| [Managing Your Sending Quotas](manage-sending-quotas.md) | Describes the Amazon SES sending quotas, provides procedures for increasing them, and documents the errors you receive when you exceed them\. | 
-| [Using Sending Authorization](sending-authorization.md) | Shows you how to authorize other users to send emails from your identities on your behalf\. | 
-| [Using Dedicated IP Addresses](dedicated-ip.md) | * you decide whether to use shared IP addresses or lease dedicated IP addresses for your Amazon SES sending\. Provides procedures for requesting and relinquishing dedicated IPs, and for creating pools of dedicated IPs\.* | 
-| [Testing Email Sending](send-email-simulator.md) | Explains how to use the Amazon SES mailbox simulator to simulate common email scenarios without affecting your sending statistics such as your bounce and complaint metrics\. The scenarios you can test are successful delivery, bounce, complaint, out\-of\-the\-office \(OOTO\), and address on the suppression list\. | 
+| [Email authentication methods](send-email-authentication.md) | Shows you how to use DKIM with Amazon SES to show ISPs that you own the domain you are sending from\. | 
+| [Managing sending quotas](manage-sending-quotas.md) | Describes the Amazon SES sending quotas, provides procedures for increasing them, and documents the errors you receive when you exceed them\. | 
+| [Using sending authorization](sending-authorization.md) | Shows you how to authorize other users to send emails from your identities on your behalf\. | 
+| [Using dedicated IP addresses](dedicated-ip.md) | * you decide whether to use shared IP addresses or lease dedicated IP addresses for your Amazon SES sending\. Provides procedures for requesting and relinquishing dedicated IPs, and for creating pools of dedicated IPs\.* | 
+| [Testing email sending](send-email-simulator.md) | Explains how to use the Amazon SES mailbox simulator to simulate common email scenarios without affecting your sending statistics such as your bounce and complaint metrics\. The scenarios you can test are successful delivery, bounce, complaint, out\-of\-the\-office \(OOTO\), and address on the suppression list\. | 
 
 
 ****  

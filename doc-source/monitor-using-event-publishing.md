@@ -1,8 +1,8 @@
 # Monitor email sending using Amazon SES event publishing<a name="monitor-using-event-publishing"></a>
 
-To enable you to track your email sending at a granular level, you can set up Amazon SES to publish *email sending events* to Amazon CloudWatch or Amazon Kinesis Data Firehose based on fine\-grained email characteristics that you define\. For example, you can categorize your emails by purpose \(transactional versus marketing\), product details, the recipient's "From" domain, and so on\.
+To enable you to track your email sending at a granular level, you can set up Amazon SES to publish *email sending events* to Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon Simple Notification Service based on characteristics that you define\.
 
-You can track several types of email sending events, including sends, deliveries, opens, clicks, bounces, complaints, rejections, rendering failures, and delivery delays\. This information can be useful for operational and analytical purposes\. For example, you can publish your email sending data to CloudWatch and create dashboards that track the performance of your email campaigns\.
+You can track several types of email sending events, including sends, deliveries, opens, clicks, bounces, complaints, rejections, rendering failures, and delivery delays\. This information can be useful for operational and analytical purposes\. For example, you can publish your email sending data to CloudWatch and create dashboards that track the performance of your email campaigns, or you can use Amazon SNS to send you notifications when certain events occur\.
 
 ## How event publishing works<a name="event-publishing-how-works"></a>
 

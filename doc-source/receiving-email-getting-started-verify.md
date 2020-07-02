@@ -1,6 +1,9 @@
-# Step 2: Verify Your Domain<a name="receiving-email-getting-started-verify"></a>
+# Step 2: Verify your domain<a name="receiving-email-getting-started-verify"></a>
 
 Before you can configure Amazon SES to receive email for your domain, you must prove that you own the domain\. You can verify any domain that you own, but it is easier to verify domains that you registered using Route 53\.
+
+**Note**  
+If your account is still in the Amazon SES sandbox, complete the procedure in [Moving out of the Amazon SES sandbox](request-production-access.md) before you complete the procedure in this section\.
 
 **To verify a domain with Amazon SES**
 
@@ -26,4 +29,4 @@ If you've already set up mail exchanger \(MX\) records for your domain, the next
 
 1. Wait five minutes, and then choose the **refresh** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/refresh_icon.png)\) button\. Confirm that the value in the **Status** column is **verified**\. If the status is **pending verification**, wait a few more minutes, and then refresh the list again\. Repeat this process until the domain's status is **verified**\.
 
-Next step: [Step 3: Set up a Receipt Rule](receiving-email-getting-started-receipt-rule.md)
+Next step: [Step 3: Set up a receipt rule](receiving-email-getting-started-receipt-rule.md)

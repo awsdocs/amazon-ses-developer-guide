@@ -4,6 +4,8 @@ Amazon SES publishes email sending event records to Amazon Kinesis Data Firehose
 
 The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `Bounce`, `Complaint`, `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Rendering Failure`, or `DeliveryDelay` object, depending on the type of event\.
 
+You can find example records for all of these notification types in [Examples of event data that Amazon SES publishes to Kinesis Data Firehose](event-publishing-retrieving-firehose-examples.md)\.
+
 **Topics**
 + [Top\-level JSON object](#event-publishing-retrieving-firehose-contents-top-level-json-object)
 + [Mail object](#event-publishing-retrieving-firehose-contents-mail-object)
@@ -46,7 +48,7 @@ Each email sending event record contains information about the original email in
 |  `timestamp`  |  The date and time, in ISO8601 format \(*YYYY\-MM\-DDThh:mm:ss\.sZ*\), when the message was sent\.  | 
 |  `messageId`  |  A unique ID that Amazon SES assigned to the message\. Amazon SES returned this value to you when you sent the message\.  This message ID was assigned by Amazon SES\. You can find the message ID of the original email in the `headers` and `commonHeaders` fields of the `mail` object\.   | 
 |  `source`  |  The email address that the message was sent from \(the envelope MAIL FROM address\)\.  | 
-|  `sourceArn`  |  The Amazon Resource Name \(ARN\) of the identity that was used to send the email\. In the case of sending authorization, the `sourceArn` is the ARN of the identity that the identity owner authorized the delegate sender to use to send the email\. For more information about sending authorization, see [Using Sending Authorization](sending-authorization.md)\.  | 
+|  `sourceArn`  |  The Amazon Resource Name \(ARN\) of the identity that was used to send the email\. In the case of sending authorization, the `sourceArn` is the ARN of the identity that the identity owner authorized the delegate sender to use to send the email\. For more information about sending authorization, see [Using sending authorization](sending-authorization.md)\.  | 
 |  `sendingAccountId`  |  The AWS account ID of the account that was used to send the email\. In the case of sending authorization, the `sendingAccountId` is the delegate sender's account ID\.  | 
 |  `destination`  |  A list of email addresses that were recipients of the original mail\.  | 
 |  `headersTruncated`  |  A string that specifies whether the headers are truncated in the notification, which occurs if the headers are larger than 10 KB\. Possible values are `true` and `false`\.  | 
@@ -97,7 +99,7 @@ The event publishing system only publishes hard bounces and soft bounces that wi
 |  `Undetermined`  |  `Undetermined`  |  Amazon SES was unable to determine a specific bounce reason\.  | 
 |  `Permanent`  |  `General`  |  Amazon SES received a general hard bounce\. If you receive this type of bounce, you should remove the recipient's email address from your mailing list\.  | 
 |  `Permanent`  |  `NoEmail`  |  Amazon SES received a permanent hard bounce because the target email address does not exist\. If you receive this type of bounce, you should remove the recipient's email address from your mailing list\.  | 
-|  `Permanent`  |  `Suppressed`  |  Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address\. For information about how to remove an address from the suppression list, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.  | 
+|  `Permanent`  |  `Suppressed`  |  Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address\. For information about how to remove an address from the suppression list, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.  | 
 | Permanent | OnAccountSuppressionList | Amazon SES has suppressed sending to this address because it is on the [account\-level suppression list](sending-email-suppression-list.md)\. | 
 |  `Transient`  |  `General`  |  Amazon SES received a general bounce\. You may be able to successfully send to this recipient in the future\.  | 
 |  `Transient`  |  `MailboxFull`  |  Amazon SES received a mailbox full bounce\. You may be able to successfully send to this recipient in the future\.  | 

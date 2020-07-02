@@ -1,12 +1,13 @@
 # Authenticating requests to the Amazon SES API<a name="using-ses-api-authentication"></a>
 
-When you make a request to the Amazon SES API, you have to prove that you're the account holder so that Amazon SES can verify whether you're registered to use services offered by AWS\. If either test fails, Amazon SES returns an error and doesn't process the request\.
+When you access the Amazon SES API, you authenticate your request using the AWS Signature\. If your request doesn't include a valid signature, Amazon SES returns an error and doesn't process the request\.
 
-Amazon SES supports AWS Signature Version 4 \(Signature Version 4\)\. For information about using Signature Version 4, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *AWS General Reference*\.
+For more information about signing AWS requests, see [Signing AWS requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *AWS General Reference*\.
+
+**Important**  
+Beginning October 1st, 2020, Amazon SES will only support requests signed using Signature Version 4\. If you use an older version of the AWS Signature, you must adopt AWS Signature Version 4 prior to that date\.
 
 ## Authentication errors<a name="using-ses-api-authentication-errors"></a>
-
-Amazon SES previously supported earlier versions of the AWS Signature\. These earlier versions are no longer supported\. Earlier versions of the AWS SDKs used these earlier versions of the AWS Signature\.
 
 If you attempt to send email, and your request uses an earlier version of the AWS Signature, you see an error message that resembles the following example:
 

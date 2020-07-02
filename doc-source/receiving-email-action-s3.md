@@ -1,4 +1,4 @@
-# S3 Action<a name="receiving-email-action-s3"></a>
+# S3 action<a name="receiving-email-action-s3"></a>
 
 The **S3** action delivers the mail to an Amazon S3 bucket and, optionally, notifies you through Amazon SNS\. This action has the following options\.
 + **S3 Bucket—**The name of the Amazon S3 bucket to which to save received emails\. You can also create a new Amazon S3 bucket when you set up your action by choosing **Create S3 Bucket**\. Amazon SES provides you the raw, unmodified email, which is typically in Multipurpose Internet Mail Extensions \(MIME\) format\. For more information about MIME format, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\.
@@ -9,7 +9,7 @@ When you save your emails to an Amazon S3 bucket, the maximum email size \(inclu
 **Note**  
 The master key you choose must be in the same AWS region as the Amazon SES endpoint you use to receive email\. 
   + To use the default master key, choose **aws/ses** when you set up the receipt rule in the Amazon SES console\. If you use the Amazon SES API, you can specify the default master key by providing an ARN in the form of `arn:aws:kms:REGION:AWSACCOUNTID:alias/aws/ses`\. For example, if your AWS account ID is 123456789012 and you want to use the default master key in the US West \(Oregon\) region, the ARN of the default master key would be `arn:aws:kms:us-west-2:123456789012:alias/aws/ses`\. If you use the default master key, you don't need to perform any extra steps to give Amazon SES permission to use the key\.
-  + To use a custom master key you created in AWS KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it\. For more information about giving permissions, see [Giving Permissions to Amazon SES for Email Receiving](receiving-email-permissions.md)\.
+  + To use a custom master key you created in AWS KMS, provide the ARN of the master key and ensure that you add a statement to your key's policy to give Amazon SES permission to use it\. For more information about giving permissions, see [Giving permissions to Amazon SES for email receiving](receiving-email-permissions.md)\.
 
   For more information about using AWS KMS with Amazon SES, see the [AWS Key Management Service Developer Guide](https://docs.aws.amazon.com/kms/latest/developerguide/services-ses.html)\. If you do not specify a master key in the console or API, Amazon SES will not encrypt your emails\.
 **Important**  

@@ -1,8 +1,8 @@
 # Setting up Amazon SES event publishing<a name="monitor-sending-using-event-publishing-setup"></a>
 
-This section describes what you need to do to configure Amazon SES to publish your email sending events to Amazon CloudWatch or Amazon Kinesis Data Firehose\.
+This section describes what you need to do to configure Amazon SES to publish your email sending events to Amazon CloudWatch, Amazon Kinesis Data Firehose, or Amazon Simple Notification Service \(Amazon SNS\)\.
 
-You first create a *configuration set* using the Amazon SES console or API\. After you create a configuration set, you add one or more *event destinations* \(CloudWatch or Kinesis Data Firehose\) to the configuration set, and configure parameters unique to the event destination\. Then, each time you send an email, you specify which configuration set to use\.
+First, you create a *configuration set* using the Amazon SES console or API\. After you create a configuration set, you add one or more *event destinations* \(CloudWatch, Kinesis Data Firehose, or Amazon SNS\) to the configuration set, and configure parameters unique to the event destination\. Then, each time you send an email, you specify which configuration set to use\.
 
 **Topics**
 + [Step 1: Create a configuration set](event-publishing-create-configuration-set.md)

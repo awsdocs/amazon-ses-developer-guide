@@ -17,7 +17,7 @@ This chapter provides procedures for deleting various types of data that might b
 
 ## Delete Email Addresses From the Account\-Level Suppression List<a name="deleting-personal-data-account-suppression-list"></a>
 
-Amazon SES includes an optional account\-level suppression list\. When you enable this feature, email addresses are automatically added to a suppression list when they result in a bounce or complaint\. Email addresses remain on this list until you delete them\. For more information about the account\-level suppression list, see [Using the Account\-Level Suppression List](sending-email-suppression-list.md)\.
+Amazon SES includes an optional account\-level suppression list\. When you enable this feature, email addresses are automatically added to a suppression list when they result in a bounce or complaint\. Email addresses remain on this list until you delete them\. For more information about the account\-level suppression list, see [Using the account\-level suppression list](sending-email-suppression-list.md)\.
 
 You can remove email addresses from the account\-level suppression list by using the `DeleteSuppressedDestination` operation in the [Amazon SES API v2](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteSuppressedDestination.html)\. This section includes a procedure for deleting email addresses by using the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
@@ -101,7 +101,7 @@ You can also use the Amazon SES API to delete identities\. The following procedu
 
 ## Delete Sender Authentication Data<a name="deleting-personal-data-sender-authentication"></a>
 
-Sender authentication refers to the process of configuring Amazon SES so that another user can send email on your behalf\. To enable sender authorization, you must create a policy, as described in [Using Sending Authorization with Amazon SES](sending-authorization.md)\. These policies contain identities \(which belong to you\), in addition to AWS IDs \(which are associated with the person or group that sends email on your behalf\)\. You can remove this personal data by modifying or deleting the sender authentication policies\. The following procedures show you how to delete these policies\.
+Sender authentication refers to the process of configuring Amazon SES so that another user can send email on your behalf\. To enable sender authorization, you must create a policy, as described in [Using sending authorization with Amazon SES](sending-authorization.md)\. These policies contain identities \(which belong to you\), in addition to AWS IDs \(which are associated with the person or group that sends email on your behalf\)\. You can remove this personal data by modifying or deleting the sender authentication policies\. The following procedures show you how to delete these policies\.
 
 **To delete a sender authentication policy by using the Amazon SES console**
 

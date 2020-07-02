@@ -2,14 +2,14 @@
 
 This section contains solutions for several common issues related to sending email through the Amazon SES Simple Mail Transfer Protocol \(SMTP\) interface\. It also contains a list of SMTP response codes that Amazon SES returns\.
 
-To learn more about sending email through the Amazon SES SMTP interface, see [Using the Amazon SES SMTP Interface to Send Email](send-email-smtp.md)\.
+To learn more about sending email through the Amazon SES SMTP interface, see [Using the Amazon SES SMTP interface to send email](send-email-smtp.md)\.
 + **You can't connect to the Amazon SES SMTP endpoint\.**
 
   Problems connecting to the Amazon SES SMTP endpoint are most commonly related to the following issues:
-  + **Incorrect credentials** – The credentials that you use to connect to the SMTP endpoint are different from your AWS credentials\. To obtain your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
+  + **Incorrect credentials** – The credentials that you use to connect to the SMTP endpoint are different from your AWS credentials\. To obtain your SMTP credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
   + **Network or firewall issues** – Your network might be blocking outbound connections over the port you're trying to send email from\. To determine if an issue on your local network is causing connection issues, type the following command at the command line, replacing `port` with the port you're trying to use \(typically 465, 587, 2465, or 2587\): `telnet email-smtp.us-west-2.amazonaws.com port`
 
-    If you are able to connect to the SMTP server using this command, and you are trying to connect to Amazon SES using TLS Wrapper or STARTTLS, complete the procedures shown in [Test Your Connection to the Amazon SES SMTP Interface Using the Command Line](send-email-smtp-client-command-line.md)\.
+    If you are able to connect to the SMTP server using this command, and you are trying to connect to Amazon SES using TLS Wrapper or STARTTLS, complete the procedures shown in [Test your connection to the Amazon SES SMTP interface using the command line](send-email-smtp-client-command-line.md)\.
 
     If you can't connect to the Amazon SES SMTP endpoint using `telnet` or `openssl`, it indicates that something in your network \(such as a firewall\) is blocking outbound connections over the port you're trying to use\. Work with your network administrator to diagnose and fix the problem\.
 + **You're sending to Amazon SES from an Amazon EC2 instance using port 25, and you're receiving timeout errors\.**
@@ -52,12 +52,12 @@ If you receive a 500 error, you have to revise your request to correct an issue 
 | Service unavailable | `421 Too many concurrent SMTP connections` | Amazon SES can't process the request because there are currently too many connections to the SMTP server\. | 
 | Local processing error | `451 Temporary service failure` | Amazon SES couldn't process the request\. There might be issues with the request that prevent it from being processed\. | 
 | Timeout | `451 Timeout waiting for data from client` | Too much time elapsed between requests, so the SMTP server closed the connection\. | 
-| Daily sending quota exceeded | `454 Throttling failure: Daily message quota exceeded` | You've exceeded the maximum number of emails that Amazon SES permits you to send in a 24\-hour period\. For more information, see [Managing Your Amazon SES Sending Quotas](manage-sending-quotas.md)\. | 
-| Maximum send rate exceeded | `454 Throttling failure: Maximum sending rate exceeded` | You've exceeded the maximum number of emails that Amazon SES permits you to send per second\. For more information, see [Managing Your Amazon SES Sending Quotas](manage-sending-quotas.md)\. | 
+| Daily sending quota exceeded | `454 Throttling failure: Daily message quota exceeded` | You've exceeded the maximum number of emails that Amazon SES permits you to send in a 24\-hour period\. For more information, see [Managing Your Amazon SES sending quotas](manage-sending-quotas.md)\. | 
+| Maximum send rate exceeded | `454 Throttling failure: Maximum sending rate exceeded` | You've exceeded the maximum number of emails that Amazon SES permits you to send per second\. For more information, see [Managing Your Amazon SES sending quotas](manage-sending-quotas.md)\. | 
 | Amazon SES issue when validating SMTP credentials |  `454 Temporary authentication failure`  | Issues that could cause this issue include \(but aren't limited to\):  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/troubleshoot-smtp.html)  | 
 | Problem receiving the request |  `454 Temporary service failure`  | Amazon SES didn't successfully receive the request\. As a result, the message wasn't sent\. | 
-| Incorrect credentials | `530 Authentication required` | The application that you use to send email didn't attempt to authenticate when it connected to the Amazon SES SMTP interface\. For an example of how to set up an email\-sending application to authenticate with Amazon SES, see [Configuring Email Clients to Send Through Amazon SES](configure-email-client.md)\. | 
-| Authentication Credentials Invalid | `535 Authentication Credentials Invalid` | The application that you use to send email didn't provide the correct SMTP credentials to Amazon SES\. Note that your SMTP credentials aren't the same as your AWS credentials\. For more information, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\. | 
+| Incorrect credentials | `530 Authentication required` | The application that you use to send email didn't attempt to authenticate when it connected to the Amazon SES SMTP interface\. | 
+| Authentication Credentials Invalid | `535 Authentication Credentials Invalid` | The application that you use to send email didn't provide the correct SMTP credentials to Amazon SES\. Note that your SMTP credentials aren't the same as your AWS credentials\. For more information, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\. | 
 | Account not subscribed to Amazon SES | `535 Account not subscribed to SES` | The AWS account that owns the SMTP credentials is not signed up for Amazon SES\. | 
 | Message is too long | `552 Message is too long.` | The message that you're trying to send is larger than 10 MB in size\. | 
 | Account not subscribed to Amazon SES | `535 Account not subscribed to SES` | The AWS account that owns the SMTP credentials is not signed up for Amazon SES\. | 

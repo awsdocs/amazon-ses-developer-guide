@@ -1,4 +1,4 @@
-# Bounce Action<a name="receiving-email-action-bounce"></a>
+# Bounce action<a name="receiving-email-action-bounce"></a>
 
 The **Bounce** action rejects the email by returning a bounce response to the sender and, optionally, notifies you through Amazon SNS\. This action has the following options\.
 + **SMTP Reply Code—**The SMTP reply code, as defined by [RFC 5321](https://tools.ietf.org/html/rfc5321)\.

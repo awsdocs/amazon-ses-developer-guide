@@ -1,4 +1,4 @@
-# Creating IP Address Filters for Amazon SES Email Receiving<a name="receiving-email-ip-filters"></a>
+# Creating IP address filters for Amazon SES email receiving<a name="receiving-email-ip-filters"></a>
 
 An IP address filter enables you to optionally specify whether to accept or reject mail originating from an IP address or range of IP addresses\.
 

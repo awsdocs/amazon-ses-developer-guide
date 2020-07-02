@@ -1,10 +1,10 @@
-# Sending Raw Email Using the Amazon SES API<a name="send-email-raw"></a>
+# Sending raw email using the Amazon SES API<a name="send-email-raw"></a>
 
 You can use the Amazon SES `SendRawEmail` operation to send highly customized messages to your recipients\.
 
 This section includes procedures for constructing and sending raw email using the Amazon SES API\.
 
-## About Email Header Fields<a name="send-email-raw-headers"></a>
+## About email header fields<a name="send-email-raw-headers"></a>
 
 Simple Mail Transfer Protocol \(SMTP\) specifies how email messages are to be sent by defining the mail envelope and some of its parameters, but it does not concern itself with the content of the message\. Instead, the Internet Message Format \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\) defines how the message is to be constructed\.
 
@@ -73,7 +73,7 @@ When you nest a MIME part within another part, as in this example, the nested pa
 
 To maintain compatibility with older systems, Amazon SES honors the 7\-bit ASCII limitation of SMTP as defined in [RFC 2821](https://tools.ietf.org/html/rfc2821)\. If you want to send content that contains non\-ASCII characters, you must encode those characters into a format that uses 7\-bit ASCII characters\.
 
-#### Email Addresses<a name="send-email-mime-encoding-addresses"></a>
+#### Email addresses<a name="send-email-mime-encoding-addresses"></a>
 
 To encode an email address that is used in the message envelope, use Punycode encoding\.
 
@@ -84,7 +84,7 @@ This rule only applies to email addresses that you specify in the message envelo
 
 For more information about Punycode encoding, see [RFC 3492](https://tools.ietf.org/html/rfc3492)\.
 
-#### Email Headers<a name="send-email-mime-encoding-headers"></a>
+#### Email headers<a name="send-email-mime-encoding-headers"></a>
 
 To encode a message header, use MIME encoded\-word syntax\. MIME encoded word syntax uses the following format:
 
@@ -108,7 +108,7 @@ For example, if you want to use the string "Як ти поживаєш?" in th
 
 For more information about Q\-encoding, see [RFC 2047](https://tools.ietf.org/html/rfc2047)\. For more information about base64 encoding, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\.
 
-#### Message Body<a name="send-email-mime-encoding-body"></a>
+#### Message body<a name="send-email-mime-encoding-body"></a>
 
 To encode the body of a message, you can use quoted\-printable encoding or base64 encoding\. Then, use the `Content-Transfer-Encoding` header to indicate which encoding scheme you used\.
 
@@ -137,7 +137,7 @@ IOCkueCliAo=
 **Note**  
 In some cases, you can use the 8bit `Content-Transfer-Encoding` in messages that you send using Amazon SES\. However, if Amazon SES has to make any changes to your messages \(for example, when you use [open and click tracking](faqs-metrics.md)\), 8\-bit\-encoded content might not appear correctly when it arrives in recipients' inboxes\. For this reason, you should always encode content that isn't 7\-bit ASCII\.
 
-#### File Attachments<a name="send-email-mime-encoding-files"></a>
+#### File attachments<a name="send-email-mime-encoding-files"></a>
 
 To attach a file to an email, you have to encode the attachment using base64 encoding\. Attachments are typically placed in dedicated MIME message parts, which include the following headers:
 + **Content\-Type**: The file type of the attachment\. The following are examples of common MIME Content\-Type declarations:
@@ -149,7 +149,7 @@ To attach a file to an email, you have to encode the attachment using base64 enc
 
 Amazon SES accepts most common file types\. For a list of file types that Amazon SES doesn't accept, see [Unsupported attachment types](mime-types-appendix.md)\.
 
-## Sending a Raw Email Using the Amazon SES API<a name="send-email-raw-api"></a>
+## Sending raw email using the Amazon SES API<a name="send-email-raw-api"></a>
 
 The Amazon SES API provides the `SendRawEmail` action, which lets you compose and send an email message in the format that you specify\. For a complete description of `SendRawEmail`, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
 

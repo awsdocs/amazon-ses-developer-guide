@@ -1,4 +1,4 @@
-# Connecting to the Amazon SES SMTP Endpoint<a name="smtp-connect"></a>
+# Connecting to an Amazon SES SMTP endpoint<a name="smtp-connect"></a>
 
 The following table shows the Amazon SES SMTP endpoints for the AWS Regions where Amazon SES is available\.
 

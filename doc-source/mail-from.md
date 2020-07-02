@@ -126,4 +126,4 @@ After you configure an identity to use a custom MAIL FROM domain, the state of t
 |  Pending  |  Uses custom MAIL FROM fallback setting  |  Amazon SES attempts to detect the required MX record for 72 hours\. If unsuccessful, the state changes to "Failed"\.  | 
 |  Success  |  Uses custom MAIL FROM domain  |  Amazon SES continuously checks that the required MX record is in place\.   | 
 |  TemporaryFailure  |  Uses custom MAIL FROM fallback setting  |  Amazon SES attempts to detect the required MX record for 72 hours\. If unsuccessful, the state changes to "Failed"; if successful, the state changes to "Success"\.  | 
-|  Failed  |  Uses custom MAIL FROM fallback setting  |  Amazon SES no longer attempts to detect the required MX record\. To use a custom MAIL FROM domain, you have to restart the setup process in [](#mail-from-set)\.   | 
+|  Failed  |  Uses custom MAIL FROM fallback setting  |  Amazon SES no longer attempts to detect the required MX record\. To use a custom MAIL FROM domain, you have to restart the setup process in [Configuring the MAIL FROM domain](#mail-from-set)\.   | 

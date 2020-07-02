@@ -1,13 +1,13 @@
-# Creating Receipt Rules for Amazon SES Email Receiving<a name="receiving-email-receipt-rules"></a>
+# Creating receipt rules for Amazon SES fmail receiving<a name="receiving-email-receipt-rules"></a>
 
-Receipt rules let you specify what Amazon SES does with email it receives for the email addresses or domains you own\. A receipt rule contains a condition and an ordered list of actions\. If the recipient of an incoming email matches a recipient specified in the conditions for the receipt rule, then Amazon SES performs the actions specified in that receipt rule\. For more information about the role of receipt rules in the email\-receiving process, see [Email\-Receiving Concepts](receiving-email-concepts.md)\.
+Receipt rules let you specify what Amazon SES does with email it receives for the email addresses or domains you own\. A receipt rule contains a condition and an ordered list of actions\. If the recipient of an incoming email matches a recipient specified in the conditions for the receipt rule, then Amazon SES performs the actions specified in that receipt rule\. For more information about the role of receipt rules in the email\-receiving process, see [Email receiving concepts](receiving-email-concepts.md)\.
 
 **Important**  
-To set up receipt rules, first verify a domain and publish an MX record on that domain\. For more information about verifying domains, see [Verifying domains in Amazon SES](verify-domains.md)\. For more information about publishing MX records, see [Publishing an MX Record for Amazon SES Email Receiving](receiving-email-mx-record.md)\.
+To set up receipt rules, first verify a domain and publish an MX record on that domain\. For more information about verifying domains, see [Verifying domains in Amazon SES](verify-domains.md)\. For more information about publishing MX records, see [Publishing an MX record for Amazon SES email receiving](receiving-email-mx-record.md)\.
 
 You can use the Amazon SES console or the `CreateReceiptRule` API operation to create receipt rules\. This section provides procedures for creating a new receipt rule using the console\. These procedures assume that your Amazon SES account does not contain any existing receipt rules\.
 
-## Setting Up a Receipt Rule<a name="receiving-email-receipt-rules-set-up"></a>
+## Setting up a receipt rule<a name="receiving-email-receipt-rules-set-up"></a>
 
 You can use the Amazon SES console or the `CreateReceiptRule` API to create rules\.
 
@@ -36,7 +36,7 @@ We recommend that you coordinate with other teams in your organization that use 
 
    1. Choose an action from the menu\.
 
-   1. Choose the action settings\. For information about the options for each action, see [Action Options](receiving-email-action.md)\.
+   1. Choose the action settings\. For information about the options for each action, see [Action options](receiving-email-action.md)\.
 
    1. Add additional actions as needed, and then choose **Next Step**\.
 

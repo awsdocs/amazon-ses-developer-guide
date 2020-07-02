@@ -1,4 +1,4 @@
-# Publishing an MX Record for Amazon SES Email Receiving<a name="receiving-email-mx-record"></a>
+# Publishing an MX record for Amazon SES email receiving<a name="receiving-email-mx-record"></a>
 
 A *mail exchanger* record \(*MX record*\) is a configuration that specifies which mail servers can accept email that's sent to your domain\. 
 
@@ -41,7 +41,7 @@ Some DNS providers refer to the **Type** field as the **Record Type** or a simil
 **Note**  
 The management consoles of some DNS providers include separate fields for the record **Value** and the record **Priority**\. If this is the case for your DNS provider, enter `10` for the **Priority** value, and enter the incoming mail endpoint URL for the **Value**\.
 
-## Instructions for Creating MX Records for Various Providers<a name="receiving-email-mx-record-links"></a>
+## Instructions for creating MX records for various providers<a name="receiving-email-mx-record-links"></a>
 
 The procedures for creating an MX record for your domain depend on which DNS provider you use\. This section includes links to the documentation for several common DNS providers\. This list isn't a complete list of providers\. If your provider isn't listed below, you can probably still use it with Amazon SES\. Inclusion on this list isn’t an endorsement or recommendation of any company’s products or services\.
 

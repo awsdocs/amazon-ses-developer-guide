@@ -1,4 +1,4 @@
-# Lambda Action<a name="receiving-email-action-lambda"></a>
+# Lambda action<a name="receiving-email-action-lambda"></a>
 
 The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS\. This action has the following options\.
 + **Lambda function—**The ARN of the Lambda function\. An example of a Lambda function ARN is *arn:aws:lambda:us\-west\-2:account\-id:function:MyFunction*\. For information about AWS Lambda, see the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)\.
@@ -11,7 +11,7 @@ There is a 30\-second timeout on **RequestResponse** invocations\.
 **Note**  
 The Amazon SNS topic you choose must be in the same AWS region as the Amazon SES endpoint you use to receive email\. 
 
-## Writing Your Lambda Function<a name="receiving-email-action-lambda-function"></a>
+## Writing your Lambda function<a name="receiving-email-action-lambda-function"></a>
 
 To process your email, your Lambda function can be invoked asynchronously \(that is, using the `Event` invocation type\)\. The event object passed to your Lambda function will contain metadata pertaining to the inbound email event\. You can also use the metadata to access the message content from your Amazon S3 bucket\.
 
@@ -23,11 +23,11 @@ For example, you can stop the receipt rule set by writing the following line at 
 callback( null, { "disposition" : "STOP_RULE_SET" });
 ```
 
-For AWS Lambda code samples, see [Lambda Function Examples](receiving-email-action-lambda-example-functions.md)\. For examples of high\-level use cases, see [Use Case Examples](receiving-email-action-lambda-example-use-cases.md)\.
+For AWS Lambda code samples, see [Lambda function examples](receiving-email-action-lambda-example-functions.md)\. For examples of high\-level use cases, see [Use case examples](receiving-email-action-lambda-example-use-cases.md)\.
 
 ### Input Format<a name="receiving-email-action-lambda-input"></a>
 
-Amazon SES passes information to the Lambda function in JSON format\. The top\-level object contains a `Records` array, which is populated with properties `eventSource`, `eventVersion`, and `ses`\. The `ses` object contains `receipt` and `mail` objects, which are in exactly the same format as in the Amazon SNS notifications described in [Notification Contents](receiving-email-notifications-contents.md)\.
+Amazon SES passes information to the Lambda function in JSON format\. The top\-level object contains a `Records` array, which is populated with properties `eventSource`, `eventVersion`, and `ses`\. The `ses` object contains `receipt` and `mail` objects, which are in exactly the same format as in the Amazon SNS notifications described in [Notification contents](receiving-email-notifications-contents.md)\.
 
 The following is a high\-level view of the structure of the input that Amazon SES provides to the Lambda function\.
 
@@ -50,7 +50,7 @@ The following is a high\-level view of the structure of the input that Amazon SE
 }
 ```
 
-### Return Values<a name="receiving-email-action-lambda-function-return-values"></a>
+### Return values<a name="receiving-email-action-lambda-function-return-values"></a>
 
 Your Lambda function can control mail flow by returning one of the following values:
 + `STOP_RULE`—No further actions in the current receipt rule will be processed, but further receipt rules can be processed\.

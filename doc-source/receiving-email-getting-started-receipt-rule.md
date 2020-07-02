@@ -1,9 +1,9 @@
-# Step 3: Set up a Receipt Rule<a name="receiving-email-getting-started-receipt-rule"></a>
+# Step 3: Set up a receipt rule<a name="receiving-email-getting-started-receipt-rule"></a>
 
 To use Amazon SES as your email receiver, you must have an active *receipt rule set*\. A receipt rule set is a collection of *receipt rules* that specify what Amazon SES should do with mail it receives for your verified domains\. Because you're setting up email receiving with Amazon SES for the first time, Amazon SES automatically creates a default receipt rule set for you\. The receipt rule you create in this section belongs to the default receipt rule set\.
 
 **Note**  
-The procedures in this section assume you've never created a receipt rule set\. If your account already contains a receipt rule set, you'll need to make the receipt rule you create in this section active before Amazon SES applies it to the incoming email for your domain\. For more information about enabling and disabling receipt rule sets, see [Activating and Disabling a Receipt Rule Set](receiving-email-managing-receipt-rule-sets.md#receiving-email-managing-receipt-rule-sets-enable-disable)\.
+The procedures in this section assume you've never created a receipt rule set\. If your account already contains a receipt rule set, you'll need to make the receipt rule you create in this section active before Amazon SES applies it to the incoming email for your domain\. For more information about enabling and disabling receipt rule sets, see [Activating and disabling a receipt rule set](receiving-email-managing-receipt-rule-sets.md#receiving-email-managing-receipt-rule-sets-enable-disable)\.
 
 **To create a receipt rule**
 
@@ -40,4 +40,4 @@ Because you're using the Amazon SES console to create an Amazon S3 bucket, Amazo
 
 1. On the **Review** page, choose **Create Rule**\.
 
-Next step: [Step 4: Send a Test Email](receiving-email-getting-started-send.md)
+Next step: [Step 4: Send a test email](receiving-email-getting-started-send.md)

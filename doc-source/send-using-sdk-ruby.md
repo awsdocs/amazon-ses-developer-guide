@@ -3,7 +3,7 @@
 This topic shows how to use the [AWS SDK for Ruby](https://aws.amazon.com/sdk-for-ruby/) to send an email through Amazon SES\. 
 
 **Important**  
-In this tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing Email Sending in Amazon SES](send-email-simulator.md)\.
+In this tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\.
 
 ## Prerequisites<a name="send-using-sdk-ruby-prerequisites"></a>
 

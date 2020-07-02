@@ -43,7 +43,7 @@ The procedure in this section assumes that you want to use Amazon SES in the US 
    + Replace *smtpUsername* with your Amazon SES SMTP username\.
    + Replace *smtpPassword* with your Amazon SES SMTP password\.
 **Note**  
-Your SMTP username and password are different from your AWS Access Key ID and Secret Access Key\. For more information about obtaining your SMTP username and password, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
+Your SMTP username and password are different from your AWS Access Key ID and Secret Access Key\. For more information about obtaining your SMTP username and password, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 
    When you finish, save `authinfo`\.
 
@@ -141,4 +141,4 @@ If you encounter errors such as "Command not found" and "No such file or directo
 
       When you finish entering the content of the email, press Ctrl\+D to send it\.
 
-1. Check the recipient email's client for the email\. If you can't find the email, check the junk mail folder\. If you still can't find the email, check the Sendmail log on your mail server\. The log is often located at */var/log/mail\.log*\. 
+1. Check the recipient email's client for the email\. If you can't find the email, check the junk mail folder\. If you still can't find the email, check the Sendmail log on your mail server\. The log is often located at */var/log/mail\.log* or */var/log/maillog*\. 

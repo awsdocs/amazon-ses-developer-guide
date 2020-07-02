@@ -115,13 +115,24 @@ To preview a custom verification email, use the `SendCustomVerificationEmail` op
 ### Q4\. Can I include images in my custom verification email templates?<a name="send-email-verify-address-custom-faq-q4"></a>
 
 You can embed images in the HTML for your templates by using Base64 encoding\. When you embed images in this way, Amazon SES automatically converts them into attachments\. You can encode an image at the command line by issuing one of the following commands:
-+ Linux, macOS, or Unix: base64 \-i *imagefile\.png* \| tr \-d '\\n' > output\.txt
-+ Windows: certutil \-encode *imagefile\.png* output\.tmp && findstr /v /c:\- output\.tmp > output\.txt && del output\.tmp
+
+------
+#### [ Linux, macOS, or Unix ]
+
+```
+base64 -i imagefile.png | tr -d '\n' > output.txt
+```
+
+------
+#### [ Windows ]
+
+```
+certutil -encodehex -f imagefile.png output.txt 0x40000001
+```
+
+------
 
 Replace `imagefile.png` with the name of the file you want to encode\. In both of the commands above, the Base64 encoded image is saved to `output.txt`\.
-
-**Note**  
-If you encoded the image using the Windows command line, you must open `output.txt` in a text editor and remove the line breaks from the file before proceeding\.
 
 You can embed the Base64\-encoded image by including the following in the HTML for the template: `<img src="data:image/png;base64,base64EncodedImage"/>`
 

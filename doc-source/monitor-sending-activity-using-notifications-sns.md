@@ -12,5 +12,5 @@ See [Monitoring Amazon SES email sending using notifications](monitor-sending-ac
 
 **Topics**
 + [Configuring Amazon SNS notifications for Amazon SES](configure-sns-notifications.md)
-+ [Amazon SNS Notification Contents for Amazon SES](notification-contents.md)
-+ [Amazon SNS Notification Examples for Amazon SES](notification-examples.md)
++ [Amazon SNS notification contents for Amazon SES](notification-contents.md)
++ [Amazon SNS notification examples for Amazon SES](notification-examples.md)

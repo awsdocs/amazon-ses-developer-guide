@@ -1,4 +1,4 @@
-# Obtaining Your Amazon SES SMTP Credentials<a name="smtp-credentials"></a>
+# Obtaining your Amazon SES SMTP credentials<a name="smtp-credentials"></a>
 
 You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\. If you plan to use the SMTP interface to send email in multiple AWS Regions, you need to obtain a unique set of SMTP credentials for each Region\.
 
@@ -36,7 +36,7 @@ You can also use the IAM console to delete existing SMTP users\. To learn more a
 
 If you want to change your SMTP password, delete your existing SMTP user in the IAM console\. Then, complete the procedures above to generate a new set of SMTP credentials\.
 
-## Obtaining Amazon SES SMTP Credentials by Converting Existing AWS Credentials<a name="smtp-credentials-convert"></a>
+## Obtaining Amazon SES SMTP credentials by converting existing AWS credentials<a name="smtp-credentials-convert"></a>
 
 If you have an IAM user that you set up using the IAM interface, you can derive the user's Amazon SES SMTP credentials from their AWS credentials\.
 

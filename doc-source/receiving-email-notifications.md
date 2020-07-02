@@ -1,4 +1,4 @@
-# Using Notifications for Amazon SES Email Receiving<a name="receiving-email-notifications"></a>
+# Using notifications for Amazon SES email receiving<a name="receiving-email-notifications"></a>
 
 When you receive an email, Amazon SES executes the rules in the active receipt rule set\. You can configure receipt rules to send you notifications using Amazon SNS\. Your receipt rules can send two different types of notifications:
 + **Notifications sent from SNS actions** – When you add an [SNS](receiving-email-action-sns.md) action to a receipt rule, it sends information about the email\. If the message is 150KB or smaller, this notification type also includes the complete MIME body of the email\.
@@ -7,5 +7,5 @@ When you receive an email, Amazon SES executes the rules in the active receipt r
 This section describes the contents of these notifications, and provides an example of each type of notification\.
 
 **Topics**
-+ [Contents of Notifications for Amazon SES Email Receiving](receiving-email-notifications-contents.md)
-+ [Examples of Notifications for Amazon SES Email Receiving](receiving-email-notifications-examples.md)
++ [Contents of notifications for Amazon SES email receiving](receiving-email-notifications-contents.md)
++ [Examples of notifications for Amazon SES email receiving](receiving-email-notifications-examples.md)

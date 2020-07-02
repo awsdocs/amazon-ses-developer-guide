@@ -1,4 +1,4 @@
-# Sending Formatted Email Using the Amazon SES API<a name="send-email-formatted"></a>
+# Sending formatted email using the Amazon SES API<a name="send-email-formatted"></a>
 
 You can send a formatted email by using the AWS Management Console or by calling the Amazon SES API through an application directly, or indirectly through an AWS SDK, the AWS Command Line Interface, or the AWS Tools for Windows PowerShell\.
 

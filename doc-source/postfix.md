@@ -52,7 +52,7 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
    [email-smtp.us-west-2.amazonaws.com]:587 SMTPUSERNAME:SMTPPASSWORD
    ```
 **Note**  
-Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password aren't the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.  
+Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password aren't the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.  
 If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
    Save and close `sasl_passwd`\.
@@ -118,7 +118,7 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
 
 1. Check the mailbox associated with the recipient address\. If the email doesn't arrive, check your junk mail folder\. If you still can't locate the email, check the mail log on the system that you used to send the email \(typically located at `/var/log/maillog`\) for more information\.
 
-## Advanced Usage Example<a name="send-email-postfix-advanced"></a>
+## Advanced usage example<a name="send-email-postfix-advanced"></a>
 
 This example shows how to send an email that uses a [configuration set](using-configuration-sets.md), and that uses MIME\-multipart encoding to send both a plain text and an HTML version of the message, along with an attachment\. It also includes a [link tag](faqs-metrics.md#sending-metric-faqs-clicks-q5), which can be used for categorizing click events\. The content of the email is specified in an external file, so that you do not have to manually type the commands in the Postfix session\.
 

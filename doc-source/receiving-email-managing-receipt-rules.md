@@ -1,18 +1,18 @@
-# Managing Receipt Rules for Amazon SES Email Receiving<a name="receiving-email-managing-receipt-rules"></a>
+# Managing receipt rules for Amazon SES email receiving<a name="receiving-email-managing-receipt-rules"></a>
 
-In addition to creating receipt rules as described in [Creating Receipt Rules](receiving-email-receipt-rules.md), you can edit, delete, enable, disable, copy, and set the position of a receipt rule in its receipt rule set, as described in the following sections\.
+In addition to creating receipt rules as described in [Creating receipt rules](receiving-email-receipt-rules.md), you can edit, delete, enable, disable, copy, and set the position of a receipt rule in its receipt rule set, as described in the following sections\.
 
 **Note**  
 The instructions in this section assume that the receipt rule is in the active receipt rule set\. To edit the receipt rules of a disabled receipt rule set, choose a receipt rule set from the **Inactive Rule Sets** list\. From there, the instructions for editing receipt rules are the same as for the active receipt rule set\.
 
 **Topics**
-+ [Editing a Receipt Rule](#receiving-email-managing-receipt-rules-edit)
-+ [Deleting a Receipt Rule](#receiving-email-managing-receipt-rules-delete)
-+ [Enabling and Disabling a Receipt Rule](#receiving-email-managing-receipt-rules-enable-disable)
-+ [Copying a Receipt Rule](#receiving-email-managing-receipt-rules-copy)
-+ [Setting the Position of a Receipt Rule](#receiving-email-managing-receipt-rules-set-position)
++ [Editing a receipt rule](#receiving-email-managing-receipt-rules-edit)
++ [Deleting a receipt rule](#receiving-email-managing-receipt-rules-delete)
++ [Enabling and disabling a receipt rule](#receiving-email-managing-receipt-rules-enable-disable)
++ [Copying a receipt rule](#receiving-email-managing-receipt-rules-copy)
++ [Setting the position of a receipt rule](#receiving-email-managing-receipt-rules-set-position)
 
-## Editing a Receipt Rule<a name="receiving-email-managing-receipt-rules-edit"></a>
+## Editing a receipt rule<a name="receiving-email-managing-receipt-rules-edit"></a>
 
 You can use the Amazon SES console or the Amazon SES API to edit a receipt rule\. It is easier to use the Amazon SES console\. 
 
@@ -30,7 +30,7 @@ You can use the Amazon SES console or the Amazon SES API to edit a receipt rule\
 
 If you want to use the Amazon SES API instead, use the `DescribeReceiptRule` API to retrieve the rule, use a text editor to edit the rule, and then use the `UpdateReceiptRule` API to overwrite the previous version of the rule\. For more information, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateReceiptRule.html)\.
 
-## Deleting a Receipt Rule<a name="receiving-email-managing-receipt-rules-delete"></a>
+## Deleting a receipt rule<a name="receiving-email-managing-receipt-rules-delete"></a>
 
 You can use the Amazon SES console or the `DeleteReceiptRule` API to delete a receipt rule\.
 
@@ -48,7 +48,7 @@ You can use the Amazon SES console or the `DeleteReceiptRule` API to delete a re
 
 For information about how to use the `DeleteReceiptRule` API to delete a rule, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRule.html)\.
 
-## Enabling and Disabling a Receipt Rule<a name="receiving-email-managing-receipt-rules-enable-disable"></a>
+## Enabling and disabling a receipt rule<a name="receiving-email-managing-receipt-rules-enable-disable"></a>
 
 You can use the Amazon SES console or the Amazon SES API to enable or disable a receipt rule\. It is easier to use the Amazon SES console\.
 
@@ -66,7 +66,7 @@ You can use the Amazon SES console or the Amazon SES API to enable or disable a 
 
 If you want to use the Amazon SES API instead, you can use the `DescribeReceiptRule` API to retrieve the receipt rule, use a text editor to edit the receipt rule's `Enabled` field, and then use the `UpdateReceiptRule` API to overwrite the previous version of the receipt rule\. For more information, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateReceiptRule.html)\.
 
-## Copying a Receipt Rule<a name="receiving-email-managing-receipt-rules-copy"></a>
+## Copying a receipt rule<a name="receiving-email-managing-receipt-rules-copy"></a>
 
 You can use the Amazon SES console or the Amazon SES API to copy a receipt rule\. It is easier to use the Amazon SES console\.
 
@@ -86,7 +86,7 @@ You can use the Amazon SES console or the Amazon SES API to copy a receipt rule\
 
 If you want to use the Amazon SES API instead, you can use the `DescribeReceiptRule` API to retrieve the receipt rule, use a text editor to edit the receipt rule's name and receipt rule set \(if desired\), and then pass that receipt rule to the `CreateReceiptRule` API\. For more information, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html)\. 
 
-## Setting the Position of a Receipt Rule<a name="receiving-email-managing-receipt-rules-set-position"></a>
+## Setting the position of a receipt rule<a name="receiving-email-managing-receipt-rules-set-position"></a>
 
 You can use the Amazon SES console or the `SetReceiptRulePosition` API to change the position of a receipt rule in the receipt rule set\.
 

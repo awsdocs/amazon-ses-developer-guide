@@ -1,4 +1,4 @@
-# Test Your Connection to the Amazon SES SMTP Interface Using the Command Line<a name="send-email-smtp-client-command-line"></a>
+# Test your connection to the Amazon SES SMTP interface using the command line<a name="send-email-smtp-client-command-line"></a>
 
 You can interact with the Amazon SES SMTP interface from your operating system's command line\. The methods described in this section are intended to be used to test your connection to the Amazon SES SMTP endpoint, validate your SMTP credentials, and troubleshoot connection issues\. These procedures use tools and libraries that are included with most common operating systems\. 
 
@@ -6,9 +6,9 @@ For additional information about troubleshooting SMTP connection problems, see [
 
 ## Prerequisites<a name="send-email-smtp-client-command-line-prereqs"></a>
 
-When you connect to the Amazon SES SMTP interface, you have to provide a set of SMTP credentials\. These SMTP credentials are different from your standard AWS credentials\. The two types of credentials aren't interchangeable\. For more information about obtaining your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
+When you connect to the Amazon SES SMTP interface, you have to provide a set of SMTP credentials\. These SMTP credentials are different from your standard AWS credentials\. The two types of credentials aren't interchangeable\. For more information about obtaining your SMTP credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 
-## Testing Your Connection to the Amazon SES SMTP Interface<a name="send-email-smtp-client-command-line-testing"></a>
+## Testing your connection to the Amazon SES SMTP interface<a name="send-email-smtp-client-command-line-testing"></a>
 
 You can use the command line to test your connection to the Amazon SES SMTP interface without authenticating or sending any messages\. This procedure is useful for troubleshooting basic connectivity issues\.
 
@@ -73,7 +73,7 @@ Alternatively, you can use implicit SSL to connect to the SMTP interface over po
 You can use the [Test\-NetConnection](https://docs.microsoft.com/en-us/powershell/module/nettcpip/test-netconnection) cmdlet in PowerShell to connect to the Amazon SES SMTP server\.
 
 **Note**  
-The `Test-NetConnection` cmdlet can determine whether your computer can connect to the Amazon SES SMTP endpoint\. However, it doesn't test whether your computer can make an implicit or explicit SSL connection to the SMTP endpoint\. To test an SSL connection, you can either install OpenSSL for Windows, or complete the procedure in [Using the Command Line to Send Email Using the Amazon SES SMTP Interface](#send-email-using-openssl) to send a test email\.
+The `Test-NetConnection` cmdlet can determine whether your computer can connect to the Amazon SES SMTP endpoint\. However, it doesn't test whether your computer can make an implicit or explicit SSL connection to the SMTP endpoint\. To test an SSL connection, you can either install OpenSSL for Windows, or complete the procedure in [Using the command line to send email using the Amazon SES SMTP interface](#send-email-using-openssl) to send a test email\.
 
 **To connect to the SMTP interface using the `Test-NetConnection` cmdlet**
 + In PowerShell, enter the following command to connect to the Amazon SES SMTP server:
@@ -97,7 +97,7 @@ The `Test-NetConnection` cmdlet can determine whether your computer can connect 
 
 ------
 
-## Using the Command Line to Send Email Using the Amazon SES SMTP Interface<a name="send-email-using-openssl"></a>
+## Using the command line to send email using the Amazon SES SMTP interface<a name="send-email-using-openssl"></a>
 
 You can also use the command line to send messages using the Amazon SES SMTP interface\. This procedure is useful for testing SMTP credentials and for testing the ability of specific recipients to receive messages that you send by using Amazon SES\.
 

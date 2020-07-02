@@ -1,8 +1,8 @@
-# Using the Amazon SES Global Suppression List<a name="sending-email-global-suppression-list"></a>
+# Using the Amazon SES global suppression list<a name="sending-email-global-suppression-list"></a>
 
 Amazon SES includes a *global suppression list*\. When any Amazon SES customer sends an email that results in a hard bounce, Amazon SES adds the email address that produced the bounce to a global suppression list\. The global suppression list is *global* in the sense that it applies to all Amazon SES customers\. In other words, if a different customer attempts to send an email to an address that's on the global suppression list, Amazon SES accepts the message, but doesn't send it, because the email address is suppressed\. An advantage of the global suppression list is that it applies to all Amazon SES accounts by default—you don't have to perform any additional configuration to use it\. A disadvantage is that you can't query the global suppression list, because it contains email addresses that are associated with other Amazon SES users' accounts\. Also, you can't manually add addresses to the global suppression list, and you can only remove addresses from the global suppression list by using the Amazon SES console\.
 
-Amazon SES also includes an account\-level suppression list\. For more information, see [Using the Account\-Level Suppression List](sending-email-suppression-list.md)\.
+Amazon SES also includes an account\-level suppression list\. For more information, see [Using the account\-level suppression list](sending-email-suppression-list.md)\.
 
 ## Global Suppression List Considerations<a name="sending-email-global-suppression-list-considerations"></a>
 

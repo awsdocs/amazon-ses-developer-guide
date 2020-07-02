@@ -44,7 +44,7 @@ Exim is a third\-party application, and isn't developed or supported by Amazon W
 
       In the preceding code, replace *USERNAME* with your SMTP username, and *PASSWORD* with your SMTP password\.
 **Important**  
-Your SMTP credentials are not the same as your AWS Access Key ID and Secret Access Key\. For information about obtaining your SMTP credentials, see [Obtaining Your Amazon SES SMTP Credentials](smtp-credentials.md)\.
+Your SMTP credentials are not the same as your AWS Access Key ID and Secret Access Key\. For information about obtaining your SMTP credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 
 1. Save `/etc/exim.conf.local`\.
 

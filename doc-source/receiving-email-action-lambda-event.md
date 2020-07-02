@@ -1,4 +1,4 @@
-# Sample Incoming Email Event<a name="receiving-email-action-lambda-event"></a>
+# Sample incoming email event<a name="receiving-email-action-lambda-event"></a>
 
 There are two ways to send incoming email events to a Lambda function\. The first method is to use a Lambda action in your receipt rule to send the event record directly to the function\. The second method is to use an Amazon SNS action in your receipt rule to send the event records to Amazon SNS, and then add the Lambda function as a subscribing endpoint to the Amazon SNS topic\.
 
@@ -7,7 +7,7 @@ This section contains examples of the event records that Amazon SES can send to 
 **Note**  
 The examples in this section include line breaks to make them easier to read\. If you copy the examples in this section, you should remove the additional line breaks to produce valid JSON objects\.
 
-## Event Records Provided by the Lambda Action<a name="receiving-email-action-lambda-event-lambdaaction"></a>
+## Event records provided by the Lambda action<a name="receiving-email-action-lambda-event-lambdaaction"></a>
 
 When you add a Lambda action to a receipt rule, Amazon SES sends an event record to Lambda every time it receives an incoming message\. This event contains information about several of the email headers for the incoming message, as well as the results of several tests that Amazon SES performs on incoming messages\. However, it omits the body of the incoming email\.
 
@@ -169,7 +169,7 @@ The following example shows the values that these event records typically contai
 }
 ```
 
-## Event Records Provided by the Amazon SNS Action<a name="receiving-email-action-lambda-event-snsaction"></a>
+## Event records provided by the Amazon SNS action<a name="receiving-email-action-lambda-event-snsaction"></a>
 
 When you add an Amazon SNS action to your receipt rule, the notification contains the entire contents of the email\. If you want to have a Lambda function process the body of the email, you should instead add an Amazon SNS action to the receipt rule\. Then, in Amazon SNS, subscribe your Lambda function to the Amazon SNS function\. This configuration causes your Lambda function to be activated when it receives a notification from the Amazon SNS topic\.
 

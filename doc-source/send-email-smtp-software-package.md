@@ -1,4 +1,4 @@
-# Sending Email Through Amazon SES From Software Packages<a name="send-email-smtp-software-package"></a>
+# Sending email through Amazon SES using software packages<a name="send-email-smtp-software-package"></a>
 
 There are a number of commercial and open source software packages that support sending email via SMTP\. Here are some examples:
 + Blogging platforms
@@ -34,7 +34,7 @@ The following procedure shows how to set up Amazon SES sending in JIRA, a popula
 **Note**  
 If you cannot connect to Amazon SES using this setting, try **SECURE\_SMTP**\.
 
-   1. **Host Name**—See [Connecting to the Amazon SES SMTP Endpoint](smtp-connect.md) for a list of Amazon SES SMTP endpoints\. For example, if you want to use the Amazon SES endpoint in the US West \(Oregon\) region, the host name would be *email\-smtp\.us\-west\-2\.amazonaws\.com*\.
+   1. **Host Name**—See [Connecting to an Amazon SES SMTP endpoint](smtp-connect.md) for a list of Amazon SES SMTP endpoints\. For example, if you want to use the Amazon SES endpoint in the US West \(Oregon\) region, the host name would be *email\-smtp\.us\-west\-2\.amazonaws\.com*\.
 
    1. **SMTP Port**—25, 587, or 2587 \(to connect using STARTTLS\), or 465 or 2465 \(to connect using TLS Wrapper\)\.
 

@@ -1,4 +1,4 @@
-# Amazon SNS Notification Contents for Amazon SES<a name="notification-contents"></a>
+# Amazon SNS notification contents for Amazon SES<a name="notification-contents"></a>
 
 Bounce, complaint, and delivery notifications are published to [Amazon Simple Notification Service \(Amazon SNS\)](https://aws.amazon.com/sns) topics in JavaScript Object Notation \(JSON\) format\. The top\-level JSON object contains a `notificationType` string, a `mail` object, and either a `bounce` object, a `complaint` object, or a `delivery` object\.
 
@@ -15,7 +15,7 @@ The following are some important notes about the contents of Amazon SNS notifica
 + Amazon SES reserves the right to add additional fields to the notifications\. As such, applications that parse these notifications must be flexible enough to handle unknown fields\.
 + Amazon SES overwrites the headers of the message when it sends the email\. You can retrieve the headers of the original message from the `headers` and `commonHeaders` fields of the `mail` object\.
 
-## Top\-Level JSON Object<a name="top-level-json-object"></a>
+## Top\-Level JSON object<a name="top-level-json-object"></a>
 
 The top\-level JSON object in an Amazon SES notification contains the following fields\.
 
@@ -23,12 +23,12 @@ The top\-level JSON object in an Amazon SES notification contains the following 
 | Field Name | Description | 
 | --- | --- | 
 |  `notificationType`  |  A string that holds the type of notification represented by the JSON object\. Possible values are `Bounce`, `Complaint`, or `Delivery`\.  | 
-|  `mail`  |  A JSON object that contains information about the original mail to which the notification pertains\. For more information, see [Mail Object](#mail-object)\.  | 
-|  `bounce`  |  This field is present only if the `notificationType` is `Bounce` and contains a JSON object that holds information about the bounce\. For more information, see [Bounce Object](#bounce-object)\.  | 
-|  `complaint`  |  This field is present only if the `notificationType` is `Complaint` and contains a JSON object that holds information about the complaint\. For more information, see [Complaint Object](#complaint-object)\.  | 
-|  `delivery`  |  This field is present only if the `notificationType` is `Delivery` and contains a JSON object that holds information about the delivery\. For more information, see [Delivery Object](#delivery-object)\.  | 
+|  `mail`  |  A JSON object that contains information about the original mail to which the notification pertains\. For more information, see [Mail object](#mail-object)\.  | 
+|  `bounce`  |  This field is present only if the `notificationType` is `Bounce` and contains a JSON object that holds information about the bounce\. For more information, see [Bounce object](#bounce-object)\.  | 
+|  `complaint`  |  This field is present only if the `notificationType` is `Complaint` and contains a JSON object that holds information about the complaint\. For more information, see [Complaint object](#complaint-object)\.  | 
+|  `delivery`  |  This field is present only if the `notificationType` is `Delivery` and contains a JSON object that holds information about the delivery\. For more information, see [Delivery object](#delivery-object)\.  | 
 
-## Mail Object<a name="mail-object"></a>
+## Mail object<a name="mail-object"></a>
 
 Each bounce, complaint, or delivery notification contains information about the original email in the `mail` object\. The JSON object that contains information about a `mail` object has the following fields\.
 
@@ -38,7 +38,7 @@ Each bounce, complaint, or delivery notification contains information about the 
 |  `timestamp`  |  The time at which the original message was sent \(in ISO8601 format\)\.  | 
 |  `messageId`  |  A unique ID that Amazon SES assigned to the message\. Amazon SES returned this value to you when you sent the message\.  This message ID was assigned by Amazon SES\. You can find the message ID of the original email in the `headers` and `commonHeaders` fields of the `mail` object\.   | 
 |  `source`  |  The email address from which the original message was sent \(the envelope MAIL FROM address\)\.  | 
-|  `sourceArn`  |  The Amazon Resource Name \(ARN\) of the identity that was used to send the email\. In the case of sending authorization, the `sourceArn` is the ARN of the identity that the identity owner authorized the delegate sender to use to send the email\. For more information about sending authorization, see [Using Sending Authorization](sending-authorization.md)\.  | 
+|  `sourceArn`  |  The Amazon Resource Name \(ARN\) of the identity that was used to send the email\. In the case of sending authorization, the `sourceArn` is the ARN of the identity that the identity owner authorized the delegate sender to use to send the email\. For more information about sending authorization, see [Using sending authorization](sending-authorization.md)\.  | 
 |  `sourceIp`  |  The originating public IP address of the client that performed the email sending request to Amazon SES\.  | 
 |  `sendingAccountId`  |  The AWS account ID of the account that was used to send the email\. In the case of sending authorization, the `sendingAccountId` is the delegate sender's account ID\.  | 
 |  `destination`  |  A list of email addresses that were recipients of the original mail\.  | 
@@ -104,16 +104,16 @@ The following is an example of a `mail` object that includes the original email 
 }
 ```
 
-## Bounce Object<a name="bounce-object"></a>
+## Bounce object<a name="bounce-object"></a>
 
 The JSON object that contains information about bounces contains the following fields\.
 
 
 | Field Name | Description | 
 | --- | --- | 
-|  `bounceType`  |  The type of bounce, as determined by Amazon SES\. For more information, see [Bounce Types](#bounce-types)\.  | 
-|  `bounceSubType`  |  The subtype of the bounce, as determined by Amazon SES\. For more information, see [Bounce Types](#bounce-types)\.  | 
-|  `bouncedRecipients`  |  A list that contains information about the recipients of the original mail that bounced\. For more information, see [Bounced Recipients](#bounced-recipients)\.  | 
+|  `bounceType`  |  The type of bounce, as determined by Amazon SES\. For more information, see [Bounce types](#bounce-types)\.  | 
+|  `bounceSubType`  |  The subtype of the bounce, as determined by Amazon SES\. For more information, see [Bounce types](#bounce-types)\.  | 
+|  `bouncedRecipients`  |  A list that contains information about the recipients of the original mail that bounced\. For more information, see [Bounced recipients](#bounced-recipients)\.  | 
 |  `timestamp`  |  The date and time at which the bounce was sent \(in ISO8601 format\)\. Note that this is the time at which the notification was sent by the ISP, and not the time at which it was received by Amazon SES\.  | 
 |  `feedbackId`  |  A unique ID for the bounce\.  | 
 
@@ -157,7 +157,7 @@ The following is an example of a `bounce` object\.
 }
 ```
 
-### Bounced Recipients<a name="bounced-recipients"></a>
+### Bounced recipients<a name="bounced-recipients"></a>
 
 A bounce notification may pertain to a single recipient or to multiple recipients\. The `bouncedRecipients` field holds a list of objects—one per recipient to whom the bounce notification pertains—and always contains the following field\.
 
@@ -186,7 +186,7 @@ The following is an example of an object that might be in the `bouncedRecipients
 }
 ```
 
-### Bounce Types<a name="bounce-types"></a>
+### Bounce types<a name="bounce-types"></a>
 
 The bounce object contains a bounce type of `Undetermined`, `Permanent`, or `Transient`\. The `Permanent` and `Transient` bounce types can also contain one of several bounce subtypes\. 
 
@@ -196,7 +196,7 @@ When you receive a bounce notification with a bounce type of `Permanent`, it's u
 
 **Note**  
 When a *soft bounce* \(a bounce related to a temporary issue, such as the recipient's inbox being full\) occurs, Amazon SES attempts to redeliver the email for a certain period of time\. At the end of that period of time, if Amazon SES still can't deliver the email, it stops trying\.  
-Amazon SES provides notifications for hard bounces, as well as for soft bounces that it stopped trying to deliver\.
+Amazon SES provides notifications for hard bounces, as well as for soft bounces that it stopped trying to deliver\. If you want to receive a notification each time a soft bounce occurs, [enable event publishing](monitor-sending-using-event-publishing-setup.md) and configure it to send notifications when Delivery Delay events occur\.
 
 
 | bounceType | bounceSubType | Description | 
@@ -204,7 +204,7 @@ Amazon SES provides notifications for hard bounces, as well as for soft bounces 
 |  `Undetermined`  |  `Undetermined`  |  The recipient's email provider sent a bounce message\. The bounce message didn't contain enough information for Amazon SES to determine the reason for the bounce\. The bounce email, which was sent to the address in the Return\-Path header of the email that resulted in the bounce, might contain additional information about the issue that caused the email to bounce\.  | 
 |  `Permanent`  |  `General`  |  The recipient's email provider sent a hard bounce message, but didn't specify the reason for the hard bounce\.   When you receive this type of bounce notification, you should immediately remove the recipient's email address from your mailing list\. Sending messages to addresses that produce hard bounces can have a negative impact on your reputation as a sender\. If you continue sending email to addresses that produce hard bounces, we might pause your ability to send additional email\.   | 
 |  `Permanent`  |  `NoEmail`  |  The intended recipient's email provider sent a bounce message indicating that the email address doesn't exist\.  When you receive this type of bounce notification, you should immediately remove the recipient's email address from your mailing list\. Sending messages to addresses that don't exist can have a negative impact on your reputation as a sender\. If you continue sending email to addresses that don't exist, we might pause your ability to send additional email\.   | 
-|  `Permanent`  |  `Suppressed`  |  The recipient's email address is on the Amazon SES suppression list because it has a recent history of producing hard bounces\. For information about removing an address from the Amazon SES suppression list, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.  | 
+|  `Permanent`  |  `Suppressed`  |  The recipient's email address is on the Amazon SES suppression list because it has a recent history of producing hard bounces\. For information about removing an address from the Amazon SES suppression list, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.  | 
 |  `Permanent`  |  `OnAccountSuppressionList`  | Amazon SES has suppressed sending to this address because it is on the [account\-level suppression list](sending-email-suppression-list.md)\.  | 
 |  `Transient`  |  `General`  |  The recipient's email provider sent a general bounce message\. You might be able to send a message to the same recipient in the future if the issue that caused the message to bounce is resolved\.  If you send an email to a recipient who has an active automatic response rule \(such as an "out of the office" message\), you might receive this type of notification\. Even though the response has a notification type of `Bounce`, Amazon SES doesn't count automatic responses when it calculates the bounce rate for your account\.   | 
 |  `Transient`  |  `MailboxFull`  |  The recipient's email provider sent a bounce message because the recipient's inbox was full\. You might be able to send to the same recipient in the future when the mailbox is no longer full\.  | 
@@ -212,7 +212,7 @@ Amazon SES provides notifications for hard bounces, as well as for soft bounces 
 |  `Transient`  |  `ContentRejected`  |  The recipient's email provider sent a bounce message because the message you sent contains content that the provider doesn't allow\. You might be able to send a message to the same recipient if you change the content of the message\.  | 
 |  `Transient`  |  `AttachmentRejected`  |  The recipient's email provider sent a bounce message because the message contained an unacceptable attachment\. For example, some email providers may reject messages with attachments of a certain file type, or messages with very large attachments\. You might be able to send a message to the same recipient if you remove or change the content of the attachment\.  | 
 
-## Complaint Object<a name="complaint-object"></a>
+## Complaint object<a name="complaint-object"></a>
 
 The JSON object that contains information about complaints has the following fields\.
 
@@ -283,7 +283,7 @@ You may see the following complaint types in the `complaintFeedbackType` field a
 + `other`—Indicates any other feedback that does not fit into other registered types\.
 + `virus`—Reports that a virus is found in the originating message\. 
 
-## Delivery Object<a name="delivery-object"></a>
+## Delivery object<a name="delivery-object"></a>
 
 The JSON object that contains information about deliveries always has the following fields\.
 

@@ -5,7 +5,7 @@ IP blacklists are intended to inform email providers of internet addresses suspe
 Different blacklists have different impacts on email deliverability\. This topic describes how blacklists impact the delivery of emails you send using Amazon SES, as well as our policies for removing Amazon SES IP addresses from blacklists\.
 
 **Note**  
-This topic is about the blacklists that email providers use to block incoming messages\. For information about how Amazon SES blocks outgoing email sent to recipients whose email addresses have previously generated bounces, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.
+This topic is about the blacklists that email providers use to block incoming messages\. For information about how Amazon SES blocks outgoing email sent to recipients whose email addresses have previously generated bounces, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.
 
 ## Q1\. How do blacklists impact email delivery?<a name="bl-q1"></a>
 

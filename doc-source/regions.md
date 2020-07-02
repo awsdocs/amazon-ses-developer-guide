@@ -47,7 +47,7 @@ You have to perform the Easy DKIM setup process for each Region where you want t
 
 ## Suppression List<a name="region-suppression-list"></a>
 
-Although each Region has a separate suppression list, if you remove an address from the suppression list of one Region, the address is removed from the suppression list of all Regions\. You remove addresses from the suppression list by using the Amazon SES console\. For more information about removing addresses from the suppression list, see [Using the Amazon SES Global Suppression List](sending-email-global-suppression-list.md)\.
+Although each Region has a separate suppression list, if you remove an address from the suppression list of one Region, the address is removed from the suppression list of all Regions\. You remove addresses from the suppression list by using the Amazon SES console\. For more information about removing addresses from the suppression list, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.
 
 ## Feedback Notifications<a name="region-feedback-notifications"></a>
 
@@ -74,10 +74,14 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 
 | Region Name | Feedback Endpoints for Custom MAIL FROM Sending Configurations | 
 | --- | --- | 
+|  US East \(Ohio\)  |  feedback\-smtp\.us\-east\-2\.amazonses\.com  | 
 |  US East \(N\. Virginia\)  |  feedback\-smtp\.us\-east\-1\.amazonses\.com  | 
 |  US West \(Oregon\)  |  feedback\-smtp\.us\-west\-2\.amazonses\.com  | 
 |  Asia Pacific \(Mumbai\)  |  feedback\-smtp\.ap\-south\-1\.amazonses\.com  | 
+|  Asia Pacific \(Seoul\)  |  feedback\-smtp\.ap\-northeast\-2\.amazonses\.com  | 
+|  Asia Pacific \(Singapore\)  |  feedback\-smtp\.ap\-southeast\-1\.amazonses\.com  | 
 |  Asia Pacific \(Sydney\)  |  feedback\-smtp\.ap\-southeast\-2\.amazonses\.com  | 
+|  Asia Pacific \(Tokyo\)  |  feedback\-smtp\.ap\-northeast\-1\.amazonses\.com  | 
 |  Canada \(Central\)  |  feedback\-smtp\.ca\-central\-1\.amazonses\.com  | 
 |  Europe \(Frankfurt\)  |  feedback\-smtp\.eu\-central\-1\.amazonses\.com  | 
 |  Europe \(Ireland\)  |  feedback\-smtp\.eu\-west\-1\.amazonses\.com  | 
@@ -87,7 +91,7 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 
 ## Sending Authorization<a name="region-sending-authorization"></a>
 
-Delegate senders can only send emails from the AWS Region where the identity owner's identity is verified\. The sending authorization policy that gives permission to the delegate sender must be attached to the identity in that Region\. For more information about sending authorization, see [Using Sending Authorization with Amazon SES](sending-authorization.md)\.
+Delegate senders can only send emails from the AWS Region where the identity owner's identity is verified\. The sending authorization policy that gives permission to the delegate sender must be attached to the identity in that Region\. For more information about sending authorization, see [Using sending authorization with Amazon SES](sending-authorization.md)\.
 
 ## Email Receiving<a name="region-receive-email"></a>
 
@@ -105,7 +109,7 @@ The following table lists the email receiving endpoints for all of the AWS Regio
 | Europe \(Ireland\) | inbound\-smtp\.eu\-west\-1\.amazonaws\.com | 
 
 **Note**  
-Amazon SES doesn't support email receiving in the following Regions: Asia Pacific \(Mumbai\), Asia Pacific \(Sydney\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), South America \(São Paulo\), and AWS GovCloud \(US\)\. 
+Amazon SES doesn't support email receiving in the following Regions: US East \(Ohio\), Asia Pacific \(Mumbai\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney\), Asia Pacific \(Tokyo\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), South America \(São Paulo\), and AWS GovCloud \(US\)\. 
 
 
 ****  

@@ -1,8 +1,8 @@
-# Amazon SES Email\-Receiving Concepts<a name="receiving-email-concepts"></a>
+# Amazon SES email receiving concepts<a name="receiving-email-concepts"></a>
 
 When you use Amazon SES as your email receiver, you must tell the service what to do with your mail\. The primary method, which gives you fine\-grained control over your mail, is to specify the actions to take based on the recipient\. The other method is to block or allow mail based on the originating IP address\. This topic describes both methods\.
 
-## Recipient\-Based Control<a name="receiving-email-concepts-rules"></a>
+## Recipient\-based control<a name="receiving-email-concepts-rules"></a>
 
 The primary way to control your incoming mail is to specify how mail is handled based on its recipient\. For example, if you own *example\.com*, you can specify that mail for *user@example\.com* should bounce, and that all other mail for *example\.com* and its subdomains should be delivered\. The list of recipients you provide is called the *condition*\.
 
@@ -21,14 +21,14 @@ Receipt rules are grouped together into *receipt rule sets*\. You can define mul
 
 ![\[Inbound email overview\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/inbound_overview.png)
 
-## IP Address\-Based Control<a name="receiving-email-concepts-ip-filters"></a>
+## IP address\-based control<a name="receiving-email-concepts-ip-filters"></a>
 
 You can control your mail flow on a broader level by setting up *IP address filters*\. IP address filters are optional and enable you to specify whether to accept or reject mail originating from an IP address or range of IP addresses\. Your IP address filters can include *block lists* \(IP addresses from which you want to block incoming mail\) and *allow lists* \(IP addresses from which you want to always accept mail\)\. IP address filters are useful for blocking spam\. Amazon SES maintains its own block list of IP addresses known to send spam, but you can choose to receive mail from those IP addresses by adding them to your allow list\.
 
 **Note**  
 If you want to allow mail that originates from an Amazon EC2 IP address, you must add it to your allow list\. All mail originating from Amazon EC2 is blocked by default\.
 
-## Email\-Receiving Process<a name="receiving-email-process"></a>
+## Email\-receiving process<a name="receiving-email-process"></a>
 
 When Amazon SES receives an email for your domain, the following events occur:
 
@@ -42,4 +42,4 @@ When Amazon SES receives an email for your domain, the following events occur:
 
 1. If Amazon SES accepts the mail, it evaluates your active receipt rule set\. All of the receipt rules that match at least one of the recipient conditions are applied in the order that they are defined, unless an action or a receipt rule explicitly terminates evaluation of the receipt rule set\.
 
-Now that you have an overview of the process, you can get started by going to [Setting Up Email Receiving](receiving-email-setting-up.md)\.
+Now that you have an overview of the process, you can get started by going to [Setting up email receiving](receiving-email-setting-up.md)\.

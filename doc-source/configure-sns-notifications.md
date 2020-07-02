@@ -65,13 +65,13 @@ Additionally, you have to subscribed one or more endpoints to the topic in order
 
       If you want to use an Amazon SNS topic that you don't own, you must [configure your AWS Identity and Access Management \(IAM\) policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage.html) to allow publishing from the Amazon Resource Name \(ARN\) of the Amazon SNS topic\.
 
-   1. If you want the Amazon SNS notifications to contain the original headers of the emails you pass to Amazon SES, choose **Include original headers**\. This option is only available if you've assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Amazon SNS Notification Contents](notification-contents.md)\. 
+   1. If you want the Amazon SNS notifications to contain the original headers of the emails you pass to Amazon SES, choose **Include original headers**\. This option is only available if you've assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Amazon SNS notification contents](notification-contents.md)\. 
 
 1. \(Optional\) If you choose Amazon SNS topics for both bounces and complaints, you can disable email notifications entirely\. To disable email notifications for bounces and complaints, under **Email Feedback Forwarding**, choose **Disable**\. Delivery notifications are available only through Amazon SNS\.
 
 1. Choose **Save Config**\. The changes you made to your notification settings might take a few minutes to take effect\.
 
-After you configure your settings, you will start receiving bounce, complaint, and/or delivery notifications to your Amazon SNS topic\(s\)\. These notifications are in JavaScript Object Notation \(JSON\) format and follow the structure described in [Amazon SNS Notification Contents](notification-contents.md)\. 
+After you configure your settings, you will start receiving bounce, complaint, and/or delivery notifications to your Amazon SNS topic\(s\)\. These notifications are in JavaScript Object Notation \(JSON\) format and follow the structure described in [Amazon SNS notification contents](notification-contents.md)\. 
 
 You will be charged standard Amazon SNS rates for bounce, complaint, and delivery notifications\. For more information, see the [Amazon SNS pricing page](https://aws.amazon.com/sns/pricing)\.
 
