@@ -134,7 +134,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Giving permissions to Amazon SES for email receiving](receiving-email-permissions.md)
       + [Creating IP address filters for Amazon SES email receiving](receiving-email-ip-filters.md)
       + [Creating a receipt rule set for Amazon SES email receiving](receiving-email-receipt-rule-set.md)
-      + [Creating receipt rules for Amazon SES fmail receiving](receiving-email-receipt-rules.md)
+      + [Creating receipt rules for Amazon SES email receiving](receiving-email-receipt-rules.md)
          + [Action options](receiving-email-action.md)
             + [Add header action](receiving-email-action-add-header.md)
             + [Bounce action](receiving-email-action-bounce.md)
