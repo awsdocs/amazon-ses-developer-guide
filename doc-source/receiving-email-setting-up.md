@@ -9,6 +9,6 @@ This section describes what you need to do to configure Amazon SES to receive yo
 + [Giving permissions to Amazon SES for email receiving](receiving-email-permissions.md)
 + [Creating IP address filters for Amazon SES email receiving](receiving-email-ip-filters.md)
 + [Creating a receipt rule set for Amazon SES email receiving](receiving-email-receipt-rule-set.md)
-+ [Creating receipt rules for Amazon SES fmail receiving](receiving-email-receipt-rules.md)
++ [Creating receipt rules for Amazon SES email receiving](receiving-email-receipt-rules.md)
 
 To see where these tasks fit into the overall email\-receiving process, see [Email receiving concepts](receiving-email-concepts.md)\.
