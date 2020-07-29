@@ -1,4 +1,4 @@
-# Creating receipt rules for Amazon SES fmail receiving<a name="receiving-email-receipt-rules"></a>
+# Creating receipt rules for Amazon SES email receiving<a name="receiving-email-receipt-rules"></a>
 
 Receipt rules let you specify what Amazon SES does with email it receives for the email addresses or domains you own\. A receipt rule contains a condition and an ordered list of actions\. If the recipient of an incoming email matches a recipient specified in the conditions for the receipt rule, then Amazon SES performs the actions specified in that receipt rule\. For more information about the role of receipt rules in the email\-receiving process, see [Email receiving concepts](receiving-email-concepts.md)\.
 
