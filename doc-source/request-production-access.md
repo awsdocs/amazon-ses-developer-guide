@@ -60,6 +60,16 @@ If you want to request that we remove your account from the sandbox in another A
 
 1. When you finish, choose **Submit**\.
 
+**To submit through the AWS CLI**
+   ```
+   aws sesv2 put-account-details \
+   --mail-type TRANSACTIONAL \
+   --website-url https://example.com \
+   --use-case-description "A description of how you plan to use Amazon SES to send email." \
+   --additional-contact-email-addresses info@example.com \
+   --contact-language EN
+   ```
+
 The AWS Support team provides an initial response to your request within 24 hours\.
 
 In order to prevent our systems from being used to send unsolicited or malicious content, we have to consider each request carefully\. If we're able to do so, we'll grant your request within this 24\-hour period\. However, if we need to obtain additional information from you, it might take longer to resolve your request\.
