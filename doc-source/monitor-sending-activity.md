@@ -30,7 +30,7 @@ You can monitor email sending events in several ways\. The method you choose dep
 |  Event publishing  |  Sends, deliveries, opens, clicks, bounces, complaints, rejects, and rendering failures\.  |  Amazon CloudWatch or Amazon Kinesis Data Firehose, or by Amazon SNS notification  |  Details on each event  |  Fine\-grained \(based on user\-definable email characteristics\)  | 
 
 **Note**  
-The metrics measured by email sending events may not align perfectly with your sending quotas\. This discrepancy can be caused by email bounces and rejections, or by using the Amazon SES inbox simulator\. To find out how close you are to your sending quotas, see [Monitoring Your Sending Quotas](manage-sending-quotas-monitor.md)\.
+The metrics measured by email sending events may not align perfectly with your sending quotas\. This discrepancy can be caused by email bounces and rejections, or by using the Amazon SES inbox simulator\. To find out how close you are to your sending quotas, see [Monitoring your sending quotas](manage-sending-quotas-monitor.md)\.
 
 **Topics**
 + [Monitoring your sending statistics using the Amazon SES console](monitor-sending-activity-console.md)

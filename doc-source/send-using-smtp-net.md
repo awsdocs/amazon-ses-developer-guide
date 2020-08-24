@@ -129,7 +129,7 @@ The email addresses are case\-sensitive\. Make sure that the addresses are exact
 
 1. In `Program.cs`, replace the following SMTP credentials with the values that you obtained in [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md):
 **Important**  
-Your SMTP credentials are different from your AWS credentials\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
+Your SMTP credentials are different from your AWS credentials\. For more information about credentials, see [Types of Amazon SES credentials](send-email-concepts-credentials.md)\.
    + YOUR\_SMTP\_USERNAME—Replace with your SMTP username\. Note that your SMTP username credential is a 20\-character string of letters and numbers, not an intelligible name\.
    + YOUR\_SMTP\_PASSWORD—Replace with your SMTP password\.
 

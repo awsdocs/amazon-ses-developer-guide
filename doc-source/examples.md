@@ -7,3 +7,4 @@ This section contains code examples that help you get started using Amazon SES t
 + [Sending email using the Amazon SES SMTP Interface](examples-send-using-smtp.md)
 + [Sending raw email using AWS SDKs](examples-send-raw-using-sdk.md)
 + [Verify multiple email addresses](sample-code-bulk-verify.md)
++ [Replicating email identities across AWS Regions](examples-replicate-identities.md)

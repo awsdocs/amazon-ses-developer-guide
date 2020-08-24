@@ -1,7 +1,9 @@
 # Amazon SES resources<a name="resources"></a>
 
-****  
-**Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\.**
+
+|  | 
+| --- |
+| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
 
 The following table lists resources that you may find useful as you work with Amazon Simple Email Service \(Amazon SES\)\.
 

@@ -2,7 +2,7 @@
 
 A *mail exchanger* record \(*MX record*\) is a configuration that specifies which mail servers can accept email that's sent to your domain\. 
 
-To have Amazon SES manage your incoming email, you need to add an MX record to your domain's DNS configuration\. The MX record that you create refers to the endpoint that receives email for the AWS Region where you use Amazon SES\. For example, the endpoint for the US West \(Oregon\) Region is *inbound\-smtp\.us\-west\-2\.amazonaws\.com*\. For a complete list of endpoints, see [Amazon SES Regions and Endpoints](regions.md#region-endpoints)\.
+To have Amazon SES manage your incoming email, you need to add an MX record to your domain's DNS configuration\. The MX record that you create refers to the endpoint that receives email for the AWS Region where you use Amazon SES\. For example, the endpoint for the US West \(Oregon\) Region is *inbound\-smtp\.us\-west\-2\.amazonaws\.com*\. For a complete list of endpoints, see [Amazon SES regions and endpoints](regions.md#region-endpoints)\.
 
 **Note**  
 The endpoints that receive email in Amazon SES aren't IMAP or POP3 email servers\. You can't use these URLs as incoming mail servers in email clients\.  
@@ -37,7 +37,7 @@ Some DNS providers refer to the **Type** field as the **Record Type** or a simil
    10 inbound-smtp.regionInboundUrl.amazonaws.com
    ```
 
-   In the preceding example, replace *regionInboundUrl* with the address of the endpoint that receives email for the AWS Region you use with Amazon SES\. For example, if you're using the US East \(N\. Virginia\) Region, replace *region* with `us-east-1`\. For a complete list of email receiving endpoints, see [Amazon SES Regions and Endpoints](regions.md#region-endpoints)\.
+   In the preceding example, replace *regionInboundUrl* with the address of the endpoint that receives email for the AWS Region you use with Amazon SES\. For example, if you're using the US East \(N\. Virginia\) Region, replace *region* with `us-east-1`\. For a complete list of email receiving endpoints, see [Amazon SES regions and endpoints](regions.md#region-endpoints)\.
 **Note**  
 The management consoles of some DNS providers include separate fields for the record **Value** and the record **Priority**\. If this is the case for your DNS provider, enter `10` for the **Priority** value, and enter the incoming mail endpoint URL for the **Value**\.
 

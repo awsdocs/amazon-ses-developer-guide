@@ -45,7 +45,7 @@ To extend the SMTP relay to private subnets, for **Relay Restriction**, use **Si
 
    1. Select **Basic Authentication** and then enter your Amazon SES SMTP username and password\. You can obtain these credentials from the Amazon SES console using the procedure in [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 **Important**  
-Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
+Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Types of Amazon SES credentials](send-email-concepts-credentials.md)\.
 
    1. Ensure that **TLS encryption** is selected\.
 

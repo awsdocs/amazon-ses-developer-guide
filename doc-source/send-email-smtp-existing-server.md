@@ -9,6 +9,5 @@ The Amazon SES SMTP endpoint requires that all connections be encrypted using Tr
 **Topics**
 + [Integrating Amazon SES with Postfix](postfix.md)
 + [Integrating Amazon SES with Sendmail](send-email-sendmail.md)
-+ [Integrating Amazon SES with Microsoft Exchange](send-email-exchange.md)
 + [Integrating Amazon SES with Microsoft Windows Server IIS SMTP](send-email-windows-server.md)
 + [Integrating Amazon SES with Exim](send-email-exim.md)

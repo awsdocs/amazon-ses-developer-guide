@@ -8,7 +8,7 @@ Handlebars includes additional features beyond those documented in this section\
 + [Parsing nested attributes](#send-personalized-email-advanced-nested)
 + [Iterating through lists](#send-personalized-email-advanced-iterating)
 + [Using basic conditional statements](#send-personalized-email-advanced-conditionals)
-+ [Creating Inline Partials](#send-personalized-email-advanced-inline-partials)
++ [Creating inline partials](#send-personalized-email-advanced-inline-partials)
 
 ## Parsing nested attributes<a name="send-personalized-email-advanced-nested"></a>
 
@@ -192,7 +192,7 @@ In this example, the recipient whose template data included a list of interests 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/send-personalized-email-advanced-condition-nointerest.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/)
 
-## Creating Inline Partials<a name="send-personalized-email-advanced-inline-partials"></a>
+## Creating inline partials<a name="send-personalized-email-advanced-inline-partials"></a>
 
 You can use inline partials to simplify templates that include repeated strings\. For example, you could create an inline partial that includes the recipient's first name, and, if it is available, their last name by adding the following code to the beginning of your template:
 

@@ -1,4 +1,4 @@
-# Email format and Amazon SES<a name="sending-concepts-email-format"></a>
+# Email format and Amazon SES<a name="send-email-concepts-email-format"></a>
 
 When a client makes a request to Amazon SES, Amazon SES constructs an email message compliant with the Internet Message Format specification \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\)\. An email consists of a *header*, a *body*, and an *envelope*, as described below\.
 + **Header—**Contains routing instructions and information about the message\. Examples are the sender's address, the recipient's address, the subject, and the date\. The header is analogous to the information at the top of a postal letter, though it can contain many other types of information, such as the format of the message\. 
@@ -27,7 +27,7 @@ The following is a simple example of an email\. The header is followed by a blan
 
 The following sections review email headers and bodies and identify the information that you need to provide when you use Amazon SES\.
 
-## Email header<a name="sending-concepts-email-format-header"></a>
+## Email header<a name="send-email-concepts-email-format-header"></a>
 
 There is one header per email message\. Each line of the header contains a field followed by a colon followed by a field body\. When you read an email in an email client, the email client typically displays the values of the following header fields:
 + **To—**The email addresses of the message's recipients\.
@@ -44,7 +44,7 @@ When you use Amazon SES, we recommend that you always set the "Return\-Path" par
 
 To easily match a bounced message with its intended recipient, you can use Variable Envelope Return Path \(VERP\)\. With VERP, you set a different "Return\-Path" for each recipient, so that if the message bounces back, you automatically know which recipient it bounced from, rather than having to open the bounce message and parse it\.
 
-## Email body<a name="sending-concepts-email-format-body"></a>
+## Email body<a name="send-email-concepts-email-format-body"></a>
 
 The email body contains the text of the message\. The body can be sent in the following formats:
 + **HTML—**If the recipient's email client can interpret HTML, the body can include formatted text and hyperlinks
@@ -53,11 +53,11 @@ The email body contains the text of the message\. The body can be sent in the fo
 
 If you are sending an email message to a large number of recipients, then it makes sense to send it in both HTML and text\. Some recipients will have HTML\-enabled email clients, so that they can click embedded hyperlinks in the message\. Recipients using text\-based email clients will need you to include URLs that they can copy and open using a web browser\.
 
-## Email information you need to provide to Amazon SES<a name="sending-concepts-email-required-information"></a>
+## Email information you need to provide to Amazon SES<a name="send-email-concepts-email-required-information"></a>
 
 When you send an email with Amazon SES, the email information you need to provide depends on how you call Amazon SES\. You can provide a minimal amount of information and have Amazon SES take care of all of the formatting for you\. Or, if you want to do something more advanced like send an attachment, you can provide the raw message yourself\. The following sections review what you need to provide when you send an email by using the Amazon SES API, the Amazon SES SMTP interface, or the Amazon SES console\.
 
-### Amazon SES API<a name="sending-concepts-email-required-information-api"></a>
+### Amazon SES API<a name="send-email-concepts-email-required-information-api"></a>
 
 If you call the Amazon SES API directly, you call either the `SendEmail` or the `SendRawEmail` API\. The amount of information you need to provide depends on which API you call\.
 + The `SendEmail API` requires you to provide only a source address, destination address, message subject, and a message body\. You can optionally provide "Reply\-To" addresses\. When you call this API, Amazon SES automatically assembles a properly formatted multi\-part Multipurpose Internet Mail Extensions \(MIME\) email message optimized for display by email client software\. For more information, see [Sending formatted email using the Amazon SES API](send-email-formatted.md)\.
@@ -67,13 +67,13 @@ If you use an AWS SDK to call the Amazon SES API, you provide the information li
 
 For more information about sending email using the Amazon SES API, see [Using the Amazon SES API to send email](send-email-api.md)\.
 
-### Amazon SES SMTP interface<a name="sending-concepts-email-required-information-smtp"></a>
+### Amazon SES SMTP interface<a name="send-email-concepts-email-required-information-smtp"></a>
 
 When you access Amazon SES through the SMTP interface, your SMTP client application assembles the message, so the information you need to provide depends on the application you are using\. At a minimum, the SMTP exchange between a client and a server requires a source address, a destination address, and message data\. If you are using the SMTP interface and have feedback forwarding enabled, then your bounces, complaints, and delivery notifications are sent to the "MAIL FROM" address\. Any "Reply\-To" address that you specify is not used\.
 
 For more information about sending email using the Amazon SES SMTP interface, see [Using the Amazon SES SMTP interface to send email](send-email-smtp.md)\.
 
-### Amazon SES console<a name="sending-concepts-email-required-information-console"></a>
+### Amazon SES console<a name="send-email-concepts-email-required-information-console"></a>
 
 When you send an email by using the Amazon SES console, the amount of information you need to provide depends on whether you choose to send a formatted or raw email\.
 + To send a formatted email, you need to provide a source address, a destination address, a message subject, and a message body\. Amazon SES automatically assembles a properly formatted multi\-part MIME email message optimized for display by email client software\. You can also specify a reply\-to and a return path field\.

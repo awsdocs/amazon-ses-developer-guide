@@ -1,4 +1,4 @@
-# Increasing Your Amazon SES Sending Quotas<a name="manage-sending-quotas-request-increase"></a>
+# Increasing your Amazon SES sending quotas<a name="manage-sending-quotas-request-increase"></a>
 
 When your account is out of the sandbox and you're sending high\-quality production email, we might automatically increase the sending quotas for your account\. Often, we automatically increase these quotas before you actually need them to be increased\.
 

@@ -1,7 +1,9 @@
 # Sending email with Amazon SES<a name="send-email"></a>
 
-****  
-**Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\.**
+
+|  | 
+| --- |
+| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
 
 When you send an email, you are sending it through some type of outbound email server\. That email server might be provided by your Internet service provider \(ISP\), your company's IT department, or you might have set it up yourself\. The email server accepts your email content, formats it to comply with email standards, and then sends the email out over the Internet\. The email may pass through other servers until it eventually reaches a receiver \(an entity, such as an ISP, that receives the email on behalf of the recipient\)\. The receiver then delivers the email to the recipient\. The following diagram illustrates the basic email\-sending process\.
 
@@ -27,9 +29,9 @@ There are several ways that you can send an email by using Amazon SES\. You can 
 If you're new to Amazon SES, start by reading the following sections:
 + [Amazon SES Quick start](quick-start.md)—Shows you how to get set up and send a test email as quickly as possible\.
 + [Getting started sending email with Amazon SES](send-email-getting-started.md)—Shows you how to send an email by using the Amazon SES console, the SMTP interface, and an AWS SDK\. Examples are provided in C\#, Java, and PHP\.
-+ [Amazon SES and deliverability](sending-concepts-deliverability.md)—Explains email deliverability concepts that you should be familiar with when you use Amazon SES\.
-+ [Amazon SES email\-sending process](sending-concepts-process.md)—Shows you what happens when you send an email through Amazon SES\.
-+ [Email format and Amazon SES](sending-concepts-email-format.md)—Reviews the format of emails and identifies the information that you need to provide to Amazon SES\.
++ [Amazon SES and deliverability](send-email-concepts-deliverability.md)—Explains email deliverability concepts that you should be familiar with when you use Amazon SES\.
++ [Amazon SES email\-sending process](send-email-concepts-process.md)—Shows you what happens when you send an email through Amazon SES\.
++ [Email format and Amazon SES](send-email-concepts-email-format.md)—Reviews the format of emails and identifies the information that you need to provide to Amazon SES\.
 
 Then you can learn about sending email with Amazon SES in more detail by reading the sections listed in the following table:
 

@@ -16,7 +16,7 @@ To send email using the Amazon SES SMTP interface, you need the following:
 Your SMTP user name and password aren't identical to your AWS access keys or the credentials that you use to sign in to the Amazon SES console\. For information about how to generate your SMTP user name and password, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
 + Client software that can communicate using Transport Layer Security \(TLS\)\. For more information, see [Connecting to an Amazon SES SMTP endpoint](smtp-connect.md)\.
 + An email address that you've verified with Amazon SES\. For more information, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
-+ Increased sending quotas, if you want to send large quantities of email\. For more information, see [Managing Your Amazon SES sending quotas](manage-sending-quotas.md)\.
++ Increased sending quotas, if you want to send large quantities of email\. For more information, see [Managing your Amazon SES sending quotas](manage-sending-quotas.md)\.
 
 Then, you can send email by doing the following:
 + To configure SMTP\-enabled software to send email through the Amazon SES SMTP interface, see [Sending email through Amazon SES using software packages](send-email-smtp-software-package.md)\.
@@ -26,7 +26,7 @@ Then, you can send email by doing the following:
 
 For a list of SMTP response codes, see [SMTP response codes returned by Amazon SES](troubleshoot-smtp.md#troubleshoot-smtp-response-codes)\.
 
-## Email Information to Provide<a name="smtp-parameters"></a>
+## Email information to provide<a name="smtp-parameters"></a>
 
 When you access Amazon SES through the SMTP interface, your SMTP client application assembles the message, so the information you need to provide depends on the application that you're using\. At a minimum, the SMTP exchange between a client and a server requires a source address, a destination address, and message data\.
 

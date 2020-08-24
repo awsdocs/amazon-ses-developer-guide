@@ -14,13 +14,13 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 | New feature | You can now use your own IP ranges to send email\. For more information, see [Using Your Own IP Addresses to Send Email Using Amazon SES](dedicated-ip-byo.md)\. | December 23, 2019 | 
 | New feature | You can now use your own public\-private key pair to complete the DKIM authentication process for a domain\. For more information, see [Provide Your Own DKIM Authentication Token in Amazon SES](send-email-authentication-dkim-bring-your-own.md)\. | December 13, 2019 | 
 | New feature | You can now use an [account\-level suppression list](sending-email-suppression-list.md) to automatically prevent sending messages to email addresses that previously resulted in a bounce or complaint\. | November 25, 2019 | 
-| New feature | If your account is in good standing, and you're approaching the sending quotas for your account, Amazon SES will automatically increase your quotas\. For more information, see [Increasing Your Amazon SES Sending Quotas](manage-sending-quotas-request-increase.md)\. |  | 
+| New feature | If your account is in good standing, and you're approaching the sending quotas for your account, Amazon SES will automatically increase your quotas\. For more information, see [Increasing your Amazon SES sending quotas](manage-sending-quotas-request-increase.md)\. |  | 
 | Documentation update | Added [information about deleting personal data from Amazon SES](deleting-personal-data.md)\. | March 13, 2018 | 
 | Open sourced documentation | The Amazon SES documentation is now available on [GitHub](https://github.com/awsdocs/amazon-ses-developer-guide)\. You can submit issues or request changes in the GitHub repository, or make changes directly and submit a pull request\. | February 22, 2018 | 
 | Documentation update | Added a section that provides information about [deleting personal data](deleting-personal-data.md) stored in Amazon SES\. | February 28, 2018 | 
 | Documentation update | Revised the [Amazon SNS event publishing field definitions](event-publishing-retrieving-sns-contents.md), and added a [Rendering Failure event example](event-publishing-retrieving-sns-examples.md#event-publishing-retrieving-sns-failure)\. | January 22, 2018 | 
 | Documentation update | Updated Deliverability Dashboard appendix to account for changes to IAM and Lambda consoles\.  We removed this appendix on May 3, 2019, because it used components that were no longer supported\.   | January 18, 2018 | 
-| Documentation update | Updated [content related to publishing events to CloudWatch](event-publishing-add-event-destination-cloudwatch.md) to mention blacklisted fields\. | January 15, 2018 | 
+| Documentation update | Updated [content related to publishing events to CloudWatch](event-publishing-add-event-destination-cloudwatch.md) to mention blocked fields\. | January 15, 2018 | 
 | Documentation update | Updated [procedures for sending email using OpenSSL](send-email-smtp-client-command-line.md) to make them easier to follow\. | January 11, 2018 | 
 | Documentation update | Added code example for sending raw email by using the AWS SDK for Ruby\. | January 2, 2018 | 
 | Documentation update | Added code example for sending raw email by using the AWS SDK for PHP\. | December 29, 2017 | 
@@ -55,8 +55,8 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 |  New feature  |  Updated to reflect the changes in validation of Header Fields and MIME Types\.  |  November 6, 2013   | 
 |  Documentation update  |  Removed content on Sender ID\.  |  August 22, 2013   | 
 |  New feature  |  Updated to reflect the Amazon SES console redesign\.  |  June 19, 2013   | 
-|  New feature  |  Replaced the blacklist with the suppression list\.  |  May 8, 2013   | 
-|  New feature  |  Updated for the blacklist removal feature\.  |  March 4, 2013   | 
+|  New feature  |  Renamed the blacklist feature to global suppression list\.  |  May 8, 2013   | 
+|  New feature  |  Updated for the global suppression list removal feature\.  |  March 4, 2013   | 
 |  Documentation update  |  Added MIME types\.  |  February 4, 2013   | 
 |  Documentation update  |  Included a Getting Started section to replace the stand\-alone Getting Started guide, restructured the Table of Contents, and updated the Sendmail integration instructions\.  |  January 21, 2013   | 
 |  Documentation update  |  Added troubleshooting sections on increasing throughput and SMTP issues\.  |  December 12, 2012   | 

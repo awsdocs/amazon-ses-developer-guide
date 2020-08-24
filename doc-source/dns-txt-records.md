@@ -43,23 +43,27 @@ When you begin [the process of verifying a new domain](verify-domain-procedure.m
 
 1. Open the Route 53 console at [https://console\.aws\.amazon\.com/route53/](https://console.aws.amazon.com/route53/)\.
 
-1. In the navigation pane, choose **Hosted Zones**\.
+1. In the navigation pane, choose **Hosted zones**\.
 
-1. Select the domain that you want to add a TXT record to, and then choose **Go to Record Sets**\.
+1. Choose the domain that you want to add a TXT record to\.
 
-1. Choose **Create Record Set**\.
+1. Choose **Create record**\.
 
-1. In the **Create Record Set** pane, make the following selections:
+1. For **Routing policy**, choose **Simple routing**, and then choose **Next**\.
 
-   1. For **Name**, type **\_amazonses**\.
+1. Choose **Define simple record**\.
 
-   1. For **Type**, choose **TXT – Text**\.
+1. In the **Define simple record** pane, make the following selections:
 
-   1. For **TTL \(Seconds\)**, type **1800**\.
+   1. For **Record name**, type **\_amazonses**\.
 
-   1. For **Value**, paste the TXT record value you copied from the Amazon SES console\.
+   1. For **Value/Route traffic to**, choose **IP address or another value depending on the record type**\. Then, in the text area, paste the TXT record value you copied from the Amazon SES console\.
 
-   1. Choose **Create**\.
+   1. For **Record type**, choose **TXT**\.
+
+   1. For **TTL \(seconds\)**, type **1800**\.
+
+   1. Choose **Define simple record**\.
 
 1. On the **Domains** page in the Amazon SES console, check the value in the **Status** column next to the domain you just attempted to verify\. If the status is "pending verification," wait a few minutes, and then choose **refresh** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/refresh_icon.png)\)\. Repeat this process until the value in the status column is "verified\."
 

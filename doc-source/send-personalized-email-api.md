@@ -1,14 +1,17 @@
 # Sending personalized email using the Amazon SES API<a name="send-personalized-email-api"></a>
 
-You can use the `CreateTemplate` API operation to create email templates\. These templates include a subject line, and the text and HTML parts of the email body\. The subject and body sections may also contain unique values that are personalized for each recipient\.
+You can use the [CreateTemplate](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateTemplate.html) API operation to create email templates\. These templates include a subject line, and the text and HTML parts of the email body\. The subject and body sections may also contain unique values that are personalized for each recipient\.
 
 There are a few limits and other considerations when using these features:
 + You can create up to 10,000 email templates per Amazon SES account\.
 + Each template can be up to 500KB in size, including both the text and HTML parts\.
 + You can include an unlimited number of replacement variables in each template\.
-+ You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients, as well as CC and BCC recipients\. Note that the number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing Your Amazon SES sending quotas](manage-sending-quotas.md)\.
++ You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients, as well as CC and BCC recipients\. Note that the number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing your Amazon SES sending quotas](manage-sending-quotas.md)\.
 
 This section includes procedures for creating email templates and for sending personalized emails\.
+
+**Note**  
+The procedures in this section assume that you've already installed and configured the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
 ## Part 1: Set up rendering failure event notifications<a name="send-personalized-email-set-up-notifications"></a>
 
@@ -28,7 +31,9 @@ The procedure in this section is optional, but highly recommended\.
 
 ## Part 2: Create an email template<a name="send-personalized-email-create-template"></a>
 
-The instructions in this section assume that you are using the AWS CLI, and that you configured it to interact with your AWS account\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
+In this section, you use the CreateTemplate API operation to create a new email template with personalization attributes\.
+
+This procedure assumes that you've already installed and configured the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
 **To create the template**
 
@@ -55,7 +60,11 @@ The instructions in this section assume that you are using the AWS CLI, and that
 
 1. Customize the preceding example to fit your needs, and then save the file as `mytemplate.json`\.
 
-1. At the command line, type the following command to create a new template using the `CreateTemplate` API operation: aws ses create\-template \-\-cli\-input\-json file://mytemplate\.json
+1. At the command line, type the following command to create a new template using the `CreateTemplate` API operation:
+
+   ```
+   aws ses create-template --cli-input-json file://mytemplate.json
+   ```
 
 ## Part 3: Sending the personalized email<a name="send-personalized-email-api-operations"></a>
 

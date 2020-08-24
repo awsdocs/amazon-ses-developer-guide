@@ -8,7 +8,7 @@ This section includes procedures for constructing and sending raw email using th
 
 Simple Mail Transfer Protocol \(SMTP\) specifies how email messages are to be sent by defining the mail envelope and some of its parameters, but it does not concern itself with the content of the message\. Instead, the Internet Message Format \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\) defines how the message is to be constructed\.
 
-With the Internet Message Format specification, every email message consists of a header and a body\. The header consists of message metadata, and the body contains the message itself\. For more information about email headers and bodies, see [Email format and Amazon SES](sending-concepts-email-format.md)\.
+With the Internet Message Format specification, every email message consists of a header and a body\. The header consists of message metadata, and the body contains the message itself\. For more information about email headers and bodies, see [Email format and Amazon SES](send-email-concepts-email-format.md)\.
 
 ## Using MIME<a name="send-email-raw-mime"></a>
 

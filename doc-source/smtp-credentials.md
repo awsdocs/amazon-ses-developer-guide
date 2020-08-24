@@ -1,11 +1,16 @@
 # Obtaining your Amazon SES SMTP credentials<a name="smtp-credentials"></a>
 
-You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\. If you plan to use the SMTP interface to send email in multiple AWS Regions, you need to obtain a unique set of SMTP credentials for each Region\.
+You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\.
+
+The credentials that you use to send email through the Amazon SES SMTP interface are unique to each AWS Region\. If you use the Amazon SES SMTP interface to send email in more than one Region, you have to [generate a set of SMTP credentials](#smtp-credentials) for each Region\.
+
+**Note**  
+If you created SMTP credentials before January 10, 2019, your SMTP credentials were created using an older version of the AWS Signature\. For security purposes, you should delete credentials that you created before this date, and replace them with newer credentials\. You can [delete older credentials by using the IAM console](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting)\.
 
 **Important**  
-Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Using credentials with Amazon SES](using-credentials.md)\.
+Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Types of Amazon SES credentials](send-email-concepts-credentials.md)\.
 
-## Obtaining Amazon SES SMTP Credentials Using the Amazon SES Console<a name="smtp-credentials-console"></a>
+## Obtaining Amazon SES SMTP credentials using the Amazon SES console<a name="smtp-credentials-console"></a>
 
 When you generate SMTP credentials by using the Amazon SES console, the Amazon SES console creates an IAM user with the appropriate policies to call Amazon SES and provides you with the SMTP credentials associated with that user\. 
 
@@ -133,7 +138,22 @@ def main():
     parser.add_argument('--region',
             help='The name of the AWS Region that the SMTP password will be used in.',
             required=True,
-            choices=['us-east-1','us-west-2','ap-south-1','ap-southeast-2','ca-central-1','eu-central-1','eu-west-1','eu-west-2','sa-east-1','us-gov-west-1'],
+            choices=[
+                'us-east-2',      #US East (Ohio)
+                'us-east-1',      #US East (N. Virginia)
+                'us-west-2',      #US West (Oregon)
+                'ap-south-1',     #Asia Pacific (Mumbai)
+                'ap-northeast-2', #Asia Pacific (Seoul)
+                'ap-southeast-1', #Asia Pacific (Singapore)
+                'ap-southeast-2', #Asia Pacific (Sydney)
+                'ap-northeast-1', #Asia Pacific (Tokyo)
+                'ca-central-1',   #Canada (Central)
+                'eu-central-1',   #Europe (Frankfurt)
+                'eu-west-1',      #Europe (Ireland)
+                'eu-west-2',      #Europe (London)
+                'sa-east-1',      #South America (São Paulo)
+                'us-gov-west-1'   #AWS GovCloud (US)
+            ],
             action="store")
     args = parser.parse_args()
 

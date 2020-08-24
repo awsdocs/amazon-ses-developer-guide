@@ -4,18 +4,18 @@ Amazon SES includes a *global suppression list*\. When any Amazon SES customer s
 
 Amazon SES also includes an account\-level suppression list\. For more information, see [Using the account\-level suppression list](sending-email-suppression-list.md)\.
 
-## Global Suppression List Considerations<a name="sending-email-global-suppression-list-considerations"></a>
+## Global suppression list considerations<a name="sending-email-global-suppression-list-considerations"></a>
 
 You should consider the following factors when you use the global suppression list:
 + The global suppression list is enabled by default for all Amazon SES accounts\. You can't disable it\.
 + Because Amazon SES applies the global suppression list to all customers, you can't query the global suppression list or add addresses to it manually\.
-+ Amazon SES automatically removes email addresses from the global suppression list after 14 days\. At the end of this 14\-day period, Amazon SES automatically removes the address from the global suppression list\. However, if the same address produces another hard bounce, Amazon SES adds it to the global suppression list again\.
++ When an email address produces a hard bounce, Amazon SES adds the address to the global suppression list of a short period of time\. After that period of time elapses, Amazon SES removes the address from the list\. If the address produces another hard bounce, Amazon SES adds it back to the global suppression list for a longer period of time, and removes it at the end of that period\. The amount of time that an address remains on the global suppression list increases each time the address produces a hard bounce\. An address can remain on the global suppression list for up to 14 days\.
 + If you attempt to send a message to an address that's on the global suppression list, Amazon SES accepts the message, but doesn't send it\. Amazon SES generates a bounce notification with a `bounceType` value of `Permanent`, and a `bounceSubType` value of `Suppressed`\. Receiving this type of bounce notification is the only way to know if an address is on the global suppression list\. You can't query the global suppression list\.
 + Amazon SES counts the messages that you send to addresses on the global suppression list toward the bounce rate for your account\.
 + Amazon SES counts the messages that you send to addresses on the global suppression list toward your daily sending quota\.
 + As with any email address that produces a hard bounce, you should remove addresses that cause a suppression list bounce from your mailing list unless you're certain that the address is valid\. Suppression list bounces count towards your account's bounce rate\. If your bounce rate gets too high, we might place your account under review or pause your account's ability to send email\.
 
-## Removing an Address From the Global Suppression List<a name="sending-email-global-suppression-list-remove"></a>
+## Removing an address from the global suppression list<a name="sending-email-global-suppression-list-remove"></a>
 
 If you're sure that an address on the global suppression list is actually a valid recipient, you can remove it by using the following procedure\. When you remove an address from the global suppression list in one Region, the removal applies to all AWS accounts in all regions\.
 

@@ -49,8 +49,8 @@ To complete the procedure in this section, you must use version 1\.14\.6 or late
      "TemplateSubject": "Please confirm your email address",
      "TemplateContent": "<html>
                          <head></head>
-                         <body style="font-family:sans-serif;">
-                           <h1 style="text-align:center">Ready to start sending 
+                         <body style='font-family:sans-serif;'>
+                           <h1 style='text-align:center'>Ready to start sending 
                            email with ProductName?</h1>
                            <p>We here at Example Corp are happy to have you on
                              board! There's just one last step to complete before
@@ -67,11 +67,23 @@ To complete the procedure in this section, you must use version 1\.14\.6 or late
 **Important**  
 To make the preceding example easier to read, the `TemplateContent` attribute contains line breaks\. If you paste the preceding example into your text file, remove the line breaks before proceeding\.
 
-   Replace the values of `TemplateName`, `FromEmailAddress`, `TemplateSubject`, `TemplateContent`, `SuccessRedirectionURL`, and `FailureRedirectionURL` with your own values\. Save the file as `customverificationemail.json`\.
+   Replace the values of `TemplateName`, `FromEmailAddress`, `TemplateSubject`, `TemplateContent`, `SuccessRedirectionURL`, and `FailureRedirectionURL` with your own values\.
+**Note**  
+The email address that you specify for the `FromEmailAddress` parameter has to be verified, or has to be an address on a verified domain\. For more information, see [Verifying identities in Amazon SES](verify-addresses-and-domains.md)\.
 
-1. At the command line, type the following command to create the custom verification email template: aws ses create\-custom\-verification\-email\-template \-\-cli\-input\-json file://customverificationemail\.json
+   When you finish, save the file as `customverificationemail.json`\.
 
-1. Optionally, you can confirm that the template was created by typing the following command: aws ses list\-custom\-verification\-email\-templates
+1. At the command line, type the following command to create the custom verification email template:
+
+   ```
+   aws ses create-custom-verification-email-template --cli-input-json file://customverificationemail.json
+   ```
+
+1. Optionally, you can confirm that the template was created by typing the following command:
+
+   ```
+   aws ses list-custom-verification-email-templates
+   ```
 
 ## Editing a custom verification email template<a name="send-email-verify-address-custom-editing"></a>
 
@@ -219,6 +231,9 @@ Custom verification email templates can't exceed 10 MB in size\. Additionally, c
 | u | class, id, style, title | 
 | ul | class, id, style, title, type | 
 | var | class, id, style, title | 
+
+**Note**  
+Custom verification email templates can't include comment tags\.
 
 ### Q6\. How many verified email addresses can exist in my account?<a name="send-email-verify-address-custom-faq-q6"></a>
 

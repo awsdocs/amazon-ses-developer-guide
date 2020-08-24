@@ -1,7 +1,9 @@
 # What is Amazon SES?<a name="Welcome"></a>
 
-****  
-**Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\.**
+
+|  | 
+| --- |
+| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
 
 Welcome to the Amazon Simple Email Service \(Amazon SES\) Developer Guide\. [Amazon SES](https://aws.amazon.com/ses) is an email platform that provides an easy, cost\-effective way for you to send and receive email using your own email addresses and domains\.
 
@@ -40,7 +42,7 @@ This guide contains the following sections:
 | [Receiving email](receiving-email.md) | Describes how you can receive email using Amazon SES\. | 
 | [Controlling access](control-user-access.md) | Shows you how to use Amazon SES with AWS Identity and Access Management \(IAM\) to specify which Amazon SES API actions a user can perform on which Amazon SES resources\. | 
 | [Logging API calls](logging-using-cloudtrail.md) | Provides a list of Amazon SES APIs that can be logged using AWS CloudTrail\. | 
-| [Using credentials](using-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
+| [Types of credentials](send-email-concepts-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
 | [Using the API](using-ses-api.md) | Describes how to interact with the Amazon SES API\. | 
 | [Regions](regions.md) | Contains information about using Amazon SES in multiple AWS Regions\. | 
 |  [Quotas](quotas.md)  |  Provides a list of quotas that apply to Amazon SES\.  | 

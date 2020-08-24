@@ -1,6 +1,6 @@
 # Increasing throughput with Amazon SES<a name="troubleshoot-throughput-problems"></a>
 
-When you send emails, you can call Amazon SES as frequently as your maximum send rate allows\. \(For more information about your maximum send rate, see [Managing Your Amazon SES sending quotas](manage-sending-quotas.md)\.\) However, each call to Amazon SES takes time to complete\.
+When you send emails, you can call Amazon SES as frequently as your maximum send rate allows\. \(For more information about your maximum send rate, see [Managing your Amazon SES sending quotas](manage-sending-quotas.md)\.\) However, each call to Amazon SES takes time to complete\.
 
 If you are making multiple calls to Amazon SES using the Amazon SES API or the SMTP interface, you may want to consider the following tips to help you improve your throughput: 
 + **Measure your current performance to identify bottlenecks**—A possible performance test involves sending multiple test emails as quickly as possible within a code loop in your application\. Measure the round\-trip latency of each `SendEmail` request\. Then, incrementally launch additional instances of the application on the same machine, and watch for any impact on network latency\. You may also want to run this test on multiple machines and on different networks to help pinpoint any possible machine resource bottlenecks or network bottleneck that may exist\.

@@ -17,58 +17,65 @@ Complete the procedures in this section to request that your account be removed 
 **Note**  
 If you're using Amazon SES to send email from an Amazon EC2 instance, you might also need to request that the throttle be removed from port 25 on your Amazon EC2 instance\. For more information, see [How do I remove the throttle on port 25 from my EC2 instance?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.
 
-**To request that your account be removed from the Amazon SES sandbox**
+**To request that your account be removed from the Amazon SES sandbox using the AWS Management Console**
 
 1. Sign in to the AWS Management Console at [https://console\.aws\.amazon\.com/](https://console.aws.amazon.com/)\.
 
-1. On the **Support** menu, choose **Support Center**, as shown in the following image\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/console_region_selector.png)
+1. In the navigation pane, under **Email Sending** choose **Sending Statistics**\.
 
-1. On the **My support cases** tab, choose **Create case**\.
+1. For **Your account details**, choose **Edit your account details**, as shown in the following image\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/production_access_account_details_sandbox.png)
 
-1. Under **Create case**, choose **Service limit increase**\.
-
-1. Under **Case classification**, complete the following sections:
-   + For **Limit type**, choose **SES Sending Limits**\.
+1. In the account details modal, fill out the following account details:  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/production_access_account_details_edit.png)
+   + For **Enable production access**, choose **Yes** or **No**\. You can only move out of the sandbox by choosing **Yes**\.
    + For **Mail Type**, choose the type of email that you plan to send\. If more than one value applies, choose the option that applies to the majority of the email that you plan to send\.
    + For **Website URL**, enter the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
-   + For **Describe how you will comply with AWS Service Terms and AUP**, explain how you plan to ensure that your email sending complies with both of these documents\.
-   + For **Describe how you will only send to recipients who have specifically requested your mail**, explain how you plan to manage your recipients' opt\-in and opt\-out preferences\.
-   + For **Describe the process that you will follow when you receive bounce and complaint notifications**, explain what you plan to do if an email results in a bounce or complaint event\.
+   + For **Use case description**, explain how you plan to explain how you plan to use Amazon SES to send email\. To help us process your request, you should answer the following questions:
+     + How do you plan to build or acquire your mailing list?
+     + How do you plan to handle bounces and complaints?
+     + How can recipients opt out of receiving email from you?
+     + How did you choose the sending rate or sending quota that you specified in this request?
 
-1. Under **Requests**, complete the following sections:
-   + For **Region**, choose the AWS Region that your request applies to\.
-   + For **Limit**, choose the type of quota increase that you want to request\. You can choose from the following options:
-     + **Desired Maximum Send Quota** – Choose this option if you want to request an increase to the number of emails that your account can send per 24\-hour period in the selected Region\. 
+1. For **Additional contact addresses**, tell us where you want to receive communications about your account\. This can be a comma\-separated list of up to 4 email addresses\.
 
-       **Desired Maximum Send Rate** – Choose this option if you want to request an increase to the number of emails that your account can send per second in the selected Region\. 
-   + For **New limit value**, enter the quota that you're requesting\. Only request the amount that you think you'll need\. Remember that you aren't guaranteed to receive the amount that you request\.
+1. For **Preferred contact language**, choose whether you want to receive communications for this case in **English** or **Japanese**\.
 
-     If you want to have your account removed from the sandbox, but don't want a sending quota increase, specify either a daily sending quota of 200 or a maximum send rate of 1, depending on the value you chose for **Limit**\. These are the default quotas that Amazon SES applies to all accounts in the sandbox\. 
+1. When you finish, choose **Submit for review**\.
+
 **Note**  
-If you want to request that we remove your account from the sandbox in another AWS Region, choose **Add another request**, and then complete the **Region**, **Limit**, and **New limit value** fields for that Region\. Repeat this process for each Region where you want to have your account removed from the sandbox\.
+Once you submit a review of your account details, you can’t edit your details until the review is complete\.
 
-1. Under **Case Description**, for **Use case description**, describe how you plan to use Amazon SES to send email\. To help us process your request, you should answer the following questions:
-   + How do you plan to build or acquire your mailing list?
-   + How do you plan to handle bounces and complaints?
-   + How can recipients opt out of receiving email from you?
-   + How did you choose the sending rate or sending quota that you specified in this request?
+Rather than submit a production access request using the AWS Management Console, you can instead submit the request using the AWS CLI\. Submitting your request using the AWS CLI is helpful when you want to request production access for a large number of identities, or when you want to automate the process of setting up Amazon SES\.
 
-   If there's additional information that we should consider when evaluating your case, provide that information in this section as well\.
+**To request that your account be removed from the Amazon SES sandbox using the AWS CLI**
+**Note**  
+Before you complete the procedure in this section, you have to install and configure the AWS CLI\. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
++ At the command line, enter the following command:
 
-1. Under **Contact options**, for **Preferred contact language**, choose whether you want to receive communications for this case in **English** or **Japanese**\.
+  ```
+  aws sesv2 put-account-details \
+  --production-access-enabled \
+  --mail-type TRANSACTIONAL \
+  --website-url https://example.com \
+  --use-case-description "Use case description" \
+  --additional-contact-email-addresses info@example.com \
+  --contact-language EN
+  ```
 
-1. When you finish, choose **Submit**\.
+  In the preceding command, do the following:
+  + Replace *TRANSACTIONAL* with the type of email that you plan to send through Amazon SES\. You can specify either `TRANSACTIONAL` or `PROMOTIONAL`\. If more than one value applies, specify the option that applies to the majority of the email that you plan to send\.
+  + Replace *https://example\.com* with the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
+  + Replace *Use case description* with a description of how you plan to use Amazon SES to send email\. To help us process your request, you should answer the following questions:
+    + How do you plan to build or acquire your mailing list?
+    + How do you plan to handle bounces and complaints?
+    + How can recipients opt out of receiving email from you?
+    + How did you choose the sending rate or sending quota that you specified in this request?
+  + Replace *info@example\.com* with the email addresses where you want to receive communications about your account\. This can be a comma\-separated list of up to 4 email addresses\.
+  + Replace *EN* with your preferred language\. You can specify `EN` for English or `JP` for Japanese\.
 
-**To submit through the AWS CLI**
-   ```
-   aws sesv2 put-account-details \
-   --mail-type TRANSACTIONAL \
-   --website-url https://example.com \
-   --use-case-description "A description of how you plan to use Amazon SES to send email." \
-   --additional-contact-email-addresses info@example.com \
-   --contact-language EN
-   ```
+**Note**  
+Once you submit a review of your account details, you can’t edit your details until the review is complete\.
 
 The AWS Support team provides an initial response to your request within 24 hours\.
 
@@ -84,15 +91,16 @@ You can use the Amazon SES console to determine if your account is still in the 
 
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. Use the Region selector to choose an AWS Region\.
-
 1. In the navigation pane, under **Email Sending**, choose **Sending Statistics**\. 
 
-1. If your account is still in the sandbox in the AWS Region that you selected, you see a banner at the top of the page that resembles the example in the following image\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/sandbox-banner-send-statistics.png)
+1. Under **Your account details**, you will see the status of your account\.
 
-   If the banner doesn't appear on this page, then your account is no longer in the sandbox in the current Region\.
+   If your account is still being reviewed, a banner shows that your account is still under review\. Your **Production access** status will still read as **Sandbox**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/production_access_account_details_under_review.png)
 
-1. \(Optional\) Repeat steps 2–4 for each AWS Region that you use to send email with Amazon SES\.
+   The banner also reflects the status of your account should your request to move out of the sandbox be denied or have failed\.
+
+   If your request to move out of the sandbox has been granted, your **Production access** status is noted as **Enabled**\. This status means then your account is no longer in the sandbox in the current Region\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/production_access_account_details_enabled.png)
 
 You can also determine whether your account is in the sandbox by sending email to an address that you haven't verified\. If your account is in the sandbox, you receive an error message stating that the destination address isn't verified\.

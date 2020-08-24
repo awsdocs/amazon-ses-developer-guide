@@ -25,9 +25,12 @@ callback( null, { "disposition" : "STOP_RULE_SET" });
 
 For AWS Lambda code samples, see [Lambda function examples](receiving-email-action-lambda-example-functions.md)\. For examples of high\-level use cases, see [Use case examples](receiving-email-action-lambda-example-use-cases.md)\.
 
-### Input Format<a name="receiving-email-action-lambda-input"></a>
+### Input format<a name="receiving-email-action-lambda-input"></a>
 
 Amazon SES passes information to the Lambda function in JSON format\. The top\-level object contains a `Records` array, which is populated with properties `eventSource`, `eventVersion`, and `ses`\. The `ses` object contains `receipt` and `mail` objects, which are in exactly the same format as in the Amazon SNS notifications described in [Notification contents](receiving-email-notifications-contents.md)\.
+
+**Note**  
+The data that Amazon SES passes to Lambda includes metadata about the message, as well as several email headers\. However, it doesn't contain the body of the message\.
 
 The following is a high\-level view of the structure of the input that Amazon SES provides to the Lambda function\.
 

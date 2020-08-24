@@ -1,4 +1,4 @@
-# Amazon SES email\-sending process<a name="sending-concepts-process"></a>
+# Amazon SES email\-sending process<a name="send-email-concepts-process"></a>
 
 This topic describes what happens when you send an email with Amazon SES, and the various outcomes that can occur after the email is sent\. The following figure is a high\-level overview of the sending process:
 
@@ -22,18 +22,18 @@ This topic describes what happens when you send an email with Amazon SES, and th
 
 The following sections review the individual possible outcomes after a sender sends an email request to Amazon SES and after Amazon SES sends an email message to the recipient\. 
 
-## After a sender sends an email request to Amazon SES<a name="sending-concepts-process-after-request"></a>
+## After a sender sends an email request to Amazon SES<a name="send-email-concepts-process-after-request"></a>
 
 When the sender makes a request to Amazon SES to send an email, the call may succeed or fail\. The following sections describe what happens in each case\.
 
-### Successful sending request<a name="sending-concepts-process-after-request-success"></a>
+### Successful sending request<a name="send-email-concepts-process-after-request-success"></a>
 
 If the request to Amazon SES succeeds, Amazon SES returns a success response to the sender\. This message includes the *message ID*, a string of characters that uniquely identifies the request\. You can use the message ID to identify the sent email or to track problems encountered during sending\. Amazon SES then assembles an email message based on the request parameters, scans the message for questionable content and viruses and then sends it out over the Internet using Simple Mail Transfer Protocol \(SMTP\)\. Your message is usually sent immediately; the first delivery attempt typically occurs within milliseconds\.
 
 **Note**  
 If Amazon SES accepts the sender's request and then determines that the message contains a virus, Amazon SES stops processing the message and doesn't attempt to deliver it to the recipient's mail server\.
 
-### Failed sending request<a name="sending-concepts-process-after-request-failure"></a>
+### Failed sending request<a name="send-email-concepts-process-after-request-failure"></a>
 
 If the sender's email\-sending request to Amazon SES fails, Amazon SES responds to the sender with an error and drops the email\. The request could fail for several reasons\. For example, the request may not be formatted properly or the email address may not have been verified by the sender\. 
 
@@ -44,7 +44,7 @@ The method through which you can determine if the request has failed depends on 
 
 For information about errors that can occur when you send an email with Amazon SES, see [Amazon SES email sending errors](troubleshoot-error-messages.md)\.
 
-## After Amazon SES sends an email<a name="sending-concepts-process-after-send"></a>
+## After Amazon SES sends an email<a name="send-email-concepts-process-after-send"></a>
 
 If the sender's request to Amazon SES succeeds, then Amazon SES sends the email and one of the following outcomes occurs:
 + **Successful delivery and the recipient does not object to the email—**The email is accepted by the ISP, and the ISP delivers the email to the recipient\. A successful delivery is shown in the following figure\.  

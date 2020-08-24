@@ -2,7 +2,7 @@
 
 *Sender Policy Framework* \(SPF\) is an email validation standard that's designed to prevent email spoofing\. Domain owners use SPF to tell email providers which servers are allowed to send email from their domains\. SPF is defined in [RFC 7208](https://tools.ietf.org/html/rfc7208)\.
 
-To set up SPF, you publish a list of authorized mail servers to the DNS configuration for your domain\. When an email provider receives a message from your domain, it checks the DNS records for your domain to make sure that the email was sent from an authorized server\.
+To set up SPF, you publish a TXT record to the DNS configuration for your domain\. This record contains a list of the servers that you authorize to send email from your domain\. When an email provider receives a message from your domain, it checks the DNS records for your domain to make sure that the email was sent from an authorized server\.
 
 When you send email through Amazon SES, the messages that you send pass an SPF check by default\. Amazon SES specifies a MAIL FROM domain for each message that is a subdomain of *amazonses\.com*, and the sending mail server for the message aligns with this domain\.
 
@@ -10,7 +10,7 @@ You can optionally publish your own SPF record\. By publishing an SPF record, yo
 
 ## Adding an SPF Record<a name="send-email-authentication-spf-records"></a>
 
-To publish an SPF record, you have to add a new record to the DNS configuration for your domain\. The procedures for updating DNS records vary depending on which DNS or web hosting provider you use\.
+To publish an SPF record, you have to add a new TXT record to the DNS configuration for your domain\. The procedures for updating DNS records vary depending on which DNS or web hosting provider you use\.
 
 The following table includes links to the documentation for several common providers\. This list isn't exhaustive, and inclusion in this list isn't an endorsement or recommendation of any company's products or services\. If your provider isn't listed in the table, you can probably still publish an SPF record\.
 

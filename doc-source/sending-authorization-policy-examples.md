@@ -95,30 +95,30 @@ The following example policy grants permission to Amazon Cognito to send from id
 20. }
 ```
 
-The following example policy grants permission to all accounts within an AWS Organization to send from identity *example\.com*\. The AWS Organization is specified using the [PrincipalOrgID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalorgid) global condition key.
+The following example policy grants permission to all accounts within an AWS Organization to send from identity example\.com\. The AWS Organization is specified using the [PrincipalOrgID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalorgid) global condition key\.
 
 ```
- 1. {
- 2.   "Id":"ExampleAuthorizationPolicy",
- 3.   "Version":"2012-10-17",
- 4.   "Statement":[
- 5.     {
- 6.       "Sid":"AuthorizeOrg",
- 7.       "Effect":"Allow",
- 8.       "Resource":"arn:aws:ses:us-east-1:888888888888:identity/example.com",
- 9.       "Principal":"*",
- 10.      "Action":[
- 11.        "SES:SendEmail",
- 12.        "SES:SendRawEmail"
- 13.      ],
- 14.      "Condition":{
- 15.        "StringEquals":{
- 16.          "aws:PrincipalOrgID":"o-xxxxxxxxxxx"
- 17.        }
- 18.      }
- 19.    }
- 20.  ]
- 21. }
+{
+  "Id":"ExampleAuthorizationPolicy",
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Sid":"AuthorizeOrg",
+      "Effect":"Allow",
+      "Resource":"arn:aws:ses:us-east-1:888888888888:identity/example.com",
+      "Principal":"*",
+      "Action":[
+        "SES:SendEmail",
+        "SES:SendRawEmail"
+      ],
+      "Condition":{
+        "StringEquals":{
+          "aws:PrincipalOrgID":"o-xxxxxxxxxxx"
+        }
+      }
+    }
+  ]
+}
 ```
 
 ## Restricting the "From" Address<a name="sending-authorization-policy-example-from"></a>

@@ -173,7 +173,7 @@ The Spamhaus Domain Blocklist isn't affiliated with Amazon SES or AWS\. We make 
 
 ### If your account is under review<a name="reputationdashboard-domainblocklist-probation"></a>
 
-We look for references to blacklisted domains in the emails that you send during the review period\. If your emails still contain a significant number of references to blacklisted domains, we might pause your account's ability to send email until you resolve the issue\.
+We look for references to domains that have been used for malicious purposes in the emails that you send during the review period\. If your emails still contain a significant number of references to these domains, we might pause your account's ability to send email until you resolve the issue\.
 
 If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we extend the review period to ensure that we're only analyzing the number of blocklisted domains present in your email after you put your changes in place\. At the end of this extended review period, if the number of domain blocklist notifications has been reduced or eliminated, and we believe that you've taken steps to prevent this issue from occurring again in the future, we cancel the review period for your account\.
 
