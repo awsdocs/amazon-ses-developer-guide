@@ -125,7 +125,7 @@ def calculateKey(secretAccessKey, region):
     signature = sign(signature, SERVICE)
     signature = sign(signature, TERMINAL)
     signature = sign(signature, MESSAGE)
-    signatureAndVersion = bytes([VERSION]) + signature
+    signatureAndVersion = b'\x04' + bytes(signature)
     smtpPassword = base64.b64encode(signatureAndVersion)
     print(smtpPassword.decode('utf-8'))
 
