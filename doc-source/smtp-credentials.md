@@ -114,7 +114,7 @@ DATE = "11111111"
 SERVICE = "ses"
 MESSAGE = "SendRawEmail"
 TERMINAL = "aws4_request"
-VERSION = 0x04
+VERSION = b'\x04'
 
 def sign(key, msg):
     return hmac.new(key, msg.encode('utf-8'), hashlib.sha256).digest()
@@ -125,7 +125,7 @@ def calculateKey(secretAccessKey, region):
     signature = sign(signature, SERVICE)
     signature = sign(signature, TERMINAL)
     signature = sign(signature, MESSAGE)
-    signatureAndVersion = bytes([VERSION]) + signature
+    signatureAndVersion = VERSION + bytes(signature)
     smtpPassword = base64.b64encode(signatureAndVersion)
     print(smtpPassword.decode('utf-8'))
 
