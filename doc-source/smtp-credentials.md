@@ -163,3 +163,51 @@ main()
 ```
 
 ------
+#### [ Bash ]
+
+```
+#!/bin/bash
+
+while test $# -gt 0; do
+  case "$1" in
+    --secret)
+      shift
+      KEY=$1
+      shift
+      ;;
+    --region)
+      shift
+      REGION=$1
+      shift
+      ;;
+    *)
+      echo "$1 is not a recognized flag."
+      exit 1
+      ;;
+  esac
+done
+
+if [ -z $KEY ]; then
+    echo 'Option --secret missing' >&2
+    exit 1
+fi
+
+if [ -z $REGION ]; then
+    echo 'Option --region missing' >&2
+    exit 1
+fi
+
+DATE="11111111"
+SERVICE="ses"
+MESSAGE="SendRawEmail"
+TERMINAL="aws4_request"
+VERSION="04"
+KDATE=$(echo -n "${DATE}" | openssl dgst -sha256 -mac hmac -macopt "key:AWS4${KEY}" -binary | xxd -p -c 64)
+KREGION=$(echo -n "${REGION}" | openssl dgst -sha256 -mac hmac -macopt "hexkey:${KDATE}" -binary | xxd -p -c 64)
+KSERVICE=$(echo -n "${SERVICE}" | openssl dgst -sha256 -mac hmac -macopt "hexkey:${KREGION}" -binary | xxd -p -c 64)
+KTERMINAL=$(echo -n "${TERMINAL}" | openssl dgst -sha256 -mac hmac -macopt "hexkey:${KSERVICE}" -binary | xxd -p -c 64)
+KMESSAGE=$(echo -n "${MESSAGE}" | openssl dgst -sha256 -mac hmac -macopt "hexkey:${KTERMINAL}" -binary | xxd -p -c 64)
+echo -n "${VERSION}${KMESSAGE}" | xxd -r -p | base64;
+```
+
+------
