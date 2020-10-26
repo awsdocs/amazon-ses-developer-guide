@@ -85,6 +85,20 @@ Your SMTP username and password are different from your AWS Access Key ID and Se
    FEATURE(masquerade_entire_domain)dnl
    ```
 
+   `If unabele to send mail via above line use below ones and check.`
+
+   ```
+   define(`SMART_HOST', `email-smtp.us-west-2.amazonaws.com')dnl
+   define(`RELAY_MAILER_ARGS', `TCP $h 587')dnl
+   define(`ESMTP_MAILER_ARGS', `TCP $h 587')dnl
+   define(`confAUTH_MECHANISMS', `LOGIN PLAIN')dnl
+   TRUST_AUTH_MECH(`EXTERNAL DIGEST-MD5 CRAM-MD5 LOGIN PLAIN')dnl
+   FEATURE(`authinfo', `hash -o /etc/mail/authinfo.db')dnl
+   MASQUERADE_AS(`example.com')dnl
+   FEATURE(masquerade_envelope)dnl
+   FEATURE(masquerade_entire_domain)dnl
+   ```
+
    In the preceding text, do the following:
    + Replace *email\-smtp\.us\-west\-2\.amazonaws\.com* with the Amazon SES SMTP endpoint that you want to use\.
    + Replace *example\.com* with the domain that you want to use to send email\.
