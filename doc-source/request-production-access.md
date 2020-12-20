@@ -4,7 +4,7 @@ To help prevent fraud and abuse, and to help protect your reputation as a sender
 
 We place all new accounts in the Amazon SES *sandbox*\. While your account is in the sandbox, you can use all of the features of Amazon SES\. However, when your account is in the sandbox, we apply the following restrictions to your account:
 + You can only send mail **to** verified email addresses and domains, or to [the Amazon SES mailbox simulator](send-email-simulator.md)\.
-+ You can only send mail **from** verified email addresses and domains\.
++ You can only receive mail **from** verified email addresses and domains\.
 **Note**  
 This restriction applies even when your account isn't in the sandbox\.
 + You can send a maximum of 200 messages per 24\-hour period\.
