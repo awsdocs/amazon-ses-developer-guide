@@ -146,5 +146,5 @@ The `commonHeaders` object can have the fields shown in the following table\. Th
 |  `from`  | The values in the From header of the email\. | 
 |  `sender`  | The values in the Sender header of the email\. | 
 |  `returnPath`  | The values in the Return\-Path header of the email\. | 
-|  `reply-to`  | The values in the Reply\-To header of the email\. | 
+|  `replyTo`  | The values in the Reply\-To header of the email\. | 
 |  `subject`  | The value of the Subject header for the email\. | 
