@@ -173,6 +173,8 @@ The following example shows the values that these event records typically contai
 
 When you add an Amazon SNS action to your receipt rule, the notification contains the entire contents of the email\. If you want to have a Lambda function process the body of the email, you should instead add an Amazon SNS action to the receipt rule\. Then, in Amazon SNS, subscribe your Lambda function to the Amazon SNS function\. This configuration causes your Lambda function to be activated when it receives a notification from the Amazon SNS topic\.
 
+
+
 ```
 {
     'Records': [

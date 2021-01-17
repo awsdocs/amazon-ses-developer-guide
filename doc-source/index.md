@@ -1,7 +1,7 @@
 # Amazon Simple Email Service Developer Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -118,6 +118,8 @@ Amazon's trademarks and trade dress may not be used in
    + [Testing email sending in Amazon SES](send-email-simulator.md)
    + [Using the account-level suppression list](sending-email-suppression-list.md)
    + [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)
+   + [Using list management](sending-email-list-management.md)
+   + [Using subscription management](sending-email-subscription-management.md)
    + [Amazon SES and security protocols](security.md)
 + [Receiving email with Amazon SES](receiving-email.md)
    + [Amazon SES email receiving concepts](receiving-email-concepts.md)
@@ -213,6 +215,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Using the reputation dashboard to track bounce and complaint rates](reputation-dashboard-dg.md)
    + [Reputation dashboard messages](reputationdashboardmessages.md)
    + [Creating reputation monitoring alarms using CloudWatch](reputationdashboard-cloudwatch-alarm.md)
+   + [SNDS metrics for dedicated IPs](snds-metrics-dedicated-ips.md)
    + [Automatically pausing email sending](monitoring-sender-reputation-pausing.md)
       + [Automatically pausing email sending for your entire Amazon SES account](monitoring-sender-reputation-pausing-account.md)
       + [Automatically pausing email sending for a configuration set](monitoring-sender-reputation-pausing-configuration-set.md)

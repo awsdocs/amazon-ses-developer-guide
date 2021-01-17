@@ -19,7 +19,7 @@ If you're using Amazon SES to send email from an Amazon EC2 instance, you might 
 
 **To request that your account be removed from the Amazon SES sandbox using the AWS Management Console**
 
-1. Sign in to the AWS Management Console at [https://console\.aws\.amazon\.com/](https://console.aws.amazon.com/)\.
+1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
 1. In the navigation pane, under **Email Sending** choose **Sending Statistics**\.
 
@@ -31,7 +31,7 @@ If you're using Amazon SES to send email from an Amazon EC2 instance, you might 
    + For **Enable production access**, choose **Yes** or **No**\. You can only move out of the sandbox by choosing **Yes**\.
    + For **Mail Type**, choose the type of email that you plan to send\. If more than one value applies, choose the option that applies to the majority of the email that you plan to send\.
    + For **Website URL**, enter the URL of your website\. Providing this information helps us better understand the type of content that you plan to send\.
-   + For **Use case description**, explain how you plan to explain how you plan to use Amazon SES to send email\. To help us process your request, you should answer the following questions:
+   + For **Use case description**, explain how you plan to use Amazon SES to send email\. To help us process your request, you should answer the following questions:
      + How do you plan to build or acquire your mailing list?
      + How do you plan to handle bounces and complaints?
      + How can recipients opt out of receiving email from you?

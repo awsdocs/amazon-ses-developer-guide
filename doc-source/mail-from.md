@@ -6,7 +6,7 @@ When an email is sent, it has two addresses that indicate its source: a From add
 
 ## Why use a custom MAIL FROM domain?<a name="mail-from-overview"></a>
 
-By default, messages that you send through Amazon SES use a subdomain of *amazonses\.com* as the MAIL FROM domain\. Sender Policy Framework \(SPF\) authentication successfully validates these messages because the default MAIL FROM domain matches the application that sent the email— in this case, Amazon SES\.
+By default, messages that you send through Amazon SES use a subdomain of `amazonses.com` as the MAIL FROM domain\. Sender Policy Framework \(SPF\) authentication successfully validates these messages because the default MAIL FROM domain matches the application that sent the email— in this case, Amazon SES\.
 
 While this level of authentication is sufficient for many senders, other senders prefer to set the MAIL FROM domain to a domain that they own\. By setting up a custom MAIL FROM domain, your emails can comply with [Domain\-based Message Authentication, Reporting and Conformance \(DMARC\)](send-email-authentication-dmarc.md)\. DMARC enables a sender's domain to indicate that emails sent from the domain are protected by one or more authentication systems\.
 
@@ -15,7 +15,7 @@ There are two ways to achieve DMARC validation: using [Sender Policy Framework](
 ## Choosing a MAIL FROM domain<a name="mail-from-requirements"></a>
 
 The subdomain you use for your MAIL FROM domain has to meet the following requirements:
-+ The MAIL FROM domain has to be a subdomain of the verified identity \(email address or domain\) that you send email from\. For example, *mail\.example\.com* is a valid MAIL FROM domain for the domain *example\.com*\.
++ The MAIL FROM domain has to be a subdomain of the verified identity \(email address or domain\) that you send email from\. For example, `mail.example.com` is a valid MAIL FROM domain for the domain `example.com`\.
 + The MAIL FROM domain shouldn't be a domain that you send email from\. If you have to use the MAIL FROM domain in a From address, either [disable email feedback forwarding](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-disabling) and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email feedback forwarding destination](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-destination)\.
 + The MAIL FROM domain shouldn't be a domain that you use to receive email\.
 
@@ -44,7 +44,7 @@ You can configure a MAIL FROM domain for an entire domain\. When you do, all of 
    1. For **MAIL FROM domain**, enter the subdomain that you want to use as the MAIL FROM domain\.
 
    1. For **Behavior if MX record not found**, choose one of the following options:
-      + **Use *region*\.amazonses\.com as MAIL FROM** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will use a subdomain of *amazonses\.com*\. The subdomain varies based on the AWS Region in which you use Amazon SES\.
+      + **Use *region*\.amazonses\.com as MAIL FROM** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will use a subdomain of `amazonses.com`\. The subdomain varies based on the AWS Region in which you use Amazon SES\.
       + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will return a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this domain will be automatically rejected\.
 
    1. Choose **Set MAIL FROM Domain**\. A window appears that contains the MX and SPF records that you have to add to your domain's DNS configuration\. These records use the formats shown in the following table\.   
@@ -73,7 +73,7 @@ To successfully set up a custom MAIL FROM domain with Amazon SES, you must publi
 You can also set up a custom MAIL FROM domain for a specific email address\. In order to set up a custom MAIL FROM domain for an email address, you have to be able to modify the DNS records for the domain that the email address is associated with\.
 
 **Note**  
-You can't set up a custom MAIL FROM domain for addresses on a domain that you don't own \(for example, you can't create a custom MAIL FROM domain for an address on the *gmail\.com* domain, because you can't add the necessary DNS records to the domain\)\.
+You can't set up a custom MAIL FROM domain for addresses on a domain that you don't own \(for example, you can't create a custom MAIL FROM domain for an address on the `gmail.com` domain, because you can't add the necessary DNS records to the domain\)\.
 
 **To configure a verified email address to use a specified MAIL FROM domain**
 
@@ -90,7 +90,7 @@ You can't set up a custom MAIL FROM domain for addresses on a domain that you do
    1. For **MAIL FROM domain**, enter the subdomain that you want to use as the MAIL FROM domain\.
 
    1. For **Behavior if MX record not found**, choose one of the following options:
-      + **Use *region*\.amazonses\.com as MAIL FROM** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will use a subdomain of *amazonses\.com*\. The subdomain varies based on the AWS Region that you use Amazon SES in\.
+      + **Use *region*\.amazonses\.com as MAIL FROM** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will use a subdomain of `amazonses.com`\. The subdomain varies based on the AWS Region that you use Amazon SES in\.
       + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES will return a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this email address will be automatically rejected\.
 
    1. Choose **Set MAIL FROM Domain**\. A window appears that contains the MX and SPF records that you have to add to the DNS configuration for the domain that the email address belongs to\. These records use the formats shown in the following table\.   

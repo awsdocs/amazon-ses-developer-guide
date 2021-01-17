@@ -131,9 +131,9 @@ To add email addresses in bulk to your account\-level suppression list, complete
 
   JSON format example for adding addresses:
 
-  `{“emailAddress”:“recipient1@example.com”,“reason”:“BOUNCE”}`
+  `{"emailAddress":"recipient1@example.com","reason":"BOUNCE"}`
 
-  `{“emailAddress”:“recipient2@example.com”,“reason”:“COMPLAINT”}`
+  `{"emailAddress":"recipient2@example.com","reason":"COMPLAINT"}`
 
   In the preceding examples, replace *recipient1@example\.com* and *recipient2@example\.com* with the email addresses that you want to add to the account\-level suppression list\. The acceptable reasons that you're adding the addresses to the suppression list are `BOUNCE` and `COMPLAINT`\.
 + Give Amazon SES permission to read the Amazon S3 object\.
@@ -193,7 +193,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job \
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”PUT\"}}" \
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"PUT\"}}" \
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 
@@ -202,7 +202,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job `
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”PUT\"}}" `
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"PUT\"}}" `
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 
@@ -329,7 +329,7 @@ To remove email addresses in bulk from your account\-level suppression list, com
 
   JSON format example for adding addresses:
 
-  `{“emailAddress”:“recipient3@example.com”}`
+  `{"emailAddress":"recipient3@example.com"}`
 
   In the preceding examples, replace *recipient3@example\.com* with the email addresses that you want to remove from the account\-level suppression list\.
 + Give Amazon SES permission to read the Amazon S3 object\.
@@ -389,7 +389,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job \
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”DELETE\"}}" \
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"DELETE\"}}" \
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 
@@ -398,7 +398,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job `
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”DELETE\"}}" `
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"DELETE\"}}" `
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 

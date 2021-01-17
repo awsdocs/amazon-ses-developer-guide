@@ -55,7 +55,7 @@ You can select a later version of the \.NET Framework if necessary\.
    20.             // Replace smtp_username with your Amazon SES SMTP user name.
    21.             String SMTP_USERNAME = "smtp_username";
    22. 
-   23.             // Replace smtp_password with your Amazon SES SMTP user name.
+   23.             // Replace smtp_password with your Amazon SES SMTP password.
    24.             String SMTP_PASSWORD = "smtp_password";
    25. 
    26.             // (Optional) the name of a configuration set to use for this message.

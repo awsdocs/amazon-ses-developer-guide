@@ -51,7 +51,7 @@ The following is a complete POST request to the `SendRawEmail` operator\. The re
  3. Content-Type: application/x-www-form-urlencoded
  4. Date: Tue, 25 May 2010 21:20:27 +0000
  5. Content-Length: 174
- 6. X-Amzn-Authorization: AWS3-HTTPS AWSAccessKeyId=AKIAIOSFODNN7EXAMPLE,Algorithm=HMACSHA256,Signature=lBP67vCvGl ...
+ 6. Authorization: AWS4-HMAC-SHA256 Credential=AKIDEXAMPLE/20150830/us-east-1/iam/aws4_request, SignedHeaders=content-type;host;x-amz-date,Signature=5d672d79c1EXAMPLE
  7. 
  8. Action=SendRawEmail
  9. &Destinations.member.1=allan%40example.com

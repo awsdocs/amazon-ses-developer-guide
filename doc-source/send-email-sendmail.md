@@ -15,11 +15,13 @@ Before you complete the procedure in this section, you should complete the follo
 Depending on which operating system distribution you use, you might also need to install the following packages: `sendmail-cf`, `m4`, and `cyrus-sasl-plain`\.
 + Verify an identity to use as your From address\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)
 
-  If your account is still in the Amazon SES sandbox, you also have to verify the addresses that you send email to\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
+  If your account is in the Amazon SES sandbox, you also have to verify the addresses that you send email to\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 If you're using Amazon SES to send email from an Amazon EC2 instance, you should also complete the following steps:
-+ If you're using Amazon SES to send email from an Amazon EC2 instance, you might need to assign an Elastic IP Address to your Amazon EC2 instance in order for receiving email providers to accept your email\. For more information, see [Amazon EC2 Elastic IP Addresses](https://aws.amazon.com/articles/1346)\.
-+ If you're using Amazon SES to send email from an Amazon EC2 instance, you should complete the [Request to Remove Email Sending Limitations](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/ec2-email-limit-rdns-request) form\. Requesting this change removes the restrictions that Amazon EC2 applies to port 25 by default\.
++ If you're using Amazon SES to send email from an Amazon EC2 instance, you might need to assign an Elastic IP Address to your Amazon EC2 instance in order for receiving email providers to accept your email\. For more information, see [Amazon EC2 Elastic IP addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) in the *Amazon EC2 User Guide for Linux Instances*\.
++ Amazon Elastic Compute Cloud \(Amazon EC2\) restricts email traffic over port 25 by default\. To avoid timeouts when sending email through the SMTP endpoint from Amazon EC2, you can request that these restrictions be removed\. For more information, see [How do I remove the restriction on port 25 from my Amazon EC2 instance or AWS Lambda function?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.
+
+  Alternatively, you can modify the procedure in this section to use port 587 rather than port 25\.
 
 ## Configuring Sendmail<a name="send-email-sendmail-procedure"></a>
 

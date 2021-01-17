@@ -6,6 +6,10 @@ To work within these restrictions, you can use Amazon Virtual Private Cloud \(Am
 
 To use Amazon SES with Amazon VPC, you first have to create an Amazon EC2 instance in your organization's VPC\. You can then connect to this instance and use it to send email through Amazon SES\. This section contains instructions for configuring your Amazon EC2 instance and creating an Amazon VPC endpoint for Amazon SES\.
 
+**Note**  
+Amazon Elastic Compute Cloud \(Amazon EC2\) restricts email traffic over port 25 by default\. To avoid timeouts when sending email through the SMTP endpoint from Amazon EC2, you can request that these restrictions be removed\. For more information, see [How do I remove the restriction on port 25 from my Amazon EC2 instance or AWS Lambda function?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.  
+Alternatively, you can use a different port \(such as 587 or 2587\) to avoid this issue\.
+
 ## Prerequisites<a name="send-email-set-up-vpc-endpoints-prereqs"></a>
 
 Before you complete the procedure in this section, you have to complete the following steps:
@@ -64,7 +68,7 @@ In Amazon EC2, a *security group* lets you control inbound and outbound communic
 
 In Amazon VPC, a *VPC endpoint* lets you connect your VPC to supported AWS services\. In this case, you configure Amazon VPC so that your Amazon EC2 security group can connect to Amazon SES\.
 
-**To create the security group**
+**To create the VPC endpoint**
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 

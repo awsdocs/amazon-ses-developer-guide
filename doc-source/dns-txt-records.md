@@ -53,11 +53,11 @@ When you begin [the process of verifying a new domain](verify-domain-procedure.m
 
 1. Choose **Define simple record**\.
 
-1. In the **Define simple record** pane, make the following selections:
+1. In the **Define simple record** pane, do the following:
 
-   1. For **Record name**, type **\_amazonses**\.
+   1. For **Record name**, enter **\_amazonses**\.
 
-   1. For **Value/Route traffic to**, choose **IP address or another value depending on the record type**\. Then, in the text area, paste the TXT record value you copied from the Amazon SES console\.
+   1. For **Value/Route traffic to**, choose **IP address or another value depending on the record type**\. Then, in the text area, paste the TXT record value that you copied from the Amazon SES console\.
 
    1. For **Record type**, choose **TXT**\.
 
@@ -65,7 +65,7 @@ When you begin [the process of verifying a new domain](verify-domain-procedure.m
 
    1. Choose **Define simple record**\.
 
-1. On the **Domains** page in the Amazon SES console, check the value in the **Status** column next to the domain you just attempted to verify\. If the status is "pending verification," wait a few minutes, and then choose **refresh** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/refresh_icon.png)\)\. Repeat this process until the value in the status column is "verified\."
+1. Wait for about 30 minutes for the record to propogate\. Then, on the **Domains** page in the Amazon SES console, check the value in the **Status** column next to the domain\. If the status is "pending verification," wait for another 30 minutes, and then choose **refresh** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/refresh_icon.png)\)\. Repeat this process until the value in the status column is "verified\."
 
 ### Generic procedures for other DNS providers<a name="add-dns-txt-record-general"></a>
 

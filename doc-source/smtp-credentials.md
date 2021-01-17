@@ -39,7 +39,7 @@ You can view a list of existing SMTP credentials that you've created using this 
 
 You can also use the IAM console to delete existing SMTP users\. To learn more about deleting users, see [https://docs\.aws\.amazon\.com/IAM/latest/UserGuide/Managing IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html) in the *IAM Getting Started Guide*\.
 
-If you want to change your SMTP password, delete your existing SMTP user in the IAM console\. Then, complete the procedures above to generate a new set of SMTP credentials\.
+If you want to rotate your SMTP credentials, complete the procedure above to generate a new set of SMTP credentials\. Then, test the new credentials to ensure that they work as expected\. Finally, delete the IAM user associated with the old SMTP credentials in the IAM console\. For more information about deleting users in IAM, see [Managing users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting) in the *IAM User Guide*\.
 
 ## Obtaining Amazon SES SMTP credentials by converting existing AWS credentials<a name="smtp-credentials-convert"></a>
 
@@ -49,7 +49,7 @@ If you have an IAM user that you set up using the IAM interface, you can derive 
 Don't use temporary AWS credentials to derive SMTP credentials\. The Amazon SES SMTP interface doesn't support SMTP credentials that have been generated from temporary security credentials\. 
 
 To enable the IAM user to send email using the Amazon SES SMTP interface, you need to do the following two steps:
-+ Derive the user's SMTP credentials from their AWS credentials using the algorithm provided in this section\. Because you are starting from AWS credentials, the SMTP username is the same as the AWS access key ID, so you just need to generate the SMTP password\.
++ Derive the user's SMTP credentials from their AWS credentials using the algorithm provided in this section\. Because you are starting from AWS credentials, the SMTP user name is the same as the AWS access key ID, so you just need to generate the SMTP password\.
 + Apply the following policy to the IAM user:
 
   ```
@@ -70,7 +70,7 @@ To enable the IAM user to send email using the Amazon SES SMTP interface, you ne
 **Note**  
 Although you can generate Amazon SES SMTP credentials for any IAM user, we recommend that you create a separate IAM user when you generate your SMTP credentials\. For information about why it is good practice to create users for specific purposes, go to [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html)\.
 
-The following pseudocode shows the algorithm that converts an AWS Secret Access Key to an Amazon SES SMTP password\.
+The following pseudocode shows an algorithm that converts an AWS Secret Access Key to an Amazon SES SMTP password\.
 
 ```
  1. // Modify this variable to include your AWS Secret Access Key
@@ -84,14 +84,14 @@ The following pseudocode shows the algorithm that converts an AWS Secret Access 
  9. service = "ses";
 10. terminal = "aws4_request";
 11. message = "SendRawEmail";
-12. versionInBytes = 0x04;
+12. version = 0x04;
 13. 
 14. kDate = HmacSha256(date, "AWS4" + key);
 15. kRegion = HmacSha256(region, kDate);
 16. kService = HmacSha256(service, kRegion);
 17. kTerminal = HmacSha256(terminal, kService);
 18. kMessage = HmacSha256(message, kTerminal);
-19. signatureAndVersion = Concatenate(versionInBytes, kMessage);
+19. signatureAndVersion = Concatenate(version, kMessage);
 20. smtpPassword = Base64(signatureAndVersion);
 ```
 
@@ -108,58 +108,90 @@ import hashlib
 import base64
 import argparse
 
-# Values that are required to calculate the signature. These values should
-# never change.
+SMTP_REGIONS = [
+    'us-east-2',       # US East (Ohio)
+    'us-east-1',       # US East (N. Virginia)
+    'us-west-2',       # US West (Oregon)
+    'ap-south-1',      # Asia Pacific (Mumbai)
+    'ap-northeast-2',  # Asia Pacific (Seoul)
+    'ap-southeast-1',  # Asia Pacific (Singapore)
+    'ap-southeast-2',  # Asia Pacific (Sydney)
+    'ap-northeast-1',  # Asia Pacific (Tokyo)
+    'ca-central-1',    # Canada (Central)
+    'eu-central-1',    # Europe (Frankfurt)
+    'eu-west-1',       # Europe (Ireland)
+    'eu-west-2',       # Europe (London)
+    'sa-east-1',       # South America (Sao Paulo)
+    'us-gov-west-1',   # AWS GovCloud (US)
+]
+
+# These values are required to calculate the signature. Do not change them.
 DATE = "11111111"
 SERVICE = "ses"
 MESSAGE = "SendRawEmail"
 TERMINAL = "aws4_request"
 VERSION = 0x04
 
+
 def sign(key, msg):
     return hmac.new(key, msg.encode('utf-8'), hashlib.sha256).digest()
 
-def calculateKey(secretAccessKey, region):
-    signature = sign(("AWS4" + secretAccessKey).encode('utf-8'), DATE)
+
+def calculate_key(secret_access_key, region):
+    if region not in SMTP_REGIONS:
+        raise ValueError(f"The {region} Region doesn't have an SMTP endpoint.")
+
+    signature = sign(("AWS4" + secret_access_key).encode('utf-8'), DATE)
     signature = sign(signature, region)
     signature = sign(signature, SERVICE)
     signature = sign(signature, TERMINAL)
     signature = sign(signature, MESSAGE)
-    signatureAndVersion = bytes([VERSION]) + signature
-    smtpPassword = base64.b64encode(signatureAndVersion)
-    print(smtpPassword.decode('utf-8'))
+    signature_and_version = bytes([VERSION]) + signature
+    smtp_password = base64.b64encode(signature_and_version)
+    return smtp_password.decode('utf-8')
+
 
 def main():
-    parser = argparse.ArgumentParser(description='Convert a Secret Access Key for an IAM user to an SMTP password.')
-    parser.add_argument('--secret',
-            help='The Secret Access Key that you want to convert.',
-            required=True,
-            action="store")
-    parser.add_argument('--region',
-            help='The name of the AWS Region that the SMTP password will be used in.',
-            required=True,
-            choices=[
-                'us-east-2',      #US East (Ohio)
-                'us-east-1',      #US East (N. Virginia)
-                'us-west-2',      #US West (Oregon)
-                'ap-south-1',     #Asia Pacific (Mumbai)
-                'ap-northeast-2', #Asia Pacific (Seoul)
-                'ap-southeast-1', #Asia Pacific (Singapore)
-                'ap-southeast-2', #Asia Pacific (Sydney)
-                'ap-northeast-1', #Asia Pacific (Tokyo)
-                'ca-central-1',   #Canada (Central)
-                'eu-central-1',   #Europe (Frankfurt)
-                'eu-west-1',      #Europe (Ireland)
-                'eu-west-2',      #Europe (London)
-                'sa-east-1',      #South America (São Paulo)
-                'us-gov-west-1'   #AWS GovCloud (US)
-            ],
-            action="store")
+    parser = argparse.ArgumentParser(
+        description='Convert a Secret Access Key for an IAM user to an SMTP password.')
+    parser.add_argument(
+        'secret', help='The Secret Access Key to convert.')
+    parser.add_argument(
+        'region',
+        help='The AWS Region where the SMTP password will be used.',
+        choices=SMTP_REGIONS)
     args = parser.parse_args()
+    print(calculate_key(args.secret, args.region))
 
-    calculateKey(args.secret,args.region)
 
-main()
+if __name__ == '__main__':
+    main()
 ```
 
+To obtain your SMTP password by using this script, save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, execute the following command:
+
+```
+python path/to/smtp_credentials_generate.py wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY us-east-1
+```
+
+In the preceding command, do the following:
++ Replace *path/to/* with the path to the location where you saved `smtp_credentials_generate.py`\.
++ Replace *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY* with the Secret Access Key that you want to convert into an SMTP password\.
++ Replace *us\-east\-1* with the AWS Region in which you want to use the SMTP credentials\.
+
+When this script runs successfully, the only output is your SMTP password\.
+
 ------
+
+To use this script, first save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, execute the following command:
+
+```
+python path/to/smtp_credentials_generate.py wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY us-east-1
+```
+
+In the preceding command, do the following:
++ Replace *path/to/* with the path to the location where you saved `smtp_credentials_generate.py`\.
++ Replace *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY* with the Secret Access Key that you want to convert into an SMTP password\.
++ Replace *us\-east\-1* with the AWS Region in which you want to use the SMTP credentials\.
+
+When this script runs successfully, the only output is your SMTP password\.

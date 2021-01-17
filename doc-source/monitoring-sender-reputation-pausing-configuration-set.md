@@ -46,6 +46,8 @@ Use the search box at the top of the list of policies to quickly locate these po
 
 1. On the **Review** page, for **Name**, type a name for the role\. Choose **Create role**\.
 
+   
+
 ## Part 3: Create the Lambda Function<a name="monitoring-sender-reputation-pausing-configuration-set-part-3"></a>
 
 After you create an IAM role, you can create the Lambda function that pauses email sending for the configuration set\.

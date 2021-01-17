@@ -31,3 +31,4 @@ For a list of SMTP response codes, see [SMTP response codes returned by Amazon S
 When you access Amazon SES through the SMTP interface, your SMTP client application assembles the message, so the information you need to provide depends on the application that you're using\. At a minimum, the SMTP exchange between a client and a server requires a source address, a destination address, and message data\.
 
 If you're using the SMTP interface and have feedback forwarding enabled, then your bounces, complaints, and delivery notifications are sent to the "MAIL FROM" address\. Any "Reply\-To" address that you specify isn't used\.
+

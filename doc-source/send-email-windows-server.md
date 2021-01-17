@@ -54,6 +54,8 @@ Your SMTP user name and password are not the same as your AWS access key ID and 
    1. Choose **Outbound Connections**\.
 
    1. In the **Outbound Connections** dialog box, ensure that the port is 25 or 587\. 
+**Note**  
+If your mail server is hosted on Amazon EC2, and you plan to send email using port 25, you must first remove the port 25 restrictions for your account\. For more information, see [How do I remove the restriction on port 25 from my Amazon EC2 instance or AWS Lambda function?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.
 
    1. Choose **Advanced**\.
 
