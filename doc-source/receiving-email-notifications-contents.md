@@ -127,7 +127,7 @@ The `mail` object has the following fields\.
 |  `timestamp`  |  String that contains the time at which the email was received, in ISO8601 format\.  | 
 |  `headers`  |  A list of Amazon SES headers and your custom headers\. Each header in the list has a `name` field and a `value` field\.  | 
 |  [`commonHeaders`](#receiving-email-notifications-contents-mail-object-commonHeaders)  |  A list of headers common to all emails\. Each header in the list is composed of a name and a value\.  | 
-|  `headersTruncated`  |  String that specifies whether the headers were truncated in the notification, which will happen if the headers are larger than 10 KB\. Possible values are `true` and `false`\.  | 
+|  `headersTruncated`  |  Boolean that specifies whether the headers were truncated in the notification, which will happen if the headers are larger than 10 KB\. Possible values are true and false\.  | 
 
 ### commonHeaders object<a name="receiving-email-notifications-contents-mail-object-commonHeaders"></a>
 
@@ -145,6 +145,6 @@ The `commonHeaders` object can have the fields shown in the following table\. Th
 |  `bcc`  | The values in the BCC header of the email\. | 
 |  `from`  | The values in the From header of the email\. | 
 |  `sender`  | The values in the Sender header of the email\. | 
-|  `returnPath`  | The values in the Return\-Path header of the email\. | 
+|  `returnPath`  | The value in the Return\-Path header of the email\. | 
 |  `reply-to`  | The values in the Reply\-To header of the email\. | 
 |  `subject`  | The value of the Subject header for the email\. | 
