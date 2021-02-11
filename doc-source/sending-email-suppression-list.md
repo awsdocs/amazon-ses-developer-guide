@@ -94,7 +94,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 put-suppressed-destination \
-  --email-address recipient@example.com \
+  --email-address="recipient@example.com" \
   --reason BOUNCE
   ```
 
@@ -103,7 +103,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 put-suppressed-destination `
-  --email-address recipient@example.com `
+  --email-address="recipient@example.com" `
   --reason BOUNCE
   ```
 
@@ -296,7 +296,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 delete-suppressed-destination \
-  --email-address recipient@example.com
+  --email-address="recipient@example.com"
   ```
 
 ------
@@ -304,7 +304,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 delete-suppressed-destination `
-  --email-address recipient@example.com
+  --email-address="recipient@example.com"
   ```
 
 ------
