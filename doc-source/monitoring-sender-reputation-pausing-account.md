@@ -54,7 +54,7 @@ This function only pauses email sending in the AWS Region you select in this ste
 
 1. Under **Author from scratch**, complete the following steps:
    + For **Name**, type a name for the Lambda function\.
-   + For **Runtime**, choose **Node\.js 6\.10**\.
+   + For **Runtime**, choose **Node\.js 10\.x**\.
    + For **Role**, choose **Choose an existing role**\.
    + For **Existing role**, choose the IAM role you created in [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1)\.
 
