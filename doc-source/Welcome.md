@@ -1,11 +1,6 @@
 # What is Amazon SES?<a name="Welcome"></a>
 
-
-|  | 
-| --- |
-| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
-
-Welcome to the Amazon Simple Email Service \(Amazon SES\) Developer Guide\. [Amazon SES](https://aws.amazon.com/ses) is an email platform that provides an easy, cost\-effective way for you to send and receive email using your own email addresses and domains\.
+[Amazon SES](https://aws.amazon.com/ses) is an email platform that provides an easy, cost\-effective way for you to send and receive email using your own email addresses and domains\.
 
 For example, you can send marketing emails such as special offers, transactional emails such as order confirmations, and other types of correspondence such as newsletters\. When you use Amazon SES to receive mail, you can develop software solutions such as email autoresponders, email unsubscribe systems, and applications that generate customer support tickets from incoming emails\.
 
@@ -48,10 +43,3 @@ This guide contains the following sections:
 |  [Quotas](quotas.md)  |  Provides a list of quotas that apply to Amazon SES\.  | 
 |  [Resources](resources.md)  |  Lists resources that you may find useful as you work with Amazon SES  | 
 | [Appendix](appendix.md) | Provides supplementary information about header fields, unsupported attachment types, and scripts\. | 
-
-
-****  
-
-|  | 
-| --- |
-| For information and discussions about a variety of topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

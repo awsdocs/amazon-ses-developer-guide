@@ -1,8 +1,8 @@
-# Managing IP Pools<a name="managing-ip-pools"></a>
+# Managing dedicated IP pools<a name="managing-ip-pools"></a>
 
 You can use IP pools to create groups of dedicated IP addresses for sending specific types of email\. You can also use a pool of IP addresses that are shared by all Amazon SES customers\.
 
-## Assigning an IP Pool to an Existing Configuration Set<a name="assign-ip-pools"></a>
+## Assigning an IP pool to an existing configuration set<a name="assign-ip-pools"></a>
 
 You can use the Amazon SES console to associate an IP pool with an existing configuration set\. 
 
@@ -21,7 +21,7 @@ You can use the Amazon SES console to associate an IP pool with an existing conf
 
    When you are finished, choose **Assign**\.
 
-## Modifying IP Pool Assignments<a name="edit-config-set-ip-pools"></a>
+## Modifying IP pool assignments<a name="edit-config-set-ip-pools"></a>
 
 You can also use the Amazon SES console to assign a different pool to a configuration set that is already associated with a pool\. Assigning a different pool to a configuration set overwrites the previous association\.
 

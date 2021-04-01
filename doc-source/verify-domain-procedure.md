@@ -1,6 +1,8 @@
 # Verifying a domain with Amazon SES<a name="verify-domain-procedure"></a>
 
-The following procedure shows you how to verify a domain using the Amazon SES console\. If you want to use the Amazon SES API instead, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. 
+The following procedure shows you how to verify a domain using the Amazon SES console\. If you want to use the Amazon SES API v1 instead, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. 
+
+To set a default configuration set while verifying an email identity, see [Managing Amazon SES default configuration sets](managing-configuration-sets-default.md)\.
 
 **Note**  
 As an alternative to completing the procedure in this section, you can also enable [Easy DKIM](send-email-authentication-dkim-easy.md)\. When Amazon SES detects that you've added the DKIM records to the DNS configuration for a domain, you can start sending email from that domain, even if you haven't already completed the procedure in this section\.

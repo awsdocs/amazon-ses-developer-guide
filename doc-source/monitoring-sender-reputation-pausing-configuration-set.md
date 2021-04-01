@@ -18,7 +18,7 @@ The solution described in this section pauses email sending for a specific confi
 
 Before you can configure Amazon SES to automatically pause email sending for a configuration set, you must first enable the export of reputation metrics for the configuration set\.
 
-To enable the export of bounce and complaint metrics for the configuration set, complete the steps in [Exporting Reputation Metrics for a Configuration Set to CloudWatch](configuration-sets-export-metrics.md)\.
+To enable the export of bounce and complaint metrics for the configuration set, complete the steps in [Exporting reputation metrics for a configuration set to CloudWatch](configuration-sets-export-metrics.md)\.
 
 ## Part 2: Create an IAM Role<a name="monitoring-sender-reputation-pausing-configuration-set-part-2"></a>
 

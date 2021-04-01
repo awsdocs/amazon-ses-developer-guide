@@ -114,7 +114,7 @@ You can use the [CreateContact](https://docs.aws.amazon.com/ses/latest/APIRefere
 
 ### Bulk importing contacts to your contact list<a name="configuring-list-management-bulk-import"></a>
 
-You can manually add addresses in bulk by first uploading your contacts into an Amazon S3 object followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
+You can manually add addresses in bulk by first uploading your contacts into an Amazon S3 object that you have permission to access followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 You should create a contact list before importing your contacts\.
 
@@ -180,50 +180,6 @@ To add contacts in bulk to your contact list, complete the following steps\.
 
   The following attributes are supported when uploading your contacts into an Amazon S3 object in either CSV or JSON format:    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-email-list-management.html)
-+ Give Amazon SES permission to read the Amazon S3 object\.
-
-  When applied to an Amazon S3 bucket, the following policy gives Amazon SES permission to read that bucket\. For more information about attaching policies to Amazon S3 buckets, see [Using Bucket Policies and User Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*\.
-
-  ```
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Sid": "AllowSESGet",
-              "Effect": "Allow",
-              "Principal": {
-                  "Service": "ses.amazonaws.com"
-              },
-              "Action": "s3:GetObject",
-              "Resource": "arn:aws:s3:::BUCKET-NAME/OBJECT-NAME",
-              "Condition": {
-                  "StringEquals": {
-                      "aws:Referer": "AWSACCOUNTID"
-                  }
-              }
-          }
-      ]
-  }
-  ```
-+ Give Amazon SES permission to use your AWS KMS master key\.
-
-  If the Amazon S3 object is encrypted with an AWS KMS key, you need to give Amazon SES permission to use the AWS KMS key\. Amazon SES can only attain permission from a custom master key, not a default master key\. You need to give Amazon SES permission to use the custom master key by adding a statement to the key's policy\.
-
-  Paste the following policy statement into the key policy to permit Amazon SES to use your custom master key\.
-
-  ```
-  {
-     "Sid": "AllowSESToDecrypt", 
-     "Effect": "Allow",
-     "Principal": {
-         "Service":"ses.amazonaws.com"
-     },
-     "Action": [
-         "kms:Decrypt", 
-     ],
-     "Resource": "*"
-  }
-  ```
 + Use the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 **Note**  

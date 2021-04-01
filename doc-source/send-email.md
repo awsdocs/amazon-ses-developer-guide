@@ -1,10 +1,5 @@
 # Sending email with Amazon SES<a name="send-email"></a>
 
-
-|  | 
-| --- |
-| Are you trying to send an email to Amazon\.com to inquire about your account or an order that you placed? If so, see [Contact Us](http://www.amazon.com/gp/help/customer/contact-us/) on the Amazon website\. | 
-
 When you send an email, you are sending it through some type of outbound email server\. That email server might be provided by your Internet service provider \(ISP\), your company's IT department, or you might have set it up yourself\. The email server accepts your email content, formats it to comply with email standards, and then sends the email out over the Internet\. The email may pass through other servers until it eventually reaches a receiver \(an entity, such as an ISP, that receives the email on behalf of the recipient\)\. The receiver then delivers the email to the recipient\. The following diagram illustrates the basic email\-sending process\.
 
 ![\[Email-sending process\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/email_sending_process-diagram.png)

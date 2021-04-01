@@ -1,5 +1,8 @@
 # Regions and Amazon SES<a name="regions"></a>
 
+**There is a newer version of this page:**  
+[Select this link](https://docs.aws.amazon.com/ses/latest/dg/regions.html) to view the updated version of this page in the SES Developer Guide V2\.
+
 Amazon SES is available in several AWS Regions around the world\. In each Region, AWS maintains multiple Availability Zones\. These Availability Zones are physically isolated from each other, but are united by private, low\-latency, high\-throughput, and highly redundant network connections\. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency\.
 
 For a list of all of the Amazon SES Regional endpoints, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the *Amazon Web Services General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
