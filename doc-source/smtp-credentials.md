@@ -168,6 +168,8 @@ To obtain your SMTP password by using this script, save the preceding code as `s
 python path/to/smtp_credentials_generate.py wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY us-east-1
 ```
 
+Note: You will need to run the above command with `python3` if the default version of `python` is 2.x.
+
 In the preceding command, do the following:
 + Replace *path/to/* with the path to the location where you saved `smtp_credentials_generate.py`\.
 + Replace *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY* with the secret access key that you want to convert into an SMTP password\.
