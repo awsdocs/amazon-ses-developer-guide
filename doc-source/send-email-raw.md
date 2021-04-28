@@ -416,7 +416,7 @@ The following code example shows how to use the [Python email\.mime](https://doc
  87.         Destinations=[
  88.             RECIPIENT
  89.         ],
- 90.         RawMessage={
+ 90.         Message={
  91.             'Data':msg.as_string(),
  92.         },
  93.         ConfigurationSetName=CONFIGURATION_SET
