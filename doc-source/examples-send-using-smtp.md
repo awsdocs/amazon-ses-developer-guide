@@ -39,63 +39,72 @@ The following code example is a complete solution for sending email through the 
 27.             // If you comment out this line, you also need to remove or comment out
 28.             // the "X-SES-CONFIGURATION-SET" header below.
 29.             String CONFIGSET = "ConfigSet";
-30. 
-31.             // If you're using Amazon SES in a region other than US West (Oregon), 
-32.             // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
-33.             // endpoint in the appropriate AWS Region.
-34.             String HOST = "email-smtp.us-west-2.amazonaws.com";
+30.             
+31.             // Adding message tags
+32.             String TAG0 = "key0=value0";
+33.             String TAG1 = "key1=value1";
+34.             
 35. 
-36.             // The port you will connect to on the Amazon SES SMTP endpoint. We
-37.             // are choosing port 587 because we will use STARTTLS to encrypt
-38.             // the connection.
-39.             int PORT = 587;
+36.             // If you're using Amazon SES in a region other than US West (Oregon), 
+37.             // replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
+38.             // endpoint in the appropriate AWS Region.
+39.             String HOST = "email-smtp.us-west-2.amazonaws.com";
 40. 
-41.             // The subject line of the email
-42.             String SUBJECT =
-43.                 "Amazon SES test (SMTP interface accessed using C#)";
-44. 
-45.             // The body of the email
-46.             String BODY =
-47.                 "<h1>Amazon SES Test</h1>" +
-48.                 "<p>This email was sent through the " +
-49.                 "<a href='https://aws.amazon.com/ses'>Amazon SES</a> SMTP interface " +
-50.                 "using the .NET System.Net.Mail library.</p>";
-51. 
-52.             // Create and build a new MailMessage object
-53.             MailMessage message = new MailMessage();
-54.             message.IsBodyHtml = true;
-55.             message.From = new MailAddress(FROM, FROMNAME);
-56.             message.To.Add(new MailAddress(TO));
-57.             message.Subject = SUBJECT;
-58.             message.Body = BODY;
-59.             // Comment or delete the next line if you are not using a configuration set
-60.             message.Headers.Add("X-SES-CONFIGURATION-SET", CONFIGSET);
-61. 
-62.             using (var client = new System.Net.Mail.SmtpClient(HOST, PORT))
-63.             {
-64.                 // Pass SMTP credentials
-65.                 client.Credentials =
-66.                     new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
-67. 
-68.                 // Enable SSL encryption
-69.                 client.EnableSsl = true;
+41.             // The port you will connect to on the Amazon SES SMTP endpoint. We
+42.             // are choosing port 587 because we will use STARTTLS to encrypt
+43.             // the connection.
+44.             int PORT = 587;
+45. 
+46.             // The subject line of the email
+47.             String SUBJECT =
+48.                 "Amazon SES test (SMTP interface accessed using C#)";
+49. 
+50.             // The body of the email
+51.             String BODY =
+52.                 "<h1>Amazon SES Test</h1>" +
+53.                 "<p>This email was sent through the " +
+54.                 "<a href='https://aws.amazon.com/ses'>Amazon SES</a> SMTP interface " +
+55.                 "using the .NET System.Net.Mail library.</p>";
+56. 
+57.             // Create and build a new MailMessage object
+58.             MailMessage message = new MailMessage();
+59.             message.IsBodyHtml = true;
+60.             message.From = new MailAddress(FROM, FROMNAME);
+61.             message.To.Add(new MailAddress(TO));
+62.             message.Subject = SUBJECT;
+63.             message.Body = BODY;
+64.             // Comment or delete the next line if you are not using a configuration set
+65.             message.Headers.Add("X-SES-CONFIGURATION-SET", CONFIGSET);
+66.             // Add message tags to the header
+67.             message.Headers.Add("X-SES-MESSAGE-TAGS", TAG0);
+68.             message.Headers.Add("X-SES-MESSAGE-TAGS", TAG1);
+69.             
 70. 
-71.                 // Try to send the message. Show status in console.
-72.                 try
-73.                 {
-74.                     Console.WriteLine("Attempting to send email...");
-75.                     client.Send(message);
-76.                     Console.WriteLine("Email sent!");
-77.                 }
-78.                 catch (Exception ex)
-79.                 {
-80.                     Console.WriteLine("The email was not sent.");
-81.                     Console.WriteLine("Error message: " + ex.Message);
-82.                 }
-83.             }
-84.         }
-85.     }
-86. }
+71.             using (var client = new System.Net.Mail.SmtpClient(HOST, PORT))
+72.             {
+73.                 // Pass SMTP credentials
+74.                 client.Credentials =
+75.                     new NetworkCredential(SMTP_USERNAME, SMTP_PASSWORD);
+76. 
+77.                 // Enable SSL encryption
+78.                 client.EnableSsl = true;
+79. 
+80.                 // Try to send the message. Show status in console.
+81.                 try
+82.                 {
+83.                     Console.WriteLine("Attempting to send email...");
+84.                     client.Send(message);
+85.                     Console.WriteLine("Email sent!");
+86.                 }
+87.                 catch (Exception ex)
+88.                 {
+89.                     Console.WriteLine("The email was not sent.");
+90.                     Console.WriteLine("Error message: " + ex.Message);
+91.                 }
+92.             }
+93.         }
+94.     }
+95. }
 ```
 
 ------
@@ -647,67 +656,75 @@ The following code example is a complete solution for sending email through the 
 23. # the "X-SES-CONFIGURATION-SET:" header below.
 24. CONFIGURATION_SET = "ConfigSet"
 25. 
-26. # If you're using Amazon SES in an AWS Region other than US West (Oregon), 
-27. # replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
-28. # endpoint in the appropriate region.
-29. HOST = "email-smtp.us-west-2.amazonaws.com"
-30. PORT = 587
-31. 
-32. # The subject line of the email.
-33. SUBJECT = 'Amazon SES Test (Python smtplib)'
-34. 
-35. # The email body for recipients with non-HTML email clients.
-36. BODY_TEXT = ("Amazon SES Test\r\n"
-37.              "This email was sent through the Amazon SES SMTP "
-38.              "Interface using the Python smtplib package."
-39.             )
-40. 
-41. # The HTML body of the email.
-42. BODY_HTML = """<html>
-43. <head></head>
-44. <body>
-45.   <h1>Amazon SES SMTP Email Test</h1>
-46.   <p>This email was sent with Amazon SES using the
-47.     <a href='https://www.python.org/'>Python</a>
-48.     <a href='https://docs.python.org/3/library/smtplib.html'>
-49.     smtplib</a> library.</p>
-50. </body>
-51. </html>
-52.             """
-53. 
-54. # Create message container - the correct MIME type is multipart/alternative.
-55. msg = MIMEMultipart('alternative')
-56. msg['Subject'] = SUBJECT
-57. msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
-58. msg['To'] = RECIPIENT
-59. # Comment or delete the next line if you are not using a configuration set
-60. msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
-61. 
-62. # Record the MIME types of both parts - text/plain and text/html.
-63. part1 = MIMEText(BODY_TEXT, 'plain')
-64. part2 = MIMEText(BODY_HTML, 'html')
+26. # Adding message tags
+27. TAG0 = "key0=value0"
+28. TAG1 = "key1=value1"
+29. 
+30. # If you're using Amazon SES in an AWS Region other than US West (Oregon), 
+31. # replace email-smtp.us-west-2.amazonaws.com with the Amazon SES SMTP  
+32. # endpoint in the appropriate region.
+33. HOST = "email-smtp.us-west-2.amazonaws.com"
+34. PORT = 587
+35. 
+36. # The subject line of the email.
+37. SUBJECT = 'Amazon SES Test (Python smtplib)'
+38. 
+39. # The email body for recipients with non-HTML email clients.
+40. BODY_TEXT = ("Amazon SES Test\r\n"
+41.              "This email was sent through the Amazon SES SMTP "
+42.              "Interface using the Python smtplib package."
+43.             )
+44. 
+45. # The HTML body of the email.
+46. BODY_HTML = """<html>
+47. <head></head>
+48. <body>
+49.   <h1>Amazon SES SMTP Email Test</h1>
+50.   <p>This email was sent with Amazon SES using the
+51.     <a href='https://www.python.org/'>Python</a>
+52.     <a href='https://docs.python.org/3/library/smtplib.html'>
+53.     smtplib</a> library.</p>
+54. </body>
+55. </html>
+56.             """
+57. 
+58. # Create message container - the correct MIME type is multipart/alternative.
+59. msg = MIMEMultipart('alternative')
+60. msg['Subject'] = SUBJECT
+61. msg['From'] = email.utils.formataddr((SENDERNAME, SENDER))
+62. msg['To'] = RECIPIENT
+63. # Comment or delete the next line if you are not using a configuration set
+64. msg.add_header('X-SES-CONFIGURATION-SET',CONFIGURATION_SET)
 65. 
-66. # Attach parts into message container.
-67. # According to RFC 2046, the last part of a multipart message, in this case
-68. # the HTML message, is best and preferred.
-69. msg.attach(part1)
-70. msg.attach(part2)
-71. 
-72. # Try to send the message.
-73. try:  
-74.     server = smtplib.SMTP(HOST, PORT)
-75.     server.ehlo()
-76.     server.starttls()
-77.     #stmplib docs recommend calling ehlo() before & after starttls()
-78.     server.ehlo()
-79.     server.login(USERNAME_SMTP, PASSWORD_SMTP)
-80.     server.sendmail(SENDER, RECIPIENT, msg.as_string())
-81.     server.close()
-82. # Display an error message if something goes wrong.
-83. except Exception as e:
-84.     print ("Error: ", e)
-85. else:
-86.     print ("Email sent!")
+66. # Adding message tags values to header
+67. msg.add_header('X-SES-MESSAGE-TAGS', TAG0)
+68. msg.add_header('X-SES-MESSAGE-TAGS', TAG1)
+69. 
+70. # Record the MIME types of both parts - text/plain and text/html.
+71. part1 = MIMEText(BODY_TEXT, 'plain')
+72. part2 = MIMEText(BODY_HTML, 'html')
+73. 
+74. # Attach parts into message container.
+75. # According to RFC 2046, the last part of a multipart message, in this case
+76. # the HTML message, is best and preferred.
+77. msg.attach(part1)
+78. msg.attach(part2)
+79. 
+80. # Try to send the message.
+81. try:  
+82.     server = smtplib.SMTP(HOST, PORT)
+83.     server.ehlo()
+84.     server.starttls()
+85.     #stmplib docs recommend calling ehlo() before & after starttls()
+86.     server.ehlo()
+87.     server.login(USERNAME_SMTP, PASSWORD_SMTP)
+88.     server.sendmail(SENDER, RECIPIENT, msg.as_string())
+89.     server.close()
+90. # Display an error message if something goes wrong.
+91. except Exception as e:
+92.     print ("Error: ", e)
+93. else:
+94.     print ("Email sent!")
 ```
 
 ------
