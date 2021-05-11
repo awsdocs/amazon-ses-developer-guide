@@ -38,7 +38,7 @@ The following procedure shows how to add a Kinesis Data Firehose event destinati
 
 1. For **Stream**, choose the delivery stream that you created in [Step 1: Create a Kinesis Data Firehose Delivery Stream](event-publishing-kinesis-analytics-firehose-stream.md)\.
 
-1. For **IAM role**, choose **Let SES make a new role**, and then type a name for the role\.
+1. For **IAM role**, choose **Let SES make a new role**, and then type a name for the role\. [**OLD UI ONLY**]
 
 1. Choose **Save**\.
 
