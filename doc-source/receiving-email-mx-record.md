@@ -25,7 +25,8 @@ To complete the following procedure, you have to be able to modify the DNS recor
    example.com.
    ```
 **Note**  
-Some DNS providers refer to the **Name** field as the **Host**, **Domain**, or **Mail Domain**\.
+Some DNS providers refer to the **Name** field as the **Host**, **Domain**, or **Mail Domain**\.  
+If you are using the Route 53 management console you can leave the MX record **Name** field blank, as it is already suffixed by your domain - even though it is not followed by a dot\.
 
 1. For **Type**, choose **MX**\.
 **Note**  
