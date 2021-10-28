@@ -45,6 +45,7 @@ Each bounce, complaint, or delivery notification contains information about the 
 |  `headersTruncated`  |  This object is only present if you configured the notification settings to include the headers from the original email\. Indicates whether the headers are truncated in the notification\. Amazon SES truncates the headers in the notification when the headers from the original message are 10KB or larger in size\. Possible values are `true` and `false`\.  | 
 |  `headers`  |  This object is only present if you configured the notification settings to include the headers from the original email\. A list of the email's original headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `headers` object is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
 |  `commonHeaders`  |  This object is only present if you configured the notification settings to include the headers from the original email\. Includes information about common email headers from the original email, including the From, To, and Subject fields\. Within this object, each header is a key\. The From and To fields are represented by arrays that can contain multiple values\.  Any message ID within the `commonHeaders` object is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
+| `tags` | Object contains a list of tags associated with particular email\. At the very least tags prefixed with `ses` can be found there to provide basic details concerning email delivery like name of configuration set\. May also contain custom tags defined when email was set\. |
 
 The following is an example of a `mail` object that includes the original email headers\. When this notification type is not configured to include the original email headers, the `mail` object does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\. 
 
@@ -100,6 +101,23 @@ The following is an example of a `mail` object that includes the original email 
       ],
       "messageId":" custom-message-ID",
       "subject":"Message sent using Amazon SES"
+   },
+   "tags":{
+      "ses:operation":[
+         "SendEmail"
+      ],
+      "ses:configuration-set":[
+         "ConfigSet"
+      ],
+      "ses:source-ip":[
+         "192.168.20.20"
+      ],
+      "ses:from-domain":[
+         "example.com"
+      ],
+      "ses:caller-identity":[
+         "example@aws.com"
+      ]
    }
 }
 ```
