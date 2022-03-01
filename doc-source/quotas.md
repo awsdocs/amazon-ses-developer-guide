@@ -22,6 +22,8 @@ Quotas are based on the number of recipients, rather than on the number of messa
 ### Message quotas<a name="quotas-message"></a>
 
 
+
+
 ****  
 
 | Resource | Default Quota | Eligible for Increase? | 
@@ -84,6 +86,8 @@ The following table lists the quotas associated with receiving email through Ama
 The following table lists quotas that apply to both sending and receiving email through Amazon SES\.
 
 ### Amazon SES API quotas<a name="quotas-api"></a>
+
+
 
 
 ****  

@@ -1,8 +1,8 @@
-# Managing Amazon SES Configuration Sets<a name="managing-configuration-sets"></a>
+# Managing configuration sets in Amazon SES<a name="managing-configuration-sets"></a>
 
 This section contains procedures for creating configuration sets, viewing a list of your existing configuration sets, viewing the details of individual configuration sets, and deleting configuration sets\.
 
-## Creating a Configuration Set<a name="event-publishing-managing-configuration-sets-creating"></a>
+## Creating a configuration set<a name="event-publishing-managing-configuration-sets-creating"></a>
 
 You can use the Amazon SES console or the `CreateConfigurationSet` API to create new configuration sets\.
 
@@ -33,7 +33,7 @@ The name can contain up to 64 alphanumeric characters\. It can also contain hyph
 
 For more information about using the `CreateConfigurationSet` API to create configuration sets, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html)\.
 
-## Viewing a List of Your Configuration Sets<a name="event-publishing-managing-configuration-sets-viewing"></a>
+## Viewing a list of your configuration sets<a name="event-publishing-managing-configuration-sets-viewing"></a>
 
 You can use the Amazon SES console or you can use the `ListConfigurationSets` API to view a list of your configuration sets\.
 
@@ -56,7 +56,7 @@ You can also use the `ListConfigurationSets` API to view a list of configuration
 
 For more information about using `ListConfigurationSets` API to list your configuration sets, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html)\.
 
-## Viewing the Details of a Configuration Set<a name="event-publishing-managing-configuration-sets-describing"></a>
+## Viewing the details of a configuration set<a name="event-publishing-managing-configuration-sets-describing"></a>
 
 You can use the Amazon SES console to view the details of a configuration set, or you can use the `DescribeConfigurationSet` API to describe a configuration set\. 
 
@@ -83,7 +83,7 @@ You can also use the `DescribeConfigurationSet` API to show more information abo
 
 For information about how to use the `DescribeConfigurationSet` API to describe a configuration set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html)\.
 
-## Deleting a Configuration Set<a name="event-publishing-managing-configuration-sets-deleting"></a>
+## Deleting a configuration set<a name="event-publishing-managing-configuration-sets-deleting"></a>
 
 You can use the Amazon SES console or the `DeleteConfigurationSet` API to delete a configuration set\. 
 

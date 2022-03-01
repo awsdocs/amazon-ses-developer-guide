@@ -49,13 +49,13 @@ The procedures for creating an MX record for your domain depend on which DNS pro
 | DNS/Hosting Provider Name | Documentation Link | 
 | --- | --- | 
 |  Amazon Route 53  |  [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)  | 
-|  GoDaddy  |  [Add an MX record](https://www.godaddy.com/help/add-an-mx-record-19234) \(external link\)  | 
-|  DreamHost  |  [How do I change my MX records?](https://help.dreamhost.com/hc/en-us/articles/215035328) \(external link\)  | 
-|  Cloudflare  |  [How do I add or edit mail or MX records? ](https://support.cloudflare.com/hc/en-us/articles/218069617-How-do-I-add-or-edit-mail-or-MX-records-) \(external link\)  | 
-|  HostGator  |  [Changing MX records \- Windows](https://support.hostgator.com/articles/hosting-guide/lets-get-started/dns-name-servers/changing-mx-records-windows) \(external link\)  | 
-|  Namecheap  |  [How can I set up MX records required for mail service? ](https://www.namecheap.com/support/knowledgebase/article.aspx/322/2237/how-can-i-set-up-mx-records-required-for-mail-service) \(external link\)  | 
-|  Names\.co\.uk  |  [Changing your domain's DNS settings](https://www.names.co.uk/support/domains/1156-changing_your_domains_dns_settings.html) \(external link\)  | 
-|  Wix  |  [Adding or Updating MX Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-mx-records-in-your-wix-account) \(external link\)  | 
+|  GoDaddy  |  [Add an MX record](https://www.godaddy.com/help/add-an-mx-record-19234)  | 
+|  DreamHost  |  [How do I change my MX records?](https://help.dreamhost.com/hc/en-us/articles/215035328)  | 
+|  Cloudflare  |  [How do I add or edit mail or MX records? ](https://support.cloudflare.com/hc/en-us/articles/218069617-How-do-I-add-or-edit-mail-or-MX-records-)  | 
+|  HostGator  |  [Changing MX records \- Windows](https://support.hostgator.com/articles/hosting-guide/lets-get-started/dns-name-servers/changing-mx-records-windows)  | 
+|  Namecheap  |  [How can I set up MX records required for mail service? ](https://www.namecheap.com/support/knowledgebase/article.aspx/322/2237/how-can-i-set-up-mx-records-required-for-mail-service)  | 
+|  Names\.co\.uk  |  [Changing your domain's DNS settings](https://www.names.co.uk/support/articles/changing-your-domains-dns-settings/)  | 
+|  Wix  |  [Adding or Updating MX Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-mx-records-in-your-wix-account)  | 
 
 
 ****  

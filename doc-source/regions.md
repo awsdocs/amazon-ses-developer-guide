@@ -1,5 +1,8 @@
 # Regions and Amazon SES<a name="regions"></a>
 
+**There is a newer version of this page:**  
+[Select this link](https://docs.aws.amazon.com/ses/latest/dg/regions.html) to view the updated version of this page in the SES Developer Guide V2\.
+
 Amazon SES is available in several AWS Regions around the world\. In each Region, AWS maintains multiple Availability Zones\. These Availability Zones are physically isolated from each other, but are united by private, low\-latency, high\-throughput, and highly redundant network connections\. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency\.
 
 For a list of all of the Amazon SES Regional endpoints, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the *Amazon Web Services General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
@@ -68,6 +71,9 @@ You can use the same custom MAIL FROM domain for verified identities in differen
 
 Use the MX record settings that Amazon SES provides during the custom MAIL FROM setup process for an identity in one of the Regions\. The custom MAIL FROM setup process is described in [Setting up a custom MAIL FROM domain](mail-from.md)\. For reference, you can find the feedback endpoints for all of the Regions in the following table\.
 
+**Note**  
+SMTP endpoints are not currently available in Middle East \(Bahrain\)\.
+
 
 ****  
 
@@ -75,6 +81,7 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 | --- | --- | 
 |  US East \(Ohio\)  |  feedback\-smtp\.us\-east\-2\.amazonses\.com  | 
 |  US East \(N\. Virginia\)  |  feedback\-smtp\.us\-east\-1\.amazonses\.com  | 
+|  US West \(N\. California\)  |  feedback\-smtp\.us\-west\-1\.amazonses\.com  | 
 |  US West \(Oregon\)  |  feedback\-smtp\.us\-west\-2\.amazonses\.com  | 
 |  Asia Pacific \(Mumbai\)  |  feedback\-smtp\.ap\-south\-1\.amazonses\.com  | 
 |  Asia Pacific \(Seoul\)  |  feedback\-smtp\.ap\-northeast\-2\.amazonses\.com  | 
@@ -85,6 +92,8 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 |  Europe \(Frankfurt\)  |  feedback\-smtp\.eu\-central\-1\.amazonses\.com  | 
 |  Europe \(Ireland\)  |  feedback\-smtp\.eu\-west\-1\.amazonses\.com  | 
 |  Europe \(London\)  |  feedback\-smtp\.eu\-west\-2\.amazonses\.com  | 
+|  Europe \(Paris\)  |  feedback\-smtp\.eu\-west\-3\.amazonses\.com  | 
+|  Europe \(Stockholm\)  |  feedback\-smtp\.eu\-north\-1\.amazonses\.com  | 
 |  South America \(São Paulo\)  |  feedback\-smtp\.sa\-east\-1\.amazonses\.com  | 
 |  AWS GovCloud \(US\)  |  feedback\-smtp\.us\-gov\-west\-1\.amazonses\.com  | 
 
@@ -108,7 +117,7 @@ The following table lists the email receiving endpoints for all of the AWS Regio
 | Europe \(Ireland\) | inbound\-smtp\.eu\-west\-1\.amazonaws\.com | 
 
 **Note**  
-Amazon SES doesn't support email receiving in the following Regions: US East \(Ohio\), Asia Pacific \(Mumbai\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney\), Asia Pacific \(Tokyo\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), South America \(São Paulo\), and AWS GovCloud \(US\)\. 
+Amazon SES doesn't support email receiving in the following Regions: US East \(Ohio\), US West \(N\. California\), Asia Pacific \(Mumbai\), Asia Pacific \(Seoul\), Asia Pacific \(Singapore\), Asia Pacific \(Sydney\), Asia Pacific \(Tokyo\), Canada \(Central\), Europe \(Frankfurt\), Europe \(London\), Europe \(Paris\), Europe \(Stockholm\), Middle East \(Bahrain\), South America \(São Paulo\), and AWS GovCloud \(US\)\. 
 
 
 ****  

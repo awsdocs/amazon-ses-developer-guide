@@ -5,7 +5,7 @@ If you purchased several dedicated IP addresses to use with Amazon SES, you can 
 This section contains procedures for creating dedicated IP pools\.
 
 **Note**  
-You can also create configuration sets that use a pool of IP addresses that are shared by all Amazon SES customers\. The shared IP pool is useful in situations where you need to send email that doesn't align with your usual sending behaviors\. For information about using the shared IP pool with a configuration set, see [Managing IP Pools](managing-ip-pools.md)\.
+You can also create configuration sets that use a pool of IP addresses that are shared by all Amazon SES customers\. The shared IP pool is useful in situations where you need to send email that doesn't align with your usual sending behaviors\. For information about using the shared IP pool with a configuration set, see [Managing dedicated IP pools](managing-ip-pools.md)\.
 
 **To create a dedicated IP pool using the Amazon SES console**
 

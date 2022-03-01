@@ -88,7 +88,7 @@ To disable click tracking for that link, modify it to resemble the following:
 
 Because `ses:no-track` isn't a standard HTML attribute, Amazon SES automatically removes it from the version of the email that arrives in your recipients' inboxes\.
 
-You can also disable click tracking for all messages that you send using a specific configuration set\. To disable click tracking, modify the configuration set event destination so that it doesn't capture click events\. For more information, see [Managing Amazon SES Event Destinations](event-publishing-managing-event-destinations.md)\.
+You can also disable click tracking for all messages that you send using a specific configuration set\. To disable click tracking, modify the configuration set event destination so that it doesn't capture click events\. For more information, see [Managing event destinations in Amazon SES](event-publishing-managing-event-destinations.md)\.
 
 ### Q3\. How many links can be tracked in each email?<a name="sending-metric-faqs-clicks-q3"></a>
 

@@ -18,13 +18,13 @@ The following table includes links to the documentation for several common provi
 | DNS/Hosting Provider | Documentation Link | 
 | --- | --- | 
 | Amazon Route 53 | [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) | 
-|  GoDaddy  |  [Add an SPF record](https://www.godaddy.com/help/add-an-spf-record-19218) \(external link\)  | 
-|  Dreamhost  |  [How do I add an SPF record?](https://help.dreamhost.com/hc/en-us/articles/216106197-How-do-I-add-an-SPF-record-) \(external link\)  | 
-|  Cloudflare  |  [Managing DNS records in CloudFlare](https://support.cloudflare.com/hc/en-us/articles/360019093151) \(external link\)  | 
-|  HostGator  |  [SPF Records](https://www.hostgator.com/help/article/spf-records) \(external link\)  | 
-|  Namecheap  |  [How do I add TXT/SPF/DKIM/DMARC records for my domain? ](https://www.namecheap.com/support/knowledgebase/article.aspx/317/2237/how-do-i-add-txtspfdkimdmarc-records-for-my-domain) \(external link\)  | 
-|  Names\.co\.uk  |  [Changing your domains DNS Settings](https://www.names.co.uk/support/1156-changing_your_domains_dns_settings.html) \(external link\)  | 
-|  Wix  |  [Adding or Updating SPF Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-spf-records-in-your-wix-account) \(external link\)  | 
+|  GoDaddy  |  [Add an SPF record](https://www.godaddy.com/help/add-an-spf-record-19218)  | 
+|  Dreamhost  |  [How do I add an SPF record?](https://help.dreamhost.com/hc/en-us/articles/216106197-How-do-I-add-an-SPF-record-)  | 
+|  Cloudflare  |  [Managing DNS records in CloudFlare](https://support.cloudflare.com/hc/en-us/articles/360019093151)  | 
+|  HostGator  |  [SPF Records](https://www.hostgator.com/help/article/spf-records)  | 
+|  Namecheap  |  [How do I add TXT/SPF/DKIM/DMARC records for my domain? ](https://www.namecheap.com/support/knowledgebase/article.aspx/317/2237/how-do-i-add-txtspfdkimdmarc-records-for-my-domain)  | 
+|  Names\.co\.uk  |  [Changing your domain's DNS settings](https://www.names.co.uk/support/articles/changing-your-domains-dns-settings/)  | 
+|  Wix  |  [Adding or Updating SPF Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-spf-records-in-your-wix-account)  | 
 
 If your domain doesn't have an existing SPF record, publish a TXT record with the following value\. The name of the record can be blank or @, depending on your DNS service\.
 

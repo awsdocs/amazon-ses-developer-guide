@@ -43,3 +43,5 @@ To add the `DELIVERY_DELAY` event type to an event destination, you have to use 
    For information about creating a topic, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Choose **Save**\.
+
+1. To use a configuration set when sending an email, see [Specifying a configuration set when you send email](using-configuration-sets-in-email.md)\.

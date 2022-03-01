@@ -22,7 +22,3 @@ This tutorial assumes that you're using a domain that you registered using Route
 You can also transfer an existing domain to Route 53\. For more information about transferring domains to Route 53, see [Transferring Registration for a Domain to Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-to-route-53.html) in the *Amazon Route 53 Developer Guide*\.
 
 Next step: [Step 2: Verify your domain](receiving-email-getting-started-verify.md)
-
-## Request production access<a name="receiving-email-getting-started-sandbox"></a>
-
-You can't set up email receiving if your account is still in the Amazon SES sandbox\. To have your account removed from the sandbox, complete the procedure in [Moving out of the Amazon SES sandbox](request-production-access.md)\.

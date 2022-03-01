@@ -29,11 +29,14 @@ If you choose to lease dedicated IP addresses, you have to [submit a request](de
 
 ## Reputation Managed by AWS<a name="dedicated-ip-managed-reputation"></a>
 
-IP address reputations are based largely on historical sending patterns and volume\. An IP address that sends consistent volumes of email over a long period of time usually has a good reputation\.
+IP address reputations are based largely on historical sending patterns and volume\. An IP address that sends consistent volumes of email over a long period of time typically has a good reputation\.
 
 Shared IP addresses are used by several Amazon SES customers\. Together, these customers send a large volume of email\. AWS carefully manages this outbound traffic in order to maximize the reputations of the shared IP addresses\.
 
 If you use dedicated IP addresses, it is your responsibility to maintain your sender reputation by sending consistent and predictable volumes of email\.
+
+**Note**  
+If you would like to see Smart Network Data Services \(SNDS\) data for your dedicated IPs, see [SNDS metrics for dedicated IPs](snds-metrics-dedicated-ips.md) for more information\.
 
 ## Predictability of Sending Patterns<a name="dedicated-ip-sending-patterns"></a>
 

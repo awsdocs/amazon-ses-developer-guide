@@ -10,7 +10,7 @@ You have to create an AWS account before you can use Amazon SES or other AWS ser
 
 1. Follow the on\-screen instructions\.
 
-## Next steps<a name="w3aab9c23c13b7"></a>
+## Next steps<a name="w5aac11c21c13b7"></a>
 
 After you create your AWS account, you can start setting up Amazon SES\.
 + To start sending email with Amazon SES, you first have to [verify an identity](verify-addresses-and-domains.md)\. An *identity* is an email address or domain that your email is sent from\. 

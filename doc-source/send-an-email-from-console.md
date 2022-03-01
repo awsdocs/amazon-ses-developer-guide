@@ -9,7 +9,9 @@ Before you follow these steps, make sure you review the setup instructions in [B
 
 **To send an email message from the Amazon SES console**
 
-1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
+1. 
+
+   Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 **Note**  
 If you are not currently signed in to your AWS account, this link takes you to a sign\-in page\. After you sign in, you are directed to the Amazon SES console\. 
 

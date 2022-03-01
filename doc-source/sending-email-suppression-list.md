@@ -113,10 +113,10 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
 ## Adding email addresses in bulk to the account\-level suppression list<a name="sending-email-suppression-list-manual-add-bulk"></a>
 
-You can manually add addresses in bulk by first uploading your contact list into an Amazon S3 object followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
+You can manually add addresses in bulk by first uploading your contact list into an Amazon S3 object that you have permission to access followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 **Note**  
-There's no limit to the number of addresses that you can add to the account\-level suppression list, but there is a bulk add limit of 100,000 addresses in an Amazon S3 object per API call\.
+There's no limit to the number of addresses that you can add to the account\-level suppression list, but there is a bulk add limit of 1,000,000 addresses in an Amazon S3 object per API call\.
 
 To add email addresses in bulk to your account\-level suppression list, complete the following steps\.
 + Upload your address list into an Amazon S3 object in either CSV or JSON format\. 
@@ -131,55 +131,11 @@ To add email addresses in bulk to your account\-level suppression list, complete
 
   JSON format example for adding addresses:
 
-  `{“emailAddress”:“recipient1@example.com”,“reason”:“BOUNCE”}`
+  `{"emailAddress":"recipient1@example.com","reason":"BOUNCE"}`
 
-  `{“emailAddress”:“recipient2@example.com”,“reason”:“COMPLAINT”}`
+  `{"emailAddress":"recipient2@example.com","reason":"COMPLAINT"}`
 
   In the preceding examples, replace *recipient1@example\.com* and *recipient2@example\.com* with the email addresses that you want to add to the account\-level suppression list\. The acceptable reasons that you're adding the addresses to the suppression list are `BOUNCE` and `COMPLAINT`\.
-+ Give Amazon SES permission to read the Amazon S3 object\.
-
-  When applied to an Amazon S3 bucket, the following policy gives Amazon SES permission to read that bucket\. For more information about attaching policies to Amazon S3 buckets, see [Using Bucket Policies and User Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*\.
-
-  ```
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Sid": "AllowSESGet",
-              "Effect": "Allow",
-              "Principal": {
-                  "Service": "ses.amazonaws.com"
-              },
-              "Action": "s3:GetObject",
-              "Resource": "arn:aws:s3:::BUCKET-NAME/OBJECT-NAME",
-              "Condition": {
-                  "StringEquals": {
-                      "aws:Referer": "AWSACCOUNTID"
-                  }
-              }
-          }
-      ]
-  }
-  ```
-+ Give Amazon SES permission to use your AWS KMS master key\.
-
-  If the Amazon S3 object is encrypted with an AWS KMS key, you need to give Amazon SES permission to use the AWS KMS key\. Amazon SES can only attain permission from a custom master key, not a default master key\. You need to give Amazon SES permission to use the custom master key by adding a statement to the key's policy\.
-
-  Paste the following policy statement into the key policy to permit Amazon SES to use your custom master key\.
-
-  ```
-  {
-     "Sid": "AllowSESToDecrypt", 
-     "Effect": "Allow",
-     "Principal": {
-         "Service":"ses.amazonaws.com"
-     },
-     "Action": [
-         "kms:Decrypt", 
-     ],
-     "Resource": "*"
-  }
-  ```
 + Use the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 **Note**  
@@ -193,7 +149,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job \
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”PUT\"}}" \
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"PUT\"}}" \
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 
@@ -202,7 +158,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job `
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”PUT\"}}" `
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"PUT\"}}" `
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 
@@ -313,7 +269,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
 ## Removing email addresses in bulk from the account\-level suppression list<a name="sending-email-suppression-list-manual-delete-bulk"></a>
 
-You can manually remove addresses in bulk by first uploading your contact list into an Amazon S3 object followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
+You can manually remove addresses in bulk by first uploading your contact list into an Amazon S3 object that you have permission to access followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 **Note**  
 There's no limit to the number of addresses that you can remove from the account\-level suppression list, but there is a bulk delete limit of 10,000 addresses in an Amazon S3 object per API call\.
@@ -329,53 +285,9 @@ To remove email addresses in bulk from your account\-level suppression list, com
 
   JSON format example for adding addresses:
 
-  `{“emailAddress”:“recipient3@example.com”}`
+  `{"emailAddress":"recipient3@example.com"}`
 
   In the preceding examples, replace *recipient3@example\.com* with the email addresses that you want to remove from the account\-level suppression list\.
-+ Give Amazon SES permission to read the Amazon S3 object\.
-
-  When applied to an Amazon S3 bucket, the following policy gives Amazon SES permission to read that bucket\. For more information about attaching policies to Amazon S3 buckets, see [Using Bucket Policies and User Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*\.
-
-  ```
-  {
-      "Version": "2012-10-17",
-      "Statement": [
-          {
-              "Sid": "AllowSESGet",
-              "Effect": "Allow",
-              "Principal": {
-                  "Service": "ses.amazonaws.com"
-              },
-              "Action": "s3:GetObject",
-              "Resource": "arn:aws:s3:::BUCKET-NAME/OBJECT-NAME",
-              "Condition": {
-                  "StringEquals": {
-                      "aws:Referer": "AWSACCOUNTID"
-                  }
-              }
-          }
-      ]
-  }
-  ```
-+ Give Amazon SES permission to use your AWS KMS master key\.
-
-  If the Amazon S3 object is encrypted with an AWS KMS key, you need to give Amazon SES permission to use the AWS KMS key\. Amazon SES can only attain permission from a custom master key, not a default master key\. You need to give Amazon SES permission to use the custom master key by adding a statement to the key's policy\.
-
-  Paste the following policy statement into the key policy to permit Amazon SES to use your custom master key\.
-
-  ```
-  {
-     "Sid": "AllowSESToDecrypt", 
-     "Effect": "Allow",
-     "Principal": {
-         "Service":"ses.amazonaws.com"
-     },
-     "Action": [
-         "kms:Decrypt", 
-     ],
-     "Resource": "*"
-  }
-  ```
 + Use the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 **Note**  
@@ -389,7 +301,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job \
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”DELETE\"}}" \
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"DELETE\"}}" \
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 
@@ -398,7 +310,7 @@ The following procedure assumes that you've already installed the AWS CLI\. For 
 
   ```
   aws sesv2 create-import-job `
-  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\”:\”DELETE\"}}" `
+  --import-destination "{\"SuppressionListDestination\": {\"SuppressionListImportAction\":\"DELETE\"}}" `
   --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
   ```
 

@@ -7,6 +7,7 @@ The following table lists the major changes to the *Amazon Simple Email Service 
 
 | Change | Description | Date Changed | 
 | --- | --- | --- | 
+| New feature | You can now specify a [default configuration set](managing-configuration-sets-default.md) to use when sending mail through each of your verified identities\. | January 27, 2021 | 
 | New feature | You can now receive [notifications](monitor-using-event-publishing.md) when an event occurs that causes the delivery of an email to be temporarily delayed\. | June 19, 2020 | 
 | New feature | Amazon SES is now available in [AWS GovCloud \(US\)](regions.md)\. | April 30, 2020 | 
 | New feature | You can now [create Amazon SES endpoints in Amazon Virtual Private Cloud](send-email-set-up-vpc-endpoints.md) \(Amazon VPC\)\. | April 29, 2020 | 

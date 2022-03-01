@@ -21,6 +21,8 @@ The following procedure shows how to get the connection string that you will nee
 The endpoint for your cluster is not available until the cluster is created and in the available state\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_url.png)
 
+
+
 ## Connecting to Your Cluster From SQL Workbench/J<a name="event-publishing-redshift-cluster-connect-profile"></a>
 
 The following procedure shows how to connect to your cluster from SQL Workbench/J\. This procedure assumes that you installed SQL Workbench/J on your computer as described in [Prerequisites](event-publishing-redshift-prerequisites.md)\.

@@ -36,7 +36,7 @@ Then, depending on the `Action`, specify the `Resource` element as follows:
   + One with `Action` set to an explicit list of the permitted non\-email\-sending APIs and `Resource` set to \*
   + One with `Action` set to one of the email\-sending APIs \(`ses:SendEmail` and/or `ses:SendRawEmail`\), and `Resource` set to the ARN\(s\) of the identities you are permitting the user to use\.
 
-For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
+For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) and [ Amazon Simple Email Service API v2 Reference](https://docs.aws.amazon.com/ses/latest/APIReference-V2/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
 
 ### Restricting Email Addresses<a name="iam-and-ses-restrict-addresses"></a>
 

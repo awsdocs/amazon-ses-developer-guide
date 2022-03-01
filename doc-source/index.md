@@ -1,7 +1,7 @@
 # Amazon Simple Email Service Developer Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -118,6 +118,8 @@ Amazon's trademarks and trade dress may not be used in
    + [Testing email sending in Amazon SES](send-email-simulator.md)
    + [Using the account-level suppression list](sending-email-suppression-list.md)
    + [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)
+   + [Using list management](sending-email-list-management.md)
+   + [Using subscription management](sending-email-subscription-management.md)
    + [Amazon SES and security protocols](security.md)
 + [Receiving email with Amazon SES](receiving-email.md)
    + [Amazon SES email receiving concepts](receiving-email-concepts.md)
@@ -156,11 +158,12 @@ Amazon's trademarks and trade dress may not be used in
          + [Contents of notifications for Amazon SES email receiving](receiving-email-notifications-contents.md)
          + [Examples of notifications for Amazon SES email receiving](receiving-email-notifications-examples.md)
 + [Using Amazon SES configuration sets](using-configuration-sets.md)
-   + [Managing Amazon SES Configuration Sets](managing-configuration-sets.md)
-   + [Managing Amazon SES Event Destinations](event-publishing-managing-event-destinations.md)
-   + [Managing IP Pools](managing-ip-pools.md)
-   + [Specifying a Configuration Set When You Send Email](using-configuration-sets-in-email.md)
-   + [Exporting Reputation Metrics for a Configuration Set to CloudWatch](configuration-sets-export-metrics.md)
+   + [Managing configuration sets in Amazon SES](managing-configuration-sets.md)
+      + [Managing Amazon SES default configuration sets](managing-configuration-sets-default.md)
+   + [Managing event destinations in Amazon SES](event-publishing-managing-event-destinations.md)
+   + [Managing dedicated IP pools](managing-ip-pools.md)
+   + [Specifying a configuration set when you send email](using-configuration-sets-in-email.md)
+   + [Exporting reputation metrics for a configuration set to CloudWatch](configuration-sets-export-metrics.md)
 + [Monitoring your Amazon SES sending activity](monitor-sending-activity.md)
    + [Monitoring your sending statistics using the Amazon SES console](monitor-sending-activity-console.md)
    + [Monitoring your usage statistics using the Amazon SES API](monitor-sending-activity-api.md)
@@ -213,6 +216,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Using the reputation dashboard to track bounce and complaint rates](reputation-dashboard-dg.md)
    + [Reputation dashboard messages](reputationdashboardmessages.md)
    + [Creating reputation monitoring alarms using CloudWatch](reputationdashboard-cloudwatch-alarm.md)
+   + [SNDS metrics for dedicated IPs](snds-metrics-dedicated-ips.md)
    + [Automatically pausing email sending](monitoring-sender-reputation-pausing.md)
       + [Automatically pausing email sending for your entire Amazon SES account](monitoring-sender-reputation-pausing-account.md)
       + [Automatically pausing email sending for a configuration set](monitoring-sender-reputation-pausing-configuration-set.md)

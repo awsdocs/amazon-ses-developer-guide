@@ -10,4 +10,5 @@ This section contains information about accessing the reputation dashboard, inte
 + [Using the reputation dashboard to track bounce and complaint rates](reputation-dashboard-dg.md)
 + [Reputation dashboard messages](reputationdashboardmessages.md)
 + [Creating reputation monitoring alarms using CloudWatch](reputationdashboard-cloudwatch-alarm.md)
++ [SNDS metrics for dedicated IPs](snds-metrics-dedicated-ips.md)
 + [Automatically pausing email sending](monitoring-sender-reputation-pausing.md)

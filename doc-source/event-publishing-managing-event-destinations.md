@@ -1,8 +1,8 @@
-# Managing Amazon SES Event Destinations<a name="event-publishing-managing-event-destinations"></a>
+# Managing event destinations in Amazon SES<a name="event-publishing-managing-event-destinations"></a>
 
 Event destinations allow you to publish email sending metrics—including the numbers of sends, deliveries, opens, clicks, bounces, and complaints—to other AWS products\. To learn more about setting up event publishing, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\. 
 
-## Updating an Event Destination<a name="event-publishing-managing-event-destinations-updating"></a>
+## Updating an event destination<a name="event-publishing-managing-event-destinations-updating"></a>
 
 You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API to update an event destination\. 
 
@@ -22,7 +22,7 @@ You can use the Amazon SES console or the `UpdateConfigurationSetEventDestinatio
 
 For information about how to use the `UpdateConfigurationSetEventDestination` API to update an event destination, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_UpdateConfigurationSetEventDestination.html)\.
 
-## Deleting an Event Destination<a name="event-publishing-managing-event-destinations-deleting"></a>
+## Deleting an event destination<a name="event-publishing-managing-event-destinations-deleting"></a>
 
 You can use the Amazon SES console or the `DeleteConfigurationSetEventDestination` API to delete an event destination\. 
 
@@ -42,7 +42,7 @@ You can use the Amazon SES console or the `DeleteConfigurationSetEventDestinatio
 
 For information about how to use the `DeleteConfigurationSetEventDestination` API to delete an event destination, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSetEventDestination.html)\.
 
-## Enabling or Disabling an Event Destination<a name="event-publishing-managing-event-destinations-enabling-disabling"></a>
+## Enabling or disabling an event destination<a name="event-publishing-managing-event-destinations-enabling-disabling"></a>
 
 You can use the Amazon SES console or the `UpdateConfigurationSetEventDestination` API to enable or disable an event destination\. 
 

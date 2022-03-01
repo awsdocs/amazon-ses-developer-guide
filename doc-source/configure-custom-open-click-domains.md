@@ -1,5 +1,8 @@
 # Configuring custom domains to handle open and click tracking<a name="configure-custom-open-click-domains"></a>
 
+**There is a newer version of this page:**  
+[Select this link](https://docs.aws.amazon.com/ses/latest/dg/configure-custom-open-click-domains.html) to view the updated version of this page in the SES Developer Guide V2\.
+
 When you use [event publishing](monitor-using-event-publishing.md) to capture open and click events, Amazon SES makes minor changes to the emails you send\. To capture open events, Amazon SES adds a 1 pixel by 1 pixel transparent image to the bottom of each email\. This image has a unique file name for each email, and is hosted on a server operated by Amazon SES\. To capture link click events, Amazon SES replaces the links in your emails with links to a server operated by Amazon SES\. This immediately redirects the recipient to his or her intended destination\. Some Amazon SES customers may want to use their own domains, rather than domains owned and operated by Amazon SES, to create a more cohesive experience for their recipients\. 
 
 You can configure multiple custom domains to handle open and click tracking events\. These custom domains are associated with configuration sets\. When you send an email using a configuration set, if that configuration set is configured to use a custom domain, then the open and click links in that email automatically use the custom domain specified in that configuration set\.
@@ -45,7 +48,7 @@ You can only use an HTTPS domain for tracking link clicks\. Amazon SES only supp
 
 1. Create a new account with a Content Delivery Network \(CDN\), such as [Amazon CloudFront](https://aws.amazon.com/cloudfront)\.
 
-1. Configure the CDN to redirect requests to the Amazon SES tracking domain\. The address that you redirect to depends on the AWS Region that you use Amazon SES in\. The following table contains a list of tracking domains for the AWS Regions where Amazon SES is available\.    
+1. Configure the CDN to forward requests to the Amazon SES tracking domain\. The address that you redirect to depends on the AWS Region that you use Amazon SES in\. The following table contains a list of tracking domains for the AWS Regions where Amazon SES is available\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html)
 
 1. If you use Amazon CloudFront as your CDN, complete the following procedures:

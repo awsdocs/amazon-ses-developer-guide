@@ -61,7 +61,7 @@ Verified domain notification settings apply to all mail sent from email addresse
    1. Choose the Amazon SNS topics you want to use to receive notifications\. You can publish multiple event type notifications to the same Amazon SNS topic or to different Amazon SNS topics\. 
 **Important**  
 The Amazon SNS topics that you use for bounce, complaint, and delivery notifications have to be in the same AWS Region that use Amazon SES in\.  
-Additionally, you have to subscribed one or more endpoints to the topic in order to receive notifications\. For example, if you want to have notifications sent to an email address, you have to subscribe an email endpoint to the topic\. For more information, see [Getting Started](https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html) in the *Amazon Simple Notification Service Developer Guide*\.
+Additionally, you have to subscribe one or more endpoints to the topic in order to receive notifications\. For example, if you want to have notifications sent to an email address, you have to subscribe an email endpoint to the topic\. For more information, see [Getting Started](https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
       If you want to use an Amazon SNS topic that you don't own, you must [configure your AWS Identity and Access Management \(IAM\) policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage.html) to allow publishing from the Amazon Resource Name \(ARN\) of the Amazon SNS topic\.
 
