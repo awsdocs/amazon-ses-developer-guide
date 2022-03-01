@@ -31,8 +31,8 @@ The following example shows a simple policy that allows AWS ID *123456789012* to
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
+15.         "ses:SendEmail",
+16.         "ses:SendRawEmail"
 17.       ],
 18.       "Condition":{
 19.         "StringLike":{
@@ -62,8 +62,8 @@ The following example policy grants permission to two IAM users to send from ide
 13.         ]
 14.       },
 15.       "Action":[
-16.         "SES:SendEmail",
-17.         "SES:SendRawEmail"
+16.         "ses:SendEmail",
+17.         "ses:SendRawEmail"
 18.       ]
 19.     }
 20.   ]
@@ -87,8 +87,8 @@ The following example policy grants permission to Amazon Cognito to send from id
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
+15.         "ses:SendEmail",
+16.         "ses:SendRawEmail"
 17.       ]
 18.     }
 19.   ]
@@ -108,8 +108,8 @@ The following example policy grants permission to all accounts within an AWS Org
       "Resource":"arn:aws:ses:us-east-1:888888888888:identity/example.com",
       "Principal":"*",
       "Action":[
-        "SES:SendEmail",
-        "SES:SendRawEmail"
+        "ses:SendEmail",
+        "ses:SendRawEmail"
       ],
       "Condition":{
         "StringEquals":{
@@ -140,8 +140,8 @@ If you use a verified domain, you may want to create a policy that only allows t
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
+15.         "ses:SendEmail",
+16.         "ses:SendRawEmail"
 17.       ],
 18.       "Condition":{
 19.         "StringEquals":{
@@ -172,8 +172,8 @@ You can also configure your sender authorization policy so that a delegate sende
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
+15.         "ses:SendEmail",
+16.         "ses:SendRawEmail"
 17.       ],
 18.       "Condition":{
 19.         "DateGreaterThan":{
@@ -212,7 +212,7 @@ If your use case is such that you want to restrict the action, you can do so by 
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendRawEmail"
+15.         "ses:SendRawEmail"
 16.       ]
 17.     }
 18.   ]
@@ -238,8 +238,8 @@ Some email clients display the "friendly" name of the email sender \(if the emai
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
+15.         "ses:SendEmail",
+16.         "ses:SendRawEmail"
 17.       ],
 18.       "Condition":{
 19.         "StringLike":{
@@ -270,8 +270,8 @@ Your sending authorization policy can include multiple statements\. The followin
 12.         ]
 13.       },
 14.       "Action":[
-15.         "SES:SendEmail",
-16.         "SES:SendRawEmail"
+15.         "ses:SendEmail",
+16.         "ses:SendRawEmail"
 17.       ],
 18.       "Condition":{
 19.         "StringLike":{
@@ -288,8 +288,8 @@ Your sending authorization policy can include multiple statements\. The followin
 30.         "AWS":"arn:aws:iam::333333333333:user/Jane"
 31.       },
 32.       "Action":[
-33.         "SES:SendEmail",
-34.         "SES:SendRawEmail"
+33.         "ses:SendEmail",
+34.         "ses:SendRawEmail"
 35.       ],
 36.       "Condition":{
 37.         "ForAllValues:StringLike":{
