@@ -1,4 +1,4 @@
-## Amazon Ses Developer Guide
+## Amazon SES Developer Guide
 
 The open source version of the Amazon Simple Email Service (Amazon SES) Developer Guide. You can submit feedback & requests for changes by submitting issues in this repo or by making proposed changes & submitting a pull request.
 
