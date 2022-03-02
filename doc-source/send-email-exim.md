@@ -1,6 +1,6 @@
 # Integrating Amazon SES with Exim<a name="send-email-exim"></a>
 
-Exim is a Mail Transfer Agent \(MTA\) that is highly flexible and configurable\. To learn more about Exim, visit the [Exim website](http://www.exim.org)\.
+Exim is a mail transfer agent \(MTA\) that is highly flexible and configurable\. To learn more about Exim, visit the [Exim website](http://www.exim.org)\.
 
 **Note**  
 Exim is a third\-party application, and isn't developed or supported by Amazon Web Services\. The procedures in this section are provided for informational purposes only, and are subject to change without notice\.
@@ -42,9 +42,9 @@ Exim is a third\-party application, and isn't developed or supported by Amazon W
       client_send = : USERNAME : PASSWORD
       ```
 
-      In the preceding code, replace *USERNAME* with your SMTP username, and *PASSWORD* with your SMTP password\.
+      In the preceding code, replace *USERNAME* with your SMTP user name, and *PASSWORD* with your SMTP password\.
 **Important**  
-Your SMTP credentials are not the same as your AWS Access Key ID and Secret Access Key\. For information about obtaining your SMTP credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
+Your SMTP credentials are not the same as your AWS Access Key ID and Secret Access Key\. For information about obtaining your SMTP credentials, see [Obtaining Amazon SES SMTP credentials](smtp-credentials.md)\.
 
 1. Save `/etc/exim.conf.local`\.
 

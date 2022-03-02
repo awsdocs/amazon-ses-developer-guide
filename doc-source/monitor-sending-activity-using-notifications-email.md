@@ -1,14 +1,14 @@
-# Amazon SES notifications sent by email<a name="monitor-sending-activity-using-notifications-email"></a>
+# Receiving Amazon SES notifications through email<a name="monitor-sending-activity-using-notifications-email"></a>
 
 Amazon SES can send you email when you receive bounces and complaints by using a process called *email feedback forwarding*\.
 
 In order to send email using Amazon SES, you must configure it to send bounce and complaint notifications by using one of the following methods:
 + By enabling email feedback forwarding\. The procedure for setting up this type of notification is included in this section\.
-+ By sending notifications to an Amazon SNS topic\. For more information, see [Amazon SES notifications sent through Amazon SNS](monitor-sending-activity-using-notifications-sns.md)\.
++ By sending notifications to an Amazon SNS topic\. For more information, see [Receiving Amazon SES notifications using Amazon SNS](monitor-sending-activity-using-notifications-sns.md)\.
 + By publishing event notifications\. For more information, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\.
 
 **Important**  
-For several important points about notifications, see [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\.
+For several important points about notifications, see [Setting up event notification for Amazon SES](monitor-sending-activity-using-notifications.md)\.
 
 **Topics**
 + [Enabling email feedback forwarding](#monitor-sending-activity-using-notifications-email-enabling)
@@ -23,7 +23,7 @@ Email feedback forwarding is enabled by default\. If you previously disabled it,
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the navigation pane, under **Identity Management**, choose **Email Addresses** if you want to configure bounce and complaint notifications for an email address, or choose **Domains** if you want to configure bounce and complaint notifications for a domain\.
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
 
 1. In the list of verified email addresses or domains, choose the email address or domain that you want to configure bounce and complaint notifications for\.
 
@@ -45,7 +45,7 @@ If you set up a different method of providing bounce and complaint notifications
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the navigation pane, under **Identity Management**, choose **Email Addresses** if you want to configure bounce and complaint notifications for an email address, or choose **Domains** if you want to configure bounce and complaint notifications for a domain\.
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
 
 1. In the list of verified email addresses or domains, choose the email address or domain that you want to configure bounce and complaint notifications for\.
 
@@ -57,7 +57,7 @@ If you set up a different method of providing bounce and complaint notifications
 **Note**  
 You must configure one method of receiving bounce and complaint notifications in order to send email through Amazon SES\. If you disable email feedback forwarding, you must enable notifications sent by Amazon SNS, or publish bounce and complaint events to an Amazon SNS topic or a Kinesis Data Firehose stream by using [event publishing](monitor-using-event-publishing.md)\. If you use event publishing, you must also apply the configuration set that contains the event publishing rule to each email you send\. If you don't set up a method of receiving bounce and complaint notifications, Amazon SES automatically forwards feedback notifications by email to the address in the Return\-Path field \(or the Source field, if you didn't specify a Return\-Path address\) of the message that resulted in the bounce or complaint event\. In this situation, Amazon SES forwards bounce and complaint notifications even if you disabled email feedback notifications\.
 
-1. Choose **Save Config** to save your notification configuration\.
+1. To save your notification configuration, choose **Save Config**\.
 **Note**  
 Changes you make on this page might take a few minutes to take effect\.
 

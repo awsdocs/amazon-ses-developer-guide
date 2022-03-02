@@ -1,12 +1,12 @@
-# Test your connection to the Amazon SES SMTP interface using the command line<a name="send-email-smtp-client-command-line"></a>
+# Testing your connection to the Amazon SES SMTP interface using the command line<a name="send-email-smtp-client-command-line"></a>
 
-You can interact with the Amazon SES SMTP interface from your operating system's command line\. The methods described in this section are intended to be used to test your connection to the Amazon SES SMTP endpoint, validate your SMTP credentials, and troubleshoot connection issues\. These procedures use tools and libraries that are included with most common operating systems\. 
+You can use the methods described in this section from the command line to test your connection to the Amazon SES SMTP endpoint, validate your SMTP credentials, and troubleshoot connection issues\. These procedures use tools and libraries that are included with most common operating systems\.
 
 For additional information about troubleshooting SMTP connection problems, see [Amazon SES SMTP issues](troubleshoot-smtp.md)\.
 
 ## Prerequisites<a name="send-email-smtp-client-command-line-prereqs"></a>
 
-When you connect to the Amazon SES SMTP interface, you have to provide a set of SMTP credentials\. These SMTP credentials are different from your standard AWS credentials\. The two types of credentials aren't interchangeable\. For more information about obtaining your SMTP credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
+When you connect to the Amazon SES SMTP interface, you have to provide a set of SMTP credentials\. These SMTP credentials are different from your standard AWS credentials\. The two types of credentials aren't interchangeable\. For more information about obtaining your SMTP credentials, see [Obtaining Amazon SES SMTP credentials](smtp-credentials.md)\.
 
 ## Testing your connection to the Amazon SES SMTP interface<a name="send-email-smtp-client-command-line-testing"></a>
 

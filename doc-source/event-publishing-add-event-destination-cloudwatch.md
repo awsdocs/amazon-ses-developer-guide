@@ -14,36 +14,13 @@ This section provides information to help you choose your dimensions, and then s
 
 ## Adding a CloudWatch Event Destination<a name="event-publishing-add-event-destination-cloudwatch-add"></a>
 
-The procedure in this section shows how to add a CloudWatch event destination to a configuration set\.
+The procedure in this section shows how to add CloudWatch event destination details to a configuration set and assumes you have completed steps 1 through 4 in [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add)\.
 
 You can also use the [UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2 to create and modify event destinations\.
 
-**To add a CloudWatch event destination to a configuration set by using the console**
+**To add CloudWatch event destination details to a configuration set using the console**
 
-1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
-
-1. In the navigation pane, choose **Configuration Sets**\.
-
-1. In the list of configuration sets, choose the configuration set for which you want to create a CloudWatch event destination\. If the list is empty, you must first [create a configuration set](event-publishing-create-configuration-set.md)\.
-
-1. On the **Event Destinations** tab, for **Add Destination**, choose **Select a destination type**, and then choose **CloudWatch**\.
-
-1. On the **CloudWatch Destination** dialog box, select **Enabled**\.
-
-1. For **Name**, type a name for the event destination\.
-
-1. For **Event types**, select the event types you want to publish to the event destination\. The following event types are available:
-   + **Sends** – The call to Amazon SES was successful and Amazon SES will attempt to deliver the email\.
-   + **Rejects** – Amazon SES accepted the email, determined that it contained a virus, and rejected it\. Amazon SES didn't attempt to deliver the email to the recipient's mail server\.
-   + **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
-   + **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
-   + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-   + **Opens** – The recipient received the message and opened it in their email client\.
-   + **Clicks** – The recipient clicked one or more links in the email\.
-   + **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
-   + **Delivery Delays** – The email couldn't be delivered to the recipient because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
-**Note**  
-To add the `DELIVERY_DELAY` event type to an event destination, you have to use the [ UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2\. Currently, you can't add this event type to a configuration set by using the Amazon SES console\.
+1. After selecting the CloudWatch **Destination type** and enabling **Event publishing** in [Step 4](event-destinations-manage.md#add-event-destination-step-4) of [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add), the respective service's detail panel will appear\. The panel's fields are addressed below\.
 
 1. For **Value Source**, specify how Amazon SES will obtain the data that it passes to CloudWatch\. The following value sources are available:
    + **Message Tag** – Amazon SES retrieves the dimension name and value from a tag that you specify by using the `X-SES-MESSAGE-TAGS` header or the `Tags` API parameter\. For more information about using message tags, see [Step 3: Specify your configuration set when you send email](event-publishing-send-email.md)\.
@@ -56,11 +33,17 @@ Message tags can include the numbers 0–9, the letters A–Z \(both uppercase a
 You can't use any of the following email headers as the **Dimension Name**: `Received`, `To`, `From`, `DKIM-Signature`, `CC`, `message-id`, or `Return-Path`\.
    + **Link Tag** – Amazon SES retrieves the dimension name and value from a tag that you specified in a link\. For more information about adding tags to links, see [Can I tag links with unique identifiers?](faqs-metrics.md#sending-metric-faqs-clicks-q5)\.
 
-1. For **Dimension Name**, type the name of the dimension that you want to pass to CloudWatch\. For **Default Value**, type the value of the dimension\.
+1. For **Dimension Name**, type the name of the dimension that you want to pass to CloudWatch\.
 **Note**  
-Dimension names and values can only contain the letters A through Z, the numbers 0 through 9, underscores \(\_\), at signs \(@\), hyphens \(\-\), and periods \(\.\)\. Spaces, accented characters, non\-Latin characters, and other special characters are not allowed\.
+Dimension names can contain only ASCII letters \(a\-z, A\-Z\), numbers \(0\-9\), underscores \(\_\), and dashes \(\-\)\. Spaces, accented characters, non\-Latin characters, and other special characters are not allowed\.
 
-1. If you want to add more dimensions, choose **Add Dimension**\. Otherwise, choose **Save**\.
+1. For **Default Value**, type the value of the dimension\.
+**Note**  
+Dimension values can contain only ASCII letters \(a\-z, A\-Z\), numbers \(0\-9\), underscores \(\_\), dashes \(\-\), at signs \(@\), and periods \(\.\)\. Spaces, accented characters, non\-Latin characters, and other special characters are not allowed\.
+
+1. If you want to add more dimensions, choose **Add Dimension**\. Otherwise, choose **Next**\.
+
+1. On the review screen, if you're satisfied with how you defined your event destination, choose **Add destination**\.
 
 ## Choosing CloudWatch Dimensions<a name="event-publishing-add-event-destination-cloudwatch-dimensions"></a>
 

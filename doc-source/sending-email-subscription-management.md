@@ -12,7 +12,7 @@ For information about list management, see [Using list management](sending-email
 ## Subscription management overview<a name="subscription-management-overview"></a>
 
 You should consider the following factors when you use subscription management:
-+ Subscription management will be fully managed by Amazon SES\. This means that Amazon SES receives unsubscribe emails and requests from the unsubscribe webpage and then updates the contact’s preference in your list\. You can receive unsubscribe notifications using configuration set notifications\. For more information about configuration sets, see [Using Amazon SES configuration sets](using-configuration-sets.md)\.
++ Subscription management will be fully managed by Amazon SES\. This means that Amazon SES receives unsubscribe emails and requests from the unsubscribe webpage and then updates the contact’s preference in your list\. You can receive unsubscribe notifications using configuration set notifications\. For more information about configuration sets, see [Using configuration sets in Amazon SES](using-configuration-sets.md)\.
 + You need to specify the contact list while sending the email\. Subscription management via the Link\-Unsubscribe header and footer links will be handled accordingly\. 
 + Amazon SES adds support for the List\-Unsubscribe header standards, which will enable email clients and inbox providers to display an unsubscribe link at the top of the email if they support it\.
 + List\-Unsubscribe headers follow the following behavior:

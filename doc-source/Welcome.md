@@ -4,13 +4,13 @@
 
 For example, you can send marketing emails such as special offers, transactional emails such as order confirmations, and other types of correspondence such as newsletters\. When you use Amazon SES to receive mail, you can develop software solutions such as email autoresponders, email unsubscribe systems, and applications that generate customer support tickets from incoming emails\.
 
-With Amazon SES, you only pay for what you use\. For more information, see [Amazon SES Pricing](https://aws.amazon.com/ses/pricing)\.
+For more information about topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\.
 
-## Why use Amazon SES?<a name="why-use-ses"></a>
+## Benefits<a name="why-use-ses"></a>
 
-Building a large\-scale email solution is often a complex and costly challenge for a business\. You must deal with infrastructure challenges such as email server management, network configuration, and IP address reputation\. Additionally, many third\-party email solutions require contract and price negotiations, as well as significant up\-front costs\. Amazon SES eliminates these challenges and enables you to benefit from the years of experience and sophisticated email infrastructure Amazon\.com has built to serve its own large\-scale customer base\. 
+Building a large\-scale email solution is often a complex and costly challenge for a business\. You must deal with infrastructure challenges such as email server management, network configuration, and IP address reputation\. Additionally, many third\-party email solutions require contract and price negotiations, as well as significant up\-front costs\. Amazon SES eliminates these challenges and enables you to benefit from the years of experience and sophisticated email infrastructure Amazon\.com has built to serve its own large\-scale customer base\.
 
-## Amazon SES and other AWS services<a name="ses-and-aws"></a>
+## Related services<a name="ses-and-aws"></a>
 
 Amazon SES integrates seamlessly with other AWS products\. For example, you can:
 + Add email\-sending capabilities to any application\. If your application runs in [Amazon Elastic Compute Cloud](https://aws.amazon.com/ec2/) \(Amazon EC2\), you can use Amazon SES to [send 62,000 emails every month at no additional charge](https://aws.amazon.com/ses/pricing/)\. You can send email from Amazon EC2 by using an [AWS SDK](https://aws.amazon.com/tools/#sdk), by using the [Amazon SES SMTP interface](send-email-smtp.md), or by making calls directly to the [Amazon SES API](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
@@ -22,24 +22,8 @@ Amazon SES integrates seamlessly with other AWS products\. For example, you can:
 + Take action on your received emails by triggering [AWS Lambda](https://aws.amazon.com/lambda/) functions\.
 + Use [AWS Key Management Service \(AWS KMS\)](https://aws.amazon.com/kms/) to optionally encrypt the mail you receive in your Amazon S3 bucket\.
 + Use [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) to log Amazon SES API calls that you make using the console or the Amazon SES API\.
-+ Publish your email sending events to [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) or [Amazon Kinesis Data Firehose](https://aws.amazon.com/firehose/)\. If you publish your email sending events to Kinesis Data Firehose, you can access them in [Amazon Redshift](https://aws.amazon.com/redshift/), [Amazon Elasticsearch Service](https://aws.amazon.com/elasticsearch-service/), or [Amazon S3](https://aws.amazon.com/s3/)\.
++ Publish your email sending events to [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) or [Amazon Kinesis Data Firehose](https://aws.amazon.com/firehose/)\. If you publish your email sending events to Kinesis Data Firehose, you can access them in [Amazon Redshift](https://aws.amazon.com/redshift/), [Amazon OpenSearch Service](https://aws.amazon.com/elasticsearch-service/), or [Amazon S3](https://aws.amazon.com/s3/)\.
 
-## In this guide<a name="in-this-guide"></a>
+## Pricing<a name="ses-pricing"></a>
 
-This guide contains the following sections:
-
-
-****  
-
-| Section | Description | 
-| --- | --- | 
-| [Sending email](send-email.md) | Describes how you can send email using Amazon SES\. | 
-| [Receiving email](receiving-email.md) | Describes how you can receive email using Amazon SES\. | 
-| [Controlling access](control-user-access.md) | Shows you how to use Amazon SES with AWS Identity and Access Management \(IAM\) to specify which Amazon SES API actions a user can perform on which Amazon SES resources\. | 
-| [Logging API calls](logging-using-cloudtrail.md) | Provides a list of Amazon SES APIs that can be logged using AWS CloudTrail\. | 
-| [Types of credentials](send-email-concepts-credentials.md) | Explains the types of credentials that you might use with Amazon SES, and when you might use them\. | 
-| [Using the API](using-ses-api.md) | Describes how to interact with the Amazon SES API\. | 
-| [Regions](regions.md) | Contains information about using Amazon SES in multiple AWS Regions\. | 
-|  [Quotas](quotas.md)  |  Provides a list of quotas that apply to Amazon SES\.  | 
-|  [Resources](resources.md)  |  Lists resources that you may find useful as you work with Amazon SES  | 
-| [Appendix](appendix.md) | Provides supplementary information about header fields, unsupported attachment types, and scripts\. | 
+With Amazon SES, you pay based on the volume of emails sent and received\. For more information, see [Amazon SES pricing](http://aws.amazon.com/ses/pricing/)\.

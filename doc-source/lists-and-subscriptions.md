@@ -1,0 +1,29 @@
+# Managing lists and subscriptions in Amazon Simple Email Service<a name="lists-and-subscriptions"></a>
+
+You can manage your own lists for mailing and subscriptions as well as for email suppression in Amazon SES\. To help you maintain your sender reputation, SES offers account\-level and configuration set\-level suppression lists that prevent you from sending to invalid recipients and harming your sender reputation\. As another measure against bounced emails and complaints, SES can automatically add unsubscribe links to all outgoing mail through subscription management\.
+
+Each of these types of lists is discussed in detail in the sections listed in this chapter's topics; however, an overview of suppression lists is presented here because there are three types of suppression lists as well as a key change with global suppression list management\. It's suggested that you read this overview before working with any of the lists discussed in this chapter\.
+
+**Overview of the three types of suppression lists**  
+The global suppression list removal feature is no longer customer facing and you no longer interact with it to manage suppression lists\. The global suppression list operates and is managed in the background by SES\. As a customer, you now have available to you account\-level suppression lists and configuration set\-level suppression lists that offer you more customized control over how you handle email suppression for your own account\.
+
+The different types of suppression lists, their scope, and what advantages they offer is explained below\. The three types of suppression lists used in Amazon SES are:
++ **Global suppression list** – owned and managed by SES to protect the reputation of addresses in the SES shared IP pool\.
++ **Account\-level suppression list** – owned and managed by the customer to protect his account reputation \- *overrides the global suppression list*\.
++ **Configuration set\-level suppression list** – owned and managed by the customer to provide conditional or fine\-grained control over suppression list management \- *overrides the account\-level suppression list*\.
+
+*The global suppression list* was the only type of suppression list until account\-level and configuration set\-level suppression was introduced in the new Amazon SES console and API v2\. The global suppression list is owned and managed by SES to protect the reputation of SES\. This is needed because all SES customers are sharing the same pool of IP addresses \(unless they have dedicated IPs\), it’s important for SES to ensure that customers aren’t sending spam or anything that would negatively impact the reputation of those IP addresses in the SES shared IP pool\. While you no longer directly interact with the global suppression list, it still operates in the background and the general tenants of how the global suppression list works can also be applied to explain the overall principals of how the other types of suppression lists work\. See [Amazon SES global suppression list](sending-email-global-suppression-list.md)\.
+
+**Note**  
+The global suppression list removal request form is no longer in the Amazon SES console because the account\-level suppression list has superseded it for all the advantages explained in this section\.
+
+*The account\-level suppression list* was introduced so that customers can create and control their own suppression lists and reputation, thus, the account\-level suppression list applies to your account only\. The account\-level suppression list interface in the new console provides an easy way to manage addresses in your account\-level suppression list, including bulk actions to add or remove addresses\.  If an address is on the global suppression list, but not on your account level suppression list *\(which means you want to send to it\)*, and you do send to it, Amazon SES will still attempt delivery, but if it bounces, the bounce will affect your own reputation, but no one else will get bounces because they can’t send to that email address if they aren’t using their own account level suppression list; therefore, the account\-level suppression list overrides the global suppression list for your account only\. See [Using the Amazon SES account\-level suppression list](sending-email-suppression-list.md)\.
+
+*The configuration set\-level suppression list* enables you to configure suppression customizations and overrides to your account\-level suppression as well as being able to use multiple configuration sets specifically created for different email sending scenarios where you want to control the account\-level suppression with various conditions and at various levels of overrides\. For example, you could have an account\-level suppression list enabled for your entire account whenever bounces and complaints occur, while also using a configuration set\-level suppression list to override your account\-level suppression list so that email addresses are added to your suppression list for just complaints \(not bounces and complaints like is set up in your account\-level suppression list\)\. With the configuration set\-level suppression list, there are different levels of overriding your account\-level suppression, including not using any suppression at all\. See [Using the configuration set\-level suppression list](sending-email-suppression-list-config-level.md)\.
+
+**Topics**
++ [Amazon SES global suppression list](sending-email-global-suppression-list.md)
++ [Using the Amazon SES account\-level suppression list](sending-email-suppression-list.md)
++ [Using the configuration set\-level suppression list](sending-email-suppression-list-config-level.md)
++ [Using list management](sending-email-list-management.md)
++ [Using subscription management](sending-email-subscription-management.md)

@@ -15,6 +15,41 @@ You can configure notifications in the Amazon SES console, or by using the Amazo
 Complete the following steps before you set up Amazon SNS notifications in Amazon SES:
 
 1. Create a topic in Amazon SNS\. For more information, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+**Important**  
+When you create your topic using Amazon SNS, for **Type**, only choose **Standard**\. \(SES does not support FIFO type topics\.\)
+
+   Whether you create a new SNS topic or select an existing one, you need to give access to SES to publish notifications to the topic\.
+
+   To give Amazon SES permission to publish notifications to the topic, on the **Edit topic** screen in the SNS console, expand **Access policy** and in the **JSON editor**, add the following permission policy:
+
+   ```
+   {
+     "Version": "2012-10-17",
+     "Id": "notification-policy",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Principal": {
+           "Service": "ses.amazonaws.com"
+         },
+         "Action": "sns:Publish",
+         "Resource": "arn:aws:sns:topic_region:111122223333:topic_name",
+         "Condition": {
+           "StringEquals": {
+             "AWS:SourceAccount": "111122223333",
+             "AWS:SourceArn": "arn:aws:ses:topic_region:111122223333:identity/identity_name"
+           }
+         }
+       }
+     ]
+   }
+   ```
+
+   Make the following changes to the preceding policy example:
+   + Replace *topic\_region* with the AWS Region where you created the SNS topic\.
+   + Replace *111122223333* with your AWS account ID\.
+   + Replace *topic\_name* with the name of your SNS topic\.
+   + Replace *identity\_name* with the verified identity \(email address or domain\) that you're subscribing to the SNS topic\.
 
 1. Subscribe at least one endpoint to the topic\. For example, if you want to receive notifications by text message, subscribe an SMS endpoint \(that is, a mobile phone number\) to the topic\. To receive notifications by email, subscribe an email endpoint \(an email address\) to the topic\. 
 
@@ -48,30 +83,28 @@ Complete the following steps before you set up Amazon SNS notifications in Amazo
 
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the navigation pane, under **Identity Management**, choose **Domains** or **Email Addresses**\.
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
 
-1. In the list of verified senders, choose the email address or domain that you want to configure notifications for\.
+1. In the **Identities** container, select the verified identity you want to receive feedback notifications for when a message sent from this identity results in either a bounce, complaint, or delivery\.
 **Important**  
 Verified domain notification settings apply to all mail sent from email addresses in that domain *except* for email addresses that are also verified\.
 
-1. Under **Notifications**, choose **Edit Configuration**\.
+1. In the details screen of the verified identity you selected, choose the **Notifications** tab and select **Edit** in the **Feedback notifications** container\.
 
-1. Under **SNS Topic Configuration**, make the following changes to the Amazon SNS topic configuration:
+1. Expand the SNS topic list box of each feedback type you want to receive notifications for, and select either an SNS topic you own, **No SNS topic**, or **SNS topic you don’t own**\.
 
-   1. Choose the Amazon SNS topics you want to use to receive notifications\. You can publish multiple event type notifications to the same Amazon SNS topic or to different Amazon SNS topics\. 
+   1. If you chose **SNS topic you don’t own**, the **SNS topic ARN** field will be presented where you must enter the SNS topic ARN shared with you by your delegate sender\. \(Only your delegate sender will get these notifications because they own the SNS topic \- See \[link\] for more information\.\) 
 **Important**  
-The Amazon SNS topics that you use for bounce, complaint, and delivery notifications have to be in the same AWS Region that use Amazon SES in\.  
+The Amazon SNS topics that you use for bounce, complaint, and delivery notifications have to be in the same AWS Region that in which you use Amazon SES\.  
 Additionally, you have to subscribe one or more endpoints to the topic in order to receive notifications\. For example, if you want to have notifications sent to an email address, you have to subscribe an email endpoint to the topic\. For more information, see [Getting Started](https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
-      If you want to use an Amazon SNS topic that you don't own, you must [configure your AWS Identity and Access Management \(IAM\) policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage.html) to allow publishing from the Amazon Resource Name \(ARN\) of the Amazon SNS topic\.
+1. \(Optional\) If you want your topic notification to include the headers from the original email, check the **Include original email headers** box directly underneath the SNS topic name of each feedback type\. This option is only available if you've assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Notification contents](notification-contents.md)\.
 
-   1. If you want the Amazon SNS notifications to contain the original headers of the emails you pass to Amazon SES, choose **Include original headers**\. This option is only available if you've assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Amazon SNS notification contents](notification-contents.md)\. 
+1. Choose **Save changes**\. The changes you made to your notification settings might take a few minutes to take effect\.
 
-1. \(Optional\) If you choose Amazon SNS topics for both bounces and complaints, you can disable email notifications entirely\. To disable email notifications for bounces and complaints, under **Email Feedback Forwarding**, choose **Disable**\. Delivery notifications are available only through Amazon SNS\.
+1. \(Optional\) If you chose Amazon SNS topic notifications for both bounces and complaints, you can disable email notifications entirely so that you don't receive double notifications through email and SNS notifications\. To disable email notifications for bounces and complaints, under the **Notifications** tab on the details screen of the verified identity, in the **Email Feedback Forwarding** container, choose **Edit**, uncheck the **Enabled** box, and choose **Save changes**\. \.
 
-1. Choose **Save Config**\. The changes you made to your notification settings might take a few minutes to take effect\.
-
-After you configure your settings, you will start receiving bounce, complaint, and/or delivery notifications to your Amazon SNS topic\(s\)\. These notifications are in JavaScript Object Notation \(JSON\) format and follow the structure described in [Amazon SNS notification contents](notification-contents.md)\. 
+After you configure your settings, you will start receiving bounce, complaint, and delivery notifications to your Amazon SNS topics\. These notifications are in JavaScript Object Notation \(JSON\) format and follow the structure described in [Notification contents](notification-contents.md)\. 
 
 You will be charged standard Amazon SNS rates for bounce, complaint, and delivery notifications\. For more information, see the [Amazon SNS pricing page](https://aws.amazon.com/sns/pricing)\.
 

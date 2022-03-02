@@ -5,7 +5,7 @@
 Different DNSBLs have different impacts on email deliverability\. This topic describes how DNSBLs impact the delivery of emails you send using Amazon SES, as well as our policies for removing Amazon SES IP addresses from DNSBLs\.
 
 **Note**  
-This topic is about the DNSBLs that email providers use to block incoming messages\. For information about how Amazon SES blocks outgoing email sent to recipients whose email addresses have previously generated bounces, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.
+This topic is about the DNSBLs that email providers use to block incoming messages\. For information about how Amazon SES blocks outgoing email sent to recipients whose email addresses have previously generated bounces, see [Amazon SES global suppression list](sending-email-global-suppression-list.md)\.
 
 ## Q1\. How do DNSBLs impact email delivery?<a name="bl-q1"></a>
 

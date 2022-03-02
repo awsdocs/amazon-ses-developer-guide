@@ -33,7 +33,7 @@ We assume that SQL Workbench/J is currently open on your computer, and it is con
    ```
 
 1. Place the cursor within the statement \(somewhere before the semicolon\), and then choose the **Execute current statement** button, as shown in the following figure\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_create_table.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_create_table.png)
 
 1. In the **Messages** pane, verify that your table was successfully created\.
 

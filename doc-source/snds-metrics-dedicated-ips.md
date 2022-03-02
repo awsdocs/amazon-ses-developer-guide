@@ -44,7 +44,7 @@ These metrics represent an activity period that provides updated data once a day
 
 **Q2\. Why are the SNDS\.SpamRate and SNDS\.ComplaintRate metrics changing, and what do I do if the rate changes to a value of 1?**
 
-This is an indicator that something in your sending behavior has triggered a negative response from the Outlook SNDS program\. In this case, you want to check other Internet Service Providers \(ISPs\) as well as your engagement numbers to make sure it isn’t a global problem\. If it is a global problem, you may see issues with multiple ISPs, which would suggest a list, content, distribution, or permissions problem\. If it is specific to Outlook, review [how to best deliver to Outlook](https://sendersupport.olc.protection.outlook.com/pm/)\. For more information about best practices, see [Best practices for sending email using Amazon SES](best-practices.md)\.
+This is an indicator that something in your sending behavior has triggered a negative response from the Outlook SNDS program\. In this case, you want to check other Internet Service Providers \(ISPs\) as well as your engagement numbers to make sure it isn’t a global problem\. If it is a global problem, you may see issues with multiple ISPs, which would suggest a list, content, distribution, or permissions problem\. If it is specific to Outlook, review [how to best deliver to Outlook](https://sendersupport.olc.protection.outlook.com/pm/)\.
 
 **Q3\. What actions will AWS Support take if my SNDS\.SpamRate changes from a value of 0 \(or 0\.5\) to 1?**
 

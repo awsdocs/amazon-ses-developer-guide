@@ -1,4 +1,4 @@
-# Email format and Amazon SES<a name="send-email-concepts-email-format"></a>
+# Email format in Amazon SES<a name="send-email-concepts-email-format"></a>
 
 When a client makes a request to Amazon SES, Amazon SES constructs an email message compliant with the Internet Message Format specification \([RFC 5322](https://www.ietf.org/rfc/rfc5322.txt)\)\. An email consists of a *header*, a *body*, and an *envelope*, as described below\.
 + **Header—**Contains routing instructions and information about the message\. Examples are the sender's address, the recipient's address, the subject, and the date\. The header is analogous to the information at the top of a postal letter, though it can contain many other types of information, such as the format of the message\. 
@@ -36,7 +36,7 @@ There is one header per email message\. Each line of the header contains a field
 + **Subject—**A summary of the message topic\.
 + **Date—**The time and date the email is sent\.
 
-There are many additional header fields that provide routing information and describe the content of the message\. Email clients typically do not display these fields to the user\. For a full list of the header fields that Amazon SES accepts, see [Header fields](header-fields.md)\. When you use Amazon SES, you particularly need to understand the difference between "From," "Reply\-To," and "Return\-Path" header fields\. As noted previously, the "From" address is the email address of the message sender, whereas "Reply\-To" and "Return\-Path" are as follows:
+There are many additional header fields that provide routing information and describe the content of the message\. Email clients typically do not display these fields to the user\. For a full list of the header fields that Amazon SES accepts, see [Amazon SES header fields](header-fields.md)\. When you use Amazon SES, you particularly need to understand the difference between "From," "Reply\-To," and "Return\-Path" header fields\. As noted previously, the "From" address is the email address of the message sender, whereas "Reply\-To" and "Return\-Path" are as follows:
 + **Reply\-To—**The email address to which replies will be sent\. By default, replies are sent to the original sender's email address\.
 + **Return\-Path—**The email address to which message bounces and complaints should be sent\. "Return\-Path" is sometimes called "envelope from," "envelope sender," or "MAIL FROM\."
 **Note**  

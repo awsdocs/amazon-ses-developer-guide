@@ -264,7 +264,7 @@ The following is an example of a `Delivery` event record that Amazon SES publish
 
 ## Send record<a name="event-publishing-retrieving-sns-send"></a>
 
-The following is an example of a `Send` event record that Amazon SES publishes to Amazon SNS\. 
+The following is an example of a `Send` event record that Amazon SES publishes to Amazon SNS\. Some fields are not always present\. For example, with a templated email, the subject is rendered later and included in subsequent events\.
 
 ```
  1. {

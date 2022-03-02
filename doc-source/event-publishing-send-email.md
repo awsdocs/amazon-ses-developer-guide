@@ -20,8 +20,6 @@ The following sections describe how to specify the configuration set and message
 + [Using Amazon SES\-Specific Email Headers](#event-publishing-using-ses-headers)
 + [Using Custom Email Headers](#event-publishing-using-custom-headers)
 
-Additionally, this guide contains several code examples that demonstrate how to send email programmatically using Amazon SES\. Each of these code examples includes a method of passing a configuration set when sending an email\. For more information, see [Amazon SES code examples](examples.md)\.
-
 **Note**  
 You can optionally include message tags in the headers of your emails\. Message tags can include the numbers 0–9, the letters A–Z \(both uppercase and lowercase\), hyphens \(\-\), and underscores \(\_\)\.
 

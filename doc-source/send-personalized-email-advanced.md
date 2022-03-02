@@ -4,6 +4,9 @@ The template feature in Amazon SES is based on the Handlebars template system\. 
 
 Handlebars includes additional features beyond those documented in this section\. For more information, see [Built\-In Helpers](https://handlebarsjs.com/guide/builtin-helpers.html) at [handlebarsjs\.com](http://handlebarsjs.com)\.
 
+**Note**  
+SES doesn't escape HTML content when rendering the HTML template for a message\. This means if you're including user inputted data, such as from a contact form, you will need to escape it on the client side\.
+
 **Topics**
 + [Parsing nested attributes](#send-personalized-email-advanced-nested)
 + [Iterating through lists](#send-personalized-email-advanced-iterating)
@@ -111,7 +114,7 @@ After you create the template, you can use the `SendTemplatedEmail` or the `Send
 
 When you send an email to the recipients listed in the preceding example using the `SendBulkTemplatedEmail` operation, they receive a message that resembles the example shown in the following image:
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/send-personalized-email-advanced-condition-interest.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/send-personalized-email-advanced-condition-interest.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/)
 
 ## Using basic conditional statements<a name="send-personalized-email-advanced-conditionals"></a>
 
@@ -190,11 +193,11 @@ The following example shows a JSON file that can be used to send email to multip
 
 In this example, the recipient whose template data included a list of interests receives the same email as the example shown in the previous section\. The recipient whose template data did not include any interests, however, receives an email that resembles the example shown in the following image:
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/send-personalized-email-advanced-condition-nointerest.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/send-personalized-email-advanced-condition-nointerest.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/)
 
 ## Creating inline partials<a name="send-personalized-email-advanced-inline-partials"></a>
 
-You can use inline partials to simplify templates that include repeated strings\. For example, you could create an inline partial that includes the recipient's first name, and, if it is available, their last name by adding the following code to the beginning of your template:
+You can use inline partials to simplify templates that include repeated strings\. For example, you could create an inline partial that includes the recipient's first name, and, if it's available, their last name by adding the following code to the beginning of your template:
 
 ```
 {{#* inline \"fullName\"}}{{firstName}}{{#if lastName}} {{lastName}}{{/if}}{{/inline}}\n

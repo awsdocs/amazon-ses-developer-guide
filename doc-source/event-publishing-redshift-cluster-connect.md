@@ -8,18 +8,17 @@ Complete this section by performing the following steps:
 
 ## Getting Your Connection String<a name="event-publishing-redshift-cluster-connect-connection-string"></a>
 
-The following procedure shows how to get the connection string that you will need to connect to your Amazon Redshift cluster from SQL Workbench/J\.
+The following procedure shows how to get the connection string that you need to connect to your Amazon Redshift cluster\.
 
 **To get your connection string**
 
-1. In the Amazon Redshift console, in the navigation pane, choose **Clusters**\.
+1. Open the Amazon Redshift console at [https://console\.aws\.amazon\.com/redshift/](https://console.aws.amazon.com/redshift/)\.
 
-1. To open your cluster, choose your cluster name\.
+1. In the navigation pane, choose **Clusters**\.
 
-1. On the **Configuration** tab, under **Cluster Database Properties**, copy the JDBC URL of the cluster\. 
-**Note**  
-The endpoint for your cluster is not available until the cluster is created and in the available state\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_url.png)
+1. Choose the cluster name to open the cluster details page\.
+
+1. The **JDBC URL** and **ODBC URL** connection strings are available, along with additional details, in the **General information** section\. Each string is based on the AWS Region where the cluster runs\.
 
 
 
@@ -34,14 +33,14 @@ The following procedure shows how to connect to your cluster from SQL Workbench/
 1. Choose **File**, and then choose **Connect window**\.
 
 1. Choose the **Create a new connection profile** button\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_new_connection.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_new_connection.png)
 
 1. In the **New profile** text box, type a name for the profile\.
 
 1. At the bottom of the window, on the left, choose **Manage Drivers**\.
 
 1. In the **Manage Drivers** dialog box, choose the **Create a new entry** button, and then add the driver as follows\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_new_entry.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_new_entry.png)
 
    1. In the **Name** box, type a name for the driver\.
 
@@ -66,7 +65,7 @@ The following procedure shows how to connect to your cluster from SQL Workbench/
 1. To test the connection, choose **Test**\.
 **Note**  
 If the connection attempt times out, you might need to add your IP address to the security group that allows incoming traffic from IP addresses\. For more information, see [The Connection Is Refused or Fails](https://docs.aws.amazon.com/redshift/latest/mgmt/connecting-refusal-failure-issues.html) in the *Amazon Redshift Database Developer Guide*\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_connection.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_connection.png)
 
 1. On the top menu bar, choose the **Save profile list** button\.
 

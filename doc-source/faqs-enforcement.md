@@ -26,7 +26,7 @@ Yes\. You'll receive a notification at the email address associated with your AW
 
 When your account is placed under review, we automatically send a notice to the email address associated with your AWS account\. This email address is the one you specified when you created your AWS account\. In some cases, this email address may be different from the one you use to send email using Amazon SES\.
 
-We recommend that you monitor your sender reputation by regularly consulting the [Reputation Dashboard](monitor-sender-reputation.md)\. You can also [set up automated alarms in Amazon CloudWatch](reputationdashboard-cloudwatch-alarm.md)\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
+We recommend that you monitor your sender reputation by regularly viewing your [Reputation metrics](monitor-sender-reputation.md)\. You can also [set up automated alarms in Amazon CloudWatch](reputationdashboard-cloudwatch-alarm.md)\. These alarms can send you a notification when your reputation metrics exceed certain thresholds\. You can also configure Amazon CloudWatch to contact you in other ways, such as by sending a text message to your mobile phone\.
 
 ### Q4\. Will the fact that my Amazon SES account is under review impact my use of other AWS services?<a name="pr-q4"></a>
 
@@ -41,13 +41,9 @@ You should do the following:
 + After you make changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide detailed information about the steps you've taken to resolve the issue, and describe how these steps prevent the issue from happening again in the future\.
 + Be sure to provide any information we specifically request\. We need this information to evaluate your case\.
 
-### Q6\. What's a review?<a name="pr-q6"></a>
+### Q6\. How do I request a review?<a name="pr-q6"></a>
 
-You can request that we review our decision to place your under review\. See the following question for more information about requesting a review\.
-
-### Q7\. How do I request a review?<a name="pr-q7"></a>
-
-To request a review, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\.
+You can request that we review our decision to place your under review\. To request a review, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\.
 
 In your request, provide the following information:
 + Information about the root cause of the event that caused your account to be placed under review\.
@@ -56,19 +52,19 @@ In your request, provide the following information:
 
 Depending on the nature of the event that led us to place your account under review, we might require additional information\. See the FAQ topic associated with the issue you experienced for a list of the information you should include in your request\.
 
-### Q8\. What if my review request isn't accepted?<a name="pr-q8"></a>
+### Q7\. What if my review request isn't accepted?<a name="pr-q7"></a>
 
 We'll respond to your request with information about why we didn't accept it\. In some cases, you'll be able to submit another request if you're able to demonstrate that you resolved the issue, and that your changes prevent the issue from occurring again in the future\.
 
-### Q9\. Can you help me diagnose the problem?<a name="pr-q9"></a>
+### Q8\. Can you help me diagnose the problem?<a name="pr-q8"></a>
 
 Typically we can give you only a high\-level overview of your issue \(for example, that you have a problem with bounces\)\. You'll need to investigate the root cause on your end\.
 
-### Q10\. How will I know if my account is no longer under review?<a name="pr-q10"></a>
+### Q9\. How will I know if my account is no longer under review?<a name="pr-q9"></a>
 
-The Reputation Dashboard includes information about the current status of your account\. For more information, see [Using the reputation dashboard to track bounce and complaint rates](reputation-dashboard-dg.md)\.
+Reputation metrics includes information about the current status of your account\. For more information, see [Using reputation metrics to track bounce and complaint rates](reputation-dashboard-dg.md)\.
 
-### Q11\. Do you place my account under review every time there's a problem?<a name="pr-q11"></a>
+### Q10\. Do you place my account under review every time there's a problem?<a name="pr-q10"></a>
 
 No\. In some situations, we might pause your account's ability to send email without first placing your account under review\. For example:
 + If the issue is very serious\.
@@ -76,11 +72,11 @@ No\. In some situations, we might pause your account's ability to send email wit
 
 In either of these situations, we automatically send you a notification when we pause your account's ability to send email\.
 
-### Q12\. What if I make my fixes shortly before the review period expires?<a name="pr-q12"></a>
+### Q11\. What if I make my fixes shortly before the review period expires?<a name="pr-q11"></a>
 
-Sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your reply to the case, let us know that you've resolved the issue\.
+Sign into the AWS Management Console and go to Support Center\. Reply to the case we opened on your behalf\. In your reply to the case, let us know that you've resolved the issue\.
 
-### Q13\. Can I get help from my AWS representative or Premium Support?<a name="pr-q13"></a>
+### Q12\. Can I get help from my AWS representative or Premium Support?<a name="pr-q12"></a>
 
 If you're already working with an AWS account representative, we'll automatically contact him or her when your account is placed under review\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
 
@@ -106,7 +102,7 @@ When you create your AWS account, you must provide an email address\. You can ch
 
 You can use Amazon CloudWatch to create alarms that inform you when your bounce and complaint rates are too high\. Creating an alarm is a good way to receive an early warning of factors that could cause us to pause your account's ability to send email\. However, there are factors other than bounces and complaints that could cause us to pause your ability to send email\. For more information about creating alarms in CloudWatch, see [Creating reputation monitoring alarms using CloudWatch](reputationdashboard-cloudwatch-alarm.md)\.
 
-You can also use the [Deliverability Dashboard](reputation-dashboard-dg.md) to determine the current status of your account\. For example, if your account's ability to send email is currently paused, the **Account status** section of the Deliverability Dashboard displays a status of **SENDING PAUSE**\. If your account is able to send email normally, it displays a status of **HEALTHY**\.
+You can also use the [Deliverability dashboard](https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-deliverability-dashboard.html) to determine the current status of your account\. For example, if your account's ability to send email is currently paused, the **Account status** section of the Deliverability dashboard displays a status of **Sending paused**\. If your account is able to send email normally, it displays a status of **Healthy**\.
 
 Finally, you can check the AWS Personal Health Dashboard \(PHD\) at [https://phd\.aws\.amazon\.com/](https://phd.aws.amazon.com/) to determine if your account's ability to send email is currently paused\. When we pause an account's ability to send email, we automatically add an **SES sending paused** event to the **Event log** section of the PHD\. The **SES sending paused** event always has a Status of **Closed**, regardless of whether or not the account's ability to send email is currently paused\. The event log also includes a copy of the email that we sent to the email address associated with your AWS account when the sending pause event occurred\. 
 
@@ -149,7 +145,7 @@ Typically we can give you only a high\-level overview of your issue \(for exampl
 
 ### Q10\. How do I know if my account's ability to send email has been restored?<a name="sp-q10"></a>
 
-The Reputation Dashboard includes information about the current status of your account\. For more information, see [Using the reputation dashboard to track bounce and complaint rates](reputation-dashboard-dg.md)\.
+Reputation metrics includes information about the current status of your account\. For more information, see [Using reputation metrics to track bounce and complaint rates](reputation-dashboard-dg.md)\.
 
 ### Q11\. Can I get help from my AWS representative or Premium Support?<a name="sp-q11"></a>
 
@@ -187,7 +183,7 @@ No\. The bounce rate is calculated using representative volume \(see [Q5\. Over 
 
 ### Q7\. How can I find out which email addresses bounced?<a name="bn-q7"></a>
 
-Examine the bounce notifications that Amazon SES sends you\. The email address to which Amazon SES forwards the notifications depends on how you sent the original messages, as described at [Amazon SES notifications sent by email](monitor-sending-activity-using-notifications-email.md)\. You can also set up bounce notifications through Amazon Simple Notification Service \(Amazon SNS\), as described at [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\. Note that simply removing bounced addresses from your list without any additional investigation might not solve the underlying problem\. For information about what you can do to reduce bounces, see [Q11\. What can I do to minimize bounces?](#bn-q11)\.
+Examine the bounce notifications that Amazon SES sends you\. The email address to which Amazon SES forwards the notifications depends on how you sent the original messages, as described at [Receiving Amazon SES notifications through email](monitor-sending-activity-using-notifications-email.md)\. You can also set up bounce notifications through Amazon Simple Notification Service \(Amazon SNS\), as described at [Setting up event notification for Amazon SES](monitor-sending-activity-using-notifications.md)\. Note that simply removing bounced addresses from your list without any additional investigation might not solve the underlying problem\. For information about what you can do to reduce bounces, see [Q11\. What can I do to minimize bounces?](#bn-q11)\.
 
 ### Q8\. If I haven't been monitoring my bounces, can you give me a list of addresses that have bounced?<a name="bn-q8"></a>
 
@@ -195,7 +191,7 @@ No, we can't provide a complete list of addresses that have bounced\. You are re
 
 ### Q9\. How should I handle bounces?<a name="bn-q9"></a>
 
-You need to remove bounced addresses from your mailing list and stop sending mail to them immediately\. If you're a small sender, it might be sufficient to simply monitor bounces through email and manually remove bounced addresses from your mailing list\. If your volume is higher, you'll probably want to set up automation for this process, either by programmatically processing the mailbox where you receive bounces, or by setting up bounce notifications through Amazon SNS\. For more information, see [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\.
+You need to remove bounced addresses from your mailing list and stop sending mail to them immediately\. If you're a small sender, it might be sufficient to simply monitor bounces through email and manually remove bounced addresses from your mailing list\. If your volume is higher, you'll probably want to set up automation for this process, either by programmatically processing the mailbox where you receive bounces, or by setting up bounce notifications through Amazon SNS\. For more information, see [Setting up event notification for Amazon SES](monitor-sending-activity-using-notifications.md)\.
 
 ### Q10\. Could my emails be bouncing because I've reached my sending quota?<a name="bn-q10"></a>
 
@@ -212,7 +208,7 @@ First, be sure that you're aware of your bounces \(see [Q7\. How can I find out 
 + Ensure that you're not structuring sign\-ups to encourage people to use fictional addresses\. For example, don't provide any added value or benefits until recipients verify their addresses\.
 + If you have an "email a friend" feature, use CAPTCHA or a similar mechanism to discourage automated use of the feature, and don't allow users to insert arbitrary content\.
 + If you're using Amazon SES for system notifications, ensure that you're sending the notifications to real addresses that can receive mail\. Also consider turning off notifications that you don't need\.
-+ If you're testing a new system, be sure you're either sending to real addresses that can receive email, or you're using the Amazon SES mailbox simulator\. For more information, see [Testing email sending in Amazon SES](send-email-simulator.md)\. 
++ If you're testing a new system, be sure you're either sending to real addresses that can receive email, or you're using the Amazon SES mailbox simulator\. For more information, see [Using the mailbox simulator manually](send-an-email-from-console.md#send-email-simulator)\. 
 
 ## Complaint FAQ<a name="e-faq-cm"></a>
 
@@ -253,11 +249,11 @@ Yes\. However, the complaint rate statistic doesn't include complaints from emai
 
 #### Q3\. How can I be notified of these complaints?<a name="cm-feedback-loop-q3"></a>
 
-You can be notified through email or through Amazon SNS notifications\. See the set\-up instructions in [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\.
+You can be notified through email or through Amazon SNS notifications\. See the set\-up instructions in [Setting up event notification for Amazon SES](monitor-sending-activity-using-notifications.md)\.
 
 #### Q4\. What should I do if I receive a complaint notification through email or through Amazon SNS?<a name="cm-feedback-loop-q4"></a>
 
-First, you need to remove addresses that generated complaints from your mailing list and stop sending mail to them immediately\. Do not even send an email that says you've received the request to unsubscribe\. Consider setting up automation for this process, either by programmatically processing the mailbox where you receive complaints, or by setting up complaint notifications through Amazon SNS\. For more information, see [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\.
+First, you need to remove addresses that generated complaints from your mailing list and stop sending mail to them immediately\. Do not even send an email that says you've received the request to unsubscribe\. Consider setting up automation for this process, either by programmatically processing the mailbox where you receive complaints, or by setting up complaint notifications through Amazon SNS\. For more information, see [Setting up event notification for Amazon SES](monitor-sending-activity-using-notifications.md)\.
 
 Then, take a close look at your sending to determine why your recipients don't appreciate the mail you're sending, and address that underlying problem\. For every person who complains, there are potentially dozens who didn't appreciate your mail who didn't \(or weren't able to\) complain\. If you only remove the recipients who actually complain, you're not addressing the underlying problem\.
 
@@ -279,7 +275,7 @@ No\. There are two primary reasons for this:
 
 #### Q8\. How can I find out which email addresses complained?<a name="cm-feedback-loop-q8"></a>
 
-Examine the complaint notifications that Amazon SES sends you through email or through Amazon SNS \(see [Monitoring Amazon SES email sending using notifications](monitor-sending-activity-using-notifications.md)\)\. However, different email providers provide differing amounts of information, and some providers redact the recipient's email address before passing the complaint notification to Amazon SES\. To enable you to find the recipient's email address in the future, your best option is to store your own mapping between an identifier and the Amazon SES message ID that Amazon SES passes back to you when it accepts the email\. Note that Amazon SES doesn't retain any custom message IDs that you add\.
+Examine the complaint notifications that Amazon SES sends you through email or through Amazon SNS \(see [Setting up event notification for Amazon SES](monitor-sending-activity-using-notifications.md)\)\. However, different email providers provide differing amounts of information, and some providers redact the recipient's email address before passing the complaint notification to Amazon SES\. To enable you to find the recipient's email address in the future, your best option is to store your own mapping between an identifier and the Amazon SES message ID that Amazon SES passes back to you when it accepts the email\. Note that Amazon SES doesn't retain any custom message IDs that you add\.
 
 #### Q9\. If I haven't been monitoring my complaints, can you give me a list of addresses that have complained?<a name="cm-feedback-loop-q9"></a>
 
@@ -399,7 +395,8 @@ To reduce the risk of sending to spamtraps, follow these guidelines:
 An Amazon SES investigator has identified a significant problem with your sending\. Typical problems include, but aren't limited to, the following:
 + Your sending violates the [AWS Acceptable Use Policy](https://aws.amazon.com/aup/) \(AUP\)\.
 + Your emails appear to be unsolicited\.
-+ Your content is associated with a use case that Amazon SES doesn't support\.
++ Your content is phishing related \(this includes simulated phishing\)\.
++ Your content is otherwise associated with a use case that Amazon SES doesn't support\.
 
 If we believe that the problem can be corrected, we place your account under review for a certain amount of time\. While your account is under review, you should make changes to your email sending practices to correct the issue\.
 

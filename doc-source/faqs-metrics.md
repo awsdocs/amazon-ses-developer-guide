@@ -7,6 +7,12 @@ Amazon SES collects several metrics about the emails you send\. These metrics en
 + [Open Tracking](#faqs-metrics-opens)
 + [Click Tracking](#faqs-metrics-clicks)
 
+**Note**  
+Event tracking is dependent upon the recipient’s email service provider \(ESP\) and how they’ve configured their privacy settings which are beyond the control of Amazon SES\. The count of tracking events can be skewed \(returning inaccurate counts\) under conditions such as:  
+The email recipient is using an email service provider \(ESP\) that protects their privacy\.
+The email recipient explicitly doesn’t give their ESP permission to share their data\.
+The email recipient’s ESP caches images or links, SES can only count the initial open, but won't be able to count subsequent openings\.
+
 ## General Questions<a name="faqs-metrics-general"></a>
 
 ### Q1\. After an email is delivered, how long does Amazon SES continue to collect open and click metrics?<a name="sending-metric-faqs-general-q1"></a>
@@ -15,7 +21,7 @@ Amazon SES collects open and click metrics for 60 days after each email is sent\
 
 ### Q2\. If a user opens an email multiple times, or clicks a link in an email multiple times, is each of those events tracked separately?<a name="sending-metric-faqs-general-q2"></a>
 
-If a recipient opens an email multiple times, Amazon SES counts each open as a unique open event\. Similarly, if a recipient clicks the same link multiple times, Amazon SES counts each click as a unique click event\.
+If a recipient opens an email multiple times, Amazon SES counts each open as a unique open event\. Similarly, if a recipient clicks the same link multiple times, Amazon SES counts each click as a unique click event\. However, these counts can be skewed by the scenarios outlined above in the note box\.
 
 ### Q3\. Are open and click metrics aggregated, or can they be measured down to the recipient level?<a name="sending-metric-faqs-general-q3"></a>
 
@@ -37,7 +43,7 @@ The command shown above retrieves the total number of click events for each day 
 
 ### Q1\. How does open tracking work?<a name="sending-metric-faqs-opens-q1"></a>
 
-At the bottom of each email sent through Amazon SES, we insert a 1 pixel by 1 pixel transparent GIF image\. Each email includes a unique reference to this image file; when the image is opened, Amazon SES can tell exactly which message was opened and by whom\.
+At the bottom of each email sent through Amazon SES, we insert a 1 pixel by 1 pixel transparent GIF image\. Each email includes a unique reference to this image file; when the image is downloaded, Amazon SES can tell exactly which message was opened and by whom\.
 
 The addition of this tracking pixel does not change the appearance of your email\.
 
@@ -67,7 +73,7 @@ Open tracking only works with HTML emails\. Because open tracking relies on the 
 
 ### Q1\. How does click tracking work?<a name="sending-metric-faqs-clicks-q1"></a>
 
-To track clicks, Amazon SES modifies each link in the body of the email\. When recipients click a link, they are sent to an Amazon SES server, and are immediately forwarded to the destination address\. As with open tracking, each redirect link is unique\. This enables Amazon SES to determine which recipient clicked the link, when they clicked it, and the email from which they arrived at the link\.
+To track clicks, Amazon SES modifies each link in the body of the email\. When recipients open a link, they are sent to an Amazon SES server, and are immediately forwarded to the destination address\. As with open tracking, each redirect link is unique\. This enables Amazon SES to determine which recipient clicked the link, when they clicked it, and the email from which they arrived at the link\.
 
 **Important**  
 If you send a single message to multiple recipients, each recipient will save the same click tracking link\. To track individual recipients' click activity, send email to one recipient per send operation\.
@@ -88,7 +94,7 @@ To disable click tracking for that link, modify it to resemble the following:
 
 Because `ses:no-track` isn't a standard HTML attribute, Amazon SES automatically removes it from the version of the email that arrives in your recipients' inboxes\.
 
-You can also disable click tracking for all messages that you send using a specific configuration set\. To disable click tracking, modify the configuration set event destination so that it doesn't capture click events\. For more information, see [Managing event destinations in Amazon SES](event-publishing-managing-event-destinations.md)\.
+You can also disable click tracking for all messages that you send using a specific configuration set\. To disable click tracking, modify the configuration set event destination so that it doesn't capture click events\. \.
 
 ### Q3\. How many links can be tracked in each email?<a name="sending-metric-faqs-clicks-q3"></a>
 

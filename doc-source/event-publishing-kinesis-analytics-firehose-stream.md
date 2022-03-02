@@ -2,7 +2,7 @@
 
 To analyze Amazon SES email sending events with Amazon Kinesis Data Analytics, you must configure Amazon SES to publish the events to an Amazon Kinesis Data Firehose delivery stream, and then configure Amazon Kinesis Data Analytics to get the event data from Kinesis Data Firehose\.
 
-When you set up a Kinesis Data Firehose delivery stream, you choose the final destination of the data\. Your destination options are Amazon Simple Storage Service \(Amazon S3\), Amazon Elasticsearch Service, and Amazon Redshift\. If you simply want to analyze email sending events with Amazon Kinesis Data Analytics, it does not matter which destination you choose\. For this tutorial, we configure Kinesis Data Firehose to publish the data to Amazon S3, but you can use the other destination options if they are in the same region as your Amazon SES sending and Kinesis Data Firehose delivery stream\.
+When you set up a Kinesis Data Firehose delivery stream, you choose the final destination of the data\. Your destination options are Amazon Simple Storage Service \(Amazon S3\), Amazon OpenSearch Service, and Amazon Redshift\. If you simply want to analyze email sending events with Amazon Kinesis Data Analytics, it does not matter which destination you choose\. For this tutorial, we configure Kinesis Data Firehose to publish the data to Amazon S3, but you can use the other destination options if they are in the same region as your Amazon SES sending and Kinesis Data Firehose delivery stream\.
 
  This section shows how to create a Kinesis Data Firehose delivery stream using the Kinesis Data Firehose console\. For this tutorial, we choose basic options\. For information about all available options, see [Creating an Amazon Kinesis Firehose Delivery Stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html) in the *Amazon Kinesis Data Firehose Developer Guide*\.
 
@@ -29,8 +29,8 @@ When you set up a Kinesis Data Firehose delivery stream, you choose the final de
       You are taken to the IAM console\.
 
    1. In the IAM console, leave the fields at their default settings, and then choose **Allow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_firehose_iam.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/white_space_horizontal.png)  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_firehose_iam.png)
 
       You return to the Kinesis Data Firehose delivery stream set\-up steps in the Kinesis Data Firehose console\.
 

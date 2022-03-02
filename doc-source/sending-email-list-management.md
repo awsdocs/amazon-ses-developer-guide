@@ -114,7 +114,7 @@ You can use the [CreateContact](https://docs.aws.amazon.com/ses/latest/APIRefere
 
 ### Bulk importing contacts to your contact list<a name="configuring-list-management-bulk-import"></a>
 
-You can manually add addresses in bulk by first uploading your contacts into an Amazon S3 object that you have permission to access followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
+You can manually add addresses in bulk by first uploading your contacts into an Amazon S3 object followed by using the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 You should create a contact list before importing your contacts\.
 
@@ -147,7 +147,7 @@ To add contacts in bulk to your contact list, complete the following steps\.
   ```
   {
        "emailAddress": "example1@amazon.com",
-       "unsusbcribeAll": false,
+       "unsubscribeAll": false,
        "attributesData": "{\"Name\":\"John\"}",
        "topicPreferences": [
         {
@@ -162,7 +162,7 @@ To add contacts in bulk to your contact list, complete the following steps\.
   }
   {
        "emailAddress": "example2@amazon.com",
-       "unsusbcribeAll": true,
+       "unsubscribeAll": true,
        "topicPreferences": [
         {
             "topicName": "Sports",
@@ -179,36 +179,61 @@ To add contacts in bulk to your contact list, complete the following steps\.
   In the preceding examples, replace *example1@amazon\.com* and *example2@amazon\.com* with the email addresses you want to add to the contact list\. Replace the attributesData values with the values specific to the contact\. Additionally, replace *Sports* and *Cycling* with the topicName that applies to your contact\. The acceptable topicPreferences are *OPT\_IN* and *OPT\_OUT*\.
 
   The following attributes are supported when uploading your contacts into an Amazon S3 object in either CSV or JSON format:    
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-email-list-management.html)
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/sending-email-list-management.html)
++ Give Amazon SES permission to read the Amazon S3 object\.
+
+  When applied to an Amazon S3 bucket, the following policy gives Amazon SES permission to read that bucket\. For more information about attaching policies to Amazon S3 buckets, see [Using Bucket Policies and User Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service User Guide*\.
+
+  ```
+  {
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Sid": "AllowSESGet",
+              "Effect": "Allow",
+              "Principal": {
+                  "Service": "ses.amazonaws.com"
+              },
+              "Action": "s3:GetObject",
+              "Resource": "arn:aws:s3:::BUCKET-NAME/OBJECT-NAME",
+              "Condition": {
+                  "StringEquals": {
+                      "aws:Referer": "AWSACCOUNTID"
+                  }
+              }
+          }
+      ]
+  }
+  ```
++ Give Amazon SES permission to use your AWS KMS key\.
+
+  If the Amazon S3 object is encrypted with an AWS KMS key, you need to give Amazon SES permission to use the KMS key\. Amazon SES can only attain permission from a customer managed key, not a default KMS key\. You must give Amazon SES permission to use the customer managed key by adding a statement to the key's policy\.
+
+  Paste the following policy statement into the key policy to permit Amazon SES to use your customer managed key\.
+
+  ```
+  {
+     "Sid": "AllowSESToDecrypt", 
+     "Effect": "Allow",
+     "Principal": {
+         "Service":"ses.amazonaws.com"
+     },
+     "Action": [
+         "kms:Decrypt", 
+     ],
+     "Resource": "*"
+  }
+  ```
 + Use the [CreateImportJob](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_CreateImportJob.html) operation in the Amazon SES API v2\.
 
 **Note**  
-The following procedure assumes that you've already installed the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
+The following example assumes that you've already installed the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
-**To manually add contacts in bulk to your contact list by using the AWS CLI**
-+ At the command line, enter the following command:
+At the command line, enter the following command\. Replace *s3bucket* withe the name of the Amazon S3 bucket and *s3object* with the name of the Amazon S3 object name\.
 
-------
-#### [ Linux, macOS, or Unix ]
-
-  ```
-  aws sesv2 create-import-job \
-  --import-destination "{\"ContactListDestination\": {\"ContactListName\”:\”ExampleContactListName\", \"ContactListImportAction\”:\”PUT\"}}" \
-  --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
-  ```
-
-------
-#### [ Windows ]
-
-  ```
-  aws sesv2 create-import-job `
-  --import-destination "{\"ContacListDestination\": {\"ContactListName\”:\”ExampleContactListName\", \"ContactListImportAction\”:\”PUT\"}}" `
-  --import-data-source "{\"S3Url\": \"s3://s3bucket/s3object\",\"DataFormat\": \"CSV\"}"
-  ```
-
-------
-
-  In the preceding examples, replace *s3bucket* and *s3object* with the Amazon S3 bucket name and Amazon S3 object name\.
+```
+aws sesv2 create-import-job --import-destination ContactListDestination={ContactListName=ExampleContactListName,ContactListImportAction=PUT} --import-data-source S3Url="s3://s3bucket/s3object",DataFormat=CSV
+```
 
 ### List your contacts to send them emails<a name="configuring-list-management-list-contacts"></a>
 

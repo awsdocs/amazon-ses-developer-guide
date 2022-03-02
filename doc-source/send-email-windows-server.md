@@ -15,7 +15,7 @@ Windows Server is a third\-party application, and isn't developed or supported b
 
    1. Launch the Server Manager Dashboard\.
 
-   1. Install the **Web Server** role\. Be sure to include the **IIS 6 Management Compatibility tools** \(an option under the **Web Server** checkbox\)\.
+   1. Install the **Web Server** role\. Be sure to include the **IIS 6 Management Compatibility tools** \(an option under the **Web Server** check box\)\.
 
    1. Install the **SMTP Server** feature\.
 
@@ -33,7 +33,7 @@ Windows Server is a third\-party application, and isn't developed or supported b
 
    1. Under **Single Computer**, enter **127\.0\.0\.1** for the IP address\. You have now granted access for this server to relay email to Amazon SES through the IIS SMTP service\.
 
-      In this procedure, we assume that your emails are generated on this server\. If the application that generates the email runs on a separate server, you need to grant relaying access for that server in IIS SMTP\.
+      In this procedure, we assume that your emails are generated on this server\. If the application that generates the email runs on a separate server, you must grant relaying access for that server in IIS SMTP\.
 **Note**  
 To extend the SMTP relay to private subnets, for **Relay Restriction**, use **Single Computer** 127\.0\.0\.1 and **Group of Computers** 172\.1\.1\.0 \- 255\.255\.255\.0 \(in the netmask section\)\. For **Connection**, use **Single Computer** 127\.0\.0\.1 and **Group of Computers** 172\.1\.1\.0 \- 255\.255\.255\.0 \(in the netmask section\)\.
 
@@ -43,7 +43,7 @@ To extend the SMTP relay to private subnets, for **Relay Restriction**, use **Si
 
    1. On the **Delivery** tab, choose **Outbound Security**\.
 
-   1. Select **Basic Authentication** and then enter your Amazon SES SMTP username and password\. You can obtain these credentials from the Amazon SES console using the procedure in [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
+   1. Select **Basic Authentication** and then enter your Amazon SES SMTP user name and password\. You can obtain these credentials from the Amazon SES console using the procedure in [Obtaining Amazon SES SMTP credentials](smtp-credentials.md)\.
 **Important**  
 Your SMTP user name and password are not the same as your AWS access key ID and secret access key\. Do not attempt to use your AWS credentials to authenticate yourself against the SMTP endpoint\. For more information about credentials, see [Types of Amazon SES credentials](send-email-concepts-credentials.md)\.
 
@@ -54,8 +54,6 @@ Your SMTP user name and password are not the same as your AWS access key ID and 
    1. Choose **Outbound Connections**\.
 
    1. In the **Outbound Connections** dialog box, ensure that the port is 25 or 587\. 
-**Note**  
-If your mail server is hosted on Amazon EC2, and you plan to send email using port 25, you must first remove the port 25 restrictions for your account\. For more information, see [How do I remove the restriction on port 25 from my Amazon EC2 instance or AWS Lambda function?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.
 
    1. Choose **Advanced**\.
 

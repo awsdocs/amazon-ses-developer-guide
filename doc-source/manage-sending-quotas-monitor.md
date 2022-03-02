@@ -13,10 +13,10 @@ The following procedure shows you how to view your sending quotas using the Amaz
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the navigation pane, choose **Sending Statistics**\. Your sending quotas are shown under **Your Amazon SES Sending Limits**\.   
-![\[AWS Management Console\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/console_dashboard.png)
+1. In the navigation pane, choose **Account dashboard**\. Your sending quotas are shown under **Sending Limits**\. Total emails sent and percentage of sending quota used is displayed under **Daily email usage**\.   
+![\[AWS Management Console\]](http://docs.aws.amazon.com/ses/latest/dg/images/acct-dashboard-send-limits-email-usage.png)
 
-1. To update the display, choose **Refresh**\.
+1. To update the display, select the refresh icon in the upper right\-hand corner of the **Daily email usage** box\.
 
 ## Monitoring your sending quotas using the Amazon SES API<a name="manage-sending-quotas-monitor-api"></a>
 

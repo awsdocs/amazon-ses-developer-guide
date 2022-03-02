@@ -1,6 +1,6 @@
 # Step 3: Send Emails<a name="event-publishing-kinesis-analytics-send-email"></a>
 
-Because this tutorial uses the Amazon Kinesis Data Analytics console to process and analyze streaming data, you must set up a steady stream of emails through Amazon SES\. This tutorial assumes that you have an application that can send these emails\. Sending one email every ten seconds for five minutes is sufficient for this tutorial\. We highly recommend that you use a "To" address from the [Amazon SES mailbox simulator](send-email-simulator.md), such as `success@simulator.amazonses.com`\.
+Because this tutorial uses the Amazon Kinesis Data Analytics console to process and analyze streaming data, you must set up a steady stream of emails through Amazon SES\. This tutorial assumes that you have an application that can send these emails\. Sending one email every ten seconds for five minutes is sufficient for this tutorial\. We highly recommend that you use a "To" address from the [Amazon SES mailbox simulator](send-an-email-from-console.md#send-email-simulator), such as `success@simulator.amazonses.com`\.
 
 To enable event publishing for an email, you provide the name of the configuration set to Amazon SES when you send the email\. You can optionally include message tags to categorize the email\. You provide this information to Amazon SES as either parameters to the email sending API, Amazon SES\-specific email headers, or custom headers in your MIME message\. For more information, see [Send Email Using Amazon SES Event Publishing](event-publishing-send-email.md)\.
 

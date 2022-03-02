@@ -1,4 +1,4 @@
-# Controlling access to Amazon SES<a name="control-user-access"></a>
+# Identity and access management in Amazon SES<a name="control-user-access"></a>
 
 You can use AWS Identity and Access Management \(IAM\) with Amazon Simple Email Service \(Amazon SES\) to specify which Amazon SES API actions an IAM user, group, or role can perform\. \(In this topic we refer to these entities collectively as *user*\.\) You can also control which email addresses the user can use for the "From", recipient, and "Return\-Path" addresses of emails\.
 
@@ -9,7 +9,7 @@ To use IAM, you define an IAM policy, which is a document that explicitly define
 **Note**  
 You can also control access to Amazon SES by using sending authorization policies\. Whereas IAM policies constrain what individual IAM users can do, sending authorization policies constrain how individual verified identities can be used\. Further, only sending authorization policies can grant cross\-account access\. For more information about sending authorization, see [Using sending authorization with Amazon SES](sending-authorization.md)\.
 
-If you are looking for information about how to generate Amazon SES SMTP credentials for an existing IAM user, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.
+If you are looking for information about how to generate Amazon SES SMTP credentials for an existing IAM user, see [Obtaining Amazon SES SMTP credentials](smtp-credentials.md)\.
 
 ## Creating IAM Policies for Access to Amazon SES<a name="iam-and-ses"></a>
 
@@ -36,7 +36,7 @@ Then, depending on the `Action`, specify the `Resource` element as follows:
   + One with `Action` set to an explicit list of the permitted non\-email\-sending APIs and `Resource` set to \*
   + One with `Action` set to one of the email\-sending APIs \(`ses:SendEmail` and/or `ses:SendRawEmail`\), and `Resource` set to the ARN\(s\) of the identities you are permitting the user to use\.
 
-For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) and [ Amazon Simple Email Service API v2 Reference](https://docs.aws.amazon.com/ses/latest/APIReference-V2/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
+For a list of available Amazon SES actions, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\. If the IAM user will be using the SMTP interface, you must allow access to `ses:SendRawEmail` at a minimum\.
 
 ### Restricting Email Addresses<a name="iam-and-ses-restrict-addresses"></a>
 
@@ -53,7 +53,7 @@ These email address condition keys apply only to the APIs noted in the following
 | `ses:Recipients` | Restricts the recipient addresses, which include the To:, "CC", and "BCC" addresses\. | `SendEmail`, `SendRawEmail` | 
 | `ses:FromAddress` | Restricts the "From" address\. | `SendEmail`, `SendRawEmail`, `SendBounce` | 
 | `ses:FromDisplayName` | Restricts the "From" address that is used as the display name\.  | `SendEmail`, `SendRawEmail` | 
-| `ses:FeedbackAddress` | Restricts the "Return\-Path" address, which is the address where bounces and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Amazon SES notifications sent by email](monitor-sending-activity-using-notifications-email.md)\. | `SendEmail`, `SendRawEmail` | 
+| `ses:FeedbackAddress` | Restricts the "Return\-Path" address, which is the address where bounces and complaints can be sent to you by email feedback forwarding\. For information about email feedback forwarding, see [Receiving Amazon SES notifications through email](monitor-sending-activity-using-notifications-email.md)\. | `SendEmail`, `SendRawEmail` | 
 
 ### Restricting General API Usage<a name="iam-and-ses-restrict-API-usage"></a>
 
@@ -269,10 +269,3 @@ The following policy permits a user to call the Amazon SES email\-sending APIs, 
 17.   ]
 18. }
 ```
-
-
-****  
-
-|  | 
-| --- |
-| For information and discussions about a variety of topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

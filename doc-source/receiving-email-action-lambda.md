@@ -1,15 +1,19 @@
-# Lambda action<a name="receiving-email-action-lambda"></a>
+# Invoke Lambda function action<a name="receiving-email-action-lambda"></a>
 
-The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS\. This action has the following options\.
-+ **Lambda function—**The ARN of the Lambda function\. An example of a Lambda function ARN is *arn:aws:lambda:us\-west\-2:account\-id:function:MyFunction*\. For information about AWS Lambda, see the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)\.
-+ **Invocation type—**The invocation type of the Lambda function\. An invocation type of **RequestResponse** means that the execution of the function will immediately result in a response, and a value of **Event** means that the function will be invoked asynchronously\. We recommend that you use **Event** invocation type unless synchronous execution is absolutely necessary for your use case\.
-**Note**  
-There is a 30\-second timeout on **RequestResponse** invocations\.
+The Lambda action calls your code through a Lambda function and, optionally, notifies you through Amazon SNS\. This action has the following options and requirements\.
 
-  For information about AWS Lambda invocation types, see the [AWS Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\.
-+ **SNS Topic—**The name or ARN of the Amazon SNS topic to notify when the specified Lambda function is triggered\. An example of an Amazon SNS topic ARN is *arn:aws:sns:us\-west\-2:123456789012:MyTopic*\. You can also create an Amazon SNS topic when you set up your action by choosing **Create SNS Topic**\. For more information about Amazon SNS topics, see the [Amazon Simple Notification Service Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)\.
-**Note**  
-The Amazon SNS topic you choose must be in the same AWS region as the Amazon SES endpoint you use to receive email\. 
+**Options**
++ **Lambda function—**The ARN of the Lambda function\. An example of a Lambda function ARN is *arn:aws:lambda:us\-east\-1:account\-id:function:MyFunction*\.
++ **Invocation type—**The invocation type of the Lambda function\. An invocation type of **RequestResponse** means that the execution of the function results in an immediate response\. An invocation type of **Event** means that the function is invoked asynchronously\. We recommend that you use **Event** invocation type unless synchronous execution is required for your use case\.
+
+  There is a 30\-second timeout on **RequestResponse** invocations\.
+
+  For more information, see [Invoking Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html) in the *AWS Lambda Developer Guide*\.
++ **SNS topic—**The name or ARN of the Amazon SNS topic to notify when the specified Lambda function is triggered\. An example of an Amazon SNS topic ARN is *arn:aws:sns:us\-east\-1:123456789012:MyTopic*\. For more information, see [Creating an Amazon SNS topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+
+**Requirements**
++ The Lambda function that you choose must be in the same AWS Region as the Amazon SES endpoint that you use to receive email\.
++ The Amazon SNS topic that you choose must be in the same AWS Region as the Amazon SES endpoint that you use to receive email\.
 
 ## Writing your Lambda function<a name="receiving-email-action-lambda-function"></a>
 
@@ -29,7 +33,6 @@ For AWS Lambda code samples, see [Lambda function examples](receiving-email-acti
 
 Amazon SES passes information to the Lambda function in JSON format\. The top\-level object contains a `Records` array, which is populated with properties `eventSource`, `eventVersion`, and `ses`\. The `ses` object contains `receipt` and `mail` objects, which are in exactly the same format as in the Amazon SNS notifications described in [Notification contents](receiving-email-notifications-contents.md)\.
 
-**Note**  
 The data that Amazon SES passes to Lambda includes metadata about the message, as well as several email headers\. However, it doesn't contain the body of the message\.
 
 The following is a high\-level view of the structure of the input that Amazon SES provides to the Lambda function\.
@@ -59,3 +62,9 @@ Your Lambda function can control mail flow by returning one of the following val
 + `STOP_RULE`—No further actions in the current receipt rule will be processed, but further receipt rules can be processed\.
 + `STOP_RULE_SET`—No further actions or receipt rules will be processed\.
 + `CONTINUE` or any other invalid value—This means that further actions and receipt rules can be processed\.
+
+**Topics**
++ [Writing your Lambda function](#receiving-email-action-lambda-function)
++ [Sample incoming email event](receiving-email-action-lambda-event.md)
++ [Use case examples](receiving-email-action-lambda-example-use-cases.md)
++ [Lambda function examples](receiving-email-action-lambda-example-functions.md)

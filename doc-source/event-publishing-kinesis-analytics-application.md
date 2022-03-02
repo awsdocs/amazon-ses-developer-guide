@@ -30,7 +30,7 @@ The email sending events of different event types \(send, bounce, complaint, and
 Do not choose **Save and continue**\. This will cause errors because the discovered schema does not adhere to SQL naming constraints\. You must edit the schema as described in the next step\.
 
 1. Choose **Edit schema**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_discovery.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_schema_discovery.png)
 
 1. For this tutorial, we remove most of the rows\. Choose **X** next to all rows *except* rows with the following column names:
    + eventType
@@ -40,7 +40,7 @@ Do not choose **Save and continue**\. This will cause errors because the discove
    + ses:configuration\-set
 **Important**  
 Do not choose **Save schema and update stream samples**\. This will cause errors because the discovered schema does not adhere to SQL naming constraints\. You must edit the schema as described in the next step\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_remove.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_schema_remove.png)
 
 1. Examine the remaining entries under **Column name** and compare them to the SQL naming requirements as follows:
    + **Format** – As described in [Identifiers](https://docs.aws.amazon.com/kinesisanalytics/latest/sqlref/sql-reference-identifiers.html) in the *Amazon Kinesis Data Analytics SQL Reference*, unquoted identifiers must start with a letter or underscore, and be followed by letters, digits, or underscores\. Amazon SES auto\-tag names do not comply with these requirements because they contain colons and dashes\. You will edit these in the next step\. 
@@ -50,13 +50,13 @@ Do not choose **Save schema and update stream samples**\. This will cause errors
    + Rename `ses:configuration-set` to `ses_configuration_set`\.
    + Rename `timestamp` to `ses_timestamp`\.
    + Rename `to` to `ses_to`\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_schema_edit.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/white_space_horizontal.png)  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_schema_edit.png)
 
 1. Choose **Save schema and update stream samples**\. If you encounter validation errors, ensure that you correctly performed step 10\. If you encounter the **No rows in source stream** error, ensure that you are still sending the email stream that you started at the beginning of this procedure, and then choose **Retrieve rows**\. You might need to choose **Retrieve rows** several times before Amazon Kinesis Data Analytics captures records\.
 
 1. Upon successful retrieval of rows, choose **Exit \(done\)**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_exit.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_exit.png)
 
 ## Next Step<a name="event-publishing-kinesis-analytics-application-next-step"></a>
 

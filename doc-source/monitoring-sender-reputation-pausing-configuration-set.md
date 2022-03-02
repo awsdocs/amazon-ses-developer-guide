@@ -18,7 +18,7 @@ The solution described in this section pauses email sending for a specific confi
 
 Before you can configure Amazon SES to automatically pause email sending for a configuration set, you must first enable the export of reputation metrics for the configuration set\.
 
-To enable the export of bounce and complaint metrics for the configuration set, complete the steps in [Exporting reputation metrics for a configuration set to CloudWatch](configuration-sets-export-metrics.md)\.
+To enable the export of bounce and complaint metrics for the configuration set, complete the steps in [Viewing and exporting reputation metrics](configuration-sets-export-metrics.md)\.
 
 ## Part 2: Create an IAM Role<a name="monitoring-sender-reputation-pausing-configuration-set-part-2"></a>
 
@@ -128,7 +128,7 @@ The procedures in this section re\-enable email sending for your configuration s
    --enabled
    ```
 
-   In the preceding command, replace *ConfigSet* with the name of the configuration set for which you want to pause email sending, and replace *us\-west\-2* with the region in which you want to automatically pause email sending\.
+   In the preceding command, replace *ConfigSet* with the name of the configuration set for which you want to pause email sending\.
 
 1. At the command line, type the following command to ensure that email sending is enabled:
 
@@ -220,7 +220,11 @@ The procedures in this section are optional, but we recommend that you complete 
 
 **To test the solution**
 
-1. At the command line, type the following command to check the email sending status for the configuration set: aws ses describe\-configuration\-set \-\-configuration\-set\-name *ConfigSet* \-\-region *us\-west\-2*
+1. At the command line, type the following command to check the email sending status for the configuration set:
+
+   ```
+   aws ses describe-configuration-set --configuration-set-name ConfigSet
+   ```
 
    If sending is enabled for the configuration set, you see the following output:
 

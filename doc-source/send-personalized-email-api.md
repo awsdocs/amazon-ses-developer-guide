@@ -1,19 +1,19 @@
-# Sending personalized email using the Amazon SES API<a name="send-personalized-email-api"></a>
+# Using templates to send personalized email with the Amazon SES API<a name="send-personalized-email-api"></a>
 
 You can use the [CreateTemplate](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateTemplate.html) API operation to create email templates\. These templates include a subject line, and the text and HTML parts of the email body\. The subject and body sections may also contain unique values that are personalized for each recipient\.
 
 There are a few limits and other considerations when using these features:
 + You can create up to 10,000 email templates per Amazon SES account\.
-+ Each template can be up to 500KB in size, including both the text and HTML parts\.
++ Each template can be up to 500 KB in size, including both the text and HTML parts\.
 + You can include an unlimited number of replacement variables in each template\.
-+ You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients, as well as CC and BCC recipients\. Note that the number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing your Amazon SES sending quotas](manage-sending-quotas.md)\.
++ You can send email to up to 50 destinations in each call to the `SendBulkTemplatedEmail` operation\. A destination includes a list of recipients,including CC and BCC recipients\. The number of destinations you can contact in a single call to the API may be limited by your account's maximum sending rate\. For more information, see [Managing your Amazon SES sending limits](manage-sending-quotas.md)\.
 
 This section includes procedures for creating email templates and for sending personalized emails\.
 
 **Note**  
 The procedures in this section assume that you've already installed and configured the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
-## Part 1: Set up rendering failure event notifications<a name="send-personalized-email-set-up-notifications"></a>
+## Part 1: Set up Rendering Failure event notifications<a name="send-personalized-email-set-up-notifications"></a>
 
  If you send an email that contains invalid personalization content, Amazon SES might accept the message, but won't be able to deliver it\. For this reason, if you plan to send personalized email, you should configure Amazon SES to send Rendering Failure event notifications through Amazon SNS\. When you receive a Rendering Failure event notification, you can identify which message contained the invalid content, fix the issues, and send the message again\.
 
@@ -21,7 +21,7 @@ The procedure in this section is optional, but highly recommended\.
 
 **To configure Rendering Failure event notifications**
 
-1. Create an Amazon SNS topic\. For procedures, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) in the *Amazon Simple Notification Service Developer Guide*\.
+1. Create an Amazon SNS topic\. For procedures, see [Create a Topic](https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html) in the *Amazon Simple Notification Service Developer Guide*\.
 
 1. Subscribe to the Amazon SNS topic\. For example, if you want to receive Rendering Failure notifications by email, subscribe an email endpoint \(that is, your email address\) to the topic\.
 
@@ -40,14 +40,14 @@ This procedure assumes that you've already installed and configured the AWS CLI\
 1. In a text editor, create a new file\. Paste the following code into the file\.
 
    ```
-   1. {
-   2.   "Template": {
-   3.     "TemplateName": "MyTemplate",
-   4.     "SubjectPart": "Greetings, {{name}}!",
-   5.     "HtmlPart": "<h1>Hello {{name}},</h1><p>Your favorite animal is {{favoriteanimal}}.</p>",
-   6.     "TextPart": "Dear {{name}},\r\nYour favorite animal is {{favoriteanimal}}."
-   7.   }
-   8. }
+   {
+     "Template": {
+       "TemplateName": "MyTemplate",
+       "SubjectPart": "Greetings, {{name}}!",
+       "HtmlPart": "<h1>Hello {{name}},</h1><p>Your favorite animal is {{favoriteanimal}}.</p>",
+       "TextPart": "Dear {{name}},\r\nYour favorite animal is {{favoriteanimal}}."
+     }
+   }
    ```
 
    This code contains the following properties:
@@ -79,16 +79,16 @@ You can use the `SendTemplatedEmail` operation to send an email to a single dest
 1. In a text editor, create a new file\. Paste the following code into the file\.
 
    ```
-    1. {
-    2.   "Source":"Mary Major <mary.major@example.com>",
-    3.   "Template": "MyTemplate",
-    4.   "ConfigurationSetName": "ConfigSet",
-    5.   "Destination": {
-    6.     "ToAddresses": [ "alejandro.rosalez@example.com"
-    7.     ]
-    8.   },
-    9.   "TemplateData": "{ \"name\":\"Alejandro\", \"favoriteanimal\": \"alligator\" }"
-   10. }
+   {
+     "Source":"Mary Major <mary.major@example.com>",
+     "Template": "MyTemplate",
+     "ConfigurationSetName": "ConfigSet",
+     "Destination": {
+       "ToAddresses": [ "alejandro.rosalez@example.com"
+       ]
+     },
+     "TemplateData": "{ \"name\":\"Alejandro\", \"favoriteanimal\": \"alligator\" }"
+   }
    ```
 
    This code contains the following properties:
@@ -96,11 +96,11 @@ You can use the `SendTemplatedEmail` operation to send an email to a single dest
    + **Template** – The name of the template to apply to the email\.
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up rendering failure event notifications](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure event notifications](#send-personalized-email-set-up-notifications)\.
    + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendTemplatedEmail` operation, all recipients receive the same email\.
    + **TemplateData** – An escaped JSON string that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
 
-1. Change the values in the code above to meet your needs, and then save the file as `myemail.json`\.
+1. Change the values in the code in the previous step to meet your needs, and then save the file as `myemail.json`\.
 
 1. At the command line, type the following command to send the email:
 
@@ -117,46 +117,46 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
 1. In a text editor, create a new file\. Paste the following code into the file\.
 
    ```
-    1. {
-    2.   "Source":"Mary Major <mary.major@example.com>",
-    3.   "Template":"MyTemplate",
-    4.   "ConfigurationSetName": "ConfigSet",
-    5.   "Destinations":[
-    6.     {
-    7.       "Destination":{
-    8.         "ToAddresses":[
-    9.           "anaya.iyengar@example.com"
-   10.         ]
-   11.       },
-   12.       "ReplacementTemplateData":"{ \"name\":\"Anaya\", \"favoriteanimal\":\"angelfish\" }"
-   13.     },
-   14.     {
-   15.       "Destination":{ 
-   16.         "ToAddresses":[
-   17.           "liu.jie@example.com"
-   18.         ]
-   19.       },
-   20.       "ReplacementTemplateData":"{ \"name\":\"Liu\", \"favoriteanimal\":\"lion\" }"
-   21.     },
-   22.     {
-   23.       "Destination":{
-   24.         "ToAddresses":[
-   25.           "shirley.rodriguez@example.com"
-   26.         ]
-   27.       },
-   28.       "ReplacementTemplateData":"{ \"name\":\"Shirley\", \"favoriteanimal\":\"shark\" }"
-   29.     },
-   30.     {
-   31.       "Destination":{
-   32.         "ToAddresses":[
-   33.           "richard.roe@example.com"
-   34.         ]
-   35.       },
-   36.       "ReplacementTemplateData":"{}"
-   37.     }
-   38.   ],
-   39.   "DefaultTemplateData":"{ \"name\":\"friend\", \"favoriteanimal\":\"unknown\" }"
-   40. }
+   {
+     "Source":"Mary Major <mary.major@example.com>",
+     "Template":"MyTemplate",
+     "ConfigurationSetName": "ConfigSet",
+     "Destinations":[
+       {
+         "Destination":{
+           "ToAddresses":[
+             "anaya.iyengar@example.com"
+           ]
+         },
+         "ReplacementTemplateData":"{ \"name\":\"Anaya\", \"favoriteanimal\":\"angelfish\" }"
+       },
+       {
+         "Destination":{ 
+           "ToAddresses":[
+             "liu.jie@example.com"
+           ]
+         },
+         "ReplacementTemplateData":"{ \"name\":\"Liu\", \"favoriteanimal\":\"lion\" }"
+       },
+       {
+         "Destination":{
+           "ToAddresses":[
+             "shirley.rodriguez@example.com"
+           ]
+         },
+         "ReplacementTemplateData":"{ \"name\":\"Shirley\", \"favoriteanimal\":\"shark\" }"
+       },
+       {
+         "Destination":{
+           "ToAddresses":[
+             "richard.roe@example.com"
+           ]
+         },
+         "ReplacementTemplateData":"{}"
+       }
+     ],
+     "DefaultTemplateData":"{ \"name\":\"friend\", \"favoriteanimal\":\"unknown\" }"
+   }
    ```
 
    This code contains the following properties:
@@ -164,13 +164,13 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
    + **Template** – The name of the template to apply to the email\.
    + **ConfigurationSetName** – The name of the configuration set to use when sending the email\.
 **Note**  
-We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up rendering failure event notifications](#send-personalized-email-set-up-notifications)\.
+We recommend that you use a configuration set that is configured to publish Rendering Failure events to Amazon SNS\. For more information, see [Part 1: Set up Rendering Failure event notifications](#send-personalized-email-set-up-notifications)\.
    + **Destinations** – An array that contains one or more Destinations\.
      + **Destination** – The recipient addresses\. You can include multiple "To," "CC," and "BCC" addresses\. When you use the `SendBulkTemplatedEmail` operation, all recipients within the same `Destination` object receive the same email\.
      + **ReplacementTemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\.
    + **DefaultTemplateData** – A JSON object that contains key\-value pairs\. The keys correspond to the variables in the template \(for example, `{{name}}`\)\. The values represent the content that replaces the variables in the email\. This object contains fallback data\. If a `Destination` object contains an empty JSON object in the `ReplacementTemplateData` property, the values in the `DefaultTemplateData` property are used\.
 
-1. Change the values in the code above to meet your needs, and then save the file as `mybulkemail.json`\.
+1. Change the values in the code in the previous step to meet your needs, and then save the file as `mybulkemail.json`\.
 
 1. At the command line, type the following command to send the bulk email:
 

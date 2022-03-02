@@ -1,111 +1,133 @@
 # Managing configuration sets in Amazon SES<a name="managing-configuration-sets"></a>
 
-This section contains procedures for creating configuration sets, viewing a list of your existing configuration sets, viewing the details of individual configuration sets, and deleting configuration sets\.
+After creating a configuration set, you can manage it with the view, edit, and delete options using the SES console, the Amazon SES API v2, and the Amazon SES CLI v2\. Configuration sets can also be assigned to a verified identity as its default configuration set that is applied every time email is sent from the identity\.
 
-## Creating a configuration set<a name="event-publishing-managing-configuration-sets-creating"></a>
+**Topics**
++ [View, edit, & delete configuration set \(console\)](#console-detail-configuration-sets)
++ [List configuration sets \(AWS CLI\)](#cli-list-configuration-sets)
++ [Get configuration set details \(AWS CLI\)](#cli-get-configuration-set)
++ [Delete a configuration set \(AWS CLI\)](#cli-delete-configuration-set)
++ [Stop sending email from a configuration set \(AWS CLI\)](#cli-configuration-set-stop-sending)
++ [Understanding default configuration sets](#default-config-sets)
++ [Managing Amazon SES event destinations](event-destinations-manage.md)
++ [Manage IP pools in Amazon SES](managing-ip-pools.md)
++ [Configuring custom domains to handle open and click tracking](configure-custom-open-click-domains.md)
 
-You can use the Amazon SES console or the `CreateConfigurationSet` API to create new configuration sets\.
+## View, edit, & delete configuration set \(console\)<a name="console-detail-configuration-sets"></a><a name="proc-access-exist-config-set"></a>
 
-**To create a configuration set by using the Amazon SES console**
-
-1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
-
-1. In the navigation pane, choose **Configuration Sets**\.
-
-1. Choose **Create Configuration Set**\.
-
-1. For **Configuration set name**, type a name for the configuration set\.
-**Note**  
-The name can contain up to 64 alphanumeric characters\. It can also contain hyphens \(\-\) and underscores \(\_\)\. Names can't contain spaces, accented characters, or any other special characters\.
-
-You can also use the `CreateConfigurationSet` API to create configuration sets\. A common way to call this API is by using the AWS CLI\.
-
-**To create a configuration set by using the AWS CLI**
-+ At the command line, type the following command:
-
-  ```
-  aws ses create-configuration-set --configuration-set Name=ConfigSet
-  ```
-
-  In the preceding command, replace *ConfigSet* with the name that you want to give the configuration set\.
-**Note**  
-The name can contain up to 64 alphanumeric characters\. It can also contain hyphens \(\-\) and underscores \(\_\)\. Names can't contain spaces, accented characters, or any other special characters\.
-
-For more information about using the `CreateConfigurationSet` API to create configuration sets, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateConfigurationSet.html)\.
-
-## Viewing a list of your configuration sets<a name="event-publishing-managing-configuration-sets-viewing"></a>
-
-You can use the Amazon SES console or you can use the `ListConfigurationSets` API to view a list of your configuration sets\.
-
-**To view your configuration sets using the Amazon SES console**
+**Access an existing configuration set's detail page**
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the left navigation pane, choose **Configuration Sets**\.
+1. In the navigation pane, under **Configuration**, choose **Configuration sets**\.
 
-   In the details pane, you will see a list of your configuration sets\.
+1. To see details for a configuration set, choose the **Name** from the configuration set list\. This takes you to the details page\.
 
-You can also use the `ListConfigurationSets` API to view a list of configuration sets\. A common way to call this API is by using the AWS CLI\.
+The **Configuration sets** detail page has two tabs for configuration set details with panels in each tab where you can view, edit, or delete as follows:
++ 
 
-**To view a list of configuration sets by using the AWS CLI**
-+ At the command line, type the following command:
+****Overview** tab**
+  + **General details** – this panel shows general details for the configuration set:
+    + **Sending status** \(whether it's currently enabled\)
+    + **Configuration set name**
+    + **Sending IP pool**
+    + **Transport Layer Security \(TLS\)**
+    + **Custom redirect domain**
+  + **Reputation options** – this panel shows details related to your sending reputation:
+    + **Reputation metrics** \(indicates if you're tracking metrics\)
+    + **Last fresh start** \(the date and time at which the reputation metrics for the configuration set were last reset\)\.
+    + **Suppression settings**
+    + **Suppression reasons**
+  + **Tags** – this panel shows all of the tags you've attached to the configuration set\.
+    + **Key**
+    + **Value**
 
-  ```
-  aws ses list-configuration-sets
-  ```
+  
 
-For more information about using `ListConfigurationSets` API to list your configuration sets, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_ListConfigurationSets.html)\.
+  You can perform the following actions from these panels:
+  + Choose the **Edit** button, or in the case of the Tags panel, the **Manage tags** button to edit the respective details of each panel\.
+  + For more information about the fields, see the related section in the [Create a configuration set \(console\)](creating-configuration-sets.md#config-sets-create-console) steps\.
+**Tip**  
+Remember to **Save changes** when you are done editing\. Choose **Cancel** to go back to the configuration set detail page without saving\.
++ 
 
-## Viewing the details of a configuration set<a name="event-publishing-managing-configuration-sets-describing"></a>
+****Event destinations** tab**
+  + **All destinations \(*count of event destinations*\)** – this panel lists all of the event destinations that you have entered for your configuration set\. For each destination, you can see:
+    + **Name**
+    + **Destination**
+    + **Event types**
+    + **Event publishing**
 
-You can use the Amazon SES console to view the details of a configuration set, or you can use the `DescribeConfigurationSet` API to describe a configuration set\. 
+  
 
-**Viewing the details of a configuration set using the Amazon SES console**
+  You can perform the following actions from this panel:
+  + Add a new event destination by choosing the **Add destination** button\. For more information about adding an event destination, see [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add)\.
+  + Modify an existing event destination by selecting its name which will open the edit screen\.
+  + Delete an existing event destination by selecting the check box next to its name then choosing the **Delete** button\.
 
-1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
+At the top of each configuration set's details page, and visible from either the **Overview** or **Events destination** tab, are the following options:
++ **Delete** – this button will delete your configuration set\.
++ **Disable sending** – this button will stop sending emails from your configuration set\.
 
-1. In the left navigation pane, choose **Configuration Sets**\.
+## List configuration sets \(AWS CLI\)<a name="cli-list-configuration-sets"></a>
 
-1. In the details pane, choose the expand icon next to the configuration set\.
+You can use the list\-configuration\-sets command in the AWS CLI to generate a list of all the configuration sets associated with your account in the current Region, as follows:
 
-   You will see the details of the configuration set\.
+```
+aws sesv2 list-configuration-sets
+```
 
-You can also use the `DescribeConfigurationSet` API to show more information about a configuration set\. A common way to call this API is by using the AWS CLI\.
+## Get configuration set details \(AWS CLI\)<a name="cli-get-configuration-set"></a>
 
-**To obtain more information about a configuration set by using the AWS CLI**
-+ At the command line, type the following command:
+You can use the get\-configuration\-set command in the AWS CLI to get details for a specific configuration set, as follows:
 
-  ```
-  aws ses describe-configuration-set --configuration-set-name ConfigSet
-  ```
+```
+aws sesv2 get-configuration-set --configuration-set-name name
+```
 
-  In the preceding command, replace *ConfigSet* with the name of the configuration set that you want to learn more about\.
+## Delete a configuration set \(AWS CLI\)<a name="cli-delete-configuration-set"></a>
 
-For information about how to use the `DescribeConfigurationSet` API to describe a configuration set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeConfigurationSet.html)\.
+You can use the delete\-configuration\-set command in the AWS CLI to delete a specific configuration set, as follows:
 
-## Deleting a configuration set<a name="event-publishing-managing-configuration-sets-deleting"></a>
+```
+aws sesv2 delete-configuration-set --configuration-set-name name
+```
 
-You can use the Amazon SES console or the `DeleteConfigurationSet` API to delete a configuration set\. 
+## Stop sending email from a configuration set \(AWS CLI\)<a name="cli-configuration-set-stop-sending"></a>
 
-**To delete a configuration set using the Amazon SES console**
+You can use the put\-configuration\-set\-sending\-options command in the AWS CLI to stop sending email from a specific configuration set, as follows:
 
-1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
+```
+aws sesv2 put-configuration-set-sending-options --configuration-set-name name --no-sending-enabled
+```
 
-1. In the left navigation pane, choose **Configuration Sets**\.
+To start sending again, run the same command with the `--sending-enabled` option instead, as follows:
 
-1. In the details pane, choose the configuration set\.
+```
+aws sesv2 put-configuration-set-sending-options --configuration-set-name name --sending-enabled
+```
 
-1. From the **Actions** menu, choose **Delete**, and then confirm that you want to delete the configuration set\.
+## Understanding default configuration sets<a name="default-config-sets"></a>
 
-You can also use the `DeleteConfigurationSet` API to delete configuration sets\. A common way to call this API is by using the AWS CLI\.
+The concept of assigning a configuration set as the default to be used by a verified identity is explained in this section to help understand the benefits and use case\.
 
-**To delete a configuration set by using the AWS CLI**
-+ At the command line, type the following command:
+A default configuration set automatically applies its rules to all messages that you send from the email identity associated with that configuration set\. You can apply default configuration sets to both email address and domain identities during the creation of the identity or after the fact as an edit function of an existing identity\.
 
-  ```
-  aws ses delete-configuration-set --configuration-set ConfigSet
-  ```
+**Default configuration set considerations**
++ The configuration set must be created first before associating it with an identity\.
++ Default configuration sets will only be applied if the identity is verified\.
++ An email identity can be associated with only one configuration set at a time\. However, you can apply the same configuration set to multiple identities\.
++ A default configuration set at the email address level overrides a default configuration set at the domain level\. For example, a default configuration set associated with *joe@example\.com* overrides the configuration set for the domain of *example\.com*\.
++ A default configuration set at the domain level applies to all email addresses for that domain \(unless you verify specific addresses for the domain\)\.
++ If you delete a configuration set that's designated as the default configuration set for an identity, and then attempt to send email through that identity, your call to Amazon SES fails with a "bad request" error\.
++ How to specify an existing configuration set to be used as the identity's default configuration set is actually a function of verified identities, so instructions are given in the identity workflows accordingly:
+  + **Specify a default configuration set during identity creation** – follow the instructions given in the optional Step 6 for either [Domain identity default configuration set](creating-identities.md#verified-domain-identity-default-config-set) or [Email identity default configuration set](creating-identities.md#verified-email-identity-default-config-set) located in the [Creating and verifying identities in Amazon SES](creating-identities.md) chapter\.
+  + **Specify a default configuration set for an existing identity** – follow the steps in [Editing an identity using the console](managing-identities.md#edit-verified-domain) along with these details for Step 5:
 
-  In the preceding command, replace *ConfigSet* with the name of the configuration set that you want to delete\.
+    1. Choose the **Configuration set** tab\.
 
-For more information using the `DeleteConfigurationSet` API to delete a configuration set, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteConfigurationSet.html)\.
+    1. Choose **Edit** in the **Default configuration set** container\.
+
+    1. Select the list box and choose an existing configuration set to be used as the default\.
+
+    1. Continue with the remaining steps in [Editing an identity using the console](managing-identities.md#edit-verified-domain)\.

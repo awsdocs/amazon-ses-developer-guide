@@ -26,7 +26,7 @@ The top\-level JSON object in an email sending event record contains the followi
 
 | Field Name | Description | 
 | --- | --- | 
-|  `eventType`  |  A string that describes the type of event\. Possible values: `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Bounce`, `Complaint`, `Rendering Failure`, or `DeliveryDelay`\.  | 
+|  `eventType`  |  A string that describes the type of event\. Possible values: `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Bounce`, `Complaint`, `Rendering Failure`, or `DeliveryDelay`\. If you did not [set up event publishing](monitor-sending-using-event-publishing-setup.md) this field is named `notificationType`\.  | 
 |  `mail`  |  A JSON object that contains information about the email that produced the event\.  | 
 |  `bounce`  |  This field is only present if `eventType` is `Bounce`\. It contains information about the bounce\.  | 
 |  `complaint`  |  This field is only present if `eventType` is `Complaint`\. It contains information about the complaint\.  | 
@@ -48,7 +48,7 @@ Each email sending event record contains information about the original email in
 |  `timestamp`  |  The date and time, in ISO8601 format \(*YYYY\-MM\-DDThh:mm:ss\.sZ*\), when the message was sent\.  | 
 |  `messageId`  |  A unique ID that Amazon SES assigned to the message\. Amazon SES returned this value to you when you sent the message\.  This message ID was assigned by Amazon SES\. You can find the message ID of the original email in the `headers` and `commonHeaders` fields of the `mail` object\.   | 
 |  `source`  |  The email address that the message was sent from \(the envelope MAIL FROM address\)\.  | 
-|  `sourceArn`  |  The Amazon Resource Name \(ARN\) of the identity that was used to send the email\. In the case of sending authorization, the `sourceArn` is the ARN of the identity that the identity owner authorized the delegate sender to use to send the email\. For more information about sending authorization, see [Using sending authorization](sending-authorization.md)\.  | 
+|  `sourceArn`  |  The Amazon Resource Name \(ARN\) of the identity that was used to send the email\. In the case of sending authorization, the `sourceArn` is the ARN of the identity that the identity owner authorized the delegate sender to use to send the email\. For more information about sending authorization, see [Email authentication methodsUsing sending authorization](sending-authorization.md)\.  | 
 |  `sendingAccountId`  |  The AWS account ID of the account that was used to send the email\. In the case of sending authorization, the `sendingAccountId` is the delegate sender's account ID\.  | 
 |  `destination`  |  A list of email addresses that were recipients of the original mail\.  | 
 |  `headersTruncated`  |  A string that specifies whether the headers are truncated in the notification, which occurs if the headers are larger than 10 KB\. Possible values are `true` and `false`\.  | 
@@ -99,8 +99,8 @@ The event publishing system only publishes hard bounces and soft bounces that wi
 |  `Undetermined`  |  `Undetermined`  |  Amazon SES was unable to determine a specific bounce reason\.  | 
 |  `Permanent`  |  `General`  |  Amazon SES received a general hard bounce\. If you receive this type of bounce, you should remove the recipient's email address from your mailing list\.  | 
 |  `Permanent`  |  `NoEmail`  |  Amazon SES received a permanent hard bounce because the target email address does not exist\. If you receive this type of bounce, you should remove the recipient's email address from your mailing list\.  | 
-|  `Permanent`  |  `Suppressed`  |  Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address\. For information about how to remove an address from the suppression list, see [Using the Amazon SES global suppression list](sending-email-global-suppression-list.md)\.  | 
-| Permanent | OnAccountSuppressionList | Amazon SES has suppressed sending to this address because it is on the [account\-level suppression list](sending-email-suppression-list.md)\. | 
+|  `Permanent`  |  `Suppressed`  |  Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address\. To override the global suppression list, see [Using the Amazon SES account\-level suppression list](sending-email-suppression-list.md)\.   | 
+| Permanent | OnAccountSuppressionList | Amazon SES has suppressed sending to this address because it is on the [account\-level suppression list](sending-email-suppression-list.md)\. This does not count toward your bounce rate metric\. | 
 |  `Transient`  |  `General`  |  Amazon SES received a general bounce\. You may be able to successfully send to this recipient in the future\.  | 
 |  `Transient`  |  `MailboxFull`  |  Amazon SES received a mailbox full bounce\. You may be able to successfully send to this recipient in the future\.  | 
 |  `Transient`  |  `MessageTooLarge`  |  Amazon SES received a message too large bounce\. You may be able to successfully send to this recipient if you reduce the size of the message\.  | 
@@ -223,7 +223,7 @@ The JSON object that contains information about a `DeliveryDelay` event has the 
 
 | Field Name | Description | 
 | --- | --- | 
-|  `delayType`  |  The type of delay\. Possible values are: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/event-publishing-retrieving-firehose-contents.html)  | 
+|  `delayType`  |  The type of delay\. Possible values are: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/event-publishing-retrieving-firehose-contents.html)  | 
 |  `delayedRecipients`  |  An object that contains information about the recipient of the email\.  | 
 |  `expirationTime`  |  The date and time when Amazon SES will stop trying to deliver the message\. This value is shown in ISO 8601 format\.  | 
 |  `reportingMTA`  |  The IP address of the Message Transfer Agent \(MTA\) that reported the delay\.  | 

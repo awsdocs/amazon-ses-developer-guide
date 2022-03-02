@@ -17,7 +17,7 @@ This chapter provides procedures for deleting various types of data that might b
 
 ## Delete Email Addresses From the Account\-Level Suppression List<a name="deleting-personal-data-account-suppression-list"></a>
 
-Amazon SES includes an optional account\-level suppression list\. When you enable this feature, email addresses are automatically added to a suppression list when they result in a bounce or complaint\. Email addresses remain on this list until you delete them\. For more information about the account\-level suppression list, see [Using the account\-level suppression list](sending-email-suppression-list.md)\.
+Amazon SES includes an optional account\-level suppression list\. When you enable this feature, email addresses are automatically added to a suppression list when they result in a bounce or complaint\. Email addresses remain on this list until you delete them\. For more information about the account\-level suppression list, see [Using the Amazon SES account\-level suppression list](sending-email-suppression-list.md)\.
 
 You can remove email addresses from the account\-level suppression list by using the `DeleteSuppressedDestination` operation in the [Amazon SES API v2](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_DeleteSuppressedDestination.html)\. This section includes a procedure for deleting email addresses by using the AWS CLI\. For more information about installing and configuring the AWS CLI, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
 
@@ -34,7 +34,7 @@ You can remove email addresses from the account\-level suppression list by using
 
 When you use Amazon SES to send an email, you can send information about that email to other AWS services\. For example, you can send information about email events \(such as deliveries, opens, and clicks\) to Kinesis Data Firehose\. This event data typically contains your email address and the IP address the email was sent from\. It also contains the email addresses of all the recipients the email was sent to\.
 
-You can use Kinesis Data Firehose to stream email event data to several destinations—including Amazon Simple Storage Service, Amazon Elasticsearch Service, and Amazon Redshift\. To remove this data, you should first stop streaming data to Kinesis Data Firehose, and then delete the data that has already been streamed\. To stop streaming Amazon SES event data to Kinesis Data Firehose, you must delete the Kinesis Data Firehose event destination\.
+You can use Kinesis Data Firehose to stream email event data to several destinations—including Amazon Simple Storage Service, Amazon OpenSearch Service, and Amazon Redshift\. To remove this data, you should first stop streaming data to Kinesis Data Firehose, and then delete the data that has already been streamed\. To stop streaming Amazon SES event data to Kinesis Data Firehose, you must delete the Kinesis Data Firehose event destination\.
 
 **To remove a Kinesis Data Firehose event destination by using the Amazon SES console**
 
@@ -44,7 +44,7 @@ You can use Kinesis Data Firehose to stream email event data to several destinat
 
 1. In the list of configuration sets, choose the configuration set that contains the Kinesis Data Firehose event destination\.
 
-1. Next to the Kinesis Data Firehose event destination that you want to delete, choose the **delete** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/delete_icon.png)\) button\.
+1. Next to the Kinesis Data Firehose event destination that you want to delete, choose the **delete** \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/delete_icon.png)\) button\.
 
 1. If necessary, remove the data that Kinesis Data Firehose wrote to other services\. For more information, see [Remove Stored Event Data](#deleting-personal-data-message-data-storage)\.
 
@@ -55,7 +55,7 @@ You can also use the Amazon SES API to delete event destinations\. The following
 1. At the command line, type the following command:
 
    ```
-   aws ses delete-configuration-set-event-destination --configuration-set-name configSet \
+   aws sesv2 delete-configuration-set-event-destination --configuration-set-name configSet \
    --event-destination-name eventDestination
    ```
 
@@ -66,8 +66,8 @@ You can also use the Amazon SES API to delete event destinations\. The following
 ### Remove Stored Event Data<a name="deleting-personal-data-message-data-storage"></a>
 
 For more information about deleting information from other AWS services, see the following documents:
-+ [Delete an Object and Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/DeletingAnObjectandBucket.html) in the *Amazon Simple Storage Service Getting Started Guide*
-+ [Delete an Amazon ES Domain](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg-deleting.html) in the *Amazon Elasticsearch Service Developer Guide*
++ [Delete an Object and Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/DeletingAnObjectandBucket.html) in the *Amazon Simple Storage Service User Guide*
++ [Delete an OpenSearch Service Domain](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/es-gsg-deleting.html) in the *Amazon OpenSearch Service Developer Guide*
 + [Deleting a Cluster](https://docs.aws.amazon.com/redshift/latest/mgmt/managing-clusters-console.html#delete-cluster) in the *Amazon Redshift Cluster Management Guide*
 
 You can also use Kinesis Data Firehose to stream email data to Splunk, a third\-party service that isn't supported by AWS or managed in the AWS Management Console\. For more information about removing data from Splunk, consult your system administrator or the documentation on the [Splunk website](http://docs.splunk.com/Documentation)\.

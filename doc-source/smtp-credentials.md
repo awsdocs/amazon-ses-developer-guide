@@ -1,4 +1,4 @@
-# Obtaining your Amazon SES SMTP credentials<a name="smtp-credentials"></a>
+# Obtaining Amazon SES SMTP credentials<a name="smtp-credentials"></a>
 
 You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\.
 
@@ -6,9 +6,12 @@ The credentials that you use to send email through the Amazon SES SMTP interface
 
 Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Types of Amazon SES credentials](send-email-concepts-credentials.md)\.
 
+**Note**  
+SMTP endpoints are not currently available in Africa \(Cape Town\), Europe \(Milan\), Middle East \(Bahrain\)\.
+
 ## Obtaining Amazon SES SMTP credentials using the Amazon SES console<a name="smtp-credentials-console"></a>
 
-When you generate SMTP credentials by using the Amazon SES console, the Amazon SES console creates an IAM user with the appropriate policies to call Amazon SES and provides you with the SMTP credentials associated with that user\. 
+When you use the SES workflow below to generate SMTP credentials by using the console, you are taken to the IAM console to create an IAM user with the appropriate policies to call Amazon SES and provides you with the SMTP credentials associated with that user\.
 
 **Requirement**  
 An IAM user can create Amazon SES SMTP credentials, but the IAM user's policy must give them permission to use IAM itself, because Amazon SES SMTP credentials are created by using IAM\. Your IAM policy must allow you to perform the following IAM actions: `iam:ListUsers`, `iam:CreateUser`, `iam:CreateAccessKey`, and `iam:PutUserPolicy`\. If you try to create Amazon SES SMTP credentials using the console and your IAM user doesn't have these permissions, you see an error that states that your account is "not authorized to perform iam:ListUsers\."
@@ -17,23 +20,23 @@ An IAM user can create Amazon SES SMTP credentials, but the IAM user's policy mu
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the navigation pane, choose **SMTP Settings**\.
+1. Choose **Account dashboard** in the left navigation pane\.
 
-1. In the content pane, choose **Create My SMTP Credentials**\.
+1. In the **Simple Mail Transfer Protocol \(SMTP\) settings** container, choose **Create SMTP Credentials** in the lower\-left corner \- the IAM console will open\.
 
-1. For **Create User for SMTP**, type a name for your SMTP user\. Alternatively, you can use the default value that is provided in this field\. When you finish, choose **Create**\.  
-![\[Create User for SMTP\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/console_smtp_create_new_user.png)
+1. For **Create User for SMTP**, type a name for your SMTP user in the **IAM User Name** field\. Alternatively, you can use the default value that is provided in this field\. When you finish, choose **Create** in the bottom\-right corner\.
 
-1. Choose **Show User SMTP Credentials**\. Your SMTP credentials are shown on the screen\. Download or copy these credentials and store them in a safe place, as you cannot view or save your credentials after you dismiss this dialog box\.  
-![\[Create User for SMTP\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/console_smtp_user_created.png)
+1. Expand **Show User SMTP Security Credentials** \- your SMTP credentials are shown on the screen\.
+
+1. Download these credentials by choosing **Download Credentials** or copy them and store them in a safe place, because you can't view or save your credentials after you close this dialog box\.
 
 1. Choose **Close Window**\.
 
-You can view a list of existing SMTP credentials that you've created using this procedure by going to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. In the navigation pane, under **Access management**, choose **Users**\. Use the search bar to find all users that contain the text "ses\-smtp\-user"\.
+You can view a list of existing SMTP credentials that you've created using this procedure by going to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. In the navigation pane, under **Access management**, choose **Users**\. Use the search bar to find all users that you've assigned SMTP credentials\.
 
 You can also use the IAM console to delete existing SMTP users\. To learn more about deleting users, see [https://docs\.aws\.amazon\.com/IAM/latest/UserGuide/Managing IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html) in the *IAM Getting Started Guide*\.
 
-If you want to rotate your SMTP credentials, complete the procedure above to generate a new set of SMTP credentials\. Then, test the new credentials to ensure that they work as expected\. Finally, delete the IAM user associated with the old SMTP credentials in the IAM console\. For more information about deleting users in IAM, see [Managing users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting) in the *IAM User Guide*\.
+If you want to change your SMTP password, delete your existing SMTP user in the IAM console\. Then, to generate a new set of SMTP credentials, complete the previous procedures\.
 
 ## Obtaining Amazon SES SMTP credentials by converting existing AWS credentials<a name="smtp-credentials-convert"></a>
 
@@ -42,8 +45,8 @@ If you have an IAM user that you set up using the IAM interface, you can derive 
 **Important**  
 Don't use temporary AWS credentials to derive SMTP credentials\. The Amazon SES SMTP interface doesn't support SMTP credentials that have been generated from temporary security credentials\. 
 
-To enable the IAM user to send email using the Amazon SES SMTP interface, you need to do the following two steps:
-+ Derive the user's SMTP credentials from their AWS credentials using the algorithm provided in this section\. Because you are starting from AWS credentials, the SMTP user name is the same as the AWS access key ID, so you just need to generate the SMTP password\.
+To enable the IAM user to send email using the Amazon SES SMTP interface, do the following\.
++ Derive the user's SMTP credentials from their AWS credentials by using the algorithm provided in this section\. Because you're starting from AWS credentials, the SMTP user name is the same as the AWS access key ID, so you only need to generate the SMTP password\.
 + Apply the following policy to the IAM user:
 
   ```
@@ -59,12 +62,12 @@ To enable the IAM user to send email using the Amazon SES SMTP interface, you ne
   }
   ```
 
-  For more information about using Amazon SES with IAM, see [Controlling access to Amazon SES](control-user-access.md)\.
+  For more information about using Amazon SES with IAM, see [Identity and access management in Amazon SES](control-user-access.md)\.
 
 **Note**  
-Although you can generate Amazon SES SMTP credentials for any IAM user, we recommend that you create a separate IAM user when you generate your SMTP credentials\. For information about why it is good practice to create users for specific purposes, go to [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html)\.
+Although you can generate Amazon SES SMTP credentials for any IAM user, we recommend that you create a separate IAM user when you generate your SMTP credentials\. For information about why it's good practice to create users for specific purposes, go to [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html)\.
 
-The following pseudocode shows an algorithm that converts an AWS secret access key to an Amazon SES SMTP password\.
+The following pseudocode shows the algorithm that converts an AWS secret access key to an Amazon SES SMTP password\.
 
 ```
  1. // Modify this variable to include your AWS secret access key
@@ -90,6 +93,10 @@ The following pseudocode shows an algorithm that converts an AWS secret access k
 ```
 
 Some programming languages include libraries that you can use to convert an IAM secret access key into an SMTP password\. This section includes a code example that you can use to convert an AWS secret access key to an Amazon SES SMTP password using Python\.
+
+**Note**  
+The following example uses **f\-strings** that were introduced in Python 3\.6; if using an older version, they won't work\.  
+Currently, the Python SDK \(Boto3\) officially supports 2\.7 and 3\.6 \(or later\)\. However, 2\.7 support is deprecated and will be dropped on 7/15/2021, so you'll need to upgrade to at least 3\.6\.
 
 ------
 #### [ Python ]
@@ -162,7 +169,7 @@ if __name__ == '__main__':
     main()
 ```
 
-To obtain your SMTP password by using this script, save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, execute the following command:
+To obtain your SMTP password by using this script, save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, run the following command:
 
 ```
 python path/to/smtp_credentials_generate.py wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY us-east-1
@@ -177,7 +184,7 @@ When this script runs successfully, the only output is your SMTP password\.
 
 ------
 
-To use this script, first save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, execute the following command:
+To use this script, first save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, run the following command:
 
 ```
 python path/to/smtp_credentials_generate.py wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY us-east-1

@@ -1,55 +1,18 @@
-# Amazon SES and security protocols<a name="security"></a>
+# Security in Amazon Simple Email Service<a name="security"></a>
 
-This topic describes the security protocols that you can use when you connect to Amazon SES, as well as when Amazon SES delivers an email to a receiver\.
+Cloud security at AWS is the highest priority\. As an AWS customer, you benefit from a data center and network architecture that is built to meet the requirements of the most security\-sensitive organizations\.
 
-## Email Sender to Amazon SES<a name="security-client-to-ses"></a>
+Security is a shared responsibility between AWS and you\. The [shared responsibility model](http://aws.amazon.com/compliance/shared-responsibility-model/) describes this as security of the cloud and security in the cloud:
++ **Security of the cloud** – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud\. AWS also provides you with services that you can use securely\. Third\-party auditors regularly test and verify the effectiveness of our security as part of the [AWS Compliance Programs](http://aws.amazon.com/compliance/programs/)\. To learn about the compliance programs that apply to Amazon Simple Email Service, see [AWS Services in Scope by Compliance Program](http://aws.amazon.com/compliance/services-in-scope/)\.
++ **Security in the cloud** – Your responsibility is determined by the AWS service that you use\. You are also responsible for other factors including the sensitivity of your data, your company’s requirements, and applicable laws and regulations 
 
-The security protocol that you use to connect to Amazon SES depends on whether you are using the Amazon SES API or the Amazon SES SMTP interface, as described next\.
+This documentation helps you understand how to apply the shared responsibility model when using Amazon Simple Email Service\. It shows you how to configure Amazon Simple Email Service to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your Amazon Simple Email Service resources\.
 
-### HTTPS<a name="security-client-to-ses-api"></a>
-
-If you are using the Amazon SES API \(either directly or through an AWS SDK\), then all communications are encrypted by TLS through the Amazon SES HTTPS endpoint\. The Amazon SES HTTPS endpoint supports TLS 1\.2, TLS 1\.1, and TLS 1\.0\. 
-
-### SMTP Interface<a name="security-client-to-ses-smtp"></a>
-
-If you are accessing Amazon SES through the SMTP interface, you are required to encrypt your connection using Transport Layer Security \(TLS\)\. Note that TLS is often referred to by the name of its predecessor protocol, Secure Sockets Layer \(SSL\)\.
-
-Amazon SES supports two mechanisms for establishing a TLS\-encrypted connection: STARTTLS and TLS Wrapper\.
-+ **STARTTLS**—STARTTLS is a means of upgrading an unencrypted connection to an encrypted connection\. There are versions of STARTTLS for a variety of protocols; the SMTP version is defined in [RFC 3207](https://www.ietf.org/rfc/rfc3207.txt)\. For STARTTLS connections, Amazon SES supports TLS 1\.2, TLS 1\.1, TLS 1\.0 and SSLv2Hello\.
-+ **TLS Wrapper**—TLS Wrapper \(also known as SMTPS or the Handshake Protocol\) is a means of initiating an encrypted connection without first establishing an unencrypted connection\. With TLS Wrapper, the Amazon SES SMTP endpoint does not perform TLS negotiation: it is the client's responsibility to connect to the endpoint using TLS, and to continue using TLS for the entire conversation\. TLS Wrapper is an older protocol, but many clients still support it\. For TLS Wrapper connections, Amazon SES supports TLS 1\.2, TLS 1\.1 and TLS 1\.0\.
-
-For information about connecting to the Amazon SES SMTP interface using these methods, see [Connecting to an Amazon SES SMTP endpoint](smtp-connect.md)\.
-
-## Amazon SES to Receiver<a name="security-ses-to-receiver"></a>
-
-Amazon SES supports TLS 1\.2, TLS 1\.1 and TLS 1\.0 for TLS connections\.
-
-By default, Amazon SES uses *opportunistic TLS*\. This means that Amazon SES always attempts to make a secure connection to the receiving mail server\. If Amazon SES can't establish a secure connection, it sends the message unencrypted\.
-
-You can change this behavior by using configuration sets\. Use the [PutConfigurationSetDeliveryOptions](https://docs.aws.amazon.com/ses/latest/APIReference/API_PutConfigurationSetDeliveryOptions.html) API operation to set the `TlsPolicy` property for a configuration set to `Require`\. You can use the [AWS CLI](https://aws.amazon.com/cli) to make this change\.
-
-**To configure Amazon SES to require TLS connections for a configuration set**
-+ At the command line, enter the following command:
-
-  ```
-  aws ses put-configuration-set-delivery-options --configuration-set-name MyConfigurationSet --delivery-options TlsPolicy=Require
-  ```
-
-  In the preceding example, replace *MyConfigurationSet* with the name of your configuration set\.
-
-  When you send an email using this configuration set, Amazon SES only sends the message to the receiving email server if it can establish a secure connection\. If Amazon SES can't make a secure connection to the receiving email server, it drops the message\.
-
-## End\-to\-End Encryption<a name="security-end-to-end"></a>
-
-You can use Amazon SES to send messages that are encrypted using S/MIME or PGP\. Messages that use these protocols are encrypted by the sender\. Their contents can only be viewed by recipients who possess the public keys that are required to decrypt the messages\.
-
-Amazon SES supports the following MIME types, which you can use to send S/MIME encrypted email:
-+ `application/pkcs7-mime`
-+ `application/pkcs7-signature`
-+ `application/x-pkcs7-mime`
-+ `application/x-pkcs7-signature`
-
-Amazon SES also supports the following MIME types, which you can use to send PGP\-encrypted email:
-+ `application/pgp-encrypted`
-+ `application/pgp-keys`
-+ `application/pgp-signature`
+**Topics**
++ [Data protection](data-protection.md)
++ [Identity and access management](control-user-access.md)
++ [Logging and monitoring](security-monitoring-overview.md)
++ [Compliance validation](compliance-validation.md)
++ [Resilience](disaster-recovery-resiliency.md)
++ [Infrastructure security](infrastructure-security.md)
++ [VPC endpoints](send-email-set-up-vpc-endpoints.md)

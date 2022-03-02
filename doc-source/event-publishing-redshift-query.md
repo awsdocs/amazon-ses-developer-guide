@@ -16,7 +16,7 @@ We assume that SQL Workbench/J is currently open on your computer, and it is con
 1. Place the cursor within the statement \(somewhere before the semicolon\), and then choose the **Execute current statement** button\.
 
    You will see the email sending records for all of the emails you sent in [Step 6: Send Emails](event-publishing-redshift-send-email.md)\. The records in the following figure show that our `book` campaign had two complaints, and the `clothing` campaign had one bounce\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_all_records.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_all_records.png)
 
 1. To count the `complaint` records for the campaign of type `book`, copy the following query and paste it into the **Statement 1** window\.
 
@@ -27,4 +27,4 @@ We assume that SQL Workbench/J is currently open on your computer, and it is con
 1. Place the cursor within the statement \(somewhere before the semicolon\), and then choose the **Execute current statement** button\.
 
    The results are the following, showing that the book campaign had two complaints\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_complaint_count.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_complaint_count.png)

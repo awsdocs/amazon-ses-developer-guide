@@ -25,7 +25,11 @@ The easiest way to call the `GetSendStatistics` API operation is to use the [AWS
 
 1. If you have not already done so, configure the AWS CLI to use your AWS credentials\. For more information, see "[Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)" in the *AWS Command Line Interface User Guide*\.
 
-1. At the command line, type **aws ses get\-send\-statistics**
+1. At the command line, run the following command:
+
+   ```
+   aws ses get-send-statistics
+   ```
 
    If the AWS CLI is properly configured, you see a list of sending statistics in JSON format\. Each JSON object includes aggregated sending statistics for a 15\-minute period\.
 
@@ -38,7 +42,7 @@ You can also call the `GetSendStatistics` operation using the AWS SDKs\. This se
 + [Code example for the AWS SDK for Ruby](#code-example-getsendstatistics-ruby)
 
 **Note**  
-These code examples assume that you have created an AWS shared credentials file that contains your AWS Access Key ID, your AWS Secret Access Key, and your preferred AWS Region\. For more information, see [Create a shared credentials file](create-shared-credentials-file.md)\.
+These code examples assume that you have created an AWS shared credentials file that contains your AWS access key ID, your AWS secret access key, and your preferred AWS Region\. For more information, see [Shared credentials and config files](https://docs.aws.amazon.com/credref/latest/refdocs/creds-config-files.html)\.
 
 ### Calling `GetSendStatistics` using the AWS SDK for Go<a name="code-example-getsendstatistics-golang"></a>
 

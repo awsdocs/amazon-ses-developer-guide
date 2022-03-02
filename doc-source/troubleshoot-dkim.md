@@ -9,7 +9,7 @@ If you used [Easy DKIM](send-email-authentication-dkim-easy.md) or [BYODKIM](sen
 + If you use the same identity in more than one AWS Region, you have to configure DKIM for each region separately\. Similarly, if you use the same domain with more than one AWS account, you have to configure DKIM for each account\. If you remove the necessary DNS records for a specific region or account, Amazon SES disables DKIM signing in that region or account\. If DKIM signing becomes disabled, Amazon SES sends you a notification by email\.
 
 **Your domain's DKIM details in the Amazon SES console show *DKIM: waiting on sender verification\.\.\. DKIM Verification Status: pending verification\.***  
-If you complete the procedures in [Easy DKIM](send-email-authentication-dkim-easy.md) or [Provide Your Own DKIM Authentication Token](send-email-authentication-dkim-bring-your-own.md) to configure DKIM for a domain, but the Amazon SES console still indicates that DKIM verification is pending, do the following:  
+If you complete the procedures in [Easy DKIM](send-email-authentication-dkim-easy.md) or [BYODKIM \- Bring Your Own DKIM](send-email-authentication-dkim-bring-your-own.md) to configure DKIM for a domain, but the Amazon SES console still indicates that DKIM verification is pending, do the following:  
 + Wait up to 72 hours\. In rare cases, it can take time for the DNS records to become visible to Amazon SES\.
 + Confirm that the CNAME record \(for Easy DKIM\) or the TXT record \(for BYODKIM\) uses the correct name\. Some DNS providers automatically append the domain name to records that you create\. For example, if you create a record with a Name of `example._domainkey.example.com`, your DNS provider might add the name of your domain to the end of this string, resulting in `example._domainkey.example.com.example.com`\. For more information, see the documentation for your DNS provider\.
 
@@ -17,7 +17,7 @@ If you complete the procedures in [Easy DKIM](send-email-authentication-dkim-eas
 This means that Amazon SES can no longer find the required CNAME records \(if you used Easy DKIM\) or the required TXT record \(if you used BYODKIM\) records on your DNS server\. The notification email will inform you of the length of time in which you must re\-publish the DNS records before your DKIM setup status is revoked and DKIM signing is disabled\. If your DKIM setup is revoked, you must restart the DKIM set\-up procedure from the beginning\. 
 
 **When attempting to set up BYODKIM, the DKIM verification process fails\.**  
-Make sure that your private key uses the right format\. The private key has to be in PKCS \#1 format and use 1024\-bit RSA encryption\. Additionally, the private key has to be base64 encoded\.
+Make sure that your private key uses the right format\. The private key has to be in PKCS \#1 format and use either 1024 or 2048 bit RSA encryption\. Additionally, the private key has to be base64 encoded\.
 
 **While setting up BYODKIM, you receive a `BadRequestException` error when you try to specify a public key for the domain\.**  
 If you receive a `BadRequestException` error, do the following:  

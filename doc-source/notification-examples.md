@@ -1,15 +1,15 @@
 # Amazon SNS notification examples for Amazon SES<a name="notification-examples"></a>
 
 The following sections provide examples of the three types of notifications:
-+ For bounce notification examples, see [Amazon SNS Bounce Notification Examples](#notification-examples-bounce)\.
-+ For complaint notification examples, see [Amazon SNS Complaint Notification Examples](#notification-examples-complaint)\.
-+ For delivery notification examples, see [Amazon SNS Delivery Notification Example](#notification-examples-delivery)\.
++ For bounce notification examples, see [Amazon SNS bounce notification examples](#notification-examples-bounce)\.
++ For complaint notification examples, see [Amazon SNS complaint notification examples](#notification-examples-complaint)\.
++ For delivery notification examples, see [Amazon SNS delivery notification example](#notification-examples-delivery)\.
 
-## Amazon SNS Bounce Notification Examples<a name="notification-examples-bounce"></a>
+## Amazon SNS bounce notification examples<a name="notification-examples-bounce"></a>
 
 This section contains examples of bounce notifications with and without a Delivery Status Notification \(DSN\) provided by the email receiver that sent the feedback\.
 
-### Bounce Notification With a DSN<a name="notification-examples-bounce-with-dsn"></a>
+### Bounce notification with a DSN<a name="notification-examples-bounce-with-dsn"></a>
 
 The following is an example of a bounce notification that contains a DSN and the original email headers\. When bounce notifications are not configured to include the original email headers, the `mail` object within the notifications does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\.
 
@@ -35,7 +35,7 @@ The following is an example of a bounce notification that contains a DSN and the
        "mail":{
           "timestamp":"2016-01-27T14:59:38.237Z",
           "source":"john@example.com",
-          "sourceArn": "arn:aws:ses:us-west-2:888888888888:identity/example.com",
+          "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
           "sourceIp": "127.0.3.0",
           "sendingAccountId":"123456789012",
           "messageId":"00000138111222aa-33322211-cccc-cccc-cccc-ddddaaaa0680-000000",
@@ -89,7 +89,7 @@ The following is an example of a bounce notification that contains a DSN and the
     }
 ```
 
-### Bounce Notification Without a DSN<a name="notification-examples-bounce-no-dsn"></a>
+### Bounce notification without a DSN<a name="notification-examples-bounce-no-dsn"></a>
 
 The following is an example of a bounce notification that includes the original email headers but does not include a DSN\. When bounce notifications are not configured to include the original email headers, the `mail` object within the notifications does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\.
 
@@ -115,7 +115,7 @@ The following is an example of a bounce notification that includes the original 
          "timestamp":"2016-01-27T14:59:38.237Z",
          "messageId":"00000137860315fd-34208509-5b74-41f3-95c5-22c1edc3c924-000000",
          "source":"john@example.com",
-         "sourceArn": "arn:aws:ses:us-west-2:888888888888:identity/example.com",
+         "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
          "destination":[
@@ -169,11 +169,11 @@ The following is an example of a bounce notification that includes the original 
   }
 ```
 
-## Amazon SNS Complaint Notification Examples<a name="notification-examples-complaint"></a>
+## Amazon SNS complaint notification examples<a name="notification-examples-complaint"></a>
 
-This section contains examples of complaint notifications with and without a feedback report provided by the email receiver that sent the feedback\.
+This section contains examples of complaint notifications, with and without a feedback report, provided by the email receiver that sent the feedback\.
 
-### Complaint Notification With a Feedback Report<a name="notification-examples-complaint-with-feedback"></a>
+### Complaint notification with a feedback report<a name="notification-examples-complaint-with-feedback"></a>
 
 The following is an example of a complaint notification that contains a feedback report and the original email headers\. When complaint notifications are not configured to include the original email headers, the `mail` object within the notifications does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\.
 
@@ -196,7 +196,7 @@ The following is an example of a complaint notification that contains a feedback
          "timestamp":"2016-01-27T14:59:38.237Z",
          "messageId":"000001378603177f-7a5433e7-8edb-42ae-af10-f0181f34d6ee-000000",
          "source":"john@example.com",
-         "sourceArn": "arn:aws:ses:us-west-2:888888888888:identity/example.com",
+         "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
          "destination":[
@@ -250,7 +250,7 @@ The following is an example of a complaint notification that contains a feedback
    }
 ```
 
-### Complaint Notification Without a Feedback Report<a name="notification-examples-complaint-no-feedback"></a>
+### Complaint notification without a feedback report<a name="notification-examples-complaint-no-feedback"></a>
 
 The following is an example of a complaint notification that includes the original email headers but does not include a feedback report\. When complaint notifications are not configured to include the original email headers, the `mail` object within the notifications does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\.
 
@@ -270,7 +270,7 @@ The following is an example of a complaint notification that includes the origin
          "timestamp":"2016-01-27T14:59:38.237Z",
          "messageId":"0000013786031775-163e3910-53eb-4c8e-a04a-f29debf88a84-000000",
          "source":"john@example.com",
-         "sourceArn": "arn:aws:ses:us-west-2:888888888888:identity/example.com",
+         "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
          "destination":[
@@ -324,7 +324,7 @@ The following is an example of a complaint notification that includes the origin
    }
 ```
 
-## Amazon SNS Delivery Notification Example<a name="notification-examples-delivery"></a>
+## Amazon SNS delivery notification example<a name="notification-examples-delivery"></a>
 
 The following is an example of a delivery notification that includes the original email headers\. When delivery notifications are not configured to include the original email headers, the `mail` object within the notifications does not include the `headersTruncated`, `headers`, and `commonHeaders` fields\.
 
@@ -335,7 +335,7 @@ The following is an example of a delivery notification that includes the origina
          "timestamp":"2016-01-27T14:59:38.237Z",
          "messageId":"0000014644fe5ef6-9a483358-9170-4cb4-a269-f5dcdf415321-000000",
          "source":"john@example.com",
-         "sourceArn": "arn:aws:ses:us-west-2:888888888888:identity/example.com",
+         "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
          "destination":[

@@ -1,10 +1,10 @@
-# Creating a Policy for Amazon SES Sending Authorization<a name="sending-authorization-identity-owner-tasks-policy"></a>
+# Creating a policy for Amazon SES sending authorization<a name="sending-authorization-identity-owner-tasks-policy"></a>
 
 To authorize a delegate sender to send emails using an email address or domain \(an *identity*\) that you own, you create a sending authorization policy, and then attach that policy to the identity\. An identity can have zero, one, or many policies\. However, a single policy can only be associated with a single identity\.
 
 You can create a sending authorization policy in the following ways:
-+ **By using the Policy Generator** – You can create a simple policy by using the Policy Generator in the Amazon SES console\. In addition to specifying who can send the emails, you can constrain the email\-sending with conditions based on the time and date range in which emails can be sent, the "From" address, the "From" display name, the address to which bounces and complaints are sent, the recipient addresses, and the source IP\. You might also want to use the Policy Generator to create the structure of a simple policy and then customize it later by editing the policy\.
-+ **By creating a Custom Policy** – If you want to include more advanced conditions or use an AWS service as the principal, you can create a custom policy and attach it to the identity by using the Amazon SES console or the Amazon SES API\.
++ **By using the policy generator** – You can create a simple policy by using the policy generator in the Amazon SES console\. In addition to specifying who can send the emails, you can constrain the email\-sending with conditions based on the time and date range in which emails can be sent, the "From" address, the "From" display name, the address to which bounces and complaints are sent, the recipient addresses, and the source IP\. You might also want to use the policy generator to create the structure of a simple policy and then customize it later by editing the policy\.
++ **By creating a custom policy** – If you want to include more advanced conditions or use an AWS service as the principal, you can create a custom policy and attach it to the identity by using the Amazon SES console or the Amazon SES API\.
 
 This topic describes both methods\.
 
@@ -12,57 +12,84 @@ This topic describes both methods\.
 Sending authorization policies that you attach to email address identities take precedence over policies that you attach to their corresponding domain identities\. For example, if you create a policy for *example\.com* that disallows a delegate sender, and you create a policy for *sender@example\.com* that allows the delegate sender, then the delegate sender can send email from *sender@example\.com*, but not from any other address on the *example\.com* domain\.  
 If you create a policy for *example\.com* that allows a delegate sender, and you create a policy for *sender@example\.com* that disallows the delegate sender, then the delegate sender can send email from any address on the *example\.com* domain, except for *sender@example\.com*\.
 
-## Creating a Policy Using the Policy Generator<a name="sending-authorization-identity-owner-tasks-identity-policy-generator"></a>
+## Creating a policy by using the policy generator<a name="sending-authorization-identity-owner-tasks-identity-policy-generator"></a>
 
-You can use the Policy Generator to create a simple authorization policy by using the following procedure\.
+You can use the policy generator to create a simple authorization policy by following these steps\.
 
-**To create a policy by using the Policy Generator**
+**To create a policy by using the policy generator**
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the left navigation pane, under **Identity Management**, choose either **Domains** or **Email Addresses**\.
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
 
-1. In the list of identities, choose the identity for which you want to create a policy\.
+1. In the **Identities** container on the **Verified identities** screen, select the verified identity you wish to authorize for the delegate sender to send on your behalf\.
 
-1. In the details pane, expand **Identity Policies**, choose **Create Policy**, and then choose **Policy Generator**\.
+1. In the details screen of the verified identity you selected in the previous step, choose the **Authorization** tab\.
 
-1. In the wizard, create a policy statement by choosing values for the following fields\. You can find information about these options in [Sending Authorization Policies](sending-authorization-policies.md)\.
-   + **Effect** – If you want to grant access, choose **Allow**; otherwise, choose **Deny**\. 
-   + **Principals** – Enter either the 12\-digit AWS account ID or the ARN of an IAM user that you are allowing or denying access, and then choose **Add**\. You can add more principals by repeating this step\. An example of an AWS account ID is 123456789012 and an example of an IAM user ARN is *arn:aws:iam::123456789012:user/John*\.
-**Note**  
-The policy generator wizard does not currently support AWS service principals\. To add an AWS service principal, you must either [create a custom policy](#sending-authorization-identity-owner-tasks-identity-policy-custom) or use the policy generator to add an AWS account or IAM user principal, and then [edit](sending-authorization-identity-owner-tasks-management.md#sending-authorization-identity-owner-tasks-management-edit) the policy\.
-   + **Actions** – Choose the email\-sending access to which this policy applies\. Typically, identity owners choose both options to give the delegate sender the freedom to choose how to implement the email sending\. For more information, see [Statements Specific to the Policy](sending-authorization-policies.md#sending-authorization-policy-statements)\. 
+1. In the **Sending authorization policies** pane, choose **Create policy** in the lower right corner and select **Use policy generator** from the dropdown\.
 
-1. \(Optional\) If you want to add restrictions to the policy, choose **Add Conditions**, and then choose the following information:
-   + **Key** – This is the characteristic that is the basis for access restriction\. The Policy Generator lets you choose an Amazon SES\-specific key or one of a few commonly used AWS\-wide keys \(current time and source IP\)\. For details, see [Conditions](sending-authorization-policies.md#sending-authorization-policy-conditions)\. If you want to specify the more advanced AWS\-wide keys listed in [Available Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AvailableKeys), you can edit the policy after you create it\.
-   + **Condition** – This is the type of condition that you want to specify\. For example, there are string conditions, numeric conditions, date and time conditions, and so on\. For a list of conditions, see [Condition Types](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#AccessPolicyLanguage_ConditionType) in the *IAM User Guide*\.
-   + **Value** – This is the value that will be tested against the condition\. For examples, see the policies in [Sending Authorization Policy Examples](sending-authorization-policy-examples.md)\. 
+1. In the **Create statement** pane, choose **Allow** in the **Effect** field\. \(If you want to create a policy to restrict your delegate sender, choose **Deny** instead\.\)
 
-   After you choose the key, condition, and value, choose **Add Condition**\. The condition appears in the **Conditions** list\. You can remove conditions by choosing **Remove** next to a condition in the list\. You can add another condition by choosing **Add Conditions** again\.   
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/sending_authorization_policy_generator.png)
+1. In the **Principals** field, enter the *AWS account ID* or *IAM user ARN* that your delegate sender shared with you to authorize them to send email on behalf of your account for this identity, then choose **Add**\. \(If you wish to authorize more than one delegate sender, repeat this step for each one\.\)
 
-1. When you finish adding conditions, choose **Add Statement**\. The statement appears in the **Statements** list, where you can choose to edit or remove it\. You can add additional statements by repeating steps 5–7\.
+1. In the **Actions** field, select the check box for each send type you would like to authorize for your delegate sender\.
 
-1. When you finish adding statements, choose **Next**\.
+1. \(Optional\) Expand **Specify conditions** if you wish to add a qualifying statement to the delegate sender permission\.
 
-1. In the **Edit Policy** dialog box, review your policy, edit it if necessary, and then choose **Apply Policy**\.
+   1. Select an operator from the **Operator** dropdown\.
 
-## Creating a Custom Policy<a name="sending-authorization-identity-owner-tasks-identity-policy-custom"></a>
+   1. Select a type from the **Key** dropdown\.
+
+   1. Respective to the key type you selected, enter its value in the **Value** field\. \(If you wish to add more conditions, choose **Add new condition** and repeat this step for each additional one\.\)
+
+1. Choose **Save statement**\.
+
+1. \(Optional\) Expand **Create another statement** if you wish to add more statements to your policy and repeat steps 6 \- 10\.
+
+1. Choose **Next** and on the **Customize policy** screen, the **Edit policy details** container has fields where you can change or customize the policy’s **Name** and the **Policy document** itself\.
+
+1. Choose **Next** and on the **Review and apply** screen, the **Overview** container will show the verified identity you’re authorizing for your delegate sender as well as the name of this policy\. In the **Policy document** pane will be the actual policy you just wrote along with any conditions you added \- review the policy and if it looks correct, choose **Apply policy**\. \(If you need to change or correct something, choose **Previous** and work in the **Edit policy details** container\.\) The policy you just created will allow your delegate sender to send on your behalf\. 
+
+1. <a name="configure-sns-topic-you-dont-own"></a>\(Optional\) If your delegate sender also wants to use an SNS topic that they own, to receive feedback notifications when they receive bounces or complaints, or when emails are delivered, you’ll need to configure their SNS topic in this verified identity\. \(Your delegate sender will need to share with you their SNS topic ARN\.\) Select the **Notifications** tab  and select **Edit** in the **Feedback notifications** container:
+
+   1. On the **Configure SNS topics** pane, in any of the feedback fields, \(Bounce, Complaint, or Delivery\), select **SNS topic you don’t own** and enter the **SNS topic ARN** owned and shared with you by your delegate sender\. \(Only your delegate sender will get these notifications because they own the SNS topic \- you, as the identity owner, will not\.\)
+
+   1. \(Optional\) If you want your topic notification to include the headers from the original email, check the **Include original email headers** box directly underneath the SNS topic name of each feedback type\. This option is only available if you've assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Notification contents](notification-contents.md)\.
+
+   1. Choose **Save changes**\. The changes you made to your notification settings might take a few minutes to take effect\.
+
+   1. \(Optional\) Since your delegate sender will be getting Amazon SNS topic notifications for bounces and complaints, you can disable email notifications entirely if you don’t want to receive feedback for this identity’s sends\. To disable email feedback for bounces and complaints, under the **Notifications** tab, in the **Email Feedback Forwarding** container, choose **Edit**, uncheck the **Enabled** box, and choose **Save changes**\. Delivery status notifications will now only be sent to the SNS topics owned by your delegate sender\.
+
+## Creating a custom policy<a name="sending-authorization-identity-owner-tasks-identity-policy-custom"></a>
 
 If you want to create a custom policy and attach it to an identity, you have the following options:
 + **Using the Amazon SES API** – Create a policy in a text editor and then attach the policy to the identity by using the `PutIdentityPolicy` API described in the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/)\.
-+ **Using the Amazon SES console** – Create a policy in a text editor and attach it to an identity by pasting it into the Custom Policy editor in the Amazon SES console\. The following procedure describes this method\.
++ **Using the Amazon SES console** – Create a policy in a text editor and attach it to an identity by pasting it into the custom policy editor in the Amazon SES console\. The following procedure describes this method\.
 
-**To create a custom policy by using the Custom Policy editor**
+
+
+**To create a custom policy by using the custom policy editor**
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the left navigation pane, under **Identity Management**, choose either **Domains** or **Email Addresses**\.
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
 
-1. In the list of identities, choose the identity for which you want to create a policy\.
+1. In the **Identities** container on the **Verified identities** screen, select the verified identity you wish to authorize for the delegate sender to send on your behalf\.
 
-1. In the details pane, expand **Identity Policies**, choose **Create Policy**, and then choose **Custom Policy**\.
+1. In the details screen of the verified identity you selected in the previous step, choose the **Authorization** tab\.
 
-1. In the **Edit Policy** pane, paste the text of your policy\.
+1. In the **Sending authorization policies** pane, choose **Create policy** in the lower right corner and select **Create custom policy** from the dropdown\.
 
-1. Choose **Apply Policy**\.
+1. In the **Policy document** pane, paste the text of your policy\.
+
+1. Choose **Apply Policy**\. \(If you ever need to modify your custom policy, just select its check box under the **Authorization** tab, choose **Edit**, and make your changes in the **Policy document** pane followed by **Save changes**\)\.
+
+1. \(Optional\) If your delegate sender also wants to use an SNS topic that they own, to receive feedback notifications when they receive bounces or complaints, or when emails are delivered, you’ll need to configure their SNS topic in this verified identity\. \(Your delegate sender will need to share with you their SNS topic ARN\.\) Select the **Notifications** tab  and select **Edit** in the **Feedback notifications** container:
+
+   1. On the **Configure SNS topics** pane, in any of the feedback fields, \(Bounce, Complaint, or Delivery\), select **SNS topic you don’t own** and enter the **SNS topic ARN** owned and shared with you by your delegate sender\. \(Only your delegate sender will get these notifications because they own the SNS topic \- you, as the identity owner, will not\.\)
+
+   1. \(Optional\) If you want your topic notification to include the headers from the original email, check the **Include original email headers** box directly underneath the SNS topic name of each feedback type\. This option is only available if you've assigned an Amazon SNS topic to the associated notification type\. For information about the contents of the original email headers, see the `mail` object in [Notification contents](notification-contents.md)\.
+
+   1. Choose **Save changes**\. The changes you made to your notification settings might take a few minutes to take effect\.
+
+   1. \(Optional\) Since your delegate sender will be getting Amazon SNS topic notifications for bounces and complaints, you can disable email notifications entirely if you don’t want to receive feedback for this identity’s sends\. To disable email feedback for bounces and complaints, under the **Notifications** tab, in the **Email Feedback Forwarding** container, choose **Edit**, uncheck the **Enabled** box, and choose **Save changes**\. Delivery status notifications will now only be sent to the SNS topics owned by your delegate sender\.

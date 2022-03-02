@@ -42,8 +42,8 @@ The following procedure shows how to create a Kinesis Data Firehose delivery str
       You will be taken to the IAM console\.
 
    1. In the IAM console, leave the fields at their default settings, and then choose **Allow**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_firehose_iam.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/white_space_horizontal.png)  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_firehose_iam.png)
 
       You will return to the Kinesis Data Firehose delivery stream set\-up steps in the Kinesis Data Firehose console\.
 
@@ -89,15 +89,15 @@ You upload the JSONPaths file to the Amazon S3 bucket you set up when you create
 
    1. In the **Redshift COPY options** box, type the following text, replacing the following values with your own values:
       + **S3\-BUCKET\-NAME** – The name of the Amazon S3 bucket where Kinesis Data Firehose places your data for Amazon Redshift to access\. You created this bucket when you set up your Kinesis Data Firehose delivery stream in [Step 4: Create a Kinesis Data Firehose Delivery Stream](#event-publishing-redshift-firehose-stream)\. An example is `my-bucket`\.
-      + **REGION** – The region in which your Amazon SES, Kinesis Data Firehose, Amazon S3, and Amazon Redshift resources are located\. An example is `us-west-2`\.
+      + **REGION** – The Region in which your Amazon SES, Kinesis Data Firehose, Amazon S3, and Amazon Redshift resources are located\. An example is `us-east-1`\.
 
       ```
       1. json 's3://S3-BUCKET-NAME/jsonpaths.json' region 'REGION';
       ```
 
    1. Choose **Save**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/white_space_horizontal.png)  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_redshift_firehose.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/white_space_horizontal.png)  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_redshift_firehose.png)
 
 ## Next Step<a name="event-publishing-redshift-firehose-stream-next-step"></a>
 

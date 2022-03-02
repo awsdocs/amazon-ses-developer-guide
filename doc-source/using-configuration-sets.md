@@ -1,14 +1,17 @@
-# Using Amazon SES configuration sets<a name="using-configuration-sets"></a>
+# Using configuration sets in Amazon SES<a name="using-configuration-sets"></a>
 
-Configuration sets are groups of rules that you can apply to the emails you send using Amazon SES\. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email\. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email\. For more information about specifying configuration sets in your emails, see [Specifying a configuration set when you send email](using-configuration-sets-in-email.md)\.
+Configuration sets are groups of rules that you can apply to your verified identities\. A verified identity is a domain, subdomain, or email address you use to send email through Amazon SES When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email\.
 
-You can use configuration sets to apply the following types of rules to your emails:
-+ **Event publishing** – Amazon SES can track the number of send, delivery, open, click, bounce, and complaint events for each email you send\. You can use event publishing to send information about these events to other AWS services\. For example, you can send your email metrics to an Amazon Kinesis Data Firehose destination, and then analyze it using Amazon Kinesis Data Analytics\. Alternatively, you can send bounce and complaint information to Amazon SNS and receive notifications immediately when those events occur\.
-+ **IP pool management** – If you lease dedicated IP addresses to use with Amazon SES, you can create groups of these addresses, called *dedicated IP pools*\. You can then associate these dedicated IP pools with configuration sets\. A common use case is to create one pool of dedicated IP addresses for sending marketing communications, and another for sending transactional emails\. Your sender reputation for transactional emails is then isolated from that of your marketing emails\.
+You can use configuration sets to apply the following types of rules to your email sending and can contain one, both, or neither of these types:
++ *Event destinations* – Allow you to publish email sending metrics, including the numbers of sends, deliveries, opens, clicks, bounces, and complaints to other AWS products for each email you send\. For example, you can send your email metrics to an Amazon Kinesis Data Firehose destination, and then analyze it using Amazon Kinesis Data Analytics\. Alternatively, you can send bounce and complaint information to Amazon SNS and receive notifications immediately when those events occur\.
++ *IP pool management* – If you lease dedicated IP addresses to use with Amazon SES, you can create groups of these addresses called *dedicated IP pools* to be used for sending specific types of email\. For example, you can associate these dedicated IP pools with configuration sets and use one for sending marketing communications, and another for sending transactional emails\. Your sender reputation for transactional emails is then isolated from that of your marketing emails\.
 
-Configuration sets can contain one, both, or neither of these types of rules\.
+To associate a configuration set with a verified identity can be done in the following ways:
++ Include a reference to the configuration set in the headers of the email\. For more information about specifying configuration sets in your emails, see [Specifying a configuration set when you send email](using-configuration-sets-in-email.md)\.
++ Specify an existing configuration set to be used as the identity's *default configuration set*, either at the time of identity creation, or later while editing a verified identity\. See [Understanding default configuration sets](managing-configuration-sets.md#default-config-sets)\.
 
-To learn more about managing configuration sets and their related components, see the following topics:
+**Topics**
++ [Creating configuration sets in Amazon SES](creating-configuration-sets.md)
 + [Managing configuration sets in Amazon SES](managing-configuration-sets.md)
-+ [Managing event destinations in Amazon SES](event-publishing-managing-event-destinations.md)
-+ [Managing dedicated IP pools](managing-ip-pools.md)
++ [Specifying a configuration set when you send email](using-configuration-sets-in-email.md)
++ [Viewing and exporting reputation metrics](configuration-sets-export-metrics.md)

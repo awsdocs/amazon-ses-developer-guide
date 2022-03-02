@@ -11,17 +11,16 @@ This section describes the available metrics and how to view the metrics in Clou
 ## Available Metrics<a name="event-publishing-retrieving-cloudwatch-metrics"></a>
 
 You can publish following Amazon SES email sending metrics to CloudWatch:
-+ **Sends** – The call to Amazon SES was successful and Amazon SES will attempt to deliver the email\.
-+ **Rejects** – Amazon SES accepted the email, determined that it contained a virus, and rejected it\. Amazon SES didn't attempt to deliver the email to the recipient's mail server\.
-+ **Bounces** – The recipient's mail server permanently rejected the email\. This event corresponds to hard bounces\. Soft bounces are only included when Amazon SES fails to deliver the email after retrying for a period of time\.
-+ **Complaints** – The email was successfully delivered to the recipient\. The recipient marked the email as spam\.
++ **Sends** – The send request was successful and Amazon SES will attempt to deliver the message to the recipient’s mail server\. \(If account\-level or global suppression is being used, SES will still count it as a send, but delivery is suppressed\.\)
++ **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\. \(This event type only occurs when you send email using the [https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\.\)
++ **Rejects** – Amazon SES accepted the email, but determined that it contained a virus and didn’t attempt to deliver it to the recipient’s mail server\.
 + **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
++ **Hard bounces** – The recipient's mail server permanently rejected the email\. \(*Soft bounces* are only included when Amazon SES fails to deliver the email after retrying for a period of time\.\)
++ **Complaints** – The email was successfully delivered to the recipient’s mail server, but the recipient marked it as spam\.
++ **Delivery Delays** – The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
++ **Subscriptions** – The email was successfully delivered, but the recipient updated the subscription preferences by clicking `List-Unsubscribe` in the email header or the `Unsubscribe` link in the footer\.
 + **Opens** – The recipient received the message and opened it in their email client\.
 + **Clicks** – The recipient clicked one or more links in the email\.
-+ **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type only occurs when you send email using the [SendTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [SendBulkTemplatedEmail](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\.
-+ **Delivery Delays** – The email couldn't be delivered to the recipient because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
-**Note**  
-To add the `DELIVERY_DELAY` event type to an event destination, you have to use the [ UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2\. Currently, you can't add this event type to a configuration set by using the Amazon SES console\.
 
 ## Available Dimensions<a name="event-publishing-retrieving-cloudwatch-dimensions"></a>
 

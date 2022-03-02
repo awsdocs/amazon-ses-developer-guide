@@ -105,11 +105,17 @@ The procedures in this section re\-enable email sending for your Amazon SES acco
 
 **To re\-enable email sending**
 
-1. At the command line, type the following command to re\-enable email sending for your account: aws ses update\-account\-sending\-enabled \-\-enabled \-\-region *us\-west\-2*
-**Note**  
-Replace *us\-west\-2* in the preceding command with the name of the region in which you want to re\-enable email sending\.
+1. At the command line, type the following command to re\-enable email sending for your account\. Replace *sending\_region* with the name of the Region in which you want to re\-enable email sending\.
 
-1. At the command line, type the following command to check the email sending status for your account: aws ses get\-account\-sending\-enabled \-\-region *us\-west\-2*
+   ```
+   aws ses update-account-sending-enabled --enabled --region sending_region
+   ```
+
+1. At the command line, type the following command to check the email sending status for your account:
+
+   ```
+   aws ses get-account-sending-enabled --region sending_region
+   ```
 
    If you see the following output, then you have successfully re\-enabled email sending for your account:
 
@@ -183,9 +189,11 @@ You can now test the alarm to ensure that it executes the Lambda function when i
 
 The procedures in this section are optional, but we recommend that you complete them to ensure that the entire solution is configured correctly\.
 
-1. At the command line, type the following command to check the email sending status for your account: aws ses get\-account\-sending\-enabled \-\-region *us\-west\-2*
-**Note**  
-Replace *us\-west\-2* in the preceding command with the name of the region you specified in the previous step\.
+1. At the command line, type the following command to check the email sending status for your account\. Replace *region* with the name of the Region\.
+
+   ```
+   aws ses get-account-sending-enabled --region region
+   ```
 
    If sending is enabled for your account, you see the following output:
 
@@ -195,13 +203,17 @@ Replace *us\-west\-2* in the preceding command with the name of the region you s
    }
    ```
 
-1. At the command line, type the following command to temporarily change the alarm state to `ALARM`: aws cloudwatch set\-alarm\-state \-\-alarm\-name *MyAlarm* \-\-state\-value ALARM \-\-state\-reason "Testing execution of Lambda function" \-\-region *us\-west\-2*
+1. At the command line, type the following command to temporarily change the alarm state to `ALARM`: aws cloudwatch set\-alarm\-state \-\-alarm\-name *MyAlarm* \-\-state\-value ALARM \-\-state\-reason "Testing execution of Lambda function" \-\-region *region*
 
-   Replace *MyAlarm* in the preceding command with the name of the alarm you created in [Part 5: Create a CloudWatch Alarm](#monitoring-sender-reputation-pausing-account-part-5), and replace *us\-west\-2* with the region in which you want to automatically pause email sending\.
+   Replace *MyAlarm* in the preceding command with the name of the alarm you created in [Part 5: Create a CloudWatch Alarm](#monitoring-sender-reputation-pausing-account-part-5), and replace *region* with the Region in which you want to automatically pause email sending\.
 **Note**  
 When you execute this command, the status of the alarm switches from `OK` to `ALARM` and back to `OK` within a few seconds\. You can view these status changes on the alarm's **History** tab in the CloudWatch console, or by using the [DescribeAlarmHistory](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) operation\.
 
-1. At the command line, type the following command to check the email sending status for your account: aws ses get\-account\-sending\-enabled \-\-region *us\-west\-2*
+1. At the command line, type the following command to check the email sending status for your account\.
+
+   ```
+   aws ses get-account-sending-enabled --region region
+   ```
 
    If the Lambda function executed successfully, you see the following output:
 

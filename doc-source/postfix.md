@@ -11,7 +11,7 @@ Before you complete the procedures in this section, you have to perform the foll
 + Uninstall Sendmail, if it's already installed on your system\. The procedure for completing this step varies depending on the operating system you use\.
 + Install Postfix\. The procedure for completing this step varies depending on the operating system you use\.
 + Install a SASL authentication package\. The procedure for completing this step varies depending on the operating system you use\. For example, if you use a RedHat\-based system, you should install the `cyrus-sasl-plain` package\. If you use a Debian\- or Ubuntu\-based system, you should install the `libsasl2-modules` package\.
-+ Verify an email address or domain to use for sending email\. For more information, see [Verifying email addresses in Amazon SES](verify-email-addresses.md)\.
++ Verify an email address or domain to use for sending email\. For more information, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
 + If your account is still in the sandbox, you can only send email to verified email addresses\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 ## Configuring Postfix<a name="send-email-postfix"></a>
@@ -32,7 +32,7 @@ Complete the following procedures to configure your mail server to send email th
    "smtp_tls_note_starttls_offer = yes"
    ```
 **Note**  
-If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the preceding command with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
+If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the preceding command with the SMTP endpoint of the appropriate Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
 1. In a text editor, open the file `/etc/postfix/master.cf`\. Search for the following entry:
 
@@ -42,7 +42,7 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
 
    If you find this entry, comment it out by placing a `#` \(hash\) character at the beginning of the line\. Save and close the file\.
 
-   Otherwise, if this entry isn't present, proceed to the next step\.
+   Otherwise, if this entry isn't present, continue to the next step\.
 
 1. In a text editor, open the file `/etc/postfix/sasl_passwd`\. If the file doesn't already exist, create it\.
 
@@ -52,8 +52,8 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
    [email-smtp.us-west-2.amazonaws.com]:587 SMTPUSERNAME:SMTPPASSWORD
    ```
 **Note**  
-Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP username and password, respectively\. Your SMTP user name and password aren't the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining your Amazon SES SMTP credentials](smtp-credentials.md)\.  
-If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the example above with the SMTP endpoint of the appropriate region\. For more information, see [Regions and Amazon SES](regions.md)\.
+Replace *SMTPUSERNAME* and *SMTPPASSWORD* with your SMTP user name and password, respectively\. Your SMTP user name and password aren't the same as your AWS access key ID and secret access key\. For more information about credentials, see [Obtaining Amazon SES SMTP credentials](smtp-credentials.md)\.  
+If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *email\-smtp\.us\-west\-2\.amazonaws\.com* in the preceding example with the SMTP endpoint of the appropriate Region\. For more information, see [Regions and Amazon SES](regions.md)\.
 
    Save and close `sasl_passwd`\.
 
@@ -63,7 +63,7 @@ If you use Amazon SES in an AWS Region other than US West \(Oregon\), replace *e
    sudo postmap hash:/etc/postfix/sasl_passwd
    ```
 
-1. *\(Optional\)* The `/etc/postfix/sasl_passwd` and `/etc/postfix/sasl_passwd.db` files you created in the previous steps aren't encrypted\. Because these files contain your SMTP credentials, we recommend that you modify the files' ownership and permissions in order to restrict access to them\. To restrict access to these files:
+1. \(Optional\) The `/etc/postfix/sasl_passwd` and `/etc/postfix/sasl_passwd.db` files you created in the previous steps aren't encrypted\. Because these files contain your SMTP credentials, we recommend that you modify the files' ownership and permissions in order to restrict access to them\. To restrict access to these files:
 
    1. At a command prompt, type the following command to change the ownership of the files:
 
@@ -190,10 +190,3 @@ This example shows how to send an email that uses a [configuration set](using-co
    If the command runs successfully, it exits without providing any output\.
 
 1. Check your inbox for the email\. If the message wasn't delivered, check your system's mail log\.
-
-
-****  
-
-|  | 
-| --- |
-| For information and discussions about a variety of topics related to Amazon SES, see the [AWS Messaging and Targeting Blog](https://aws.amazon.com//blogs/messaging-and-targeting/)\. To browse and post questions, go to the [Amazon SES Forum](https://forums.aws.amazon.com/forum.jspa?forumID=90)\. | 

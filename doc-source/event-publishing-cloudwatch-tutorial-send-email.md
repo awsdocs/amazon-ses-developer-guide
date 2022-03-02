@@ -6,15 +6,15 @@ For Amazon SES to publish events associated with an email, you must specify a co
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. In the **Navigation** pane of the Amazon SES console, under **Identity Management**, choose **Email Addresses**\.
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
 
-1. In the list of identities, select the check box of an email address that you have successfully [verified with Amazon SES](verify-email-addresses.md)\.
+1. In the list of identities, select the check box of an email address that you have successfully [verified with Amazon SES](creating-identities.md#verify-email-addresses-procedure)\.
 
 1. Choose **Send a Test Email**\.
 
 1. In the **Send Test Email** dialog box, for **Email Format**, choose **Raw**\.
 
-1. For the **To** address, type an address from the [Amazon SES mailbox simulator](send-email-simulator.md), such as `complaint@simulator.amazonses.com` or `bounce@simulator.amazonses.com`\.
+1. For the **To** address, type an address from the [Amazon SES mailbox simulator](send-an-email-from-console.md#send-email-simulator), such as `complaint@simulator.amazonses.com` or `bounce@simulator.amazonses.com`\.
 
 1. Copy and paste the following message in its entirety into the **Message** text box, replacing `CONFIGURATION-SET-NAME` with the name of the configuration set you created in [Step 1: Set up a Configuration Set](event-publishing-cloudwatch-tutorial-configuration-set.md), and replacing `FROM-ADDRESS` with the verified address you are sending this email from\.
 

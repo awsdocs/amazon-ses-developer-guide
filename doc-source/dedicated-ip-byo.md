@@ -1,8 +1,8 @@
-# Using Your Own IP Addresses to Send Email Using Amazon SES<a name="dedicated-ip-byo"></a>
+# Using your own IP addresses to send email using Amazon SES<a name="dedicated-ip-byo"></a>
 
 Amazon SES includes a feature called *Bring Your Own IP* \(*BYOIP*\), which makes it possible to use your own IP addresses to send email through Amazon SES\. If you already use a range of IP addresses to send email, you can request that we make your IP range available for sending email through Amazon SES\.
 
-BYOIP is helpful, for example, when you have developed a positive IP reputation using an in\-house email sending system, but you want to migrate to Amazon SES\. By using BYOIP, you can start sending email through Amazon SES immediately, without having to re\-establish the reputations of your IP addresses\.
+BYOIP is helpful, for example, when you've developed a positive IP reputation using an in\-house email sending system, but you want to migrate to Amazon SES\. By using BYOIP, you can start sending email through Amazon SES immediately, without having to re\-establish the reputations of your IP addresses\.
 
 ## Requirements<a name="dedicated-ip-byo-requirements"></a>
 
@@ -20,11 +20,11 @@ There are several factors that you should consider before you request the transf
 + If you use your own IP addresses, you can't use the addresses in the pool of shared Amazon SES IP addresses\. If you need to use these shared IP addresses, you can use Amazon SES in a different AWS Region, or create a new AWS account\.
 + There is a monthly charge for each IP address that you use with BYOIP\. For more information, see [Amazon SES Pricing](https://aws.amazon.com/ses/pricing/)\.
 
-## Using Your Own IP Addresses with Amazon SES<a name="dedicated-ip-byo-request"></a>
+## Using your own IP addresses with Amazon SES<a name="dedicated-ip-byo-request"></a>
 
 In order to prevent our systems from being used to send unsolicited or malicious content, we have to consider each BYOIP request carefully\.
 
-If you want to use your own IP range with Amazon SES please send the following information to [ses\-byoip\-request@amazon\.com](mailto:ses-byoip-request@amazon.com):
+If you want to use your own IP range with Amazon SES, send the following information to [ses\-byoip\-request@amazon\.com](mailto:ses-byoip-request@amazon.com):
 + Your AWS account ID\.
 + The AWS Region that you want to use the IP range in, such as ap\-south\-1\.
 + A description of your use case\.

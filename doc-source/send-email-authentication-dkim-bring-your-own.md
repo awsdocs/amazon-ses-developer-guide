@@ -1,31 +1,31 @@
-# Provide Your Own DKIM Authentication Token in Amazon SES<a name="send-email-authentication-dkim-bring-your-own"></a>
+# Provide your own DKIM authentication token \(BYODKIM\) in Amazon SES<a name="send-email-authentication-dkim-bring-your-own"></a>
 
 As an alternative to using [Easy DKIM](send-email-authentication-dkim-easy.md), you can instead configure DKIM authentication by using your own public\-private key pair\. This process is known as *Bring Your Own DKIM* \(*BYODKIM*\)\.
 
-With BYODKIM, you can use a single DNS record to configure DKIM authentication for your domains, as opposed to Easy DKIM, which requires you to publish three separate DNS records\. Additionally, using BYODKIM lets you rotate the DKIM keys for your domains as often as you want\.
+With BYODKIM, you can use a single DNS record to configure DKIM authentication for your domains, as opposed to Easy DKIM, which requires you to publish three separate DNS records\. Additionally, with BYODKIM you can rotate the DKIM keys for your domains as often as you want\.
 
 **Topics**
-+ [Step 1: Create the Key Pair](#send-email-authentication-dkim-bring-your-own-create-key-pair)
-+ [Step 2: Add the Public Key to the DNS Configuration for Your Domain](#send-email-authentication-dkim-bring-your-own-update-dns)
-+ [Step 3: Configure a Domain to Use BYODKIM](#send-email-authentication-dkim-bring-your-own-configure-identity)
++ [Step 1: Create the key pair](#send-email-authentication-dkim-bring-your-own-create-key-pair)
++ [Step 2: Add the public key to the DNS configuration for your domain](#send-email-authentication-dkim-bring-your-own-update-dns)
++ [Step 3: Configure a domain to use BYODKIM](#send-email-authentication-dkim-bring-your-own-configure-identity)
 
-## Step 1: Create the Key Pair<a name="send-email-authentication-dkim-bring-your-own-create-key-pair"></a>
+## Step 1: Create the key pair<a name="send-email-authentication-dkim-bring-your-own-create-key-pair"></a>
 
 To use the Bring Your Own DKIM feature, you first have to create a key pair\.
 
-The private key that you generate has to use 1024\-bit RSA encoding\. The private key has to be in PKCS \#1 format\. 
+The private key that you generate must use at least 1024\-bit RSA encryption and up to 2048\-bit, and be encoded using base64 encoding\. See [DKIM signing key length](send-email-authentication-dkim.md#send-email-authentication-dkim-1024-2048) to learn more about DKIM signing key lengths and how to change them\.
 
 This section shows you how to use the `openssl` command that's built in to most Linux, macOS, or Unix operating systems to create the key pair\.
 
 **Note**  
-If you use a Windows computer, you can use third\-party applications to generate RSA key pairs\. If you use a third\-party application, it has to be able to generate a 1024\-bit RSA key pair in PKCS \#1 format\.
+If you use a Windows computer, you can use third\-party applications to generate RSA key pairs\. If you use a third\-party application, it has to be able to generate at least a 1024\-bit RSA key pair\.
 
 **To create the key pair from the Linux, macOS, or Unix command line**
 
-1. At the command line, enter the following command to generate the private key:
+1. At the command line, enter the following command to generate the private key replacing *nnnn* with a bit length of at least 1024 and up to 2048:
 
    ```
-   openssl genrsa -f4 -out private.key 1024
+   openssl genrsa -f4 -out private.key nnnn
    ```
 
 1. At the command line, enter the following command to generate the public key:
@@ -34,16 +34,16 @@ If you use a Windows computer, you can use third\-party applications to generate
    openssl rsa -in private.key -outform PEM -pubout -out public.key
    ```
 
-## Step 2: Add the Public Key to the DNS Configuration for Your Domain<a name="send-email-authentication-dkim-bring-your-own-update-dns"></a>
+## Step 2: Add the public key to the DNS configuration for your domain<a name="send-email-authentication-dkim-bring-your-own-update-dns"></a>
 
-Now that you've created a key pair, you have to add the public key to the DNS configuration for your domain as a TXT record\.
+Now that you've created a key pair, you have to add the public key as a TXT record to the DNS configuration for your domain\.
 
 **To add the public key to the DNS configuration for your domain**
 
 1. Sign in to the management console for your DNS or hosting provider\.
 
 1. Add a new text record to the DNS configuration for your domain\. The record should use the following format:    
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim-bring-your-own.html)
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-bring-your-own.html)
 
    In the preceding example, make the following changes:
    + Replace *selector* with a unique name that identifies the key\.
@@ -53,21 +53,24 @@ Now that you've created a key pair, you have to add the public key to the DNS co
 You have to delete the first and last lines \(`-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`, respectively\) of the generated public key\. Additionally, you have to remove the line breaks in the generated public key\. The resulting value is a string of characters with no spaces or line breaks\.
 
    Different providers have different procedures for updating DNS records\. The following table lists links to the documentation for several common providers\. This list isn't exhaustive and inclusion in this list isn’t an endorsement or recommendation of any company's products or services\.    
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-authentication-dkim-bring-your-own.html)
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-bring-your-own.html)
 
-## Step 3: Configure a Domain to Use BYODKIM<a name="send-email-authentication-dkim-bring-your-own-configure-identity"></a>
+## Step 3: Configure a domain to use BYODKIM<a name="send-email-authentication-dkim-bring-your-own-configure-identity"></a>
 
-You can set up BYODKIM for both new domains \(that is, domains that you don't currently use to send email through Amazon SES\) and existing domains \(that is, domains that you've already set up to use with Amazon SES\)\. To set up a new domain, use the `CreateEmailIdentity` operation in the Amazon SES API\. To configure an existing domain, use the `PutEmailIdentityDkimSigningAttributes` operation\.
+You can set up BYODKIM for both new domains \(that is, domains that you don't currently use to send email through Amazon SES\) and existing domains \(that is, domains that you've already set up to use with Amazon SES\) by using either the console or AWS CLI\. Before you use the AWS CLI procedures in this section, you first have to install and configure the AWS CLI\. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.\.
 
-This section includes procedures for setting up new and existing domains by using the AWS CLI\. Before you complete the procedures in this section, you first have to install and configure the AWS CLI\. For more information, see the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\.
+### Option 1: Creating a new domain identity that uses BYODKIM<a name="send-email-authentication-dkim-bring-your-own-configure-identity-new-domain"></a>
 
-### Option 1: Creating a New Domain Identity That Uses BYODKIM<a name="send-email-authentication-dkim-bring-your-own-configure-identity-new-domain"></a>
+This section contains procedures for creating a new domain identity that uses BYODKIM\. A new domain identity is a domain that you haven't previously set up to send email using Amazon SES\.
 
-This section contains a procedure for creating a new domain identity that uses BYODKIM\. A new domain identity is a domain that you haven't previously set up to send email using Amazon SES\.
+If you want to configure an existing domain to use BYODKIM, complete the procedure in [Option 2: Configuring an existing domain identity](#send-email-authentication-dkim-bring-your-own-configure-identity-existing-domain) instead\.
 
-If you want to configure an existing domain to use BYODKIM, complete the procedure in [Option 2: Configuring an Existing Domain Identity](#send-email-authentication-dkim-bring-your-own-configure-identity-existing-domain) instead\.
+**To create an identity using BYODKIM from the console**
++ Follow the procedures in [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure) and follow the BYODKIM option in the configure domain step\.
 
-**To create the identity**
+**To create an identity using BYODKIM from the AWS CLI**
+
+To configure a new domain, use the `CreateEmailIdentity` operation in the Amazon SES API\.
 
 1. In a text editor, paste the following code:
 
@@ -96,11 +99,35 @@ If you want to configure an existing domain to use BYODKIM, complete the procedu
 
    In the preceding command, replace *path/to/create\-identity\.json* with the complete path to the file that you created in the previous step\.
 
-### Option 2: Configuring an Existing Domain Identity<a name="send-email-authentication-dkim-bring-your-own-configure-identity-existing-domain"></a>
+### Option 2: Configuring an existing domain identity<a name="send-email-authentication-dkim-bring-your-own-configure-identity-existing-domain"></a>
 
-This section contains a procedure for updating an existing domain identity to use BYODKIM\. A an existing domain identity is a domain that you have already set up to send email using Amazon SES\.
+This section contains procedures for updating an existing domain identity to use BYODKIM\. An existing domain identity is a domain that you have already set up to send email using Amazon SES\.
 
-**To update the domain identity**
+**To update a domain identity using BYODKIM from the console**
+
+1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
+
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\.
+
+1. In the list of identities, choose an identity where the **Identity type** is *Domain*\.
+**Note**  
+If you need to create or verify a domain, see [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure)\.
+
+1. Under the **Authentication** tab, in the **DomainKeys Identified Mail \(DKIM\)** container, choose **Edit**\.
+
+1. In the **Advanced DKIM settings** container, choose the **Provide DKIM authentication token** button in the **Identity type** field\.
+
+1. For **Private key**, paste the private key\. The private key must use [at least 1024\-bit RSA encryption and up to 2048\-bit](send-email-authentication-dkim.md#send-email-authentication-dkim-1024-2048), and must be encoded using base64 encoding\.
+
+1. For **Selector name**, enter the name of the selector that you specified in your domain’s DNS settings\.
+
+1. In the **DKIM signatures** field, check the **Enabled** box\.
+
+1. Choose **Save changes**\.
+
+**To update a domain identity using BYODKIM from the AWS CLI**
+
+To configure an existing domain, use the `PutEmailIdentityDkimSigningAttributes` operation in the Amazon SES API\.
 
 1. In a text editor, paste the following code:
 
@@ -130,7 +157,7 @@ This section contains a procedure for updating an existing domain identity to us
    + Replace *path/to/update\-identity\.json* with the complete path to the file that you created in the previous step\.
    + Replace *example\.com* with the domain that you want to update\.
 
-### Checking the DKIM Status for a Domain That Uses BYODKIM<a name="send-email-authentication-dkim-bring-your-own-configure-identity-check"></a>
+### Checking the DKIM status for a domain that uses BYODKIM<a name="send-email-authentication-dkim-bring-your-own-configure-identity-check"></a>
 
 After you configure a domain to use BYODKIM, you can use the GetEmailIdentity operation to confirm that DKIM is properly configured\.
 
@@ -158,7 +185,7 @@ After you configure a domain to use BYODKIM, you can use the GetEmailIdentity op
   }
   ```
 
-  BYODKIM is properly configured for the domain if all of the following are true:
+  If all of the following are true, BYODKIM is properly configured for the domain:
   + The value of the `SigningAttributesOrigin` property is `EXTERNAL`\.
   + The value of `SigningEnabled` is `true`\.
   + The value of `Status` is `SUCCESS`\.

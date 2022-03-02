@@ -1,16 +1,16 @@
-# Amazon SES Sending Authorization Policy Examples<a name="sending-authorization-policy-examples"></a>
+# Policy examples<a name="sending-authorization-policy-examples"></a>
 
 Sending authorization enables you to specify the fine\-grained conditions under which you allow delegate senders to send on your behalf\.
 
 **Topics**
-+ [Specifying the Delegate Sender](#sending-authorization-policy-example-sender)
-+ [Restricting the "From" Address](#sending-authorization-policy-example-from)
-+ [Restricting the Time at which the Delegate can Send Email](#sending-authorization-policy-example-time)
-+ [Restricting the Email Sending Action](#sending-authorization-policy-example-action)
-+ [Restricting the Display Name of the Email Sender](#sending-authorization-policy-example-display-name)
-+ [Using Multiple Statements](#sending-authorization-policy-example-multiple-statements)
++ [Specifying the delegate sender](#sending-authorization-policy-example-sender)
++ [Restricting the "From" address](#sending-authorization-policy-example-from)
++ [Restricting the time at which the delegate can send email](#sending-authorization-policy-example-time)
++ [Restricting the email sending action](#sending-authorization-policy-example-action)
++ [Restricting the display name of the email sender](#sending-authorization-policy-example-display-name)
++ [Using multiple statements](#sending-authorization-policy-example-multiple-statements)
 
-## Specifying the Delegate Sender<a name="sending-authorization-policy-example-sender"></a>
+## Specifying the delegate sender<a name="sending-authorization-policy-example-sender"></a>
 
 The *principal*, which is the entity to which you are granting permission, can be an AWS account, an AWS Identity and Access Management \(IAM\) user, or an AWS service\.
 
@@ -89,10 +89,16 @@ The following example policy grants permission to Amazon Cognito to send from id
 14.       "Action":[
 15.         "ses:SendEmail",
 16.         "ses:SendRawEmail"
-17.       ]
-18.     }
-19.   ]
-20. }
+17.       ],
+18.       "Condition": {
+19.         "StringEquals": {
+20.           "aws:SourceAccount": "888888888888",
+21.           "aws:SourceArn": "arn:aws:cognito-idp:us-east-1:888888888888:userpool/your-user-pool-id-goes-here"
+22.         }
+23.       }
+24.     }
+25.   ]
+26. }
 ```
 
 The following example policy grants permission to all accounts within an AWS Organization to send from identity example\.com\. The AWS Organization is specified using the [PrincipalOrgID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principalorgid) global condition key\.
@@ -121,9 +127,9 @@ The following example policy grants permission to all accounts within an AWS Org
 }
 ```
 
-## Restricting the "From" Address<a name="sending-authorization-policy-example-from"></a>
+## Restricting the "From" address<a name="sending-authorization-policy-example-from"></a>
 
-If you use a verified domain, you may want to create a policy that only allows the delegate sender to send from a specified email address\. To restrict the "From" address, you set a condition on the key called *ses:FromAddress*\. The following policy enables AWS account ID *123456789012* to send from the identity *example\.com*, but only from the email address *sender@example\.com*\.
+If you use a verified domain, you may want to create a policy that allows only the delegate sender to send from a specified email address\. To restrict the "From" address, you set a condition on the key called *ses:FromAddress*\. The following policy enables AWS account ID *123456789012* to send from the identity *example\.com*, but only from the email address *sender@example\.com*\.
 
 ```
  1. {
@@ -153,9 +159,9 @@ If you use a verified domain, you may want to create a policy that only allows t
 25. }
 ```
 
-## Restricting the Time at which the Delegate can Send Email<a name="sending-authorization-policy-example-time"></a>
+## Restricting the time at which the delegate can send email<a name="sending-authorization-policy-example-time"></a>
 
-You can also configure your sender authorization policy so that a delegate sender can only send email at a certain time of day, or within a certain date range\. For example, if you plan to send an email campaign during the month of September 2018, you can use the following policy to restrict the delegate's ability to send email to that month only\.
+You can also configure your sender authorization policy so that a delegate sender can send email only at a certain time of day, or within a certain date range\. For example, if you plan to send an email campaign during the month of September 2021, you can use the following policy to restrict the delegate's ability to send email to that month only\.
 
 ```
  1. {
@@ -177,10 +183,10 @@ You can also configure your sender authorization policy so that a delegate sende
 17.       ],
 18.       "Condition":{
 19.         "DateGreaterThan":{
-20.           "aws:CurrentTime":"2018-08-31T12:00Z"
+20.           "aws:CurrentTime":"2021-08-31T12:00Z"
 21.         },
 22.         "DateLessThan":{
-23.           "aws:CurrentTime":"2018-10-01T12:00Z"
+23.           "aws:CurrentTime":"2021-10-01T12:00Z"
 24.         }
 25.       }
 26.     }
@@ -188,7 +194,7 @@ You can also configure your sender authorization policy so that a delegate sende
 28. }
 ```
 
-## Restricting the Email Sending Action<a name="sending-authorization-policy-example-action"></a>
+## Restricting the email sending action<a name="sending-authorization-policy-example-action"></a>
 
 There are two actions that senders can use to send an email with Amazon SES: `SendEmail` and `SendRawEmail`, depending on how much control the sender wants over the format of the email\. Sending authorization policies enable you to restrict the delegate sender to one of those two actions\. However, many identity owners leave the details of the email sending calls up to the delegate sender by enabling both actions in their policies\.
 
@@ -219,7 +225,7 @@ If your use case is such that you want to restrict the action, you can do so by 
 19. }
 ```
 
-## Restricting the Display Name of the Email Sender<a name="sending-authorization-policy-example-display-name"></a>
+## Restricting the display name of the email sender<a name="sending-authorization-policy-example-display-name"></a>
 
 Some email clients display the "friendly" name of the email sender \(if the email header provides it\), rather than the actual "From" address\. For example, the display name of "John Doe <johndoe@example\.com>" is John Doe\. For instance, you might send emails from *user@example\.com*, but you prefer that recipients see that the email is from *Marketing* rather than from *user@example\.com*\. The following policy enables AWS account ID 123456789012 to send from identity *example\.com*, but only if the display name of the "From" address includes *Marketing*\.
 
@@ -251,7 +257,7 @@ Some email clients display the "friendly" name of the email sender \(if the emai
 25. }
 ```
 
-## Using Multiple Statements<a name="sending-authorization-policy-example-multiple-statements"></a>
+## Using multiple statements<a name="sending-authorization-policy-example-multiple-statements"></a>
 
 Your sending authorization policy can include multiple statements\. The following example policy has two statements\. The first statement authorizes two AWS accounts to send from *sender@example\.com* as long as the "From" address and the feedback address both use the domain *example\.com*\. The second statement authorizes an IAM user to send email from *sender@example\.com* as long as the recipient's email address is under the *example\.com* domain\.
 

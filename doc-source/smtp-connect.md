@@ -4,9 +4,7 @@ To send email using the Amazon SES SMTP interface, you connect to an SMTP endpoi
 
 The Amazon SES SMTP endpoint requires that all connections be encrypted using Transport Layer Security \(TLS\)\. \(Note that TLS is often referred to by the name of its predecessor protocol, SSL\.\) Amazon SES supports two mechanisms for establishing a TLS\-encrypted connection: STARTTLS and TLS Wrapper\. Check the documentation for your software to determine whether it supports STARTTLS, TLS Wrapper, or both\.
 
-**Note**  
-Amazon Elastic Compute Cloud \(Amazon EC2\) restricts email traffic over port 25 by default\. To avoid timeouts when sending email through the SMTP endpoint from Amazon EC2, you can request that these restrictions be removed\. For more information, see [How do I remove the restriction on port 25 from my Amazon EC2 instance or AWS Lambda function?](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-port-25-throttle/) in the AWS Knowledge Center\.  
-Alternatively, you can use a different port, or use an [Amazon VPC endpoint](send-email-set-up-vpc-endpoints.md)\.
+Amazon Elastic Compute Cloud \(Amazon EC2\) throttles email traffic over port 25 by default\. To avoid timeouts when sending email through the SMTP endpoint from EC2, submit a [Request to Remove Email Sending Limitations](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/ec2-email-limit-rdns-request) to remove the throttle\. Alternatively, you can send email using a different port, or use an [Amazon VPC endpoint](send-email-set-up-vpc-endpoints.md)\.
 
 ## STARTTLS<a name="smtp-connect-starttls"></a>
 
@@ -16,6 +14,6 @@ To set up a STARTTLS connection, the SMTP client connects to the Amazon SES SMTP
 
 ## TLS Wrapper<a name="smtp-connect-tlswrapper"></a>
 
-TLS Wrapper \(also known as SMTPS or the Handshake Protocol\) is a means of initiating an encrypted connection without first establishing an unencrypted connection\. With TLS Wrapper, the Amazon SES SMTP endpoint does not perform TLS negotiation: it is the client's responsibility to connect to the endpoint using TLS, and to continue using TLS for the entire conversation\. TLS Wrapper is an older protocol, but many clients still support it\.
+TLS Wrapper \(also known as SMTPS or the Handshake Protocol\) is a means of initiating an encrypted connection without first establishing an unencrypted connection\. With TLS Wrapper, the Amazon SES SMTP endpoint doesn't perform TLS negotiation: it's the client's responsibility to connect to the endpoint using TLS, and to continue using TLS for the entire conversation\. TLS Wrapper is an older protocol, but many clients still support it\.
 
 To set up a TLS Wrapper connection, the SMTP client connects to the Amazon SES SMTP endpoint on port 465 or 2465\. The server presents its certificate, the client issues an EHLO command, and the SMTP session proceeds normally\.

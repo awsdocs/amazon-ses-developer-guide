@@ -10,12 +10,12 @@ This procedure requires that you continue to send a steady stream of emails conf
 **To run a SQL query in Amazon Kinesis Data Analytics**
 
 1. Assuming that you have moved on to this procedure after completing the [last step](event-publishing-kinesis-analytics-application.md), go to the Amazon Kinesis Data Analytics console top menu and choose your application\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_select_app.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_select_app.png)
 
 1. Choose **Go to SQL editor**\. 
 
    Amazon Kinesis Data Analytics attempts to read event data from the Kinesis Data Firehose stream\. If you encounter the **No rows in source stream** error, ensure that you are still sending the email stream you started at the beginning of this procedure, and then choose **Retrieve rows**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_go_to_editor.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_go_to_editor.png)
 
 1. In the code editor box, paste the following\.
 
@@ -32,7 +32,7 @@ This procedure requires that you continue to send a steady stream of emails conf
 1. Choose **Save and run SQL**\.
 
    After Amazon Kinesis Data Analytics retrieves and processes incoming records, you see a list of event records of type "Send"\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/images/event_publishing_tutorial_kinesis_analytics_sql.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/event_publishing_tutorial_kinesis_analytics_sql.png)
 
 ## Next Step<a name="event-publishing-kinesis-analytics-sql-next-step"></a>
 
