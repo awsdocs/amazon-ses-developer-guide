@@ -14,5 +14,7 @@ AWS software development kits \(SDKs\) are available for many popular programmin
 | [AWS SDK for Python \(Boto3\)](https://docs.aws.amazon.com/pythonsdk) | [AWS SDK for Python \(Boto3\) code examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python) | 
 | [AWS SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby) | [AWS SDK for Ruby code examples](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby) | 
 
+For examples specific to Amazon SES, see [Code examples for Amazon SES](service_code_examples.md)\.
+
 **Example availability**  
 Can't find what you need? Request a code example by using the **Provide feedback** link at the bottom of this page\.

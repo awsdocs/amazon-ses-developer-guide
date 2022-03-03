@@ -30,10 +30,10 @@ The following steps show how to request dedicated IP addresses by creating a ser
 
 1. Under **Requests**, complete the following sections:
    + For **Region**, choose the AWS Region that your request applies to\.
-   + For **Limit**, choose **Desired Maximum Send Rate**\.
-   + For **New limit value**, enter the maximum number of messages that you want to send per second\. We use the value that you provide to calculate the number of dedicated IP addresses that you need to implement your use case\. For this reason, the estimate that you provide should be as accurate as possible\.
+   + For **Limit**, choose **Desired Dedicated IP**\.
+   + For **New limit value**, enter the number dedicated IP addresses that you need to implement your use case\.
 **Note**  
-A single, dedicated IP address can only be used in the AWS Region that you chose in this step\. If you want to request dedicated IP addresses for use in another AWS Region, choose **Add another request**, and then complete the **Region**, **Limit**, and **New limit value** fields for the additional Region\. Repeat this process for each Region that you want to use dedicated IP addresses in\.
+If you want to request dedicated IP addresses for use in another AWS Region, choose **Add another request**, and then complete the **Region**, **Limit**, and **New limit value** fields for the additional Region\. Repeat this process for each Region that you want to use dedicated IP addresses in\.
 
 1. Under **Case description**, for **Use case description**, state that you want to request dedicated IP addresses\. If you want to request a specific number of dedicated IP addresses, mention that as well\. If you don't specify a number of dedicated IP addresses, we'll provide the number of dedicated IP addresses that are necessary to meet the sending rate requirement that you specified in the previous step\.
 
