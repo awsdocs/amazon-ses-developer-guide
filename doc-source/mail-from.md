@@ -101,7 +101,7 @@ You can't set up a custom MAIL FROM domain for addresses on a domain that you do
       + **Use default MAIL FROM domain** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES uses a subdomain of `amazonses.com`\. The subdomain varies based on the AWS Region that you use Amazon SES in\.
       + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES returns a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this email address are automatically rejected\.
 
-   1. Choose **Save changes**\. You'll be returned to the previous screen where the **Custom MAIL FROM domain** pane now displays the MX and SPF records that you have to add to the DNS configuration for the domain that the email address belongs to\. These records use the formats shown in the following table\.   
+   1. Choose **Save changes**\. You'll be returned to the previous screen where the **Custom MAIL FROM domain** pane now displays the MX and TXT records that you have to add to the DNS configuration for the domain that the email address belongs to\. These records use the formats shown in the following table\.   
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/mail-from.html)
 
