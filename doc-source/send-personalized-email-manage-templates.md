@@ -111,8 +111,8 @@ You can use the [UpdateTemplate](https://docs.aws.amazon.com/ses/latest/APIRefer
 
 1. Modify the template as needed\. Any lines that you omit are removed from the template\. For example, if you only want to change the `SubjectPart` of the template, you still need to include the `TextPart` and `HtmlPart` properties\.
 
-   When you finish, save the file as `update_template.json`\.
-
+   When you finish, choose a suitable name for your file and save it. For this example, you can go ahead and save the file as `update_template.json`\.
+    
 1. At the command line, enter the following command:
 
    ```
