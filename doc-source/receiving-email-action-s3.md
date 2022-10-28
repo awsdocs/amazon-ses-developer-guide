@@ -3,7 +3,8 @@
 The **S3** action delivers the mail to an Amazon S3 bucket and, optionally, notifies you through Amazon SNS\. This action has the following options\.
 + **S3 Bucket—**The name of the Amazon S3 bucket to which to save received emails\. You can also create a new Amazon S3 bucket when you set up your action by choosing **Create S3 Bucket**\. Amazon SES provides you the raw, unmodified email, which is typically in Multipurpose Internet Mail Extensions \(MIME\) format\. For more information about MIME format, see [RFC 2045](https://tools.ietf.org/html/rfc2045)\.
 **Important**  
-When you save your emails to an Amazon S3 bucket, the default maximum email size \(including headers\) is 30 MB\.
+When you save your emails to an Amazon S3 bucket, the default maximum email size \(including headers\) is 40 MB\.
+SES does not support receipt rules that upload to S3 buckets enabled with object lock configured with a default retention period\.
 If specifying your own KMS key, be sure to use the fully qualified KMS key ARN, and not the KMS key alias; using the alias can result in data encrypted with a KMS key that belongs to the requester, and not the bucket administrator\. See [Using encryption for cross\-account operations](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/bucket-encryption.html#bucket-encryption-update-bucket-policy)\.
 + **Object Key Prefix—**A key name prefix to use within the Amazon S3 bucket\. Key name prefixes enable you to organize your Amazon S3 bucket in a folder structure\. For example, if you use *Email* as your **Object Key Prefix**, your emails will appear in your Amazon S3 bucket in a folder named *Email*\.
 + **KMS Key \(if "Encrypt Message" is selected in the Amazon SES console\)—**The AWS KMS key that Amazon SES should use to encrypt your emails before saving them to the Amazon S3 bucket\. You can use the default KMS key or a customer managed key that you created in AWS KMS\.

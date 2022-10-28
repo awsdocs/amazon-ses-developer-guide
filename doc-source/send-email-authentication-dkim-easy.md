@@ -5,9 +5,12 @@ When you set up Easy DKIM for a domain identity, Amazon SES automatically adds a
 **Note**  
 To set up Easy DKIM, you have to modify the DNS settings for your domain\. If you use Route 53 as your DNS provider, Amazon SES can automatically create the appropriate records for you\. If you use another DNS provider, see your provider's documentation to learn more about changing the DNS settings for your domain\.
 
+**Warning**  
+If you currently have BYODKIM enabled and are transitioning over to Easy DKIM, be aware that Amazon SES will not use BYODKIM to sign your emails while Easy DKIM is being set up and your DKIM status is in a pending state\. Between the moment you make the call to enable Easy DKIM \(either through the API or console\) and the moment when SES can confirm your DNS configuration, your emails may be sent by SES without a DKIM signature\. Therefore, it is advised to use an intermediary step to migrate from one DKIM signing method to the other \(e\.g\., using a subdomain of your domain with BYODKIM enabled and then deleting it once Easy DKIM verification has passed\), or perform this activity during your application's downtime, if any\.
+
 ## Setting up Easy DKIM for a verified domain identity<a name="send-email-authentication-dkim-easy-setup-domain"></a>
 
-The procedure in this section is streamlined to just show the steps necessary to configure Easy DKIM on a domain identity that you've already created\. To see all available options for customizing your domain identity, such as using a default configuration set, custom MAIL FROM domain, and tags, see [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure)\. 
+The procedure in this section is streamlined to just show the steps necessary to configure Easy DKIM on a domain identity that you've already created\. If you haven't yet created a domain identity or you want to see all available options for customizing a domain identity, such as using a default configuration set, custom MAIL FROM domain, and tags, see [Creating a domain identity](creating-identities.md#verify-domain-procedure)\. 
 
 Part of creating an Easy DKIM domain identity is configuring its DKIM\-based verification where you will have the choice to either accept the Amazon SES default of 2048 bits, or to override the default by selecting 1024 bits\. See [DKIM signing key length](send-email-authentication-dkim.md#send-email-authentication-dkim-1024-2048) to learn more about DKIM signing key lengths and how to change them\.
 
@@ -19,7 +22,7 @@ Part of creating an Easy DKIM domain identity is configuring its DKIM\-based ver
 
 1. In the list of identities, choose an identity where the **Identity type** is *Domain*\.
 **Note**  
-If you need to create or verify a domain, see [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure)\.
+If you need to create or verify a domain, see [Creating a domain identity](creating-identities.md#verify-domain-procedure)\.
 
 1. Under the **Authentication** tab, in the **DomainKeys Identified Mail \(DKIM\)** container, choose **Edit**\.
 
@@ -31,7 +34,7 @@ If you need to create or verify a domain, see [Creating and verifying a domain i
 
 1. Choose **Save changes**\.
 
-1. Now that you’ve configured your domain identity with Easy DKIM, you must complete the verification process with your DNS provider \- proceed to [verify a DKIM domain identity with your DNS provider](creating-identities.md#just-verify-domain-proc) and follow the DNS authentication procedures for Easy DKIM\.
+1. Now that you’ve configured your domain identity with Easy DKIM, you must complete the verification process with your DNS provider \- proceed to [Verifying a DKIM domain identity with your DNS provider](creating-identities.md#just-verify-domain-proc) and follow the DNS authentication procedures for Easy DKIM\.
 
 ## Change the Easy DKIM signing key length for an identity<a name="send-email-authentication-dkim-easy-managing-change-key-length"></a>
 

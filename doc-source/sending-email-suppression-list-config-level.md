@@ -1,10 +1,15 @@
-# Using the configuration set\-level suppression list<a name="sending-email-suppression-list-config-level"></a>
+# Using configuration set\-level suppression to override your account\-level suppression list<a name="sending-email-suppression-list-config-level"></a>
 
-You can enable the account\-level suppression list for your entire account, and at the same time, you can configure it separately for different configuration sets \- this is referred to as a configuration set\-level suppression list\. For example, you could have an account\-level suppression list enabled for your entire account whenever bounces and complaints occur, while also using a configuration set\-level suppression list to override your account\-level suppression list so that email addresses are added to your suppression list for just complaints \(not bounces and complaints like is set up in your account\-level suppression list\)\.
+While the account\-level suppression list is set for your entire account, you can customize it separately for different configuration sets by overriding it with configuration set\-level suppression\. This finer granularity allows you to use customized suppression settings for different email sending groups that you've assigned to their own configuration sets\. For example, let's say your account\-level suppression list is configured for both bounce and complaint addresses to be added, but you have a particular email demographic defined in a configuration set for which you're only interested in complaint addresses being added \- you would achieve this by enabling this configuration set's suppression overrides so that email addresses are added to your account\-level suppression list just for complaints \(not bounces and complaints like is set in your account\-level suppression list\) from email sent with this configuration set\.
 
-With the configuration set\-level suppression list, there are different levels of overriding your account\-level suppression, including not using any suppression at all\. To help understand these various levels of suppression that can be set in the following console procedures, the following relationship map models the decision set of choices made for the enabling or disabling of various levels of overrides, that depending on their combination, can be used to implement three different levels of suppression\.
+With configuration set\-level suppression, there are different levels of overriding your account\-level suppression, including not using any suppression at all\. To help understand these various levels of suppression that can be set in the following console procedures, the following relationship map models the decision set of choices you can make for the enabling or disabling of various levels of overrides, that depending on their combination, can be used to implement three different levels of suppression:
++ **No overrides \(default\)** – the configuration set uses your account\-level suppression list settings\.
++ **Override account level settings** – this will negate any account\-level suppression list settings; email sent with this configuration set will not use any suppression settings at all\.
++ **Override account level settings with configuration set\-level suppression enabled** – email sent with this configuration set will only use the suppression conditions you enabled for it \(bounces, complaints, or bounces and complaints\) \- regardless of what your account\-level suppression list settings are, it will override them\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/config_set_suppression_logic.png)
+
+Keep in mind that configuration set\-level suppression is not an actual suppression *list*, rather, it's simply a mechanism to override your account\-level suppression list with custom suppression settings defined in a configuration set \- this means any email sent using the configuration set will only use its own suppression settings and ignore any account\-level suppression settings\. In other words, configuration set\-level suppression is interacting with your account\-level suppression list by simply changing \(overriding\) the suppression reasons that determine what email addresses get added to your account\-level suppression list\.
 
 ## Enabling configuration set\-level suppression<a name="create-config-level-suppression-console"></a>
 
@@ -30,7 +35,7 @@ With the configuration set\-level suppression list, there are different levels o
 
       1. In **Suppression list**, uncheck the **Enabled** box\.
 
-   1. **Use configuration set\-level suppression:** Override your account\-level suppression with custom suppression list settings defined in this configuration set \- this means any email sent using this configuration set will only use its own suppression settings and ignore any account\-level suppression settings\. To do this:
+   1. **Use configuration set\-level suppression:** Override your account\-level suppression list with custom suppression settings defined in this configuration set \- this means any email sent using this configuration set will only use its own suppression settings and ignore any account\-level suppression settings\. To do this:
 
       1. In **Suppression list settings**, check the **Override account level settings** box\. 
 

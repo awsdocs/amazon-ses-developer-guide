@@ -2,7 +2,7 @@
 
 A event destination notifies you about specific email sending events using Amazon SNS\. Because an Amazon SNS event destination only exists within a configuration set, you have to [create a configuration set](event-publishing-create-configuration-set.md) before you add the event destination to the configuration set\.
 
-The procedure in this section shows how to add Amazon SNS event destination details to a configuration set and assumes you have completed steps 1 through 4 in [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add)\.
+The procedure in this section shows how to add Amazon SNS event destination details to a configuration set and assumes you have completed steps 1 through 6 in [Creating an event destination](event-destinations-manage.md#event-destination-add)\.
 
 You can also use the [UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2 to create and modify event destinations\.
 
@@ -13,7 +13,7 @@ There are additional charges for sending messages to the endpoints that are subs
 
 **To add Amazon SNS event destination details to a configuration set using the console**
 
-1. After selecting the Amazon SNS **Destination type** and enabling **Event publishing** in [Step 4](event-destinations-manage.md#add-event-destination-step-4) of [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add), the **Amazon Simple Notification Service \(SNS\) topic** panel will appear \- its fields are addressed in the following steps\.
+1. These are the detailed instructions for selecting Amazon SNS as your event destination type in [Step 7](event-destinations-manage.md#specify-event-dest-step) and assumes you have completed all the previous steps in [Creating an event destination](event-destinations-manage.md#event-destination-add)\. After selecting the Amazon SNS **Destination type** and enabling **Event publishing**, the **Amazon Simple Notification Service \(SNS\) topic** panel will appear \- its fields are addressed in the following steps\.
 
 1. For **SNS topic**, choose an existing Amazon SNS topic, or choose **Create SNS topic** to create a new one\.
 

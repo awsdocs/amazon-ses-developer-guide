@@ -12,6 +12,10 @@ This section provides examples of the types of email sending event records that 
 + [Click record](#event-publishing-retrieving-sns-click)
 + [Rendering Failure record](#event-publishing-retrieving-sns-failure)
 + [DeliveryDelay record](#event-publishing-retrieving-sns-delayed-delivery)
++ [Subscription record](#event-publishing-retrieving-sns-subscription)
+
+**Note**  
+In the following examples where a `tag` field is utilized, it is using event publishing through a configuration set for which SES supports the publishing of tags for all event types\. If using feedback notifications directly on the identity, SES does not publish tags\. Read about adding tags when [creating a configuration set](creating-configuration-sets.md) or [modifying a configuration set](managing-configuration-sets.md#console-detail-configuration-sets)\.
 
 ## Bounce record<a name="event-publishing-retrieving-sns-bounce"></a>
 
@@ -483,7 +487,7 @@ The following is an example of an `Open` event record that Amazon SES publishes 
 56.         "myCustomValue2"
 57.       ],
 58.       "ses:caller-identity": [
-59.         "ses-user"
+59.         "IAM_user_or_role_name"
 60.       ],
 61.       "ses:configuration-set": [
 62.         "ConfigSet"
@@ -667,4 +671,87 @@ The following is an example of a `DeliveryDelay` event record that Amazon SES pu
 27.     }]
 28.   }
 29. }
+```
+
+## Subscription record<a name="event-publishing-retrieving-sns-subscription"></a>
+
+The following is an example of a `Subscription` event record that Amazon SES publishes to Kinesis Data Firehose\. 
+
+```
+ 1. {
+ 2.   "eventType": "Subscription",
+ 3.   "mail": {
+ 4.     "timestamp": "2022-01-12T01:00:14.340Z",
+ 5.     "source": "sender@example.com",
+ 6.     "sourceArn": "arn:aws:ses:us-east-1:123456789012:identity/sender@example.com",
+ 7.     "sendingAccountId": "123456789012",
+ 8.     "messageId": "EXAMPLEe4bccb684-777bc8de-afa7-4970-92b0-f515137b1497-000000",
+ 9.     "destination": ["recipient@example.com"],
+10.     "headersTruncated": false,
+11.     "headers": [
+12.       {
+13.         "name": "From",
+14.         "value": "sender@example.com"
+15.       },
+16.       {
+17.         "name": "To",
+18.         "value": "recipient@example.com"
+19.       },
+20.       {
+21.         "name": "Subject",
+22.         "value": "Message sent from Amazon SES"
+23.       },
+24.       {
+25.         "name": "MIME-Version",
+26.         "value": "1.0"
+27.       },
+28.       {
+29.         "name": "Content-Type",
+30.         "value": "text/html; charset=UTF-8"
+31.       },
+32.       {
+33.         "name": "Content-Transfer-Encoding",
+34.         "value": "7bit"
+35.       }
+36.     ],
+37.     "commonHeaders": {
+38.       "from": ["sender@example.com"],
+39.       "to": ["recipient@example.com"],
+40.       "messageId": "EXAMPLEe4bccb684-777bc8de-afa7-4970-92b0-f515137b1497-000000",
+41.       "subject": "Message sent from Amazon SES"
+42.     },
+43.     "tags": {
+44.       "ses:operation": ["SendEmail"],
+45.       "ses:configuration-set": ["ConfigSet"],
+46.       "ses:source-ip": ["192.0.2.0"],
+47.       "ses:from-domain": ["example.com"],
+48.       "ses:caller-identity": ["ses_user"],
+49.       "myCustomTag1": ["myCustomValue1"],
+50.       "myCustomTag2": ["myCustomValue2"]
+51.     }
+52.   },
+53.   "subscription": {
+54.     "contactList": "ContactListName",
+55.     "timestamp": "2022-01-12T01:00:17.910Z",
+56.     "source": "UnsubscribeHeader",
+57.     "newTopicPreferences": {
+58.       "unsubscribeAll": true,
+59.       "topicSubscriptionStatus": [
+60.         {
+61.           "topicName": "ExampleTopicName",
+62.           "subscriptionStatus": "OptOut"
+63.         }
+64.       ]
+65.     },
+66.     "oldTopicPreferences": {
+67.       "unsubscribeAll": false,
+68.       "topicSubscriptionStatus": [
+69.         {
+70.           "topicName": "ExampleTopicName",
+71.           "subscriptionStatus": "OptOut"
+72.         }
+73.       ]
+74.     }
+75.   }
+76. }
 ```

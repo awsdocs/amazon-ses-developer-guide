@@ -12,7 +12,7 @@ This topic provides an overview of the steps that you have to take if you want t
 
 ## Step 1\. Verify your domain<a name="send-email-getting-started-migrate-verify-domain"></a>
 
-Before you can use Amazon SES to send email, you have to verify the identities that you plan to send email from\. In Amazon SES, an identity can be an email address or an entire domain\. When you verify a domain, you can use Amazon SES to send email from any address on that domain\. For more information about verifying a domain, see [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure)\.
+Before you can use Amazon SES to send email, you have to verify the identities that you plan to send email from\. In Amazon SES, an identity can be an email address or an entire domain\. When you verify a domain, you can use Amazon SES to send email from any address on that domain\. For more information about verifying a domain, see [Creating a domain identity](creating-identities.md#verify-domain-procedure)\.
 
 ## Step 2\. Request production access<a name="send-email-getting-started-migrate-request-production-access"></a>
 

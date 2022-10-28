@@ -2,13 +2,13 @@
 
 An Amazon Kinesis Data Firehose event destination represents an entity that publishes specific Amazon SES email sending events to Kinesis Data Firehose\. Because a Kinesis Data Firehose event destination exists within a configuration set only, you first have to [create a configuration set](event-publishing-create-configuration-set.md)\. Next, you add the event destination to the configuration set\.
 
-The procedure in this section shows how to add Kinesis Data Firehose event destination details to a configuration set and assumes you have completed steps 1 through 4 in [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add)\.
+The procedure in this section shows how to add Kinesis Data Firehose event destination details to a configuration set and assumes you have completed steps 1 through 6 in [Creating an event destination](event-destinations-manage.md#event-destination-add)\.
 
 You can also use the [UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2 destination to create and update event destinations\. 
 
 **To add Kinesis Data Firehose event destination details to a configuration set using the console**
 
-1. After selecting the Kinesis Data Firehose **Destination type** and enabling **Event publishing** in [Step 4](event-destinations-manage.md#add-event-destination-step-4) of [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add), the respective service's detail panel will appear\. The panel's fields are addressed below\.
+1. These are the detailed instructions for selecting Kinesis Data Firehose as your event destination type in [Step 7](event-destinations-manage.md#specify-event-dest-step) and assumes you have completed all the previous steps in [Creating an event destination](event-destinations-manage.md#event-destination-add)\. After selecting the Kinesis Data Firehose **Destination type** and enabling **Event publishing**, the **Amazon Kinesis Data Firehose delivery stream** panel will appear \- its fields are addressed in the following steps\.
 
 1. For **Delivery stream**, choose an existing Kinesis Data Firehose delivery stream, or choose **Create new stream** to create a new one using the Kinesis Data Firehose console\.
 

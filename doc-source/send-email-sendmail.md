@@ -13,7 +13,7 @@ Before you complete the procedure in this section, you should complete the follo
 + Install the Sendmail package on your server\. 
 **Note**  
 Depending on which operating system distribution you use, you might also need to install the following packages: `sendmail-cf`, `m4`, and `cyrus-sasl-plain`\.
-+ Verify an identity to use as your From address\. For more information, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
++ Verify an identity to use as your From address\. For more information, see [Creating an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
 
   If your account is in the Amazon SES sandbox, you must also verify the addresses that you send email to\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
@@ -119,6 +119,12 @@ If you encounter errors such as "Command not found" and "No such file or directo
 
    ```
    sudo /etc/init.d/sendmail restart
+   ```
+
+   *Depending on the version of Linux or Sendmail, if the above doesn't work, try the following:*
+
+   ```
+   sudo su service sendmail restart
    ```
 
 1. Complete the following steps to send a test email:

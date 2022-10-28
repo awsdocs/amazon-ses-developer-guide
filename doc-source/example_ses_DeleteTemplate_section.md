@@ -1,14 +1,50 @@
 # Delete an Amazon SES email template using an AWS SDK<a name="example_ses_DeleteTemplate_section"></a>
 
-The following code example shows how to delete an Amazon SES email template\.
+The following code examples show how to delete an Amazon SES email template\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/SES#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Delete an email template.
+    /// </summary>
+    /// <param name="templateName">Name of the template.</param>
+    /// <returns>True if successful.</returns>
+    public async Task<bool> DeleteEmailTemplateAsync(string templateName)
+    {
+        var success = false;
+        try
+        {
+            var response = await _amazonSimpleEmailService.DeleteTemplateAsync(
+                new DeleteTemplateRequest
+                {
+                    TemplateName = templateName
+                });
+            success = response.HttpStatusCode == HttpStatusCode.OK;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("DeleteEmailTemplateAsync failed with exception: " + ex.Message);
+        }
+
+        return success;
+    }
+```
++  For API details, see [DeleteTemplate](https://docs.aws.amazon.com/goto/DotNetSDKV3/email-2010-12-01/DeleteTemplate) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
   
 
 ```
@@ -47,7 +83,6 @@ class SesTemplate:
                 "Couldn't delete template %s.", self.template['TemplateName'])
             raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
 +  For API details, see [DeleteTemplate](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/DeleteTemplate) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

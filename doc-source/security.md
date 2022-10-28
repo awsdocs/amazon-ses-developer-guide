@@ -8,6 +8,9 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 
 This documentation helps you understand how to apply the shared responsibility model when using Amazon Simple Email Service\. It shows you how to configure Amazon Simple Email Service to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your Amazon Simple Email Service resources\.
 
+**Note**  
+If you need to report abuse of AWS resources, including email spam and malware distribution, do not use the feedback link on any of the pages of this developer guide, as the form is received by the AWS Documentation team, not AWS Trust & Safety\. Instead, on the [How do I report abuse of AWS resources?](http://aws.amazon.com/premiumsupport/knowledge-center/report-aws-abuse/) page, follow the directions to contact the AWS Trust & Safety team to report any type of Amazon AWS abuse\.
+
 **Topics**
 + [Data protection](data-protection.md)
 + [Identity and access management](control-user-access.md)

@@ -2,6 +2,9 @@
 
 Amazon SES includes a feature called *Bring Your Own IP* \(*BYOIP*\), which makes it possible to use your own IP addresses to send email through Amazon SES\. If you already use a range of IP addresses to send email, you can request that we make your IP range available for sending email through Amazon SES\.
 
+**Note**  
+BYOIP is only available for dedicated IP addresses that you configure manually—it can't be used with *Dedicated IPs \(managed\)*\.
+
 BYOIP is helpful, for example, when you've developed a positive IP reputation using an in\-house email sending system, but you want to migrate to Amazon SES\. By using BYOIP, you can start sending email through Amazon SES immediately, without having to re\-establish the reputations of your IP addresses\.
 
 ## Requirements<a name="dedicated-ip-byo-requirements"></a>
@@ -10,6 +13,7 @@ To use BYOIP, your IP address range has to meet the following requirements:
 + The address range has to be registered with your Regional internet registry \(RIR\), such as the American Registry for Internet Numbers \(ARIN\), Réseaux IP Européens Network Coordination Centre \(RIPE NCC\), or Asia\-Pacific Network Information Centre \(APNIC\)\. The address range has to be registered to a business or institutional entity and can't be registered to a person\.
 + You have to be able to provide proof that you own the address range by submitting a signed authorization message\.
 + The addresses in the IP address range have to have a clean history\. We might investigate the reputation of the IP address range, and we reserve the right to reject an IP address range if it contains IP addresses that have poor reputations or are associated with malicious behavior\.
++ The IP address range cannot include IP address ranges that were brought into another AWS service for BYOIP, such as Amazon EC2\.
 
 ## Considerations<a name="dedicated-ip-byo-considerations"></a>
 

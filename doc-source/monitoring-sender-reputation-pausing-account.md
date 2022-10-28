@@ -22,19 +22,21 @@ The first step in configuring automatic pausing of email sending is to create an
 
 1. Choose **Create role**\.
 
-1. Under **Select type of trusted entity**, choose **AWS service**\.
+1. On the **Select trusted entity** page, choose **AWS service** for the **Trusted entity type**\.
 
-1. Under **Choose the service that will use this role**, choose **Lambda**\. Choose **Next: Permissions**\.
+1. Under **Use case**, choose **Lambda**, then choose **Next**\.
 
-1. On the **Attach permissions policies** page, choose the following policies:
+1. On the **Add permissions** page, choose the following policies:
    + **AWSLambdaBasicExecutionRole**
    + **AmazonSESFullAccess**
 **Tip**  
-Use the search box at the top of the list of policies to quickly locate these policies\.
+Use the search box under **Permission policies** to quickly locate these policies, but note that after searching for and selecting the first policy, you must choose **Clear filters** before searching and selecting the second policy\.
 
-   Choose **Next: Review**\.
+   Then choose **Next**\.
 
-1. On the **Review** page, for **Name**, type a name for the role\. Choose **Create role**\.
+1. On the **Name, review, and create** page, under **Role details**, enter a meaningful name for the policy in the **Role name** field\.
+
+1. Verify that the two policies you selected are listed in the **Permissions policy summary** table, then choose **Create role**\.
 
 ## Part 2: Create the Lambda Function<a name="monitoring-sender-reputation-pausing-account-part-2"></a>
 
@@ -52,15 +54,16 @@ This function only pauses email sending in the AWS Region you select in this ste
 
 1. Under **Create function**, choose **Author from scratch**\.
 
-1. Under **Author from scratch**, complete the following steps:
-   + For **Name**, type a name for the Lambda function\.
-   + For **Runtime**, choose **Node\.js 6\.10**\.
-   + For **Role**, choose **Choose an existing role**\.
-   + For **Existing role**, choose the IAM role you created in [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1)\.
+1. Under **Basic information**, complete the following steps:
+   + For **Function name**, type a name for the Lambda function\.
+   + For **Runtime**, choose **Node\.js 14x** \(or the version currently offered in the select list\)\.
+   + For **Architecture**, keep the preselected default, **x86\_64**\.
+   + Under Permissions, expand **Change default execution role** and choose **Use an existing role**\.
+   + Click inside the **Existing role** list box, and choose the IAM role you created in [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1)\.
 
-   Choose **Create function**\.
+   Then choose **Create function**\.
 
-1. Under **Function code**, in the code editor, paste the following code:
+1. Under **Code source**, in the code editor, paste the following code:
 
    ```
    'use strict';
@@ -89,11 +92,13 @@ This function only pauses email sending in the AWS Region you select in this ste
    };
    ```
 
-   Choose **Save**\.
+   Then choose **Deploy**\.
 
-1. Choose **Test**\. If the **Configure test event** window appears, type a name in the **Event name** field, and then choose **Create**\.
+1. Choose **Test**\. If the **Configure test event** window appears, type a name in the **Event name** field, and then choose **Save**\.
 
-1.  Ensure that the notification bar at the top of the page says Execution result: succeeded\. If the function failed to execute, do the following:
+1. Expand the **Test** drop box and select the name of the event you just created, and then choose **Test**\.
+
+1. The **Execution results** tab will appear \- just below it and to the right, ensure that Status: Succeeded is displayed\. If the function failed to execute, do the following:
    + Verify that the IAM role you created in [Part 1: Create an IAM Role](#monitoring-sender-reputation-pausing-account-part-1) contains the correct policies\.
    + Verify that the code in the Lambda function does not contain any errors\. The Lambda code editor automatically highlights syntax errors and other potential issues\.
 

@@ -3,13 +3,13 @@
 Your Amazon SES account has a set of sending quotas that regulate the number of email messages that you can send and the rate at which you can send them\. Sending quotas benefit all Amazon SES customers because they help to maintain the trusted relationship between Amazon SES and email providers\. Sending quotas help you to gradually ramp up your sending activity and decrease the likelihood that email providers block your emails because of sudden, unexpected spikes in your email sending volume or rate\.
 
 The following quotas apply to sending email through Amazon SES:
-+ **Sending quota**—The maximum number of emails that you can send in a 24\-hour period\. This quota is calculated on a rolling time period\. Every time you try to send an email, Amazon SES determines the number of emails that you sent in the previous 24 hours\. As long as the total number of emails that you have sent in the past 24 hours is less than this daily maximum, your send request is accepted and your email is sent\.
++ [**Sending quota**](quotas.md)—The maximum number of emails that you can send in a 24\-hour period\. This quota is calculated on a rolling time period\. Every time you try to send an email, Amazon SES determines the number of emails that you sent in the previous 24 hours\. As long as the total number of emails that you have sent in the past 24 hours is less than this daily maximum, your send request is accepted and your email is sent\.
 
   If sending a message would exceed the daily maximum for your account, your call to Amazon SES is rejected\.
-+ **Sending rate**—The maximum number of emails that Amazon SES can accept from your account each second\. You can exceed this quota for short bursts, but not for sustained periods of time\.
++ [**Sending rate**](quotas.md)—The maximum number of emails that Amazon SES can accept from your account each second\. You can exceed this quota for short bursts, but not for sustained periods of time\.
 **Note**  
 The rate at which Amazon SES accepts your messages can be less than the maximum send rate for your account\.
-+ **Maximum message size \(MB\)**—The maximum email size that you can send\. This includes any images and attachments that are part of the email after MIME encoding\. For example, if you attach a 5MB file, the attachment size in the email after MIME encoding will be \~6\.85MB \(about 137% of the original file size\)\.
++ [**Maximum message size \(MB\)**](quotas.md)—The maximum email size that you can send\. This includes any images and attachments that are part of the email after MIME encoding\. For example, if you attach a 5MB file, the attachment size in the email after MIME encoding will be \~6\.85MB \(about 137% of the original file size\)\.
 **Note**  
 We recommend you upload your attachments to cloud drives and include the URL of cloud drive attachment to reduce email size and improve deliverability\. SES cannot guarantee that large emails will end up in the recipient mailbox as different mail servers will have varying size based policies\.
 
@@ -22,5 +22,5 @@ When your account has been removed from the sandbox, you can request additional 
 **Note**  
 Sending quotas are based on recipients rather than on messages\. For example, an email that has 10 recipients counts as 10 against your quota\. However, we don't recommend that you send an email to multiple recipients in a single call to the `SendEmail` API operation, because if the call fails, the entire email is rejected\. We recommend that you call `SendEmail` once for every recipient\.
 + To increase your sending quotas, see [Increasing your Amazon SES sending quotas](manage-sending-quotas-request-increase.md)\. 
-+ For information about the errors your application receives when you reach your sending quotas, see [Errors related to the sending quotas for your Amazon SES account](manage-sending-quotas-errors.md)\.
 + To monitor your sending quotas by using the Amazon SES console or the Amazon SES API, see [Monitoring your Amazon SES sending quotas](manage-sending-quotas-monitor.md)\.
++ For information about the errors your application receives when you reach your sending quotas, see [Errors related to the sending quotas for your Amazon SES account](manage-sending-quotas-errors.md)\.

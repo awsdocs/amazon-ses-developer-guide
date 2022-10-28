@@ -69,6 +69,9 @@ You can also obtain the DKIM records for an identity by using the Amazon SES API
    y4examplexbhyhnsjcmtvzotfvqjmdqoj._domainkey.example.com CNAME y4examplexbhyhnsjcmtvzotfvqjmdqoj.dkim.amazonses.com
    ```
 
+**Note**  
+If your selected AWS Region is Cape Town, Osaka, or Milan, you will need to use region specific DKIM domains as specified in the [DKIM Domains table](https://docs.aws.amazon.com/general/latest/gr/ses.html) found in the *AWS General Reference*\.
+
 ## Disabling Easy DKIM for an identity<a name="send-email-authentication-dkim-easy-managing-disabling"></a>
 
 You can quickly disable DKIM authentication for an identity by using the Amazon SES console\.
@@ -167,7 +170,7 @@ The following SES console procedure explains how to override \(disable or enable
 
 1. Under the **Authentication** tab, in the **DomainKeys Identified Mail \(DKIM\)** container, choose **Edit**\.
 **Note**  
-The **Authentication** tab is only present if the selected email address identity belongs to a domain that has already been verified by SES\. If you haven't verified your domain yet, see [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure)\.
+The **Authentication** tab is only present if the selected email address identity belongs to a domain that has already been verified by SES\. If you haven't verified your domain yet, see [Creating a domain identity](creating-identities.md#verify-domain-procedure)\.
 
 1. Under **Advanced DKIM settings**, in the **DKIM signatures** field, clear the **Enabled** checkbox to disable DKIM signing, or select it to re\-enable DKIM signing \(if it had been overridden previously\)\.
 

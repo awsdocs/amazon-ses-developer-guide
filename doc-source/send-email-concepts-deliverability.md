@@ -36,7 +36,7 @@ One of the biggest issues with email on the Internet is unsolicited bulk email \
 
 ### Verification<a name="send-email-concepts-deliverability-verification"></a>
 
-Unfortunately, it's possible for a spammer to falsify an email header and spoof the originating email address so that it appears as though the email originated from a different source\. To maintain trust between email providers and Amazon SES, Amazon SES needs to ensure that its senders are who they say they are\. You are therefore required to verify all email addresses from which you send emails through Amazon SES to protect your sending identity\. You can verify email addresses by using the Amazon SES console or by using the Amazon SES API\. You can also verify entire domains\. For more information, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure) and [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure)\.
+Unfortunately, it's possible for a spammer to falsify an email header and spoof the originating email address so that it appears as though the email originated from a different source\. To maintain trust between email providers and Amazon SES, Amazon SES needs to ensure that its senders are who they say they are\. You are therefore required to verify all email addresses from which you send emails through Amazon SES to protect your sending identity\. You can verify email addresses by using the Amazon SES console or by using the Amazon SES API\. You can also verify entire domains\. For more information, see [Creating an email address identity](creating-identities.md#verify-email-addresses-procedure) and [Creating a domain identity](creating-identities.md#verify-domain-procedure)\.
 
 If your account is still in the Amazon SES sandbox, you also need to verify all recipient addresses except for addresses provided by the Amazon SES mailbox simulator\. For information about getting out of the sandbox, see [Moving out of the Amazon SES sandbox](request-production-access.md)\. For more information about the mailbox simulator, see [Using the mailbox simulator manually](send-an-email-from-console.md#send-email-simulator)\.
 
@@ -83,3 +83,9 @@ Amazon SES provides usage statistics so that you can view your failed deliveries
 ## Improve your email\-sending program<a name="send-email-concepts-deliverability-improve"></a>
 
 If you are getting large numbers of bounces and complaints, it's time to reassess your email\-sending strategy\. Remember that excessive bounces, complaints, and attempts to send low\-quality email constitute abuse and put your AWS account at risk of termination\. Ultimately, you need to be sure that you use Amazon SES to send high\-quality emails and to only send emails to recipients who want to receive them\.  
+
+## At\-least\-once delivery<a name="send-email-concepts-at-least-once-delivery"></a>
+
+Amazon SES stores copies of your messages on multiple servers for redundancy and high availability\. On rare occasions, one of the servers that stores a copy of a message might be unavailable when you receive or delete a message\.
+
+If this occurs, the copy of the message isn't deleted on that unavailable server, and you might get that message copy again when you receive messages\. Design your applications to be idempotent \(they should not be affected adversely when processing the same message more than once\)\.

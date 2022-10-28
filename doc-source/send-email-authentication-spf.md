@@ -17,7 +17,7 @@ The following table includes links to the documentation for several common provi
 
 | DNS/Hosting provider | Documentation link | 
 | --- | --- | 
-| Amazon Route 53 | [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) | 
+| Amazon Route 53 | [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html) and [Common values](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-values-shared.html) | 
 |  GoDaddy  |  [Add an SPF record](https://www.godaddy.com/help/add-an-spf-record-19218) \(external link\)  | 
 |  DreamHost  |  [How do I add an SPF record?](https://help.dreamhost.com/hc/en-us/articles/216106197-How-do-I-add-an-SPF-record-) \(external link\)  | 
 |  Cloudflare  |  [Managing DNS records in Cloudflare](https://support.cloudflare.com/hc/en-us/articles/360019093151) \(external link\)  | 

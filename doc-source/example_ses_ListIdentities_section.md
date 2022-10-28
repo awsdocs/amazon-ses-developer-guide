@@ -1,14 +1,102 @@
 # List Amazon SES identities using an AWS SDK<a name="example_ses_ListIdentities_section"></a>
 
-The following code example shows how to list Amazon SES identities\.
+The following code examples show how to list Amazon SES identities\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/SES#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Get the identities of a specified type for the current account.
+    /// </summary>
+    /// <param name="identityType">IdentityType to list.</param>
+    /// <returns>The list of identities.</returns>
+    public async Task<List<string>> ListIdentitiesAsync(IdentityType identityType)
+    {
+        var result = new List<string>();
+        try
+        {
+            var response = await _amazonSimpleEmailService.ListIdentitiesAsync(
+                new ListIdentitiesRequest
+                {
+                    IdentityType = identityType
+                });
+            result = response.Identities;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("ListIdentitiesAsync failed with exception: " + ex.Message);
+        }
+
+        return result;
+    }
+```
++  For API details, see [ListIdentities](https://docs.aws.amazon.com/goto/DotNetSDKV3/email-2010-12-01/ListIdentities) in *AWS SDK for \.NET API Reference*\. 
+
+------
+#### [ Java ]
+
+**SDK for Java 2\.x**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/ses#readme)\. 
+  
+
+```
+    public static void listSESIdentities(SesClient client) {
+
+        try {
+            ListIdentitiesResponse identitiesResponse = client.listIdentities();
+            List<String> identities = identitiesResponse.identities();
+            for (String identity: identities) {
+                System.out.println("The identity is "+identity);
+            }
+
+        } catch (SesException e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+    }
+```
++  For API details, see [ListIdentities](https://docs.aws.amazon.com/goto/SdkForJavaV2/email-2010-12-01/ListIdentities) in *AWS SDK for Java 2\.x API Reference*\. 
+
+------
+#### [ JavaScript ]
+
+**SDK for JavaScript V3**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/ses#code-examples)\. 
+  
+
+```
+import { ListIdentitiesCommand } from "@aws-sdk/client-ses";
+import { sesClient } from "./libs/sesClient.js";
+
+const createListIdentitiesCommand = () =>
+  new ListIdentitiesCommand({ IdentityType: "EmailAddress", MaxItems: 10 });
+
+const run = async () => {
+  const listIdentitiesCommmand = createListIdentitiesCommand();
+
+  try {
+    return await sesClient.send(listIdentitiesCommmand);
+  } catch (err) {
+    console.log("Failed to list identities.", err);
+    return err;
+  }
+};
+```
++  For API details, see [ListIdentities](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-ses/classes/listidentitiescommand.html) in *AWS SDK for JavaScript API Reference*\. 
+
+------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
   
 
 ```
@@ -39,7 +127,6 @@ class SesIdentity:
         else:
             return identities
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
 +  For API details, see [ListIdentities](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/ListIdentities) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

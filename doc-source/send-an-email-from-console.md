@@ -19,7 +19,7 @@ Before you follow these steps, complete the tasks in [Setting up Amazon Simple E
 
 1. In the navigation pane under **Configuration** choose **Verified Identities**\.
 
-1. From the **Identities** table, select a verified email identity \(by clicking directly on the identity name as opposed to selecting its checkbox\)\. *If you don't have a verified email identity, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure)\.*
+1. From the **Identities** table, select a verified email identity \(by clicking directly on the identity name as opposed to selecting its checkbox\)\. *If you don't have a verified email identity, see [Creating an email address identity](creating-identities.md#verify-email-addresses-procedure)\.*
 
 1. On the selected email identity's detail page, choose **Send test email**\.
 
@@ -43,7 +43,7 @@ Before you follow these steps, complete the tasks in [Setting up Amazon Simple E
 
 1. Choose the type of simulated email scenario you want to test by expanding the **Scenario** list box\.
 
-   1. If you choose **Custom** and you're still in the Amazon SES sandbox, make sure that the address in the **Custom recipient** field is a verified email address\. For more information, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
+   1. If you choose **Custom** and you're still in the Amazon SES sandbox, make sure that the address in the **Custom recipient** field is a verified email address\. For more information, see [Creating an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
 
 1. Fill out the remaining fields as desired\.
 

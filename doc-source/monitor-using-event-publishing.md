@@ -36,16 +36,16 @@ The following list defines terms related to Amazon SES event publishing\.
 
 **Email sending event**  
 Information associated with the outcome of an email you submit to Amazon SES\. Sending events include the following:  
-+ **Sends** – The send request was successful and Amazon SES will attempt to deliver the message to the recipient’s mail server\. \(If account\-level or global suppression is being used, SES will still count it as a send, but delivery is suppressed\.\)
-+ **Rendering Failures** – The email wasn't sent because of a template rendering issue\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\. \(This event type only occurs when you send email using the [https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\.\)
-+ **Rejects** – Amazon SES accepted the email, but determined that it contained a virus and didn’t attempt to deliver it to the recipient’s mail server\.
-+ **Deliveries** – Amazon SES successfully delivered the email to the recipient's mail server\.
-+ **Hard bounces** – The recipient's mail server permanently rejected the email\. \(*Soft bounces* are only included when Amazon SES fails to deliver the email after retrying for a period of time\.\)
-+ **Complaints** – The email was successfully delivered to the recipient’s mail server, but the recipient marked it as spam\.
-+ **Delivery Delays** – The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
-+ **Subscriptions** – The email was successfully delivered, but the recipient updated the subscription preferences by clicking `List-Unsubscribe` in the email header or the `Unsubscribe` link in the footer\.
-+ **Opens** – The recipient received the message and opened it in their email client\.
-+ **Clicks** – The recipient clicked one or more links in the email\.
++ **Send** – The send request was successful and Amazon SES will attempt to deliver the message to the recipient’s mail server\. \(If account\-level or global suppression is being used, SES will still count it as a send, but delivery is suppressed\.\)
++ **Rendering Failure** – The email wasn't sent because of a template rendering issue\. This event type can occur when template data is missing, or when there is a mismatch between template parameters and data\. \(This event type only occurs when you send email using the [https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html) or [https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html](https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html) API operations\.\)
++ **Reject** – Amazon SES accepted the email, but determined that it contained a virus and didn’t attempt to deliver it to the recipient’s mail server\.
++ **Delivery** – Amazon SES successfully delivered the email to the recipient's mail server\.
++ **Hard bounce** – The recipient's mail server permanently rejected the email\. \(*Soft bounces* are only included when Amazon SES fails to deliver the email after retrying for a period of time\.\)
++ **Complaint** – The email was successfully delivered to the recipient’s mail server, but the recipient marked it as spam\.
++ **Delivery Delay** – The email couldn't be delivered to the recipient’s mail server because a temporary issue occurred\. Delivery delays can occur, for example, when the recipient's inbox is full, or when the receiving email server experiences a transient issue\.
++ **Subscription** – The email was successfully delivered, but the recipient updated the subscription preferences by clicking `List-Unsubscribe` in the email header or the `Unsubscribe` link in the footer\.
++ **Open** – The recipient received the message and opened it in their email client\.
++ **Click** – The recipient clicked one or more links in the email\.
 
 **Configuration set**  
 A set of rules that defines the destination that Amazon SES publishes email sending events to, and the types of email sending events that you want to publish\. When you send an email that you want to use with event publishing, you specify the configuration set to associate with the email\.

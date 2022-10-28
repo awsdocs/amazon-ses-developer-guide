@@ -19,7 +19,7 @@ If you set up Amazon SES to send notifications by using Amazon SNS, you're charg
 ## Cross\-account notifications legacy support<a name="sending-authorization-delegate-sender-tasks-cross-account-sunsetting"></a>
 
 Cross\-account notifications were an Amazon SES classic console concept where you'd associate a topic with an identity you didn't own \(that’s the cross\-account\), in the SES new console, this has been replaced by using configuration sets and verified identities in association with delegate sending where you're allowed to use another’s identity \(after they’ve given you permission\) to send email\. This new method allows the flexibility to configure bounce, complaint, delivery, and other event notifications by two constructs depending if you're the delegate sender or the owner of the verified identity:
-+ **Configuration sets** – The delegate sender can set up event publishing in his own configuration set that he can specify when sending email from a verified identity he doesn't own, but has been authorized to send from by the identity owner through an authorization policy\. Event publishing allows bounce, complaint, delivery, and other event notifications to be published to Amazon CloudWatch, Amazon Kinesis Data Firehose, Amazon Pinpoint, and Amazon SNS\. See [Manage event destinations](event-destinations-manage.md)\.
++ **Configuration sets** – The delegate sender can set up event publishing in his own configuration set that he can specify when sending email from a verified identity he doesn't own, but has been authorized to send from by the identity owner through an authorization policy\. Event publishing allows bounce, complaint, delivery, and other event notifications to be published to Amazon CloudWatch, Amazon Kinesis Data Firehose, Amazon Pinpoint, and Amazon SNS\. See [Create event destinations](event-destinations-manage.md)\.
 + **Verified identities** – Besides having the identity owner authorize the delegate sender to use one of his verified identities to send email from, he can also, at the request of the delegate sender, configure feedback notifications on the shared identity to use SNS topics owned by the delegate sender\. Only the delegate sender will get these notifications because they own the SNS topic\. See Step 14 for how to [configure an "SNS topic you don't own"](sending-authorization-identity-owner-tasks-policy.md#configure-sns-topic-you-dont-own) in the authorization policy procedures\.
 
 **Note**  
@@ -97,7 +97,7 @@ Procedures are given below for setting up new delegate sending notifications usi
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. Follow the procedures in [Manage event destinations](event-destinations-manage.md)\.
+1. Follow the procedures in [Create event destinations](event-destinations-manage.md)\.
 
 1. After you've set up event publishing in your configuration set, specify the name of the configuration set when you send email as a delegate sender using the verified identity the identity owner authorized you to send from\. See [Sending emails for the identity owner](sending-authorization-delegate-sender-tasks-email.md)\.
 

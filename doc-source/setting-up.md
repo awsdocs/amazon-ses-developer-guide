@@ -20,6 +20,8 @@ If you do not have an AWS account, complete the following steps to create one\.
 
    Part of the sign\-up procedure involves receiving a phone call and entering a verification code on the phone keypad\.
 
+   When you sign up for an AWS account, an *AWS account root user* is created\. The root user has access to all AWS services and resources in the account\. As a security best practice, [assign administrative access to an administrative user](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html), and use only the root user to perform [tasks that require root user access](https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root)\.
+
 ## Get your AWS access keys<a name="get-aws-keys"></a>
 
 After you've signed up for AWS, you must obtain your AWS access keys to access Amazon SES through the Amazon SES API, whether by the Query \(HTTPS\) interface directly or indirectly through an [AWS SDK](https://aws.amazon.com/tools/), the [AWS Command Line Interface](https://aws.amazon.com/cli/), or the [AWS Tools for Windows PowerShell](https://aws.amazon.com/powershell/)\. AWS access keys consist of an access key ID and a secret access key\.
@@ -32,4 +34,4 @@ To call the Amazon SES API without having to handle low\-level details like asse
 
 ## Verify your email address<a name="quick-start-verify-email-addresses"></a>
 
-Before you can send email from your email address through Amazon SES, you must show Amazon SES that you own the email address by verifying it\. For instructions, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
+Before you can send email from your email address through Amazon SES, you must show Amazon SES that you own the email address by verifying it\. For instructions, see [Creating an email address identity](creating-identities.md#verify-email-addresses-procedure)\.

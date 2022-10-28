@@ -11,11 +11,15 @@ When referring to Outlook, this covers all the domains they track\. For example,
 
 1. Sign in to the Amazon CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
 
-1. In the navigation pane, choose **Metrics**\.
+1. In the navigation pane, expand **Metrics** and choose **All metrics**\.
 
-1. On the **All metrics** tab in the AWS Region of your choice, choose **SES** under **AWS Namespaces**\.
+   *\(Directions are given for the new CloudWatch console interface\.\)*
 
-1. Choose **IP Metrics**, which will show you all of your dedicated IPs tracked by SNDS\.
+1. Under the **Browse** tab in the **Metrics** container, select your AWS Region, then choose **SES**\.
+
+1. Choose **IP Metrics** which will show you all of your dedicated IPs tracked by SNDS\.
+
+   *\(Note: if there are no dedicated IP addresses associated with your account in the selected region, **IP Metrics** will not appear in the CloudWatch console\.\)*
 
 1. View all of your dedicated IPs tracked by SNDS in this list, or select an individual IP address to view only its metrics\.
 

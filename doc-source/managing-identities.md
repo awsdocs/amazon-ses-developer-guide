@@ -17,7 +17,7 @@ You can use the Amazon SES console or API to view a list of domain and email add
 **Note**  
 This procedure only displays a list of identities for the selected AWS Region\.
 
-1. In the navigation pane, under **Configuration**, choose **Verified identities**\. The **Verified identities** table displays both domain and email address identities\. The **Status** column displays whether an identity has been verified, is pending verification, or has failed the verification process \- definitions of all possible status values are as follows:
+1. In the navigation pane, under **Configuration**, choose **Verified identities**\. The **Loaded identities** table displays both domain and email address identities\. The **Status** column displays whether an identity has been verified, is pending verification, or has failed the verification process \- definitions of all possible status values are as follows:
    + **Verified** – your identity is successfully verified for sending in SES\.
    + **Failure** – SES was unable to verify your identity\. If it's a domain, it means SES was unable to detect the DNS records within 72 hours\. If it's an email address, it means the verification email that was sent to the email address was not acknowledged within 24 hours\.
    + **Pending** – SES is still trying to verify the identity\.
@@ -40,7 +40,7 @@ You can use the Amazon SES console or API to remove a domain or email address id
 
 1. In the navigation pane, under **Configuration**, choose **Verified identities**\. 
 
-   The **Verified identities** table displays a list of both domain and email address identities\.
+   The **Loaded identities** table displays a list of both domain and email address identities\.
 
 1. In the **Identity** column, select the identity that you want to delete\. You can delete multiple identities by checking the box next to each identity that you want to delete\.
 
@@ -58,7 +58,7 @@ You can use the Amazon SES console or API to edit a domain or email address iden
 
 1. In the navigation pane, under **Configuration**, choose **Verified identities**\. 
 
-   The **Verified identities** table displays a list of both domain and email address identities\.
+   The **Loaded identities** table displays a list of both domain and email address identities\.
 
 1. In the **Identity** column, select the identity that you want to edit \(by clicking directly on the identity name as opposed to selecting its checkbox\)\.
 

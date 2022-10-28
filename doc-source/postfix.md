@@ -9,9 +9,11 @@ Postfix is a third\-party application, and isn't developed or supported by Amazo
 
 Before you complete the procedures in this section, you have to perform the following tasks:
 + Uninstall Sendmail, if it's already installed on your system\. The procedure for completing this step varies depending on the operating system you use\.
+**Note**  
+Following references to *sendmail* refer to the Postfix command `sendmail`, not to be confused with the Sendmail application\.
 + Install Postfix\. The procedure for completing this step varies depending on the operating system you use\.
 + Install a SASL authentication package\. The procedure for completing this step varies depending on the operating system you use\. For example, if you use a RedHat\-based system, you should install the `cyrus-sasl-plain` package\. If you use a Debian\- or Ubuntu\-based system, you should install the `libsasl2-modules` package\.
-+ Verify an email address or domain to use for sending email\. For more information, see [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
++ Verify an email address or domain to use for sending email\. For more information, see [Creating an email address identity](creating-identities.md#verify-email-addresses-procedure)\.
 + If your account is still in the sandbox, you can only send email to verified email addresses\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 ## Configuring Postfix<a name="send-email-postfix"></a>

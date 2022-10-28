@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
   
 
 ```
@@ -357,7 +358,12 @@ def main():
 if __name__ == '__main__':
     main()
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [ListIdentities](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/ListIdentities)
+  + [SetIdentityNotificationTopic](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/SetIdentityNotificationTopic)
+  + [VerifyDomainDkim](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/VerifyDomainDkim)
+  + [VerifyDomainIdentity](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/VerifyDomainIdentity)
+  + [VerifyEmailIdentity](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/VerifyEmailIdentity)
 
 ------
 

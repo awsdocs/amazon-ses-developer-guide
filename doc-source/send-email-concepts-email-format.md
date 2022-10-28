@@ -69,7 +69,7 @@ For more information about sending email using the Amazon SES API, see [Using th
 
 ### Amazon SES SMTP interface<a name="send-email-concepts-email-required-information-smtp"></a>
 
-When you access Amazon SES through the SMTP interface, your SMTP client application assembles the message, so the information you need to provide depends on the application you are using\. At a minimum, the SMTP exchange between a client and a server requires a source address, a destination address, and message data\. If you are using the SMTP interface and have feedback forwarding enabled, then your bounces, complaints, and delivery notifications are sent to the "MAIL FROM" address\. Any "Reply\-To" address that you specify is not used\.
+When you access Amazon SES through the SMTP interface, your SMTP client application assembles the message, so the information you need to provide depends on the application you are using\. At a minimum, the SMTP exchange between a client and a server requires a source address, a destination address, and message data\. 
 
 For more information about sending email using the Amazon SES SMTP interface, see [Using the Amazon SES SMTP interface to send email](send-email-smtp.md)\.
 

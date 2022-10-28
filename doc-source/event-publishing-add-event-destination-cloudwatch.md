@@ -1,6 +1,6 @@
 # Set up a CloudWatch event destination for event publishing<a name="event-publishing-add-event-destination-cloudwatch"></a>
 
-You can use Amazon CloudWatch event destinations to publish Amazon SES email sending events to CloudWatch\. Because a CloudWatch event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
+With [Amazon CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html), you can use event destinations to publish Amazon SES email sending events to CloudWatch\. Because a CloudWatch event destination exists within a configuration set only, you must first [create a configuration set](event-publishing-create-configuration-set.md) and then add the event destination to the configuration set\.
 
 When you add a CloudWatch event destination to a configuration set, you must choose one or more CloudWatch *dimensions* that correspond to the message tags you use when you send your emails\. Like message tags, a CloudWatch dimension is a name/value pair that helps you uniquely identify a metric\.
 
@@ -14,13 +14,13 @@ This section provides information to help you choose your dimensions, and then s
 
 ## Adding a CloudWatch Event Destination<a name="event-publishing-add-event-destination-cloudwatch-add"></a>
 
-The procedure in this section shows how to add CloudWatch event destination details to a configuration set and assumes you have completed steps 1 through 4 in [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add)\.
+The procedure in this section shows how to add CloudWatch event destination details to a configuration set and assumes you have completed steps 1 through 6 in [Creating an event destination](event-destinations-manage.md#event-destination-add)\.
 
 You can also use the [UpdateConfigurationSetEventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_UpdateConfigurationSetEventDestination.html) operation in the Amazon SES API V2 to create and modify event destinations\.
 
 **To add CloudWatch event destination details to a configuration set using the console**
 
-1. After selecting the CloudWatch **Destination type** and enabling **Event publishing** in [Step 4](event-destinations-manage.md#add-event-destination-step-4) of [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add), the respective service's detail panel will appear\. The panel's fields are addressed below\.
+1. These are the detailed instructions for selecting CloudWatch as your event destination type in [Step 7](event-destinations-manage.md#specify-event-dest-step) and assumes you have completed all the previous steps in [Creating an event destination](event-destinations-manage.md#event-destination-add)\. After selecting the CloudWatch **Destination type** and enabling **Event publishing**, the **Amazon CloudWatch dimensions** panel will appear \- its fields are addressed in the following steps\.
 
 1. For **Value Source**, specify how Amazon SES will obtain the data that it passes to CloudWatch\. The following value sources are available:
    + **Message Tag** – Amazon SES retrieves the dimension name and value from a tag that you specify by using the `X-SES-MESSAGE-TAGS` header or the `Tags` API parameter\. For more information about using message tags, see [Step 3: Specify your configuration set when you send email](event-publishing-send-email.md)\.

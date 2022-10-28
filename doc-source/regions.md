@@ -2,7 +2,7 @@
 
 Amazon SES is available in several AWS Regions around the world\. In each Region, AWS maintains multiple Availability Zones\. These Availability Zones are physically isolated from each other, but are united by private, low\-latency, high\-throughput, and highly redundant network connections\. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency\.
 
-For a list of all of the Amazon SES Regional endpoints, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the *Amazon Web Services General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
+For a list of all of the Amazon SES Regional endpoints, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the *AWS General Reference*\. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)\.
 
 This section contains information that you need to know if you plan to use Amazon SES in multiple AWS Regions\. It discusses the following subjects:
 + [Amazon SES regions and endpoints](#region-endpoints)
@@ -14,17 +14,18 @@ This section contains information that you need to know if you plan to use Amazo
 + [SMTP credentials](#region-smtp)
 + [Sending authorization](#region-sending-authorization)
 + [Custom MAIL FROM domains](#region-mail-from)
-+ [Setting up \(MX\) records](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-mx-record.hmtl)\.
++ [Email receiving](#region-receive-email)
++ [Setting up \(MX\) records](https://docs.aws.amazon.com/ses/latest/dg/receiving-email-mx-record.html)
 
-For general information about AWS Regions, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference\.*
+For general information about AWS Regions, see [AWS service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *AWS General Reference\.*
 
 ## Amazon SES regions and endpoints<a name="region-endpoints"></a>
 
-When you use Amazon Simple Email Service \(Amazon SES\) to send email, you connect to a URL that provides an endpoint for the Amazon SES API or SMTP interface\. The *AWS General Reference* contains a complete list of endpoints that you use to send and receive email through Amazon SES\. For more information, see [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/general/latest/gr/rande.html#ses_region) in the *AWS General Reference*\.
+When you use Amazon SES to send email, you connect to a URL that provides an endpoint for the SES API or SMTP interface\. The *AWS General Reference* contains a complete list of endpoints that you use to send and receive email through Amazon SES\. For more information, see [Amazon Simple Email Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/ses.html) in the AWS General Reference\.
 
-When you send email through Amazon SES, you can use the URLs in the **API \(HTTPS\) Endpoint** column to make HTTPS requests to the Amazon SES API\. You can also use the URLs in the **SMTP Endpoint** column to send email by using the SMTP interface\.
+When you send email through Amazon SES, you can use the URLs in the rows specified with [HTTPS](https://docs.aws.amazon.com/general/latest/gr/ses.html#ses_region) in the *Protocol* column to make HTTPS requests to the SES API\. You can also use the URLs in the rows specified with [SMTP](https://docs.aws.amazon.com/general/latest/gr/ses.html#ses_region) in the *Protocol* column to send email by using the SMTP interface\.
 
-If you've configured Amazon SES to receive email that's sent to your domain, you can use the inbound SMTP endpoint URLs \(that is, the URLs that begin with "inbound\-smtp\."\) when you [set up the mail exchanger \(MX\) records in the DNS settings for your domain](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-mx-record.hmtl)\.
+If you've configured Amazon SES to receive email that's sent to your domain, you can use the inbound SMTP endpoint URLs \(that is, the URLs that begin with "inbound\-smtp\."\) when you [set up the mail exchanger \(MX\) records in the DNS settings for your domain](https://docs.aws.amazon.com/ses/latest/dg/receiving-email-mx-record.html)\.
 
 **Note**  
 The inbound SMTP URLs aren't IMAP server addresses\. In other words, you can't use them to receive email by using an application such as Outlook\. For a service that provides an IMAP server for incoming email, see [Amazon WorkMail](https://aws.amazon.com/workmail)\.
@@ -85,7 +86,6 @@ Use the MX record settings that Amazon SES provides during the custom MAIL FROM 
 |  Asia Pacific \(Sydney\)  |  feedback\-smtp\.ap\-southeast\-2\.amazonses\.com  | 
 |  Asia Pacific \(Tokyo\)  |  feedback\-smtp\.ap\-northeast\-1\.amazonses\.com  | 
 |  Canada \(Central\)  |  feedback\-smtp\.ca\-central\-1\.amazonses\.com  | 
-|  China \(Ningxia\)  |  feedback\-smtp\.ses\.cn\-northwest\-1\.amazonaws\.com\.cn  | 
 |  Europe \(Frankfurt\)  |  feedback\-smtp\.eu\-central\-1\.amazonses\.com  | 
 |  Europe \(Ireland\)  |  feedback\-smtp\.eu\-west\-1\.amazonses\.com  | 
 |  Europe \(London\)  |  feedback\-smtp\.eu\-west\-2\.amazonses\.com  | 

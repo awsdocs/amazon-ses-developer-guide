@@ -13,13 +13,13 @@ Both of these methods are described in this section along with an overview of ho
 
 ## Recipient\-based control using receipt rules<a name="receiving-email-concepts-rules"></a>
 
-The primary way to control your incoming mail is to specify how mail is handled through an ordered list of actions for any of your verified domain identities \(email addresses, domains, or sub\-domains\) that you own\. These actions are defined and ordered in *receipt rules* that you create within a *rule set*\.
+The primary way to control your incoming mail is to specify how mail is handled through an ordered list of actions for any of your verified identities which includes domains, sub\-domains, or email addresses \- note that email addresses have to belong to one of your verified domain identities\. These actions are defined and ordered in *receipt rules* that you create within a *rule set*\.
 
 As an option, you can also add recipient conditions as a way to specify that the actions only be taken if the recipient to whom the incoming mail is addressed matches a recipient identity specified in the condition\.  For example, if you own *example\.com*, you can specify that mail for *user@example\.com* should bounce, and that all other mail for *example\.com* and its subdomains should be delivered\.
 
 Otherwise, if you do not add any recipient conditions, the actions will be applied to everything \- all email addresses, domains, and sub\-domains that belong to your verified domains\. The following actions are available to be applied to your receipt rules:
 + **Add header action—**Adds a header to the received email\. You typically use this action only in combination with other actions\.
-+ **Return bounce response action—**Rejects the email by returning a bounce response to the sender and, optionally, notifies you through Amazon SNS\.
++ **Return bounce response action—**blocks the email by returning a bounce response to the sender and, optionally, notifies you through Amazon SNS\.
 + **Invoke AWS Lambda function action—**Calls your code through a Lambda function and, optionally, notifies you through Amazon SNS\.
 + **Deliver to S3 bucket action—**Delivers the mail to an Amazon S3 bucket and, optionally, notifies you through Amazon SNS\.
 + **Publish to Amazon SNS topic action—**Publishes the complete email to an Amazon SNS topic\. 
@@ -34,9 +34,9 @@ Receipt rules are grouped together into *rule sets*\. If you don't have an exist
 
 ## IP\-based control using IP address filters<a name="receiving-email-concepts-ip-filters"></a>
 
-You can control your mail flow by setting up **IP address filters**\. IP address filters are optional and enable you to specify whether to accept or reject mail originating from an IP address or range of IP addresses\. Your IP address filters can include *block lists* \(IP addresses from which you want to block incoming mail\) and *allow lists* \(IP addresses from which you want to always accept mail\)\.
+You can control your mail flow by setting up **IP address filters**\. IP address filters are optional and enable you to specify whether to accept or block mail originating from an IP address or range of IP addresses\. Your IP address filters can include *block lists* \(IP addresses from which you want to block incoming mail\) and *allow lists* \(IP addresses from which you want to always accept mail\)\.
 
-IP address filters are useful for blocking spam\. Amazon SES maintains its own block list of IP addresses known to send spam, but you can choose to receive mail from those IP addresses by adding them to your allow list\.
+IP address filters are useful for blocking spam\. Amazon SES maintains its own block list of IP addresses known to send spam including those listed in Spamhaus\. However, you can choose to receive mail from those IP addresses by adding them to your allow list\. Since there are no logs that show which IP addresses are being blocked, the sender who is being blocked will need to inform you\. This is also a good opportunity to help the sender determine if their IP address is on a block list, such as [Spamhaus](https://www.spamhaus.org/), and recommend they request to be unlisted\. Doing so will be beneficial to both you and the sender in that you won't have to maintain an IP address filter for them and they will improve their email deliverability\.
 
 **Note**  
 If you want to allow mail that originates from an Amazon EC2 IP address, you must add it to your allow list\. All mail originating from Amazon EC2 is blocked by default\.
@@ -51,7 +51,7 @@ When Amazon SES receives an email for your domain, the following events occur:
    + The IP address is in the Amazon SES block list, but not on your allow list\.
 
 1. Amazon SES examines your active rule set to determine whether any of your receipt rules contain a recipient condition:
-   + If there's a recipient condition and it matches any of the incoming email's recipients, Amazon SES accepts the email\. Otherwise, if there aren't any matches, Amazon SES rejects the email\.
+   + If there's a recipient condition and it matches any of the incoming email's recipients, Amazon SES accepts the email\. Otherwise, if there aren't any matches, Amazon SES blocks the email\.
    + If the receipt rule does not contain a recipient condition, Amazon SES accepts the mail \- all of the rule's actions will apply to all the verified identities you own\.
 
 1. Amazon SES authenticates the email and scans its content for spam and malware:
@@ -94,7 +94,7 @@ Amazon SES can provide you the email content in two ways: it can store the email
 
 **How large are the emails that you'll be receiving?**
 
-If you store emails in an S3 bucket, the maximum email size \(including headers\) is 30 MB\. If you receive your emails through Amazon SNS notifications, the maximum email size \(including headers\) is 150 KB\.
+If you store emails in an S3 bucket, the maximum email size \(including headers\) is 40 MB\. If you receive your emails through Amazon SNS notifications, the maximum email size \(including headers\) is 150 KB\.
 
 **How do you want to trigger the processing of your mail?**
 
@@ -110,13 +110,13 @@ Amazon SES integrates with AWS Key Management Service \(AWS KMS\) to optionally 
 
 ### Unwanted mail<a name="receiving-email-consider-use-case-unwanted"></a>
 
-**At what point in the email\-receiving process do you want to reject unwanted mail?**
+**At what point in the email\-receiving process do you want to block unwanted mail?**
 
 When a sender tries to send an email to a recipient, the sender's email server exchanges a sequence of commands with the recipient's server\. This sequence is called the *SMTP conversation*\.
 
-You can reject incoming email at two points in the email receiving process: during the SMTP conversation, and after the SMTP conversation\. You use *IP address filters* to reject messages during the SMTP conversation, and *receipt rules* to reject emails after the SMTP conversation\.
+You can block incoming email at two points in the email receiving process: during the SMTP conversation, and after the SMTP conversation\. You use *IP address filters* to block messages during the SMTP conversation, and *receipt rules* to block emails after the SMTP conversation\.
 
-You can use IP address filters to reject email that originates from specific IP addresses\. The benefit of using IP address filters to reject unwanted mail is that we don't charge you for messages that are rejected during the SMTP conversation\. The drawback to using IP address filters is that they reject email from the IP addresses you specify without performing any analysis on the actual content of the messages\. For more information about IP address filters, see [Create IP address filters console walkthrough](receiving-email-ip-filtering-console-walkthrough.md)\.
+You can use IP address filters to block email that originates from specific IP addresses\. The benefit of using IP address filters to block unwanted mail is that we don't charge you for messages that are blocked during the SMTP conversation\. The drawback to using IP address filters is that they block email from the IP addresses you specify without performing any analysis on the actual content of the messages\. For more information about IP address filters, see [Create IP address filters console walkthrough](receiving-email-ip-filtering-console-walkthrough.md)\.
 
 You can use receipt rules to send a bounce notification to the sender of an email based on the address \(or domain, or subdomain\) that the message was sent to\. The benefit of using receipt rules is that you can perform additional analysis on incoming messages before you send a bounce notification to the sender\. For example, you can use AWS Lambda to send bounce notifications only when messages fail DKIM authentication or are identified as spam\. The drawback to using receipt rules is that, because receipt rules are processed after the SMTP conversation, we bill you for each message that you receive\. You might also be charged if you use Lambda to analyze the content of incoming messages\. For more information about receipt rules, see [Creating receipt rules console walkthrough](receiving-email-receipt-rules-console-walkthrough.md)\. For more information about using Lambda to analyze incoming email, see [Lambda function examples](receiving-email-action-lambda-example-functions.md)\. 
 

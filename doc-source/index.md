@@ -4,13 +4,13 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
@@ -30,8 +30,8 @@ Amazon's trademarks and trade dress may not be used in
    + [Migrating to Amazon SES from another email-sending solution](send-email-getting-started-migrate.md)
    + [Moving out of the Amazon SES sandbox](request-production-access.md)
 + [Managing your Amazon SES sending limits](manage-sending-quotas.md)
-   + [Monitoring your Amazon SES sending quotas](manage-sending-quotas-monitor.md)
    + [Increasing your Amazon SES sending quotas](manage-sending-quotas-request-increase.md)
+   + [Monitoring your Amazon SES sending quotas](manage-sending-quotas-monitor.md)
    + [Errors related to the sending quotas for your Amazon SES account](manage-sending-quotas-errors.md)
 + [Set up email sending with Amazon SES](send-email.md)
    + [Using the Amazon SES SMTP interface to send email](send-email-smtp.md)
@@ -79,7 +79,7 @@ Amazon's trademarks and trade dress may not be used in
             + [Stop rule set action](receiving-email-action-stop.md)
             + [Integrate with Amazon WorkMail action](receiving-email-action-workmail.md)
       + [Create IP address filters console walkthrough](receiving-email-ip-filtering-console-walkthrough.md)
-   + [Increasing your Amazon SES receiving quotas](manage-receiving-quotas-request-increase.md)
+   + [Viewing metrics for Amazon SES email receiving](receiving-email-metrics.md)
 + [Verified identities in Amazon SES](verify-addresses-and-domains.md)
    + [Creating and verifying identities in Amazon SES](creating-identities.md)
    + [Managing identities in Amazon SES](managing-identities.md)
@@ -122,20 +122,22 @@ Amazon's trademarks and trade dress may not be used in
 + [Using configuration sets in Amazon SES](using-configuration-sets.md)
    + [Creating configuration sets in Amazon SES](creating-configuration-sets.md)
    + [Managing configuration sets in Amazon SES](managing-configuration-sets.md)
-      + [Managing Amazon SES event destinations](event-destinations-manage.md)
-      + [Manage IP pools in Amazon SES](managing-ip-pools.md)
+      + [Creating Amazon SES event destinations](event-destinations-manage.md)
+      + [Assigning IP pools in Amazon SES](managing-ip-pools.md)
       + [Configuring custom domains to handle open and click tracking](configure-custom-open-click-domains.md)
    + [Specifying a configuration set when you send email](using-configuration-sets-in-email.md)
    + [Viewing and exporting reputation metrics](configuration-sets-export-metrics.md)
 + [Dedicated IP addresses for Amazon SES](dedicated-ip.md)
-   + [Requesting and relinquishing dedicated IP addresses](dedicated-ip-case.md)
-   + [Warming up dedicated IP addresses](dedicated-ip-warming.md)
-   + [Creating dedicated IP pools](dedicated-ip-pools.md)
+   + [Dedicated IP addresses (standard) in Amazon SES](manual-dedicated-ips.md)
+      + [Requesting and relinquishing dedicated IP addresses (standard)](dedicated-ip-case.md)
+      + [Warming up dedicated IP addresses (standard)](dedicated-ip-warming.md)
+      + [Creating standard dedicated IP pools for dedicated IP addresses (standard)](dedicated-ip-pools.md)
+   + [Dedicated IP addresses (managed) for Amazon SES](managed-dedicated-sending.md)
    + [Using your own IP addresses to send email using Amazon SES](dedicated-ip-byo.md)
 + [Managing lists and subscriptions in Amazon Simple Email Service](lists-and-subscriptions.md)
    + [Amazon SES global suppression list](sending-email-global-suppression-list.md)
    + [Using the Amazon SES account-level suppression list](sending-email-suppression-list.md)
-   + [Using the configuration set-level suppression list](sending-email-suppression-list-config-level.md)
+   + [Using configuration set-level suppression to override your account-level suppression list](sending-email-suppression-list-config-level.md)
    + [Using list management](sending-email-list-management.md)
    + [Using subscription management](sending-email-subscription-management.md)
 + [Monitoring your Amazon SES sending activity](monitor-sending-activity.md)
@@ -147,6 +149,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Step 2: Add an event destination](event-publishing-add-event-destination.md)
             + [Set up a CloudWatch event destination for event publishing](event-publishing-add-event-destination-cloudwatch.md)
             + [Set up a Kinesis Data Firehose event destination for Amazon SES event publishing](event-publishing-add-event-destination-firehose.md)
+            + [Set up an Amazon Pinpoint event destination for event publishing](event-publishing-add-event-destination-pinpoint.md)
             + [Set up an Amazon SNS event destination for event publishing](event-publishing-add-event-destination-sns.md)
          + [Step 3: Specify your configuration set when you send email](event-publishing-send-email.md)
       + [Working with Amazon SES event data](working-with-event-data.md)
@@ -188,9 +191,9 @@ Amazon's trademarks and trade dress may not be used in
    + [Automatically pausing email sending](monitoring-sender-reputation-pausing.md)
       + [Automatically pausing email sending for your entire Amazon SES account](monitoring-sender-reputation-pausing-account.md)
       + [Automatically pausing email sending for a configuration set](monitoring-sender-reputation-pausing-configuration-set.md)
-+ [Code examples for Amazon SES](service_code_examples.md)
-   + [Code examples for Amazon SES](service_code_examples_ses.md)
-      + [Actions for Amazon SES](service_code_examples_ses_actions.md)
++ [Code examples for Amazon SES using AWS SDKs](service_code_examples.md)
+   + [Code examples for Amazon SES using AWS SDKs](service_code_examples_ses.md)
+      + [Actions for Amazon SES using AWS SDKs](service_code_examples_ses_actions.md)
          + [Create an Amazon SES receipt filter using an AWS SDK](example_ses_CreateReceiptFilter_section.md)
          + [Create an Amazon SES receipt rule using an AWS SDK](example_ses_CreateReceiptRule_section.md)
          + [Create an Amazon SES receipt rule set using an AWS SDK](example_ses_CreateReceiptRuleSet_section.md)
@@ -202,6 +205,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Delete an Amazon SES identity using an AWS SDK](example_ses_DeleteIdentity_section.md)
          + [Describe an Amazon SES receipt rule set using an AWS SDK](example_ses_DescribeReceiptRuleSet_section.md)
          + [Get an existing Amazon SES email template using an AWS SDK](example_ses_GetTemplate_section.md)
+         + [Get Amazon SES sending limits using an AWS SDK](example_ses_GetSendQuota_section.md)
          + [Get the status of an Amazon SES identity using an AWS SDK](example_ses_GetIdentityVerificationAttributes_section.md)
          + [List Amazon SES email templates using an AWS SDK](example_ses_ListTemplates_section.md)
          + [List Amazon SES identities using an AWS SDK](example_ses_ListIdentities_section.md)
@@ -211,23 +215,21 @@ Amazon's trademarks and trade dress may not be used in
          + [Update an Amazon SES email template using an AWS SDK](example_ses_UpdateTemplate_section.md)
          + [Verify a domain identity with Amazon SES using an AWS SDK](example_ses_VerifyDomainIdentity_section.md)
          + [Verify an email identity with Amazon SES using an AWS SDK](example_ses_VerifyEmailIdentity_section.md)
-      + [Scenarios for Amazon SES](service_code_examples_ses_scenarios.md)
+      + [Scenarios for Amazon SES using AWS SDKs](service_code_examples_ses_scenarios.md)
          + [Copy Amazon SES email and domain identities from one AWS Region to another using an AWS SDK](example_ses_Scenario_ReplicateIdentities_section.md)
-         + [Create and manage rules and filters for Amazon SES using an AWS SDK](example_ses_Scenario_ReceiptRulesFilters_section.md)
-         + [Create and manage Amazon SES templates using an AWS SDK](example_ses_Scenario_Templates_section.md)
          + [Generate credentials to connect to an Amazon SES SMTP endpoint](example_ses_Scenario_GenerateSmtpCredentials_section.md)
          + [Verify an email identity and send messages with Amazon SES using an AWS SDK](example_ses_Scenario_SendEmail_section.md)
-         + [Verify and manage Amazon SES identities using an AWS SDK](example_ses_Scenario_EmailIdentity_section.md)
-      + [Cross-service examples for Amazon SES](service_code_examples_ses_cross-service_examples.md)
+      + [Cross-service examples for Amazon SES using AWS SDKs](service_code_examples_ses_cross-service_examples.md)
          + [Build an Amazon Transcribe streaming app](example_cross_TranscriptionStreamingApp_section.md)
          + [Create a dynamic web application to track DynamoDB data](example_cross_DynamoDBDataTracker_section.md)
          + [Create an Amazon Relational Database Service item tracker](example_cross_RDSDataTracker_section.md)
+         + [Create an Amazon Redshift item tracker](example_cross_RedshiftDataTracker_section.md)
          + [Detect PPE in images with Amazon Rekognition using an AWS SDK](example_cross_RekognitionPhotoAnalyzerPPE_section.md)
          + [Detect objects in images with Amazon Rekognition using an AWS SDK](example_cross_RekognitionPhotoAnalyzer_section.md)
          + [Detect people and objects in a video with Amazon Rekognition using an AWS SDK](example_cross_RekognitionVideoDetection_section.md)
          + [Use Step Functions to invoke Lambda functions](example_cross_ServerlessWorkflows_section.md)
-   + [Code examples for Amazon SES API v2](service_code_examples_sesv2.md)
-      + [Actions for Amazon SES API v2](service_code_examples_sesv2_actions.md)
+   + [Code examples for Amazon SES API v2 using AWS SDKs](service_code_examples_sesv2.md)
+      + [Actions for Amazon SES API v2 using AWS SDKs](service_code_examples_sesv2_actions.md)
          + [Create an Amazon SES API v2 contact in a contact list using an AWS SDK](example_sesv2_CreateContact_section.md)
          + [Create an Amazon SES API v2 contact list using an AWS SDK](example_sesv2_CreateContactList_section.md)
          + [Get information about an Amazon SES API v2 identity using an AWS SDK](example_sesv2_GetEmailIdentity_section.md)
@@ -246,7 +248,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Setting up VPC endpoints with Amazon SES](send-email-set-up-vpc-endpoints.md)
 + [Troubleshooting Amazon SES issues](troubleshoot.md)
    + [General Amazon SES issues](troubleshoot-general.md)
-   + [Email address and domain verification problems](troubleshoot-verification.md)
+   + [Domain and Email address verification problems](troubleshoot-verification.md)
    + [Troubleshooting DKIM problems in Amazon SES](troubleshoot-dkim.md)
    + [Amazon SES Delivery problems](troubleshoot-delivery.md)
    + [Problems with emails received from Amazon SES](troubleshoot-receiving.md)
@@ -259,3 +261,4 @@ Amazon's trademarks and trade dress may not be used in
    + [DNS Blackhole List (DNSBL) FAQs](faqs-dnsbls.md)
    + [Amazon SES email sending metrics FAQs](faqs-metrics.md)
 + [Amazon SES Developer Guide document history](doc-history.md)
++ [Quick Find Index](quick-find.md)

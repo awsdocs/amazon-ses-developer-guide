@@ -10,7 +10,7 @@ Additionally, the AWS accounts of **both** the identity owner and the delegate s
 
 ## Using the Amazon SES API<a name="sending-authorization-delegate-sender-tasks-api"></a>
 
-As with any Amazon SES email sender, if you access Amazon SES through the Amazon SES API \(either directly through HTTPS or indirectly through an AWS SDK\), you can choose between one of two email\-sending actions: `SendEmail` and `SendRawEmail`\. The [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) describes the details of these APIs, but we provide an overview of the sending authorization parameters here\.
+As with any Amazon SES email sender, if you access Amazon SES through the Amazon SES API \(either directly through HTTPS or indirectly through an AWS SDK\), you can choose between one of three email\-sending actions: `SendEmail`, `SendTemplatedEmail`, and `SendRawEmail`\. The [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) describes the details of these APIs, but we provide an overview of the sending authorization parameters here\.
 
 ### SendRawEmail<a name="sending-authorization-delegate-sender-tasks-api-sendrawemail"></a>
 
@@ -53,19 +53,19 @@ Do not include these X\-headers in the DKIM signature, because they are removed 
   22. ------=_boundary--
   ```
 
-### SendEmail<a name="sending-authorization-delegate-sender-tasks-api-sendemail"></a>
+### SendEmail and SendTemplatedEmail<a name="sending-authorization-delegate-sender-tasks-api-sendemail"></a>
 
-If you use the `SendEmail` operation, you can specify the delegated authorized identity by passing in the optional parameters below\. You can't use the X\-header method when you use the `SendEmail`operation\.
+If you use the `SendEmail` or `SendTemplatedEmail` operation, you can specify the delegated authorized identity by passing in the optional parameters below\. You can't use the X\-header method when you use the `SendEmail` or `SendTemplatedEmail` operation\.
 
 
 ****  
 
 | Parameter | Description | 
 | --- | --- | 
-| `SourceArn` | The ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the `Source` parameter of `SendRawEmail`\. | 
-| `ReturnPathArn` | The ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the `ReturnPath` parameter of `SendRawEmail`\. | 
+| `SourceArn` | The ARN of the identity that is associated with the sending authorization policy that permits you to send for the email address specified in the `Source` parameter of either `SendEmail` or `SendTemplatedEmail`\. | 
+| `ReturnPathArn` | The ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the `ReturnPath` parameter of either `SendEmail` or `SendTemplatedEmail`\. | 
 
-The following example shows how to send an email that includes the `SourceArn` and `ReturnPathArn` attributes using the `SendEmail` operation and the [SDK for Python](https://aws.amazon.com/sdk-for-python)\.
+The following example shows how to send an email that includes the `SourceArn` and `ReturnPathArn` attributes using either the `SendEmail` or `SendTemplatedEmail` operation and the [SDK for Python](https://aws.amazon.com/sdk-for-python)\.
 
 ```
 import boto3

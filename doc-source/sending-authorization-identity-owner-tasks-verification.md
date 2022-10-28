@@ -7,4 +7,4 @@ You can confirm that an email address or domain is verified by checking its stat
 Before you or the delegate sender can send email to non\-verified email addresses, you have to submit a request to have your account removed from the Amazon SES sandbox\. For more information, see [Moving out of the Amazon SES sandbox](request-production-access.md)\.
 
 **Important**  
-The AWS accounts of **both** the identity owner and the delegate sender have to be removed from the sandbox before either account can send email to non\-verified addresses\.
+ The AWS account of the delegate sender must be removed from the sandbox before it can be used to send email to non\-verified addresses\.

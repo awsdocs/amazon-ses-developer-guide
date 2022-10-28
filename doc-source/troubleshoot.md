@@ -1,7 +1,7 @@
 # Troubleshooting Amazon SES issues<a name="troubleshoot"></a>
 
 This section contains the following topics that may help you when you encounter problems: 
-+ For information about domain verification problems that you might encounter, see [Email address and domain verification problems](troubleshoot-verification.md)\.
++ For information about domain verification problems that you might encounter, see [Domain and Email address verification problems](troubleshoot-verification.md)\.
 + For solutions to DKIM\-related issues, see [Troubleshooting DKIM problems in Amazon SES](troubleshoot-dkim.md)\.
 + For a list of common delivery problems that you might encounter when you send email, along with corrective actions that you can take, see [Amazon SES Delivery problems](troubleshoot-delivery.md)\. 
 + For a description of issues recipients may see when they receive an email that was sent through Amazon SES, see [Problems with emails received from Amazon SES](troubleshoot-receiving.md)\.
@@ -14,3 +14,17 @@ This section contains the following topics that may help you when you encounter 
 + For a discussion about how DNS\-based Blackhole Lists \(DNSBLs\) affect your sending with Amazon SES, see [DNS Blackhole List \(DNSBL\) FAQs](faqs-dnsbls.md)\.
 
 If you are calling the Amazon SES API directly, see the [Amazon Simple Email Service API Reference](https://docs.aws.amazon.com/ses/latest/APIReference/) for the HTTP errors that you might receive\.
+
+**Note**  
+If you need to request technical support, do not use the feedback link on any of the pages of this developer guide, as the form is received by the AWS Documentation team, not AWS Support\. Instead, on the [Contact Us](http://aws.amazon.com/contact-us/) page, explore the different support options available\.
+
+**Topics**
++ [General Amazon SES issues](troubleshoot-general.md)
++ [Domain and Email address verification problems](troubleshoot-verification.md)
++ [Troubleshooting DKIM problems in Amazon SES](troubleshoot-dkim.md)
++ [Amazon SES Delivery problems](troubleshoot-delivery.md)
++ [Problems with emails received from Amazon SES](troubleshoot-receiving.md)
++ [Amazon SES notification problems](troubleshoot-notifications.md)
++ [Amazon SES email sending errors](troubleshoot-error-messages.md)
++ [Increasing throughput with Amazon SES](troubleshoot-throughput-problems.md)
++ [Amazon SES SMTP issues](troubleshoot-smtp.md)

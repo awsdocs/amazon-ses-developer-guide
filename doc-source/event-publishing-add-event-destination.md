@@ -17,4 +17,5 @@ If you want to receive notifications when certain events occur, you can use Amaz
 **Topics**
 + [Set up a CloudWatch event destination for event publishing](event-publishing-add-event-destination-cloudwatch.md)
 + [Set up a Kinesis Data Firehose event destination for Amazon SES event publishing](event-publishing-add-event-destination-firehose.md)
++ [Set up an Amazon Pinpoint event destination for event publishing](event-publishing-add-event-destination-pinpoint.md)
 + [Set up an Amazon SNS event destination for event publishing](event-publishing-add-event-destination-sns.md)

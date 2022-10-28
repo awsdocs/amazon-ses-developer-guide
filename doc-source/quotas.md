@@ -2,6 +2,9 @@
 
 The following sections list and describe the quotas that apply to Amazon SES resources and operations\. Some quotas can be increased, while others can't\. To determine whether you can request an increase for a quota, refer to the **Adjustable** column\.
 
+**Note**  
+Amazon SES quotas are for each AWS Region that you use in your AWS account\.
+
 ## Email sending quotas<a name="quotas-email-sending"></a>
 
 The following quotas apply to sending email through Amazon SES\.
@@ -21,7 +24,11 @@ Quotas are based on the number of recipients, rather than on the number of messa
 
 | Resource | Default Quota | Adjustable | 
 | --- | --- | --- | 
-|  Maximum message size \(including attachments\)  |  10 MB per message \(after base64 encoding\)\.  |  [Yes](manage-sending-quotas-request-increase.md)  | 
+|  **Using the [SES v1 API](https://docs.aws.amazon.com/ses/latest/APIReference/)** \- Maximum message size \(including attachments\)  |  10 MB per message \(after base64 encoding\)\.  |  No *\(For workloads with message sizes in excess of 10MB, consider migrating to the [SES v2 API](https://docs.aws.amazon.com/ses/latest/APIReference-V2/)\.\)*  | 
+|  **Using the [SES v2 API](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) or [SMTP](send-email-smtp.md)** \- Maximum message size \(including attachments\)  |  40 MB per message \(after base64 encoding\)\.  |  No  | 
+
+**Note**  
+Messages larger than 10MB are subject to bandwidth throttling, and depending on your sending rate, you may be throttled to as low as 40MB/s\. For example, you could send a 40MB message at the rate of 1 message per second, or two 20MB messages per second\.
 
 ### Sender and recipient quotas<a name="quotas-sender-recipient"></a>
 
@@ -63,7 +70,7 @@ The following table lists the quotas associated with receiving email through Ama
 |  Maximum number of recipients per receipt rule  |  100  |  No  | 
 |  Maximum number of receipt rule sets per AWS account  |  40  |  No  | 
 |  Maximum number of IP address filters per AWS account  |  100  |  No  | 
-|  Maximum email size \(including headers\) that can be stored in an Amazon S3 bucket  |  30 MB  |  [Yes](manage-receiving-quotas-request-increase.md)  | 
+|  Maximum email size \(including headers\) that can be stored in an Amazon S3 bucket  |  40 MB  |  No  | 
 |  Maximum email size \(including headers\) that can be published using an Amazon SNS notification  |  150 KB  |  No  | 
 
 ## General quotas<a name="quotas-email-general"></a>

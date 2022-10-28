@@ -93,7 +93,7 @@ Verified domain notification settings apply to all mail sent from email addresse
 
 1. Expand the SNS topic list box of each feedback type you want to receive notifications for, and select either an SNS topic you own, **No SNS topic**, or **SNS topic you don’t own**\.
 
-   1. If you chose **SNS topic you don’t own**, the **SNS topic ARN** field will be presented where you must enter the SNS topic ARN shared with you by your delegate sender\. \(Only your delegate sender will get these notifications because they own the SNS topic \- See \[link\] for more information\.\) 
+   1. If you chose **SNS topic you don’t own**, the **SNS topic ARN** field will be presented where you must enter the SNS topic ARN shared with you by your delegate sender\. \(Only your delegate sender will get these notifications because they own the SNS topic\. To learn more about delegate sending, see [Overview of sending authorization](sending-authorization-overview.md)\.\)
 **Important**  
 The Amazon SNS topics that you use for bounce, complaint, and delivery notifications have to be in the same AWS Region that in which you use Amazon SES\.  
 Additionally, you have to subscribe one or more endpoints to the topic in order to receive notifications\. For example, if you want to have notifications sent to an email address, you have to subscribe an email endpoint to the topic\. For more information, see [Getting Started](https://docs.aws.amazon.com/sns/latest/dg/sns-getting-started.html) in the *Amazon Simple Notification Service Developer Guide*\.
@@ -109,7 +109,7 @@ After you configure your settings, you will start receiving bounce, complaint, a
 You will be charged standard Amazon SNS rates for bounce, complaint, and delivery notifications\. For more information, see the [Amazon SNS pricing page](https://aws.amazon.com/sns/pricing)\.
 
 **Note**  
-If an attempt to publish to your Amazon SNS topic fails because the topic has been deleted or your AWS account no longer has permissions to publish to it, Amazon SES removes the configuration for that topic\. Additionally, Amazon SES re\-enables bounce and complaint email notifications for the identity, and you receive a notification of the change by email\. If multiple identities are configured to use the topic, the topic configuration for each identity is changed when each identity experiences a failure to publish to the topic\.
+If an attempt to publish to your Amazon SNS topic fails because the topic has been deleted or your AWS account no longer has permissions to publish to it, Amazon SES removes the configuration for that topic if it's been configured for bounces or complaints \(not deliveries \- for delivery notifications, SES won't delete the SNS topic configuration setting\)\. Additionally, Amazon SES re\-enables bounce and complaint email notifications for the identity, and you receive a notification of the change by email\. If multiple identities are configured to use the topic, the topic configuration for each identity is changed when each identity experiences a failure to publish to the topic\.
 
 ## Configuring notifications using the Amazon SES API<a name="configure-feedback-notifications-api"></a>
 

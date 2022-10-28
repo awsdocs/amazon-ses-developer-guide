@@ -41,7 +41,7 @@ You can change this behavior by using configuration sets\. Use the [PutConfigura
 
 ## End\-to\-end encryption<a name="security-end-to-end"></a>
 
-You can use Amazon SES to send messages that are encrypted using S/MIME or PGP\. Messages that use these protocols are encrypted by the sender\. Their contents can only be viewed by recipients who possess the public keys that are required to decrypt the messages\.
+You can use Amazon SES to send messages that are encrypted using S/MIME or PGP\. Messages that use these protocols are encrypted by the sender\. Their contents can only be viewed by recipients who possess the private keys that are required to decrypt the messages\.
 
 Amazon SES supports the following MIME types, which you can use to send S/MIME encrypted email:
 + `application/pkcs7-mime`

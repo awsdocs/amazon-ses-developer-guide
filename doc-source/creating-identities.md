@@ -1,18 +1,47 @@
 # Creating and verifying identities in Amazon SES<a name="creating-identities"></a>
 
-In Amazon SES, you can create an identity at the domain level or you can create email address identities\. These identity types aren’t mutually exclusive\. In most cases, creating a domain identity eliminates the need for individual email address identities, unless you want to apply custom configurations to a specific email address\. 
+In Amazon SES, you can create an identity at the domain level or you can create an email address identity\. These identity types aren’t mutually exclusive\. In most cases, creating a domain identity eliminates the need for creating and verifying individual email address identities, unless you want to apply custom configurations to a specific email address\. Whether you create a domain and utilize email addresses based on the domain, or create individual email addresses, there are benefits to both approaches\. Which method you choose is dependant on your specific needs as discussed below\.
 
-Creating and verifying an email address identity is the fastest way to get started in Amazon SES, but there are benefits to verifying an identity at the domain level\. When you verify an email address identity, you’re only able to send from that email address\. When you verify a domain identity, you can send email from any subdomain or email address of the verified domain without having to verify each one individually\. For example, if you create and verify an identity for example\.com, you don't need to create separate identities for a\.example\.com, a\.b\.example\.com, user@example\.com, user@a\.example\.com, and so on\.
+Creating and verifying an email address identity is the fastest way to get started in SES, but there are benefits to verifying an identity at the domain level\. When you verify an email address identity, only that email address can be used to send mail, but when you verify a domain identity, you can send email from any subdomain or email address of the verified domain without having to verify each one individually\. For example, if you create and verify a domain identity called example\.com, you don't need to create separate subdomain identities for a\.example\.com, a\.b\.example\.com, nor separate email address identities for user@example\.com, user@a\.example\.com, and so on\.
+
+However, keep in mind that an email address identity that's using the inherited verification from its domain is limited to straightforward email sending\. If you want to do more advanced sending, you'll have to also explicitly verify it as an email address identity\. Advanced sending includes using the email address with configuration sets, policy authorizations for delegate sending, and configurations that override the domain settings\.
+
+To help clarify the verification inheritance and email sending capabilities discussed above, the following table categorizes each combination of domain/email address verification and lists the inheritance, sending level, and display status for each:
+
+
+| Only domain verified | Only email address verified | Both domain & email address verified | 
+| --- | --- | --- | 
+| Subdomains and email addresses inherit verification from the parent domain\. | Email address explicitly verified\. | [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/creating-identities.html) | 
+| Email addresses limited to straightforward email sending\. | Email address can be used in advanced email sending\. | Email address can be used in advanced email sending\. | 
+| Console/API status: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/creating-identities.html) | Console/API status: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/creating-identities.html) | Console/API status: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/creating-identities.html) | 
 
 To send email from the same domain or email address in more than one AWS Region, you must create and verify a separate identity for each Region\. You can verify as many as 10,000 identities in each Region\.
 
+**When you create and verify domain and email address identities, consider the following:**
++ You can send email from any subdomain or email address of the verified domain without having to verify each one individually\. For example, if you create and verify an identity for example\.com, you don't need to create separate identities for a\.example\.com, a\.b\.example\.com, user@example\.com, user@a\.example\.com, and so on\. 
++ As specified in [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.6), each DNS label can have up to 63 characters, and the whole domain name must not exceed a total length of 255 characters\.
++ If you verify a domain, subdomain, or email address that shares a root domain, the identity settings \(such as feedback notifications\) apply at the most granular level you verified\. 
+  + Verified email address identity settings override verified domain identity settings\.
+  + Verified subdomain identity settings override verified domain identity settings, with lower\-level subdomain settings overriding higher\-level subdomain settings\. 
+
+    For example, assume you verify user@a\.b\.example\.com, a\.b\.example\.com, b\.example\.com, and example\.com\. These are the verified identity settings that will be used in the following scenarios:
+    + Emails sent from user@example\.com \(an email address that isn’t specifically verified\) will use the settings for example\.com\.
+    + Emails sent from user@a\.b\.example\.com \(an email address that is specifically verified\) will use the settings for user@a\.b\.example\.com\.
+    + Emails sent from user@b\.example\.com \(an email address that isn’t specifically verified\) will use the settings for b\.example\.com\.
++ You can add labels to verified email addresses without performing additional verification steps\. To add a label to an email address, add a plus sign \(\+\) between the account name and the "at" sign \(@\), followed by a text label\. For example, if you already verified sender@example\.com, you can use sender\+myLabel@example\.com as the "From" or "Return\-Path" address for your emails\. You can use this feature to implement Variable Envelope Return Path \(VERP\)\. Then you can use VERP to detect and remove undeliverable email addresses from your mailing lists\.
++ Domain names are case\-insensitive\. If you verify example\.com, you can send from EXAMPLE\.com also\.
++ Email addresses *are* case sensitive\. If you verify sender@EXAMPLE\.com, you can't send email from sender@example\.com unless you verify sender@example\.com as well\.
++ In each AWS Region, you can verify as many as 10,000 identities \(domains and email addresses, in any combination\)\.
+
 **Topics**
-+ [Creating and verifying a domain identity](#verify-domain-procedure)
-+ [Creating and verifying an email address identity](#verify-email-addresses-procedure)
++ [Creating a domain identity](#verify-domain-procedure)
++ [Verifying a DKIM domain identity with your DNS provider](#just-verify-domain-proc)
++ [Creating an email address identity](#verify-email-addresses-procedure)
++ [Verifying an email address identity](#just-verify-email-proc)
 + [Create and verify an identity and assign a default configuration set at the same time](#default-config-set-at-create-api)
 + [Using custom verification email templates](#send-email-verify-address-custom)
 
-## Creating and verifying a domain identity<a name="verify-domain-procedure"></a>
+## Creating a domain identity<a name="verify-domain-procedure"></a>
 
 Part of creating a domain identity is configuring its DKIM\-based verification\. DomainKeys Identified Mail \(DKIM\) is an email authentication method that Amazon SES uses to verify domain ownership, and receiving mail servers use to validate email authenticity\. You can choose to configure DKIM by using either Easy DKIM or Bring Your Own DKIM \(BYODKIM\), and depending on your choice, you'll have to configure the signing key length of the private key as follows:
 + **Easy DKIM** \- either accept the Amazon SES default of 2048 bits, or override it by selecting 1024 bits\.
@@ -21,7 +50,7 @@ Part of creating a domain identity is configuring its DKIM\-based verification\.
 See [DKIM signing key length](send-email-authentication-dkim.md#send-email-authentication-dkim-1024-2048) to learn more about DKIM signing key lengths and how to change them\.
 
 The following procedure shows you how to create a domain identity using the Amazon SES console\.
-+ If you've already created your domain and just need to verify it, skip to the procedure [To verify a domain identity configured with DKIM](#just-verify-domain-proc) on this page\.
++ If you've already created your domain and just need to verify it, skip to the procedure [Verifying a DKIM domain identity with your DNS provider](#just-verify-domain-proc) on this page\.
 **Note**  
 Verifying a domain identity requires access to the domain’s DNS settings\. Changes to these settings can take up to 48 hours to propagate\.
 
@@ -71,7 +100,9 @@ Amazon SES only defaults to the assigned configuration set when no other set is 
 
       1. In the **Identity type** field, choose **Provide DKIM authentication token \(BYODKIM\)**\.
 
-      1. For **Private key**, paste the private key you generated from your public\-private key pair\. The private key must use [at least 1024\-bit RSA encryption and up to 2048\-bit](send-email-authentication-dkim.md#send-email-authentication-dkim-1024-2048), and must be encoded using base64 encoding\.
+      1. For **Private key**, paste the private key you generated from your public\-private key pair\. The private key must use [at least 1024\-bit RSA encryption and up to 2048\-bit](send-email-authentication-dkim.md#send-email-authentication-dkim-1024-2048), and must be encoded using base64 [\(PEM\)](https://en.wikipedia.org/wiki/Privacy-Enhanced_Mail) encoding\.
+**Note**  
+You have to delete the first and last lines \(`-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`, respectively\) of the generated private key\. Additionally, you have to remove the line breaks in the generated private key\. The resulting value is a string of characters with no spaces or line breaks\.
 
       1. For **Selector name**, enter the name of the selector to be specified in your domain’s DNS settings\.
 
@@ -85,58 +116,70 @@ Amazon SES only defaults to the assigned configuration set when no other set is 
 
 1. Choose **Create identity**\.
 
+Now that you’ve created and configured your domain identity with DKIM, you must complete the verification process with your DNS provider \- proceed to [Verifying a DKIM domain identity with your DNS provider](#just-verify-domain-proc) and follow the DNS authentication procedures for the type of DKIM you configured your identity with\.
+
+## Verifying a DKIM domain identity with your DNS provider<a name="just-verify-domain-proc"></a>
+
 After you’ve created your domain identity configured with DKIM, you must complete the verification process with your DNS provider by following the respective authentication procedures for the type of DKIM you chose\.
+
+If you haven't created a domain identity, see [Creating a domain identity](#verify-domain-procedure)\.
 
 **To verify a DKIM domain identity with your DNS provider**
 
-1. From the **Verified identities** table, select the domain you want to verify\.
+1. From the **Loaded identities** table, select the domain you want to verify\.
 
-1. On the **Authentication** tab of the identity details page, expand **View DNS records**\.
+1. On the **Authentication** tab of the identity details page, expand **Publish DNS records**\.
 
 1. Depending on which flavor of DKIM you configured your domain with, **Easy DKIM** or **BYODKIM**, follow the respective instructions:
 
-   1. **Easy DKIM**:
+------
+#### [ Easy DKIM ]
 
-      1. From the **View DNS records** table, copy the three CNAME records that appear in this section to be published \(added\) to your DNS provider\. Alternatively, you can choose **Download \.csv record set** to save a copy of the records to your computer\.
+**To verify a domain configured with Easy DKIM**
 
-         The following image shows an example of the CNAME records to publish to your DNS provider\.  
+   1. From the **Publish DNS records** table, copy the three CNAME records that appear in this section to be published \(added\) to your DNS provider\. Alternatively, you can choose **Download \.csv record set** to save a copy of the records to your computer\.
+
+      The following image shows an example of the CNAME records to publish to your DNS provider\.  
 ![\[\]](http://docs.aws.amazon.com/ses/latest/dg/images/dkim_records.png)
 
-      1. Add the CNAME records to your domain’s DNS settings respective of your DNS host provider:
-         + **All DNS host providers** *\(excluding Route 53\)* – Login to your domain’s DNS or web hosting provider, and then add the CNAME records containing the values that you copied or saved previously\. Different providers have different procedures for updating DNS records\. See the [DNS/Hosting provider table](#dns-hosting-providing-table) following these procedures\.
+   1. Add the CNAME records to your domain’s DNS settings respective of your DNS host provider:
+      + **All DNS host providers** *\(excluding Route 53\)* – Login to your domain’s DNS or web hosting provider, and then add the CNAME records containing the values that you copied or saved previously\. Different providers have different procedures for updating DNS records\. See the [DNS/Hosting provider table](#dns-hosting-providing-table) following these procedures\.
 **Note**  
 A small number of DNS providers don't allow you to include underscores \(\_\) in record names\. However, the underscore in the DKIM record name is required\. If your DNS provider doesn't allow you to enter an underscore in the record name, contact the provider's customer support team for assistance\.
-         + **Route 53 as your DNS host provider** – If you use Route 53 on the same account that you use when you send email using SES, and the domain is registered, SES automatically updates the DNS settings for your domain if you enabled SES to publish them at the time of creation\. Otherwise, you can easily publish them to Route 53 with a button click after creation \- see [Editing an existing identity in Amazon SES](managing-identities.md#edit-verified-domain)\. If your DNS settings don’t update automatically, complete the procedures in [Editing records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-editing.html)\.
-         + **If you're not sure who your DNS provider is** – Ask your system administrator for more information\.
+      + **Route 53 as your DNS host provider** – If you use Route 53 on the same account that you use when you send email using SES, and the domain is registered, SES automatically updates the DNS settings for your domain if you enabled SES to publish them at the time of creation\. Otherwise, you can easily publish them to Route 53 with a button click after creation \- see [Editing an existing identity in Amazon SES](managing-identities.md#edit-verified-domain)\. If your DNS settings don’t update automatically, complete the procedures in [Editing records](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-editing.html)\.
+      + **If you're not sure who your DNS provider is** – Ask your system administrator for more information\.
 
-   1. **Provide DKIM authentication token \(BYODKIM\)**:
+------
+#### [ BYODKIM ]
 
-      1. To recap, when you created your domain with BYODKIM, you added the private key and selector name prefix into their respective fields on the SES console's Advance DKIM Settings page\. Now you must complete the verification process by updating the following records for your DNS host provider\.
+**To verify a domain configured with BYODKIM**
 
-      1. From the **View DNS records** table, copy the selector name record that appears in the **Name** column to be published \(added\) to your DNS provider\. Alternatively, you can choose **Download \.csv record set** to save a copy of it to your computer\.
+   1. To recap, when you created your domain with BYODKIM, or you configured an existing domain with BYODKIM, you added the private key \(from your [self\-generated public\-private key pair](send-email-authentication-dkim-bring-your-own.md)\) and selector name prefix into their respective fields on the SES console's Advance DKIM Settings page\. Now you must complete the verification process by updating the following records for your DNS host provider\.
 
-         The following image shows an example of the selector name record to publish to your DNS provider\.  
+   1. From the **Publish DNS records** table, copy the selector name record that appears in the **Name** column to be published \(added\) to your DNS provider\. Alternatively, you can choose **Download \.csv record set** to save a copy of it to your computer\.
+
+      The following image shows an example of the selector name record to publish to your DNS provider\.  
 ![\[\]](http://docs.aws.amazon.com/ses/latest/dg/images/byodkim_records.png)
 
-      1. Login to your domain’s DNS or web hosting provider, and then add the selector name record you copied or saved previously\. Different providers have different procedures for updating DNS records\. See the [DNS/Hosting provider table](#dns-hosting-providing-table) following these procedures\.
+   1. Login to your domain’s DNS or web hosting provider, and then add the selector name record you copied or saved previously\. Different providers have different procedures for updating DNS records\. See the [DNS/Hosting provider table](#dns-hosting-providing-table) following these procedures\.
 **Note**  
 A small number of DNS providers don't allow you to include underscores \(\_\) in record names\. However, the underscore in the DKIM record name is required\. If your DNS provider doesn't allow you to enter an underscore in the record name, contact the provider's customer support team for assistance\.
 
-      1. If you haven't done so already, be sure to add the public key from your self\-generated public\-private key pair to your domain's DNS or web hosting provider\.
+   1. If you haven't done so already, be sure to add the public key from your from your [self\-generated public\-private key pair](send-email-authentication-dkim-bring-your-own.md) to your domain's DNS or web hosting provider\.
 
-         Note that in the **View DNS records** table, the public key record that appears in the **Value** column only displays, “p=*customerProvidedPublicKey*”, as a placeholder for the public key you supplied to your DNS provider\. 
+      Note that in the **Publish DNS records** table, the public key record that appears in the **Value** column only displays, “p=*customerProvidedPublicKey*”, as a placeholder for the public key value you saved to your computer or supplied to your DNS provider\.
+**Note**  
+When you publish \(add\) your public key to your DNS provider, it must be formatted as follows:  
+You have to delete the first and last lines \(`-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----`, respectively\) of the generated public key\. Additionally, you have to remove the line breaks in the generated public key\. The resulting value is a string of characters with no spaces or line breaks\.
+You must include the `p=` prefix as shown in the *Value* column in the **Publish DNS records** table\.
+
+------
 
 1. It can take up to 72 hours for changes to DNS settings to propagate\. As soon as Amazon SES detects all of the required DKIM records in your domain’s DNS settings, the verification process is complete\. Your domain’s **DKIM configuration** appears as **Successful** and the **Identity status** appears as **Verified**\.
 
-1. If you chose to use a [custom MAIL FROM domain](mail-from.md), complete the following steps to configure your MAIL FROM domain:
+1. If want to configure and verify a [custom MAIL FROM domain](mail-from.md), follow the procedures in [Configuring the MAIL FROM domain](mail-from.md#mail-from-set)\.
 
-   1. On the **Authentication** tab under **Custom MAIL FROM domain**, you'll see the MX and SPF records that you must publish \(add\) to your domain's DNS settings to complete the verification process\.
-
-   1. From the **View DNS records** table, copy the MX and SPF records that appear in this section\. Alternatively, you can choose **Download \.csv record set** to save a copy of the records to your computer\.
-
-   1. Login to your domain’s DNS or web hosting provider, and then add the MX and SPF records you copied or saved previously\. Different providers have different procedures for updating DNS records\. See the [DNS/Hosting provider table](#dns-hosting-providing-table) below\.
-
-The following table lists links to the documentation for several common providers\. This list isn't exhaustive, and inclusion in this list isn’t an endorsement or recommendation of any company’s products or services\. If your provider isn't listed in the table, you can probably still use the domain with Amazon SES\. 
+The following table includes links to the documentation for a few widely used DNS providers\. This list isn't exhaustive and doesn't signify endorsement; likewise, if your DNS provider isn't listed, it doesn't imply you can't use the domain with Amazon SES\. 
 
 
 | DNS/Hosting provider | Documentation link | 
@@ -149,20 +192,6 @@ The following table lists links to the documentation for several common provider
 |  Names\.co\.uk  |  [Changing your domains DNS Settings](https://www.names.co.uk/support/1156-changing_your_domains_dns_settings.html) \(external link\)  | 
 |  Wix  |  [Adding or Updating CNAME Records in Your Wix Account](https://support.wix.com/en/article/adding-or-updating-cname-records-in-your-wix-account) \(external link\)  | 
 
-**When you create and verify a domain identity, consider the following:**
-+ You can send email from any subdomain or email address of the verified domain without having to verify each one individually\. For example, if you create and verify an identity for example\.com, you don't need to create separate identities for a\.example\.com, a\.b\.example\.com, user@example\.com, user@a\.example\.com, and so on\. 
-+ As specified in [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.6), each DNS label can have up to 63 characters, and the whole domain name must not exceed a total length of 255 characters\.
-+ If you verify a domain, subdomain, or email address that shares a root domain, the identity settings \(such as feedback notifications\) apply at the most granular level you verified\. 
-  + Verified email address identity settings override verified domain identity settings\.
-  + Verified subdomain identity settings override verified domain identity settings, with lower\-level subdomain settings overriding higher\-level subdomain settings\. 
-
-    For example, assume you verify user@a\.b\.example\.com, a\.b\.example\.com, b\.example\.com, and example\.com\. These are the verified identity settings that will be used in the following scenarios:
-    + Emails sent from user@example\.com \(an email address that isn’t specifically verified\) will use the settings for example\.com\.
-    + Emails sent from user@a\.b\.example\.com \(an email address that is specifically verified\) will use the settings for user@a\.b\.example\.com\.
-    + Emails sent from user@b\.example\.com \(an email address that isn’t specifically verified\) will use the settings for b\.example\.com\.
-+ Domain names are case\-insensitive\. If you verify example\.com, you can send from EXAMPLE\.com also\.
-+ In each AWS Region, you can verify as many as 10,000 identities \(domains and email addresses, in any combination\)\.
-
 ### Troubleshooting domain verification<a name="troubleshooting-domain-verification"></a>
 
 If you completed the steps above, but your domain isn't verified after 72 hours, check the following:
@@ -171,13 +200,9 @@ If you completed the steps above, but your domain isn't verified after 72 hours,
 + The underscore character \(\_\) is required in the **Name/host** value of each DNS record\. If your provider doesn't allow underscores in DNS record names, contact the provider's customer support department for additional assistance\.
 + The validation records that you have to add to your domain’s DNS settings are different for each AWS Region\. If you want to use a domain to send email from multiple AWS Regions, you have to create and verify a separate domain identity for each of those Regions\. 
 
-## Creating and verifying an email address identity<a name="verify-email-addresses-procedure"></a>
+## Creating an email address identity<a name="verify-email-addresses-procedure"></a>
 
-Complete the following procedure to create and verify an email address identity by using the Amazon SES console\.
-
-### Creating an email address identity<a name="create-email-addresses-identity"></a>
-
-To create an email address identity by using the Amazon SES console, complete the following steps\.
+Complete the following procedure to create an email address identity by using the Amazon SES console\.
 
 **To create an email address identity \(console\)**
 
@@ -207,27 +232,19 @@ Amazon SES only defaults to the assigned configuration set when no other set is 
 **Note**  
 You can customize the messages that are sent to the email addresses you attempt to verify\. For more information, see [Using custom verification email templates](#send-email-verify-address-custom)\.
 
-### Verifying an email address<a name="verify-email-addresses-procedure-console"></a>
+Now that you’ve created your email address identity, you must complete the verification process \- proceed to [Verifying an email address identity](#just-verify-email-proc)\.
 
-Verify an email address by completing the following steps\.
+## Verifying an email address identity<a name="just-verify-email-proc"></a>
 
-**To verify an email address**
+After you’ve created your email address identity, you must complete the verification process\.
+
+If you haven't created an email address identity, see [Creating an email address identity](#verify-email-addresses-procedure)\.
+
+**To verify an email address identity**
 
 1. Check the inbox of the email address used to create your identity and look for an email from no\-reply\-aws@amazon\.com\. 
 
 1. Open the email and click the link to complete the verification process for the email address\. After it's complete, the **Identity status** updates to **Verified**\. 
-
-When you create and verify an email address identity, consider the following:
-+ Email addresses are case sensitive\. If you verify sender@EXAMPLE\.com, you can't send email from sender@example\.com unless you verify sender@example\.com as well\.
-+ If you verify a domain, subdomains, or email addresses that share a root domain, the identity settings \(such as feedback notifications\) apply at the most granular level you verified\. 
-  + Verified email address identity settings override verified domain identity settings\.
-  + Verified subdomain identity settings override verified domain identity settings, with lower\-level subdomain settings overriding higher\-level subdomain settings\. 
-
-    For example, assume you verify user@a\.b\.example\.com, a\.b\.example\.com, b\.example\.com, and example\.com\. These are the verified identity settings that will be used in the following scenarios:
-    + Emails sent from user@example\.com \(an email address that isn’t specifically verified\) will use the settings for example\.com\.
-    + Emails sent from user@a\.b\.example\.com \(an email address that is specifically verified\) will use the settings for user@a\.b\.example\.com\.
-    + Emails sent from user@b\.example\.com \(an email address that isn’t specifically verified\) will use the settings for b\.example\.com\.
-+ You can add labels to verified email addresses without performing additional verification steps\. To add a label to an email address, add a plus sign \(\+\) between the account name and the "at" sign \(@\), followed by a text label\. For example, if you already verified sender@example\.com, you can use sender\+myLabel@example\.com as the "From" or "Return\-Path" address for your emails\. You can use this feature to implement Variable Envelope Return Path \(VERP\)\. Then you can use VERP to detect and remove undeliverable email addresses from your mailing lists\.
 
 ### Troubleshooting email address verification<a name="verify-email-addresses-troubleshooting"></a>
 
@@ -267,7 +284,7 @@ The link in the verification message expires 24 hours after the message was sent
 
 **To verify your domain**
 
-To verify your domain, see [Creating and verifying a domain identity](#verify-domain-procedure) for more information\.
+To verify your domain, see [Creating a domain identity](#verify-domain-procedure) for more information\.
 
 ## Using custom verification email templates<a name="send-email-verify-address-custom"></a>
 

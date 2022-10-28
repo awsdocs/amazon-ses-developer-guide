@@ -6,6 +6,17 @@ The following code examples show how to create a web application that tracks and
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ Shows how to use the Amazon DynamoDB \.NET API to create a dynamic web application that tracks DynamoDB work data\.   
+ For complete source code and instructions on how to set up and run, see the full example on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/cross-service/DynamodbWebApp)\.   
+
+**Services used in this example**
++ DynamoDB
++ Amazon SES
+
+------
 #### [ Java ]
 
 **SDK for Java 2\.x**  

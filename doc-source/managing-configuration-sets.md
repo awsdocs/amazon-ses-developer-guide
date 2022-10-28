@@ -9,8 +9,8 @@ After creating a configuration set, you can manage it with the view, edit, and d
 + [Delete a configuration set \(AWS CLI\)](#cli-delete-configuration-set)
 + [Stop sending email from a configuration set \(AWS CLI\)](#cli-configuration-set-stop-sending)
 + [Understanding default configuration sets](#default-config-sets)
-+ [Managing Amazon SES event destinations](event-destinations-manage.md)
-+ [Manage IP pools in Amazon SES](managing-ip-pools.md)
++ [Creating Amazon SES event destinations](event-destinations-manage.md)
++ [Assigning IP pools in Amazon SES](managing-ip-pools.md)
 + [Configuring custom domains to handle open and click tracking](configure-custom-open-click-domains.md)
 
 ## View, edit, & delete configuration set \(console\)<a name="console-detail-configuration-sets"></a><a name="proc-access-exist-config-set"></a>
@@ -61,7 +61,7 @@ Remember to **Save changes** when you are done editing\. Choose **Cancel** to go
   
 
   You can perform the following actions from this panel:
-  + Add a new event destination by choosing the **Add destination** button\. For more information about adding an event destination, see [Add an event destination \(console\)](event-destinations-manage.md#event-destination-add)\.
+  + Add a new event destination by choosing the **Add destination** button\. For more information about adding an event destination, see [Creating an event destination](event-destinations-manage.md#event-destination-add)\.
   + Modify an existing event destination by selecting its name which will open the edit screen\.
   + Delete an existing event destination by selecting the check box next to its name then choosing the **Delete** button\.
 

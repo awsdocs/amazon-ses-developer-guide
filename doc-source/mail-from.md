@@ -14,14 +14,14 @@ There are two ways to achieve DMARC validation: using [Sender Policy Framework](
 
 ## Choosing a MAIL FROM domain<a name="mail-from-requirements"></a>
 
-The subdomain you use for your MAIL FROM domain has to meet the following requirements:
-+ The MAIL FROM domain has to be a subdomain of the verified identity \(email address or domain\) that you send email from\. For example, `mail.example.com` is a valid MAIL FROM domain for the domain `example.com`\.
-+ The MAIL FROM domain shouldn't be a domain that you send email from\. If you have to use the MAIL FROM domain in a From address, either [disable email feedback forwarding](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-disabling) and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email feedback forwarding destination](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-destination)\.
-+ The MAIL FROM domain shouldn't be a domain that you use to receive email\.
+In the following, the term *MAIL FROM domain* always refers to a subdomain \- this subdomain that you use for your MAIL FROM domain has to meet the following requirements:
++ The MAIL FROM domain has to be a subdomain of the parent domain of a verified identity \(email address or domain\) that you want to use to send email from\. For example, `mail.example.com` is a valid MAIL FROM domain for the domain `example.com`\.
++ The MAIL FROM domain shouldn't be a subdomain that you also use to send email from\. For example, if you send email from the `mail.example.com` subdomain, you can't use it as your MAIL FROM domain\. If you have to use the MAIL FROM domain in a From address, either [disable email feedback forwarding](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-disabling) and receive your bounces through Amazon SNS notifications, or ensure that your MAIL FROM domain is not the destination for feedback forwarding\. To determine the destination of email forwarding feedback, see [Email feedback forwarding destination](monitor-sending-activity-using-notifications-email.md#monitor-sending-activity-using-notifications-email-destination)\.
++ The MAIL FROM domain shouldn't be a subdomain that you use to receive email\.
 
 ## Configuring the MAIL FROM domain<a name="mail-from-set"></a>
 
-The process of setting up a custom MAIL FROM domain requires you to add records to the DNS configuration for the domain\. You have to publish an MX record so that your domain can receive the bounce and complaint notifications that email providers send you\. You also have to publish an SPF record in order to prove that Amazon SES is authorized to send email from your domain\.
+The process of setting up a custom MAIL FROM domain requires you to add records to the DNS configuration for the domain\. You have to publish an MX record so that your domain can receive the bounce and complaint notifications that email providers send you\. You also have to publish an SPF \(type TXT\) record in order to prove that Amazon SES is authorized to send email from your domain\.
 
 You can set up a custom MAIL FROM domain for an entire domain, or for individual email addresses\. The following procedures show how to use the Amazon SES console to configure a custom MAIL FROM domain\. You can also configure a custom MAIL FROM domain using the [SetIdentityMailFromDomain](https://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html) API operation\.
 
@@ -37,7 +37,7 @@ You can configure a MAIL FROM domain for an entire domain\. When you do, all of 
 
 1. In the list of identities, choose the identity you want to configure where the **Identity type** is **Domain** and **Status** is *Verified*\.
 
-   1. If the **Status** is *Unverified*, complete the procedures at [Creating and verifying a domain identity](creating-identities.md#verify-domain-procedure) to verify the email address's domain\. 
+   1. If the **Status** is *Unverified*, complete the procedures at [Verifying a DKIM domain identity with your DNS provider](creating-identities.md#just-verify-domain-proc) to verify the email address's domain\. 
 
 1. At the bottom of the screen in the in the **Custom MAIL FROM domain** pane, choose **Edit** \.
 
@@ -51,15 +51,21 @@ You can configure a MAIL FROM domain for an entire domain\. When you do, all of 
       + **Use default MAIL FROM domain** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES uses a subdomain of `amazonses.com`\. The subdomain varies based on the AWS Region that you use Amazon SES in\.
       + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES returns a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this domain are automatically rejected\.
 
-   1. Choose **Save changes**\. You'll be returned to the previous screen where the **Custom MAIL FROM domain** pane now displays the MX and SPF records that you have to add to your domain's DNS configuration\. These records use the formats shown in the following table\.   
+   1. Choose **Save changes** \- you'll be returned to the previous screen\.
+
+1. Publish the MX and SPF \(type TXT\) records to the DNS server of the custom MAIL FROM domain:
+
+   In the **Custom MAIL FROM domain** pane, the **Publish DNS records** table now displays the MX and SPF \(type TXT\) records in that you have to publish \(add\) to your domain's DNS configuration\. These records use the formats shown in the following table\.   
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/mail-from.html)
 
-      In the preceding records, *subdomain*\.*domain*\.*com* will be populated with your MAIL FROM subdomain, and *region* will be populated with the name of the AWS Region where you want to verify the MAIL FROM domain \(such as `us-west-2`, `us-east-1`, or `eu-west-1`\)\. The *number 10* listed along with the MX value is the preference order for the mail server  and will need to be entered into a separate value field as specified by your DNS provider's GUI\. The value of the TXT record has to include the quotation marks\.
+   In the preceding records,
+   + *subdomain*\.*domain*\.*com* will be populated with your MAIL FROM subdomain
+   + *region* will be populated with the name of the AWS Region where you want to verify the MAIL FROM domain \(such as `us-west-2`, `us-east-1`, or `eu-west-1`, etc\.\)
+   + The number *10* listed along with the MX value is the preference order for the mail server  and will need to be entered into a separate value field as specified by your DNS provider's GUI
+   + The SPF's TXT record value has to include the quotation marks
 
-      These values are needed for the following publish process \- both names and values can be copied by choosing the copy icon next to each, or you can choose **Download \.csv record set**\.
-
-1. Publish an MX record to the DNS server of the custom MAIL FROM domain\.
+   From the **Publish DNS records** table, copy the MX and SPF \(type TXT\) records by choosing the copy icon next to each value and paste them into the corresponding fields in your DNS provider's GUI\. Alternatively, you can choose **Download \.csv record set** to save a copy of the records to your computer\.
 **Important**  
 To successfully set up a custom MAIL FROM domain with Amazon SES, you must publish exactly one MX record to the DNS server of your MAIL FROM domain\. If the MAIL FROM domain has multiple MX records, the custom MAIL FROM setup with Amazon SES will fail\.
 
@@ -67,7 +73,7 @@ To successfully set up a custom MAIL FROM domain with Amazon SES, you must publi
 
    If you use a different DNS provider, you have to publish the DNS records to the MAIL FROM domain's DNS server manually\. The procedure for adding DNS records to your domain's DNS server varies based on your web hosting service or DNS provider\. 
 
-   The procedures for publishing DNS records for your domain depend on which DNS provider you use\. The following table includes links to the documentation for several common DNS providers\. This list isn't a complete list of providers\. If your provider isn't listed, you can probably still set up a MAIL FROM domain\. Inclusion on this list isn’t an endorsement or recommendation of any company’s products or services\.    
+   The procedures for publishing DNS records for your domain depend on which DNS provider you use\. The following table includes links to the documentation for a few widely used DNS providers\. This list isn't exhaustive and doesn't signify endorsement; likewise, if your DNS provider isn't listed, it doesn't imply they don't support MAIL FROM domain configuration\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/mail-from.html)
 
    When Amazon SES detects that the records are in place, you receive an email informing you that your custom MAIL FROM domain was set up successfully\. Depending on your DNS provider, there might be a delay of up to 72 hours before Amazon SES detects the MX record\.
@@ -87,7 +93,7 @@ You can't set up a custom MAIL FROM domain for addresses on a domain that you do
 
 1. In the list of identities, choose the identity you want to configure where the **Identity type** is **Email address** and **Status** is *Verified*\.
 
-   1. If the **Status** is *Unverified*, complete the procedures at [Creating and verifying an email address identity](creating-identities.md#verify-email-addresses-procedure) to verify the email address's domain\. 
+   1. If the **Status** is *Unverified*, complete the procedures at [Verifying an email address identity](creating-identities.md#just-verify-email-proc) to verify the email address's domain\. 
 
 1. Under the **MAIL FROM Domain** tab, choose **Edit** in the **Custom MAIL FROM domain** pane\.
 
@@ -101,15 +107,21 @@ You can't set up a custom MAIL FROM domain for addresses on a domain that you do
       + **Use default MAIL FROM domain** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES uses a subdomain of `amazonses.com`\. The subdomain varies based on the AWS Region that you use Amazon SES in\.
       + **Reject message** – If the custom MAIL FROM domain's MX record is not set up correctly, Amazon SES returns a `MailFromDomainNotVerified` error\. Emails that you attempt to send from this email address are automatically rejected\.
 
-   1. Choose **Save changes**\. You'll be returned to the previous screen where the **Custom MAIL FROM domain** pane now displays the MX and SPF records that you have to add to the DNS configuration for the domain that the email address belongs to\. These records use the formats shown in the following table\.   
+   1. Choose **Save changes** \- you'll be returned to the previous screen\.
+
+1. Publish the MX and SPF \(type TXT\) records to the DNS server of the custom MAIL FROM domain:
+
+   In the **Custom MAIL FROM domain** pane, the **Publish DNS records** table now displays the MX and SPF \(type TXT\) records in that you have to publish \(add\) to your domain's DNS configuration\. These records use the formats shown in the following table\.   
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/mail-from.html)
 
-      In the preceding records, *subdomain*\.*domain*\.*com* will be populated with your MAIL FROM subdomain, and *region* will be populated with the name of the AWS Region where you want to verify the MAIL FROM domain \(such as `us-west-2`, `us-east-1`, or `eu-west-1`\)\. The value of the TXT record has to include the quotation marks\.
+   In the preceding records,
+   + *subdomain*\.*domain*\.*com* will be populated with your MAIL FROM subdomain
+   + *region* will be populated with the name of the AWS Region where you want to verify the MAIL FROM domain \(such as `us-west-2`, `us-east-1`, or `eu-west-1`, etc\.\)
+   + The number *10* listed along with the MX value is the preference order for the mail server  and will need to be entered into a separate value field as specified by your DNS provider's GUI
+   + The SPF's TXT record value has to include the quotation marks
 
-      These values are needed for the following publish process \- both names and values can be copied by choosing the copy icon next to each, or you can choose **Download \.csv record set**\.
-
-1. Publish the DNS records to the DNS server of the custom MAIL FROM domain\.
+   From the **Publish DNS records** table, copy the MX and SPF \(type TXT\) records by choosing the copy icon next to each value and paste them into the corresponding fields in your DNS provider's GUI\. Alternatively, you can choose **Download \.csv record set** to save a copy of the records to your computer\.
 **Important**  
 To successfully set up a custom MAIL FROM domain with Amazon SES, you must publish exactly one MX record to the DNS server of your MAIL FROM domain\. If the MAIL FROM domain has multiple MX records, the custom MAIL FROM setup with Amazon SES will fail\.
 
@@ -117,7 +129,7 @@ To successfully set up a custom MAIL FROM domain with Amazon SES, you must publi
 
    If you use a different DNS provider, you have to publish the DNS records to the MAIL FROM domain's DNS server manually\. The procedure for adding DNS records to your domain's DNS server varies based on your web hosting service or DNS provider\. 
 
-   The procedures for publishing DNS records for your domain depend on which DNS provider you use\. The following table includes links to the documentation for several common DNS providers\. This list isn't a complete list of providers\. If your provider isn't listed, you can probably still set up a MAIL FROM domain\. Inclusion on this list isn’t an endorsement or recommendation of any company’s products or services\.    
+   The procedures for publishing DNS records for your domain depend on which DNS provider you use\. The following table includes links to the documentation for a few widely used DNS providers\. This list isn't exhaustive and doesn't signify endorsement; likewise, if your DNS provider isn't listed, it doesn't imply they don't support MAIL FROM domain configuration\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/ses/latest/dg/mail-from.html)
 
    When Amazon SES detects that the records are in place, you receive an email informing you that your custom MAIL FROM domain was set up successfully\. Depending on your DNS provider, there might be a delay of up to 72 hours before Amazon SES detects the MX record\.

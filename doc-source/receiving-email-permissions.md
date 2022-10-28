@@ -76,6 +76,29 @@ Make the following changes to the preceding policy example:
 + Replace *rule\_set\_name* with the name of the rule set that contains the receipt rule that you've associated with email receiving\.
 + Replace *receipt\_rule\_name* with the name of the receipt rule that you've associated with email receiving\.
 
+If you're using AWS KMS to send encrypted messages to an S3 bucket with server\-side encryption enabled, then you need to add the policy action, `"kms:Decrypt"`\. Using the preceding example, adding this action to your policy would appear as follows:
+
+```
+{
+  "Sid": "AllowSESToEncryptMessagesBelongingToThisAccount", 
+  "Effect": "Allow",
+  "Principal": {
+    "Service":"ses.amazonaws.com"
+  },
+  "Action": [
+    "kms:Decrypt",
+    "kms:GenerateDataKey*"
+  ],
+  "Resource": "*",
+  "Condition":{
+        "StringEquals":{
+          "AWS:SourceAccount":"111122223333",
+          "AWS:SourceArn": "arn:aws:ses:region:111122223333:receipt-rule-set/rule_set_name:receipt-rule/receipt_rule_name"
+        }
+      }
+}
+```
+
 For more information about attaching policies to AWS KMS keys, see [Using Key Policies in AWS KMS](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*\.
 
 ## Give Amazon SES permission to invoke a AWS Lambda function<a name="receiving-email-permissions-lambda"></a>
@@ -136,3 +159,25 @@ Make the following changes to the preceding policy example:
 + Replace *receipt\_region* with the AWS Region where you created the receipt rule\.
 + Replace *rule\_set\_name* with the name of the rule set that contains the receipt rule where you created your publish to Amazon SNS topic action\.
 + Replace *receipt\_rule\_name* with the name of the receipt rule containing the publish to Amazon SNS topic action\.
+
+If your Amazon SNS topic uses AWS KMS for server\-side encryption, you have to add permissions to the AWS KMS key policy\. You can add permissions by attaching the following policy to the AWS KMS key policy:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowSESToUseKMSKey",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "ses.amazonaws.com"
+            },
+            "Action": [
+                "kms:GenerateDataKey",
+                "kms:Decrypt"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```

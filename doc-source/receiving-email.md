@@ -1,6 +1,6 @@
 # Email receiving with Amazon SES<a name="receiving-email"></a>
 
-Besides using Amazon Simple Email Service to manage your email sending, you can also configure Amazon SES to receive email on behalf of one or more of your domains\. As the email receiver, Amazon SES handles underlying mail\-receiving operations, such as communicating with other mail servers, scanning for spam and viruses, rejecting mail from untrusted sources, and accepting mail for recipients in your domain\.
+Besides using Amazon SES to manage your email sending, you can also configure SES to receive email on behalf of one or more of your domains\. As the email receiver, SES handles underlying mail\-receiving operations, such as communicating with other mail servers, scanning for spam and viruses, blocking mail from untrusted sources \(addresses on the block lists of either [Spamhaus](https://www.spamhaus.org/) or SES\), and accepting mail for recipients in your domain\.
 
 The extent of processing on your received email is determined by the custom instructions you specify\. These instructions come in two forms:
 + **Receipt rules** *\(recipient\-based control\)* provide the finest granularity of control over incoming email\. Receipt rules can do advanced processing such as deliver incoming mail to an Amazon S3 bucket, publish it to an Amazon SNS topic, send it to Amazon WorkMail, or automatically send bounce messages when messages are to specific email addresses, and more\.
@@ -12,4 +12,4 @@ To get started with learning about email receiving, setting it up, and implement
 + [Amazon SES email receiving concepts and use cases](receiving-email-concepts.md)
 + [Setting up Amazon SES email receiving](receiving-email-setting-up.md)
 + [Amazon SES email receiving console walkthroughs](receiving-email-walkthroughs.md)
-+ [Increasing your Amazon SES receiving quotas](manage-receiving-quotas-request-increase.md)
++ [Viewing metrics for Amazon SES email receiving](receiving-email-metrics.md)

@@ -2,7 +2,7 @@
 
 You need an Amazon SES SMTP user name and password to access the Amazon SES SMTP interface\.
 
-The credentials that you use to send email through the Amazon SES SMTP interface are unique to each AWS Region\. If you use the Amazon SES SMTP interface to send email in more than one Region, you must [generate a set of SMTP credentials](#smtp-credentials) for each Region that you plan to use\.
+The credentials that you use to send email through the Amazon SES SMTP interface are unique to each AWS Region\. If you use the Amazon SES SMTP interface to send email in more than one Region, you must generate a set of SMTP credentials for each Region that you plan to use\.
 
 Your SMTP password is different from your AWS secret access key\. For more information about credentials, see [Types of Amazon SES credentials](send-email-concepts-credentials.md)\.
 
@@ -20,9 +20,11 @@ An IAM user can create Amazon SES SMTP credentials, but the IAM user's policy mu
 
 1. Sign in to the AWS Management Console and open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
-1. Choose **Account dashboard** in the left navigation pane\.
+1. Choose **SMTP settings** in the left navigation pane \- this will open the **Simple Mail Transfer Protocol \(SMTP\) settings** page\.
 
-1. In the **Simple Mail Transfer Protocol \(SMTP\) settings** container, choose **Create SMTP Credentials** in the lower\-left corner \- the IAM console will open\.
+1. Choose **Create SMTP Credentials** in the upper\-right corner \- the IAM console will open\.
+
+1. \(Optional\) If you need to view, edit, or delete SMTP users you’ve already created, choose **Manage my existing SMTP credentials** in the lower\-right corner \- the IAM console will open\. Details for managing SMTP credentials is given following these procedures\.
 
 1. For **Create User for SMTP**, type a name for your SMTP user in the **IAM User Name** field\. Alternatively, you can use the default value that is provided in this field\. When you finish, choose **Create** in the bottom\-right corner\.
 
@@ -32,9 +34,9 @@ An IAM user can create Amazon SES SMTP credentials, but the IAM user's policy mu
 
 1. Choose **Close Window**\.
 
-You can view a list of existing SMTP credentials that you've created using this procedure by going to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. In the navigation pane, under **Access management**, choose **Users**\. Use the search bar to find all users that you've assigned SMTP credentials\.
+You can view a list of the SMTP credentials you've created using this procedure in the IAM console under **Access management** and choosing **Users** followed by using the search bar to find all users that you've assigned SMTP credentials\.
 
-You can also use the IAM console to delete existing SMTP users\. To learn more about deleting users, see [https://docs\.aws\.amazon\.com/IAM/latest/UserGuide/Managing IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html) in the *IAM Getting Started Guide*\.
+You can also use the IAM console to delete existing SMTP users\. To learn more about deleting users, see [Managing IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html) in the *IAM Getting Started Guide*\.
 
 If you want to change your SMTP password, delete your existing SMTP user in the IAM console\. Then, to generate a new set of SMTP credentials, complete the previous procedures\.
 

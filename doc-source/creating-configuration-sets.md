@@ -16,7 +16,7 @@ To create a configuration set using the Amazon SES console, follow these steps:
    + **Configuration set name** – the name for your configuration set\. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens \(\-\) and underscores \(\_\) only\.
    + **Sending IP pool** – when you send email using this configuration set, messages are sent from the dedicated IP addresses in the assigned pool\. Select an IP pool from the list\.
 **Note**  
-The **ses\-default\-dedicated\-pool** contains dedicated IP addresses that haven't been assigned to any other pool\. To learn more about managing IP pools, see [Manage IP pools](managing-ip-pools.md)\.
+The **default** \(ses\-default\-dedicated\-pool\) contains dedicated IP addresses that haven't been assigned to any other pool\. To learn more about managing IP pools, see [Assign IP pools](managing-ip-pools.md)\.
    + **Tracking options** – select the **Use a custom redirect domain** check box to use a custom redirect domain to handle open and click tracking for this configuration set, instead of using one of the Amazon SES domains\.
      + **Custom redirect domain** – with a custom redirect domain, you can enter a custom subdomain in the box \(optional\), or select a verified domain from the list\.
 **Note**  
@@ -63,6 +63,8 @@ Amazon SES supports TLS 1\.2, TLS 1\.1, and TLS 1\.0\. To learn more, see [Secur
    To remove a tag you've entered, choose **Remove** for that tag\. You can enter a maximum of 50 tags\.
 
 1. Choose **Create set** to create your configuration set\.
+
+Now that you’ve created your configuration set, you have the option to define event destinations for your configuration set which enables event publishing that is triggered on the event types you specify for the event destination\. A configuration set can have multiple event destinations with multiple event types defined\. See [Creating Amazon SES event destinations](event-destinations-manage.md)\.
 
 ## Create a configuration set \(AWS CLI\)<a name="config-sets-create-cli"></a>
 

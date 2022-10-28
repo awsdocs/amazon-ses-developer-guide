@@ -2,8 +2,6 @@
 
 Amazon SES publishes email sending event records to Amazon Kinesis Data Firehose in JSON format\. When publishing events to Kinesis Data Firehose, Amazon SES follows each JSON record with a newline character\.
 
-The top\-level JSON object contains an `eventType` string, a `mail` object, and either a `Bounce`, `Complaint`, `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Rendering Failure`, or `DeliveryDelay` object, depending on the type of event\.
-
 You can find example records for all of these notification types in [Examples of event data that Amazon SES publishes to Kinesis Data Firehose](event-publishing-retrieving-firehose-examples.md)\.
 
 **Topics**
@@ -18,6 +16,7 @@ You can find example records for all of these notification types in [Examples of
 + [Click object](#event-publishing-retrieving-firehose-contents-click-object)
 + [Rendering Failure object](#event-publishing-retrieving-firehose-contents-failure-object)
 + [DeliveryDelay object](#event-publishing-retrieving-firehose-delivery-delay-object)
++ [Subscription object](#event-publishing-retrieving-firehose-subscription-object)
 
 ## Top\-level JSON object<a name="event-publishing-retrieving-firehose-contents-top-level-json-object"></a>
 
@@ -26,7 +25,7 @@ The top\-level JSON object in an email sending event record contains the followi
 
 | Field Name | Description | 
 | --- | --- | 
-|  `eventType`  |  A string that describes the type of event\. Possible values: `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Bounce`, `Complaint`, `Rendering Failure`, or `DeliveryDelay`\. If you did not [set up event publishing](monitor-sending-using-event-publishing-setup.md) this field is named `notificationType`\.  | 
+|  `eventType`  |  A string that describes the type of event\. Possible values: `Bounce`, `Complaint`, `Delivery`, `Send`, `Reject`, `Open`, `Click`, `Rendering Failure`, `DeliveryDelay`, or `Subscription`\. If you did not [set up event publishing](monitor-sending-using-event-publishing-setup.md) this field is named `notificationType`\.  | 
 |  `mail`  |  A JSON object that contains information about the email that produced the event\.  | 
 |  `bounce`  |  This field is only present if `eventType` is `Bounce`\. It contains information about the bounce\.  | 
 |  `complaint`  |  This field is only present if `eventType` is `Complaint`\. It contains information about the complaint\.  | 
@@ -37,6 +36,7 @@ The top\-level JSON object in an email sending event record contains the followi
 |  `click`  |  This field is only present if `eventType` is `Click`\. It contains information about the click event\.  | 
 | `failure` | This field is only present if `eventType` is `Rendering Failure`\. It contains information about the rendering failure event\. | 
 |  `deliveryDelay`  |  This field is only present if `eventType` is `DeliveryDelay`\. It contains information about the delayed delivery of an email\.  | 
+|  `subscription`  |  This field is only present if `eventType` is `Subscription`\. It contains information about the subscription preferences\.  | 
 
 ## Mail object<a name="event-publishing-retrieving-firehose-contents-mail-object"></a>
 
@@ -54,6 +54,7 @@ Each email sending event record contains information about the original email in
 |  `headersTruncated`  |  A string that specifies whether the headers are truncated in the notification, which occurs if the headers are larger than 10 KB\. Possible values are `true` and `false`\.  | 
 |  `headers`  |  A list of the email's original headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `headers` field is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
 |  `commonHeaders`  |  A list of the email's original, commonly used headers\. Each header in the list has a `name` field and a `value` field\.  Any message ID within the `commonHeaders` field is from the original message that you passed to Amazon SES\. The message ID that Amazon SES subsequently assigned to the message is in the `messageId` field of the `mail` object\.   | 
+|  `tags`  |  A list of tags associated with the email\.  | 
 
 ## Bounce object<a name="event-publishing-retrieving-firehose-contents-bounce-object"></a>
 
@@ -239,3 +240,26 @@ The `delayedRecipients` object contains the following values\.
 |  `emailAddress`  |  The email address that resulted in the delivery of the message being delayed\.  | 
 |  `status`  |  The SMTP status code associated with the delivery delay\.  | 
 |  `diagnosticCode`  |  The diagnostic code provided by the receiving Message Transfer Agent \(MTA\)\.   | 
+
+## Subscription object<a name="event-publishing-retrieving-firehose-subscription-object"></a>
+
+The JSON object that contains information about a `Subscription` event has the following fields\.
+
+
+| Field Name | Description | 
+| --- | --- | 
+|  `contactList`  |  The name of the list the contact is on\.  | 
+|  `timestamp`  |  The date and time, in ISO8601 format *\(YYYY\-MM\-DDThh:mm:ss\.sZ\)*, when the ISP sent the subscription notification\.  | 
+|  `source`  |  The email address that the message was sent from \(the envelope MAIL FROM address\)\.  | 
+|  `newTopicPreferences`  |  A JSON data\-structure \(map\) which specifies the subscription status of all the topics in the contact list indicating the status after a change \(contact subscribed or unsubscribed\)\.  | 
+|  `oldTopicPreferences`  |  A JSON data\-structure \(map\) which specifies the subscription status of all the topics in the contact list indicating the status before the change \(contact subscribed or unsubscribed\)\.  | 
+
+### New/old topic preferences<a name="event-publishing-retrieving-firehose-contents-subscription-object-topic-preferences"></a>
+
+The `newTopicPreferences` and `oldTopicPreferences` objects contain the following values\.
+
+
+| Field Name | Description | 
+| --- | --- | 
+|  `unsubscribeAll`  |  Specifies if the contact unsubscribed from all the topics in the contact list\.  | 
+|  `topicSubscriptionStatus`  |  Specifies the topic in the `topicName` field and maps the subscription status \(**OptIn** or **OptOut**\) in the `subscriptionStatus` field\.  | 

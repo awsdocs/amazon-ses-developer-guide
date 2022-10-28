@@ -1,14 +1,52 @@
 # Get the status of an Amazon SES identity using an AWS SDK<a name="example_ses_GetIdentityVerificationAttributes_section"></a>
 
-The following code example shows how to get the status of an Amazon SES identity\.
+The following code examples show how to get the status of an Amazon SES identity\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/SES#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Get identity verification status for an email.
+    /// </summary>
+    /// <returns>The verification status of the email.</returns>
+    public async Task<VerificationStatus> GetIdentityStatusAsync(string email)
+    {
+        var result = VerificationStatus.TemporaryFailure;
+        try
+        {
+            var response =
+                await _amazonSimpleEmailService.GetIdentityVerificationAttributesAsync(
+                    new GetIdentityVerificationAttributesRequest
+                    {
+                        Identities = new List<string> { email }
+                    });
+
+            if (response.VerificationAttributes.ContainsKey(email))
+                result = response.VerificationAttributes[email].VerificationStatus;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("GetIdentityStatusAsync failed with exception: " + ex.Message);
+        }
+
+        return result;
+    }
+```
++  For API details, see [GetIdentityVerificationAttributes](https://docs.aws.amazon.com/goto/DotNetSDKV3/email-2010-12-01/GetIdentityVerificationAttributes) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
   
 
 ```
@@ -40,7 +78,6 @@ class SesIdentity:
         else:
             return status
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
 +  For API details, see [GetIdentityVerificationAttributes](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/GetIdentityVerificationAttributes) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

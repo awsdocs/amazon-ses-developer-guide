@@ -7,6 +7,7 @@ This section contains information about the following types of notifications:
 + [Bounce Rate Notification](#reputationdashboard-bounce)
 + [Complaint Rate Notification](#reputationdashboard-complaint)
 + [Anti\-Spam Organization Notification](#reputationdashboard-antispamorg)
++ [Listbombing Notification](#reputationdashboard-listbombing)
 + [Direct Feedback Notification](#reputationdashboard-directfeedback)
 + [Domain Blocklist Notification](#reputationdashboard-domainblocklist)
 + [Internal Review Notification](#reputationdashboard-internalreview)
@@ -15,6 +16,7 @@ This section contains information about the following types of notifications:
 + [Related Account Notification](#reputationdashboard-relatedaccount)
 + [Spamtrap Notification](#reputationdashboard-spamtrap)
 + [Vulnerable Site Notification](#reputationdashboard-vulnerablesite)
++ [Compromised Credentials Notification](#reputationdashboard-compromised)
 + [Other Notification](#reputationdashboard-other)
 
 ## Status Messages<a name="reputationdashboard-account-status"></a>
@@ -120,6 +122,34 @@ At the end of the review period, if the anti\-spam organization continues to ide
 If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we will extend the review period to ensure that we're only analyzing the anti\-spam organization notifications we have received after you implemented your changes\. At the end of this extended review period, your account is no longer listed by the anti\-spam organization, we will remove the review period for your account\.
 
 ### If your account's ability to send email is paused<a name="reputationdashboard-antispamorg-suspended"></a>
+
+You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
+
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+
+## Listbombing Notification<a name="reputationdashboard-listbombing"></a>
+
+This section contains additional information about Listbombing notifications shown in the Amazon SES reputation metrics page\.
+
+### Why you received this notification<a name="reputationdashboard-listbombing-whyreceived"></a>
+
+An anti\-spam organization has identified that your email\-sending processes are vulnerable to "listbombing\." Listbombing is a form of abuse in which an attacker registers a very large number of email addresses on a web\-based form\. Listbombing can result in service disruptions for users of impacted email services\. It can also result in your email being blocked by email providers\.
+
+Anti\-spam organizations use proprietary methods to identify sites that are vulnerable to listbombing\. For this reason, we can't provide additional details about the issue that led the anti\-spam organization to identify your email\-sending process as problematic\. We also can't share the name of the organization that identified the issue\.
+
+### What you can do to resolve the issue<a name="reputationdashboard-listbombing-whattodo"></a>
+
+You should examine all of your web\-based sign\-up forms to ensure that they aren't vulnerable to this kind of abuse\. Every form should include a CAPTCHA to prevent automated scripts from submitting subscription requests\. Additionally, when new users sign up for your product or service, send them an email to confirm that they did, in fact, intend to sign up\. Don't send any additional email to customers unless they explicitly opt in to your communications\.
+
+Finally, you should perform a "permission pass" on your email list\. In a permission pass, you send an email to all of your customers asking them if they still want to receive email from you\. Only send email to customers who verify that they want to continue to receive email from you\.
+
+### If your account is under review<a name="reputationdashboard-listbombing-probation"></a>
+
+At the end of the review period, if the anti\-spam organization continues to identify the email sent from your account as problematic, we might pause your account's ability to send email until you resolve the issue\.
+
+If you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. In your message, provide details of the changes you made\. When we receive this information, we will extend the review period to ensure that we're only analyzing the anti\-spam organization notifications we have received after you implemented your changes\. At the end of this extended review period, your account is no longer listed by the anti\-spam organization, we will remove the review period for your account\.
+
+### If your account's ability to send email is paused<a name="reputationdashboard-listbombing-suspended"></a>
 
 You can request that we reconsider this decision\. For more information, see [Amazon SES Sending review process FAQs](faqs-enforcement.md)\.
 
@@ -344,6 +374,28 @@ First, identify features of your website or applications that might allow third 
 Next, modify your application or website to prevent unsolicited sending\. For example, add a CAPTCHA, limit the rate at which emails can be sent, remove the ability of users to submit custom content, require users to log in to send email, and remove the ability for the application to generate multiple simultaneous notifications\.
 
 ### If your account is under review, or if your account's ability to send email is paused<a name="reputationdashboard-vulnerablesite-probation-suspended"></a>
+
+When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
+
+If we remove a review period or sending pause from your account, and we observe the same issue later, we might place your account under review or pause your ability to send email again\. If we observe extreme issues or repeated instances of the same issue, we might permanently suspend your account's ability to send email\.
+
+See [Amazon SES Sending review process FAQs](faqs-enforcement.md) for more information about what to do if your account is under review, or your account's ability to send email is paused\.
+
+## Compromised Credentials Notification<a name="reputationdashboard-compromised"></a>
+
+This section contains additional information about compromised credentials site notifications shown in the Amazon SES reputation metrics page\.
+
+### Why you received this notification<a name="reputationdashboard-compromised-whyreceived"></a>
+
+A comprehensive review has found that messages are being sent from your account that we don't believe you intended to send\. These messages are highly likely to be flagged as spam by mailbox providers and recipients\.
+
+Some common causes are compromised IAM access keys, compromised SMTP passwords, or other security vulnerabilities\.
+
+### What you can do to resolve the issue<a name="reputationdashboard-compromised-whattodo"></a>
+
+You should perform a comprehensive security review of your SES utilization and ensure that you have rotated any applicable IAM access keys or SMTP passwords and that you have removed any unauthorized users or resources from your account\. Ensure that you are not storing sensitive information such as passwords or access keys on third party web sites or repositories\.
+
+### If your account is under review, or if your account's ability to send email is paused<a name="reputationdashboard-compromised-probation-suspended"></a>
 
 When you have implemented changes that you believe will resolve the issue, sign into the AWS Console and go to Support Center\. Reply to the case we opened on your behalf\. Include details of the actions you have taken to resolve this issue, as well as details of your plans to ensure that this issue doesn't occur again\. After we receive your request, we review the information that you provided and change the status of your account if necessary\.
 

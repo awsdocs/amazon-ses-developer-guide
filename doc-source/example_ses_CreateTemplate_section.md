@@ -1,14 +1,60 @@
 # Create an Amazon SES email template using an AWS SDK<a name="example_ses_CreateTemplate_section"></a>
 
-The following code example shows how to create an Amazon SES email template\.
+The following code examples show how to create an Amazon SES email template\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/SES#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Create an email template.
+    /// </summary>
+    /// <param name="name">Name of the template.</param>
+    /// <param name="subject">Email subject.</param>
+    /// <param name="text">Email body text.</param>
+    /// <param name="html">Email HTML body text.</param>
+    /// <returns>True if successful.</returns>
+    public async Task<bool> CreateEmailTemplateAsync(string name, string subject, string text,
+        string html)
+    {
+        var success = false;
+        try
+        {
+            var response = await _amazonSimpleEmailService.CreateTemplateAsync(
+                new CreateTemplateRequest
+                {
+                    Template = new Template
+                    {
+                        TemplateName = name,
+                        SubjectPart = subject,
+                        TextPart = text,
+                        HtmlPart = html
+                    }
+                });
+            success = response.HttpStatusCode == HttpStatusCode.OK;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("CreateEmailTemplateAsync failed with exception: " + ex.Message);
+        }
+
+        return success;
+    }
+```
++  For API details, see [CreateTemplate](https://docs.aws.amazon.com/goto/DotNetSDKV3/email-2010-12-01/CreateTemplate) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
   
 
 ```
@@ -56,7 +102,6 @@ class SesTemplate:
             logger.exception("Couldn't create template %s.", name)
             raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/ses#code-examples)\. 
 +  For API details, see [CreateTemplate](https://docs.aws.amazon.com/goto/boto3/email-2010-12-01/CreateTemplate) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

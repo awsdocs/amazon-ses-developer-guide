@@ -6,8 +6,9 @@ To work within these restrictions, you can use Amazon Virtual Private Cloud \(Am
 
 To use Amazon SES with Amazon VPC, you must create an Amazon EC2 instance in your organization's VPC\. You can then connect to this instance and use it to send email through Amazon SES\. This section contains instructions for configuring your Amazon EC2 instance and creating an Amazon VPC endpoint for Amazon SES\.
 
-**Limitation**  
+**Limitations**  
 Amazon SES does not support VPC endpoints in the following Availability Zones: `use1-az2`, `use1-az3`, `use1-az5`, `usw1-az2`, `usw2-az4`, `apne2-az4`, `cac1-az3`, and `cac1-az4`\.
+The SMTP endpoint used within the VPC is restricted to the AWS Region currently being used for your account\.
 
 ## Prerequisites<a name="send-email-set-up-vpc-endpoints-prereqs"></a>
 

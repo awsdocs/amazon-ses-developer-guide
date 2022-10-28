@@ -43,7 +43,9 @@ The command shown above retrieves the total number of click events for each day 
 
 ### Q1\. How does open tracking work?<a name="sending-metric-faqs-opens-q1"></a>
 
-At the bottom of each email sent through Amazon SES, we insert a 1 pixel by 1 pixel transparent GIF image\. Each email includes a unique reference to this image file; when the image is downloaded, Amazon SES can tell exactly which message was opened and by whom\.
+A 1 pixel by 1 pixel transparent GIF image is inserted in each email sent through Amazon SES and includes a unique reference to this image file; when the image is downloaded, SES can tell exactly which message was opened and by whom\.
+
+By default, this pixel is inserted at the bottom of the email; however, some email providers’ applications truncate the preview of an email when it exceeds a certain size and may provide a link to view the remainder of the message\. In this scenario, the SES pixel tracking image does not load and will throw off the open rates you’re trying to track\. To get around this, you can optionally place the pixel at the beginning of the email, or anywhere else, by inserting the `{{ses:openTracker}}` placeholder into the email body\. Once SES receives the message with the placeholder, it will be replaced with open tracking pixel image\. Just add one placeholder, as only the first occurrence will be replaced, any remaining will be omitted\.
 
 The addition of this tracking pixel does not change the appearance of your email\.
 
@@ -59,7 +61,9 @@ Open tracking is available to all Amazon SES users by default\. To use open trac
 
 1. In every email for which you want to track opens, specify the configuration set that you created in step 1\.
 
-For a more detailed explanation of this process, see [Monitor email sending using Amazon SES event publishing](monitor-using-event-publishing.md)\.
+For details about how to enable open tracking through a configuration set's event destination, see [Creating Amazon SES event destinations](event-destinations-manage.md)\. You can use the pixel placeholder in [SMTP email](send-email-smtp.md) in such ways as [formatted, raw, and templated ](send-email-api.md) email\.
+
+Learn more about how to [Monitor email sending using event publishing](monitor-using-event-publishing.md)\.
 
 ### Q3\. Can I omit the open tracking pixel from certain emails?<a name="sending-metric-faqs-opens-q3"></a>
 
@@ -94,7 +98,11 @@ To disable click tracking for that link, modify it to resemble the following:
 
 Because `ses:no-track` isn't a standard HTML attribute, Amazon SES automatically removes it from the version of the email that arrives in your recipients' inboxes\.
 
-You can also disable click tracking for all messages that you send using a specific configuration set\. To disable click tracking, modify the configuration set event destination so that it doesn't capture click events\. \.
+You can also disable click tracking for all messages that you send using a specific configuration set\. To disable click tracking, modify the configuration set event destination so that it doesn't capture click events\.
+
+For details about how to enable and disable click tracking through a configuration set's event destination, see [Creating Amazon SES event destinations](event-destinations-manage.md)\.
+
+Learn more about how to [Monitor email sending using event publishing](monitor-using-event-publishing.md)\.
 
 ### Q3\. How many links can be tracked in each email?<a name="sending-metric-faqs-clicks-q3"></a>
 

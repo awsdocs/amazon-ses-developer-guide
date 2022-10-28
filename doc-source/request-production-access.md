@@ -18,9 +18,13 @@ If you're using Amazon SES to send email from an Amazon EC2 instance, you might 
 
 1. Open the Amazon SES console at [https://console\.aws\.amazon\.com/ses/](https://console.aws.amazon.com/ses/)\.
 
+1. In the navigation pane, choose **Account dashboard**\.
+
 1. In the warning box at the top of the console that says, "Your Amazon SES account is in the sandbox", on the right\-hand side, choose **Request production access**\.
 
 1. In the account details modal, select either the **Marketing** or **Transactional** radio button that best describes the majority of mail you'll be sending\.
+   + *Marketing email* \- Sent on a one\-to\-many basis to a targeted list of prospects or customers containing marketing and promotional content such as to make a purchase, download information, etc\.
+   + *Transactional email* \- Sent on a one\-to\-one basis unique to each recipient usually triggered by a user action such as a website purchase, a password reset request, etc\.
 
 1. In **Website URL**, enter the URL of your website to help us better understand the kind of content you plan on sending\.
 

@@ -38,6 +38,7 @@ The following is an example of a bounce notification that contains a DSN and the
           "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
           "sourceIp": "127.0.3.0",
           "sendingAccountId":"123456789012",
+          "callerIdentity": "IAM_user_or_role_name",
           "messageId":"00000138111222aa-33322211-cccc-cccc-cccc-ddddaaaa0680-000000",
           "destination":[
             "jane@example.com",
@@ -118,6 +119,7 @@ The following is an example of a bounce notification that includes the original 
          "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
+         "callerIdentity": "IAM_user_or_role_name",
          "destination":[
             "jane@example.com",
             "mary@example.com",
@@ -199,6 +201,7 @@ The following is an example of a complaint notification that contains a feedback
          "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
+         "callerIdentity": "IAM_user_or_role_name",
          "destination":[
             "jane@example.com",
             "mary@example.com",
@@ -273,6 +276,7 @@ The following is an example of a complaint notification that includes the origin
          "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
+         "callerIdentity": "IAM_user_or_role_name",
          "destination":[
             "jane@example.com",
             "mary@example.com",
@@ -338,6 +342,7 @@ The following is an example of a delivery notification that includes the origina
          "sourceArn": "arn:aws:ses:us-east-1:888888888888:identity/example.com",
          "sourceIp": "127.0.3.0",
          "sendingAccountId":"123456789012",
+         "callerIdentity": "IAM_user_or_role_name",
          "destination":[
             "jane@example.com"
          ], 

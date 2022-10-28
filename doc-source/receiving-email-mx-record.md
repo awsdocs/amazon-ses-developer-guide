@@ -34,10 +34,10 @@ Some DNS providers refer to the **Type** field as the **Record Type** or a simil
 1. For **Value**, enter the following:
 
    ```
-   10 inbound-smtp.regionInboundUrl.amazonaws.com
+   10 inbound-smtp.region.amazonaws.com
    ```
 
-   In the preceding example, replace *regionInboundUrl* with the address of the endpoint that receives email for the AWS Region you use with Amazon SES\. For example, if you're using the US East \(N\. Virginia\) Region, replace *region* with `us-east-1`\. For a complete list of email receiving endpoints, see [Amazon SES regions and endpoints](regions.md#region-endpoints)\.
+   In the preceding example, replace *region* with the address of the endpoint that receives email for the AWS Region you use with Amazon SES\. For example, if you're using the US East \(N\. Virginia\) Region, replace *region* with `us-east-1`\. For a complete list of email receiving endpoints, see [Amazon SES regions and endpoints](regions.md#region-endpoints)\.
 **Note**  
 The management consoles of some DNS providers include separate fields for the record **Value** and the record **Priority**\. If this is the case for your DNS provider, enter `10` for the **Priority** value, and enter the incoming mail endpoint URL for the **Value**\.
 
@@ -51,7 +51,7 @@ The procedures for creating an MX record for your domain depend on which DNS pro
 |  Amazon Route 53  |  [Creating Records by Using the Amazon Route 53 Console](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-creating.html)  | 
 |  GoDaddy  |  [Add an MX record](https://www.godaddy.com/help/add-an-mx-record-19234) \(external link\)  | 
 |  DreamHost  |  [How do I change my MX records?](https://help.dreamhost.com/hc/en-us/articles/215035328) \(external link\)  | 
-|  Cloudflare  |  [How do I add or edit mail or MX records? ](https://support.cloudflare.com/hc/en-us/articles/218069617-How-do-I-add-or-edit-mail-or-MX-records-) \(external link\)  | 
+|  Cloudflare  |  [Set up email records](https://developers.cloudflare.com/dns/manage-dns-records/how-to/email-records/) \(external link\)  | 
 |  HostGator  |  [Changing MX records \- Windows](https://support.hostgator.com/articles/hosting-guide/lets-get-started/dns-name-servers/changing-mx-records-windows) \(external link\)  | 
 |  Namecheap  |  [How can I set up MX records required for mail service? ](https://www.namecheap.com/support/knowledgebase/article.aspx/322/2237/how-can-i-set-up-mx-records-required-for-mail-service) \(external link\)  | 
 |  Names\.co\.uk  |  [Changing your domain's DNS settings](https://www.names.co.uk/support/domains/1156-changing_your_domains_dns_settings.html) \(external link\)  | 
