@@ -9,7 +9,9 @@ We recommend using the Amazon SES console to send a test email with Amazon SES\.
 ## Using the mailbox simulator from the console<a name="send-test-email"></a>
 
 **Important**  
-In this tutorial, you send an email to yourself so that you can check to see if you received it\. For further experimentation or load testing, use the Amazon SES mailbox simulator\. Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates\. For more information, see [Using the mailbox simulator manually](#send-email-simulator)\.
+In this tutorial, you send an email to yourself from the console so that you can check to see if you received it\. For further experimentation or load testing, see [Using the mailbox simulator manually](#send-email-simulator)\.
+Emails that you send to the mailbox simulator do not count toward your sending quota or your bounce and complaint rates, nor do they affect Virtual Deliverability Manager metrics\.
+ 
 
 Before you follow these steps, complete the tasks in [Setting up Amazon Simple Email Service](setting-up.md)\.
 

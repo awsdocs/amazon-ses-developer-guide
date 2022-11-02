@@ -52,6 +52,24 @@ Amazon SES supports TLS 1\.2, TLS 1\.1, and TLS 1\.0\. To learn more, see [Secur
 
       1. In **Specify the reason\(s\)\.\.\.**, select one of the suppression reasons for this configuration set to use\.
 
+1. <a name="vdm-create-config-overrides"></a>The **Virtual Deliverability Manager options** section provides a way for you to define custom settings for how this configuration set will use engagement tracking and optimized shared delivery by overriding how they’ve been defined in your Virtual Deliverability Manager settings at the account level:
+
+   1. To disable both engagement tracking and optimized shared delivery for this configuration set:
+
+      1. Check the **Override account level settings** box\.
+
+      1. Ensure **Enabled** is unchecked for both *Engagement tracking* and *Optimized shared delivery*, then choose **Save changes**\.
+
+   1. To enable or disable either, or both, engagement tracking and optimized shared delivery for this configuration set:
+
+      1. Check the **Override account level settings** box\.
+
+      1. Check or uncheck **Enabled** for either or both *Engagement tracking* and *Optimized shared delivery*, then choose **Save changes**\.
+
+   1. To revert back to your Virtual Deliverability Manager account level settings for engagement tracking and optimized shared delivery for this configuration set:
+
+      1. Uncheck the **Override account level settings** box, then choose **Save changes**\. 
+
 1. You can optionally add one or more tags in the **Tags** section\. Repeat the following steps for each tag you want to add to your configuration set\.
 
    1. Choose **Add new tag**\.

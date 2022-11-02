@@ -35,9 +35,14 @@ The **Configuration sets** detail page has two tabs for configuration set detail
     + **Custom redirect domain**
   + **Reputation options** – this panel shows details related to your sending reputation:
     + **Reputation metrics** \(indicates if you're tracking metrics\)
-    + **Last fresh start** \(the date and time at which the reputation metrics for the configuration set were last reset\)\.
-    + **Suppression settings**
-    + **Suppression reasons**
+    + **Last fresh start** \(the date and time at which the reputation metrics for the configuration set were last reset\)
+  + **Suppression list options** – this panel shows if you're overriding your account\-level suppression list with the configuration set, and if so, what the override details are:
+    + **Suppression list settings** \(indicates overriding account\-level settings—if not, this is the only item displayed in the panel\)
+    + **Suppression list** \(indicates how you're overriding your account\-level setting—either with the suppression list enabled or disabled\)
+    + **Suppression reasons** \(indicates if bounces and/or complaints are the reason for adding recipient email addresses to your suppression list\)
+  + <a name="vdm-edit-config-overrides"></a>**Virtual Deliverability Manager options** – this panel shows if you're overriding your Virtual Deliverability Manager account settings for engagement tracking and optimized shared delivery with the configuration set, and if so, what the override details are: 
+    + **Engagement tracking** \(indicates if engagement tracking is enabled or disabled\)
+    + **Optimized shared delivery** \(indicates if optimized shared delivery is enabled or disabled\)
   + **Tags** – this panel shows all of the tags you've attached to the configuration set\.
     + **Key**
     + **Value**

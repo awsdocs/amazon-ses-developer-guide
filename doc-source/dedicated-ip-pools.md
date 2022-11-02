@@ -1,4 +1,4 @@
-# Creating standard dedicated IP pools for dedicated IP addresses \(standard\)<a name="dedicated-ip-pools"></a>
+# Creating standard dedicated IP pools for dedicated IPs \(standard\)<a name="dedicated-ip-pools"></a>
 
 If you purchased several dedicated IP addresses \(standard\) to use with Amazon SES, you can create groups of those addresses, called *dedicated IP pools*\.   Grouping dedicated IPs \(standard\) together in a pool makes them easier to manage\. A common scenario is to create one pool for sending marketing communications, and another for sending transactional emails\. Your sender reputation for transactional emails is then isolated from that of your marketing emails\. In this scenario, if a marketing campaign generates a large number of complaints, the delivery of your transactional emails is not impacted\.
 

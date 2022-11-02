@@ -9,4 +9,4 @@ The topics is this section explain how to manually set up and manage dedicated I
 **Topics**
 + [Requesting and relinquishing dedicated IP addresses \(standard\)](dedicated-ip-case.md)
 + [Warming up dedicated IP addresses \(standard\)](dedicated-ip-warming.md)
-+ [Creating standard dedicated IP pools for dedicated IP addresses \(standard\)](dedicated-ip-pools.md)
++ [Creating standard dedicated IP pools for dedicated IPs \(standard\)](dedicated-ip-pools.md)
