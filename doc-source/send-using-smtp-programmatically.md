@@ -261,47 +261,48 @@ This tutorial requires JavaMail version 1\.5 or later\. These procedures were te
    54.     	props.put("mail.smtp.port", PORT); 
    55.     	props.put("mail.smtp.starttls.enable", "true");
    56.     	props.put("mail.smtp.auth", "true");
-   57. 
-   58.         // Create a Session object to represent a mail session with the specified properties. 
-   59.     	Session session = Session.getDefaultInstance(props);
-   60. 
-   61.         // Create a message with the specified information. 
-   62.         MimeMessage msg = new MimeMessage(session);
-   63.         msg.setFrom(new InternetAddress(FROM,FROMNAME));
-   64.         msg.setRecipient(Message.RecipientType.TO, new InternetAddress(TO));
-   65.         msg.setSubject(SUBJECT);
-   66.         msg.setContent(BODY,"text/html");
-   67.         
-   68.         // Add a configuration set header. Comment or delete the 
-   69.         // next line if you are not using a configuration set
-   70.         msg.setHeader("X-SES-CONFIGURATION-SET", CONFIGSET);
-   71.             
-   72.         // Create a transport.
-   73.         Transport transport = session.getTransport();
-   74.                     
-   75.         // Send the message.
-   76.         try
-   77.         {
-   78.             System.out.println("Sending...");
-   79.             
-   80.             // Connect to Amazon SES using the SMTP username and password you specified above.
-   81.             transport.connect(HOST, SMTP_USERNAME, SMTP_PASSWORD);
-   82.         	
-   83.             // Send the email.
-   84.             transport.sendMessage(msg, msg.getAllRecipients());
-   85.             System.out.println("Email sent!");
-   86.         }
-   87.         catch (Exception ex) {
-   88.             System.out.println("The email was not sent.");
-   89.             System.out.println("Error message: " + ex.getMessage());
-   90.         }
-   91.         finally
-   92.         {
-   93.             // Close and terminate the connection.
-   94.             transport.close();
-   95.         }
-   96.     }
-   97. }
+   57.      props.put("mail.smtp.ssl.protocols","TLSv1.2"); // To over come 'Could not convert socket to TLS' error
+   58.      
+   59.         // Create a Session object to represent a mail session with the specified properties. 
+   60.     	Session session = Session.getDefaultInstance(props);
+   61. 
+   62.         // Create a message with the specified information. 
+   63.         MimeMessage msg = new MimeMessage(session);
+   64.         msg.setFrom(new InternetAddress(FROM,FROMNAME));
+   65.         msg.setRecipient(Message.RecipientType.TO, new InternetAddress(TO));
+   66.         msg.setSubject(SUBJECT);
+   67.         msg.setContent(BODY,"text/html");
+   68.         
+   69.         // Add a configuration set header. Comment or delete the 
+   70.         // next line if you are not using a configuration set
+   71.         msg.setHeader("X-SES-CONFIGURATION-SET", CONFIGSET);
+   72.             
+   73.         // Create a transport.
+   74.         Transport transport = session.getTransport();
+   75.                     
+   76.         // Send the message.
+   77.         try
+   78.         {
+   79.             System.out.println("Sending...");
+   80.             
+   81.             // Connect to Amazon SES using the SMTP username and password you specified above.
+   82.             transport.connect(HOST, SMTP_USERNAME, SMTP_PASSWORD);
+   83.         	
+   84.             // Send the email.
+   85.             transport.sendMessage(msg, msg.getAllRecipients());
+   86.             System.out.println("Email sent!");
+   87.         }
+   88.         catch (Exception ex) {
+   89.             System.out.println("The email was not sent.");
+   90.             System.out.println("Error message: " + ex.getMessage());
+   91.         }
+   92.         finally
+   93.         {
+   94.             // Close and terminate the connection.
+   95.             transport.close();
+   96.         }
+   97.     }
+   98. }
    ```
 
 1. In `AmazonSESSample.java`, replace the following email addresses with your own values:
