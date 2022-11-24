@@ -183,18 +183,3 @@ In the preceding command, do the following:
 + Replace *us\-east\-1* with the AWS Region in which you want to use the SMTP credentials\.
 
 When this script runs successfully, the only output is your SMTP password\.
-
-------
-
-To use this script, first save the preceding code as `smtp_credentials_generate.py`\. Then, at the command line, run the following command:
-
-```
-python path/to/smtp_credentials_generate.py wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY us-east-1
-```
-
-In the preceding command, do the following:
-+ Replace *path/to/* with the path to the location where you saved `smtp_credentials_generate.py`\.
-+ Replace *wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY* with the Secret Access Key that you want to convert into an SMTP password\.
-+ Replace *us\-east\-1* with the AWS Region in which you want to use the SMTP credentials\.
-
-When this script runs successfully, the only output is your SMTP password\.
