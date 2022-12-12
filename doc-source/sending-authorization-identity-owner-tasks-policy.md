@@ -30,7 +30,7 @@ You can use the policy generator to create a simple authorization policy by foll
 
 1. In the **Create statement** pane, choose **Allow** in the **Effect** field\. \(If you want to create a policy to restrict your delegate sender, choose **Deny** instead\.\)
 
-1. In the **Principals** field, enter the *AWS account ID* or *IAM user ARN* that your delegate sender shared with you to authorize them to send email on behalf of your account for this identity, then choose **Add**\. \(If you wish to authorize more than one delegate sender, repeat this step for each one\.\)
+1. In the **Principals** field, enter the *AWS account ID* or *IAM user or role ARN* that your delegate sender shared with you to authorize them to send email on behalf of your account for this identity, then choose **Add**\. \(If you wish to authorize more than one delegate sender, repeat this step for each one\.\)
 
 1. In the **Actions** field, select the check box for each send type you would like to authorize for your delegate sender\.
 
