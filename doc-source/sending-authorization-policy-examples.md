@@ -14,7 +14,7 @@ Sending authorization enables you to specify the fine\-grained conditions under 
 
 The *principal*, which is the entity to which you are granting permission, can be an AWS account, an AWS Identity and Access Management \(IAM\) user, or an AWS service\.
 
-The following example shows a simple policy that allows AWS ID *123456789012* to send email from the verified identity *example\.com* \(which is owned by AWS account *888888888888*\)\. The `Condition` statement in this policy only allows the delegate \(that is, AWS ID *123456789012*\) to send email from the address *marketing\+\.\*@example\.com*, where *\.\** is any string that the sender wants to add after *marketing\+*\.
+The following example shows a simple policy that allows AWS ID *123456789012* to send email from the verified identity *example\.com* \(which is owned by AWS account *888888888888*\)\. The `Condition` statement in this policy only allows the delegate \(that is, AWS ID *123456789012*\) to send email from the address *marketing\+\*@example\.com*, where *\** is any string that the sender wants to add after *marketing\+*\.
 
 ```
  1. {
@@ -36,7 +36,7 @@ The following example shows a simple policy that allows AWS ID *123456789012* to
 17.       ],
 18.       "Condition":{
 19.         "StringLike":{
-20.           "ses:FromAddress":"marketing+.*@example.com"
+20.           "ses:FromAddress":"marketing+*@example.com"
 21.         }
 22.       }
 23.     }
