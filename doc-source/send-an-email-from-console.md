@@ -1,6 +1,6 @@
 # Sending test emails in Amazon SES with the simulator<a name="send-an-email-from-console"></a>
 
-We recommend using the Amazon SES console to send a test email with Amazon SES\. Because the console requires you to manually enter information, you typically only use it to send test emails\. After you get started with Amazon SES, you will most likely send your emails by using either the Amazon SES SMTP interface or API\. However,the console is useful for monitoring your sending activity\.
+We recommend using the Amazon SES console to send a test email with Amazon SES\. Because the console requires you to manually enter information, you typically only use it to send test emails\. After you get started with Amazon SES, you will most likely send your emails by using either the Amazon SES SMTP interface or API\. However, the console is useful for monitoring your sending activity\.
 
 **Topics**
 + [Using the mailbox simulator from the console](#send-test-email)
