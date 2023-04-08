@@ -53,7 +53,7 @@ There are two policy\-wide elements: `Id` and `Version`\. The following table pr
 |  Name  |  Description  |  Required  |  Valid values  | 
 | --- | --- | --- | --- | 
 |   `Id`   |  Uniquely identifies the policy\.  |  No  |  Any string  | 
-|   `Version`   |  Specifies the policy access language version\.  |  No  |  Any string\. As a best practice, we recommend that you include this field with a value of "2012\-10\-17"\.  | 
+|   `Version`   |  Specifies the policy access language version\.  |  No  |  Either "2012\-10\-17"\ or "2008\-10\-17"\. As a best practice, we recommend that you include this field with a value of "2012\-10\-17"\.  For more information, see [IAM JSON policy elements: Version](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_version.html)| 
 
 ### Statements specific to the policy<a name="sending-authorization-policy-statements"></a>
 
