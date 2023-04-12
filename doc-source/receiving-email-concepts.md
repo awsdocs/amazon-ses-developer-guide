@@ -157,4 +157,4 @@ The possible values for the headers above are listed in:
 + [spam](receiving-email-notifications-contents.md#receiving-email-notifications-contents-spamverdict-object)
 + [virus](receiving-email-notifications-contents.md#receiving-email-notifications-contents-virusverdict-object)
 
-Now that you have an understanding of the email receiving concepts, how it works, and it's use cases, you can get started by going to [Setting up email receiving](receiving-email-setting-up.md)\.
+Now that you have an understanding of the email receiving concepts, how it works, and its use cases, you can get started by going to [Setting up email receiving](receiving-email-setting-up.md)\.
