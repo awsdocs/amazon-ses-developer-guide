@@ -125,7 +125,7 @@ You can use the `SendBulkTemplatedEmail` operation to send an email to several d
        {
          "Destination":{
            "ToAddresses":[
-             "anaya.iyengar@example.com"
+             "anaya@example.com"
            ]
          },
          "ReplacementTemplateData":"{ \"name\":\"Anaya\", \"favoriteanimal\":\"angelfish\" }"
