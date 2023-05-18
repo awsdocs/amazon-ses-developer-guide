@@ -78,7 +78,7 @@ Sign into the AWS Management Console and go to Support Center\. Reply to the cas
 
 ### Q12\. Can I get help from my AWS representative or Premium Support?<a name="pr-q12"></a>
 
-If you're already working with an AWS account representative, we'll automatically contact him or her when your account is placed under review\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
+If you're already working with an AWS account representative, we'll automatically contact them when your account is placed under review\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
 
 ## Sending pause FAQ<a name="e-faq-sp"></a>
 
@@ -149,7 +149,7 @@ Reputation metrics includes information about the current status of your account
 
 ### Q11\. Can I get help from my AWS representative or Premium Support?<a name="sp-q11"></a>
 
-If you're already working with an AWS account representative, we'll automatically contact him or her if we pause your account's ability to send email\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
+If you're already working with an AWS account representative, we'll automatically contact them if we pause your account's ability to send email\. Your account representative may be able to provide additional information to help you better understand the issue\. If you use Premium Support, you should also contact that team for additional help\.
 
 ## Bounce FAQ<a name="e-faq-bn"></a>
 

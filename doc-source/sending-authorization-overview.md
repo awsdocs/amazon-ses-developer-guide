@@ -25,7 +25,7 @@ The sending authorization process consists of the following steps:
 
 1. The delegate sender lets the identity owner know which AWS account ID or IAM user ARN they want to use for sending\.
 
-1. If the identity owner agrees to allow the delegate sender to send from one of his accounts, he creates a sending authorization policy and attaches the policy to the chosen identity by using the Amazon SES console or the Amazon SES API\.
+1. If the identity owner agrees to allow the delegate sender to send from one of their accounts, they create a sending authorization policy and attach the policy to the chosen identity by using the Amazon SES console or the Amazon SES API\.
 
 1. The identity owner gives the delegate sender the ARN of the authorized identity so that the delegate sender can provide the ARN to Amazon SES at the time of email sending\.
 

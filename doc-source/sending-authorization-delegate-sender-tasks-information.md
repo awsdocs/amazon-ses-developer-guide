@@ -1,8 +1,8 @@
 # Providing information to the identity owner for Amazon SES sending authorization<a name="sending-authorization-delegate-sender-tasks-information"></a>
 
-As a delegate sender, you must provide the identity owner with either your AWS account ID or your IAM user Amazon Resource Name \(ARN\) since you will be sending email on behalf of the identity owner\. The identity owner needs your account information so he can create a policy that grants you permission to send from one of his verified identities\.
+As a delegate sender, you must provide the identity owner with either your AWS account ID or your IAM user Amazon Resource Name \(ARN\) since you will be sending email on behalf of the identity owner\. The identity owner needs your account information so they can create a policy that grants you permission to send from one of their verified identities\.
 
-If you want to use your own SNS topics, you can request that your identity owner configure feedback notifications for bounces, complaints, or deliveries to be sent to one or more of your SNS topics\. Do do this, you’ll need to share your SNS topic ARN with your identity owner so that he can configure your SNS topic in the verified identity he's authorizing you to send from\.
+If you want to use your own SNS topics, you can request that your identity owner configure feedback notifications for bounces, complaints, or deliveries to be sent to one or more of your SNS topics\. To do this, you’ll need to share your SNS topic ARN with your identity owner so that they can configure your SNS topic in the verified identity they are authorizing you to send from\.
 
 The following procedures explain how to find your account information and SNS topic ARNs to share with your identity owner\.
 
