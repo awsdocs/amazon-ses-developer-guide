@@ -1,7 +1,0 @@
-# Creating a sending authorization policy in Amazon SES<a name="sending-authorization-policies"></a>
-
-To authorize a delegate sender to send emails using an email address or domain identity that you own, you must create a sending authorization policy and then attach that policy to the identity\. An identity can have zero, one, or many policies; however, a single policy can only be associated with a single identity\.
-
-You can create a sending authorization policy in the following ways:
-+ By using the policy generator – Create a simple policy by using the policy generator in the Amazon SES console\. In addition to specifying who can send the emails, you can specify conditions based on the time and date range during which emails can be sent, the "From" address, the "From" display name, the address to which bounce and complaint notifications are sent, the recipient addresses, and the source IP\. You might also want to use the policy generator to create the structure of a simple policy that you can then customize later by editing the policy in JSON\.
-+ By creating a custom policy – If you want to include more advanced conditions or specify an AWS service as the principal, you can create a custom policy and attach it to your identity by using the Amazon SES console or the Amazon SES API\.

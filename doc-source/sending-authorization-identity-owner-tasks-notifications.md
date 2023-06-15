@@ -1,9 +1,0 @@
-# Setting up identity owner notifications for Amazon SES sending authorization<a name="sending-authorization-identity-owner-tasks-notifications"></a>
-
-If you authorize a delegate sender to send email on your behalf, Amazon SES counts all bounces or complaints that those emails generate toward the delegate sender's bounce and complaint limits, rather than your own\. However, if your IP address appears on third\-party anti\-spam, DNS\-based Blackhole Lists \(DNSBLs\) as a result of messages sent by a delegate sender, the reputation of your identities may be damaged\. For this reason, if you're an identity owner, you should set up email feedback forwarding for all your identities, including those that you've authorized for delegate sending\. For more information, see [Receiving Amazon SES notifications through email](monitor-sending-activity-using-notifications-email.md)\.
-
-Delegate senders can and should set up their own bounce and complaint notifications for the identities that you have authorized them to use\. They can set up [event publishing](monitor-using-event-publishing.md) to  to publish bounce and complaint events to an Amazon SNS topic or a Kinesis Data Firehose stream\.
-
-If neither the identity owner nor the delegate sender sets up a method of sending notifications for bounce and complaint events, or if the sender doesn't apply the configuration set that uses the event publishing rule, then Amazon SES automatically sends event notifications by email to the address in the Return\-Path field of the email \(or the address in the Source field, if you didn't specify a Return\-Path address\), even if you disabled email feedback forwarding\. This process is illustrated in the following image\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/ses/latest/dg/images/feedback_forwarding.png)
